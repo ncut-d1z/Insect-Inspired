@@ -680,7 +680,7 @@ P1 还必须执行以下受控正/反例测试，不将虚构测试数据写入�
 
 ## 10. 路线图及门禁
 
-执行状态统一记录于 [进度追踪](temp/progress.md)；阶段验收见 [P1/P2 报告](temp/reports/P1-P2.md)，有效快照见 [CP-0001](temp/snapshots/checkpoints/CP-0001.json)。本节定义阶段门禁，不另行维护执行状态。
+执行状态统一记录于 [进度追踪](temp/progress.md)；阶段验收见 [P1/P2 报告](temp/reports/P1-P2.md)，有效快照见 [CP-0002](temp/snapshots/checkpoints/CP-0002.json)。本节定义阶段门禁，不另行维护执行状态。
 
 | 阶段 | 输入 | 任务及验收产物 | 门禁 |
 | --- | --- | --- | --- |

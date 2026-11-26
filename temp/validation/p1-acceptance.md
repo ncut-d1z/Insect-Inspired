@@ -9,7 +9,7 @@ P1 的受控行为门禁及三类真实样本门禁通过。验收证明种子�
 | 验收组 | 结果 | 可追溯记录 |
 | --- | --- | --- |
 | 强类型与受控正/反例 | 58 项通过，0 项失败 | `p1-gates.json` |
-| 三类真实文献样本 | 43 项通过，0 项失败 | `p1-real-samples.json` |
+| 三类真实文献样本 | 45 项通过，0 项失败 | `p1-real-samples.json` |
 | 真实样本失败与重试 | 1 项类型转换问题已纠正；保留失败及重试事件 | `p1-real-sample-events.jsonl` |
 | 正式数据隔离 | 测试构造的 Work、Upload、Assessment 不进入正式库 | 真实样本报告的 `production_data_contaminated=false` 及隔离产物哈希 |
 

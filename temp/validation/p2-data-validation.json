@@ -1,6 +1,6 @@
 {
   "report_type": "P2_formal_data_validation",
-  "run_at_utc": "2026-11-26T06:17:31Z",
+  "run_at_utc": "2026-11-26T06:25:40Z",
   "scope_id": "SCOPE-0001",
   "schema_version": "1.1.0",
   "passed": 34,
@@ -215,14 +215,14 @@
   ],
   "validated_artifact_hashes": {
     "ref.bib": "c7acd4363ff2106fb978f03e5c9c0c1cf184b0d8c9d419aaf1a8ee63c60bcbef",
-    "ref.html": "f53563f146119e9dcbe385cc0eb56e7bce7e663eaee978ea9655883c6ce54e93",
+    "ref.html": "ecb024dfcff093925621591d7f6a14231e579d114d5ff1871fdaf99079fcb18f",
     "temp/schema.json": "e7540cb7770878813b3a8ae20560226183e34dd2e2b31e3f46a85fbbbe7990a9",
     "temp/snapshots/scope.json": "45150b8374103fa15e2d2e16626c86ad884126006d0ceab99eafab41589838e9",
-    "temp/exports/citation_graph.json": "f1bc9b92abd84dbeeb20797b2766eef27e928fc8c848eb8cbd51aeaa8cf980b8",
+    "temp/exports/citation_graph.json": "cf789157ebc76d89ce0a97c8000d8c2be690ddd32ff7e822a748361f4beb7a48",
     "temp/exports/evidence_matrix.csv": "84f46d770f563bcc38b85b13479cf98a58b8c1599621183ea3ef70c4939e71d4",
-    "temp/exports/research_entities.json": "44026679f3f245a07c08009545a4bb819bb1422733aab9a0e4eaba9423b36429",
+    "temp/exports/research_entities.json": "3b6916abfd392d5af1b67742d8d1a6ca222cae9b539ab1c2b0bf57299bcd81e7",
     "temp/exports/research_implications.csv": "f3004fe4f73ee0752caf3bc998f7385a66fadf005c8c87ce68fe614142f9d2ad",
-    "temp/exports/research_paths.json": "a1d12f36832e348cfab74901aac107820ba1c4e1f1c2733a1c5612cc23fb779c"
+    "temp/exports/research_paths.json": "960b1fb27a002ab3d1b81334c3e43f725d369f223d16e7998967827d46be4678"
   },
   "limits": "Validates data integrity and the P2 seed snapshot; does not certify literature closure or scientific Assessment findings. Rendered UI behavior and source scientific interpretation remain separately reviewed.",
   "validator_sha256": "183d9d616d427ae9ec9347cf1b624a1f453bbdb8ea08e7f827856d601c87c499"

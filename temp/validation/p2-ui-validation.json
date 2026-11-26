@@ -1,8 +1,8 @@
 {
   "report_type": "P2_offline_browser_validation",
   "scope_id": "SCOPE-0001",
-  "checkpoint_id": "CP-0001",
-  "run_at_utc": "2026-11-26T05:55:01.358Z",
+  "checkpoint_id": "CP-0002",
+  "run_at_utc": "2026-11-26T06:25:42.582Z",
   "browser_package": "@sparticuz/chromium 158.0.0",
   "viewports": [
     {
@@ -113,7 +113,7 @@
       "status": "passed"
     }
   ],
-  "html_sha256": "f53563f146119e9dcbe385cc0eb56e7bce7e663eaee978ea9655883c6ce54e93",
-  "script_sha256": "ea9723166537d201101156963eba8515ea13498f0ec1988b8e5d7943a84e30c3",
+  "html_sha256": "ecb024dfcff093925621591d7f6a14231e579d114d5ff1871fdaf99079fcb18f",
+  "script_sha256": "01b415cadd4c915a5553404e6131245bf275250a3728795fb1802e7567bd361d",
   "notes": "Runtime test and screenshots use only the local HTML. Screenshots and test code remain private; no source PDFs or credentials are in the deliverable."
 }
