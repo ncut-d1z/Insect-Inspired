@@ -1,0 +1,62 @@
+{
+  "query_id": "Q-RUN04-WEB-0002",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "institutional_repository",
+  "source_name": "NCBI PubMed",
+  "entity_id": "W-D982fbc0c39deffe0",
+  "work_key": "Sturzl2016",
+  "endpoint_or_url": "https://pubmed.ncbi.nlm.nih.gov/26877083/",
+  "transport": "web_retrieval",
+  "queried_at_utc": "2026-11-26T16:13:43.913Z",
+  "completed_at_utc": "2026-11-26T16:13:44.462Z",
+  "query_time_status": "exact",
+  "raw_parameters": {
+    "open": [
+      {
+        "ref_id": "https://pubmed.ncbi.nlm.nih.gov/26877083/"
+      }
+    ],
+    "response_length": "long"
+  },
+  "normalized_parameters": {
+    "pmid": "26877083",
+    "resource_kind": "PubMed record"
+  },
+  "status": "partial",
+  "http_status": null,
+  "response_kind": "unreadable_source_record",
+  "returned_count": null,
+  "visible_total": null,
+  "count_scope": "One exact PubMed identity only; no corpus/citation-list/author-entity coverage is inferred.",
+  "result_identifiers": [],
+  "external_requests_performed": 1,
+  "manual_review_items": 0,
+  "cache_hit": false,
+  "retrieval_cache_note": "The web retrieval service controls its own upstream cache; this is a new tool access, not proof of a new origin HTTP response.",
+  "timeout_note": "Web retrieval tool exposes no caller timeout parameter; actual call timestamps retained.",
+  "retry_of_query_id": "Q-RUN03-WEB-0010",
+  "source_refs": [
+    "turn855953543view0"
+  ],
+  "source_locators": [
+    {
+      "source_ref": "turn855953543view0",
+      "line_start": 0,
+      "line_end": 0,
+      "observation": "Only the HHS disclosure footer was exposed; no matching bibliographic header was readable."
+    }
+  ],
+  "metadata": null,
+  "integration_guard": "Match existing DOI/title/byline record and retain its work_id, work_key, Version and existing Person relationships. Work-scoped byline affiliation does not establish a cross-Work Person merge; do not infer ORCID or current affiliation.",
+  "error_code": "SOURCE_RECORD_NOT_READABLE",
+  "error_message": "The official PubMed retrieval exposed only a footer; DOI/PMID bridge and metadata remain unverified by this access.",
+  "sanitized": true,
+  "payload_retained": false,
+  "metadata_allowlist_retained": true,
+  "license_note": "Bibliographic facts and locators only. Original abstract, full text, figures, references payload, street addresses, email/contact addresses and credentials excluded.",
+  "raw_tool_response_sha256": "77cf9a124ea669194a5e6b9066419dc13036617214942607bcdbbf75b52b892b",
+  "raw_tool_response_bytes": 700,
+  "raw_response_retention": "Private local tool-response cache outside repository; not for Git publication."
+}

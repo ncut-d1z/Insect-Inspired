@@ -1,0 +1,179 @@
+{
+  "query_id": "Q-RUN04-WEB-0003",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "institutional_repository",
+  "source_name": "NCBI PubMed",
+  "entity_id": "W-Dbfce205be4b6d9df",
+  "work_key": "Ogawa2015",
+  "endpoint_or_url": "https://pubmed.ncbi.nlm.nih.gov/25994678/",
+  "transport": "web_retrieval",
+  "queried_at_utc": "2026-11-26T16:13:52.108Z",
+  "completed_at_utc": "2026-11-26T16:13:52.755Z",
+  "query_time_status": "exact",
+  "raw_parameters": {
+    "open": [
+      {
+        "ref_id": "https://pubmed.ncbi.nlm.nih.gov/25994678/"
+      }
+    ],
+    "response_length": "long"
+  },
+  "normalized_parameters": {
+    "pmid": "25994678",
+    "resource_kind": "PubMed record"
+  },
+  "status": "success",
+  "http_status": null,
+  "response_kind": "bibliographic_record",
+  "returned_count": 1,
+  "visible_total": 1,
+  "count_scope": "One exact PubMed identity only; no corpus/citation-list/author-entity coverage is inferred.",
+  "result_identifiers": [
+    "MED:25994678",
+    "DOI:10.1098/rspb.2015.0673",
+    "PMCID:PMC4455814"
+  ],
+  "external_requests_performed": 1,
+  "manual_review_items": 0,
+  "cache_hit": false,
+  "retrieval_cache_note": "The web retrieval service controls its own upstream cache; this is a new tool access, not proof of a new origin HTTP response.",
+  "timeout_note": "Web retrieval tool exposes no caller timeout parameter; actual call timestamps retained.",
+  "retry_of_query_id": "Q-RUN03-WEB-0014",
+  "source_refs": [
+    "turn365259586view0"
+  ],
+  "source_locators": [
+    {
+      "source_ref": "turn365259586view0",
+      "line_start": 177,
+      "line_end": 194,
+      "fields": [
+        "publication_date",
+        "volume",
+        "issue",
+        "article_number",
+        "title",
+        "byline",
+        "affiliations",
+        "PMID",
+        "PMCID",
+        "DOI"
+      ]
+    },
+    {
+      "source_ref": "turn365259586view0",
+      "line_start": 250,
+      "line_end": 250,
+      "fields": [
+        "publisher"
+      ]
+    }
+  ],
+  "metadata": {
+    "pmid": "25994678",
+    "pmcid": "PMC4455814",
+    "doi": "10.1098/rspb.2015.0673",
+    "title": "Three spectrally distinct photoreceptors in diurnal and nocturnal Australian ants",
+    "publication_date": "2015-06-07",
+    "publication_date_kind": "issue_date_as_shown_not_electronic_publication_date",
+    "year": 2015,
+    "venue_abbreviation": "Proc Biol Sci",
+    "volume": "282",
+    "issue": "1808",
+    "article_number": "20150673",
+    "publisher": "The Royal Society",
+    "authors": [
+      {
+        "position": 1,
+        "display_name": "Yuri Ogawa",
+        "affiliation_numbers": [
+          1
+        ]
+      },
+      {
+        "position": 2,
+        "display_name": "Marcin Falkowski",
+        "affiliation_numbers": [
+          2
+        ]
+      },
+      {
+        "position": 3,
+        "display_name": "Ajay Narendra",
+        "affiliation_numbers": [
+          3
+        ]
+      },
+      {
+        "position": 4,
+        "display_name": "Jochen Zeil",
+        "affiliation_numbers": [
+          4
+        ]
+      },
+      {
+        "position": 5,
+        "display_name": "Jan M Hemmi",
+        "affiliation_numbers": [
+          5
+        ]
+      }
+    ],
+    "publication_affiliations": [
+      {
+        "affiliation_number": 1,
+        "organization_names": [
+          "School of Animal Biology and UWA Oceans Institute",
+          "The University of Western Australia"
+        ],
+        "country": "Australia"
+      },
+      {
+        "affiliation_number": 2,
+        "organization_names": [
+          "School of Animal Biology and UWA Oceans Institute",
+          "The University of Western Australia",
+          "Research School of Biology",
+          "The Australian National University"
+        ],
+        "country": "Australia"
+      },
+      {
+        "affiliation_number": 3,
+        "organization_names": [
+          "Department of Biological Sciences",
+          "Macquarie University"
+        ],
+        "country": "Australia"
+      },
+      {
+        "affiliation_number": 4,
+        "organization_names": [
+          "Research School of Biology",
+          "The Australian National University"
+        ],
+        "country": "Australia"
+      },
+      {
+        "affiliation_number": 5,
+        "organization_names": [
+          "School of Animal Biology and UWA Oceans Institute",
+          "The University of Western Australia"
+        ],
+        "country": "Australia"
+      }
+    ]
+  },
+  "integration_guard": "Match existing DOI/title/byline record and retain its work_id, work_key, Version and existing Person relationships. Work-scoped byline affiliation does not establish a cross-Work Person merge; do not infer ORCID or current affiliation.",
+  "error_code": null,
+  "error_message": null,
+  "sanitized": true,
+  "payload_retained": false,
+  "metadata_allowlist_retained": true,
+  "license_note": "Bibliographic facts and locators only. Original abstract, full text, figures, references payload, street addresses, email/contact addresses and credentials excluded.",
+  "raw_tool_response_sha256": "23c9d55bf61b8c040fbd454ab5389d4591f7ebc667ba8ccf7ca1a7d225b3e90b",
+  "raw_tool_response_bytes": 18038,
+  "raw_response_retention": "Private local tool-response cache outside repository; not for Git publication."
+}
