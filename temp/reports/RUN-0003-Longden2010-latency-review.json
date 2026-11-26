@@ -1,0 +1,100 @@
+{
+ "report_id": "RUN-0003-Longden2010-latency-review",
+ "run_id": "RUN-0003",
+ "scope_id": "SCOPE-0001",
+ "intended_checkpoint_id": "CP-0005",
+ "base_git_commit": "54394bcf81d6ac993b676b09b176b025d839c7a6",
+ "reviewed_at_utc": "2026-11-26T14:35:08.315278Z",
+ "review_status": "verified_scientific_receipt_complete_assessment_pending",
+ "source": {
+  "doi": "10.3389/fnsys.2010.00153",
+  "work_id": "W-D6e117a3d967ebdc0",
+  "version_id": "V-W-D6e117a3d967ebdc0-01",
+  "upload_id": "U-RUN02-Longden2010-PDF",
+  "sha256": "23989196daa8ed304a4f9a6901257afd38bad7c0a3ca5eefb98cf2b80b569948",
+  "bytes": 812062,
+  "reused_query_id": "Q-RUN02-L079-longden2010-pdf",
+  "source_body_redistributed": false,
+  "original_pages_visually_reviewed": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ },
+ "verified_finding": {
+  "claim": "在固定制备的雌性 Calliphora vicina H2 细胞记录中，CDM 条件下刺激响应起始潜伏期缩短；该结果提供瞬态响应的量化生理约束。",
+  "before_ms": 44.8,
+  "before_se_ms": 1.3,
+  "after_ms": 40.9,
+  "after_se_ms": 1.5,
+  "reported_reduction_percent": 9,
+  "n_paired_H2_recordings": 7,
+  "p_value": 0.04,
+  "test": "paired t-test",
+  "pooling_temporal_frequency_hz": [
+   0.85,
+   8
+  ],
+  "quantitative_locator": "原文印刷/PDF p5，Response latency 小节；p6 Fig3A–B。",
+  "negative_result": "峰值响应潜伏期未检出显著改变；不等于证明峰值时间相同。"
+ },
+ "verified_methods": {
+  "organism": "female Calliphora vicina, 2–11 days old",
+  "recording": "右侧 lobula plate 的 H2 细胞，固定制备，胞外记录",
+  "intervention": "chlordimeform-HCl (CDM)，2.5 µM，10 µl，施于右侧 lobula plate",
+  "temperature_c": [
+   21.7,
+   24.3
+  ],
+  "grating_spatial_period_deg": 11.4,
+  "michelson_contrast_percent": 95,
+  "refresh_hz": 200,
+  "aperture_diameter_deg": 24,
+  "aperture_center_deg": {
+   "azimuth": 30,
+   "elevation": 0
+  },
+  "velocity_tuning_design": "31 个随机排序恒定时间频率，范围 −25 至 +25 Hz；每次运动 0.5 s，前后各 0.5 s 等亮灰屏；25 组，即每个频率 25 次重复。",
+  "latency_definition": "各细胞每刺激的跨试次平均响应以 SD=3 ms 高斯平滑；阈值为刺激前 375 ms 自发放电率均值加 2 SD；潜伏期是刺激后首次持续 6 ms 越阈时刻。",
+  "locators": {
+   "specimen_drug": "p2 Methods",
+   "stimulus_and_repeats": "p3 Methods",
+   "latency_estimator": "p4 Data analysis / Stimulus response latency",
+   "statistics": "p5 Statistics"
+  }
+ },
+ "scope_and_gates": {
+  "proposed_assessment_id": "AS-RUN03-Longden2010-L03-onset-latency",
+  "problem_id": "L03",
+  "evidence_admission_status": "eligible",
+  "handling_level": "new_evidence_or_hypothesis",
+  "limitation": "仅用于 CDM 固定制备的 H2 瞬态生理约束；不声称自然飞行机制、工程模型已修复、所有频率分别显著或 L07 平台区速率恢复。",
+  "statistical_gaps": [
+   "未单列配对差置信区间",
+   "未给出精确 t 统计量/自由度/检验尾数",
+   "未说明该汇总比较的多重性修正",
+   "独立动物分配未逐项给出"
+  ]
+ },
+ "preservation_guard": {
+  "unchanged_assessment_id": "AS-RUN02-Longden2010-L07-positive-speed-information",
+  "old_assessment_raw_line_sha256": "6c5b21eb9491173939f6a39ff0042d704ab84dd1288a23d1079d7b9bec5879ab",
+  "original_L07_status": "insufficient_evidence",
+  "old_assessment_must_remain_byte_identical": true,
+  "work_level_assessment_task": "T-assessment-W-D6e117a3d967ebdc0",
+  "work_level_assessment_task_status": "partial",
+  "L07_followup_task": "T-RUN02-L079-4426c4dc035807f4",
+  "L07_followup_task_status": "pending",
+  "canonical_files_edited": false
+ },
+ "activity_accounting": {
+  "manual_review_activities": 1,
+  "cached_resources_reused": 1,
+  "new_scientific_network_requests": 0,
+  "new_fulltext_downloads": 0,
+  "whole_work_or_L07_closed": false
+ },
+ "integration_note": "该报告先提交已核对科学结果；后续在同一路径补入完整 Assessment、门禁和缓存复用记录。规范库由 root 集成；此报告提交不等同于 canonical ingestion 或 CP5 完成。"
+}
