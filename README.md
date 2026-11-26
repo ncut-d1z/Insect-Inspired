@@ -132,7 +132,7 @@ PPT 第 22 页的七个一级项目固定细分为 L01–L09。第二个一级�
 
 所有 Assessment 的核心字段必须通过 schema.json 强类型验证；required、type、enum、数组唯一性、数值区间、条件依赖、外键检查均为强制约束。核心分类只能使用本节及 §7.2 的枚举，不接受自由文本或隐式类型转换；自由文本仅用于说明、原文证据及备注。
 
-统一类型 Condition<T> 为封闭对象：
+统一类型 `Condition<T>` 为封闭对象：
 
     status: enum(reported, not_reported, unknown, unknown_review_required, not_applicable)
     value: T | null
@@ -143,22 +143,22 @@ PPT 第 22 页的七个一级项目固定细分为 L01–L09。第二个一级�
 
 reported 要求非空且符合 T 的 value 及支持定位；其余状态 value 必须为 null、reason 必填。not_reported 必须定位已核查的完整相关原文及说明确未披露；not_applicable 必须有不适用依据；unknown 和 unknown_review_required 必须有原始时间及复核工单。未取得全文、解析失败、OCR 错误或尚未检查不能标为 not_reported。
 
-| 条件字段 | 强类型（统一外层 Condition<T>） | 值域与约束 |
+| 条件字段 | 强类型（统一外层 `Condition<T>`） | 值域与约束 |
 | --- | --- | --- |
-| species | array<object> | reported 时至少一项；scientific_name:string、taxon_id:string/null、cell_type:string/null、cell_identifiers:array<string>；非生物研究标不适用 |
+| species | `array<object>` | reported 时至少一项；scientific_name:string、taxon_id:string/null、cell_type:string/null、cell_identifiers:`array<string>`；非生物研究标不适用 |
 | motion_type | Enum | pure_rotation、pure_translation、mixed_rotation_translation、stationary、other_specified |
 | motion_dof | object | rotation_dof、translation_dof 为 0..3 的整数；estimated_components 为去重枚举数组：rotation_axis、rotation_direction、rotation_rate、rotation_angle、rotation_3d、translation_direction、translation_relative、translation_metric、depth_relative、depth_metric |
 | known_translation | Enum | externally_known、partially_known、not_known；附条件来源 |
-| speed_range | array<QuantityRange> | 角速度、线速度、帧间角位移、线位移、采样间隔分别记录；reported 至少一项 |
+| speed_range | `array<QuantityRange>` | 角速度、线速度、帧间角位移、线位移、采样间隔分别记录；reported 至少一项 |
 | environment | Enum | laboratory_controlled、natural_environment、indoor_structured、outdoor_structured、synthetic_simulation、reconstructed_simulation、mixed_environments、other_specified |
-| environment_details | object | dataset_ids:array<string>、scene_count:integer≥1/null、fov_deg:QuantityRange/null、distance_range:QuantityRange/null、distance_distribution:Enum（fixed、measured、statistical_prior、estimated）、scene_dynamics:Enum（static、dynamic、mixed）、distance_knowledge:Enum（known_metric、known_relative、partially_known、not_known）；未披露/未知/不适用的子字段按状态记录 |
+| environment_details | object | dataset_ids:`array<string>`、scene_count:integer≥1/null、fov_deg:QuantityRange/null、distance_range:QuantityRange/null、distance_distribution:Enum（fixed、measured、statistical_prior、estimated）、scene_dynamics:Enum（static、dynamic、mixed）、distance_knowledge:Enum（known_metric、known_relative、partially_known、not_known）；未披露/未知/不适用的子字段按状态记录 |
 | texture_noise | object | stimulus_type:Enum（periodic_grating、random_pattern、natural_image、synthetic_pattern、natural_video、other_specified）、contrast、spatial_frequency、illumination、noise 为 QuantityRange/null；outlier_fraction、occlusion_fraction 为 number/null 且 0..1 |
 | scale | Enum | absolute_metric、relative_scale、direction_only、scale_unobservable；空值状态不属于实际值域 |
-| scale_source_prior | array<Enum> | inertial_metric、known_baseline、known_scene_geometry、known_camera_height、known_metric_motion、metric_range_sensor、metric_training_prior、other_metric_prior、none；reported 非空无重复，none 互斥 |
+| scale_source_prior | `array<Enum>` | inertial_metric、known_baseline、known_scene_geometry、known_camera_height、known_metric_motion、metric_range_sensor、metric_training_prior、other_metric_prior、none；reported 非空无重复，none 互斥 |
 | scale_observability | Enum | proven_under_assumptions、empirically_validated_under_assumptions、unobservable、not_demonstrated |
-| method_and_validation | object | assumptions:array<string>、validation_types:array<evidence_kind Enum>、dataset_ids:array<string>、sample_count/trial_count:integer≥1/null、baseline_ids/metric_ids/failure_conditions:array<string> |
+| method_and_validation | object | assumptions:`array<string>`、validation_types:`array<evidence_kind Enum>`、dataset_ids:`array<string>`、sample_count/trial_count:integer≥1/null、baseline_ids/metric_ids/failure_conditions:`array<string>` |
 
-QuantityRange 固定为 quantity:Enum（angular_velocity、linear_velocity、angular_displacement、linear_displacement、sample_interval、fov、distance、contrast、spatial_frequency、illumination、noise、other_specified）、min/max:number（有限且 min≤max，单值 min=max）、unit:string、coordinate_frame:string/null、measurement_role:Enum（ground_truth、measured、estimated、assumed）、evidence_locator:array<Locator>。单位须与 quantity 相容，不猜测单位、坐标系及数值；other_specified 必须附明确定义及定位。嵌套可空字段采用相同 Condition 包装或 schema 固定的 field_states 路径映射，禁止无状态裸 null。Locator 定义见 §4.2。conditions 为上述字段的封闭对象（additionalProperties=false），同名 Assessment 投影确定性生成，不得另录矛盾值。JSON Schema 合格不等同科学门禁合格。
+QuantityRange 固定为 quantity:Enum（angular_velocity、linear_velocity、angular_displacement、linear_displacement、sample_interval、fov、distance、contrast、spatial_frequency、illumination、noise、other_specified）、min/max:number（有限且 min≤max，单值 min=max）、unit:string、coordinate_frame:string/null、measurement_role:Enum（ground_truth、measured、estimated、assumed）、evidence_locator:`array<Locator>`。单位须与 quantity 相容，不猜测单位、坐标系及数值；other_specified 必须附明确定义及定位。嵌套可空字段采用相同 Condition 包装或 schema 固定的 field_states 路径映射，禁止无状态裸 null。Locator 定义见 §4.2。conditions 为上述字段的封闭对象（additionalProperties=false），同名 Assessment 投影确定性生成，不得另录矛盾值。JSON Schema 合格不等同科学门禁合格。
 
 #### 3.1.1 空值隔离及人工复核时限
 
@@ -170,15 +170,25 @@ unknown 未升级驻留上限固定为 **24 小时（UTC，自 unknown_since_utc
 
 ### 3.2 量化证据准入与拒收阈值
 
-拒收对象是具体主张的合格证据资格，不是合法发现的 Work。Assessment 必须记录 claim_id、claim_type（theoretical、biological_mechanism、engineering_performance、engineering_trajectory、other_specified）、evidence_admission_status（eligible、insufficient_evidence、pending_review）、rejection_codes、metric_records、proof_record。
+拒收对象是具体主张的合格证据资格，不是合法发现的 Work。Assessment 必须记录 claim_id、claim_type（theoretical、biological_mechanism、engineering_performance、engineering_trajectory、other_specified）、evidence_admission_status（eligible、insufficient_evidence、pending_review）、rejection_codes、dataset_records、baseline_records、condition_levels、metric_records、proof_record。
 
 统一门禁：主张必须具有与证据路线、条件相符的严密数学推导或量化实验/仿真支撑；不以与主张无关的量化数据代替证明。
 
-- 理论主张：至少一个可核验结论、完整推导定位、模型、关键假设、变量/尺度、适用条件、退化及反例边界。proof_record 包含 assumption_locators、derivation_locators、conclusion_locator、checked_by、verification_status。定性描述、无推导的公式及假说不是证明。
+- 理论主张：至少一个可核验结论、完整推导定位、模型、关键假设、变量/尺度、适用条件、退化及反例边界。proof_record 包含 assumption_locators、derivation_locators（均为非空 Locator 数组）、conclusion_locator（Locator 对象）、checked_by（string）、verification_status（§4.2 枚举）。定性描述、无推导的公式及假说不是证明。
 - 实验/仿真、生物机制与工程效果：至少 1 项与主张直接对应的可核验量化结果（数值或可复核原始数据）、指标定义、单位、数据/刺激/仿真出处及条件；记录适用样本数/试验数、变异或不确定性及缺失状态。改善声明至少 1 个可比较基线/对照及效果量；因果主张须有适用干预或识别依据。决定性对照、样本或统计设计缺失不得凭数字本身通过。
 - 工程轨迹主张：必须有基准数据集出处（名称、版本、URL/DOI 或原文定位、序列/划分、真值来源）、运动/噪声条件、至少 1 条评估序列及 ATE 与 RPE 的明确数值/量级、定义、单位、对齐方式、RPE 时间/距离间隔、统计量和失败样本口径；数学等价指标须给出定义与等价关系，不伪造 ATE/RPE。非轨迹工程主张（如两帧旋转/平移方向、速度编码、传感器延迟）必须提供相应真值指标和数据出处，不要求不适用的轨迹指标，不得升格为轨迹性能结论。
 
-MetricRecord 类型固定：metric_id:string、metric_name:Enum（ATE、RPE_translation、RPE_rotation、rotation_geodesic_error、translation_direction_error、angular_velocity_error、linear_velocity_error、depth_error、correlation、response_amplitude、response_latency、time_constant、adaptation_gain、receptive_field_error、selectivity_index、contrast_sensitivity、effect_size、runtime、failure_rate、other_defined）、definition:string、value:number/null、unit:string、statistic:Enum（single、mean、median、rmse、std、quantile、confidence_interval、other_defined）、sample_count:integer/null、dataset_id:string/null、baseline_id:string/null、alignment:Enum（none、SE3、Sim3、scale_only、other_defined、not_applicable）、alignment_source:Enum（ground_truth_fit、external_metric_calibration、none、not_applicable）、interval:QuantityRange/null、uncertainty:object/null、evidence_locator:array<Locator>、field_states:object。metric_records 为该类型数组。数值有限且满足对应物理值域；估读图表标明方法、精度及来源；未取得数值不得编造。other_defined 不能绕过门禁。
+MetricRecord 类型固定：metric_id:string、metric_name:Enum（ATE、RPE_translation、RPE_rotation、rotation_geodesic_error、translation_direction_error、angular_velocity_error、linear_velocity_error、depth_error、correlation、response_amplitude、response_latency、time_constant、adaptation_gain、receptive_field_error、selectivity_index、contrast_sensitivity、effect_size、runtime、failure_rate、other_defined）、definition:string、value:number/null、unit:string、statistic:Enum（single、mean、median、rmse、std、quantile、confidence_interval、other_defined）、sample_count:integer/null、dataset_id:string/null、baseline_id:string/null、alignment:Enum（none、SE3、Sim3、scale_only、other_defined、not_applicable）、alignment_source:Enum（ground_truth_fit、external_metric_calibration、none、not_applicable）、interval:QuantityRange/null、uncertainty:object/null、evidence_locator:`array<Locator>`、field_states:object。metric_records 为该类型数组。数值有限且满足对应物理值域；估读图表标明方法、精度及来源；未取得数值不得编造。other_defined 不能绕过门禁。
+
+用于核验最低条件数、数据来源和基线的结构化记录必须包含：
+
+| 字段 | 类型与最低字段 |
+| --- | --- |
+| dataset_records | `array<DatasetRecord>`；dataset_id:string（Assessment 内唯一）、name:string、version:string/null、data_kind:Enum（public_benchmark、author_experiment、simulation、recorded_flight、neural_recording、other_defined）、source_locator:Locator、sequence_ids:array（string）、split_id:string/null、ground_truth_source:Locator/null、ground_truth_independence:Enum（independent、used_for_calibration、used_for_alignment、not_applicable）、field_states:object |
+| baseline_records | `array<BaselineRecord>`；baseline_id:string（Assessment 内唯一）、baseline_type:Enum（prior_method、ablation、control_group、pre_adaptation、null_model、ground_truth、other_defined）、description:string、dataset_id:string/null、condition_ids:array（string）、metric_ids:array（string）、evidence_locator:Locator 数组、field_states:object |
+| condition_levels | `array<ConditionLevel>`；condition_id:string（Assessment 内唯一）、factor:Enum（contrast、spatial_frequency、texture、speed、adaptation_state、environment、motion_component、cell_identity、control_intervention、other_defined）、level_id:string、quantity:QuantityRange/null、description:string、evidence_locator:Locator 数组、field_states:object；数量门禁按不同 factor 下经核验的不同 level_id 计数，不以重复试验或文字描述重复计数 |
+
+MetricRecord 的 dataset_id、baseline_id 以及 method_and_validation 中的 dataset_ids、baseline_ids、metric_ids 必须引用本 Assessment 的相应记录；baseline_records 的 metric_ids 与 condition_ids 同样必须解析。其他可空字段按 §3.1 的状态语义登记；不得将未披露信息补写为事实。工程轨迹声明必须验证实际关联数据及对齐条件，而非仅检查指标名称存在。
 
 各 L 的最低定量阈值（严格理论证明按相应理论路径审核）：
 
@@ -202,9 +212,9 @@ rejection_codes 白名单：missing_fulltext_evidence、missing_rigorous_derivat
 
 已标定单目中心投影、未知场景结构且无度量约束时，同时缩放平移与场景距离不改变图像观测。固定任意尺度、平移范数归一化、相对深度及以真值进行 Sim(3) 对齐均不能证明绝对平移尺度恢复。
 
-凡声称完整六自由度且包含绝对尺度的 L06/L08 主张，必须登记：
+凡声称完整六自由度且包含绝对尺度的 L06/L08 主张，必须登记（claims_absolute_scale.status=reported 且 value=true）：
 
-- claims_absolute_scale:boolean，§3.1 的 scale、scale_source_prior、scale_observability、motion_dof、known_translation；scale_prior_details 为结构化数组，包含先验类型、物理量/单位、数值或标定依据、证据定位、获取阶段及独立于待估尺度的程度。
+- claims_absolute_scale: `Condition<boolean>`，§3.1 的 scale、scale_source_prior、scale_observability、motion_dof、known_translation；scale_prior_details 为结构化数组，包含先验类型、物理量/单位、数值或标定依据、证据定位、获取阶段及独立于待估尺度的程度。
 - measurement_model、state_variables、gauge_freedoms、observability_assumptions、observability_argument_locator、degeneracy_conditions、excitation_requirements、external_measurement_sources；明确先验如何破除尺度自由度及成立、退化条件。IMU 融合、已知基线/场景、特定机动等只是潜在来源，不自动意味着尺度可观测。度量训练先验须说明训练/测试与泛化限制，不等同严格几何可观测性。
 - 经验主张必须提供未依赖真值拟合比例的度量尺度误差及实际平移误差、真值独立性、对齐方式和尺度标定来源；仅 Sim(3) 结果不是绝对尺度证据。严格理论主张必须提供尺度破除的推导及条件，不强制要求不适用的实验。
 - 无有效尺度来源（none、未披露或未知）、无可核验可辨识性说明、经验验证缺失或仅用真值拟合尺度时，禁止收录为已证实的绝对尺度主张：evidence_admission_status=insufficient_evidence，handling_level=insufficient_evidence，记录 §3.2 对应代码。Work、原主张及证据定位仍保留；旋转、方向、相对尺度的独立合格结论另建 Assessment；不可观测性证明作为合格反证。
@@ -237,7 +247,7 @@ rejection_codes 白名单：missing_fulltext_evidence、missing_rigorous_derivat
 | Person | person_id、display_name、name_variants、orcid、external_ids、identity_confidence、verification_status、affiliation_history（org_id、角色、起止时间及依据）、sources |
 | Organization | org_id、canonical_name、name_variants、raw_affiliations、ror、external_ids、organization_level、parent_org_id、historical_relations、valid_from、valid_to、verification_status、sources |
 | Project | project_id、canonical_name、grant_id、org_ids、person_ids、start_date、end_date、objective、url、output_work_ids、project_relation、evidence_locator、verification_status、sources |
-| Assessment | assessment_id、work_id、work_key、limitation_id、claim_id、claim_type、relation_type、handling_level、evidence_level、evidence_kind、evidence_route、conditions、species、motion_type、environment、scale、method、results、baseline、effect、metric_records、proof_record、evidence_admission_status、rejection_codes、claims_absolute_scale、scale_prior_details、measurement_model、state_variables、gauge_freedoms、observability_assumptions、observability_argument_locator、degeneracy_conditions、excitation_requirements、external_measurement_sources、remaining_limitations、counter_evidence、counter_evidence_types、evidence_locator、provenance_upload_ids、provenance_version_ids、assessment_status、superseded_by_assessment_id、cascade_event_id、discard_reason、fulltext_status、verification_status、citation_roles、project_relation、statement_basis、reviewer、date、biological_implications、engineering_implications |
+| Assessment | assessment_id、work_id、work_key、limitation_id、claim_id、claim_type、relation_type、handling_level、evidence_level、evidence_kind、evidence_route、conditions、species、motion_type、environment、scale、method、results、baseline、effect、dataset_records、baseline_records、condition_levels、metric_records、proof_record、evidence_admission_status、rejection_codes、claims_absolute_scale、scale_prior_details、measurement_model、state_variables、gauge_freedoms、observability_assumptions、observability_argument_locator、degeneracy_conditions、excitation_requirements、external_measurement_sources、remaining_limitations、counter_evidence、counter_evidence_types、evidence_locator、provenance_upload_ids、provenance_version_ids、assessment_status、superseded_by_assessment_id、cascade_event_id、discard_reason、fulltext_status、verification_status、citation_roles、project_relation、statement_basis、reviewer、date、biological_implications、engineering_implications |
 | Alias | alias_id、entity_type、raw_identifier、normalized_identifier、target_id、historical_key、reason、source、verification_status、date |
 | Query / Task / Checkpoint / Scope | 采用 §5.6、§6.2、§8.3、§9.1 定义的固定字段 |
 
@@ -263,7 +273,7 @@ Assessment 的 species、motion_type、environment、scale 是 conditions 对应
 
 confirmed 或 verified 必须有支持依据。撤稿及更正记录保留原书目与状态，不将撤稿结果当作有效的正面结论。
 
-所有实体核心 ID、外键、key、枚举与时间为 string（符合固定格式/枚举）；标志为 boolean；计数为非负 integer；测量为有限 number；多值字段为带 item schema 的 array；嵌套关系、证据及条件为封闭 object；null 仅在字段明确可空且具有状态依据时允许。Assessment 的 claim_id 为稳定字符串，§7.2 多标签为去重枚举数组，handling_level、evidence_level、evidence_route、evidence_admission_status、assessment_status 为单值枚举；核心条件及指标按 §3.1–§3.3。provenance_upload_ids、provenance_version_ids 为唯一外键数组，superseded_by_assessment_id 为可空 Assessment 外键，cascade_event_id 为可空事务 ID；discard_reason 为可空说明。scale_prior_details 每项为 object（prior_type:Enum、quantity:QuantityRange/null、calibration_basis:string、independence_basis:string、acquisition_stage:Enum[training, calibration, runtime, evaluation, other_specified]、conditions:string、evidence_locator:array<Locator>）；claims_absolute_scale 为 boolean，measurement_model 为 string/null，state_variables、gauge_freedoms、observability_assumptions、degeneracy_conditions、excitation_requirements、external_measurement_sources 为结构化对象数组（description:string、evidence_locator:array<Locator>），observability_argument_locator 为 Locator 数组；绝对尺度主张必须满足 §3.3，其他主张按不适用状态处理。proof_record 为 §3.2 的 object/null。字段缺失/不适用理由按 §3.1 记录。schema.json 必须实现字段级校验与跨实体语义检查，不把任何核心枚举降级为自由文本。
+所有实体核心 ID、外键、key、枚举与时间为 string（符合固定格式/枚举）；标志为 boolean；计数为非负 integer；测量为有限 number；多值字段为带 item schema 的 array；嵌套关系、证据及条件为封闭 object；null 仅在字段明确可空且具有状态依据时允许。Assessment 的 claim_id 为稳定字符串，§7.2 多标签为去重枚举数组，handling_level、evidence_level、evidence_route、evidence_admission_status、assessment_status 为单值枚举；核心条件及指标按 §3.1–§3.3。provenance_upload_ids、provenance_version_ids 为唯一外键数组，superseded_by_assessment_id 为可空 Assessment 外键，cascade_event_id 为可空事务 ID；discard_reason 为可空说明。scale_prior_details 每项为 object（prior_type:Enum、quantity:QuantityRange/null、calibration_basis:string、independence_basis:string、acquisition_stage:Enum[training, calibration, runtime, evaluation, other_specified]、conditions:string、evidence_locator:`array<Locator>`）；claims_absolute_scale 为 `Condition<boolean>`（reported=true 表示有定位的明确主张，reported=false 表示核验后无该主张；未知不得默认为 false），measurement_model 为 string/null，state_variables、gauge_freedoms、observability_assumptions、degeneracy_conditions、excitation_requirements、external_measurement_sources 为结构化对象数组（description:string、evidence_locator:`array<Locator>`），observability_argument_locator 为 Locator 数组；绝对尺度主张必须满足 §3.3，其他主张按不适用状态处理。proof_record 为 §3.2 的 object/null。字段缺失/不适用理由按 §3.1 记录。schema.json 必须实现字段级校验与跨实体语义检查，不把任何核心枚举降级为自由文本。
 
 ### 4.3 书目身份归一化、去重与计数
 
@@ -428,7 +438,6 @@ fulltext_status 固定为 pending、available_unverified、available_verified、
 | claim_type | 单值 | theoretical、biological_mechanism、engineering_performance、engineering_trajectory、other_specified |
 | assessment_status | 单值 | active、pending_review、merged、discarded；级联见 §1.3 |
 | rejection_codes | 多标签 | §3.2 白名单；不足证据必须记录原因 |
-
 | 摘要/全文状态 | 单值 | 见 §6.3 |
 | U00 原因 | 多标签 | 见 §8.2 |
 
@@ -580,11 +589,11 @@ Checkpoint 提交前统一生成并校验 ref.bib、ref.html、§8.4 五个研�
 | --- | --- |
 | citation_graph.json | nodes（work_id、work_key、canonical_title、identity_confidence、publication_status）；edges（edge_id、citing_work_id、cited_work_id、citing_key、cited_key、verification_status、citation_roles、context_locators、occurrence_ids、discovery_sources）；independent_progress（assessment_id、work_id、limitation_id、relation_type）；未解析端点单列 unresolved_occurrences，不作虚假边 |
 | research_entities.json | people、organizations、projects、work_refs、relations；关系字段 relation_id、relation_type、from_id、to_id、valid_from、valid_to、verification_status、evidence_locator；分别区分发表时隶属、历史隶属、资助、项目参与及实际成果 |
-| evidence_matrix.csv | 固定列 scope_id,checkpoint_id,schema_version,assessment_id,work_id,work_key,limitation_id,claim_id,claim_type,evidence_route,relation_type,handling_level,evidence_level,evidence_kind,evidence_admission_status,rejection_codes,conditions,metric_records,proof_record,claims_absolute_scale,scale_prior_details,observability_argument_locator,effect,remaining_limitations,counter_evidence,counter_evidence_types,evidence_locator,provenance_upload_ids,provenance_version_ids,verification_status,reviewer,date；一行一个 active Assessment，含不足证据主张；pending_review/merged/discarded 不计有效行，保留于审计源 |
+| evidence_matrix.csv | 固定列 scope_id,checkpoint_id,schema_version,assessment_id,work_id,work_key,limitation_id,claim_id,claim_type,evidence_route,relation_type,handling_level,evidence_level,evidence_kind,evidence_admission_status,rejection_codes,conditions,dataset_records,baseline_records,condition_levels,metric_records,proof_record,claims_absolute_scale,scale_prior_details,observability_argument_locator,effect,remaining_limitations,counter_evidence,counter_evidence_types,evidence_locator,provenance_upload_ids,provenance_version_ids,verification_status,reviewer,date；一行一个 active Assessment，含不足证据主张；pending_review/merged/discarded 不计有效行，保留于审计源 |
 | research_paths.json | paths（path_id、limitation_id、assessment_id、seed_id、work_id、ordered_steps、path_type、verification_status、evidence_locators、counter_evidence、gap_reason）；每步含 from_id、to_id、relation_id、relation_type、source_id、locator；至少保存各已核验发现路径类型的代表路径，不枚举全部可能组合；不将种子预置关系或作者关联伪作引用 |
 | research_implications.csv | 固定列 scope_id,checkpoint_id,schema_version,assessment_id,work_key,limitation_id,evidence_route,evidence_admission_status,biological_implications,engineering_implications,conditions,remaining_limitations,statement_basis,evidence_locator；每个 active Assessment 一行，未验证启示明确标记，不得据不足证据宣称有效 |
 
-全部节点、边、Assessment、路径、启示必须可按规范 ID 回溯至 temp 原始数据与证据，覆盖不足及 pending_review 状态在 Checkpoint 报告单列。citation_graph.json 的实际引用边与 citation-edges.jsonl 有效边集合相等；work-relations 不混入 cites。两份 CSV 的 assessment_id 集合等于 active Assessment 集合；research_entities 的实体/关系集合与规范记录对账；research_paths 的每一跳核验端点、来源及关系类型，缺口显式记录。校验五文件存在、格式、表头、排序、外键、计数、哈希及作用域一致性，结果写入 Checkpoint validation_results。
+全部节点、边、Assessment、路径、启示必须可按规范 ID 回溯至 temp 原始数据与证据，覆盖不足及 pending_review 状态在 Checkpoint 报告单列。citation_graph.json 的实际引用边与 citation-edges.jsonl 有效边集合相等；JSON 节点/边及 CSV 主键均不得重复，边的 work_id 与 work_key 必须指向同一规范记录；work-relations 不混入 cites。两份 CSV 的 assessment_id 集合等于 active Assessment 集合；research_entities 的实体/关系集合与规范记录对账；research_paths 的每一跳核验端点、来源及关系类型，缺口显式记录。校验五文件存在、格式、表头、排序、外键、计数、哈希及作用域一致性，结果写入 Checkpoint validation_results。
 
 ## 9. 质量控制、状态及验收
 
