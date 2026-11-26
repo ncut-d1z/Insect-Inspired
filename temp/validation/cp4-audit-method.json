@@ -1,0 +1,54 @@
+{
+  "checkpoint_id": "CP-0004",
+  "status": "passed",
+  "original_audit_sha256": "bce5f6b8387dce5d9d8c6c56bf38695ff6ad9b729f2f8c1461c5925aa052c2d9",
+  "strict_adapter_sha256": "2df055077bb33ec6ee908ddab6b785d5b1f2f5cfe38ce8cbcd73fac8d30b01c2",
+  "change_scope": "One independently reviewed S19 reassessment; all other original checks retained.",
+  "conditions": [
+    "Exact old manual record equals the preserved before record.",
+    "Exact new canonical record equals the preserved after record after the recorded source alias mapping.",
+    "The only prior rejection was missing critical species information, supplied by primary Methods evidence.",
+    "A dated manual ledger entry and independent primary-page inspection support the correction.",
+    "PDF/Version/Upload hashes, metrics, claim identity, scale and counter-evidence are preserved.",
+    "All unmatched upgrades remain rejected by the original rule."
+  ],
+  "accepted_explicit_manual_reassessments": 1,
+  "preflight": "temp/validation/cp4-adapter-preflight.json",
+  "independent_evidence": "temp/validation/cp4-explicit-manual-reassessment-evidence.json",
+  "audit_report_bytes_preserved": true,
+  "historical_absolute_paths_note": "Published audit receipts retain original execution paths and SHA-256 values unchanged. Paths into private runtime/cache locations are historical locators, not claims that raw PDFs or runtime scripts are included in this research snapshot.",
+  "published_receipts": [
+    {
+      "path": "temp/validation/cp4-data-audit.json",
+      "sha256": "8cb1d545f9d2bafa490baf1d7f7a58055d89fbd4bbd2cc142d0e7b17102b6166"
+    },
+    {
+      "path": "temp/validation/cp4-data-audit-initial.json",
+      "sha256": "e219e8d4de5b3370ab6e7995ed177ba874877a818d7473655ba44d4500281055"
+    },
+    {
+      "path": "temp/validation/cp4-ui-validation.json",
+      "sha256": "f1974fcf3a310c61540e5adbb4c9eea1c0c9501e5ec2609ed184e8c931c491c2"
+    },
+    {
+      "path": "temp/validation/cp4-determinism.json",
+      "sha256": "ebf263f5bf38c88c2be238d472a45b60b8b3764deec87aa9b4abdd85e893b353"
+    },
+    {
+      "path": "temp/validation/cp4-explicit-manual-reassessment-evidence.json",
+      "sha256": "2326bf4aa991fe1b990a93eeacbe1b6d3d3e833db59aa15f4b8c21f873806f88"
+    },
+    {
+      "path": "temp/validation/cp4-adapter-preflight.json",
+      "sha256": "3f48be7aa9a3825aea8907c04dcb38a339498a63b1a2ed53ef23de16b39c818f"
+    },
+    {
+      "path": "temp/validation/cp4-report-review-entities.json",
+      "sha256": "7f576d91cd4ac87572d808cb3204b26957e660eb25b93b0c506efd5652c2a054"
+    },
+    {
+      "path": "temp/validation/cp4-report-review-science.json",
+      "sha256": "1d5878e812c424bdd05f061442daccd0d25ec16f9c0d50a67501cbeae09e5249"
+    }
+  ]
+}

@@ -1,0 +1,674 @@
+[
+  {
+    "page": 20,
+    "column": 0,
+    "x": 90.0,
+    "y": 463.81,
+    "text": "Borst A, Egelhaaf M, Haag J (1995) Mechanisms of dendritic integration underlying gain control in fly"
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 111.75,
+    "y": 475.06,
+    "text": "motion-sensitive neurons.  Journal of Computational Neuroscience 2:5-18."
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 90.0,
+    "y": 487.06,
+    "text": "Buchner E (1976) Elementary movement detectors in an insect visual system. Biological Cybernetics"
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 111.75,
+    "y": 498.31,
+    "text": "24:85-101."
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 90.0,
+    "y": 509.56,
+    "text": "Clifford CWG, Ibbotson MR (2003) Fundamental mechanisms of visual motion detection: models, cells"
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 111.75,
+    "y": 521.56,
+    "text": "and functions. Progress in Neurobiology 68:409-437."
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 90.0,
+    "y": 532.81,
+    "text": "Clifford CWG, Langley K (1996) Psychophysics of motion adaptation paralle ls insect electrophysiology."
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 111.75,
+    "y": 544.06,
+    "text": "Current Biology 6:1340-1342."
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 90.0,
+    "y": 556.06,
+    "text": "de Ruyter van Steveninck R, Zaagman WH, Mastebroek HAK (1986) Adaptation of transient responses of"
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 111.75,
+    "y": 567.31,
+    "text": "a movement-sensitive neuron in the visual system of the blowfly Calliphora erythrocephala."
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 111.75,
+    "y": 578.56,
+    "text": "Biological Cybernetics 54:223-236."
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 90.0,
+    "y": 590.56,
+    "text": "Douglass JK, Strausfeld N (1995) Visual motion detection circuits in flies: Peripheral motion computation"
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 111.75,
+    "y": 601.81,
+    "text": "by identified small-field retinotopic neurons. Journal of Neuroscience 15:5596-5611."
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 90.0,
+    "y": 613.06,
+    "text": "Dror RO, O'Carroll DC, Laughlin SB (2001) Accuracy of velocity estimation by Reichardt correlators."
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 111.75,
+    "y": 625.06,
+    "text": "Journal of the Optical Society of America A 18:241-252."
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 90.0,
+    "y": 636.31,
+    "text": "Egelhaaf M, Borst A (1993) A look into the cockpit of the fly: visual orientation, algorithms, and identified"
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 111.75,
+    "y": 647.56,
+    "text": "neurons.  Journal of Neuroscience 13:4563-4574."
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 90.0,
+    "y": 659.56,
+    "text": "Egelhaaf M, Borst A, Reichardt W (1989) Computational structure of a biological motion-detection system"
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 111.75,
+    "y": 670.81,
+    "text": "as revealed by local detector analysis in the fly’s nervous system. Journal of the Optical Society of"
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 111.75,
+    "y": 682.06,
+    "text": "America A 6:1070-1087."
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 90.0,
+    "y": 694.06,
+    "text": "Fairhall AL, Lewen GD, Bialek W, de Ruyter van Steveninck R (2001) Efficiency and ambiguity in an"
+  },
+  {
+    "page": 20,
+    "column": 0,
+    "x": 111.75,
+    "y": 705.31,
+    "text": "adaptive neural code.  Nature 41:787-792."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 72.31,
+    "text": "Franceschini N, Riehle A, Le Nestour A (1989) Directionally selective motion detection by insect neurons."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 83.56,
+    "text": "In: Stavenga DG and Hardie RC (eds) Facets of Vision, pp 360-390, Springer-Verlag, Berlin."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 95.56,
+    "text": "Franz MO, Krapp HG (1998) Wide-field, motion-sensitive neurons and matched filters for optic flow"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 106.81,
+    "text": "fields.  Biological Cybernetics 83:185-197."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 118.06,
+    "text": "Götz KG (1964). Optomotorische Untersuchung des visuellen Systems einiger Augenmutanten der"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 130.06,
+    "text": "Fruchtfliege Drosophila. Kybernetik 2:77-92."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 141.31,
+    "text": "Haag J, Egelhaaf M, Borst A (1992) Dendritic integration of motion information in visual interneurons of"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 152.56,
+    "text": "the blowfly. Neuroscience Letters 140:173-176."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 164.56,
+    "text": "Harris RA, O’Carroll DC, Laughlin SB (2000) Contrast gain reduction in fly motion adaptation. Neuron"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 175.81,
+    "text": "28:595-606."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 187.06,
+    "text": "Harris RA, O’Carroll DC, Laughlin SB (1999) Adaptation and the temporal filter of fly motion detectors."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 199.06,
+    "text": "Vision Research 39:2603-2613."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 210.31,
+    "text": "Harrison RR, Koch C (2001) A silicon model of the fly’s optomotor control system. Neural Computation"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 221.56,
+    "text": "12:2291-2304."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 233.56,
+    "text": "Hassenstein B, Reichardt W (1956) Systemtheoretische analyse der Zeit-, Reihenfolgen-, und"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 244.81,
+    "text": "Vorseichenauswertung bei der Berwegungsperzeption des Rüsselkäfers Chlorophanus. Zeitschrift für"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 256.06,
+    "text": "Naturforschung 11b:513-524."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 268.06,
+    "text": "Hausen K (1993) The decoding of retinal image flow in insects. In: Miles FA and Wallman J (eds) Visual"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 279.31,
+    "text": "Motion and its Role in the Stabilisation of Gaze, Elsevier, London."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 290.56,
+    "text": "Hausen K, Egelhaaf M  (1989) Neural Mechanisms of Visual Course Control in Insects. In: Stavenga DG"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 302.56,
+    "text": "and Hardie RC (eds) Facets of Vision, pp 391-424, Springer-Verlag, Berlin."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 313.81,
+    "text": "Hausen K (1982) Motion-sensitive interneurons in the optomotor system of the fly.  II. The horizontal cells :"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 325.06,
+    "text": "Receptive field organization and response characteristics. Biological Cybernetics 46:67-79."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 337.06,
+    "text": "Higgins CM, Douglass JK, Strausfeld NJ (2004) The computational basis of an identified neuronal circuit"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 348.31,
+    "text": "for elementary motion detection in dipterous insects. Visual Neuroscience 21:567-586."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 359.56,
+    "text": "James AC (1992) Nonlinear operator network models of processing in the fly lamina. In: Nabet B (ed)"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 371.56,
+    "text": "Nonlinear Vision, pp 39-74, CRC Press,  Boca Raton FL."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 382.81,
+    "text": "Kern R, Lutterklas M, Petereit C, Lindemann JP, Egelhaaf M (2001) Neuronal processing of behaviourally"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 394.06,
+    "text": "generated optic flow: experiments and model simulations. Network-Computation in Neural Systems"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 406.06,
+    "text": "12: 351-369."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 417.31,
+    "text": "Kirschfeld K (1991) An optomotor control system with automatic compensation for contrast and texture."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 428.56,
+    "text": "Proceedings of the Royal Society of London B 246:261-268."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 440.56,
+    "text": "Kirschfeld K (1972) The visual system of Musca: studies on optics, structure, and function. In: Wehner R"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 451.81,
+    "text": "(ed) Information processing in the visual system of arthropods. Springer, Berlin Heidelberg New"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 463.06,
+    "text": "York, pp 61-74."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 475.06,
+    "text": "Krapp HG, Hengstenberg B, Hengstenberg R (1998)  Dendritic structure and receptive-field organization of"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 486.31,
+    "text": "optic flow processing interneurons in the fly. Journal of Neurophysiology 79:1902-1917."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 497.56,
+    "text": "Laughlin SB, Weckström M (1993)  Fast and slow photoreceptors – a comparative study of the functional"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 509.56,
+    "text": "diversity of coding and conductances in the diptera. Journal of Comparative Physiology A 172:593-"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 520.81,
+    "text": "609."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 532.06,
+    "text": "Lipetz LE (1971) The relation of physiological and psychological aspects of sensory intensity. In:"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 544.06,
+    "text": "Loewenstein WR (ed) Handbook of sensory physiology. Springer, Berlin Heidelberg New York, pp"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 555.31,
+    "text": "192–225."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 566.56,
+    "text": "Maddess T, Laughlin SB (1985) Adaptation of the motion- sensitive neuron H1 is generated locally and"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 578.56,
+    "text": "governed by contrast frequency. Proceedings of the Royal Society of London B 225:251–275."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 589.81,
+    "text": "Naka KI, Rushton WAH (1966) S-potentials from luminosity units in retina of fish (Cyprinidae). Journal of"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 601.06,
+    "text": "Physiology (London) 185:587-599."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 613.06,
+    "text": "Poggio T, Reichardt W, Hausen K (1981) A neural circuitry for relative movement discrimination by the"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 624.31,
+    "text": "visual system of the fly. Naturwissenschaften 443:446."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 635.56,
+    "text": "Potters M, Bialek W (1994) Statistical mechanics and visual signal processing. Journal de Physique I"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 647.56,
+    "text": "4:1755-1775."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 658.81,
+    "text": "Ruderman DL (1994) The statistics of natural images. Network: Computation in Neural Systems 5:517-"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 670.06,
+    "text": "548."
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 90.0,
+    "y": 682.06,
+    "text": "Snyder AW (1979) Physics of vision in compound eyes. In: Autrum H (ed) Comparative physiology and"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 693.31,
+    "text": "evolution of vision in invertebrates: Invertebrate photoreceptors, vol. VII/6A of Handbook of Sensory"
+  },
+  {
+    "page": 21,
+    "column": 0,
+    "x": 111.75,
+    "y": 704.56,
+    "text": "Physiology.  Springer-Verlag, Berlin, pp 225-313."
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 90.0,
+    "y": 72.31,
+    "text": "Snyder AW, Stavenga DF, Laughlin SB (1977) Spatial information capacity of the eyes. Journal of"
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 111.75,
+    "y": 83.56,
+    "text": "Comparative Physiology 116:183-207."
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 90.0,
+    "y": 95.56,
+    "text": "Srinivasan MV, Guy RG (1990) Spectral properties of movement perception in the dronefly Eristalis."
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 111.75,
+    "y": 106.81,
+    "text": "Journal of Comparative Physiology A 166:287-295."
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 90.0,
+    "y": 118.06,
+    "text": "Srinivasan MV, Laughlin SB, Dubs A (1982) Predictive coding: a fresh view of inhibition in the retina."
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 111.75,
+    "y": 130.06,
+    "text": "Proceedings Royal Society of London B 216:427-459."
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 90.0,
+    "y": 141.31,
+    "text": "Straw A, Rainsford T, O’Carroll D (2005) Estimates of natural scene velocity in fly motion detectors are"
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 111.75,
+    "y": 152.56,
+    "text": "contrast independent. Current Biology, submitted."
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 90.0,
+    "y": 164.56,
+    "text": "Tolhurst DJ, Tadmor Y, Chao T (1992) Amplitude spectra of natural images. Ophthalmology and"
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 111.75,
+    "y": 175.81,
+    "text": "Physiological Optics 12:229-232."
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 90.0,
+    "y": 187.06,
+    "text": "van Hateren JH, Snippe HP (2001) Information theoretical evaluation on parametric models of gain control"
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 111.75,
+    "y": 199.06,
+    "text": "in blowfly photoreceptor cells. Vision Research 41:1851-1865."
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 90.0,
+    "y": 210.31,
+    "text": "van Hateren JH (1992) Theoretical predictions of spatiotemporal receptive fields of fly LMCs, and"
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 111.75,
+    "y": 221.56,
+    "text": "experimental validation. Journal of Comparative Physiology A 171:157-170."
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 90.0,
+    "y": 233.56,
+    "text": "van Hateren JH (1997) Processing of natural time series of intensities by the visual system of the blowfly."
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 111.75,
+    "y": 244.81,
+    "text": "Vision Research 37:3407-3416."
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 90.0,
+    "y": 256.06,
+    "text": "van Hateren JH (1990) Directional tuning curves, elementary movement detectors, and the estimation of"
+  },
+  {
+    "page": 22,
+    "column": 0,
+    "x": 111.75,
+    "y": 268.06,
+    "text": "the direction of visual movement. Vision Research 30:603–614."
+  }
+]

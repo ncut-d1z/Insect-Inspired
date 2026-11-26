@@ -1,0 +1,34 @@
+{
+  "checkpoint_id": "CP-0004",
+  "status": "passed",
+  "scope": "After data/UI/determinism audits, only reporting and run-status files were changed; canonical scientific datasets and seven exports remain byte-identical.",
+  "changed_existing_reporting_files": [
+    "README.md",
+    "temp/change-log.md",
+    "temp/progress.md",
+    "temp/reports/cp4-query-reconciliation.json",
+    "temp/risk-register.md",
+    "temp/runs/RUN-0002.json"
+  ],
+  "added_reporting_files": [
+    "temp/reports/P3-P6-CP0004.md",
+    "temp/reports/cp4-supplemental-metrics.json",
+    "temp/validation/cp4-adapter-preflight.json",
+    "temp/validation/cp4-audit-method.json",
+    "temp/validation/cp4-data-audit-initial.json",
+    "temp/validation/cp4-data-audit.json",
+    "temp/validation/cp4-determinism.json",
+    "temp/validation/cp4-explicit-manual-reassessment-evidence.json",
+    "temp/validation/cp4-report-review-entities.json",
+    "temp/validation/cp4-report-review-science.json",
+    "temp/validation/cp4-ui-validation.json",
+    "temp/validation/html-desktop.png",
+    "temp/validation/html-mobile-controls.png",
+    "temp/validation/html-mobile.png",
+    "temp/validation/html-topic.png"
+  ],
+  "unexpected_changes": [],
+  "unchanged_input_file_count": 1107,
+  "unchanged_scientific_data_and_export_files": true,
+  "checkpoint_status_and_manifest_finalization_follows": true
+}

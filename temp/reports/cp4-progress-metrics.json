@@ -1,0 +1,239 @@
+{
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0004",
+  "comparison_baseline": "Recovered CP-0003 candidate, explicitly invalid; not misrepresented as prior published checkpoint.",
+  "last_valid_checkpoint": "CP-0002",
+  "counts": {
+    "seed_records": 20,
+    "canonical_works": 5085,
+    "versions": 5134,
+    "retained_uploads": 24,
+    "distinct_seed_pdf_sha256": 20,
+    "distinct_files": 47,
+    "file_backed_versions": 40,
+    "people_records": 20529,
+    "organizations": 1414,
+    "projects": 4,
+    "reference_occurrences": 158544,
+    "resolved_occurrences": 34132,
+    "unresolved_occurrences": 124412,
+    "citation_edges": 31804,
+    "context_reviewed_edges": 20,
+    "assessments": 68,
+    "eligible_claims": 59,
+    "insufficient_claims": 9,
+    "counter_evidence_claims": 22,
+    "topic_work_union": 33,
+    "u00_works": 5052,
+    "task_events": 134629,
+    "unique_tasks": 130853,
+    "unresolved_tasks": 130154,
+    "queries": 872,
+    "exact_query_timestamps": 817,
+    "unavailable_exact_query_timestamps": 55,
+    "merged_work_pairs": 42,
+    "seed_reference_occurrences": 1173,
+    "iteration2_reviewed_reference_occurrences": 1193,
+    "scientific_fulltext_works_reviewed": 37,
+    "seed_scientific_review_partial_works": 1,
+    "run2_fulltext_works": 4,
+    "seed_s2_lists_reconciled": 19,
+    "seed_epmc_lists_reconciled": 7,
+    "seed_author_profiles_retrieved": 57,
+    "seed_author_lists_paginated": 57,
+    "seed_author_lists_reconciled": 53,
+    "manual_review_activities": 251,
+    "run2_manual_review_activities": 51,
+    "fully_resolved_claims": 0,
+    "L01_works": 9,
+    "L02_works": 5,
+    "L03_works": 9,
+    "L04_works": 9,
+    "L05_works": 5,
+    "L06_works": 12,
+    "L07_works": 1,
+    "L08_works": 4,
+    "L09_works": 2
+  },
+  "delta_from_recovered_candidate": {
+    "seed_records": 0,
+    "canonical_works": 1028,
+    "versions": 1030,
+    "retained_uploads": 4,
+    "distinct_seed_pdf_sha256": 0,
+    "distinct_files": 5,
+    "file_backed_versions": 5,
+    "people_records": 5051,
+    "organizations": 110,
+    "projects": 2,
+    "reference_occurrences": 11672,
+    "resolved_occurrences": 3402,
+    "unresolved_occurrences": 8270,
+    "citation_edges": 3247,
+    "context_reviewed_edges": 0,
+    "assessments": 4,
+    "eligible_claims": 2,
+    "insufficient_claims": 2,
+    "counter_evidence_claims": 0,
+    "topic_work_union": 1,
+    "u00_works": 1027,
+    "task_events": 30384,
+    "unique_tasks": 28921,
+    "unresolved_tasks": 28407,
+    "queries": 269,
+    "exact_query_timestamps": 251,
+    "unavailable_exact_query_timestamps": 18,
+    "merged_work_pairs": 0,
+    "seed_reference_occurrences": 0,
+    "iteration2_reviewed_reference_occurrences": 0,
+    "scientific_fulltext_works_reviewed": 4,
+    "seed_scientific_review_partial_works": 0,
+    "seed_s2_lists_reconciled": 0,
+    "seed_epmc_lists_reconciled": 0,
+    "seed_author_profiles_retrieved": 8,
+    "seed_author_lists_paginated": 9,
+    "seed_author_lists_reconciled": 8,
+    "manual_review_activities": 51,
+    "L01_works": 0,
+    "L02_works": 0,
+    "L03_works": 0,
+    "L04_works": 0,
+    "L05_works": 1,
+    "L06_works": 0,
+    "L07_works": 0,
+    "L08_works": 0,
+    "L09_works": 1
+  },
+  "coverage": {
+    "metadata": {
+      "denominator": 5085,
+      "states": {
+        "verified_complete": 19,
+        "partial": 5066
+      }
+    },
+    "fulltext": {
+      "denominator": 5085,
+      "states": {
+        "verified_complete": 34,
+        "pending": 5044,
+        "partial": 6,
+        "restricted": 1
+      }
+    },
+    "abstract": {
+      "denominator": 5085,
+      "states": {
+        "verified_complete": 41,
+        "restricted": 561,
+        "pending": 4079,
+        "partial": 404
+      }
+    },
+    "references": {
+      "denominator": 5085,
+      "states": {
+        "partial": 2345,
+        "pending": 2740
+      }
+    },
+    "citations": {
+      "denominator": 5085,
+      "states": {
+        "partial": 25,
+        "pending": 5060
+      }
+    },
+    "authors": {
+      "denominator": 5085,
+      "states": {
+        "verified_complete": 20,
+        "pending": 5065
+      }
+    },
+    "affiliations_projects": {
+      "denominator": 5085,
+      "states": {
+        "partial": 20,
+        "pending": 5065
+      }
+    },
+    "assessment": {
+      "denominator": 5085,
+      "states": {
+        "partial": 37,
+        "pending": 5045,
+        "verified_complete": 1,
+        "not_applicable": 2
+      }
+    },
+    "phase_status": {
+      "P0": "completed",
+      "P1": "completed",
+      "P2": "completed",
+      "P3": "iterated_partial_checkpointed",
+      "P4": "iterated_partial_checkpointed",
+      "P5": "iterated_partial_checkpointed",
+      "P6": "iterated_partial_checkpointed",
+      "P7": "not_started_final_acceptance",
+      "P8": "not_triggered"
+    },
+    "closure": {
+      "established": false,
+      "reason": "References, fulltexts/supplements, source diversity, author identities, citation contexts and scientific claims remain open. A valid data checkpoint is not research closure."
+    },
+    "fulltext_meaning": {
+      "scientific_fulltext_works_reviewed": 37,
+      "seed_thesis_S01_partial": true,
+      "run2_newly_inspected_existing_works": 4,
+      "limitation": "Counts are claim/version-specific, and do not assert complete supplements or every claim reviewed."
+    },
+    "scientific_gates": {
+      "eligible": 59,
+      "insufficient": 9,
+      "counter_evidence": 22,
+      "fully_resolved_claims": 0,
+      "manual_L07_insufficiency_preserved": true
+    },
+    "sources": {
+      "s2_seed_reconciled": 19,
+      "epmc_seed_reconciled": 7,
+      "author_profiles": 57,
+      "author_lists_paginated": 57,
+      "author_lists_reconciled": 53,
+      "seed_authors": 57,
+      "new_project_epmc_list_reconciled": "42/42",
+      "new_project_citer_identity_metadata": "28/42",
+      "index_snapshot_historical": false
+    },
+    "reconciliation": {
+      "K": 5085,
+      "T_union": 33,
+      "U": 5052,
+      "T_i": {
+        "L01": 9,
+        "L02": 5,
+        "L03": 9,
+        "L04": 9,
+        "L05": 5,
+        "L06": 12,
+        "L07": 1,
+        "L08": 4,
+        "L09": 2
+      },
+      "multi_label_sum_is_not_independent_work_count": true
+    },
+    "task_states": {
+      "partial": 8907,
+      "pending": 119142,
+      "verified_complete": 699,
+      "retryable_error": 19,
+      "needs_disambiguation": 1497,
+      "restricted": 589
+    },
+    "queries": {
+      "unavailable_exact": 55,
+      "exact": 817
+    }
+  }
+}

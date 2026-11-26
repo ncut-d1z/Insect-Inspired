@@ -1,0 +1,19 @@
+{
+  "run_id": "RUN-0002",
+  "recorded_at_utc": "2026-11-26T10:33:22.659472Z",
+  "counts": {
+    "http_requests": 224,
+    "cache_reuses": 19,
+    "new_query_rows": 6,
+    "web_invocations": 23,
+    "known_unsaved_web_invocations": 3,
+    "last_import_added_query_rows": 6,
+    "run2_query_rows_total": 269
+  },
+  "canonical_query_rows": 872,
+  "cache_is_not_http": true,
+  "recovered_root_search_time_status": "Five original research web results were recovered without exact invocation times; no fabricated timestamps.",
+  "research_request_accounting": "Itemized HTTP excluding cache reuse plus itemized web invocations. Research-call coverage of any unretained earlier root source-discovery lookup is not claimed exact; these counts are observed lower bounds.",
+  "private_payloads_excluded": true,
+  "new_query_rows_definition": "Rows added by the last import invocation only; not the cumulative RUN-0002 delta."
+}

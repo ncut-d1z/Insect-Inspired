@@ -1,0 +1,24 @@
+{
+  "kind": "targeted_private_adapter_preflight_only",
+  "recorded_at_utc": "2026-11-26T10:30:14.361339Z",
+  "full_audit_executed": false,
+  "canonical_modified": false,
+  "checks": {
+    "complete_unchanged_review_accepted": true,
+    "changed_metric_rejected": true,
+    "changed_species_rejected": true,
+    "unreviewed_assessment_rejected": true,
+    "unrelated_veto_unchanged": true
+  },
+  "accepted_reassessment": {
+    "assessment_id": "AS-S19-L05-baseline-receptive-field",
+    "decision": "explicit_manual_reassessment",
+    "proof_file": "/workspace/scratch/2e518600ca4c/cp4_qa/explicit-manual-reassessment-evidence.json",
+    "proof_sha256": "2326bf4aa991fe1b990a93eeacbe1b6d3d3e833db59aa15f4b8c21f873806f88",
+    "repair_reviewed_at_utc": "2026-11-26T09:54:19Z",
+    "independently_reviewed_at_utc": "2026-11-26T10:28:07.469027Z",
+    "canonical_after_sha256": "75774b00032035fe24d28133f79fbbb4fb4cb7e44fa9a463c34523b53ab81cf6",
+    "resolved_condition": "species",
+    "counter_evidence_preserved": true
+  }
+}

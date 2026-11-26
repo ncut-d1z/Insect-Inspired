@@ -1,0 +1,1508 @@
+{
+  "new_works": 21,
+  "new_work_ids": [
+    "W-D09f416a6f13cbe9a",
+    "W-D0c0d1d96d63e878e",
+    "W-D1c31e323570e2dcd",
+    "W-D27065c87ad391bc3",
+    "W-D379c93c7ef016a33",
+    "W-D40f88abdd863542b",
+    "W-D67f05077e4f088ce",
+    "W-D7c841635ef21ac88",
+    "W-D8c38c6364edf942e",
+    "W-D904914a3c5aa7e01",
+    "W-D98b026c3b1ed2718",
+    "W-Da7110c75b2a16464",
+    "W-Dae584d10122956da",
+    "W-Dbccc1c2ce6364f56",
+    "W-Dd98ce957174d9462",
+    "W-Ddefe39e06eda3382",
+    "W-Ddfdda8e082ac3bc3",
+    "W-Dee8a80e9b1a461d3",
+    "W-Df1a9ac76cf415a73",
+    "W-Df3d5c92a8e5362d3",
+    "W-Dfda66b7a1dc2804f"
+  ],
+  "resolved_seed_occurrences": 10,
+  "review_events": [
+    {
+      "event_id": "CP4-REF-R-S01-026",
+      "kind": "reference_identity_resolution",
+      "scope_id": "SCOPE-0001",
+      "checkpoint_id": "CP-0004",
+      "before": {
+        "occurrence_id": "R-S01-026",
+        "citing_work_id": "W-S01",
+        "version_id": "V-S01-01",
+        "reference_label": "26",
+        "section": "Bibliography",
+        "page": 100,
+        "raw_reference": "[26]  Martin Egelhaaf. “On the neuronal basis of figure-ground discrimination by relative\nmotion in the visual system of the fly”. In: Biological Cybernetics 52.2 (1985),\npp. 123–140.",
+        "raw_fingerprint": "e1f51ce47bab03d41f2f45c339a6eb3ad38b49165b5c792a2cc2ecf85c1ff13e",
+        "candidate_ids": [],
+        "cited_work_id": null,
+        "identity_confidence": "ambiguous",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S01",
+          "version": "V-S01-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.4119/unibi/2934904",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S01-01",
+              "upload_id": "U-S01-01",
+              "identifier": "S01",
+              "page": 100,
+              "section": "Bibliography",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 26 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            }
+          ]
+        },
+        "failure_reason": "Multiple plausible registry identities or insufficient identifying fields; retain raw reference for human review."
+      },
+      "after": {
+        "occurrence_id": "R-S01-026",
+        "citing_work_id": "W-S01",
+        "version_id": "V-S01-01",
+        "reference_label": "26",
+        "section": "Bibliography",
+        "page": 100,
+        "raw_reference": "[26]  Martin Egelhaaf. “On the neuronal basis of figure-ground discrimination by relative\nmotion in the visual system of the fly”. In: Biological Cybernetics 52.2 (1985),\npp. 123–140.",
+        "raw_fingerprint": "e1f51ce47bab03d41f2f45c339a6eb3ad38b49165b5c792a2cc2ecf85c1ff13e",
+        "candidate_ids": [],
+        "cited_work_id": "W-D2b641af2d16428c7",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S01",
+          "version": "V-S01-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.4119/unibi/2934904",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S01-01",
+              "upload_id": "U-S01-01",
+              "identifier": "S01",
+              "page": 100,
+              "section": "Bibliography",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 26 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            },
+            {
+              "source_id": "publisher",
+              "url": "https://doi.org/10.1007/bf00364003",
+              "accessed_at": "2026-11-26",
+              "section": "Bibliographic identity / publication history",
+              "evidence_note": "1985 volume52(2), pages123–140 identifies Part I; same-title parts II/III are separate."
+            }
+          ]
+        },
+        "failure_reason": null
+      },
+      "review_note": "1985 volume52(2), pages123–140 identifies Part I; same-title parts II/III are separate.",
+      "reviewed_at_utc": "2026-11-26T09:43:04.166846Z"
+    },
+    {
+      "event_id": "CP4-REF-R-S01-040",
+      "kind": "reference_identity_resolution",
+      "scope_id": "SCOPE-0001",
+      "checkpoint_id": "CP-0004",
+      "before": {
+        "occurrence_id": "R-S01-040",
+        "citing_work_id": "W-S01",
+        "version_id": "V-S01-01",
+        "reference_label": "40",
+        "section": "Bibliography",
+        "page": 101,
+        "raw_reference": "[40]  James J Gibson. “Visually controlled locomotion and visual orientation in animals”.\nIn: British journal of psychology 49.3 (1958), pp. 182–194.",
+        "raw_fingerprint": "52393ace9bb2662257bbaca5bc9d3971738624cc073163d8d0685ba8e827b6d3",
+        "candidate_ids": [],
+        "cited_work_id": null,
+        "identity_confidence": "ambiguous",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S01",
+          "version": "V-S01-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.4119/unibi/2934904",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S01-01",
+              "upload_id": "U-S01-01",
+              "identifier": "S01",
+              "page": 101,
+              "section": "Bibliography",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 40 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            }
+          ]
+        },
+        "failure_reason": "Multiple plausible registry identities or insufficient identifying fields; retain raw reference for human review."
+      },
+      "after": {
+        "occurrence_id": "R-S01-040",
+        "citing_work_id": "W-S01",
+        "version_id": "V-S01-01",
+        "reference_label": "40",
+        "section": "Bibliography",
+        "page": 101,
+        "raw_reference": "[40]  James J Gibson. “Visually controlled locomotion and visual orientation in animals”.\nIn: British journal of psychology 49.3 (1958), pp. 182–194.",
+        "raw_fingerprint": "52393ace9bb2662257bbaca5bc9d3971738624cc073163d8d0685ba8e827b6d3",
+        "candidate_ids": [],
+        "cited_work_id": "W-Dc95bd121f8749bf2",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S01",
+          "version": "V-S01-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.4119/unibi/2934904",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S01-01",
+              "upload_id": "U-S01-01",
+              "identifier": "S01",
+              "page": 101,
+              "section": "Bibliography",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 40 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            },
+            {
+              "source_id": "publisher",
+              "url": "https://doi.org/10.1111/j.2044-8295.1958.tb00656.x",
+              "accessed_at": "2026-11-26",
+              "section": "Bibliographic identity / publication history",
+              "evidence_note": "1958 original volume49 pages182–194, not the separately published1998 reprint."
+            }
+          ]
+        },
+        "failure_reason": null
+      },
+      "review_note": "1958 original volume49 pages182–194, not the separately published1998 reprint.",
+      "reviewed_at_utc": "2026-11-26T09:43:04.166846Z"
+    },
+    {
+      "event_id": "CP4-REF-R-S01-047",
+      "kind": "reference_identity_resolution",
+      "scope_id": "SCOPE-0001",
+      "checkpoint_id": "CP-0004",
+      "before": {
+        "occurrence_id": "R-S01-047",
+        "citing_work_id": "W-S01",
+        "version_id": "V-S01-01",
+        "reference_label": "47",
+        "section": "Bibliography",
+        "page": 101,
+        "raw_reference": "[47]  Klaus Hausen. “Motion sensitive interneurons in the optomotor system of the fly”.\nIn: Biological Cybernetics 45.2 (1982), pp. 143–156.",
+        "raw_fingerprint": "9c21f5aab88bd86d9473a860a987b0a3c6196110acf877c2716ed97fe1f47883",
+        "candidate_ids": [],
+        "cited_work_id": null,
+        "identity_confidence": "ambiguous",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S01",
+          "version": "V-S01-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.4119/unibi/2934904",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S01-01",
+              "upload_id": "U-S01-01",
+              "identifier": "S01",
+              "page": 101,
+              "section": "Bibliography",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 47 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            }
+          ]
+        },
+        "failure_reason": "Multiple plausible registry identities or insufficient identifying fields; retain raw reference for human review."
+      },
+      "after": {
+        "occurrence_id": "R-S01-047",
+        "citing_work_id": "W-S01",
+        "version_id": "V-S01-01",
+        "reference_label": "47",
+        "section": "Bibliography",
+        "page": 101,
+        "raw_reference": "[47]  Klaus Hausen. “Motion sensitive interneurons in the optomotor system of the fly”.\nIn: Biological Cybernetics 45.2 (1982), pp. 143–156.",
+        "raw_fingerprint": "9c21f5aab88bd86d9473a860a987b0a3c6196110acf877c2716ed97fe1f47883",
+        "candidate_ids": [],
+        "cited_work_id": "W-De9e0a7c2b13b2c88",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S01",
+          "version": "V-S01-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.4119/unibi/2934904",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S01-01",
+              "upload_id": "U-S01-01",
+              "identifier": "S01",
+              "page": 101,
+              "section": "Bibliography",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 47 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            },
+            {
+              "source_id": "publisher",
+              "url": "https://doi.org/10.1007/bf00335241",
+              "accessed_at": "2026-11-26",
+              "section": "Bibliographic identity / publication history",
+              "evidence_note": "1982 volume45(2), pages143–156 identifies Part I; Part II has pages67–79."
+            }
+          ]
+        },
+        "failure_reason": null
+      },
+      "review_note": "1982 volume45(2), pages143–156 identifies Part I; Part II has pages67–79.",
+      "reviewed_at_utc": "2026-11-26T09:43:04.166846Z"
+    },
+    {
+      "event_id": "CP4-REF-R-S11-cdfe1e168ae69545",
+      "kind": "reference_identity_resolution",
+      "scope_id": "SCOPE-0001",
+      "checkpoint_id": "CP-0004",
+      "before": {
+        "occurrence_id": "R-S11-cdfe1e168ae69545",
+        "citing_work_id": "W-S11",
+        "version_id": "V-S11-01",
+        "reference_label": null,
+        "section": "References",
+        "page": 15,
+        "raw_reference": "Kern R, Lutterklas M, Petereit C, Lindemann JP, Egelhaaf M (2001b) Neu-\nronal processing of behaviourally generated optic flow: experiments and\nmodel simulations. Network: Comput Neural Syst 12:351–369.",
+        "raw_fingerprint": "cdfe1e168ae695451139d6acde3299bb6f177ba9ce5f7d0ef0c1790d8840afa4",
+        "candidate_ids": [],
+        "cited_work_id": null,
+        "identity_confidence": "ambiguous",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S11",
+          "version": "V-S11-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.1523/jneurosci.1132-05.2005",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S11-01",
+              "upload_id": "U-S11-01",
+              "identifier": "S11",
+              "page": 15,
+              "section": "References",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference  transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            }
+          ]
+        },
+        "failure_reason": "Multiple plausible registry identities or insufficient identifying fields; retain raw reference for human review."
+      },
+      "after": {
+        "occurrence_id": "R-S11-cdfe1e168ae69545",
+        "citing_work_id": "W-S11",
+        "version_id": "V-S11-01",
+        "reference_label": null,
+        "section": "References",
+        "page": 15,
+        "raw_reference": "Kern R, Lutterklas M, Petereit C, Lindemann JP, Egelhaaf M (2001b) Neu-\nronal processing of behaviourally generated optic flow: experiments and\nmodel simulations. Network: Comput Neural Syst 12:351–369.",
+        "raw_fingerprint": "cdfe1e168ae695451139d6acde3299bb6f177ba9ce5f7d0ef0c1790d8840afa4",
+        "candidate_ids": [],
+        "cited_work_id": "W-D40c8deb37198bed2",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S11",
+          "version": "V-S11-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.1523/jneurosci.1132-05.2005",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S11-01",
+              "upload_id": "U-S11-01",
+              "identifier": "S11",
+              "page": 15,
+              "section": "References",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference  transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            },
+            {
+              "source_id": "publisher",
+              "url": "https://doi.org/10.1088/0954-898x/12/3/307",
+              "accessed_at": "2026-11-26",
+              "section": "Bibliographic identity / publication history",
+              "evidence_note": "Original2001 IOP publication DOI verified by PubMed and institutional manuscript, authors and pages351–369; alternate publisher DOI remains an explicit duplicate-identity review."
+            }
+          ]
+        },
+        "failure_reason": null
+      },
+      "review_note": "Original2001 IOP publication DOI verified by PubMed and institutional manuscript, authors and pages351–369; alternate publisher DOI remains an explicit duplicate-identity review.",
+      "reviewed_at_utc": "2026-11-26T09:43:04.166846Z"
+    },
+    {
+      "event_id": "CP4-REF-R-S01-020",
+      "kind": "reference_identity_resolution",
+      "scope_id": "SCOPE-0001",
+      "checkpoint_id": "CP-0004",
+      "before": {
+        "occurrence_id": "R-S01-020",
+        "citing_work_id": "W-S01",
+        "version_id": "V-S01-01",
+        "reference_label": "20",
+        "section": "Bibliography",
+        "page": 99,
+        "raw_reference": "[20]  John S Chipman. “Gauss-Markov Theorem”. In: International Encyclopedia of\nStatistical Science. Springer, 2011, pp. 577–582.",
+        "raw_fingerprint": "34c6f2293e263a490ce2da5feefd19f3421bbd3bc54afd337d42efe113182e9d",
+        "candidate_ids": [],
+        "cited_work_id": null,
+        "identity_confidence": "ambiguous",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S01",
+          "version": "V-S01-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.4119/unibi/2934904",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S01-01",
+              "upload_id": "U-S01-01",
+              "identifier": "S01",
+              "page": 99,
+              "section": "Bibliography",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 20 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            }
+          ]
+        },
+        "failure_reason": "Multiple plausible registry identities or insufficient identifying fields; retain raw reference for human review."
+      },
+      "after": {
+        "occurrence_id": "R-S01-020",
+        "citing_work_id": "W-S01",
+        "version_id": "V-S01-01",
+        "reference_label": "20",
+        "section": "Bibliography",
+        "page": 99,
+        "raw_reference": "[20]  John S Chipman. “Gauss-Markov Theorem”. In: International Encyclopedia of\nStatistical Science. Springer, 2011, pp. 577–582.",
+        "raw_fingerprint": "34c6f2293e263a490ce2da5feefd19f3421bbd3bc54afd337d42efe113182e9d",
+        "candidate_ids": [],
+        "cited_work_id": "W-Dee8a80e9b1a461d3",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S01",
+          "version": "V-S01-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.4119/unibi/2934904",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S01-01",
+              "upload_id": "U-S01-01",
+              "identifier": "S01",
+              "page": 99,
+              "section": "Bibliography",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 20 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            },
+            {
+              "source_id": "publisher",
+              "url": "https://doi.org/10.1007/978-3-642-04898-2_270",
+              "accessed_at": "2026-11-26",
+              "section": "Bibliographic identity / publication history",
+              "evidence_note": "Original cited author/year/container/pages agree with exact registered chapter; title omitted or multiple editions caused the earlier ambiguity."
+            }
+          ]
+        },
+        "failure_reason": null
+      },
+      "review_note": "Original cited author/year/container/pages agree with exact registered chapter; title omitted or multiple editions caused the earlier ambiguity.",
+      "reviewed_at_utc": "2026-11-26T09:43:04.166846Z"
+    },
+    {
+      "event_id": "CP4-REF-REF-S15-13",
+      "kind": "reference_identity_resolution",
+      "scope_id": "SCOPE-0001",
+      "checkpoint_id": "CP-0004",
+      "before": {
+        "occurrence_id": "REF-S15-13",
+        "citing_work_id": "W-S15",
+        "version_id": "V-S15-01",
+        "reference_label": "13",
+        "section": "References",
+        "page": 33,
+        "raw_reference": "Chipman JS (2011) Gauss-Markov theorem. In: International Encyclopedia of Statistical Science,\n                                                    Springer. pp. 577–582.",
+        "raw_fingerprint": "ad0606b26e3be6bc7889a39ffe9cbd7b0fe7e475db0cd04d117c3f4ac81743d2",
+        "candidate_ids": [],
+        "cited_work_id": null,
+        "identity_confidence": "ambiguous",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S15",
+          "version": "V-S15-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.1371/journal.pone.0128413",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S15-01",
+              "upload_id": "U-S15-01",
+              "identifier": "S15",
+              "page": 33,
+              "section": "References",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 13 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            }
+          ]
+        },
+        "failure_reason": "Multiple plausible registry identities or insufficient identifying fields; retain raw reference for human review."
+      },
+      "after": {
+        "occurrence_id": "REF-S15-13",
+        "citing_work_id": "W-S15",
+        "version_id": "V-S15-01",
+        "reference_label": "13",
+        "section": "References",
+        "page": 33,
+        "raw_reference": "Chipman JS (2011) Gauss-Markov theorem. In: International Encyclopedia of Statistical Science,\n                                                    Springer. pp. 577–582.",
+        "raw_fingerprint": "ad0606b26e3be6bc7889a39ffe9cbd7b0fe7e475db0cd04d117c3f4ac81743d2",
+        "candidate_ids": [],
+        "cited_work_id": "W-Dee8a80e9b1a461d3",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S15",
+          "version": "V-S15-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.1371/journal.pone.0128413",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S15-01",
+              "upload_id": "U-S15-01",
+              "identifier": "S15",
+              "page": 33,
+              "section": "References",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 13 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            },
+            {
+              "source_id": "publisher",
+              "url": "https://doi.org/10.1007/978-3-642-04898-2_270",
+              "accessed_at": "2026-11-26",
+              "section": "Bibliographic identity / publication history",
+              "evidence_note": "Original cited author/year/container/pages agree with exact registered chapter; title omitted or multiple editions caused the earlier ambiguity."
+            }
+          ]
+        },
+        "failure_reason": null
+      },
+      "review_note": "Original cited author/year/container/pages agree with exact registered chapter; title omitted or multiple editions caused the earlier ambiguity.",
+      "reviewed_at_utc": "2026-11-26T09:43:04.166846Z"
+    },
+    {
+      "event_id": "CP4-REF-R-S06-018",
+      "kind": "reference_identity_resolution",
+      "scope_id": "SCOPE-0001",
+      "checkpoint_id": "CP-0004",
+      "before": {
+        "occurrence_id": "R-S06-018",
+        "citing_work_id": "W-S06",
+        "version_id": "V-S06-01",
+        "reference_label": "18",
+        "section": "References",
+        "page": 14,
+        "raw_reference": "18. Barnes, W. J. P., Horseman, B. G. & Macauley, M. W. S. in:\nThe Crustacean Nervous System (ed. Wiese, K.) 468–485\n(Springer, 2002).",
+        "raw_fingerprint": "b5006ee11df54ff3d2946417e19052af6bf6f0021c95b8fdaed906fc8d8b9439",
+        "candidate_ids": [
+          "10.1007/978-3-662-04843-6_35"
+        ],
+        "cited_work_id": null,
+        "identity_confidence": "unresolved",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S06",
+          "version": "V-S06-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.1038/s41593-025-01948-9",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S06-01",
+              "upload_id": "U-S06-01",
+              "identifier": "S06",
+              "page": 14,
+              "section": "References",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 18 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            }
+          ]
+        },
+        "failure_reason": "Multiple plausible registry identities or insufficient identifying fields; retain raw reference for human review."
+      },
+      "after": {
+        "occurrence_id": "R-S06-018",
+        "citing_work_id": "W-S06",
+        "version_id": "V-S06-01",
+        "reference_label": "18",
+        "section": "References",
+        "page": 14,
+        "raw_reference": "18. Barnes, W. J. P., Horseman, B. G. & Macauley, M. W. S. in:\nThe Crustacean Nervous System (ed. Wiese, K.) 468–485\n(Springer, 2002).",
+        "raw_fingerprint": "b5006ee11df54ff3d2946417e19052af6bf6f0021c95b8fdaed906fc8d8b9439",
+        "candidate_ids": [
+          "10.1007/978-3-662-04843-6_35"
+        ],
+        "cited_work_id": "W-Dc641e4031362f724",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S06",
+          "version": "V-S06-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.1038/s41593-025-01948-9",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S06-01",
+              "upload_id": "U-S06-01",
+              "identifier": "S06",
+              "page": 14,
+              "section": "References",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 18 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            },
+            {
+              "source_id": "publisher",
+              "url": "https://doi.org/10.1007/978-3-662-04843-6_35",
+              "accessed_at": "2026-11-26",
+              "section": "Bibliographic identity / publication history",
+              "evidence_note": "Original cited author/year/container/pages agree with exact registered chapter; title omitted or multiple editions caused the earlier ambiguity."
+            }
+          ]
+        },
+        "failure_reason": null
+      },
+      "review_note": "Original cited author/year/container/pages agree with exact registered chapter; title omitted or multiple editions caused the earlier ambiguity.",
+      "reviewed_at_utc": "2026-11-26T09:43:04.166846Z"
+    },
+    {
+      "event_id": "CP4-REF-R-S06-037",
+      "kind": "reference_identity_resolution",
+      "scope_id": "SCOPE-0001",
+      "checkpoint_id": "CP-0004",
+      "before": {
+        "occurrence_id": "R-S06-037",
+        "citing_work_id": "W-S06",
+        "version_id": "V-S06-01",
+        "reference_label": "37",
+        "section": "References",
+        "page": 14,
+        "raw_reference": "37. Namiki, S. & Kanzaki, R. in: Insect Sex Pheromone Research and\nBeyond, 243–264 (Springer, 2020).",
+        "raw_fingerprint": "cfa9b176e12aea9b1f5310acde580e98e8ae07aa4ea23d11594b2d91e1849413",
+        "candidate_ids": [
+          "10.1007/978-981-15-3082-1_12"
+        ],
+        "cited_work_id": null,
+        "identity_confidence": "unresolved",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S06",
+          "version": "V-S06-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.1038/s41593-025-01948-9",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S06-01",
+              "upload_id": "U-S06-01",
+              "identifier": "S06",
+              "page": 14,
+              "section": "References",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 37 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            }
+          ]
+        },
+        "failure_reason": "Multiple plausible registry identities or insufficient identifying fields; retain raw reference for human review."
+      },
+      "after": {
+        "occurrence_id": "R-S06-037",
+        "citing_work_id": "W-S06",
+        "version_id": "V-S06-01",
+        "reference_label": "37",
+        "section": "References",
+        "page": 14,
+        "raw_reference": "37. Namiki, S. & Kanzaki, R. in: Insect Sex Pheromone Research and\nBeyond, 243–264 (Springer, 2020).",
+        "raw_fingerprint": "cfa9b176e12aea9b1f5310acde580e98e8ae07aa4ea23d11594b2d91e1849413",
+        "candidate_ids": [
+          "10.1007/978-981-15-3082-1_12"
+        ],
+        "cited_work_id": "W-D9cb2dad91d9fd4ef",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S06",
+          "version": "V-S06-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.1038/s41593-025-01948-9",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S06-01",
+              "upload_id": "U-S06-01",
+              "identifier": "S06",
+              "page": 14,
+              "section": "References",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 37 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            },
+            {
+              "source_id": "publisher",
+              "url": "https://doi.org/10.1007/978-981-15-3082-1_12",
+              "accessed_at": "2026-11-26",
+              "section": "Bibliographic identity / publication history",
+              "evidence_note": "Original cited author/year/container/pages agree with exact registered chapter; title omitted or multiple editions caused the earlier ambiguity."
+            }
+          ]
+        },
+        "failure_reason": null
+      },
+      "review_note": "Original cited author/year/container/pages agree with exact registered chapter; title omitted or multiple editions caused the earlier ambiguity.",
+      "reviewed_at_utc": "2026-11-26T09:43:04.166846Z"
+    },
+    {
+      "event_id": "CP4-WORK-Werner",
+      "kind": "bibliographic_enrichment",
+      "before": {
+        "work_id": "W-Rc76de53676531d31",
+        "work_key": "TempWRc76de53676531d31",
+        "canonical_title": "Funktionalanalysis, 5., erw.",
+        "title_variants": [
+          "Funktionalanalysis, 5., erw."
+        ],
+        "authors": [],
+        "document_type": "other",
+        "publication_status": "unknown",
+        "year": 2005,
+        "publication_date": "2005",
+        "venue": null,
+        "volume": null,
+        "number": null,
+        "pages": null,
+        "eid": null,
+        "publisher": null,
+        "identifiers": {},
+        "doi": null,
+        "url": "https://doi.org/10.4119/unibi/2934904",
+        "language": "und",
+        "discovery_sources": [
+          {
+            "source_id": "SRC-PDF",
+            "identifier": "S01",
+            "version": "V-S01-01",
+            "accessed_at": "2026-11-26",
+            "verification_status": "verified",
+            "license": "Reference bibliographic facts only.",
+            "url": "https://doi.org/10.4119/unibi/2934904",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ]
+          }
+        ],
+        "identity_confidence": "probable",
+        "verification_status": "source_supported",
+        "merge_history": [],
+        "fulltext_status": "pending",
+        "abstract_status": "abstract_missing",
+        "abstract_source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S01",
+          "version": "V-S01-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.4119/unibi/2934904",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S01-01",
+              "upload_id": "U-S01-01",
+              "identifier": "S01",
+              "page": 106,
+              "section": "Bibliography",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            }
+          ]
+        },
+        "abstract_items": [],
+        "license": "No fulltext redistribution license established; bibliographic facts retained.",
+        "u00_reasons": [
+          "pending_assessment",
+          "metadata_unverified"
+        ],
+        "review_condition": "Retrieve lawful fulltext, verify complete references and citation context, disambiguate authors/affiliations, and assess L01-L09 before any coverage claim.",
+        "dimension_status": {
+          "metadata": "partial",
+          "fulltext": "pending",
+          "abstract": "pending",
+          "references": "pending",
+          "citations": "pending",
+          "authors": "pending",
+          "affiliations_projects": "pending",
+          "assessment": "pending"
+        },
+        "seed_ids": [],
+        "notes": "Discovered from backward_citation; index metadata and original fulltext evidence are separate. Raw byline: Dirk Werner",
+        "field_states": {
+          "authors": {
+            "status": "unknown",
+            "reason": "Author list not yet parsed or independently checked; no institutional author fabricated.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-2e9164b05a4b39aa"
+          },
+          "venue": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-ed5ae422ab069301"
+          },
+          "volume": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-e31408dc8c7a90ac"
+          },
+          "number": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-6a92b52b37ca3ee4"
+          },
+          "pages": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-80a364531a325048"
+          },
+          "eid": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-46ec602729e0c4a2"
+          },
+          "publisher": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-43912f367c3d108d"
+          },
+          "doi": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-eb10f4196d2c924a"
+          },
+          "language": {
+            "status": "unknown",
+            "reason": "Language code und is unestablished, not an assertion of English.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-67e8de3f7677f6f2"
+          }
+        },
+        "discovery_depth": 1,
+        "discovery_path": [
+          {
+            "from_entity_id": "W-S01",
+            "to_entity_id": "W-Rc76de53676531d31",
+            "discovery_route": "backward_citation",
+            "source_id": "SRC-PDF",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "verification_status": "verified",
+            "scope_id": "SCOPE-0001"
+          }
+        ]
+      },
+      "after": {
+        "work_id": "W-Rc76de53676531d31",
+        "work_key": "TempWRc76de53676531d31",
+        "canonical_title": "Funktionalanalysis",
+        "title_variants": [
+          "Funktionalanalysis, 5., erw.",
+          "Funktionalanalysis"
+        ],
+        "authors": [
+          {
+            "person_id": "P-Rc78d615130daff95",
+            "display_name": "Dirk Werner",
+            "is_corporate": false,
+            "organization_ids": [],
+            "source": {
+              "source_id": "publisher",
+              "url": "https://link.springer.com/book/10.1007/b138024",
+              "accessed_at": "2026-11-26",
+              "verification_status": "source_supported",
+              "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "url": "https://link.springer.com/book/10.1007/b138024",
+                  "evidence_note": "Official publisher confirms Dirk Werner, fifth edition, copyright2005; ebook released2006-01-09. Do not substitute the2011 edition.",
+                  "accessed_at": "2026-11-26"
+                }
+              ]
+            },
+            "family_name": "Werner",
+            "given_name": "Dirk",
+            "field_states": {
+              "organization_ids": {
+                "status": "unknown",
+                "reason": "Byline affiliation has not been checked in the original publication.",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "url": "https://link.springer.com/book/10.1007/b138024",
+                    "evidence_note": "Official publisher confirms Dirk Werner, fifth edition, copyright2005; ebook released2006-01-09. Do not substitute the2011 edition.",
+                    "accessed_at": "2026-11-26"
+                  }
+                ],
+                "unknown_since_utc": "2026-11-26T09:43:04.166846Z",
+                "review_task_id": "T-Unknown-36612fb8052ac922"
+              }
+            }
+          }
+        ],
+        "document_type": "book",
+        "publication_status": "unknown",
+        "year": 2005,
+        "publication_date": "2005",
+        "venue": null,
+        "volume": null,
+        "number": null,
+        "pages": null,
+        "eid": null,
+        "publisher": "Springer Berlin, Heidelberg",
+        "identifiers": {
+          "DOI": "10.1007/b138024",
+          "ISBN": "978-3-540-26749-2"
+        },
+        "doi": "10.1007/b138024",
+        "url": "https://link.springer.com/book/10.1007/b138024",
+        "language": "und",
+        "discovery_sources": [
+          {
+            "source_id": "SRC-PDF",
+            "identifier": "S01",
+            "version": "V-S01-01",
+            "accessed_at": "2026-11-26",
+            "verification_status": "verified",
+            "license": "Reference bibliographic facts only.",
+            "url": "https://doi.org/10.4119/unibi/2934904",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ]
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://link.springer.com/book/10.1007/b138024",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "url": "https://link.springer.com/book/10.1007/b138024",
+                "evidence_note": "Official publisher confirms Dirk Werner, fifth edition, copyright2005; ebook released2006-01-09. Do not substitute the2011 edition.",
+                "accessed_at": "2026-11-26"
+              }
+            ]
+          }
+        ],
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "merge_history": [],
+        "fulltext_status": "pending",
+        "abstract_status": "abstract_missing",
+        "abstract_source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S01",
+          "version": "V-S01-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.4119/unibi/2934904",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S01-01",
+              "upload_id": "U-S01-01",
+              "identifier": "S01",
+              "page": 106,
+              "section": "Bibliography",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            }
+          ]
+        },
+        "abstract_items": [],
+        "license": "No fulltext redistribution license established; bibliographic facts retained.",
+        "u00_reasons": [
+          "pending_assessment",
+          "metadata_unverified"
+        ],
+        "review_condition": "Retrieve lawful fulltext, verify complete references and citation context, disambiguate authors/affiliations, and assess L01-L09 before any coverage claim.",
+        "dimension_status": {
+          "metadata": "partial",
+          "fulltext": "pending",
+          "abstract": "pending",
+          "references": "pending",
+          "citations": "pending",
+          "authors": "pending",
+          "affiliations_projects": "pending",
+          "assessment": "pending"
+        },
+        "seed_ids": [],
+        "notes": "Discovered from backward_citation; index metadata and original fulltext evidence are separate. Raw byline: Dirk Werner Fifth edition/copyright2005 verified; ebook date2006-01-09 retained as version date, not used to replace printed edition year.",
+        "field_states": {
+          "venue": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-ed5ae422ab069301"
+          },
+          "volume": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-e31408dc8c7a90ac"
+          },
+          "number": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-6a92b52b37ca3ee4"
+          },
+          "pages": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-80a364531a325048"
+          },
+          "eid": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-46ec602729e0c4a2"
+          },
+          "language": {
+            "status": "unknown",
+            "reason": "Language code und is unestablished, not an assertion of English.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-67e8de3f7677f6f2"
+          }
+        },
+        "discovery_depth": 1,
+        "discovery_path": [
+          {
+            "from_entity_id": "W-S01",
+            "to_entity_id": "W-Rc76de53676531d31",
+            "discovery_route": "backward_citation",
+            "source_id": "SRC-PDF",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S01-01",
+                "upload_id": "U-S01-01",
+                "identifier": "S01",
+                "page": 106,
+                "section": "Bibliography",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 103 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ],
+            "verification_status": "verified",
+            "scope_id": "SCOPE-0001"
+          }
+        ],
+        "edition": "5"
+      },
+      "reviewed_at_utc": "2026-11-26T09:43:04.166846Z"
+    },
+    {
+      "event_id": "CP4-REF-REF-S15-37",
+      "kind": "reference_identity_resolution",
+      "scope_id": "SCOPE-0001",
+      "checkpoint_id": "CP-0004",
+      "before": {
+        "occurrence_id": "REF-S15-37",
+        "citing_work_id": "W-S15",
+        "version_id": "V-S15-01",
+        "reference_label": "37",
+        "section": "References",
+        "page": 34,
+        "raw_reference": "Werner D (2005) Funktionalanalysis. Springer, 5 edition.",
+        "raw_fingerprint": "014c7398122864992bd5e2ae4d791f17c3ca33c0e5c23ccb71ec3f17f8cbc676",
+        "candidate_ids": [],
+        "cited_work_id": null,
+        "identity_confidence": "ambiguous",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S15",
+          "version": "V-S15-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.1371/journal.pone.0128413",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S15-01",
+              "upload_id": "U-S15-01",
+              "identifier": "S15",
+              "page": 34,
+              "section": "References",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 37 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            }
+          ]
+        },
+        "failure_reason": "Multiple plausible registry identities or insufficient identifying fields; retain raw reference for human review."
+      },
+      "after": {
+        "occurrence_id": "REF-S15-37",
+        "citing_work_id": "W-S15",
+        "version_id": "V-S15-01",
+        "reference_label": "37",
+        "section": "References",
+        "page": 34,
+        "raw_reference": "Werner D (2005) Funktionalanalysis. Springer, 5 edition.",
+        "raw_fingerprint": "014c7398122864992bd5e2ae4d791f17c3ca33c0e5c23ccb71ec3f17f8cbc676",
+        "candidate_ids": [],
+        "cited_work_id": "W-Rc76de53676531d31",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S15",
+          "version": "V-S15-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.1371/journal.pone.0128413",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S15-01",
+              "upload_id": "U-S15-01",
+              "identifier": "S15",
+              "page": 34,
+              "section": "References",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 37 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            },
+            {
+              "source_id": "publisher",
+              "url": "https://link.springer.com/book/10.1007/b138024",
+              "accessed_at": "2026-11-26",
+              "section": "Bibliographic identity / publication history",
+              "evidence_note": "Publisher confirms the cited fifth edition, author and copyright2005;2006 ebook release is separately noted."
+            }
+          ]
+        },
+        "failure_reason": null
+      },
+      "review_note": "Publisher confirms the cited fifth edition, author and copyright2005;2006 ebook release is separately noted.",
+      "reviewed_at_utc": "2026-11-26T09:43:04.166846Z"
+    },
+    {
+      "event_id": "CP4-REF-R-S06-038",
+      "kind": "reference_identity_resolution",
+      "scope_id": "SCOPE-0001",
+      "checkpoint_id": "CP-0004",
+      "before": {
+        "occurrence_id": "R-S06-038",
+        "citing_work_id": "W-S06",
+        "version_id": "V-S06-01",
+        "reference_label": "38",
+        "section": "References",
+        "page": 14,
+        "raw_reference": "38. Rayshubskiy, A. et al. Neural circuit mechanisms for steering\ncontrol in walking Drosophila. eLife 13, RP102230 (2024).",
+        "raw_fingerprint": "2003226ffa5701b1e487e1963d996449bd5b9b1d36ed06b406474c45f5055794",
+        "candidate_ids": [],
+        "cited_work_id": null,
+        "identity_confidence": "ambiguous",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S06",
+          "version": "V-S06-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.1038/s41593-025-01948-9",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S06-01",
+              "upload_id": "U-S06-01",
+              "identifier": "S06",
+              "page": 14,
+              "section": "References",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 38 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            }
+          ]
+        },
+        "failure_reason": "Multiple plausible registry identities or insufficient identifying fields; retain raw reference for human review."
+      },
+      "after": {
+        "occurrence_id": "R-S06-038",
+        "citing_work_id": "W-S06",
+        "version_id": "V-S06-01",
+        "reference_label": "38",
+        "section": "References",
+        "page": 14,
+        "raw_reference": "38. Rayshubskiy, A. et al. Neural circuit mechanisms for steering\ncontrol in walking Drosophila. eLife 13, RP102230 (2024).",
+        "raw_fingerprint": "2003226ffa5701b1e487e1963d996449bd5b9b1d36ed06b406474c45f5055794",
+        "candidate_ids": [],
+        "cited_work_id": "W-D343f06a3bc764bf6",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "SRC-PDF",
+          "identifier": "S06",
+          "version": "V-S06-01",
+          "accessed_at": "2026-11-26",
+          "verification_status": "verified",
+          "license": "Reference bibliographic facts only.",
+          "url": "https://doi.org/10.1038/s41593-025-01948-9",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S06-01",
+              "upload_id": "U-S06-01",
+              "identifier": "S06",
+              "page": 14,
+              "section": "References",
+              "accessed_at": "2026-11-26",
+              "evidence_note": "Printed reference 38 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+            },
+            {
+              "source_id": "publisher",
+              "url": "https://elifesciences.org/reviewed-preprints/102230v1",
+              "accessed_at": "2026-11-26",
+              "section": "Bibliographic identity / publication history",
+              "evidence_note": "Original S06 cites2024 reviewed preprint; publisher history and article102230 identify the existing Work, preserving the2024 version separately."
+            },
+            {
+              "source_id": "publisher",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12279373/",
+              "accessed_at": "2026-11-26",
+              "section": "Bibliographic identity / publication history",
+              "evidence_note": "Original S06 cites2024 reviewed preprint; publisher history and article102230 identify the existing Work, preserving the2024 version separately."
+            }
+          ]
+        },
+        "failure_reason": null
+      },
+      "review_note": "Original S06 cites2024 reviewed preprint; publisher history and article102230 identify the existing Work, preserving the2024 version separately.",
+      "reviewed_at_utc": "2026-11-26T09:43:04.166846Z"
+    }
+  ],
+  "iteration2_parents": [
+    "W-Dee8a80e9b1a461d3",
+    "W-Dc641e4031362f724",
+    "W-D9cb2dad91d9fd4ef"
+  ],
+  "iteration3_parents": [
+    "W-D09f416a6f13cbe9a",
+    "W-D0c0d1d96d63e878e",
+    "W-D1c31e323570e2dcd",
+    "W-D27065c87ad391bc3",
+    "W-D379c93c7ef016a33",
+    "W-D40f88abdd863542b",
+    "W-D67f05077e4f088ce",
+    "W-D7c841635ef21ac88",
+    "W-D8c38c6364edf942e",
+    "W-D904914a3c5aa7e01",
+    "W-D98b026c3b1ed2718",
+    "W-Da7110c75b2a16464",
+    "W-Dae584d10122956da",
+    "W-Dbccc1c2ce6364f56",
+    "W-Dd98ce957174d9462",
+    "W-Ddefe39e06eda3382",
+    "W-Ddfdda8e082ac3bc3",
+    "W-Df1a9ac76cf415a73",
+    "W-Df3d5c92a8e5362d3",
+    "W-Dfda66b7a1dc2804f"
+  ]
+}

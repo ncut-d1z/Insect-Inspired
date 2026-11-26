@@ -1,0 +1,298 @@
+{
+  "review_id": "QA-CP4-REPORT-SCIENCE-L07-L09",
+  "run_id": "RUN-0002",
+  "checkpoint": "CP4",
+  "reviewer": "/root/l07_l09_evidence",
+  "reviewed_at_utc": "2026-11-26T10:47:27.038845+00:00",
+  "review_mode": "read_only_existing_fulltext_and_canonical",
+  "network_requests": 0,
+  "repository_mutations": 0,
+  "status": "pass_with_minor_clarifications",
+  "blocking_findings_count": 0,
+  "minor_findings_count": 3,
+  "editorial_findings_count": 1,
+  "scope": "report-draft.md scientific paragraphs for Krapp1998, S19, Jung2011, Shoemaker2005, Longden2010, Franz2004 and Lingenfelter2021; no overall audit/count/status certification",
+  "report_snapshot": {
+    "path": "/workspace/scratch/2e518600ca4c/cp4_work/report-draft.md",
+    "sha256": "5f41eeed4587ab4237c64c3fa00200526c5d292f7c7e08889c318bcbce3a8cca"
+  },
+  "handoff_snapshot": {
+    "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/handoff.json",
+    "sha256": "c5cfdf62b6b03063e737296b6be9425d6bccaf33111d2b4e9b08e0b2ac7aff79"
+  },
+  "canonical_assessment_snapshot": {
+    "logical_name": "assessments.jsonl",
+    "reader": "storage.read_logical(name, base=repo/temp)",
+    "assessment_ids": [
+      "AS-RUN02-Krapp1998-L09-mapped-Hx-field",
+      "AS-S19-L05-baseline-receptive-field",
+      "AS-RUN02-Jung2011-L07-state-dependent-tuning",
+      "AS-RUN02-Shoemaker2005-L07-scene-invariance-candidate",
+      "AS-RUN02-Longden2010-L07-positive-speed-information",
+      "AS-S17-L06-joint-linear-gantry",
+      "AS-pool2021-L06-imu-metric-speed",
+      "AS-pool2021-L01-metric-depth"
+    ],
+    "record_count": 8,
+    "selection_sha256": "ea4c5620604c723c2dfbb10b7613ecfa3566e223b1c4fa13e50c46bb94cabd0d"
+  },
+  "primary_sources_checked": [
+    {
+      "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/krapp1998.pdf",
+      "sha256": "ace2812b8bb45ef53a56d3ed34c33a67e4bfddb4dbfd06f6dcfa1bf70fa86b38"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/krapp1998.txt",
+      "sha256": "dd24ae47d20ebcd1f8c793ddb20806b9381b39ce3544e2fde99116618d9a7547"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/jung2011.pdf",
+      "sha256": "05efa9a082c08496422012a814b5715f0b51719407fbe07403abd547d1bf6852"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/jung2011.txt",
+      "sha256": "ffbc9ae123097c440829a2ba2d34547803d49919a7873dee145531e4a51b00f0"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/shoemaker2005.pdf",
+      "sha256": "7bf3d90be3b5e441fc36e0df382c57d65eb7e593387e935d58eb8427d17850f9"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/shoemaker2005.txt",
+      "sha256": "28dec96eadac93804b4b8b5fa6fc06b89f6f07c8465c616089e49dbebac07a98"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/longden2010.pdf",
+      "sha256": "23989196daa8ed304a4f9a6901257afd38bad7c0a3ca5eefb98cf2b80b569948"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/longden2010.txt",
+      "sha256": "88d42a882f7ea04ee4acdfc18684c1b9dad5341f7ddb8a97d4ed3abe3f5ed833"
+    },
+    {
+      "path": "/workspace/scratch/9d487ee78414/p1p2_work/text/S17.txt",
+      "sha256": "97fe71c86987b5b81c5c75d1db1b2cfcefd2e02c0692dedcc5e3b58d44445fbf"
+    },
+    {
+      "path": "/workspace/scratch/9d487ee78414/p3p6_work/agent_c/iteration2/pool2021-fulltext.txt",
+      "sha256": "d22c4387bc60567cefd7c9dc69f8b58361a479df835d8f3ffa84fa5117355076"
+    }
+  ],
+  "mandatory_risk_checks": {
+    "52_visual_directions_misreported_as_animals": false,
+    "chi_square_non_rejection_misreported_as_proof": false,
+    "information_rate_misreported_as_plateau_amplitude_decoding": false,
+    "species_mismatches_detected": false,
+    "reported_numerical_values_conflict_with_primary_evidence": false,
+    "biological_measurements_conflated_with_engineering_models": false
+  },
+  "assessment_checks": [
+    {
+      "work_key": "Krapp1998",
+      "assessment_ids": [
+        "AS-RUN02-Krapp1998-L09-mapped-Hx-field"
+      ],
+      "result": "pass",
+      "report_lines": [
+        65,
+        67
+      ],
+      "verified": [
+        "1–3日龄雌性 Calliphora erythrocephala；物种来自原始 Methods/Preparation。",
+        "Hx径向局部优选方向、奇点约方位135°/仰角0°、方位约45°水平后向前运动最大敏感位置，符合原文与Fig.9。",
+        "52为视向采样位置；报告明确没有把它写成52只动物，且保留Hx独立动物数/群体方差未单列。",
+        "限定为量化感受野基础证据，没有升格为最优匹配滤波统计检验、平台内速率解码或完整自运动恢复。"
+      ],
+      "primary_locators": [
+        "PDF p4 / printed p1905, Methods/Preparation",
+        "PDF p10 / printed p1911, Hx description",
+        "PDF p14 / printed p1915, Fig.9"
+      ]
+    },
+    {
+      "work_key": "Franz2000 / S19",
+      "assessment_ids": [
+        "AS-S19-L05-baseline-receptive-field"
+      ],
+      "result": "pass",
+      "report_lines": [
+        71,
+        73
+      ],
+      "verified": [
+        "数据来源为Krapp1998的VS局部敏感度均值及SD，物种修订保留旧判定。",
+        "52个空间位置剔除身体遮挡的方位180°/仰角−15°位置后拟合51个位置；线性4参数对应47自由度，平台5参数对应46自由度。",
+        "VS4/VS5/VS6平台χ²=30.8/52.1/57.6，p=.96/.25/.12；与表1一致。",
+        "报告正确写为在该检验程序下未拒绝，未将p值解释为最优性或因果实现的证明；未写为所有VS都解释，也未声称平台内幅值恢复。"
+      ],
+      "primary_locators": [
+        "S19 PDF p7 / printed p191, Table1 and adjacent fitting text",
+        "S19 PDF pp7–9, Figs.6–7",
+        "Krapp1998 PDF p4 / printed p1905, preparation species"
+      ]
+    },
+    {
+      "work_key": "Jung2011",
+      "assessment_ids": [
+        "AS-RUN02-Jung2011-L07-state-dependent-tuning"
+      ],
+      "result": "pass",
+      "report_lines": [
+        79,
+        83
+      ],
+      "verified": [
+        "雌性Lucilia spp.的H1，不是Calliphora VS/Hx。",
+        "光栅空间周期40°；10个速度12–800°/s；Fig.4速度调谐比较n=8。",
+        "飞行相关调谐展宽被正确保留为状态依赖机制线索；未声称在已确认的饱和平台内恢复速率幅值。"
+      ],
+      "primary_locators": [
+        "PDF pp1–2 / printed pp9231–9232, Methods",
+        "PDF p3 / printed p9233, Fig.4"
+      ]
+    },
+    {
+      "work_key": "Shoemaker2005",
+      "assessment_ids": [
+        "AS-RUN02-Shoemaker2005-L07-scene-invariance-candidate"
+      ],
+      "result": "pass",
+      "report_lines": [
+        80,
+        83
+      ],
+      "verified": [
+        "Eristalis tenax的HSNE；4雄蝇、3自然全景、相隔90°的4旋转相位；响应平均窗口0.2–1.0s。",
+        "Fig.1速度曲线非单调；跨图像响应稳健性不构成速度反演唯一性或平台内幅值解码误差证据。",
+        "报告没有捏造图中精确数值，也没有把模型输出当作生物细胞测量。"
+      ],
+      "primary_locators": [
+        "Author-uploaded manuscript PDF p3, Fig.1 and legend; this is manuscript PDF pagination, not publisher page3"
+      ]
+    },
+    {
+      "work_key": "Longden2010",
+      "assessment_ids": [
+        "AS-RUN02-Longden2010-L07-positive-speed-information"
+      ],
+      "result": "pass_with_precision_edit",
+      "report_lines": [
+        81,
+        83
+      ],
+      "verified": [
+        "原文及canonical明确Calliphora vicina的H2；报告只写属名，建议补全。",
+        "11.4°空间周期；正向0–25Hz的随机时序，每5ms更新；不是稳态速度逐档平台解码试验。",
+        "CDM前后正向控制信息率12.7±1.7与15.8±1.6bit/s，+24%，P=.009，N=5；±为SEM。",
+        "正确区分正向控制与双向−25..25Hz实验；没有把信息率增加转换成平台内幅值恢复。"
+      ],
+      "primary_locators": [
+        "PDF pp2–4, Materials and Methods",
+        "PDF p8, Fig.7 and positive-velocity information paragraph"
+      ]
+    },
+    {
+      "work_key": "Franz2004 / S17",
+      "assessment_ids": [
+        "AS-S17-L06-joint-linear-gantry"
+      ],
+      "result": "pass_with_wording_clarification",
+      "report_lines": [
+        87
+      ],
+      "verified": [
+        "26个办公室测量位置的激光距离统计，固定0.62m相机高度及测试同高，符合原文§§3.1–3.2和脚注3。",
+        "标注other_metric_prior正确：距离统计与高度属于外部公制信息。",
+        "canonical同时包含rotation_rate、rotation_axis、translation_direction；direction_only/绝对尺度未证实的限定不能误读成否认已报告旋转速率结果。",
+        "报告没有将该龙门实验扩为全3轴旋转的6DOF普遍验证，也没有声称纯视觉无先验绝对平移尺度。"
+      ],
+      "primary_locators": [
+        "S17 PDF p5, §3.1",
+        "S17 PDF pp8–9, §3.2, footnote3 and Fig.5",
+        "Canonical results: rotation-rate mean error0.7°/s over450 estimates; axis error1.7°, translation-direction error4.5°"
+      ]
+    },
+    {
+      "work_key": "Lingenfelter2021",
+      "assessment_ids": [
+        "AS-pool2021-L06-imu-metric-speed",
+        "AS-pool2021-L01-metric-depth"
+      ],
+      "result": "pass_with_input_role_clarification",
+      "report_lines": [
+        89
+      ],
+      "verified": [
+        "0.062m/s是单一80s直线轨道演示的组合估计结果；作者明确定义为root-median-squared error，非root-mean-squared。",
+        "加速度误差0.11m/s²与顶视跟踪推导真值比较；深度误差0.194m（距离3m内）/0.542m（全部像素全部速度）与RealSense深度真值比较。",
+        "运行时的公制输入为D435i IMU加速度；RealSense深度通道与独立顶视跟踪用于评估，不能混写成输入。",
+        "已保留直线前进条件与一般非零加速度需要；本例加速度长期为零时速度也为零，因此不能推广为任意长匀速条件。",
+        "报告没有把整体算法误差误归因于空间池化单项消融。",
+        "两条合格绝对尺度Assessment均属同一Work的速度/深度主张，不是两篇独立重复验证。"
+      ],
+      "primary_locators": [
+        "Implementation & results, 80s linear track and overhead evaluation paragraphs",
+        "Velocity estimation, paragraph containing0.062m/s and0.11m/s²; Figs.3–4",
+        "Depth estimation, Figs.5–6 and0.194m/0.542m paragraph",
+        "Analysis: Geometry of linear motion; Velocity estimation through spatial pooling"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "SCI-01",
+      "severity": "minor",
+      "blocking": false,
+      "category": "species_and_uncertainty_precision",
+      "report_line": 81,
+      "assessment_id": "AS-RUN02-Longden2010-L07-positive-speed-information",
+      "finding": "属名不是错误，但在本轮重点核对物种与不确定度的报告中，应与原文和canonical一样写全Calliphora vicina，并明确±为SEM。",
+      "suggested_replacement": "| Longden2010 | *Calliphora vicina* H2；11.4°光栅、仅正向0–25Hz随机频率、5ms更新；CDM前后信息率12.7±1.7→15.8±1.6bit/s（均值±SEM），+24%，P=.009，N=5；Methods及Fig.7（PDF p8） | insufficient_evidence / threshold_not_met。正向控制排除了仅方向符号解释，但随机低速/高速及瞬态混合不能充当稳态饱和平台内幅值解码试验 |"
+    },
+    {
+      "finding_id": "SCI-02",
+      "severity": "minor",
+      "blocking": false,
+      "category": "metric_input_and_ground_truth_roles",
+      "report_line": 89,
+      "assessment_ids": [
+        "AS-pool2021-L06-imu-metric-speed",
+        "AS-pool2021-L01-metric-depth"
+      ],
+      "finding": "现文事实正确，但独立公制输入未点名，紧邻RealSense真值容易混淆输入与评估。建议明确IMU加速度以及非零加速度条件。",
+      "suggested_replacement": "**Lingenfelter2021** 的运行时公制输入是RealSense D435i的IMU加速度；RealSense深度通道和独立顶视跟踪分别用于深度、运动真值评估。两个深度误差为0.194m（3m以内）和0.542m（全部像素、全部速度），加速度误差为0.11m/s²。0.062m/s是单一80s直线实验中组合算法的 root-median-squared error，不是root-mean-squared error，也不是单独归因于空间池化的消融提升。方法一般要求非零加速度；本演示中加速度长时间为零时速度也为零。依据为 Implementation & results、Velocity estimation及Depth estimation、Figs.3–6。全库仅2条合格绝对尺度主张，均来自该Work的速度/深度Assessment并依赖IMU公制输入；另1条绝对尺度候选继续拒收。"
+    },
+    {
+      "finding_id": "SCI-03",
+      "severity": "minor",
+      "blocking": false,
+      "category": "scope_precision",
+      "report_line": 87,
+      "assessment_id": "AS-S17-L06-joint-linear-gantry",
+      "finding": "“只认定旋转与平移方向”可能被读作旋转也只有方向；canonical实际上记录旋转速率和旋转轴。建议清楚列出认定分量，并将direction_only限定到本条平移尺度。",
+      "suggested_replacement": "**Franz2004 / S17** 的模型使用26个激光测距位置形成的环境距离统计，并在标定/测试中保持0.62m相机高度（§§3.1–3.2、脚注3）。本轮将漏写的外部公制先验显式标为 other_metric_prior；该条Assessment记录旋转速率、旋转轴与平移方向，对平移尺度仍保留 direction_only 和 scale_observability=not_demonstrated，不认定纯视觉无先验绝对尺度。"
+    },
+    {
+      "finding_id": "SCI-04",
+      "severity": "editorial",
+      "blocking": false,
+      "category": "primary_source_locator",
+      "report_lines": [
+        71,
+        79,
+        80
+      ],
+      "finding": "S19拟合数值、Jung与Shoemaker表格行可补最短原文定位，便于报告独立复核。canonical和handoff已有定位，因此不构成证据链缺失。",
+      "suggested_additions": {
+        "S19": "S19 PDF p7／印刷p191，Table1及相邻拟合说明。",
+        "Jung2011": "Methods pp9231–9232；Fig.4／p9233。",
+        "Shoemaker2005": "作者公开稿PDF p3，Fig.1及图注（不写为出版社p3）。"
+      }
+    }
+  ],
+  "conclusion": "科学主结论通过；未发现需重开规范Assessment的阻断性错误。建议仅在最终报告补全Longden物种及SEM、澄清Franz估计分量、点明Lingenfelter运行时IMU公制输入与非零加速度条件，并加短原文定位。S19未拒绝、L07仍不足、Hx只作感受野基础证据的边界均保持正确。",
+  "limitations": [
+    "本审查使用既有缓存、先前已目视核对页图和本轮canonical逻辑分区；未重取外网或重新执行全库审计。",
+    "报告如在本快照之后修改，应对照建议文本检查；本文件没有修改任何报告或规范数据库。"
+  ]
+}

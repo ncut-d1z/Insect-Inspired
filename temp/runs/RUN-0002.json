@@ -1,0 +1,37 @@
+{
+  "run_id": "RUN-0002",
+  "scope_id": "SCOPE-0001",
+  "start_checkpoint_id": "CP-0002",
+  "recovered_candidate_checkpoint_id": "CP-0003",
+  "started_at_utc": "2026-11-26T09:43:04.789429Z",
+  "authorization": "反复迭代或递归执行 P3,P4,P5,P6 阶段任务。在输出对话回复时，评估任务进度。",
+  "authorized_stages": [
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "approval_effect": "Supersedes P1/P2 stage authorization only; frozen literature cutoff, seed set, expansion bounds and DEC rules remain unchanged.",
+  "budget": {
+    "wall_clock_hours": 6,
+    "external_requests": 2000,
+    "manual_review_items": 200,
+    "paid_spend": 0
+  },
+  "manual_review_unit": "A separately logged Work fulltext/bibliography review, Person disambiguation review, Project review, or Assessment adjudication. Automated metadata matching is logged separately.",
+  "external_requests_used": 250,
+  "external_requests_note": "224 HTTP attempts +23 saved web invocations +3 known unsaved delegated web invocations = 250 known research invocations. 19 cache reuses excluded. Exact coverage of any earlier unretained root lookup is not asserted.",
+  "manual_review_items_used": 51,
+  "status": "checkpointed_open",
+  "end_checkpoint_id": "CP-0004",
+  "external_request_count_status": "known_invocations_with_documented_receipt_gaps",
+  "saved_web_invocations": 23,
+  "known_unsaved_web_invocations": 3,
+  "cache_reuse_events": 19,
+  "pause_reason": "Current recursive waves consolidated into an audited recovery checkpoint; research closure remains open. Budget exhaustion is not asserted.",
+  "checkpoint_started_at_utc": "2026-11-26T10:35:27.616306Z",
+  "checkpoint_completed_at_utc": "2026-11-26T10:49:55.111195Z",
+  "checkpoint_wall_clock_hours": 1.114,
+  "budget_exhausted": false,
+  "delivery_mode": "complete_snapshot_and_git_recovery_bundle; remote_sync_unconfirmed"
+}

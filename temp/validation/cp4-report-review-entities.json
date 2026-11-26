@@ -1,0 +1,165 @@
+{
+  "review_id": "CP4-REPORT-ENTITIES-REVIEW",
+  "reviewed_at_utc": "2026-11-26T10:44:51.292474Z",
+  "status": "pass_with_reporting_clarifications",
+  "canonical_data_errors_found": 0,
+  "external_requests": 0,
+  "canonical_files_modified": false,
+  "review_scope": [
+    "report-draft.md claims on authors/projects/recursive metadata",
+    "README §9.4 report requirements",
+    "two corrected electronic publication dates",
+    "final count/coverage consistency"
+  ],
+  "files_reviewed": [
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp4_work/report-draft.md",
+      "sha256": "5f41eeed4587ab4237c64c3fa00200526c5d292f7c7e08889c318bcbce3a8cca"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp4_work/final-counts.json",
+      "sha256": "43d0e63672cfb4a3a558f20e9c95cad925842cb091e194c1344f97402a9c942a"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp4_work/final-coverage.json",
+      "sha256": "829df38a548550d4ee4674a8d594120438b21a75bd2c6423b7b77f053fc64e92"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/insect-project/README.md",
+      "sha256": "7d4716a15817baebc04ce938297d4630800e622fdff09423bd5bdf125c8e3c78"
+    }
+  ],
+  "confirmed_correct": [
+    {
+      "claim": "Authors: 57/57 profiles; 57/57 source lists paginated; 53/57 totals reconciled; nine resumed lists retain853 records.",
+      "evidence": [
+        {
+          "path": "/workspace/scratch/2e518600ca4c/cp4_work/final-counts.json",
+          "detail": "seed_author_profiles_retrieved57, seed_author_lists_paginated57, seed_author_lists_reconciled53"
+        },
+        {
+          "path": "/workspace/scratch/2e518600ca4c/research_entities/handoff.json",
+          "detail": "author_list_records853; author_lists_now_complete9; author_lists_now_total_reconciled8"
+        }
+      ],
+      "qualification": "Report correctly separates list exhaustion from per-Work attribution review."
+    },
+    {
+      "claim": "Two new official projects and27 retained bibliographic output observations, with one unresolved thesis-title variant.",
+      "evidence": [
+        {
+          "path": "/workspace/scratch/2e518600ca4c/insect-project/temp/projects.jsonl",
+          "detail": "Outdoor7 resolved output Work IDs; Visual Homing19. The remaining preliminary thesis title is retained as an unresolved observation, not fabricated as another confirmed Work."
+        },
+        {
+          "path": "/workspace/scratch/2e518600ca4c/research_entities/project-output-records.json",
+          "detail": "27 observations; Differt preliminary title independent_work_identity=false"
+        }
+      ],
+      "qualification": "Report correctly links S15 as Outdoor output and Stürzl as collaborator of the older Visual Homing project; it does not incorrectly make S15 an older-project output."
+    },
+    {
+      "claim": "42/42 source-listed citers;28/42 enriched identities;14 identity queries pending.",
+      "evidence": [
+        {
+          "path": "/workspace/scratch/2e518600ca4c/research_entities/forward-citer-records.json",
+          "detail": "42 records;28 identity_enriched=true"
+        },
+        {
+          "path": "/workspace/scratch/2e518600ca4c/cp4_work/final-coverage.json",
+          "detail": "sources.new_project_epmc_list_reconciled42/42; new_project_citer_identity_metadata28/42"
+        }
+      ],
+      "qualification": "Report correctly avoids calling these citation-context reviews."
+    },
+    {
+      "claim": "Both Work and VOR Version dates have already been corrected in canonical data.",
+      "evidence": [
+        {
+          "path": "/workspace/scratch/2e518600ca4c/insect-project/temp/works.jsonl",
+          "detail": "Read logical partitioned data: Juusola2026=2026-09-23; Calzoni2026=2026-11-13"
+        },
+        {
+          "path": "/workspace/scratch/2e518600ca4c/insect-project/temp/versions.jsonl",
+          "detail": "V-W-D8c63923d2a391e3d-01=2026-09-23; V-W-D19f79ec6690c8cb6-01=2026-11-13"
+        },
+        {
+          "path": "/workspace/scratch/2e518600ca4c/cp4_date_review/date-correction-recommendations.json",
+          "detail": "Exact PubMed Electronic ArticleDate nodes, matching DOI, plus Calzoni PMC epub node"
+        }
+      ],
+      "qualification": "No canonical date fix remains. Dates precede frozen cutoff; print/issue2026-12 is retained separately."
+    }
+  ],
+  "patch_suggestions": [
+    {
+      "id": "ENT-R1",
+      "severity": "medium",
+      "location": "§4 stage table, P3 row",
+      "current_text": "10条种子引文身份修复",
+      "suggested_text": "复核10条种子引文身份疑点；已修正项与仍待消歧项分别保留",
+      "reason": "§3 says Kern2001 two DOI alternatives remain unresolved. “10条...修复” can be read as ten identities all resolved. Reviewed and repaired counts should remain distinct.",
+      "basis": [
+        {
+          "path": "/workspace/scratch/2e518600ca4c/cp4_work/report-draft.md",
+          "detail": "§3 explicitly retains Kern2001 disambiguation task"
+        }
+      ]
+    },
+    {
+      "id": "ENT-R2",
+      "severity": "medium",
+      "location": "§3 P5项目进入P3 paragraph",
+      "current_text": "完整的下一层登记参考为6,334项，其中这155份元数据自身带有6,111项；它们已落入参考数据及后续任务。",
+      "suggested_text": "本分支160个不同施引DOI的已取得Crossref参考数组共保留6,334个出现项，其中155份递归元数据包装含6,111项；该合计也包含前述项目成果参考，并非互不重叠的新层级计数。全部出现项已落入参考数据及后续任务，完整正文书目仍待核验。",
+      "reason": "6334 is the retained aggregate frontier across160 unique citingDOIs, including initial project metadata and recursive metadata after citing-DOI deduplication. It should not read as6334 wholly additional references beyond the254 or6111.",
+      "basis": [
+        {
+          "path": "/workspace/scratch/2e518600ca4c/research_entities/handoff.json",
+          "detail": "next_frontier_reference_occurrences6334; next_frontier_unique_citing_dois160; recursive_wrapper_reference_occurrences6111"
+        },
+        {
+          "path": "/workspace/scratch/2e518600ca4c/research_entities/freeze_handoff.py",
+          "detail": "unique_metadata is built from primary+recursive wrappers and deduplicated by citingDOI"
+        }
+      ]
+    },
+    {
+      "id": "ENT-R3",
+      "severity": "medium",
+      "location": "§3 P5项目进入P3 paragraph, append official time/funding evidence",
+      "suggested_text": "Outdoor Navigation 的官方资助期为2014–2017，DFG项目号MO1037/10-1及STU413/2-1；Visual Homing两期DFG资助分别为2006-05至2008-04、2008-05至2010-04，项目号MO1037/2-1及MO1037/2-2。后一项目另有后续CITEC/EXC277支持，2010-04不是全部后续研究的结束日期。",
+      "reason": "README §9.4 explicitly calls for author/team/project temporal attribution and evidence. Draft gives project names/relationships but no dates or funding identifiers; this concise addition makes the new project result independently assessable.",
+      "basis": [
+        {
+          "path": "/workspace/scratch/2e518600ca4c/insect-project/temp/projects.jsonl",
+          "detail": "Both formal project records contain these grant IDs and date precision."
+        },
+        {
+          "path": "/workspace/scratch/2e518600ca4c/research_entities/projects.json",
+          "detail": "Official project and funding-table evidence locators preserved."
+        }
+      ],
+      "source_urls": [
+        "https://www.ti.uni-bielefeld.de/html/research/outdoor/index.html",
+        "https://www.ti.uni-bielefeld.de/html/research/of-navigation/index.html",
+        "https://www.ti.uni-bielefeld.de/html/research/index.html"
+      ]
+    }
+  ],
+  "required_template_completion": {
+    "DATE_REPAIR_NOTE": "Juusola2026（DOI10.1016/j.plrev.2026.09.009）的电子发表日为2026-09-23，Calzoni2026（DOI10.1016/j.isci.2026.118240）为2026-11-13。PubMed XML的Electronic ArticleDate明确支持两者，Calzoni的PMC原文epub字段另行确认；Work及对应VOR版本日期已同步修正。原Crossref的2026-12及Calzoni的2026-12-22卷期/collection日期作为独立观察保留。两篇均满足冻结截止日期要求；created、indexed、license起始日及接受日均未用作发表日。",
+    "MANUAL_COUNT": 51,
+    "OPEN_TASK_COUNT": 130154,
+    "query_counts_note": "查询总数872；精确时间817、精确时间不可恢复55。不得把累计人工复核251写作本轮使用数。",
+    "section9_4_completion_check": "最终展开VALIDATION_SECTION和EXPORT_TABLE后，确认包含五视图路径/哈希/记录数、证据拒收代码分布、绝对尺度门禁、unknown及超期数。仅凭当前占位模板无法审查这些最终数值；不得以占位符通过最终报告验收。",
+    "section4_3_count_note": "当前数量表未显式列出retained_uploads24、distinct_seed_pdf_sha25620、distinct_files47、file_backed_versions40；若VALIDATION_SECTION未补，应追加这四项，以满足§9.4引用的§4.3计数要求。"
+  },
+  "non_findings": [
+    "57/57分页结束没有被写成57/57作者身份全部完成。",
+    "两个项目的官方成果关系与科学性能证据已明确区分。",
+    "S01仅索引身份解决，429列表仍开放；未将singleton零计数写成核验零引用。",
+    "两篇电子发表日期的修正不新增Work，也不新增科学Assessment。"
+  ],
+  "conclusion": "没有发现需要重开冻结canonical数据的作者、项目或日期错误。建议完成3处文字澄清并填实日期/审计占位符；保持研究闭包未成立的结论。"
+}

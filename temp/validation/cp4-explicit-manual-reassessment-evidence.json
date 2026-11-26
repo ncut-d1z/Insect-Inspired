@@ -1,0 +1,128 @@
+{
+  "format_version": 1,
+  "decision": "explicit_manual_reassessment",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0004",
+  "assessment_id": "AS-S19-L05-baseline-receptive-field",
+  "independent_reviewer": "ChatGPT /root/scope_audit",
+  "independently_reviewed_at_utc": "2026-11-26T10:28:07.469027Z",
+  "legacy_manual_baseline_path": "/workspace/scratch/9d487ee78414/p3p6_work/agent_c/assessments.json",
+  "legacy_manual_assessment_sha256": "c65c6f27f48397e17b7d96e2c20697548dce1a74e71141a9956048e49385e2b4",
+  "repair_event_before_sha256": "c65c6f27f48397e17b7d96e2c20697548dce1a74e71141a9956048e49385e2b4",
+  "repair_event_after_sha256": "2a7d668fc5aeee4bdbe58a66800875863ade5ddcbcd0e4a4e07eebbed34d95d5",
+  "canonical_after_sha256": "75774b00032035fe24d28133f79fbbb4fb4cb7e44fa9a463c34523b53ab81cf6",
+  "repair_reviewed_at_utc": "2026-11-26T09:54:19Z",
+  "repair_reason": "原实验全文和S19数据复用段交叉核验，解决唯一missing_critical_conditions；保留原拒收决定审计。",
+  "canonical_alias_map": {
+    "SRC-RUN02-KRAPP1998-NOAH": "institutional_repository",
+    "SRC-RUN02-JUNG2011-PUBLISHER": "publisher",
+    "SRC-RUN02-SHOEMAKER2005-AUTHOR": "researchgate",
+    "SRC-RUN02-LONGDEN2010-PUBLISHER": "publisher",
+    "SRC-RUN02-STRAW-OFFICIAL": "institutional_repository",
+    "SRC-RUN02-PMC-PUBLIC": "institutional_repository"
+  },
+  "critical_condition": "species",
+  "resolved_species": "Calliphora erythrocephala",
+  "original_rejection_codes": [
+    "missing_critical_conditions"
+  ],
+  "retained_counter_evidence": true,
+  "linked_manual_review": {
+    "review_id": "MR-RUN02-L079-004",
+    "run_id": "RUN-0002",
+    "review_type": "cross_source_patch",
+    "entity_id": "AS-S19-L05-baseline-receptive-field",
+    "reviewer": "ChatGPT L07/L09 primary-evidence subagent",
+    "recorded_at_utc": "2026-11-26T10:04:22Z",
+    "artifact": "research_l07_l09",
+    "notes": "S19 p7 both columns, Table1 and original Krapp species evidence checked."
+  },
+  "source_original": {
+    "work_id": "W-D864a37e3fe3dfb23",
+    "version_id": "V-W-D864a37e3fe3dfb23-01",
+    "upload_id": "U-RUN02-Krapp1998-PDF",
+    "sha256": "ace2812b8bb45ef53a56d3ed34c33a67e4bfddb4dbfd06f6dcfa1bf70fa86b38",
+    "source_url": "https://noah.nrw/ubbihs/download/pdf/5105349",
+    "accessed_at_utc": "2026-11-26T09:41:33.206084Z",
+    "species_locator": {
+      "source_id": "institutional_repository",
+      "identifier": "10.1152/jn.1998.79.4.1902",
+      "url": "https://noah.nrw/ubbihs/download/pdf/5105349",
+      "page": 4,
+      "evidence_note": "印刷p1905 Methods/Preparation明确1–3日龄雌性Calliphora erythrocephala；S19 p7明确复用此文LMS均值及SD。",
+      "accessed_at": "2026-11-26T09:41:33.206084Z",
+      "section": "Methods / Preparation"
+    }
+  },
+  "new_evidence_locators": [
+    {
+      "source_id": "institutional_repository",
+      "identifier": "10.1152/jn.1998.79.4.1902",
+      "url": "https://noah.nrw/ubbihs/download/pdf/5105349",
+      "page": 4,
+      "evidence_note": "印刷p1905 Methods/Preparation明确1–3日龄雌性Calliphora erythrocephala；S19 p7明确复用此文LMS均值及SD。",
+      "accessed_at": "2026-11-26T09:41:33.206084Z",
+      "section": "Methods / Preparation"
+    },
+    {
+      "source_id": "SRC-PDF",
+      "identifier": "S19",
+      "version_id": "V-S19-01",
+      "upload_id": "U-S19-01",
+      "page": 7,
+      "evidence_note": "Table1与正文已目视核对；52点中遮挡点(az180°,el−15°)丢弃；平台46df、线性47df。",
+      "table": "1",
+      "section": "4–5"
+    }
+  ],
+  "independent_observations": [
+    {
+      "document": "Krapp1998",
+      "locator": "PDF page 4 / printed page 1905, Methods / Preparation",
+      "finding": "Directly inspected the cached original Methods page: the experiments used female Calliphora erythrocephala aged one to three days. This is method text, not a species inferred from the bibliography."
+    },
+    {
+      "document": "S19 Franz2000",
+      "locator": "PDF page 7 / printed page 191, model-fitting paragraph and Table 1",
+      "finding": "Directly inspected the page: the model reused Krapp et al. (1998) LMS means and standard deviations. One of 52 spatial measurements was removed due to body occlusion. Only the VS4–VS6 plateau fits were not rejected; other-cell and linear-model failures remain."
+    }
+  ],
+  "claim_boundaries": [
+    "51 denotes spatial sampling positions, not independent animals.",
+    "Model fit compatibility does not demonstrate biological causal implementation or global optimality.",
+    "No evidence for speed-magnitude recovery inside a saturation plateau is admitted.",
+    "Counter-evidence remains true and the failure of the other cell fits is retained."
+  ],
+  "artifact_hashes": [
+    {
+      "role": "unchanged_original_audit",
+      "path": "/workspace/scratch/9d487ee78414/p3p6_work/audit_run.py",
+      "sha256": "bce5f6b8387dce5d9d8c6c56bf38695ff6ad9b729f2f8c1461c5925aa052c2d9",
+      "bytes": 67549
+    },
+    {
+      "role": "unchanged_legacy_manual_baseline",
+      "path": "/workspace/scratch/9d487ee78414/p3p6_work/agent_c/assessments.json",
+      "sha256": "08ce8f0ca9b8c7ed682a401843d0190c5e00dc42cd5b5b0a72e3a17ac4d0c29f",
+      "bytes": 462662
+    },
+    {
+      "role": "original_Krapp1998_PDF",
+      "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/krapp1998.pdf",
+      "sha256": "ace2812b8bb45ef53a56d3ed34c33a67e4bfddb4dbfd06f6dcfa1bf70fa86b38",
+      "bytes": 411083
+    },
+    {
+      "role": "visually_reviewed_Krapp_methods_page",
+      "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/krapp_methods-04.png",
+      "sha256": "2731538ec01e9268afd589eed111cffd4b268d86a3d66ef7bd1092a1c2f6eff6",
+      "bytes": 248970
+    },
+    {
+      "role": "visually_reviewed_S19_data_reuse_page",
+      "path": "/workspace/scratch/9d487ee78414/p3p6_work/agent_c/S19-p7.png",
+      "sha256": "9063f05e179d6deb25622de499b5fe7bc9963b826fd03d6f002dfff90e0d17b0",
+      "bytes": 298436
+    }
+  ]
+}
