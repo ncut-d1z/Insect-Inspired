@@ -1,0 +1,216 @@
+{
+  "query_id": "Q-RUN04-SEARCH-0003",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "web_search",
+  "underlying_source_id": "institutional_repository",
+  "underlying_source_name": "NCBI PubMed indexed metadata",
+  "entity_id": "W-Raab0f78cce8a781f",
+  "work_key": "TempWRaab0f78cce8a781f",
+  "endpoint_or_url": "https://pubmed.ncbi.nlm.nih.gov/27436729/",
+  "transport": "system1_search_query",
+  "queried_at_utc": "2026-11-26T16:27:53.888Z",
+  "completed_at_utc": "2026-11-26T16:27:54.817Z",
+  "query_time_status": "exact",
+  "raw_parameters": {
+    "system1_search_query": [
+      {
+        "q": "\"27436729\" \"Neural mechanisms of insect navigation\"",
+        "domains": [
+          "pubmed.ncbi.nlm.nih.gov",
+          "ncbi.nlm.nih.gov",
+          "europepmc.org",
+          "sciencedirect.com",
+          "cell.com"
+        ]
+      }
+    ],
+    "response_length": "long"
+  },
+  "normalized_parameters": {
+    "pmid": "27436729",
+    "q": "\"27436729\" \"Neural mechanisms of insect navigation\"",
+    "domains": [
+      "pubmed.ncbi.nlm.nih.gov",
+      "ncbi.nlm.nih.gov",
+      "europepmc.org",
+      "sciencedirect.com",
+      "cell.com"
+    ]
+  },
+  "status": "success",
+  "http_status": null,
+  "response_kind": "indexed_bibliographic_metadata",
+  "verification_status": "source_supported",
+  "returned_count": 9,
+  "visible_total": null,
+  "target_identity_count": 1,
+  "count_before_dedup": 9,
+  "count_after_dedup": 9,
+  "page_complete": false,
+  "pagination_note": "Search tool exposed no total/paging cursor; result-list or citer-list completeness is not asserted.",
+  "count_scope": "returned_count counts visible indexed search hits; one exact target PMID/DOI identity was established. No fulltext/citation-context/source-wide coverage inferred.",
+  "result_identifiers": [
+    "MED:27436729",
+    "DOI:10.1016/j.cois.2016.02.011"
+  ],
+  "external_requests_performed": 1,
+  "external_request_unit": "One system1 search tool query; upstream engine/source request count unknown.",
+  "manual_review_items": 0,
+  "cache_hit": false,
+  "source_refs": [
+    "turn427339484search0"
+  ],
+  "source_locators": [
+    {
+      "source_ref": "turn427339484search0",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27436729/",
+      "section": "Indexed citation header, byline, publication affiliations, PMID and DOI fields",
+      "evidence_note": "Exact PMID, DOI, matching title and ordered byline all visible together in the official PubMed indexed record. This is indexed metadata, not a newly fetched article body."
+    }
+  ],
+  "metadata": {
+    "pmid": "27436729",
+    "doi": "10.1016/j.cois.2016.02.011",
+    "title": "Neural mechanisms of insect navigation",
+    "year": 2016,
+    "publication_date": "2016-03-03",
+    "publication_date_kind": "electronic_publication_date",
+    "electronic_publication_date": "2016-03-03",
+    "issue_date": "2016-06",
+    "venue_abbreviation": "Curr Opin Insect Sci",
+    "volume": "15",
+    "pages": "27-39",
+    "authors": [
+      {
+        "position": 1,
+        "display_name": "Barbara Webb",
+        "affiliation_numbers": [
+          1
+        ]
+      },
+      {
+        "position": 2,
+        "display_name": "Antoine Wystrach",
+        "affiliation_numbers": [
+          2
+        ]
+      }
+    ],
+    "publication_affiliations": [
+      {
+        "affiliation_number": 1,
+        "organization_names": [
+          "School of Informatics",
+          "University of Edinburgh"
+        ],
+        "country": "United Kingdom"
+      },
+      {
+        "affiliation_number": 2,
+        "organization_names": [
+          "Centre de Recherches sur la Cognition Animale",
+          "Centre National de la Recherche Scientifique",
+          "Universite Paul Sabatier"
+        ],
+        "city": "Toulouse",
+        "country": "France"
+      }
+    ]
+  },
+  "search_hits": [
+    {
+      "title": "Neural mechanisms of insect navigation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27436729/",
+      "source_ref": "turn427339484search0",
+      "within_requested_domain_filter": true,
+      "used_for_target_metadata": true,
+      "disposition": "admitted_indexed_bibliographic_metadata"
+    },
+    {
+      "title": "Neural mechanisms of insect navigation",
+      "url": "https://www.sciencedirect.com/science/article/pii/S221457451630013X",
+      "source_ref": "turn427339484search1",
+      "within_requested_domain_filter": true,
+      "used_for_target_metadata": false,
+      "disposition": "retained_search_hit_pending_matching_and_scope_review"
+    },
+    {
+      "title": "Neural mechanisms of insect navigation",
+      "url": "https://www.pure.ed.ac.uk/ws/portalfiles/portal/25686010/Webb_Wystrach.pdf",
+      "source_ref": "turn427339484search7",
+      "within_requested_domain_filter": false,
+      "used_for_target_metadata": false,
+      "disposition": "returned_despite_domain_filter_not_admitted"
+    },
+    {
+      "title": "Neural mechanisms of insect navigation",
+      "url": "https://openalex.org/W2289037009",
+      "source_ref": "turn427339484search2",
+      "within_requested_domain_filter": false,
+      "used_for_target_metadata": false,
+      "disposition": "returned_despite_domain_filter_not_admitted"
+    },
+    {
+      "title": "# THE UNIVERSITY of EDINBURGH",
+      "url": "https://www.pure.ed.ac.uk/ws/files/25686010/Webb_Wystrach.pdf",
+      "source_ref": "turn427339484search8",
+      "within_requested_domain_filter": false,
+      "used_for_target_metadata": false,
+      "disposition": "returned_despite_domain_filter_not_admitted"
+    },
+    {
+      "title": "Neural mechanisms of insect navigation",
+      "url": "https://www.research.ed.ac.uk/en/publications/neural-mechanisms-of-insect-navigation/",
+      "source_ref": "turn427339484search3",
+      "within_requested_domain_filter": false,
+      "used_for_target_metadata": false,
+      "disposition": "returned_despite_domain_filter_not_admitted"
+    },
+    {
+      "title": "Insect-Like Organization of the Stomatopod Central Complex: Functional and Phylogenetic Implications",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5294995/",
+      "source_ref": "turn427339484search4",
+      "within_requested_domain_filter": true,
+      "used_for_target_metadata": false,
+      "disposition": "retained_search_hit_pending_matching_and_scope_review"
+    },
+    {
+      "title": "Finding a place and leaving a mark in memory formation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7124997/",
+      "source_ref": "turn427339484search5",
+      "within_requested_domain_filter": true,
+      "used_for_target_metadata": false,
+      "disposition": "retained_search_hit_pending_matching_and_scope_review"
+    },
+    {
+      "title": "From skylight cues to magnetic fields: the toolkit of insect long-distance navigation.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41145882/",
+      "source_ref": "turn427339484search6",
+      "within_requested_domain_filter": true,
+      "used_for_target_metadata": false,
+      "disposition": "retained_search_hit_pending_matching_and_scope_review"
+    }
+  ],
+  "domain_filter_note": "Tool returned some out-of-filter domains despite the requested domain restriction; these are retained only as search-output audit entries and not used for metadata.",
+  "integration_guard": "Keep the same existing Work ID/key/Version; preserve an existing ordered byline and its Person IDs when consistent. Name-only cross-Work Person/organization-hierarchy merges are not authorized by this evidence.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Only bibliographic facts, organization names and source locators are retained; indexed abstracts/fulltext/highlights/contact addresses are stripped. No scientific assessment or citation-role claim is made.",
+  "followup_leads": [
+    {
+      "source_ref": "turn427339484search1",
+      "url": "https://www.sciencedirect.com/science/article/pii/S221457451630013X",
+      "kind": "funding_acknowledgement",
+      "named_projects": [
+        "FP7 FET-OPEN project MINIMAL",
+        "BBSRC grant Bayesian ants"
+      ],
+      "verification_status": "indexed_lead_pending_direct_source_review",
+      "next_task": "Check existing project entities and saved official grant evidence before adding any funding relation; no new project/entity is asserted here."
+    }
+  ],
+  "raw_tool_response_sha256": "dc0dff3076d58ab90fb27558b72f85880358fe60be660a095915065dfbe28783",
+  "raw_tool_response_bytes": 21289
+}
