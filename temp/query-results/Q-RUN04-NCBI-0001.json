@@ -1,0 +1,68 @@
+{
+  "query_id": "Q-RUN04-NCBI-0001",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "institutional_repository",
+  "source_name": "NCBI E-utilities ESummary",
+  "endpoint_or_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=27436728%2C26877083%2C27436729%2C26898725%2C26582183&retmode=json",
+  "api_version": "ESummary PubMed JSON, capability not established by failed access",
+  "transport": "web_retrieval",
+  "queried_at_utc": "2026-11-26T16:21:57.670Z",
+  "completed_at_utc": "2026-11-26T16:21:58.001Z",
+  "query_time_status": "exact",
+  "raw_parameters": {
+    "open": [
+      {
+        "ref_id": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=27436728%2C26877083%2C27436729%2C26898725%2C26582183&retmode=json"
+      }
+    ],
+    "response_length": "long"
+  },
+  "normalized_parameters": {
+    "db": "pubmed",
+    "id": [
+      "27436728",
+      "26877083",
+      "27436729",
+      "26898725",
+      "26582183"
+    ],
+    "retmode": "json"
+  },
+  "status": "error",
+  "http_status": null,
+  "response_kind": "tool_resource_unavailable",
+  "returned_count": null,
+  "visible_total": null,
+  "count_scope": "Five exact identities requested. The tool returned no provider JSON; no bibliographic count or endpoint capability is inferred.",
+  "result_identifiers": [],
+  "metadata": [],
+  "external_requests_performed": 1,
+  "external_request_unit": "One web retrieval tool access; upstream HTTP origin request count is unknown.",
+  "manual_review_items": 0,
+  "cache_hit": false,
+  "source_refs": [
+    "turn417640976view0"
+  ],
+  "error_code": "WEB_RESOURCE_UNAVAILABLE",
+  "error_message": "The official NCBI ESummary URL is not accessible via this web retrieval tool; no provider response was available.",
+  "retry_of_query_ids": [
+    "Q-RUN04-EPMC-0001",
+    "Q-RUN04-WEB-0001",
+    "Q-RUN04-WEB-0002",
+    "Q-RUN04-WEB-0007",
+    "Q-RUN04-WEB-0008",
+    "Q-RUN04-WEB-0009"
+  ],
+  "source_capability_observation": {
+    "operation": "Exact five-ID PubMed ESummary metadata lookup",
+    "status": "not_established",
+    "reason": "Tool resource unavailable; this observation does not verify or disqualify the provider globally."
+  },
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "No article abstract/fulltext/contact data retained; failed-access evidence only.",
+  "raw_tool_response_sha256": "bc17d5e6abfd069bb31edea60764203691f6bb0b4e611df0b63a82f4cb55205e",
+  "raw_tool_response_bytes": 907
+}
