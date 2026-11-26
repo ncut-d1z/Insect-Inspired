@@ -1,0 +1,61 @@
+{
+  "query_id": "Q-RUN04-WEB-0008",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "institutional_repository",
+  "source_name": "NCBI PubMed",
+  "entity_id": "W-Rd1e5a7dad924a37d",
+  "work_key": "TempWRd1e5a7dad924a37d",
+  "endpoint_or_url": "https://pubmed.ncbi.nlm.nih.gov/26898725/",
+  "transport": "web_retrieval",
+  "queried_at_utc": "2026-11-26T16:19:58.082Z",
+  "completed_at_utc": "2026-11-26T16:19:59.233Z",
+  "query_time_status": "exact",
+  "raw_parameters": {
+    "open": [
+      {
+        "ref_id": "https://pubmed.ncbi.nlm.nih.gov/26898725/"
+      }
+    ],
+    "response_length": "long"
+  },
+  "normalized_parameters": {
+    "pmid": "26898725",
+    "resource_kind": "PubMed record"
+  },
+  "status": "partial",
+  "http_status": null,
+  "response_kind": "unreadable_source_record",
+  "returned_count": null,
+  "visible_total": null,
+  "count_scope": "Unreadable exact PubMed record; returned bibliographic record count remains unknown, not zero.",
+  "result_identifiers": [],
+  "external_requests_performed": 1,
+  "manual_review_items": 0,
+  "cache_hit": false,
+  "retrieval_cache_note": "Web retrieval service controls its own upstream cache; this is a new tool access, not proof of a new origin HTTP response.",
+  "timeout_note": "Web retrieval tool exposes no caller timeout parameter; actual timestamps retained.",
+  "retry_of_query_id": "Q-RUN03-WEB-0009",
+  "source_refs": [
+    "turn413591945view0"
+  ],
+  "source_locators": [
+    {
+      "source_ref": "turn413591945view0",
+      "line_start": 0,
+      "line_end": 0,
+      "observation": "Only the HHS disclosure footer was exposed; no matching bibliographic header was readable."
+    }
+  ],
+  "metadata": null,
+  "error_code": "SOURCE_RECORD_NOT_READABLE",
+  "error_message": "The official PubMed retrieval exposed only a footer. DOI/PMID bridge and metadata remain unverified by this access.",
+  "sanitized": true,
+  "payload_retained": false,
+  "metadata_allowlist_retained": true,
+  "license_note": "No abstract/fulltext/contact information is included. Failed receipt retained; no source absence or final unavailability inferred.",
+  "raw_tool_response_sha256": "2fb90488b255b182e37820736af03a0362c698e902b962820c73c1b91d62fb48",
+  "raw_tool_response_bytes": 700,
+  "raw_response_retention": "Private local tool-response cache outside repository; not for Git publication."
+}
