@@ -1,394 +1,557 @@
 # Insect-Inspired：昆虫启发的视觉自运动估计文献追踪与局限性研究
 
-> 状态：需求及 DEC-01–DEC-09 已确认（2026-11-26）。本文定义后续文献数据库构建、递归引文检索、研究人员与机构追踪、局限性证据分析及验收规范。本文不是检索结果。本阶段仅编写 README.md，不解析种子 PDF 的参考文献、不查询施引论文、不实际获取新论文、不填充 ref.bib 或 ref.html，也不启动自动化程序。
+> 版本：1.0；生效日期：2026-11-26。  
+> 本文件是最终执行规范，规定文献数据库、递归引文检索、作者/机构/项目追踪、局限性证据分析与验收要求；不包含检索结果、数据文件或运行日志。数据文件与日志按 §8 生成，审计数据与日志保存于 `temp/`。
 
 ## 1. 研究背景与任务目标
 
-以 Franz & Krapp（2000）《Wide-field, motion-sensitive neurons and matched filters for optic flow fields》及用户提供的《广视域.pptx》第 22 页“局限性”为研究问题来源，以用户三轮上传的原始研究、技术报告及后续研究 PDF 为种子文献，建立一个可以持续扩展、复查、去重和增量维护的文献数据库。
+### 1.1 研究目标
 
-本项目不只是收集论文题目，也不只是按关键词寻找相似论文，而是通过系统性文献追踪（citation chasing / snowballing）回答以下问题：
+研究问题来源见 §2.1，种子来源见 §2.2。采用系统性引文追踪（citation chasing / snowballing）、研究主体追踪和全文证据分析，建立持续扩展、可追溯、可去重、可增量维护的研究证据库。必须回答：
 
-1. 对 PPT 提出的每项局限，原论文及其后续研究提出了哪些数学方法、神经机制、实验方法或工程实现？解决了什么，又没有解决什么？
-2. 种子论文的作者在发表该论文之后是否继续开展有关研究？其所属大学、研究所、实验室、课题组及相关研究人员是否开展了后续项目？项目与论文之间是否有明确的证据联系？
-3. 哪些论文引用种子论文或递归发现的其他文献？引用属于直接继承、方法改进、验证、反驳、应用，还是仅作为背景介绍？哪些真正推动了某项局限性研究？
-4. 这些研究依赖了哪些前期工作？能否重建由基础研究、原论文、后续研究到当前方法的可追溯演化路径？
-5. 截至指定检索日期，哪些问题已经在明确条件下得到处理，哪些仅被缓解、仍有争论或缺少证据？哪些值得进一步用于仿生视觉、自运动估计或纯视觉里程计？
+1. 针对 PPT 各项局限，相关数学方法、神经机制、实验方法及工程实现分别处理了什么问题，在何种条件下成立，仍存在何种困难？
+2. 原论文及其他 Work 的作者、大学、研究所、实验室、课题组及相关研究人员有哪些相关成果和研究项目？项目与成果的关联证据是什么？
+3. 哪些 Work 实际引用前作，引用作用是继承、改进、验证、质疑、应用还是背景介绍？哪些 Work 独立推进同类问题？
+4. 各项研究依赖哪些前期工作？依据已核验的关系重建研究脉络，保留负结果、相互矛盾的证据及未解决问题。
+5. 哪些结论对昆虫视觉、自运动估计和纯视觉里程计具有启示？
 
-成果应同时服务于生物学研究（EMD、LPTC、VS、HS/HSE、Hx、神经回路、自由飞行行为）、数学研究（球面光流、匹配滤波、耦合、估计理论和距离模型）和工程研究（传感器、真实图像、运动估计与里程计）。三条路线不得混同；工程可行性不能直接证明动物实现了同一计算，神经元具有某种选择性也不能直接证明可恢复完整六自由度运动。
+每条 Assessment 必须绑定 §7.2 定义的 evidence_route：生物机制、数学/计算模型或工程实现。工程可行性不直接证明动物实现同一计算；神经元响应选择性不直接证明六自由度运动可恢复；仿真结果不直接证明真实系统性能。
+
+本项目仅声明冻结快照和已披露来源内经验证的覆盖范围，不声明穷尽全部数据库、语言、年代和灰色文献。研究结论采用 §9.4 固定模板。
+
+### 1.2 术语表
+
+| 术语 | 定义与标识 |
+| --- | --- |
+| Seed record（种子记录） | §2.2 中固定编号的规范输入记录，以 seed_id 标识；唯一编号来源为该表 |
+| Upload（上传出现项） | 一次文件输入的审计实体，以 upload_id 标识；不等于 Seed record、Work 或 Version |
+| Work（规范文献） | 可独立识别、引用的书目实体，以不可复用的 work_id 和稳定 BibTeX key 标识；可具有多个 Version；身份未定者依 §4.3 处理 |
+| Version（版本/文件） | Work 的具体出版版本、作者稿、预印本、存档或文件表现形式，以 version_id 标识；文件 SHA-256 标识字节内容，文件与版本不是同一计数口径 |
+| Assessment（主题证据） | Work 对特定局限性、证据路线及条件的独立评价，以 assessment_id 标识；记录结论和可核验依据 |
+| Checkpoint（检查点） | 同一 scope_id 内经一致性校验提交的可恢复状态，以 checkpoint_id 标识，含队列、游标、统计、产物版本与缺口 |
+
+规范性关键词：必须/不得表示强制约束；允许表示在适用条件内的合法选择。缺失或不确定事实以结构化字段、枚举及证据记录表示，不以推测替代事实。
 
 ## 2. 输入材料与种子范围
 
 ### 2.1 问题来源
 
-- 《广视域.pptx》，第 22 页：局限性。其文字作为分类定义来源，第 23 页未来研究方向可在执行阶段作为辅助线索（不改变第 22 页分类数量）。
-- Franz & Krapp（2000）是研究基准文献。应在执行阶段核实书目信息并与 PPT 逐条对应；该正式论文已由用户在第三批上传（S19），直接纳入种子集合，不另计一份。1998 年同作者技术报告（S21，Technical Report No. 61）也属于种子，须独立保留书目并核实与 2000 年论文的关系，不能将两篇文献的模型、公式或结论相互替代。不能把之前对该论文的概述当成全文证据。
+- 《广视域.pptx》第 22 页为局限性分类来源，第 23 页研究方向为辅助检索线索，不增加局限性分类。
+- Franz & Krapp（2000）为基准论文，1998 年 Technical Report No. 61 为相关技术报告；对应 Seed record 及关系见 §2.2。两篇分别保留独立书目、Version 和模型证据，不得互相替代，不得以概述代替全文证据。
 
-### 2.2 种子文献清单（计划输入，不是已入库结果）
+### 2.2 种子记录（规范输入；不含已去重 Upload）
 
-依据 DEC-01，种子范围固定为三批上传记录：**第一批 17 份 + 第二批 1 份 + 第三批 3 份 = 21 次 PDF 上传记录**。第二批为 Kern 等（2005）；第三批含原始论文、Li 等（2021）及 1998 年技术报告。其中 S20 与 S09 的题名及 DOI 一致，是同一文献的再次上传；应保留两个输入来源，复核文件哈希及版本，只建立一个规范 Work，不重复解析相同文件。预计为 20 个不重复的候选文献，最终独立作品与文件数量由 P1/P2 核验确定。下面仅登记输入材料，尚未执行参考文献解析、全面身份核验或入库。若执行时文件缺失，应报告缺失，不假设可用。
+种子集合固定为下表 S01–S20 共 20 条 Seed record。S19 为 Franz & Krapp（2000）基准论文，S20 为 1998 年 Technical Report No. 61。下表是种子编号、题名及种子身份的唯一事实源。已去重 Upload 不占用 S 编号、不建立额外 Work 或重复 Version；其审计记录仅保存于 `temp/seed-manifest.jsonl`。Seed record、Upload、不同文件哈希、规范 Work、Version 分别按 §4.3 统计。
 
-| 输入 ID | 题名 |
-| --- | --- |
-| S01 | Insect-Inspired Visual Self-Motion Estimation（博士论文） |
-| S02 | Linear Combinations of Optic Flow Vectors for Estimating Self-Motion – a Real-World Test of a Neural Model |
-| S03 | Olfactory Neuromodulation of Motion Vision Circuitry in Drosophila |
-| S04 | Blowfly flight characteristics are shaped by environmental features and controlled by optic flow information |
-| S05 | Population Coding of Self-Motion: Applying Bayesian Analysis to a Population of Visual Interneurons in the Fly |
-| S06 | A competitive disinhibitory network for robust optic flow processing in Drosophila |
-| S07 | Sharing Receptive Fields with Your Neighbors: Tuning the Vertical System Cells to Wide Field Motion |
-| S08 | Dynamic Signal Compression for Robust Motion Vision in Flies |
-| S09 | Disentangling of Local and Wide-Field Motion Adaptation |
-| S10 | Neural mechanism underlying complex receptive field properties of motion-sensitive interneurons |
-| S11 | On the computations analyzing natural optic flow: Quantitative model analysis of the blowfly motion vision pathway |
-| S12 | Near-Optimal Decoding of Transient Stimuli from Coupled Neuronal Subpopulations |
-| S13 | Robust Models for Optic Flow Coding in Natural Scenes Inspired by Insect Biology |
-| S14 | Depth information in natural environments derived from optic flow by insect motion detection system: a model analysis |
-| S15 | Insect-Inspired Self-Motion Estimation with Dense Flow Fields—An Adaptive Matched Filter Approach |
-| S16 | Insect-Inspired Odometry by Optic Flow Recorded with Optical Mouse Chips（书籍章节） |
-| S17 | Insect-Inspired Estimation of Egomotion |
-| S18 | Function of a Fly Motion-Sensitive Neuron Matches Eye Movements during Free Flight（第二批补传） |
-| S19 | Wide-field, motion-sensitive neurons and matched filters for optic flow fields（Franz & Krapp，2000，正式基准论文，第三批） |
-| S20 | Wide-Field, Motion-Sensitive Neurons and Optimal Matched Filters for Optic Flow（Franz & Krapp，1998 年 6 月，Max-Planck-Institut für biologische Kybernetik，Technical Report No. 61，第三批） |
+规范 Work 初判固定为 independent（独立书目身份）或 related_independent（具有相关文献关系的独立书目身份）。初判不是已经生成的 Work ID 或全文核验结果；身份核验由 identity_confidence 和 verification_status 表示。
 
-执行时应生成输入清单，记录文件名、SHA-256、页数、文献类型、来源、是否存在可提取文本和对应的正式书目身份。种子文件数不等于独立研究成果数；会议论文与期刊扩展版、博士论文与其中包含的论文需要识别关系，但不能仅因内容相似而误合并独立发表的作品。基准论文 S19 和技术报告 S21 均已计入 21 次上传，不额外增加输入数量。报告分别统计上传出现次数、不同文件哈希数、规范 Work 数及版本数；不得将预计数量作为已经核验的结果。
+| S 编号 | 题名 | 文献类型 | 规范 Work 初判 | 版本/关系备注 |
+| --- | --- | --- | --- | --- |
+| S01 | Insect-Inspired Visual Self-Motion Estimation | 学位论文 | related_independent | 与 S15 存在章节内容关系，独立学位论文 |
+| S02 | Linear Combinations of Optic Flow Vectors for Estimating Self-Motion – a Real-World Test of a Neural Model | 会议论文 | related_independent | 与 S17 存在前期研究关系，独立书目 |
+| S03 | Olfactory Neuromodulation of Motion Vision Circuitry in Drosophila | 期刊论文 | independent | — |
+| S04 | Blowfly flight characteristics are shaped by environmental features and controlled by optic flow information | 期刊论文 | independent | — |
+| S05 | Population Coding of Self-Motion: Applying Bayesian Analysis to a Population of Visual Interneurons in the Fly | 期刊论文 | independent | — |
+| S06 | A competitive disinhibitory network for robust optic flow processing in Drosophila | 期刊论文 | independent | — |
+| S07 | Sharing Receptive Fields with Your Neighbors: Tuning the Vertical System Cells to Wide Field Motion | 期刊论文 | independent | — |
+| S08 | Dynamic Signal Compression for Robust Motion Vision in Flies | 期刊论文 | independent | — |
+| S09 | Disentangling of Local and Wide-Field Motion Adaptation | 期刊论文 | independent | — |
+| S10 | Neural mechanism underlying complex receptive field properties of motion-sensitive interneurons | 期刊论文 | independent | — |
+| S11 | On the computations analyzing natural optic flow: Quantitative model analysis of the blowfly motion vision pathway | 期刊论文 | independent | 机构库文件含封面及出版版本 |
+| S12 | Near-Optimal Decoding of Transient Stimuli from Coupled Neuronal Subpopulations | 期刊论文 | independent | — |
+| S13 | Robust Models for Optic Flow Coding in Natural Scenes Inspired by Insect Biology | 期刊论文 | independent | — |
+| S14 | Depth information in natural environments derived from optic flow by insect motion detection system: a model analysis | 期刊论文 | independent | — |
+| S15 | Insect-Inspired Self-Motion Estimation with Dense Flow Fields—An Adaptive Matched Filter Approach | 期刊论文 | related_independent | 与 S01 存在章节内容关系，独立期刊论文 |
+| S16 | Insect-Inspired Odometry by Optic Flow Recorded with Optical Mouse Chips | 书籍章节 | independent | — |
+| S17 | Insect-Inspired Estimation of Egomotion | 期刊论文 | related_independent | 与 S02 存在扩展研究关系，独立书目；所供文件的版本类型单独核验 |
+| S18 | Function of a Fly Motion-Sensitive Neuron Matches Eye Movements during Free Flight | 期刊论文 | independent | — |
+| S19 | Wide-field, motion-sensitive neurons and matched filters for optic flow fields | 期刊论文 | related_independent | Franz & Krapp，2000；正式基准论文 |
+| S20 | Wide-Field, Motion-Sensitive Neurons and Optimal Matched Filters for Optic Flow | 技术报告 | related_independent | Franz & Krapp，1998 年 6 月；Max-Planck-Institut für biologische Kybernetik，Technical Report No. 61；与 S19 分立 |
+
+每条 Seed record 必须在 seed-manifest 中有映射。被去重 Upload 使用独立 upload_id，seed_id 为 null，记录原文件名、SHA-256、来源、对应 work_id、version_id、duplicate_of_upload_id 和 verification_status；不得为其另建 Seed record 或 Work。真实关系尚未核验时，相关字段为 null 并标记状态；文件缺失记录于 tasks.jsonl，不得假设可用。完整字段、文件归属和计数规则见 §4.2–§4.3、§8.3。种子表不得由运行数据自动改号或扩充；输入范围变更必须修订规范并经用户批准。
 
 ## 3. 局限性分类与研究问题
 
-依据 DEC-04，PPT 第 22 页的 7 个一级项目按九个独立问题固定拆分为 L01–L09；L02–L04 共同对应第二个一级项目，L06 与 L08 保留交叉但不合并。依据 DEC-08，ref.html 除九张主题表外，必须有第十张表 U00（其他、背景与待分类文献）。U00 不是新的研究局限性。分类口径已经确认，不改变原 PPT。
+PPT 第 22 页的七个一级项目固定细分为 L01–L09。第二个一级项目对应 L02–L04；L06 与 L08 存在交叉但不合并。U00 为非主题文献表，不是局限性。PPT 表述与基准论文的原文存在差异时，保留两者并说明差异，不改写原作者主张。
 
-以下是检索问题的操作化定义，不是对原论文结论的预先认定。原文与 PPT 表述如有差异，应在证据记录中同时保留，不应为了“解决局限性”而修饰或夸大原论文的主张。
+| ID | PPT 中的局限性（概括） | 需回答的问题 | 纳入判断重点 | 可接受证据类型 | 不可接受推断 |
+| --- | --- | --- | --- | --- | --- |
+| L01 | 广域求和平均距离依赖，弱化运动视差，不能完整恢复三维运动与结构 | 局部/区域/多尺度整合、主动视觉、时序分离及距离模型能否保留空间信息？ | 邻近度、相对/绝对深度、结构表征与完整重建；平移是否已知 | 深度真值对比、空间分辨率分析、神经响应及行为实验、可辨识性推导 | 将平均邻近度或避障行为等同完整三维重建 |
+| L02 | 简化 EMD 模型忽略对比度、空间频率与纹理依赖 | 归一化、增益控制、多尺度滤波、统计模型、ON/OFF 通路能否减少图像因素干扰？ | 对比度、纹理、空间频率分别评价；局部速度与广域响应分别评价 | 控制变量刺激实验、自然图像速度真值对照、理论/模型消融 | 将图案平均响应稳定等同所有局部速度无偏或纹理依赖完全消除 |
+| L03 | 简化模型不能充分反映瞬态响应和适应 | 时变、非线性或适应模型如何解释局部与广域适应？ | 时间常数、延迟、刺激历史、瞬态、模型辨识和泛化 | 时序电生理/成像、适应范式、动态模型与数据比较 | 以稳态拟合证明瞬态性能，或由 HSE 直接推广到全部 VS |
+| L04 | 简化模型只考虑低速周期性条纹（PPT 表述） | 自然图像、非周期纹理、高速、加速度、自由飞行及动态环境下性能如何？ | 区分基准论文的线性区与平台区；记录刺激、速度、曝光/采样条件 | 自然光流重放、实测飞行轨迹、真实图像或受控高速实验 | 由自然图像验证推出任意高速运动无歧义编码；将基准模型仅描述为低速 |
+| L05 | 部分 VS 感受野无法解释，尤其 VS1–VS3、VS7–VS10 | 电耦合、化学突触、其他神经元输入及网络模型能否解释具体感受野特征？ | 物种、编号、LPD/LMS、背腹不对称、额侧响应、未解释特征 | 双细胞记录、消融/干预、连接组、受数据约束的模型与感受野比较 | 将连接存在等同全部感受野已解释；跨物种直接对应同编号细胞 |
+| L06 | 单滤波器受其他运动类型激发；距离结构与混合光流限制完整自运动恢复 | 联合滤波、旋转平移解耦、群体解码或神经回路能恢复哪些运动量？ | 旋转轴、旋转方向、旋转速率、平移方向、相对平移、绝对尺度分别评价；串扰、误差及退化 | 可观测性/秩分析、混合运动估计实验、群体解码及因果神经回路验证 | 从单轴响应或纯旋转实验推断一般六自由度恢复；无尺度依据声称绝对平移 |
+| L07 | 平台模型不能编码旋转速率；PPT 将方向鲁棒性与角位移大小联系起来 | 其他调谐通道、动态响应、附加信号或改进 EMD 能否补充幅值信息？ | 预设轴响应符号、真实轴与方向、速率与帧间角位移分别评价 | 速度调谐/饱和实验、可辨识性证明、多通道解码及真值幅值比较 | 完全饱和的单输出在无附加信息时恢复丢失的幅值；由方向选择性推出速率或角位移准确性 |
+| L08 | 世界模型简单；距离统计与飞行统计缺少充分实测依据，旋转平移可能耦合 | 自然环境深度与飞行运动联合统计如何建模？自适应距离先验能否跨环境工作？ | 测量数据与统计先验、当前环境自适应分开；采样偏差、运动耦合、尺度 | 深度/轨迹实测及统计、模型推导、跨环境对比与消融 | 将固定距离先验当真实当前环境；由仿真直接证明自然飞行统计或绝对尺度可恢复 |
+| L09 | Hx 数据不足，缺少与 VS 同等假设检验 | 是否有 Hx 解剖、生理、感受野、平移选择性数据及对匹配滤波假设的直接检验？ | 丽蝇与果蝇分开；功能相似、跨模态调节、同等假设检验分开 | Hx 记录、解剖/连接组、明确统计检验和模型比较 | 以不同物种同名细胞或嗅觉调节证明原 Hx 匹配滤波假设已通过检验 |
 
-| ID | PPT 中的局限性（概括） | 后续研究要回答的问题 | 纳入判断重点 |
-| --- | --- | --- | --- |
-| L01 | 广域求和平均距离依赖，弱化运动视差；不是完整三维运动与结构恢复算法 | 局部或区域化空间整合、多尺度感受野、主动视觉、时序分离、距离或深度模型能否保留有用的空间信息？是否需要完整三维重建？ | 区分邻近度、相对深度、结构表征与完整三维重建；区分已知平移和未知平移 |
-| L02 | 简化 EMD 模型未考虑对比度、图像模式空间频率等依赖 | 是否有对比度归一化、增益控制、多尺度滤波、统计模型、ON/OFF 运动通路等方法，减少非运动因素对响应的干扰？ | 对比度、纹理、空间频率分别评价；区分平均响应、局部估计和真实速度准确性 |
-| L03 | 简化模型不能充分反映瞬态响应和适应过程 | 是否建立时变、动态、非线性或适应性模型？如何区分局部检测器与广域神经元的适应？ | 时间常数、响应延迟、瞬态、适应历史、实验条件、模型辨识及验证 |
-| L04 | 简化模型只考虑周期性明暗条纹低速移动（PPT 表述） | 是否在自然图像、非周期纹理、高速运动、加速度、自由飞行或动态环境中检验或替换简化模型？ | 原论文涉及的线性区与平台区需分别核实；不能把自然刺激验证等同于所有高速运动均准确编码 |
-| L05 | 不能解释全部 VS 感受野，尤其 VS1–VS3、VS7–VS10 | 是否发现 VS 电耦合、化学突触、其他神经元输入或连接网络，或建立能解释具体神经元异常的模型？ | 神经元编号、物种、感受野特征、记录/消融/连接组证据、未解释部分 |
-| L06 | 单滤波器受其他运动类型激发且世界模型未充分考虑平移光流和距离结构，不能完整准确恢复自运动 | 如何联合滤波器、解耦旋转和平移、利用群体解码或神经线路？在未知距离、非均匀视野、混合运动下能恢复哪些运动量？ | 区分旋转轴、旋转速率、平移方向、相对平移、绝对尺度；评价串扰、可观测性、误差与退化情形 |
-| L07 | 平台模型不能编码旋转速率；PPT 将轴、方向鲁棒性与角位移大小联系起来 | 是否通过其他神经元、不同速度调谐、动态响应、额外信号或改进 EMD 恢复旋转幅值？平台区信息损失能否避免？ | 区分预设轴的响应符号与真实旋转轴；不能声称仅凭完全饱和的单输出恢复丢失的幅值；区分速度与帧间角位移 |
-| L08 | 世界模型过于简单，距离统计和飞行参数统计未经充分实测验证，旋转和平移可能耦合 | 是否测量自然环境深度、飞行轨迹和运动联合分布？是否建立可更新的距离先验、自适应匹配滤波、运动耦合模型或跨环境验证？ | 区分真实距离数据、统计先验与当前环境自适应；记录采样偏差、数据来源、适用范围、尺度不可观性 |
-| L09 | Hx 实验数据过少，未实施与 VS 同等的假设检验 | 是否新增 Hx 解剖、生理、感受野或平移选择性数据？是否直接检验 Franz–Krapp 的匹配滤波假设？ | 区分丽蝇与果蝇的 Hx，区分功能相似、跨模态调节及对原模型的同等统计检验 |
+### 3.1 最小可判定条件
 
-一篇论文可以对应多个 L 编号；每个编号都应有独立的相关性理由与证据。一般背景方法可入库，但不得被误标为某局限性的直接进展。前期研究与后续研究均允许进入数据库，后续进展结论必须按发表时间及证据关系判断。
+每条 Assessment 的 conditions 必须包含下列字段。数值含单位、坐标系、测量/估计对象及来源；原文未披露标记 not_reported，未知标记 unknown，不适用标记 not_applicable，不得省略字段或填入未经证实的默认值。
 
-## 4. 数据库的定义与基本原则
-
-### 4.1 两个必须交付的根目录文件
-
-- **ref.bib**：整个文献数据库的规范化 BibTeX 书目。每条已确认或可明确标注缺失字段的独立书目记录恰有一个唯一、稳定的 BibTeX key。
-- **ref.html**：可以直接在本地浏览器打开的 UTF-8 HTML 文献索引和局限性研究表。所有入库 BibTeX key 均应可从该 HTML 查到，每条记录应提供摘要（原摘要有许可时可展示；否则展示明确标注的忠实中文摘要或概括）、摘要状态与来源。九张主题表分别显示相关论文；第十张表 U00 专门显示尚未进入任何主题表的背景、无关、待分类、证据不足及其他记录。所有已识别文献，不论是否相关、是否有 PDF 或摘要，都应入 ref.bib 并至少出现在 ref.html 的一个表中；不因相关性筛选删除书目。
-
-论文入库的逻辑含义是一次操作同时纳入这两份文件所表达的同一记录，不能只更新其中一个。后续可采用本地结构化中间数据统一生成两份文件；中间数据不替代用户指定的最终交付。
-
-数据库的书目全集与九项局限性相关的证据子集必须明确区分。不能因为一条参考文献暂时与九项局限性无关就静默丢弃它，也不能因为它被发现就将其作为解决局限性的论文。
-
-### 4.2 书目与证据数据模型
-
-计划维护以下实体和关系（实现形式后续确定，可采用 JSONL/SQLite 等；本轮不创建这些文件）：
-
-| 实体 | 最低字段 |
+| 字段 | 最低内容 |
 | --- | --- |
-| 文献 Work | 内部稳定 ID、BibTeX key、原题名、作者、文献类型、发表/版本日期、出版物、DOI 或其他标识、URL、原语言、发现来源、身份核验状态、全文状态、摘要状态 |
-| 文献版本 / 文件 | 对应 Work、预印本/会议/期刊/作者稿/正式版关系、文件哈希、合法访问来源、版本、页数、解析状态、获取时间、许可 |
-| 原始引文出现项 | 来源 Work、参考文献序号或章节、页码、原始文本、目标候选、匹配置信与证据；无法匹配时保留原文和原因 |
-| 引文边 | citing_key、cited_key、发现来源、核验状态、时间、正文引用位置/语境、引用作用；边方向永远是施引文献指向被引文献 |
-| 作者 Person | 稳定 ID、显示名、姓名变体、ORCID/其他可核实作者 ID、身份来源、隶属历史 |
-| 机构 Organization | 稳定 ID、原始署名、规范名、ROR 等标识（如有）、大学/研究所/院系/实验室层级、历史别名、时间范围 |
-| 研究项目 Project | 项目名称、官方项目/基金编号（若有）、承担机构、负责人/参与人员、起止时间、目标、项目主页、与论文的关联证据 |
-| 主题证据 Assessment | Work、L 编号、研究问题、方法、实验/理论结果、评价状态、适用条件、剩余局限、证据定位、评估日期 |
-| 检索任务与日志 | 对象 ID、任务类型、源、检索式、时间、分页游标、批次、状态、失败原因、重试次数、覆盖说明和证据链接 |
+| species | 物种、细胞类型及编号；非生物研究标记不适用 |
+| motion_type | 纯旋转、纯平移、混合运动、静止或其他；自由度、是否外部给定平移 known_translation、所用先验及其来源 |
+| speed_range | 角速度、线速度、帧间位移、采样间隔及单位，按研究对象分别记录 |
+| environment | 场景、视域/采样分布、距离范围、距离分布、距离是否已知、静态/动态 |
+| texture_noise | 刺激类型、对比度、空间频率、纹理、照明、噪声、外点及遮挡条件 |
+| scale | absolute_metric、relative_scale、direction_only、scale_unobservable、not_applicable 或 unknown；说明尺度来源 |
+| method_and_validation | 模型假设、样本/数据、基线、指标、结果、验证类型及失效条件 |
 
-关联边应区分 cites（实际引用）、authored_by、affiliated_with（带时间）、participates_in、funded_by、project_output、version_of、related_to_limitation。共用作者或机构不等于存在引用或研究继承关系；仅从同一作者姓名不能推出是同一人。
+仅对与结论相关且证据充分的条件作出处理程度判断；对关键条件未披露导致无法判断的主张，不得标记为已直接处理或部分处理。可对有明确边界的子问题作独立 Assessment。
 
-### 4.3 书目身份归一化与去重
+同一 Work 可归入多个 L，每个 L 必须具有独立证据；不同证据路线或条件的结论分别建立 Assessment。多主题计数相加不等于独立 Work 数。
 
-1. 优先用经过核验的 DOI（去除 URL 前缀、大小写归一化等）或其他稳定标识匹配。核对题名、作者、年份和文献类型，避免原文 DOI 抄录错误。
-2. 无 DOI 的文献用标准化题名、作者姓名、年份、刊物/书籍/卷页等组合匹配；考虑连字符、Unicode 重音、OCR 误差、译名、作者缩写和出版年份差异。模糊匹配仅生成候选，不得无依据自动合并。
-3. 同一作品的正式版、作者稿、数据库镜像和重复下载 PDF 统一到同一 Work，保存版本记录。具有独立出版身份及实质新增内容的会议、期刊、章节或学位论文分别建项并显式关联；不得把博士论文中的参考文献与所含已发表论文简单当作同一份。
-4. 无法确定身份的原始参考文献进入待核验队列，保留所有来源；不编造 DOI、作者、年份、摘要或 BibTeX 条目。不具备可唯一定位书目信息的原始字符串先保留为 unresolved，并以稳定原始引文 ID、原文指纹与已查询别名写入 temp/，不计作已确认作品。已经能建立可追踪的独立候选身份但书目信息暂不完整者，须使用稳定临时 key、仅填真实已知字段的暂定 BibTeX 条目进入 ref.bib 和 U00，显式标注待核验，后续合并迁移时保留 key/ID 别名；不得为不知身份的字符串杜撰论文。
-5. 去重只去掉重复 Work，不删除新增的引文边、出现位置、版本、不同来源和不同主题评估。已经入库但尚未解析参考文献或施引关系的论文仍需处理。
-6. BibTeX key 默认采用 ASCII 化的第一作者姓氏 + 四位年份，例如 Kern2005；同名同年冲突采用 Kern2005a、Kern2005b 或稳定后缀。首次分配后不得因新增论文而重排旧 key；冲突处理和历史别名记录可追踪。无作者或年份的待确认记录使用稳定临时 ID，不冒用正式 key。
+## 4. 数据库定义与基本原则
 
-## 5. 文献发现与递归检索任务
+### 4.1 数据源及一致性
 
-用户提出的 1–5 步是主流程。下述规范使之成为能够分批执行、断点续跑、验证覆盖情况的图遍历任务。这里所说的“解析”在后续执行阶段进行，本轮不实际操作。
+`temp/` 采用 UTF-8 JSONL 作为实体、关系、日志和任务的规范结构化数据源；作用域及 Checkpoint 元数据采用 JSON，风险与变更记录采用 Markdown。由规范结构化数据确定性生成根目录 `ref.bib` 和 `ref.html`，不独立手工维护相互冲突的内容。
 
-### 5.1 阶段 A：种子导入（对应步骤 1）
+- ref.bib 是规范书目全集，每个有效 Work 恰有一条 BibTeX 条目。
+- ref.html 是该全集的离线文献索引及证据视图，含九张 L 表和一张 U00 表；所有有效 Work 至少出现于一张表，摘要及状态必填。
+- 所有已识别的 Work 均入库，包括无关、背景、全文不可得、书目暂定、范围外和非学术资源。相关性筛选只影响分类及已声明的扩展范围，不删除已发现书目。不能定位独立书目身份的原始引文出现项依 §4.3 保留，不制造虚假 Work。
+- 每个 Checkpoint 同步提交两份输出及对应审计数据。只有通过 §9 对账的提交才可作为有效 Checkpoint。
 
-- 冻结本轮输入集合和清单，对每个 PDF 检查可读性和完整性；提取正式题名、作者、发表时机构、摘要、DOI/出版信息。
-- 对全部 21 次种子上传及已有数据库去重；保留 S09/S20 等重复输入关系，生成规范条目、摘要和来源信息。
-- 将所有种子（含暂时无法取得全文但身份可确认者）纳入处理队列。存在旧数据库时读入旧记录及历史 key，保留原始数据。
-- 将已上传的 S19 基准论文与 S21 技术报告作为种子分别处理；不将 PPT 当作学术论文引用，不为 S19 再重复创建一份种子。
-- 种子数量、独立 Work 数、版本数量分别统计。
+### 4.2 实体及固定最低字段
 
-### 5.2 阶段 B：向后查找参考文献（对应步骤 2–4）
+字段名采用 snake_case；主键不可复用；外键必须可解析至有效实体或有明确指向的历史别名。枚举字段仅使用本文件或 §8.3 字段定义中的固定值。未知、未披露、不适用的语义必须区分；未知标识用 null 配合状态表示。所有来源记录 URL/标识、取得日期、来源版本、核验状态及许可。
 
-对数据库中每个尚未完成参考文献处理的 Work：
-
-1. 优先读取可合法获取的原文或可靠的出版商结构化全文，定位完整 References/Bibliography；覆盖正文及附录中的独立参考文献列表。对于双栏、跨页、扫描文档、缺页、补充材料等情形，进行版面与边界核验；必要时使用 OCR 并标注。
-2. 逐条保存原始书目字符串、参考文献编号、页码/位置，识别 DOI 或其他标识；匹配数据库已有记录。对于已存在目标，仅补充缺少的引文边与来源。
-3. 对新增的身份可确认文献补齐书目信息、摘要状态并入库，加入待处理队列。若只有书目信息或摘要而无合法全文，尝试出版商、作者机构存档、预印本、开放全文索引及授权访问；可使用可靠的结构化引用列表作为替代，但要标注它不是逐页 PDF 核验。
-4. 对新加入的文献重复上述处理，直至所有可处理的向后队列为空；不能只做一次或两次引用层级，也不能把没有 PDF 的论文直接当作已完成。
-5. 对无法匹配、无全文、无参考文献元数据、请求失败、超限等单独记账，保存未来继续处理的入口。明确区分“已核实无参考文献”和“没有查到参考文献”。
-
-原始参考文献原则上全部登记，不以是否相关、年份过早、被引量低或文献类型为理由静默截断。书籍、学位论文、会议论文、技术报告等具有研究价值的作品同样纳入。非学术资源（软件、数据集、网页、个人通讯等）也保留原始引用及类型，能构成独立规范条目者按适当类型入库；对非论文不强行要求不存在的参考文献列表。
-
-### 5.3 阶段 C：向前查找施引论文（对应步骤 5 的第一部分）
-
-对数据库中每个 Work 查询在指定检索范围及快照日期内实际引用它的所有可发现文献，不能只查询种子或排名前若干篇：
-
-- 按 DOI、唯一数据库 ID、无 DOI 题名及作者/年份组合分别查询；对版本的施引记录合并去重。
-- 使用不止一个合理来源互补覆盖，检查分页和总量，不把单个数据库的被引计数等同于论文列表完整性。
-- 对每个施引候选记录来源、检索时间、被引对象、匹配状态。先查证其引用关系，再读取引用上下文，判断其是否只是背景引用、直接继承、改进、验证、质疑或应用。
-- 将所有范围内身份可确认的施引论文纳入数据库，而非仅纳入“有正面结果”的论文；后续对相关性分类，重新执行阶段 B。
-- 如果只能从可靠引文数据库确认边、无法阅读正文，应标为引用关系已获索引支持但引用语境未核实；不能因此认定该论文解决了局限性。
-- 查询失败、截断、平台未收录、付费墙等必须报告，不能当作零施引。
-
-### 5.4 阶段 D：作者后续研究追踪（对应步骤 5 的第二部分）
-
-逐个处理数据库论文的全部署名作者（不限第一作者或通信作者），而非从姓名关键词简单检索：
-
-1. 解析论文发表当时的署名机构，建立作者与机构的时间关系；作者重名、多姓氏、姓名变体、ORCID、研究履历和合作者关系需要消歧。
-2. 通过作者主页、机构学术档案、ORCID、出版数据库等查找该作者其他作品，区分论文发表之前、同期和之后的成果。范围内作品纳入数据库，相关性判断单独进行；不只保留显式引用原论文的作品。
-3. 对后来转入其他机构、实验室或学科的作者保留历史与现时记录，不用当前机构覆盖发表时机构。
-4. 查找公开可核实的后续项目、基金、实验室研究方向、公开数据集、软件及研究报告；记录项目来源、时间、参与者、任务目标、成果论文，以及项目是否直接涉及 L01–L09。
-5. 纳入相关项目衍生的文献并回到阶段 B。没有正式论文的项目可保留项目记录，不能虚构对应论文或强行写入一个不存在的 BibTeX 条目；确有独立可引用的技术报告、项目页面或软件时按类型登记。
-
-### 5.5 阶段 E：机构与其他研究人员追踪（对应步骤 5 的第三部分）
-
-从论文署名机构出发，查找作者所在院系、实验室/研究组、研究中心及大学或研究所其他研究人员的成果：
-
-- 首先建立机构实体与层级、历史更名/合并关系、真实课题组归属和研究人员公开名录；区分大学整体、研究所、系、研究组与合作机构。
-- 从作者所属的相关研究团队和项目出发，查找其公开成果、论文列表、项目主页、基金数据库、学术机构库，并通过主题关键词补充院校/研究所其他团队的相关研究，特别注意并未引用种子论文但独立推进同一问题的成果。
-- 依据 DEC-02，机构扩展以核实的相关实验室、课题组、研究项目为核心，再覆盖同一大学或研究所其他团队的主题相关成果；不无条件展开整所机构全部学科的所有作品。机构发现范围内取得的文献均登记；递归参考文献、施引文献及作者文献不因已发现主题无关而从库中删除。不得事后为减少工作量任意缩小范围。
-- 不因同属大学就认定是同一课题组、不因共同发表一篇论文就认定共同参加某基金项目。项目与论文的联系须有基金致谢、成果列表、作者/机构正式说明或其他可追溯证据；没有证据时标为未知或推测，不写成事实。
-- 记录每个机构、团队、研究人员的来源、时间覆盖、检索范围和完成状态。新增作品回到阶段 B，并按批准的前向扩展策略继续处理。
-
-### 5.6 迭代、穷尽条件与范围风险
-
-形式化地，将独立文献视为节点，将引用视为有向边（施引 → 被引），作者、机构和项目为额外实体。设 S 为种子集合，R(D) 为 D 中所有作品的参考文献目标，C(D) 为范围内施引作品，A(D) 为范围内作者作品，O(D) 为范围内机构/研究人员/项目作品，则目标是保留全部被发现的合法候选并迭代形成闭包：
-
-    D0 = normalize(S)  # S 已含 S19 基准论文与 S21 技术报告
-    D(n+1) = normalize(D(n) ∪ R(D(n)) ∪ C(D(n)) ∪ A(D(n)) ∪ O(D(n)))
-
-建议的任务编排：
-
-    1. 初始化数据库和队列
-    2. 向后遍历所有未完成的参考文献任务（阶段 B）
-    3. 对当前未处理的 Work 执行施引、作者、机构/项目任务（阶段 C/D/E）
-    4. 将新增候选消歧、入库；新增 Work 回到第 2 步
-    5. 对已发现记录进行主题评估，可与检索分批交错
-    6. 按已批准的范围重复，直到闭包条件成立或明确报告尚未完成
-
-采用广度优先/分层批次处理并记录离种子的最短发现距离，使用持久化队列和 visited 集合（按实体 ID、任务类型、查询范围、检索源及快照版本区分，而非只按 PDF 文件名）。优先级用于调度，不用于丢弃候选。
-
-**必须区分“穷尽本次可检索范围”和“穷尽全部科学文献”。** 无限扩张作者及机构网络会跨入大部分科学领域；索引覆盖、非数字化文献、付费墙、动态更新、同名歧义以及开放数据源的限制使绝对完整性无法保证。即使向后引文大致按时间回溯，也不能据此保证数据库规模可管理；向前及作者/机构扩展会引入大量新的节点。
-
-因此，提出两种可审计执行口径：
-
-- 严格闭包：在明确固定的检索快照、来源覆盖、文献类型与机构范围内，对每个已入库作品都执行全部已批准的扩展关系；不设置未经批准的深度、数量或相关性硬截断。可分批运行，但未清空任务不得声称闭包完成。
-- 分阶段扩展：先对全部种子执行向后闭包，再对冻结的一批数据库作品完整执行阶段 C/D/E，并对新作执行向后闭包；下一批继续扩展。若用户决定暂停或设置预算，保留全部待办和边界清单，报告“已完成第 X 批”而非“已穷尽全部文献”。依据 DEC-03，正式采用此方式执行，保留完整递归目标；新加入作品的各类扩展任务持续排队，不以批次结束冒充闭包完成。不得隐含设置最大深度、每篇候选上限或仅处理前若干篇。
-
-依据 DEC-05，P1 开始时冻结本轮实际检索截止日期（日期与明确时区）、数据源与覆盖范围，记录可用资源、访问授权与预算；当前不虚构具体配额。新发表或索引更新的作品在下一次增量任务中处理。达到资源限额时保存检查点、待办和失败原因，预算仅为暂停和恢复机制，不是漏检合理化理由。
-
-完成条件：范围内所有分页已遍历、可处理任务队列为空、所有新增作品经身份归一化、未解决条目已列出原因及复查方式，且没有隐含的截断或未披露的失败。存在暂缓任务、未获全文或不完整覆盖时，只能报告已完成范围和剩余缺口；不能以“本轮没有查到新文献”替代检查。
-
-## 6. 预定数据来源与全文/元数据获取策略
-
-下列是未来拟使用的来源类别及候选工具，并非本轮已查询或已验证其现行 API 功能；执行前需核验接口、认证、许可、覆盖和分页能力。
-
-| 目的 | 候选来源 |
+| 实体 | 固定最低字段 |
 | --- | --- |
-| PDF 文本、参考文献及书目解析 | PDF 原文、出版社 JATS/XML、GROBID 等文献解析工具；按需使用版面解析与人工复核 |
-| DOI 和出版元数据 | Crossref、DataCite、出版社和 DOI 登记页面 |
-| 向前/向后引文图 | OpenAlex、Semantic Scholar、Crossref 可用引用字段、OpenCitations、PubMed/Europe PMC（适用领域）、有授权的引文索引；可用其他公开搜索渠道补漏 |
-| 全文与作者稿 | 出版商开放全文、PMC/Europe PMC、机构知识库、合法预印本存档、Unpaywall 等 OA 定位来源、用户已合法获取的 PDF |
-| 作者与机构消歧 | ORCID、ROR、OpenAlex 作者/机构 ID、个人主页、机构研究人员档案及论文正式署名 |
-| 项目与基金 | 大学/研究所/实验室官方项目页面、公开基金数据库、项目报告、论文 Funding/Acknowledgements 和官方成果清单 |
+| Seed mapping | seed_id、upload_id、work_id、version_id、relation_type、verification_status、notes；去重审计见 §2.2 |
+| Upload | upload_id、filename、sha256、pages、text_extractability、source、received_at、internal_batch_id（仅内部，不在正文或 HTML 展示）、work_id、version_id、duplicate_of_upload_id、relation_type、verification_status、notes |
+| Work | work_id、work_key（BibTeX key）、canonical_title、title_variants、authors、document_type、publication_status、year、publication_date、venue、volume、number、pages/eid、publisher、identifiers、doi、url、language、discovery_sources、identity_confidence、verification_status、merge_history、fulltext_status、abstract_status、abstract_source、abstract_items、license、u00_reasons、review_condition、dimension_status |
+| Version | version_id、work_id、version_type、version_date、identifiers、source、url、file_records（sha256、pages、text_extractability、取得时间、许可、解析状态）、verification_status、related_version_ids |
+| ReferenceOccurrence | occurrence_id、citing_work_id、version_id、reference_label、section、page、raw_reference、raw_fingerprint、candidate_ids、cited_work_id、identity_confidence、verification_status、source、failure_reason |
+| CitationEdge | edge_id、citing_key、cited_key、occurrence_ids、discovery_sources、verification_status、citation_roles、context_locators、date；方向恒为 citing → cited |
+| Person | person_id、display_name、name_variants、orcid、external_ids、identity_confidence、verification_status、affiliation_history（org_id、角色、起止时间及依据）、sources |
+| Organization | org_id、canonical_name、name_variants、raw_affiliations、ror、external_ids、organization_level、parent_org_id、historical_relations、valid_from、valid_to、verification_status、sources |
+| Project | project_id、canonical_name、grant_id、org_ids、person_ids、start_date、end_date、objective、url、output_work_ids、project_relation、evidence_locator、verification_status、sources |
+| Assessment | assessment_id、work_id、work_key、limitation_id、relation_type、handling_level、evidence_level、evidence_kind、evidence_route、conditions、species、motion_type、environment、scale、method、results、baseline、effect、remaining_limitations、counter_evidence、counter_evidence_types、evidence_locator、fulltext_status、verification_status、citation_roles、project_relation、statement_basis、reviewer、date、biological_implications、engineering_implications |
+| Alias | alias_id、entity_type、raw_identifier、normalized_identifier、target_id、historical_key、reason、source、verification_status、date |
+| Query / Task / Checkpoint / Scope | 采用 §5.6、§6.2、§8.3、§9.1 定义的固定字段 |
 
-### 6.1 已确认可使用的现成学术资源（DEC-09）
+Assessment 的 species、motion_type、environment、scale 是 conditions 对应字段的确定性投影，不得独立录入冲突值。evidence_locator 为数组；每项含 source_id、version_id（适用时）、URL/标识、页码/节/图/式/表/段落中适用的位置、访问日期及证据说明。文献全文、摘要、引用关系、项目关系的核验状态独立记录。
 
-本项目是具体文献调查，不是通用检索软件开发。可综合使用现成网站、浏览器检索、官方 API、开放元数据接口及必要的临时脚本，不要求每个来源都使用或为每个站点开发爬虫。除上表所列来源，用户明确允许考虑以下资源：
+关系类型固定为 cites、authored_by、affiliated_with、participates_in、funded_by、project_output、version_of、related_work、related_to_limitation；发表机构关联必须带时间及来源。Work 间 related_work 的子类型固定为 preliminary_of、expanded_by、related_report、included_in_thesis、translation_of、correction_of、other_verified_relation、unverified_relation；不同 Work 不能仅以 version_of 替代实质出版关系。共作者或同机构不证明实际引用、方法继承或共同参加项目。
 
-| 资源 | 计划用途（实际能力与访问条件待 P1 核验） |
+通用状态枚举：
+
+| 字段 | 值 |
 | --- | --- |
-| [DBLP](https://dblp.org/) | 计算机科学书目、会议/期刊、作者消歧和出版记录 |
-| [ScienceDirect](https://www.sciencedirect.com/) | Elsevier 出版物、摘要、参考文献及许可范围内的全文 |
-| [Web of Science 中国入口](https://webofscience.clarivate.cn/wos/alldb/smart-search)、[国际入口](https://www.webofscience.com/) | 在具备合法授权时查询引文、施引、作者和机构；两个入口不重复统计为独立数据库 |
-| [Research.com](https://research.com/) | 研究人员与机构线索，须用官方档案或出版记录核验 |
-| [alphaXiv](https://www.alphaxiv.org/)、[arXiv](https://arxiv.org/)、[ChinaXiv](https://www.chinaxiv.org/home.htm) | 预印本与相关讨论线索；核验正式版本和原文，不把评论或机器摘要作为论文证据 |
-| [PubScholar](https://pubscholar.cn/) | 补充学术书目与开放资源检索 |
-| [ResearchGate](https://www.researchgate.net/) | 作者研究资料、作者合法分享的版本及项目线索；核对版本、来源与许可 |
+| identity_confidence | confirmed、probable、ambiguous、unresolved |
+| verification_status | unverified、source_supported、verified、conflicting、rejected |
+| document_type | journal_article、conference_paper、preprint、thesis、technical_report、book、book_chapter、patent、software、dataset、project_resource、web_resource、personal_communication、other |
+| publication_status | published、accepted、preprint、unpublished、withdrawn、retracted、unknown、not_applicable |
+| version_type | version_of_record、accepted_manuscript、preprint、submitted_manuscript、institutional_copy、translation、corrected_version、other、unknown |
+| text_extractability | extractable、partial、image_only、unreadable、unknown、not_applicable |
+| Upload / Seed mapping 的 relation_type | canonical、additional_version、duplicate_upload、unresolved |
+| organization_level | university、research_institute、faculty、department、laboratory、research_group、research_center、other、unknown |
 
-用户列举的资源是候选渠道，不代表已登录、已具备订阅、已检索或已验证接口。对于用户提及的 Sci-Hub，不通过未授权渠道取得受版权保护的论文，不绕过访问控制；需要全文时优先使用用户合法提供的 PDF、开放版本、机构库、出版社或授权订阅。无法合法访问的论文仍保留在 ref.bib 和相应 HTML 表内，注明全文与摘要获取状态，继续利用合法元数据，并登记后续补查任务。
+confirmed 或 verified 必须有支持依据。撤稿及更正记录保留原书目与状态，不将撤稿结果当作有效的正面结论。
 
-### 6.2 来源核验、缓存与许可
+### 4.3 书目身份归一化、去重与计数
 
-首选原文与官方记录。交叉比对独立来源并保留冲突；引用索引的缺失不是未引用证据，元数据不完整不是没有文献。检索日志记录来源、查询参数、分页、日期、可见总数、实际返回数、去重前后数量和错误；API 限额应遵守，采用缓存、退避重试、分页检查和可恢复任务。不能依赖未经验证的自动化抓取或绕过访问控制。
+1. 优先使用可核验的 DOI 或稳定出版标识。DOI 归一化：去除外围空白、doi: 前缀及 http(s)://doi.org/、http(s)://dx.doi.org/ 解析器前缀；解析 URL 时将路径内合法百分号编码解码一次，去除解析器 URL 的查询参数和片段；保留 DOI 本身有效标点，禁止盲目删除末尾字符；ASCII 字母转小写并核对 DOI 注册记录的题名、作者、年份及类型。原始 DOI 与规范 DOI 同时存入别名索引；错误或冲突 DOI 不自动合并。
+2. 无 DOI 文献按规范化题名、作者/机构作者、年代、出版物、卷页、报告编号/ISBN/专利号等组合核验。Unicode NFC/NFKC、空白、大小写、重音、连字符、OCR 与译名差异仅用于匹配候选，原始题名和姓名必须保留。模糊匹配不得单独作为合并依据；冲突交人工复核。
+3. 相同字节内容只保留一个文件内容身份；相同 Work 的不同 Version 均保留。作者稿、镜像、正式版的对应关系依证据确认；具有独立出版身份的会议论文、期刊扩展版、章节、学位论文及 §2.2 指定的独立书目不得因内容相似而误合并。已去重 Upload 按 §2.2 和 §8.3 审计；其映射指向既有实体。
+4. 能识别独立书目但字段不足或存在合并疑义的 Work 使用暂定 key、真实已知字段和 identity_confidence，进入 ref.bib 与 U00。无法建立独立身份的原始引文标记 unresolved，保留 occurrence_id、原始字符串、指纹、查询记录及重试入口，不计为 Work。项目实体与可独立引用的项目资源分开。
+5. 发现已存在 Work 时仅补充来源、Version、引文边、缺失字段和未完成任务。经核验合并重复 Work 时，保留被合并 work_id、历史 key 与迁移证据，更新全部外键、合并关系及评估；不删除原始引文出现项、失败记录和历史 Checkpoint。
+6. BibTeX key 使用第一作者姓氏的 ASCII 转写（保留原姓名于 author）加四位出版年，如 Kern2005。机构作者采用其已核验的规范短名 ASCII 转写；转写去除组合重音及非 ASCII 标点，空白转为下划线，无法可靠转写使用稳定的 ID 后缀。不知道作者或年份时使用 Temp 加不可复用的 work_id 安全片段，标记暂定。冲突按首次分配顺序使用 a、b、…、z、aa、ab… 后缀；已分配 key 永不因插入或排序重排，合并及必要纠错保留历史别名，禁止复用废弃 key。
+7. 计数：Seed record 数仅由 §2.2 得出；Upload 数为 uploads 与 seed-manifest 中去重审计 Upload 的唯一 upload_id 并集；文件数为已核验非空 SHA-256 的不同值数（缺失哈希单列）；Version 数为有效 version_id 数；规范 Work 数为有效 work_id 数（confirmed 与暂定分别报告，已合并别名及 unresolved occurrence 不计）；引文出现项、唯一有向边、Assessment、主题表行数分别统计。
 
-公开仓库不得上传未获转载许可的 PDF、受限全文或大段受版权保护的内容；本地 PDF 缓存独立管理。摘要优先保存来源和许可信息，有明确开放许可的可按许可与署名展示原文；其他情况使用基于原摘要/全文的忠实中文概括并附原文链接。没有取得摘要或全文时显示“摘要不可得/待获取”，不依据标题编造摘要。研究人员追踪仅使用公开学术身份、机构和项目资料，不收集无关私人信息；API 密钥、登录凭据、个人联系方式等不写入仓库。
+## 5. 文献发现与递归检索
+
+主流程固定为：种子导入 → 向后引文 → 向前引文 → 作者追踪 → 机构/项目追踪 → 证据评估 → 验收。新增 Work 按 §5.6 返回向后引文及其他扩展队列。检索前执行 §8.3 缓存及去重检查。
+
+### 5.1 阶段 A：种子导入
+
+- 按 §2.2 建立 Seed record 与 seed-manifest、Upload、Work、Version 映射；核验文件可读性、完整性、哈希及版本，提取作者、发表时机构、出版信息和摘要。
+- 按 §4.3 识别重复与相关独立书目；已去重 Upload 按 §2.2 保存，不另建 Work；PPT 仅为分类来源，不作为论文引用，不建立 Work。
+- 所有种子进入处理队列；文件不可得而身份可确认时仍入库，记录缺口。
+- 载入既有规范数据、历史 key 和任务状态，按 §8 生成输出。
+
+### 5.2 阶段 B：向后查找参考文献
+
+对每个 Work 的未完成 references 任务：
+
+1. 优先读取合法可用的原文或出版商结构化全文，定位 References/Bibliography 及附录、补充材料的独立书目。覆盖双栏、跨页、扫描及缺页场景，核验版面及列表边界；必要 OCR 必须记录方法、误识别风险及人工复核。
+2. 逐条保留原始字符串、参考文献序号、页码/节、来源 Version、指纹与核验状态，识别稳定标识，匹配既有 Work。原始引文不得因不相关、过早、低被引量或文献类型而静默删除。
+3. 身份可识别的新增 Work 按 §4 入库并加入扩展队列；未取得合法全文时利用允许来源补充元数据和摘要，结构化引用列表须标注来源、覆盖和与全文核验的区别。保留引用出现项及施引→被引边。
+4. 重复处理新 Work 的向后任务直至适用队列为空；不得将没有 PDF 或未发现引用数据的 Work 标记为完成。
+5. 无法识别、缺全文、缺参考文献、接口失败或限流分别记录原因、状态、尝试证据与重试入口。verified_none 必须有明确无参考文献的证据；检索无结果不能代替该证据。
+
+### 5.3 阶段 C：向前查找施引文献
+
+对范围内每个 Work 使用 DOI、数据库 ID、规范题名、作者/年份和已核验 Version 查找冻结快照内可发现的全部施引 Work。使用独立来源互补，遍历分页、检查总量并记录差异，不以被引计数或前若干条代替完整结果。
+
+将范围内身份可识别的施引 Work 全部入库；查证实际引用边、获取正文引用位置、记录作用。仅索引支持的边标记 source_supported，语境未核验时 citation_roles 为 unknown。查询失败、截断、未收录、访问受限不能解释为零施引。新增 Work 返回阶段 B，按 §5.6 继续扩展。
+
+### 5.4 阶段 D：作者追踪
+
+- 处理范围内 Work 的全部署名作者，不限第一/通信作者；以 ORCID、署名机构、合作者、履历、姓名变体及出版记录消歧，不以姓名相同自动合并。
+- 查找该作者的其他 Work，按相对基准 Work 的时间区分前期、同期与后续成果；范围内发现的 Work 全部登记，不要求直接引用基准论文。发表时机构、历史机构与当前机构分别核验。
+- 查找公开学术项目、基金、研究方向及其成果；记录项目目标、参与者、时间、来源和论文关系。独立可引用报告、数据集、软件或项目页面建立相应 Work；不可独立引用的项目仅建立 Project，禁止虚构论文。
+- 新 Work 返回阶段 B；作者消歧及检索分页按 §5.6 记录。
+
+### 5.5 阶段 E：机构及研究项目追踪
+
+- 建立作者发表时机构的层级、历史名称、研究组、研究人员公开身份及关联时间。核心范围为核实的实验室、课题组和项目；从核心范围扩展至同一大学/研究所其他团队与 L01–L09 相关的研究，不无条件抓取全校全部学科。
+- P1 在 scope.json 中固定关键词/检索式/机构层级表：limitation_id、语言、关键词与同义词、布尔检索式、来源及字段、organization_level、org_id、父子机构扩展规则、研究团队/项目准入条件、时间边界、命中及排除依据。未经记录和批准不得任意缩小已冻结的范围；扩展范围变更须另立 scope_id。
+- 查找机构库、课题组/研究人员成果列表、公开项目与基金、官方成果清单及论文资助致谢；对同一机构其他团队使用冻结的主题检索式。独立推进同类问题但未引用基准论文的 Work 同样纳入。
+- 项目与 Work 的关系必须以官方成果记录、项目编号、正式资助说明或其他可追溯资料判定；同机构、同作者或共同发表仅为线索。记录不同来源冲突，不将间接线索作为已证实项目产出。
+- 阶段 E 的主题边界仅约束机构扩展任务，不删除阶段 B/C/D 已发现的无关 Work。新增 Work 返回阶段 B 并按 §5.6 扩展。
+
+### 5.6 固定任务编排、闭包与 Checkpoint
+
+设 S 为 §2.2 的 Seed record 所映射的 Work 集合；D 为已入库有效 Work 集合；R、C、A、O 分别为作用域内向后参考文献、向前施引文献、作者作品及机构/项目作品的可发现目标集合。normalize 执行 §4.3。对固定作用域，递归目标定义为：
+
+    D₀ = normalize(S)
+    Dₙ₊₁ = normalize(Dₙ ∪ R(Dₙ) ∪ C(Dₙ) ∪ A(Dₙ) ∪ O(Dₙ))
+
+任务编排固定为六步：
+
+1. 载入规范数据、Seed record 映射和未完成任务。
+2. 按广度优先处理适用的向后引文队列，归一化发现对象并生成任务。
+3. 对已冻结的当前工作集合处理适用的施引、作者、机构及项目扩展任务。
+4. 每个新增 Work 执行去重、入库及任务登记，返回第 2 步；已存在 Work 补充新增关系，不重复已成功的同参数查询。
+5. 对已发现 Work 执行主题评估并生成十表视图；检索与评估允许交错，阶段门禁按 §10。
+6. 保存并校验 Checkpoint；只要存在适用且未完成的任务，就继续在固定作用域内处理；闭包及停止声明依据本节条件。
+
+采用分阶段扩展、完整递归目标和持久化队列。不得未经批准设置最大深度、每篇文献数量上限、仅处理种子施引者或只保留正面/相关结果。记录最短发现距离及来源链；优先级只决定调度顺序。每个任务以实体、任务类型、scope_id、来源、规范参数及快照版本确定身份，使用持久化 visited/缓存索引；新发现的关系或未完成维度仍生成适用任务。
+
+Scope 以 SCOPE- 加稳定序号标识；每次运行绑定一个 scope_id 和起始/结束 checkpoint_id（CP- 加稳定序号）。P1 冻结 cutoff_at（ISO 8601，含时区，并存 UTC 值）、索引查询日期、来源准入、类型/语言/年代边界、机构检索式、资源与时间/API/人工复核预算，保存于 §8.3 指定的 scope.json。来源不具备历史快照能力时，记录查询时点与索引漂移，不虚构可复现的历史结果。新发表和索引更新依 P8 处理。
+
+达到预算、遭遇限流或中断时，必须保存 Checkpoint、tasks.jsonl 中的游标、待办、错误码/原因与复查条件；报告已完成 Checkpoint CP-…、作用域 SCOPE-…、剩余任务队列及覆盖缺口。预算仅触发暂停，不等于截断或完成；恢复从已验证游标进行，不丢弃未完成任务。
+
+严格闭包的验收条件：在固定作用域及可验证来源覆盖内，Dₙ₊₁ = Dₙ、全部适用扩展任务完成或有可证明的不适用/无数据状态、全部可见分页遍历并对账、无未披露失败、无未解析的身份阻断或未确认的截断。仅因为没有新增 Work 不能声明闭包成立。有未处理、受限、不完整或不可核验任务时，报告已完成范围和未完成缺口；不得称为已穷尽。全科学文献的绝对穷尽不属于可保证的验收口径。
+
+### 5.7 文献类型及语言边界
+
+范围内学术文献包括期刊、会议、预印本、学位论文、技术报告、书籍、章节、专利及具有独立可引用身份的软件、数据集和研究资源。非学术资源、非英语文献、非数字化文献和灰色文献不得因类型、语言、年代或获取困难而自动排除；原始引用出现项均保存。独立可识别资源进入 Work；无独立身份的个人通讯等依 §4.3 登记原始引用。不具备参考文献或施引索引的资源，按实际证据标记相应状态；不得假定无数据。任何明确排除类别、语言、年代或来源都必须在 scope.json 披露范围、依据和批准记录；已识别的范围外 Work 仍入库并记录不展开原因。
+
+## 6. 数据来源与全文/元数据策略
+
+### 6.1 允许来源与准入条件
+
+允许使用现成网站、公开学术数据库、官方 API、授权浏览器访问、合法开放数据及必要辅助解析工具；不要求建设通用检索软件或逐站开发爬虫。按来源能力选择互补渠道，而非假定所有资源具备相同覆盖和接口。
+
+| 用途 | 允许资源 |
+| --- | --- |
+| 全文、参考文献解析 | 合法 PDF、出版商 JATS/XML、GROBID、版面解析与人工复核 |
+| DOI/出版元数据 | Crossref、DataCite、DOI 登记页面、出版商、[DBLP](https://dblp.org/) |
+| 引文/施引 | OpenAlex、Semantic Scholar、OpenCitations、Crossref 可用字段、PubMed/Europe PMC、具备合法授权的 [Web of Science 中国入口](https://webofscience.clarivate.cn/wos/alldb/smart-search) 与 [国际入口](https://www.webofscience.com/)；同一数据库不同入口不计独立来源 |
+| 出版物及开放学术资源 | [ScienceDirect](https://www.sciencedirect.com/)、[PubScholar](https://pubscholar.cn/)、PMC/Europe PMC、出版商网站及大学/研究所机构库 |
+| 预印本及版本线索 | [arXiv](https://arxiv.org/)、[ChinaXiv](https://www.chinaxiv.org/home.htm)、[alphaXiv](https://www.alphaxiv.org/)；评论或机器摘要不作为论文原文证据 |
+| 合法全文定位 | Unpaywall、开放许可出版版本、作者合法分享版本、机构存档、用户提供的合法 PDF、授权订阅 |
+| 作者/机构身份 | ORCID、ROR、OpenAlex 作者/机构 ID、官方学术履历、论文署名、[Research.com](https://research.com/)、[ResearchGate](https://www.researchgate.net/)；第三方资料须核验 |
+| 项目/基金 | 大学、研究所、实验室官方页面、公开基金数据库、项目报告、成果清单、论文 Funding/Acknowledgements |
+
+每条来源的准入记录包含 source_id、名称、URL/接口、API 版本、认证方式（不含凭据）、授权/许可、适用实体和覆盖范围、分页机制、可见总数语义、历史快照能力、限额、核验方法及日期、verification_status、限制和降级方式。只有核验了相应功能与合法访问条件的来源才能作为该维度的覆盖证据。优先使用原文与官方记录；多源冲突保留并复核。不得绕过付费墙、访问控制或利用 Sci-Hub 等未授权渠道取得受版权保护全文。无法合法访问的 Work 仍进入 ref.bib 和对应 HTML 表，记录可获取元数据、缺口和复查条件。
+
+### 6.2 查询日志及缓存
+
+每次查询或合法的缓存命中在 queries.jsonl 中保存以下最低字段：
+
+    query_id, task_id, scope_id, checkpoint_id, entity_id,
+    source_id, endpoint_or_url, api_version, query_kind,
+    raw_parameters, normalized_parameters, queried_at_utc,
+    cursor_in, cursor_out, page_index, page_complete,
+    visible_total, returned_count, count_before_dedup,
+    count_after_dedup, new_work_ids, new_work_count,
+    result_identifiers, status, verification_status,
+    error_code, error_message, retry_count, retry_at,
+    cache_path, cache_hit, reused_query_id, rerun_reason,
+    coverage_note, license_note
+
+可见总数未知时用 null 并注明来源限制；不得以 returned_count 代替全量总数。合并不同来源结果时按 Work 身份去重，同时保留各来源计数和关系证据。缓存键及重查规则见 §8.3。遵守来源限额、分页协议及服务条款，采用退避、受控重试和可恢复任务。索引缺失不是未引用证据，未收录不是不存在。
+
+### 6.3 摘要、全文及版权
+
+abstract_status 及每个 abstract_items 元素的 status 采用以下固定枚举：
+
+| 值 | 含义 |
+| --- | --- |
+| original_oa | 原摘要以已核实开放许可允许公开展示 |
+| original_licensed | 原摘要以明确转载许可允许公开展示 |
+| chinese_summary_from_fulltext | 中文忠实概括，依据合法取得的全文 |
+| chinese_summary_from_abstract | 中文忠实概括，仅依据合法可读原摘要 |
+| abstract_missing | 未获得可用于概括的摘要或全文 |
+| abstract_restricted | 访问/许可限制使摘要或依据不能取得或公开使用 |
+
+存在合法可用的全文或摘要时必须生成中文忠实概括并附原文链接；许可允许时另附原摘要及署名，不以登录权限推断转载许可。abstract_status 表示主展示摘要的状态，abstract_items 逐项记录 status、text、source、version_id、license、summarizer、date、source_language 及核验状态；无可展示内容时 text 为 null，并显示缺失/受限及原因。不依据标题、机器生成摘要或未读来源编造论文摘要。原摘要与中文概括明确区分；中文概括须经依据版本核对。
+
+fulltext_status 固定为 pending、available_unverified、available_verified、partial、not_found、restricted、not_digitized、retryable_error、not_applicable。available_verified 指合法可读的对应 Version 经完整性核验，不等于全部 Assessment 已全文验证。仅有摘要、片段或索引不标记 available_verified。
+
+不得提交未获转载许可的 PDF、受限全文、受限摘要、大段受保护原文、API 密钥、登录凭据、个人联系方式及非公开个人数据。合法本地全文缓存独立管理，Git 仅保存允许公开的元数据、摘要概括、必要合法摘录、证据定位及脱敏日志。
 
 ## 7. 针对九项局限性的证据分析
 
 ### 7.1 逐篇阅读与引用语境
 
-除书目和摘要外，对可能涉及 L01–L09 的作品尽量取得可读全文；优先核验引言、方法、结果、讨论、图表、补充材料及引用所在段落。为每个主题提取：
+对可能相关的 Work 读取合法可用原文，核验引言、方法、结果、讨论、公式、图表、补充材料及正文引用语境。按 §3.1、§4.2 记录原问题与假设、方法、基线、定量/定性结果、样本与实验条件、与前作的实质差异、适用条件、失效情形、原文结论及研究者推断。区分期刊正式版、报告和其他 Version。
 
-- 对应的原问题和原方法假设；
-- 作者实际提出的理论、模型、算法、神经回路、实验或测量；
-- 定量/定性结果、比较基线、实验场景、物种、运动类型、速度范围、环境距离、噪声/纹理条件、数据及评价指标（原文有则记录）；
-- 相对原论文或被引作品的具体新增内容，以及未覆盖的条件；
-- 作者明确提出的剩余局限、失败结果、未来研究方向；
-- 原文证据位置（页码、节、图、式、表、引用语境或项目网页链接），以及全文版本与访问日期。
+仅摘要/书目信息只能标记为候选，不得写入全文已验证；不得以标题或索引替代结果。缺少支持某 L 的已核验正文证据时不作直接或部分处理判断，相关 Work 进入 U00（除已具备其他主题的合格 Assessment 者）。非论文的官方项目/数据文档只支持其能够核验的事实与研究关系，不自动支持论文的科学效果。负结果、反例、复现失败及不同物种/条件下的矛盾证据单独标记。
 
-摘要筛选阶段仅能给出候选/初步相关性；不能把数据库自动摘要或标题推断当作已确认的证据。负结果、反例、复现失败、不同物种和实验条件下的矛盾结果同样纳入。
+### 7.2 固定证据矩阵
 
-### 7.2 相关性、证据强度与处理程度
+每条 Assessment 绑定一个 limitation_id 和一个 evidence_route，独立记录条件及证据定位。多标签字段为数组、同一标签不重复；单值字段不可同时赋多个互斥状态。跨路线证据分别建立 Assessment，不进行未经验证的外推。
 
-按论文 × 局限性独立判定，不给整篇论文一个模糊的“解决”标签。
+| 字段 | 类型 | 固定枚举及含义 |
+| --- | --- | --- |
+| relation_type | 多标签 | direct_study（直接研究）、indirect_mitigation（间接缓解/机制）、foundational_support（基础支持）、engineering_application（工程应用）、independent_progress（独立进展）、counter_evidence（反证）、background_only（背景）、unrelated（无关）、candidate（候选） |
+| handling_level | 单值 | directly_addressed_under_conditions（明确条件下直接处理）、partially_addressed（部分处理）、new_evidence_or_hypothesis（新增证据/假说）、proposed_unvalidated（提出未验证）、not_resolved（未解决/反例）、insufficient_evidence（证据不足）、not_applicable（不适用） |
+| evidence_level | 单值 | fulltext_result（全文推导/结果）、fulltext_discussion（全文讨论/假说）、abstract_only（摘要）、index_or_official_record（索引或官方记录）、metadata_only（书目） |
+| evidence_kind | 多标签 | mathematical_proof、simulation、controlled_experiment、electrophysiology、imaging、connectomics、causal_intervention、behavioral_experiment、real_world_engineering、dataset_measurement、author_discussion、official_record、bibliographic_index、other |
+| evidence_route | 单值 | biological_mechanism（生物机制）、mathematical_computational_model（数学/计算模型）、engineering_implementation（工程实现） |
+| project_relation | 单值/按具体 Project–Work 边 | official_confirmed（官方证实）、funding_acknowledgment（资助致谢支持）、indirect_clue（间接线索）、unknown（未知）、not_applicable |
+| citation_roles | 多标签/按具体引文边 | inheritance、improvement、comparison、replication、validation、challenge、engineering_transfer、background、unknown |
+| counter_evidence | 布尔值 | true、false；未取得证据时 false 不表示不存在反例 |
+| counter_evidence_types | 多标签 | negative_result、counterexample、replication_failure、cross_species_conflict、cross_condition_conflict、methodological_conflict |
+| statement_basis | 单值 | author_explicit（原作者明确主张）、reviewer_inference（有依据的分析推断）、unverified_hypothesis（未验证猜想） |
+| 摘要/全文状态 | 单值 | 见 §6.3 |
+| U00 原因 | 多标签 | 见 §8.2 |
 
-- 关系类型：直接研究该局限；间接缓解/提供机制；基础理论或数据支持；工程应用；独立研究同类问题；反例/反驳；仅背景引用；未发现相关性；待核验。
-- 处理程度：在明确条件下直接处理；部分处理；仅提供新的证据或假说；提出但未验证；未解决/仍有反例；证据不足；不适用。每个判定必须有理由。
-- 证据来源：全文明确推导/实验/结果；全文作者讨论或假说；摘要支持；引文索引或机构资料；仅书目信息。来源类别不能代替质量判断，理论证明、实验数据、仿真和生物学因果证据分别评价。
-- 引用作用：继承、改进、对比、复现、验证、质疑、工程转用、背景引用、无法确定；有正文位置才可高置信度判断。
-- 项目关系：官方直接证实、论文资助/致谢支持、共同作者或机构等间接线索、未知。不得由作者/机构相关性直接推出项目关系。
+强制判定门禁：
 
-必须区分“论文明确指出”“本项目根据证据得出的推断”和“尚待验证的猜想”。如涉及实际六自由度估计，还需区分绝对尺度、相对尺度、轴与方向、角速度和角位移、理论可辨识性与经验精度；不以部分成功代替一般成立。
+- 每条 Assessment 必须具有可定位的证据条目（具体 Version 的页码、节、图、式、表、段落或精确 URL/定位）。无法定位的 Work 保留待评估任务，不生成虚假 Assessment。
+- directly_addressed_under_conditions、partially_addressed 必须具有与路线一致的全文结果或等价的合法原始研究证据、符合 §3.1 的最小条件、明确处理对象和结果、证据定位以及未覆盖条件。仅讨论/假说只能支持对应假说或提出未验证等状态；仅摘要/书目不能满足该门禁。
+- evidence_level 表示来源及内容类型，不是跨学科绝对质量排名。理论证明、仿真、神经因果实验和真实工程实验按各自适用域评价；不由单项成功推及全场景。
+- counter_evidence 为 true 时必须记录具体类型、相反结论、适用条件及依据；不得用剩余局限字段代替负证据。互相矛盾的 Assessment 分别保存，说明冲突而非删除。
+- 引用关系不等于引用作用，只有已核验正文引用语境方可确认具体作用；索引只能证明索引支持的边。项目关系不从共同署名或机构归属直接推出。
+- 证据中涉及尺度、速率、位移、旋转轴及方向时分别评价，禁止混用。条件缺失且妨碍判断时降为 insufficient_evidence；背景、无关、候选与实质相关的标签不得在同一判断中自相矛盾。
 
-### 7.3 各主题的研究脉络
+### 7.3 各主题综合说明
 
-在每张主题表之前提供简短中文综合说明：
+每张 L 表前必须按五段式给出中文综合分析：
 
-1. 原问题（PPT 与原论文的对应，必要时说明表述差异）。
-2. 相关前期工作、直接后续工作、独立后续工作和机构/项目研究路线。
-3. 具体进展、适用范围、互相矛盾之处、未解决问题。
-4. 重要研究链路：由已核实 BibTeX key 和引文边组成，区分直接施引与仅作者/机构/主题关联。
-5. 对进一步研究的建议，分别列出生物机制研究和工程算法可能的启发。
+1. 原问题：PPT 与原文的对应及表述差异。
+2. 研究路线：前期、直接后续、独立后续、作者/机构/项目四类路径。
+3. 具体进展、证据条件、冲突与剩余问题。
+4. 可追溯研究链路：使用已核验 Work key、引文边、作者/机构/项目关系；实际引用与其他关联分开。
+5. 生物机制启示与工程算法启示分别陈述，并标明证据路线和外推条件。
 
-没有相关论文或证据不足时，明确显示该状态；不得人为凑齐九张表的内容。
+没有合格相关证据时显示“无相关证据”，说明检索覆盖及未完成缺口，不等同于问题未被研究。
 
-## 8. 输出文件详细规范
+## 8. 输出规范
 
 ### 8.1 ref.bib
 
-- UTF-8；兼容标准 BibTeX 解析器，条目类型正确（如 @article、@inproceedings、@incollection、@phdthesis、@book、@techreport、@misc）。
-- 依文献类型使用 title、author、year、journal/booktitle、volume、number、pages/eid、publisher、school、institution、doi、url、editor 等字段；缺失或不适用的字段不杜撰。作者格式遵循 BibTeX 的 and 分隔规则，保留必要重音及专名大小写保护。
-- 摘要在 ref.html 中必须有字段；ref.bib 可按许可及兼容性选择 abstract 字段，但不要求重复存储全文或受限摘要。
-- DOI 使用规范形式；无 DOI 不是排除理由。可补充核验来源和版本信息，但不将全部运行日志塞入 BibTeX。
-- 按稳定 key 确定性排序，重复运行不产生无意义变动。已有 key 不能未经迁移修改，修正记录应保留历史关联。
-
-示意（纯占位格式，不是已入库论文）：
-
-    @article{Example2005,
-      author  = {Example, A.},
-      title   = {Placeholder title},
-      journal = {Placeholder journal},
-      year    = {2005}
-    }
+- UTF-8、LF 换行、文件末尾换行；通过标准 BibTeX 解析器。按规范 ASCII key 字典序排序；已确认及暂定 Work 均生成条目，已合并历史别名不生成重复条目。
+- 文献类型映射：journal_article → @article；conference_paper → @inproceedings；book_chapter → @incollection；book → @book；thesis → @phdthesis 或 @mastersthesis（学位类型明确时）；technical_report → @techreport；其余类型及非学术资源 → @misc 并在 howpublished/type 注明资源类型。未知学位类型不得冒称博士。
+- 固定字段顺序（缺失或不适用的字段省略）：author、editor、title、year、month、journal、booktitle、series、edition、volume、number、pages、eid、publisher、school、institution、address、type、howpublished、doi、isbn、issn、url、urldate、language、note、abstract。DOI 采用 §4.3 规范值，URL 采用稳定来源；作者按 BibTeX and 分隔，保留原姓名重音及专名大小写保护，机构作者正确括号保护。
+- abstract 非必填，仅写入可公开、与 §6.3 一致的内容；HTML 摘要状态必填。暂定书目在 note 标记身份未核验，不杜撰作者、题名、年、DOI 或摘要。运行日志不写入 BibTeX。
+- 相同有效结构化输入须生成字节一致的输出，不因运行时间或排序重排旧 key；合并及更正保留别名映射。
 
 ### 8.2 ref.html
 
-页面为可直接离线打开的 HTML，无需连接数据库、CDN 或登录服务才能查看基本信息。用 UTF-8、响应式布局和语义化 table/caption/thead/tbody。恰好十张文献表：前九张依次对应 L01–L09，ID 固定为 limitation-L01 至 limitation-L09；第十张 U00 的 ID 固定为 literature-U00，标题为“其他、背景与待分类文献”。提供主题目录、按 key/作者/年份/题名/机构/关键词查找、主题筛选、排序、摘要展开和返回顶部功能；不因分页或筛选丢失数据库记录。实现细节可后续调整。
+UTF-8、语义化 HTML、响应式布局，可离线打开，无登录、CDN 或外部运行依赖。固定十张文献表，前九张按 §3 顺序排列，ID 为 limitation-L01 至 limitation-L09，第十张 ID 为 literature-U00，标题为“其他、背景与待分类文献”。每表包含 caption、thead、tbody；其他统计和详情不得增加 table 元素。
 
-每张主题表的最低展示字段如下（宽字段可在一行内折叠展开，不额外创建表格）：
+固定功能：主题目录、按 BibTeX key/题名/作者/年份/机构/关键词搜索、按主题及状态筛选、表内排序、摘要与证据详情展开/收起、返回顶部、清除筛选。支持键盘操作；默认展示全部记录，筛选与分页不改变数据库及对账口径。每行同表 key 唯一，跨主题复用同一规范 key；多条 Assessment 在同一行展开。
 
-| 字段 | 说明 |
+顶部显示 scope_id、checkpoint_id、快照截止时间及查询时点、来源与覆盖声明、§4.3 各计数、主题计数、K/T/U 对账摘要、全文/摘要/参考文献/施引处理完成度（分子、分母和状态口径）、未解决任务数及缺口。
+
+主题表固定列：
+
+| 列 | 内容 |
 | --- | --- |
-| BibTeX key | 必须与 ref.bib 完全一致，可定位规范记录；多主题出现仍使用同一 key |
-| 题名 / 作者 / 年份 / 来源 | 显示规范书目信息、DOI 或原文链接、可合法获取的全文链接 |
-| 作者发表时机构 / 后续机构 | 明确时间，未知则标记；同名消歧状态可查 |
-| 文献摘要 | 原文摘要（许可允许）或忠实中文概括，明确来源/类型/缺失状态 |
-| 来源链路 | 种子 ID、被引/施引 key、作者/团队/项目发现路径；同时展示多条来源 |
-| 研究问题、方法、主要结果 | 与当前 L 编号有关的独立描述，不仅是通用摘要 |
-| 对局限性的具体贡献 | 处理程度、适用条件、证据强度、验证方式、剩余问题 |
-| 引用关系及作用 | 具体被引作品、引用语境、核验状态 |
-| 后续研究项目 | 项目名称、机构、时间、公开证据链接，与该论文关系 |
-| 证据定位与状态 | 原文页/节/图/式、全文/摘要可用性、最后核验日期 |
+| BibTeX key | 对应 ref.bib 唯一条目 |
+| 题名、作者、年份、来源 | 正式书目、文献类型、发表状态、DOI 或稳定链接、合法全文链接 |
+| 作者及机构 | 发表时机构、历史/后续机构、时间、消歧状态 |
+| 摘要 | 中文概括及许可允许的原摘要、状态、依据版本、概括者与日期 |
+| 来源链路 | Seed record、施引/被引 key、作者/机构/项目路径及来源 |
+| 研究问题、方法、结果 | 当前 L 对应的具体内容、基线与指标 |
+| Assessment | 路线、关系类型、处理程度、证据等级、最小条件、效果、剩余问题、负证据、研究启示 |
+| 引用及作用 | 实际引文关系、作用、语境、核验状态 |
+| 研究项目 | 项目名称、机构、时间、证据链接及关系 |
+| 证据与处理状态 | 原文定位、全文/摘要状态、核验者及日期 |
 
-同一论文可在多张表出现；摘要可共享规范记录、主题评价分别存储。每张表内同一 key 只出现一次。页面顶部显示唯一作品总数、种子覆盖、每类相关作品数、全文/摘要/引文解析完成度、未解决任务数和检索范围；多主题计数相加不代表独立作品总数。第十张 U00 表必须收录 ref.bib 中未出现在任何 L01–L09 表的全部记录，采用与主题表一致的基本书目信息、摘要、来源链路及处理状态字段，另列未分类原因（背景、无关、待评估、证据不足、书目待核验等）。记 K 为 ref.bib 的 key 集合，T_i 为各主题表 key 集合，U 为 U00 key 集合，则 U = K \\ (T_1 ∪ … ∪ T_9)，且 K = U ∪ T_1 ∪ … ∪ T_9。U00 与主题表互斥；某条记录后续明确归入任一主题时，从 U00 移至相应主题表，但保留 key 与全部历史检索记录。任何文献不得因为缺 PDF、摘要、相关性不足而被遗漏。用户可定位所有 ref.bib 中的 key。
+U00 固定保留 BibTeX key、题名/作者/年份/来源、作者及机构、摘要、来源链路、证据与处理状态，并增加“未分类原因”“下一步动作/复查条件”两列。u00_reasons 枚举（多标签）：
 
-### 8.3 可追溯性与一致性（DEC-07：仓库 temp/）
+| 值 | 展示名称 |
+| --- | --- |
+| background | 背景文献 |
+| unrelated | 主题无关 |
+| pending_assessment | 待评估 |
+| insufficient_evidence | 证据不足 |
+| metadata_unverified | 书目待核验 |
+| non_academic_resource | 非学术资源 |
+| project_software_dataset_only | 仅项目/软件/数据集 |
+| out_of_scope | 范围外 |
+| duplicate_pending_merge | 重复待合并 |
 
-依据 DEC-07，仓库根目录下必须保留 temp/，用于长期可追溯的中间数据与检索日志。名称虽为 temp，但其审计数据不能在批次完成后清空或作为普通临时缓存删除，必须纳入版本管理。推荐采用 UTF-8 JSONL/JSON/Markdown 等可审查格式，具体文件组织可按任务规模调整；建议结构如下（本次只修改 README，不提前生成空数据文件）：
+duplicate_pending_merge 仅指身份未定的 Work 合并疑义，不是已经去重的 Upload。复查条件必须指出缺失证据、待办任务或明确不再展开的范围依据。某 Work 获得至少一个合格主题 Assessment 时进入对应 L 表并从 U00 移除，保留既有 key、审计历史及其他未完成任务。U00 与所有主题表互斥；完整集合对账按 §9.2。
+
+### 8.3 temp/ 数据及日志
+
+固定目录如下；所有 JSONL 为 UTF-8，每行一个 JSON 对象；JSON 为 UTF-8，Markdown 为可审查文本。规范记录采用唯一 ID 与确定性字段、行排序；查询和状态事件按持久化事件顺序保存。字段定义由 schema.json 固定版本并与本文件一致；扩展字段必须有定义及迁移记录，不改变本文件强制字段与枚举。
 
     temp/
-      seed-manifest.jsonl       # S01–S21、文件哈希、版本、输入来源和 Work 映射
-      works.jsonl               # 规范 Work、BibTeX key、核验/处理状态
-      versions.jsonl            # 版本、文件指纹和合法来源
-      aliases.jsonl             # DOI、数据库 ID、题名变体、历史 key、重复合并映射
-      reference-occurrences.jsonl  # 原始引文条目及定位、未解析记录
-      citation-edges.jsonl      # 施引→被引边及核验来源
-      authors.jsonl             # 作者身份与消歧证据
-      organizations.jsonl       # 机构层级与历史别名
-      projects.jsonl            # 项目、基金、成果及证据
-      assessments.jsonl         # L01–L09 分类与证据；U00 原因
-      queries.jsonl             # 检索源、参数、日期、分页、结果计数、错误与重试
-      tasks.jsonl               # 已完成/待处理/失败/暂停任务及恢复位置
-      snapshots/                # 批次范围、统计、审计和检查点
+      seed-manifest.jsonl          # Seed mapping；去重 Upload 的唯一完整审计记录
+      uploads.jsonl                # 保留的非去重 Upload 规范记录
+      works.jsonl                  # 有效及历史 Work、状态、摘要
+      versions.jsonl               # Version、文件内容身份及合法来源
+      aliases.jsonl                # 标识、题名变体、历史 key 及合并映射
+      reference-occurrences.jsonl  # 原始引文及定位、未解析记录
+      citation-edges.jsonl         # 实际引用边及证据
+      authors.jsonl                # Person、身份及隶属历史
+      organizations.jsonl          # Organization、机构层级与历史关系
+      projects.jsonl               # Project、参与者、成果与证据
+      assessments.jsonl            # Assessment、分类与证据
+      queries.jsonl                # 查询、分页、缓存、错误、重试
+      tasks.jsonl                  # 任务、游标、状态事件及恢复入口
+      schema.json                  # 字段定义、类型、枚举、主外键、schema_version
+      risk-register.md             # 风险登记
+      change-log.md                # 规范数据及状态迁移、合并和范围变更
+      snapshots/
+        scope.json                 # 当前活动作用域的规范执行参数
+        scopes/                    # 不可变的各 scope_id JSON 快照
+        checkpoints/               # 每个 checkpoint_id 的 JSON 清单与审计统计
 
-每次对 DOI、题名、作者、机构、参考文献或施引关系发起新查询前，须先检查 ref.bib 和 temp/ 的身份/别名索引、原始引文指纹、既有查询记录及任务状态。已存在的论文继续补充新关系和未完成维度，而不是重复执行已经成功的相同查询；仅在明确需要补漏、重新核验、重试失败或更新快照时重查并记录原因。查询缓存键至少包括规范实体 ID、任务类型、数据源、归一化检索参数及快照版本。全文缓存、受限内容、认证信息、API 密钥和私人信息不得提交公开仓库；temp/ 中只保留合规的元数据、证据定位、必要的合法摘录与日志。
+Seed mapping 与去重 Upload 记录通过 record_type（seed_mapping、duplicate_upload）区分，去重记录的 seed_id 为 null；保留非去重 Upload 的完整记录仅位于 uploads.jsonl。两份文件中的 upload_id 映射构成 Upload 视图，禁止重复存放同一去重审计实体。seed-manifest 中 Seed mapping 只引用对应保留 Upload，不重复维护其原文件属性；去重记录指向已存在 Upload、Work、Version，无独立 Work。上传出现项的最低审计字段如下（含内部字段见 §4.2）：
 
-每批次先生成临时输出，完成校验后再以同一 Git 提交更新 ref.bib 和 ref.html以及 temp/ 对应的状态与日志；避免只提交其中一个文件。保留可回溯的变更记录及上一次成功检查点。失败时重跑未完成任务，不重复添加条目或丢失原始引文。
+    upload_id | filename | sha256 | pages | work_id | version_id |
+    duplicate_of_upload_id | relation_type | verification_status | notes
 
-## 9. 质量控制、状态与验收
+scope.json 字段固定为 scope_id、schema_version、cutoff_at、cutoff_at_utc、index_observed_at、sources（§6.1 准入表）、document_types、languages、date_range、institution_scope（§5.5 关键词/检索式/层级表）、expansion_policy、exclusions、access_and_license、resource_limits、budget、approval、created_at。活动 scope 变更通过新 scope_id 和不可变 scopes 记录追踪。
 
-### 9.1 任务状态
+Checkpoint 清单字段固定为 checkpoint_id、scope_id、parent_checkpoint_id、schema_version、created_at_utc、task_cursor_state、query_log_high_watermark、counts、coverage、unresolved_tasks、failure_reasons、artifact_hashes、validation_results、status。status 仅为 valid 或 invalid；有效性须满足 §9。保存 Git 提交与 Checkpoint 的对应关系（可由 Git 历史及 Checkpoint ID 定位，不在同一提交内嵌该提交自身哈希）。
 
-为每个 Work 分开记录 metadata、fulltext、abstract、references、citations、authors、affiliations/projects、assessment 的状态。建议状态：待处理、处理中、已核验完成、仅部分完成、无数据已确认、待人工消歧、获取受限、临时失败待重试、范围外（含理由）、永久不可获取（含证据）。不应使用一个“完成”布尔值掩盖其他处理维度。
+查询前必须检查 ref.bib、works、aliases、原始引文指纹、queries 和 tasks；缓存键为规范实体 ID、任务类型、source_id、API 版本、规范化参数、scope_id 与快照版本。相同键下已成功的查询复用结果，不再次访问来源；仅补漏、冲突核验、失败重试或快照更新允许重新查询并写明原因。合并 Work 时别名和已完成查询状态随映射迁移，既有新关系或未完成任务仍须处理。
 
-### 9.2 自动化检查与人工抽查
+Checkpoint 提交前统一生成并校验 ref.bib、ref.html 与对应 temp 状态，失败不得标记有效；恢复时从最后有效 Checkpoint 的游标及任务事件继续。temp 审计数据纳入 Git，不得因阶段完成清空、覆盖不可变快照或将其作为普通缓存删除。受限全文、认证信息和私人数据按 §6.3 留于合法本地缓存；不提交包含秘密的查询参数、路径或错误日志。
 
-- 种子输入清单与 21 次上传记录逐项对应；S09/S20 重复上传关系、文件哈希、独立作品数与版本关系可查；S19/S21 分别保留独立书目及研究关系。
-- ref.bib 可无错解析，key 唯一，规范 DOI 不重复；无 DOI/疑似重复记录有身份依据；不得生成虚假字段。
-- ref.html 恰有十张文献表（九张局限性表 + U00），每张主题表对应 PPT 定义；每表 key 唯一，所有展示 key 在 ref.bib 中存在，每个 ref.bib key 至少出现在一张表；U00 恰为未进入任何主题表的 key 集合。所有入库记录都有摘要字段及状态，不可得时明确原因；主题标签与评估一致。
-- 原始引文出现项数量与解析/去重/未识别统计可对账；每条引文边端点在库中或在待核验记录中可追踪，重复引文保留不同来源；前向引用结果分页完整性有记录。
-- temp/ 必须随批次保存中间数据、查询日志、去重别名和持久化任务；检查相同快照与参数下已完成检索不被重复调用，并核实所有范围内作者、机构、项目的检索任务有来源与状态。抽查姓名重名、机构历史、更名、项目与论文关联；同机构无关论文不得被写成局限性进展。
-- 所有标为直接处理、部分处理、反例等的主题评估有可定位证据及条件；对于仅摘要/书目信息的记录，不得宣称全文已验证。抽查原文、中文摘要、引用语境和图表证据。
-- HTML 可离线阅读，转义外部文本，避免引入不受信任的脚本；输出不包含不应公开的原文、密钥或私人数据。
-- 对同一输入与检索快照重复生成，数据库 key、引文边、主题表无重复，输出可复现；模拟中断、API 限流、解析失败及恢复，不误标完成。
+风险登记册字段固定为 risk_id、风险、触发条件、影响、控制措施、状态、责任角色、证据/复查条件。最低风险项：
 
-### 9.3 阶段交付与最终报告
-
-每次批次交付应报告：输入/新增/重复/待消歧数量、独立 Work 和版本数量、引文边数量、参考文献解析覆盖、施引查询覆盖、作者/机构/项目覆盖、全文和摘要获取情况、九项分类数量、第十表 U00 数量及尚未解决问题、已执行范围、截断/失败原因、剩余队列、下一批计划。统计以唯一 Work 为主，原始字符串、版本、文件、引文边、表格行分别计数。
-
-最终报告至少能回答：哪篇文献、哪个作者或团队/项目、在何时、以什么方法、基于何种证据处理了哪项局限，效果与适用条件如何，是否引用了前作，哪些问题尚未解决。最终结论只能声称指定来源与检索快照内已达到的覆盖，不声称对所有数据库、所有年代和所有人类文献绝对穷尽。
-
-## 10. 已确认的执行路线图
-
-| 阶段 | 工作 | 验收产物 |
+| risk_id | 风险 | 控制及验收依据 |
 | --- | --- | --- |
-| P0（本次更新） | 需求分析、分类口径、扩展范围及证据规范；登记 DEC-01–DEC-09 决策 | README.md；需求已确认，尚未执行实际检索 |
-| P1 | 建立 21 次上传的输入清单、temp/ 工作状态、数据模型、工具及检索源；冻结快照；用少量受控样本验证解析和去重 | 可复查配置、样本验收及失败记录 |
-| P2 | 逐个导入种子（包括 S19 基准论文、S21 技术报告）；初始化书目和十张 HTML 表 | ref.bib、ref.html、temp/ 种子统计、待处理队列 |
-| P3 | 递归解析参考文献、身份核验、获取合法全文及摘要，执行向后遍历 | 逐批书目/HTML 更新、引文边、覆盖与缺口 |
-| P4 | 逐个查询库内作品的施引文献，核实引用上下文 | 施引列表、引文关系和初步主题评估；新增作品回 P3 |
-| P5 | 逐个追踪作者、机构其他研究人员和研究项目；核实论文成果关系 | 作者/机构/项目关系、相关研究成果；新增作品回 P3 |
-| P6 | 按批准的策略持续处理 P3–P5，完成证据阅读与主题评估 | 分批进度、九类研究脉络、剩余队列 |
-| P7 | 数据一致性、覆盖与科学结论审计，验收并冻结快照 | 可复查的 ref.bib/ref.html 和最终报告 |
-| P8（可选） | 增量更新新发表或新索引文献，保留历史快照 | 新批次及差异报告 |
+| R01 | 编号错乱 | §2.2 唯一编号源；映射及静态检查 |
+| R02 | 范围爆炸 | scope_id、分阶段队列、预算暂停；不静默截断 |
+| R03 | API 限流或中断 | 退避、游标、Checkpoint 恢复及失败日志 |
+| R04 | 版权/许可 | 来源准入、权限核验与公开内容审查 |
+| R05 | 作者同名消歧 | 多标识核验、冲突记录、人工复核 |
+| R06 | 引用索引缺失 | 多源对照、分页及覆盖缺口披露 |
+| R07 | 摘要翻译质量 | 依据 Version、概括者及抽查 |
+| R08 | 项目关系证据不足 | 官方记录、资助致谢与间接线索分级 |
+| R09 | HTML 对账失败 | §9.2 集合校验，不通过禁止有效提交 |
+| R10 | 重复合并误判 | DOI/书目联合核验、历史别名及可追溯迁移 |
 
-## 11. 正式确认的执行决策
+## 9. 质量控制、状态及验收
 
-以下九项决策均由用户确认（2026-11-26），优先于旧版需求草案中未确认的建议。后续不得将已经确定的事项重复提交用户决策。
+### 9.1 任务状态枚举与种子映射
 
-| 决策 ID | 状态 | 正式执行规则 |
-| --- | --- | --- |
-| DEC-01 | 已确认 | 原 17 份 + 补传 1 份 + 本轮 3 份，共 21 次上传；S19 为已包含的 2000 年基准论文，S21 为 1998 年技术报告，S20 与 S09 先核验重复关系；不重复增加 Work |
-| DEC-02 | 已确认 | 采用推荐方案：核心团队、研究项目及同一机构其他团队的主题相关成果；不无条件抓取全校所有学科 |
-| DEC-03 | 已确认 | 采用推荐方案：分阶段扩展、完整递归目标、持久化检查点；不设未经批准的硬截断 |
-| DEC-04 | 已确认 | 九个局限性分类（L01–L09），保持原拆分口径；加 DEC-08 独立表后 HTML 共十表 |
-| DEC-05 | 已确认 | 实际检索开始时冻结快照、来源及资源范围；限额/失败时暂停并记录恢复点，仅使用合法可访问资料 |
-| DEC-06 | 已确认 | 忠实中文概括及原文链接；许可允许时附原摘要；摘要缺失显式标注；不提交受限 PDF |
-| DEC-07 | 已确认 | 中间数据、去重索引、引文图、检索日志、评估证据、任务状态及检查点保存在仓库 temp/ 下并纳入 Git；敏感/受限内容留在合法本地缓存 |
-| DEC-08 | 已确认 | 所有已识别文献均写入 ref.bib（与相关性无关），并用 ref.html 第十表 U00 收录未进入九张主题表的背景、无关、待分类等文献；利用 ref.bib 和 temp/ 防止重复检索 |
-| DEC-09 | 已确认 | 不开发通用文献检索软件；利用现成网站、学术数据库、合法授权接口和必要临时工具完成调查，候选来源见 §6 |
+每个 Work 分维度记录 metadata、fulltext、abstract、references、citations、authors、affiliations/projects、assessment（结构化键 affiliations_projects）；同时为各来源、Person、Organization、Project 及扩展任务记录独立状态。dimension_status 的值使用以下状态枚举，不能以一个布尔值代替全部维度。摘要及全文的内容状态另按 §6.3 记录。
 
-仍需在 P1 中记录实际检索截止时间、各数据源可用性、许可/访问状态、运行资源与实际预算；这些是执行参数和核验事项，不是重新开启 DEC-01–DEC-09 的待决策状态。若遇到实质性范围变更、数据访问授权或无法安全解决的身份歧义，单独记录并请求必要决定。
+| 状态 | 含义及验收约束 |
+| --- | --- |
+| pending | 待处理 |
+| running | 处理中，须保存游标 |
+| verified_complete | 已核验完成，有来源、覆盖证据及对账 |
+| partial | 部分完成，缺口与重试/复查入口明确 |
+| verified_none | 经核实确无该类数据，不得以无查询结果代替 |
+| needs_disambiguation | 待消歧，保留候选及冲突 |
+| restricted | 访问/许可受限，不能算完成 |
+| retryable_error | 可重试失败，记录错误和重试策略 |
+| paused_budget | 预算暂停，保留全部待办和游标 |
+| out_of_scope | 固定作用域外，记录具体排除依据 |
+| unavailable_final | 已核验不可得，记录原因、证据及复查条件；不等同已完成覆盖 |
+| not_applicable | 经核验不适用，记录理由 |
 
-## 12. 本阶段明确不做的事项
+tasks.jsonl 最低字段：task_id、entity_type、entity_id、task_type、scope_id、source_id、normalized_parameters、task_state、cursor、dependency_ids、query_ids、attempt_count、error_code、failure_reason、retry_at、review_condition、created_at_utc、updated_at_utc、checkpoint_id、event_sequence。状态变更以追加事件保留历史，当前状态取相同 task_id 最新事件；已完成状态必须引用支持记录。
 
-- 不执行种子 PDF 参考文献提取、外部学术检索、作者/机构/项目调查、全文下载或自动递归。
-- 不创建或填充 ref.bib、ref.html，不虚构检索数量、引文图、作者后续成果或九项局限的解决状态。
-- 不改变用户的 PPT，不上传任何 PDF，不提交运行代码、配置文件或辅助数据。
-- 本 README 是已确认的执行依据。本次提交只落实上述九项决策，保留原有执行规范；尚未开始 P1–P8 的实际调查与数据生成。后续收到启动调查的明确指令后，按已确认方案推进，无须再次确认 DEC-01–DEC-09。
+种子验收以 §2.2 为准：逐条核对 seed-manifest 映射、独立书目及版本/相关关系；去重 Upload 的原始哈希、来源和映射完整保留；计数严格按 §4.3，不得用 Seed record 数替代 Work 数。文件缺失及身份疑义必须有任务记录。
+
+### 9.2 自动校验和人工抽查
+
+设 K 为 ref.bib 中全部有效 key 集合，T_i 为 L0i（i=1,…,9）表中 key 集合，U 为 U00 表中 key 集合。强制满足：
+
+    K = U ∪ T₁ ∪ … ∪ T₉
+    U = K ∖ (T₁ ∪ … ∪ T₉)
+
+- ref.bib 可无错解析，key 唯一、无未经核验的 DOI 冲突；有效 Work 与条目一一对应，历史别名可解析。无 DOI 不是失败条件。
+- ref.html 恰含 §8.2 十张文献表、固定 ID 和功能；每表 key 唯一，所有展示 key 属于 K，每个 K 至少出现在一张表；U 与主题表互斥。按集合去重统计，跨 L 重复行不计多个 Work；摘要字段、状态、来源及 U00 复查条件完整。
+- 种子与 Upload/Work/Version 主外键符合 §9.1；实体、历史别名、原始引文及引用边可对账。引文出现项可多次支持同一唯一边；未知端点保留 unresolved 任务，不能伪造边。
+- 每项已完成扩展任务必须具有来源准入、完整分页及覆盖证据；去重前后数量、可见总数差异和新增 Work 可对账；索引或访问限制不得隐藏。
+- 按 §7.2 检查 Assessment 条件、路线、等级、证据定位、负证据和处理程度；人工抽查原文、摘要概括、引用语境、身份消歧、机构历史及项目关系；发现错误建立纠正任务。
+- HTML 离线可读、可搜索、筛选、排序及展开；转义不可信外部内容，不执行外部脚本，不泄漏受限原文、秘密或私人数据。
+- 相同结构化输入及快照重复生成，输出字节一致。通过中断、API 限流、解析失败、重复导入及恢复测试，必须从最后有效 Checkpoint 继续，保留任务和日志，无重复条目、遗漏或错误完成状态。
+- 未通过任一强制校验的产物不得作为有效 Checkpoint 或完整覆盖证据。
+
+### 9.3 P1 样本门禁
+
+按 §2.2 选择三类受控样本：有 DOI 的期刊论文；无 DOI 的技术报告（以已核验无 DOI 的记录作为样本，不把暂未查到 DOI 当作已核验）；重复 Upload/Version 关系。分别验证：
+
+| 样本 | 验收条件 |
+| --- | --- |
+| DOI 期刊论文 | 提取并核验书目、摘要、作者及机构、DOI 归一化、参考文献边界及原始引文；生成真实 Work/Version 映射、BibTeX 和合法摘要显示；验证缓存与日志 |
+| 无 DOI 技术报告 | 以报告编号、机构、题名、作者、日期等建立可核验身份；不杜撰 DOI；分别核验版本和与相关 Work 的关系；生成书目、HTML 落位及日志 |
+| 重复 Upload/Version 关系 | 复核文件指纹、同 Work 不同 Version、独立相关出版物的区别；去重 Upload 只留审计映射，引用和身份合并不丢失关系；验证重跑不重复入库 |
+
+所有样本均执行 Upload/Work/Version 映射、解析、去重、HTML 落位、日志与 K/T/U 对账，并验证来源准入及 Checkpoint 恢复。样本产物使用隔离验证目录或明确隔离的样本 scope，不污染正式书目。失败必须记录具体错误、证据、影响及重试入口；未通过门禁不得进入 P2，不能以失败记录代替通过。合规不可得情况通过替代样本验证能力，同时保留原样本的缺口记录。
+
+### 9.4 Checkpoint 报告与最终结论模板
+
+每个有效 Checkpoint 报告 scope_id、checkpoint_id、输入及新增/重复/待消歧 Work、§4.3 各计数、引文边、元数据/全文/摘要/参考文献/施引/作者/机构与项目/Assessment 各维度覆盖、L 与 U00 数量、分页对账、风险、剩余任务、失败原因和复查条件。各完成度明确分子、分母和不适用项；未解决或受限项不得计入 verified_complete。
+
+最终报告逐项采用固定结论模板：
+
+| 字段 | 内容 |
+| --- | --- |
+| Work key | 规范 BibTeX key、可追溯来源 |
+| 作者/团队/项目 | 相关主体、时间归属、项目关系及证据 |
+| 时间 | 发表、项目或证据的明确日期 |
+| 方法 | 模型、算法、实验或测量及比较基线 |
+| 证据等级/路线 | §7.2 枚举与可定位依据 |
+| 对应 L | §3 编号 |
+| 效果与处理程度 | 数据/推导支持的结果、反例与处理程度 |
+| 适用条件 | §3.1 最小可判定条件 |
+| 引用前作 | 实际引文 key、语境及引用作用；独立路线单列 |
+| 剩余问题 | 未解决、未验证和冲突证据 |
+| 生物机制启示 | 与物种、神经元和生物证据相符的结论或假说 |
+| 工程算法启示 | 工程/数学依据、使用条件及未验证外推 |
+
+最终报告依 §5.6 声明闭包是否成立、已验证作用域、来源覆盖与缺口；不能把阶段验收、无新增结果或预算暂停当作已穷尽。
+
+## 10. 路线图及门禁
+
+| 阶段 | 输入 | 任务及验收产物 | 门禁 |
+| --- | --- | --- | --- |
+| P0 | 研究问题与用户决策 | 规范基线：交付本文件；不生成数据文件 | 规范内容、分类和编号一致 |
+| P1 | 启动指令、§2.2、P0 | 建立 seed-manifest、uploads、数据模型/schema、来源准入表、scope.json、样本验收和 Checkpoint 协议 | §9.3 通过；来源能力、范围及预算明确 |
+| P2 | P1 合格产物、§2.2 | 导入种子表，初始化 ref.bib、ref.html、temp 状态、关系和扩展队列 | §9.1–§9.2 映射及对账通过 |
+| P3 | 待处理向后任务 | 递归参考文献解析、去重、合法全文与摘要获取；引文边、更新后的规范输出及缺口 | §5.2、§9.2；未完成任务保留 |
+| P4 | 适用的施引任务 | 查找施引文献、核验关系及语境，生成引用作用及扩展任务 | §5.3；新增 Work 返回 P3 |
+| P5 | 适用的作者/机构/项目任务 | 主体消歧、机构与项目追踪，生成关系、成果及证据 | §5.4–§5.5；新增 Work 返回 P3 |
+| P6 | P3–P5 任务队列及已发现 Work | 按 §5.6 递归扩展，完成证据阅读、Assessment 与九项综合说明 | §7、§9；保留全部缺口，不因阶段完成宣称闭包 |
+| P7 | Checkpoint、规范输出、证据及风险 | 数据一致性、覆盖及科学结论审计，冻结验收快照，交付 §9.4 报告 | §9 强制校验通过；闭包声明满足 §5.6，未成立必须明示 |
+| P8 | 新发表文献或索引更新且用户批准 | 增量更新：建立新 scope_id、差异记录及 Checkpoint；复用历史身份与查询记录，按范围重新核验 | 保留历史快照；执行 §5–§9 |
+
+P3–P6 是可循环阶段，不是只执行一次的线性流水线。Checkpoint 可交付阶段性成果，但只有对应门禁及覆盖条件成立才可标记相应阶段或任务完成。
+
+## 11. 执行决策
+
+本节为生效规则；正文的种子编号、题名及种子身份以 §2.2 为唯一事实源。出现冲突时以本节和 §2.2 为准；本节对其他规范内容采用章节引用，不另建事实清单。
+
+| 决策 ID | 生效规则 |
+| --- | --- |
+| DEC-01 | 种子集合及编号固定为 §2.2；去重 Upload 不进入种子表、不建立 Work，其哈希、来源和映射仅保存于 seed-manifest；分别统计 Seed record、Upload、文件哈希、Work、Version（§4.3）。 |
+| DEC-02 | 采用核心实验室/课题组/项目及所属机构其他团队的主题相关成果范围；固定机构层级、关键词、检索式、准入边界和依据（§5.5）。 |
+| DEC-03 | 分阶段扩展、完整递归目标、持久化 Checkpoint；使用 scope_id/checkpoint_id；预算仅暂停，不得未经批准硬截断（§5.6）。 |
+| DEC-04 | L01–L09 九项局限性分类固定为 §3。 |
+| DEC-05 | P1 执行参数记录于 temp/snapshots/scope.json：检索截止时间、来源可用性、许可/访问状态、覆盖、资源及预算；只使用合法资料（§5.6、§6、§8.3）。 |
+| DEC-06 | 中文忠实概括及原文链接必备；原摘要须具备公开许可，缺失或受限显式标注（§6.3）。 |
+| DEC-07 | temp/ 为持久化审计数据目录，纳入 Git，不得清空；目录、字段、查询及 Checkpoint 规则固定为 §8.3。 |
+| DEC-08 | 全部已识别 Work 入 ref.bib；九张 L 表与第十张 U00 对账；以 ref.bib 和 temp 防止重复检索（§4、§8、§9.2）。 |
+| DEC-09 | 项目目标为具体文献调查，不开发通用检索软件；采用 §6 的允许来源及工具，来源可用性、许可/访问状态、资源与预算在 P1 写入 scope.json。 |
+
+实质性范围变更、访问授权或无法自行消歧的冲突，须登记风险或决策记录并获得必要的用户批准。
+
+## 12. 本文件不包含/不产生的事项
+
+- 本文件不执行 PDF 参考文献解析、外部学术检索、作者/机构/项目调查、全文获取或自动递归。
+- 本文件不创建或填充 ref.bib、ref.html、temp 数据文件，不产生或虚构检索结果、引文统计、研究成果与局限性处理结论。
+- 本文件不修改 PPT、不上传 PDF、不提交运行代码；P1 允许提交合规配置模板、字段定义和必要的审计记录，不提交密钥、受限数据或私人信息。
+- 启动 P1 的条件是用户发布启动指令；启动后按本文件执行，不再重复确认 DEC-01–DEC-09。
