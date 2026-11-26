@@ -37,7 +37,7 @@ python3 -B /workspace/scratch/2e518600ca4c/cp6_work/checkpoint_cp6.py \
   --repo /workspace/scratch/2e518600ca4c/insect-project --apply
 ```
 
-3. root 将私有 `cp6-delta-preservation.json` 原字节归档至 `temp/validation/cp6-delta-preservation.json`，同步并回读候选批；正式冻结后按 cp6_qa/RUN.md 运行完整数据审计、七产物确定性和十项 UI。
+3. 所有源回执、人工决定和脚本须已经发布并精确回读。canonical integration → exports → candidate → QA → finalize 属于同一冻结检查点交付批，期间只整合和验证、不新增研究。root 将私有 `cp6-delta-preservation.json` 原字节归档至 `temp/validation/cp6-delta-preservation.json`；正式冻结后按 cp6_qa/RUN.md 运行完整数据审计、七产物确定性和十项 UI，然后执行 `cp6_qa/make_receipt.py` 生成带精确输入绑定的原始 QA receipt。此步骤不宣称临时 invalid 候选已经远端发布。
 4. QA 完成后，root 将以下原字节归档。finalize 不替代这一步，也不会创建这些 canonical 文件：
 
 | 私有 QA 文件 | canonical 目标 |
@@ -57,6 +57,11 @@ python3 -B /workspace/scratch/2e518600ca4c/cp6_work/finalize_cp6.py \
 
 finalize 重算 canonical 事实并核对冻结候选的计数、任务游标、query 高水位和未结队列，验证候选输入哈希；要求全部 QA 对应当前 CP6 的精确七产物，旧科学保护全部通过、S19 例外恰1、warnings 与原 CP5 完整告警集合相同。任何新增或丢失警告都要求先独立核查，不能静默过滤。
 
+每次候选刷新都更新 `input_frozen_at_utc` 和 `canonical_input_digest_sha256`；`created_at_utc` 仅保留首次创建历史。
+完整审计保存候选自身 SHA、审计前后精确输入映射与摘要。finalize 必须核对当前候选 SHA 与审计时一致，
+候选 / 当前 / audit before / audit after 输入映射完全相等，QA receipt 完整保留该绑定，且审计不早于本次冻结。
+同时强制 `candidate.coverage.derived_views.artifacts == state['exports']`，不能以另一轮同内容导出或旧时间戳替代本次正式审计。
+
 最终哈希按六个路径的预定最终字节计算，覆盖仓库所有文件，排除 Git 内部文件和 CP6 本身，拒绝意外符号链接。CP6 最后写入并标 valid，再全文件复核；旧检查点始终不动。结果只写私有 `final-checkpoint-result.json`，提供 CP6 自身 SHA。
 
 ## 同步与闭包
@@ -67,3 +72,5 @@ valid 仅代表本检查点已经通过数据与交付验收。P3–P6 继续 pa
 https://github.com/ncut-d1z/Insect-Inspired/blob/sync/cp6-checkpoint-import/temp/sync/CP-0006/verification.json
 
 该回执后置保存，不再改写已冻结 CP6。同步未被精确远端回读证明前，不开启新的研究批次。
+完成本冻结交付批后立即 commit、打包并同步，独立远端完整验收通过前不进入下一研究批。
+用户可见 Markdown 的当前日期、进度时间和 change-log 日期采用 Asia/Singapore 并标记 UTC+8；机器 `_utc` 字段、查询与冻结时间继续保留 UTC。

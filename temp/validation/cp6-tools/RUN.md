@@ -55,6 +55,9 @@ python3 -B /workspace/scratch/2e518600ca4c/cp6_qa/check_determinism.py
 
 node /workspace/scratch/2e518600ca4c/cp6_qa/html-smoke.mjs \
   /workspace/scratch/2e518600ca4c/insect-project/ref.html
+
+python3 -B /workspace/scratch/2e518600ca4c/cp6_qa/make_receipt.py \
+  --repo /workspace/scratch/2e518600ca4c/insect-project
 ```
 
 先跑完整数据审计；成功后确定性与 UI 可在内存许可下并行。所有结果留在仓库外，验收期间不写 canonical。
@@ -66,6 +69,13 @@ node /workspace/scratch/2e518600ca4c/cp6_qa/html-smoke.mjs \
 - cp6-determinism.json 恰含 BibTeX、HTML 和五个研究视图，共七个产物，全部 byte_equal，changed_inputs=[]。
 - ui-audit-final.json 和原始 html-browser-check.json 保留完整十项通过结果、零 JavaScript 错误、input_changed=false、实际 HTML SHA 与字节数，以及四张截图。
 - 主代理另外保存 19 个逻辑数据集与 CP5 的 delta 保留核查；不得仅凭新记录数量判断旧数据未丢失。
+
+每次候选刷新均更新 `validation_results.input_frozen_at_utc`，不沿用历史创建时间充当新冻结时间。
+审计在完整检查前后保存精确 `canonical_input_hashes` 映射及其规范 JSON SHA-256，并锁定候选自身 SHA。
+审计时间不得早于这次冻结；本轮 canonical 逻辑全集不能超出候选绑定的输入范围。
+`make_receipt.py` 只在三项正式 QA 完成后执行，把上述 before/after 映射完整写入私有 QA receipt，
+并再次比较当前数据和候选。最终冻结脚本必须核对候选、数据审计、receipt 和当前输入全等；
+候选保存的七产物完整清单也必须与当前导出清单全等。旧 QA 不能仅凭时间晚于首次创建或七产物相同而复用。
 
 验收通过表示本次检查点的数据和产物合格，不表示 P3–P6 研究闭包：未结任务、原游标、未取得全文、源失败及未知字段时钟继续保留。
 缓存复用不计 HTTP，外部尝试和手工审阅按实际活动记账。六小时/2000 请求/200 手工/零付费预算继续适用。

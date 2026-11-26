@@ -1,5 +1,5 @@
 {
-  "prepared_at_utc": "2026-11-26T16:34:45.598190Z",
+  "prepared_at_utc": "2026-11-26T16:56:53.536668Z",
   "scope_id": "SCOPE-0001",
   "run_id": "RUN-0004",
   "checkpoint_id": "CP-0006",
@@ -8,18 +8,18 @@
   "files": [
     {
       "path": "/workspace/scratch/2e518600ca4c/cp6_work/checkpoint_cp6.py",
-      "bytes": 50431,
-      "sha256": "0975f1eda645030d9b99948c2e3d39447770730443dd66d09c865e531ff86920"
+      "bytes": 51023,
+      "sha256": "cf760430bde950422fe27274194978e7efddca63b5c9f8e3328c69eab8514760"
     },
     {
       "path": "/workspace/scratch/2e518600ca4c/cp6_work/finalize_cp6.py",
-      "bytes": 14520,
-      "sha256": "ebe9ef9b5a8da954647bc53860c1569c7b81190147934d4e9b67ecf8da205213"
+      "bytes": 16252,
+      "sha256": "35e08d74a753f547ffb3e8cf8511e39e371417afb5256b00acb1e55ba16c76ed"
     },
     {
       "path": "/workspace/scratch/2e518600ca4c/cp6_work/CHECKPOINT-RUN.md",
-      "bytes": 5519,
-      "sha256": "2cb2fed81f06d080f0f802aac0cded9b655972d399a3649626781cb6d82acead"
+      "bytes": 6736,
+      "sha256": "9ebebbdf8ec4f78aba315c146e6536e6028b7da4b821bcd1f49e07165ac9f061"
     },
     {
       "path": "/workspace/scratch/2e518600ca4c/cp6_work/checkpoint-preflight.json",
@@ -43,5 +43,12 @@
     "temp/snapshots/checkpoints/CP-0006.json"
   ],
   "implementation_note": "Counts and all 19 preservation checks derive from complete logical canonical data; integration declared deltas and changed_records must reconcile exactly. Finalization verifies root-archived QA without adding files outside the six-path whitelist.",
-  "has_not_executed_candidate_or_finalizer": true
+  "has_not_executed_candidate_or_finalizer": true,
+  "previous_preparation_manifest_sha256": "0d6cf7c774cc5a69bce2f4a0a51badb64e0c9112928736afc8b7edc128ef9814",
+  "revision_note": "Adds fresh input freeze, exact finalizer input/receipt binding, export inventory equality, and Singapore visible dates. Frozen dependencies retain their original exact hashes.",
+  "binding_preflight": {
+    "path": "/workspace/scratch/2e518600ca4c/cp6_qa/binding-preflight.json",
+    "bytes": 1571,
+    "sha256": "21f9110518424c2a3cfe8b5d8deb08961f9c61b9e7217cf2f7d6850d7370605d"
+  }
 }

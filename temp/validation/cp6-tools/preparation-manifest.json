@@ -1,5 +1,5 @@
 {
-  "prepared_at_utc": "2026-11-26T16:16:17.503775Z",
+  "prepared_at_utc": "2026-11-26T16:56:53.536668Z",
   "scope_id": "SCOPE-0001",
   "run_id": "RUN-0004",
   "checkpoint_id": "CP-0006",
@@ -60,13 +60,18 @@
   "prepared_files": [
     {
       "path": "/workspace/scratch/2e518600ca4c/cp6_qa/RUN.md",
-      "bytes": 4995,
-      "sha256": "4d74bce247b1548ebc590bbac3a954861a68f43dffda63921109984c8195e209"
+      "bytes": 5878,
+      "sha256": "d75698b9d4c875a05487111fac823a0ad3b03bc28f964453ec9b3ed095cbad02"
     },
     {
       "path": "/workspace/scratch/2e518600ca4c/cp6_qa/audit_cp6.py",
-      "bytes": 8790,
-      "sha256": "0b044eef00b4ff534d9785dd4593bbd7abab4187d6a54f3d0aada8416d9d706c"
+      "bytes": 14119,
+      "sha256": "d3b6497b528fb8975d917d25524a0efea94c8820a095071b3e6c3290a1643743"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp6_qa/binding-preflight.json",
+      "bytes": 1571,
+      "sha256": "21f9110518424c2a3cfe8b5d8deb08961f9c61b9e7217cf2f7d6850d7370605d"
     },
     {
       "path": "/workspace/scratch/2e518600ca4c/cp6_qa/check_determinism.py",
@@ -84,6 +89,11 @@
       "sha256": "974cf0b7b68ae526d61b9351f118b907df46ce4968c454c971d1b716a8dc1939"
     },
     {
+      "path": "/workspace/scratch/2e518600ca4c/cp6_qa/make_receipt.py",
+      "bytes": 5397,
+      "sha256": "0b658dbe643a636bccb9bb78bc521819e332e07eeabb00f3deb20544c9667ae5"
+    },
+    {
       "path": "/workspace/scratch/2e518600ca4c/cp6_qa/preflight.json",
       "bytes": 1487,
       "sha256": "a125dbaaa992c946e768804cd7f1fd12ee3c92b91e502b90ed8b0422acfd453e"
@@ -93,5 +103,7 @@
     "check_determinism.py": "Only CP6 labels/output directory/report name; exporters continue to use unchanged cp5_qa files.",
     "html-smoke.mjs": "Only checkpoint_id changed from CP-0005 to CP-0006; original ten checks retained."
   },
-  "full_validation_not_yet_run": true
+  "full_validation_not_yet_run": true,
+  "previous_preparation_manifest_sha256": "5874684db53c24977d8c8089b0a197e7cec00f6025b3dd8fdf6a8b253c4abc9f",
+  "revision_note": "Adds exact candidate hash/fresh freeze and before-after canonical input maps, plus private receipt assembly; no inherited source dependency changed."
 }

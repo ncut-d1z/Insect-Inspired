@@ -36,6 +36,35 @@ def sha(raw):
     return hashlib.sha256(raw).hexdigest()
 
 
+def input_digest(snapshot):
+    return sha(json.dumps(snapshot, ensure_ascii=False, sort_keys=True,
+                          separators=(',', ':'), allow_nan=False).encode('utf-8'))
+
+
+def input_snapshot(repo, names, watch=None):
+    result = {}
+    for name in sorted(names):
+        path = (repo / safe_relative(name)).resolve()
+        if not path.is_relative_to(repo.resolve()):
+            raise ValueError('Bound input path escapes repository')
+        if watch: watch(path)
+        result[name] = {'bytes': path.stat().st_size, 'sha256': cp5.cp4.original.sha(path)}
+    return result
+
+
+def required_input_names(repo):
+    """The current logical universe cannot silently exceed the frozen map."""
+    names = {'temp/partitions/manifest.json', 'temp/schema.json',
+             'temp/reports/RUN-0004-integration.json',
+             'temp/reports/RUN-0004-Jung2011-adaptation-review.json', *FROZEN_PATHS}
+    manifest = json.loads((repo / 'temp/partitions/manifest.json').read_bytes())
+    for path in (repo / 'temp').glob('*.jsonl'):
+        names.add(str(path.relative_to(repo)))
+        for part in manifest['datasets'].get(path.name, {}).get('parts', []):
+            names.add('temp/' + safe_relative(part['path']))
+    return names
+
+
 def safe_relative(path):
     value = PurePosixPath(path)
     if value.is_absolute() or '..' in value.parts:
@@ -129,6 +158,65 @@ def cp5_baseline(repo):
 
 
 class AuditCP6(cp5.AuditCP5):
+    def load(self):
+        candidate_path = self.temp / 'snapshots/checkpoints/CP-0006.json'
+        self.watch(candidate_path)
+        candidate_raw = candidate_path.read_bytes()
+        candidate_hash, candidate_size = sha(candidate_raw), len(candidate_raw)
+        candidate = json.loads(candidate_raw)
+        del candidate_raw
+        validation = candidate['validation_results']
+        expected = validation['canonical_input_hashes']
+        frozen_at = cp5.cp4.original.utc(validation['input_frozen_at_utc'])
+        began = datetime.now(timezone.utc)
+        self.require(candidate['checkpoint_id'] == 'CP-0006' and candidate['parent_checkpoint_id'] == 'CP-0005',
+                     'cp6_input_binding_checkpoint', 'Expected exact CP6 candidate identity')
+        self.require(frozen_at is not None and began >= frozen_at and self.now >= frozen_at,
+                     'cp6_audit_predates_freeze', validation['input_frozen_at_utc'])
+        self.require(required_input_names(self.repo).issubset(expected),
+                     'cp6_input_universe_unbound', 'All current logical inputs must be in the candidate hash map')
+        before = input_snapshot(self.repo, expected, self.watch)
+        self.require(before == expected, 'cp6_before_inputs_differ', 'Current input bytes differ from this candidate freeze')
+        self.require(input_digest(expected) == validation['canonical_input_digest_sha256'],
+                     'cp6_input_digest_differs', 'Candidate input-map digest differs')
+        self.require(cp5.cp4.original.sha(candidate_path) == candidate_hash,
+                     'cp6_candidate_changed_before_audit', 'Candidate changed while establishing its input binding')
+        self.stats['cp6_input_binding'] = {
+            'checkpoint_id': 'CP-0006', 'input_frozen_at_utc': validation['input_frozen_at_utc'],
+            'candidate_sha256': candidate_hash, 'candidate_bytes': candidate_size,
+            'audit_started_at_utc': began.isoformat().replace('+00:00', 'Z'),
+            'expected_digest_sha256': input_digest(expected),
+            'before_input_hashes': before, 'before_digest_sha256': input_digest(before),
+        }
+        self._cp6_expected_inputs = expected
+        del candidate
+        super().load()
+
+    def finish(self):
+        binding = self.stats.get('cp6_input_binding')
+        if binding is not None:
+            try:
+                after = input_snapshot(self.repo, self._cp6_expected_inputs, self.watch)
+                candidate_path = self.temp / 'snapshots/checkpoints/CP-0006.json'
+                binding.update(after_input_hashes=after, after_digest_sha256=input_digest(after),
+                    candidate_sha256_after=cp5.cp4.original.sha(candidate_path),
+                    audit_completed_at_utc=datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'))
+                self.require(required_input_names(self.repo).issubset(self._cp6_expected_inputs),
+                             'cp6_input_universe_changed', 'A logical input appeared outside the frozen map')
+                self.require(after == binding['before_input_hashes'] == self._cp6_expected_inputs,
+                             'cp6_after_inputs_differ', 'Exact canonical input bytes changed during the audit')
+                self.require(binding['candidate_sha256_after'] == binding['candidate_sha256'],
+                             'cp6_candidate_changed_during_audit', 'Candidate bytes changed during the audit')
+                binding['passed'] = (after == binding['before_input_hashes'] == self._cp6_expected_inputs
+                    and binding['candidate_sha256_after'] == binding['candidate_sha256']
+                    and binding['before_digest_sha256'] == binding['after_digest_sha256'] == binding['expected_digest_sha256'])
+            except Exception as error:
+                binding['passed'] = False
+                self.note('cp6_input_binding_finish_error', str(error))
+        else:
+            self.note('cp6_input_binding_missing', 'No exact candidate/input binding was established')
+        return super().finish()
+
     def check_cp5_baseline(self):
         for path in (Path(__file__).resolve(), CP5_ADAPTER):
             self.watch(path)

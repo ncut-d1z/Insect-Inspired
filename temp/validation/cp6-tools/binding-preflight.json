@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-11-26T16:56:53.536668Z",
+  "scope": "Syntax and isolated evaluation of the two actual new finalizer guards only; no canonical integration, candidate generation, full QA or finalization executed.",
+  "python_syntax": [
+    "/workspace/scratch/2e518600ca4c/cp6_work/checkpoint_cp6.py",
+    "/workspace/scratch/2e518600ca4c/cp6_work/finalize_cp6.py",
+    "/workspace/scratch/2e518600ca4c/cp6_qa/audit_cp6.py",
+    "/workspace/scratch/2e518600ca4c/cp6_qa/make_receipt.py"
+  ],
+  "actual_guard_negative_cases": [
+    {
+      "case": "current_input_hash_change_rejected",
+      "passed": true
+    },
+    {
+      "case": "candidate_export_inventory_hash_change_rejected",
+      "passed": true
+    }
+  ],
+  "actual_guard_positive_cases_passed": true,
+  "builder_audit_input_digest_agreement": true,
+  "singapore_visible_date_rollover_passed": true,
+  "all_preexisting_dependency_bytes_unchanged": true,
+  "previous_preparation_manifests": {
+    "/workspace/scratch/2e518600ca4c/cp6_qa/preparation-manifest.json": "5874684db53c24977d8c8089b0a197e7cec00f6025b3dd8fdf6a8b253c4abc9f",
+    "/workspace/scratch/2e518600ca4c/cp6_work/checkpoint-preparation-manifest.json": "0d6cf7c774cc5a69bce2f4a0a51badb64e0c9112928736afc8b7edc128ef9814"
+  },
+  "reviewed_integrator": {
+    "path": "/workspace/scratch/2e518600ca4c/cp6_work/integrate_cp6.py",
+    "bytes": 41152,
+    "sha256": "95b6781742dcd6f93989de88dff68f2d4108b761469e9ee9fc88c3afdce50bf4"
+  },
+  "canonical_writes": false,
+  "research_requests": 0,
+  "full_qa_executed": false
+}

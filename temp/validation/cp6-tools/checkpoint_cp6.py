@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 import csv
 import hashlib
 import json
@@ -63,6 +64,11 @@ def sha(path):
 
 def sha_bytes(raw):
     return hashlib.sha256(raw).hexdigest()
+
+
+def input_digest(snapshot):
+    return sha_bytes(json.dumps(snapshot, ensure_ascii=False, sort_keys=True,
+                               separators=(',', ':'), allow_nan=False).encode('utf-8'))
 
 
 def json_text(value, compact=False):
@@ -436,7 +442,9 @@ def collect(repo, now):
 def documents(state, valid=False, qa=None):
     c, cov, d = state['counts'], state['coverage'], state['derived']
     now, science, claim = state['now'], state['science'], state['science']['assessment']
-    stamp = now.isoformat().replace('+00:00', 'Z'); source = cov['sources']
+    local_now = now.astimezone(ZoneInfo('Asia/Singapore'))
+    stamp = local_now.strftime('%Y-%m-%d %H:%M:%S') + ' UTC+8 (Asia/Singapore)'
+    source = cov['sources']
     state_word = 'valid 数据检查点' if valid else 'invalid 候选，完整验收待完成'
     acceptance = ('完整数据审计 0 错误、' + str(qa['warning_count']) + ' 项已报告警告；七产物字节一致，十项 UI 通过。'
                   if valid else '完整数据审计、七产物确定性、十项 UI 和最终 artifact hashes 尚待验收。')
@@ -540,7 +548,7 @@ P3–P6 继续部分推进，研究闭包未成立，P7 未启动，P8 未触发
     readme, n = re.subn(r'^执行状态统一记录于 \[进度追踪\].*$', lambda _: pointer, (state['repo'] / 'README.md').read_text(encoding='utf-8'), flags=re.MULTILINE)
     require(n == 1, 'README status pointer not unique')
     start, end = '<!-- CP6-CHECKPOINT-START -->', '<!-- CP6-CHECKPOINT-END -->'
-    section = f'{start}\n## {CP} / {RUN} / {now.date()} · {state_word}\n\nPMID 身份本批完成 {source["run4_identity_resolved"]}/{source["run4_identity_target_count"]}；新 Work {d["new_work_records"]}、署名身份 {d["new_work_scoped_person_records"]}、参考解析 {d["new_reference_resolutions"]}、source_supported 边 {d["new_source_supported_edges"]}。Jung 独立 L03 单主张新增，原科学记录完整保留。unknown 关闭 {d["unknown_field_tasks_closed"]}、逾期升级 {d["overdue_unknown_tasks_escalated"]}。外部 {d["new_external_invocations"]}、缓存 {d["cache_reuses"]}、人工 {d["manual_review_activities"]}。{acceptance} 研究闭包未成立；最终同步由提交后的外部回读证明。\n{end}'
+    section = f'{start}\n## {CP} / {RUN} / {local_now.date()} UTC+8 · {state_word}\n\nPMID 身份本批完成 {source["run4_identity_resolved"]}/{source["run4_identity_target_count"]}；新 Work {d["new_work_records"]}、署名身份 {d["new_work_scoped_person_records"]}、参考解析 {d["new_reference_resolutions"]}、source_supported 边 {d["new_source_supported_edges"]}。Jung 独立 L03 单主张新增，原科学记录完整保留。unknown 关闭 {d["unknown_field_tasks_closed"]}、逾期升级 {d["overdue_unknown_tasks_escalated"]}。外部 {d["new_external_invocations"]}、缓存 {d["cache_reuses"]}、人工 {d["manual_review_activities"]}。{acceptance} 研究闭包未成立；最终同步由提交后的外部回读证明。\n{end}'
     change = (state['repo'] / 'temp/change-log.md').read_text(encoding='utf-8')
     if start in change:
         change, n = re.subn(re.escape(start) + r'.*?' + re.escape(end), lambda _: section, change, flags=re.DOTALL)
@@ -577,9 +585,12 @@ def candidate(state):
         'Research closure remains open; unresolved tasks, missing original text and source/identity/count gaps retain their true cursors.',
         'Jung Fig6b admission is confined to reported response-decay estimates, conditions and uncertainty; no universal mechanism or fully-resolved claim is inferred.',
         'At snapshot creation final canonical publication/readback has not occurred; post-commit verification is recorded separately.']
+    # created_at is historical identity; every refresh gets a distinct freeze.
+    frozen_at = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
     validation = {'state': 'data_audit_pending', 'checkpoint_self_hash_excluded': True, 'git_internal_files_excluded': True,
         'frozen_parent_bytes_unchanged': True, 'frozen_scope_and_seed_unchanged': True, 'frozen_baseline_sha256': state['frozen'],
         'canonical_input_hashes': state['inputs'], 'baseline_commit': BASE_COMMIT, 'baseline_tree': BASE_TREE,
+        'input_frozen_at_utc': frozen_at, 'canonical_input_digest_sha256': input_digest(state['inputs']),
         'integration_report_sha256': sha(repo / INTEGRATION_PATH), 'scientific_review_sha256': sha(repo / SCIENCE_PATH),
         'data_audit': 'pending', 'determinism': 'pending', 'ui_validation': 'pending', 'final_artifact_hashes': 'pending',
         'final_remote_verification': 'post_commit_external_receipt_required', 'post_commit_verification_url': SYNC_URL,

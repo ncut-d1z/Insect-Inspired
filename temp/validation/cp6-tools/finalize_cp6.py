@@ -32,7 +32,24 @@ def load_qa(repo, qa, candidate, state):
             'Full data audit did not pass with stable inputs')
     require(audit.get('read_only') is True and Path(audit['repository']).resolve() == repo,
             'Audit refers to another repository or is not read-only')
-    require(build.utc(audit['audited_at_utc']) >= build.utc(candidate['created_at_utc']), 'Audit predates the candidate')
+    validation = candidate['validation_results']
+    frozen = validation['input_frozen_at_utc']
+    require(build.utc(audit['audited_at_utc']) >= build.utc(frozen), 'Audit predates the current input freeze')
+    expected_inputs = validation['canonical_input_hashes']
+    binding = audit['statistics']['cp6_input_binding']
+    require(binding['passed'] is True and binding['checkpoint_id'] == build.CP
+            and binding['input_frozen_at_utc'] == frozen
+            and build.utc(binding['audit_started_at_utc']) >= build.utc(frozen),
+            'Audit is not bound to this exact candidate freeze')
+    require(binding['candidate_sha256'] == binding['candidate_sha256_after'] == build.sha(repo / build.CP_PATH)
+            and binding['candidate_bytes'] == (repo / build.CP_PATH).stat().st_size,
+            'Audited candidate bytes differ from current candidate')
+    current_inputs = build.file_snapshot(repo, expected_inputs)
+    require(binding['before_input_hashes'] == binding['after_input_hashes'] == expected_inputs == current_inputs,
+            'Candidate/audit/current exact canonical input maps differ')
+    digest = build.input_digest(expected_inputs)
+    require(binding['before_digest_sha256'] == binding['after_digest_sha256'] == binding['expected_digest_sha256']
+            == validation['canonical_input_digest_sha256'] == digest, 'Canonical input-map digests differ')
     export_meta = audit['statistics']['export_metadata']
     require(len(export_meta) == 5 and all(row[1] == 'SCOPE-0001' and row[2] == build.CP for row in export_meta),
             'Full data audit did not inspect five CP6 views')
@@ -75,6 +92,10 @@ def load_qa(repo, qa, candidate, state):
     require(receipt['status'] == 'passed' and receipt['checkpoint_id'] == build.CP
             and receipt['scope_id'] == 'SCOPE-0001' and set(receipt['raw_evidence_files']) == RAW_NAMES,
             'QA receipt population/identity differs')
+    require(receipt['canonical_input_binding'] == binding
+            and receipt['receipt_input_digest_sha256'] == digest
+            and receipt['receipt_candidate_sha256'] == binding['candidate_sha256'],
+            'Final QA receipt lost the exact before/after candidate input binding')
     archive = repo / 'temp/validation/cp6-qa'
     for name, metadata in receipt['raw_evidence_files'].items():
         path, archived = qa / name, archive / name
@@ -116,6 +137,8 @@ def main():
     now = datetime.now(timezone.utc)
     state = build.collect(repo, now)
     require(candidate['counts'] == state['counts'], 'Current computed counts differ from frozen candidate')
+    require(candidate['coverage']['derived_views']['artifacts'] == state['exports'],
+            'Candidate export inventory differs from current seven exact artifacts')
     require(candidate['task_cursor_state'] == {tid: {f: t.get(f) for f in ['event_sequence', 'task_state', 'cursor', 'query_ids', 'attempt_count', 'error_code', 'failure_reason', 'retry_at', 'review_condition']}
             for tid,t in sorted(state['latest'].items())}, 'Current task cursor state differs from frozen candidate')
     require(candidate['query_log_high_watermark'] == state['counts']['queries']
