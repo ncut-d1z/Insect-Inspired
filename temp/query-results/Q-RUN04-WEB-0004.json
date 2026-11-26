@@ -1,0 +1,127 @@
+{
+  "query_id": "Q-RUN04-WEB-0004",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "institutional_repository",
+  "source_name": "NCBI PubMed",
+  "entity_id": "W-R5c6074f5a61518d4",
+  "work_key": "TempWR5c6074f5a61518d4",
+  "endpoint_or_url": "https://pubmed.ncbi.nlm.nih.gov/28193813/",
+  "transport": "web_retrieval",
+  "queried_at_utc": "2026-11-26T16:16:46.925Z",
+  "completed_at_utc": "2026-11-26T16:16:47.578Z",
+  "query_time_status": "exact",
+  "raw_parameters": {
+    "open": [
+      {
+        "ref_id": "https://pubmed.ncbi.nlm.nih.gov/28193813/"
+      }
+    ],
+    "response_length": "long"
+  },
+  "normalized_parameters": {
+    "pmid": "28193813",
+    "resource_kind": "PubMed record"
+  },
+  "status": "success",
+  "http_status": null,
+  "response_kind": "bibliographic_record",
+  "returned_count": 1,
+  "visible_total": 1,
+  "count_scope": "One exact PubMed identity only; no corpus/citation-list/fulltext/author-entity coverage is inferred.",
+  "result_identifiers": [
+    "MED:28193813",
+    "DOI:10.1098/rstb.2016.0068",
+    "PMCID:PMC5312018"
+  ],
+  "external_requests_performed": 1,
+  "manual_review_items": 0,
+  "cache_hit": false,
+  "retrieval_cache_note": "Web retrieval service controls its own upstream cache; this is a new tool access, not proof of a new origin HTTP response.",
+  "timeout_note": "Web retrieval tool exposes no caller timeout parameter; actual timestamps retained.",
+  "retry_of_query_id": "Q-RUN03-WEB-0003",
+  "source_refs": [
+    "turn596099182view0"
+  ],
+  "source_locators": [
+    {
+      "source_ref": "turn596099182view0",
+      "line_start": 177,
+      "line_end": 193,
+      "fields": [
+        "publication_date",
+        "volume",
+        "issue_or_article_number_or_pages",
+        "title",
+        "byline",
+        "publication_affiliations",
+        "PMID",
+        "DOI",
+        "PMCID_if_reported"
+      ]
+    }
+  ],
+  "metadata": {
+    "pmid": "28193813",
+    "pmcid": "PMC5312018",
+    "doi": "10.1098/rstb.2016.0068",
+    "title": "Subtle changes in the landmark panorama disrupt visual navigation in a nocturnal bull ant",
+    "publication_date": "2017-04-05",
+    "publication_date_kind": "issue_date_as_shown",
+    "year": 2017,
+    "venue_abbreviation": "Philos Trans R Soc Lond B Biol Sci",
+    "volume": "372",
+    "issue": "1717",
+    "article_number": "20160068",
+    "authors": [
+      {
+        "position": 1,
+        "display_name": "Ajay Narendra",
+        "affiliation_numbers": [
+          1
+        ]
+      },
+      {
+        "position": 2,
+        "display_name": "Fiorella Ramirez-Esquivel",
+        "affiliation_numbers": [
+          2
+        ]
+      }
+    ],
+    "publication_affiliations": [
+      {
+        "affiliation_number": 1,
+        "organization_names": [
+          "Department of Biological Sciences",
+          "Macquarie University"
+        ],
+        "country": "Australia"
+      },
+      {
+        "affiliation_number": 2,
+        "organization_names": [
+          "Research School of Biology",
+          "The Australian National University"
+        ],
+        "country": "Australia"
+      }
+    ]
+  },
+  "metadata_pending_review": {
+    "language": "not explicitly established by retrieved citation header",
+    "publisher": "not independently established in this receipt",
+    "cross_work_person_identity": "Names and work-scoped affiliation facts alone must not automatically merge Person entities."
+  },
+  "integration_guard": "Retain the existing work_id/work_key and check the complete canonical DOI/title index before any merge. No new Work is asserted; exact byline identity is scoped to this article. Preserve existing Version/Person records.",
+  "error_code": null,
+  "error_message": null,
+  "sanitized": true,
+  "payload_retained": false,
+  "metadata_allowlist_retained": true,
+  "license_note": "Bibliographic facts and locators only; original abstracts/fulltext/figure text/references payload/street addresses/email/credentials excluded.",
+  "raw_tool_response_sha256": "b2ffefef93b9efd04d35268f61c46b879647e06b85e3815c8741ac235c833690",
+  "raw_tool_response_bytes": 19098,
+  "raw_response_retention": "Private local tool-response cache outside repository; not for Git publication."
+}

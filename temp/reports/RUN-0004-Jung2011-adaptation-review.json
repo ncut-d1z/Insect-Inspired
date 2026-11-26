@@ -1,0 +1,1834 @@
+{
+ "report_id": "RUN-0004-Jung2011-adaptation-review",
+ "run_id": "RUN-0004",
+ "scope_id": "SCOPE-0001",
+ "intended_checkpoint_id": "CP-0006",
+ "base_git_commit": "a250d7a836649d96c13c555be5482d704dc06d3e",
+ "reviewed_at_utc": "2026-11-26T16:18:01.561286Z",
+ "review_status": "single_claim_review_complete_pending_remote_upload_and_canonical_ingestion",
+ "source": {
+  "work_id": "W-Dabcb702a46d5671a",
+  "work_key": "Jung2011",
+  "title": "Flight Activity Alters Velocity Tuning of Fly Motion-Sensitive Neurons",
+  "doi": "10.1523/jneurosci.1138-11.2011",
+  "version_id": "V-W-Dabcb702a46d5671a-01",
+  "upload_id": "U-RUN02-Jung2011-PDF",
+  "original_filename": "jung2011.pdf",
+  "sha256": "05efa9a082c08496422012a814b5715f0b51719407fbe07403abd547d1bf6852",
+  "bytes": 1482077,
+  "pages": 7,
+  "source_id": "publisher",
+  "url": "https://www.jneurosci.org/content/jneuro/31/25/9231.full.pdf",
+  "original_retrieved_at_utc": "2026-11-26T09:42:54.439428Z",
+  "reused_query_id": "Q-RUN02-L079-jung2011-pdf",
+  "cache_receipt_path": "temp/query-results/Q-RUN02-L079-jung2011-pdf.json",
+  "fulltext_access_level": "cached_primary_publisher_fulltext_pdf",
+  "original_pages_visually_reviewed": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "source_body_redistributed": false,
+  "discovery_path": [
+   {
+    "from_entity_id": "W-S03",
+    "to_entity_id": "W-Dabcb702a46d5671a",
+    "discovery_route": "backward_citation",
+    "source_id": "SRC-PDF",
+    "evidence_locator": [
+     {
+      "source_id": "SRC-PDF",
+      "version_id": "V-S03-01",
+      "upload_id": "U-S03-01",
+      "identifier": "S03",
+      "page": 7,
+      "section": "References",
+      "accessed_at": "2026-11-26",
+      "evidence_note": "Printed reference 28 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+     }
+    ],
+    "verification_status": "verified",
+    "scope_id": "SCOPE-0001"
+   }
+  ]
+ },
+ "assessment": {
+  "assessment_id": "AS-RUN04-Jung2011-L03-impulse-decay-adaptation",
+  "work_id": "W-Dabcb702a46d5671a",
+  "work_key": "Jung2011",
+  "limitation_id": "L03",
+  "claim_id": "CLAIM-RUN04-Jung2011-H1-impulse-decay-adaptation",
+  "claim_type": "biological_mechanism",
+  "relation_type": [
+   "foundational_support"
+  ],
+  "handling_level": "new_evidence_or_hypothesis",
+  "evidence_level": "fulltext_result",
+  "evidence_kind": [
+   "electrophysiology",
+   "controlled_experiment"
+  ],
+  "evidence_route": "biological_mechanism",
+  "conditions": {
+   "species": {
+    "status": "reported",
+    "value": [
+     {
+      "scientific_name": "Lucilia spp.",
+      "taxon_id": null,
+      "cell_type": "H1 LPTC",
+      "cell_identifiers": [
+       "H1"
+      ],
+      "field_states": {
+       "taxon_id": {
+        "status": "not_reported",
+        "reason": "论文未给出分类数据库标识符。",
+        "evidence_locator": [
+         {
+          "source_id": "publisher",
+          "identifier": "10.1523/jneurosci.1138-11.2011",
+          "version_id": "V-W-Dabcb702a46d5671a-01",
+          "upload_id": "U-RUN02-Jung2011-PDF",
+          "page": 1,
+          "evidence_note": "印刷p9231，Preparation and set-up：仅雌性Lucilia spp.；固定头部和胸部、翅可自由运动，准备后恢复至少12h。未给种级名称或日龄。",
+          "section": "Materials and Methods / Preparation and set-up"
+         }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+       }
+      }
+     }
+    ],
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 1,
+      "evidence_note": "印刷p9231，Preparation and set-up：仅雌性Lucilia spp.；固定头部和胸部、翅可自由运动，准备后恢复至少12h。未给种级名称或日龄。",
+      "section": "Materials and Methods / Preparation and set-up"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "motion_type": {
+    "status": "reported",
+    "value": "other_specified",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "motion_dof": {
+    "status": "not_applicable",
+    "value": null,
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "reason": "显示器光栅与脉冲范式，不估计动物自运动自由度。",
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "known_translation": {
+    "status": "not_applicable",
+    "value": null,
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "reason": "无动物平移恢复主张。",
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "speed_range": {
+    "status": "reported",
+    "value": [
+     {
+      "quantity": "other_specified",
+      "min": 5,
+      "max": 5,
+      "unit": "Hz",
+      "coordinate_frame": "paper-defined sensor/body frame",
+      "measurement_role": "ground_truth",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 2,
+        "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+        "section": "Visual stimulation; Experimental protocol; Recording"
+       }
+      ],
+      "definition": "适应刺激时间频率；脉冲由突然位移产生，位移幅度未单列。"
+     }
+    ],
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "environment": {
+    "status": "reported",
+    "value": "laboratory_controlled",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "environment_details": {
+    "status": "reported",
+    "value": {
+     "dataset_ids": [
+      "DS-RUN04-Jung2011-Fig6b-H1-impulse"
+     ],
+     "scene_count": 1,
+     "fov_deg": {
+      "quantity": "fov",
+      "min": 170,
+      "max": 170,
+      "unit": "deg",
+      "coordinate_frame": "paper-defined sensor/body frame",
+      "measurement_role": "ground_truth",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 2,
+        "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+        "section": "Visual stimulation; Experimental protocol; Recording"
+       }
+      ],
+      "definition": "LED柱形显示器水平视野170°，垂直60°；不是全景自然光流。"
+     },
+     "distance_range": null,
+     "distance_distribution": null,
+     "scene_dynamics": "dynamic",
+     "distance_knowledge": null,
+     "field_states": {
+      "distance_range": {
+       "status": "not_applicable",
+       "reason": "本实验比较显示器运动脉冲响应，不推断场景距离或深度分布。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.1523/jneurosci.1138-11.2011",
+         "version_id": "V-W-Dabcb702a46d5671a-01",
+         "upload_id": "U-RUN02-Jung2011-PDF",
+         "page": 2,
+         "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+         "section": "Visual stimulation; Experimental protocol; Recording"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      },
+      "distance_distribution": {
+       "status": "not_applicable",
+       "reason": "本实验比较显示器运动脉冲响应，不推断场景距离或深度分布。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.1523/jneurosci.1138-11.2011",
+         "version_id": "V-W-Dabcb702a46d5671a-01",
+         "upload_id": "U-RUN02-Jung2011-PDF",
+         "page": 2,
+         "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+         "section": "Visual stimulation; Experimental protocol; Recording"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      },
+      "distance_knowledge": {
+       "status": "not_applicable",
+       "reason": "本实验比较显示器运动脉冲响应，不推断场景距离或深度分布。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.1523/jneurosci.1138-11.2011",
+         "version_id": "V-W-Dabcb702a46d5671a-01",
+         "upload_id": "U-RUN02-Jung2011-PDF",
+         "page": 2,
+         "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+         "section": "Visual stimulation; Experimental protocol; Recording"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      }
+     }
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "texture_noise": {
+    "status": "reported",
+    "value": {
+     "stimulus_type": "periodic_grating",
+     "contrast": {
+      "quantity": "contrast",
+      "min": 0.174,
+      "max": 0.174,
+      "unit": "contrast_fraction",
+      "coordinate_frame": "paper-defined sensor/body frame",
+      "measurement_role": "ground_truth",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 2,
+        "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+        "section": "Visual stimulation; Experimental protocol; Recording"
+       }
+      ],
+      "definition": "原文报告17.4%对比；此字段仅换算为比例。"
+     },
+     "spatial_frequency": {
+      "quantity": "spatial_frequency",
+      "min": 0.025,
+      "max": 0.025,
+      "unit": "cycles/deg",
+      "coordinate_frame": "paper-defined sensor/body frame",
+      "measurement_role": "ground_truth",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 2,
+        "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+        "section": "Visual stimulation; Experimental protocol; Recording"
+       }
+      ],
+      "definition": "由40°/周期取倒数，属于刺激单位换算。"
+     },
+     "illumination": {
+      "quantity": "illumination",
+      "min": 5.3,
+      "max": 5.3,
+      "unit": "cd/m2",
+      "coordinate_frame": "paper-defined sensor/body frame",
+      "measurement_role": "measured",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 2,
+        "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+        "section": "Visual stimulation; Experimental protocol; Recording"
+       }
+      ],
+      "definition": "原文给显示屏平均亮度5.3cd/m²。"
+     },
+     "noise": null,
+     "outlier_fraction": null,
+     "occlusion_fraction": null,
+     "field_states": {
+      "noise": {
+       "status": "not_reported",
+       "reason": "所定位方法/刺激描述没有定量披露此条件；不把未报告当作零。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.1523/jneurosci.1138-11.2011",
+         "version_id": "V-W-Dabcb702a46d5671a-01",
+         "upload_id": "U-RUN02-Jung2011-PDF",
+         "page": 2,
+         "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+         "section": "Visual stimulation; Experimental protocol; Recording"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      },
+      "outlier_fraction": {
+       "status": "not_reported",
+       "reason": "所定位方法/刺激描述没有定量披露此条件；不把未报告当作零。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.1523/jneurosci.1138-11.2011",
+         "version_id": "V-W-Dabcb702a46d5671a-01",
+         "upload_id": "U-RUN02-Jung2011-PDF",
+         "page": 2,
+         "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+         "section": "Visual stimulation; Experimental protocol; Recording"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      },
+      "occlusion_fraction": {
+       "status": "not_reported",
+       "reason": "所定位方法/刺激描述没有定量披露此条件；不把未报告当作零。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.1523/jneurosci.1138-11.2011",
+         "version_id": "V-W-Dabcb702a46d5671a-01",
+         "upload_id": "U-RUN02-Jung2011-PDF",
+         "page": 2,
+         "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+         "section": "Visual stimulation; Experimental protocol; Recording"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      }
+     }
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "scale": {
+    "status": "not_applicable",
+    "value": null,
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "reason": "本条为响应时间常数，不涉及运动尺度恢复。",
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "scale_source_prior": {
+    "status": "not_applicable",
+    "value": null,
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "reason": "无公制运动尺度主张。",
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "scale_observability": {
+    "status": "not_applicable",
+    "value": null,
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "reason": "无尺度可观测性主张。",
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "method_and_validation": {
+    "status": "reported",
+    "value": {
+     "assumptions": [
+      "仅雌性Lucilia spp.；不擅定种级身份、日龄或温度",
+      "右脑H1胞外记录，视觉刺激左眼；30kHz采集",
+      "适应前/后比较，每一行为状态有自身基准",
+      "3s/5Hz适应，结束200ms后突然位移测试；脉冲幅度未单列",
+      "Fig6b n=5只蝇；图注未提供个体配对矩阵",
+      "脉冲范式重复数未单列，不套用速度调谐的10次",
+      "高通参数来自响应估计与模型对应；低通常数另行拟合，不属于本条指标"
+     ],
+     "validation_types": [
+      "electrophysiology",
+      "controlled_experiment"
+     ],
+     "dataset_ids": [
+      "DS-RUN04-Jung2011-Fig6b-H1-impulse"
+     ],
+     "sample_count": 5,
+     "trial_count": null,
+     "baseline_ids": [
+      "B-RUN04-Jung2011-nonflight-unadapted",
+      "B-RUN04-Jung2011-flight-unadapted"
+     ],
+     "metric_ids": [
+      "M-RUN04-Jung2011-nonflight-before",
+      "M-RUN04-Jung2011-nonflight-after",
+      "M-RUN04-Jung2011-flight-before",
+      "M-RUN04-Jung2011-flight-after"
+     ],
+     "failure_conditions": [
+      "仅准入该实验下作者报告的平均衰减常数变化，不证明生物高通滤波器的直接机制或一般瞬态模型已解决。种级身份仅为Lucilia spp.；日龄/温度未单列。Fig6b标注n=5只蝇，未列个体配对矩阵或该脉冲范式每条件试次数；不能套用Fig4的n=8和10次试验。SEM只图示、无数值；方法写配对t检验，Fig6b未给精确P、t、df、检验尾数或差值CI；不由误差条重建。衰减拟合函数、窗口、优化器和原始个体常数未单列，模型高通解释不等于测得突触时间常数；不作局部/广域分离、自然自由飞行、VS/Hx或L07平台幅值恢复外推。"
+     ],
+     "field_states": {
+      "trial_count": {
+       "status": "not_reported",
+       "reason": "10次重复在速度调谐协议段落中；Fig6b脉冲范式未单列每条件试次数，不直接移用。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.1523/jneurosci.1138-11.2011",
+         "version_id": "V-W-Dabcb702a46d5671a-01",
+         "upload_id": "U-RUN02-Jung2011-PDF",
+         "page": 2,
+         "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+         "section": "Visual stimulation; Experimental protocol; Recording"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      }
+     }
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   }
+  },
+  "species": {
+   "status": "reported",
+   "value": [
+    {
+     "scientific_name": "Lucilia spp.",
+     "taxon_id": null,
+     "cell_type": "H1 LPTC",
+     "cell_identifiers": [
+      "H1"
+     ],
+     "field_states": {
+      "taxon_id": {
+       "status": "not_reported",
+       "reason": "论文未给出分类数据库标识符。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.1523/jneurosci.1138-11.2011",
+         "version_id": "V-W-Dabcb702a46d5671a-01",
+         "upload_id": "U-RUN02-Jung2011-PDF",
+         "page": 1,
+         "evidence_note": "印刷p9231，Preparation and set-up：仅雌性Lucilia spp.；固定头部和胸部、翅可自由运动，准备后恢复至少12h。未给种级名称或日龄。",
+         "section": "Materials and Methods / Preparation and set-up"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      }
+     }
+    }
+   ],
+   "evidence_locator": [
+    {
+     "source_id": "publisher",
+     "identifier": "10.1523/jneurosci.1138-11.2011",
+     "version_id": "V-W-Dabcb702a46d5671a-01",
+     "upload_id": "U-RUN02-Jung2011-PDF",
+     "page": 1,
+     "evidence_note": "印刷p9231，Preparation and set-up：仅雌性Lucilia spp.；固定头部和胸部、翅可自由运动，准备后恢复至少12h。未给种级名称或日龄。",
+     "section": "Materials and Methods / Preparation and set-up"
+    }
+   ],
+   "reason": null,
+   "unknown_since_utc": null,
+   "review_task_id": null
+  },
+  "motion_type": {
+   "status": "reported",
+   "value": "other_specified",
+   "evidence_locator": [
+    {
+     "source_id": "publisher",
+     "identifier": "10.1523/jneurosci.1138-11.2011",
+     "version_id": "V-W-Dabcb702a46d5671a-01",
+     "upload_id": "U-RUN02-Jung2011-PDF",
+     "page": 2,
+     "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+     "section": "Visual stimulation; Experimental protocol; Recording"
+    }
+   ],
+   "reason": null,
+   "unknown_since_utc": null,
+   "review_task_id": null
+  },
+  "environment": {
+   "status": "reported",
+   "value": "laboratory_controlled",
+   "evidence_locator": [
+    {
+     "source_id": "publisher",
+     "identifier": "10.1523/jneurosci.1138-11.2011",
+     "version_id": "V-W-Dabcb702a46d5671a-01",
+     "upload_id": "U-RUN02-Jung2011-PDF",
+     "page": 2,
+     "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+     "section": "Visual stimulation; Experimental protocol; Recording"
+    }
+   ],
+   "reason": null,
+   "unknown_since_utc": null,
+   "review_task_id": null
+  },
+  "scale": {
+   "status": "not_applicable",
+   "value": null,
+   "evidence_locator": [
+    {
+     "source_id": "publisher",
+     "identifier": "10.1523/jneurosci.1138-11.2011",
+     "version_id": "V-W-Dabcb702a46d5671a-01",
+     "upload_id": "U-RUN02-Jung2011-PDF",
+     "page": 2,
+     "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+     "section": "Visual stimulation; Experimental protocol; Recording"
+    }
+   ],
+   "reason": "本条为响应时间常数，不涉及运动尺度恢复。",
+   "unknown_since_utc": null,
+   "review_task_id": null
+  },
+  "method": "雌性Lucilia spp.的右脑H1胞外记录，刺激左眼；在非飞行/系留飞行中比较孤立运动脉冲与适应后脉冲。适应为40°周期、17.4%对比的5Hz正弦光栅运动3s；结束200ms后以光栅突然位移施加脉冲。作者从H1脉冲响应估计衰减常数，并依所用Reichardt模型解释为高通参数；低通常数是另一拟合参数。",
+  "results": "作者报告H1脉冲响应衰减常数在适应后降低：非飞行0.171→0.113s，飞行0.289→0.165s（Fig6b，均值，误差条为SEM，n=5只蝇）。该结果给出适应前后瞬态动力学的量化约束；四条件不作为20只独立动物计数。",
+  "baseline": "两个行为状态各自的适应前孤立脉冲响应为基准；不将飞行和非飞行互作的显著性作为本条主张。",
+  "effect": "适应后报告均值均低于各自适应前基准。由图注均值作描述性相减，非飞行减0.058s、飞行减0.124s；此算术差不是个体配对差的分布、CI或新显著性检验。正文称缩短显著，方法指定配对t检验；精确P未披露。",
+  "dataset_records": [
+   {
+    "dataset_id": "DS-RUN04-Jung2011-Fig6b-H1-impulse",
+    "name": "Fig6b：H1脉冲响应衰减常数，适应前/后×非飞行/系留飞行，图注n=5只蝇",
+    "version": null,
+    "data_kind": "neural_recording",
+    "source_locator": {
+     "source_id": "publisher",
+     "identifier": "10.1523/jneurosci.1138-11.2011",
+     "version_id": "V-W-Dabcb702a46d5671a-01",
+     "upload_id": "U-RUN02-Jung2011-PDF",
+     "page": 4,
+     "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+     "figure": "6a;6b",
+     "section": "Figure 6 caption"
+    },
+    "sequence_ids": [
+     "Fig6b-unadapted-and-adapted-impulse-responses"
+    ],
+    "split_id": null,
+    "ground_truth_source": null,
+    "ground_truth_independence": "not_applicable",
+    "field_states": {
+     "version": {
+      "status": "not_reported",
+      "reason": "论文未指定该数据的版本号。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 4,
+        "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+        "figure": "6a;6b",
+        "section": "Figure 6 caption"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     },
+     "split_id": {
+      "status": "not_applicable",
+      "reason": "本实验不采用训练/测试 split 命名。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 4,
+        "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+        "figure": "6a;6b",
+        "section": "Figure 6 caption"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     },
+     "ground_truth_source": {
+      "status": "not_applicable",
+      "reason": "此神经响应或理论记录没有外部运动真值需求。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 4,
+        "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+        "figure": "6a;6b",
+        "section": "Figure 6 caption"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   }
+  ],
+  "baseline_records": [
+   {
+    "baseline_id": "B-RUN04-Jung2011-nonflight-unadapted",
+    "baseline_type": "pre_adaptation",
+    "description": "非飞行的孤立脉冲/适应前条件；与同一行为状态下适应后比较。",
+    "dataset_id": "DS-RUN04-Jung2011-Fig6b-H1-impulse",
+    "condition_ids": [
+     "C-RUN04-Jung2011-Fig6b-before",
+     "C-RUN04-Jung2011-Fig6b-nonflight"
+    ],
+    "metric_ids": [
+     "M-RUN04-Jung2011-nonflight-before"
+    ],
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 4,
+      "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+      "figure": "6a;6b",
+      "section": "Figure 6 caption"
+     }
+    ],
+    "field_states": {}
+   },
+   {
+    "baseline_id": "B-RUN04-Jung2011-flight-unadapted",
+    "baseline_type": "pre_adaptation",
+    "description": "系留飞行的孤立脉冲/适应前条件；与同一行为状态下适应后比较。",
+    "dataset_id": "DS-RUN04-Jung2011-Fig6b-H1-impulse",
+    "condition_ids": [
+     "C-RUN04-Jung2011-Fig6b-before",
+     "C-RUN04-Jung2011-Fig6b-tethered-flight"
+    ],
+    "metric_ids": [
+     "M-RUN04-Jung2011-flight-before"
+    ],
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 4,
+      "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+      "figure": "6a;6b",
+      "section": "Figure 6 caption"
+     }
+    ],
+    "field_states": {}
+   }
+  ],
+  "condition_levels": [
+   {
+    "condition_id": "C-RUN04-Jung2011-Fig6b-before",
+    "factor": "adaptation_state",
+    "level_id": "before",
+    "quantity": null,
+    "description": "孤立运动脉冲；适应前。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 5,
+      "evidence_note": "印刷p9235，左栏首个完整段落：孤立脉冲及3s运动光栅结束200ms后测试；正文给约170/290ms和113/165ms，称适应后缩短。精确四值以Fig6b图注为准。",
+      "section": "Results / Altered velocity tuning is accounted for by shorter motion-detector time constants",
+      "paragraph": "左栏首个完整段落"
+     }
+    ],
+    "field_states": {
+     "quantity": {
+      "status": "not_applicable",
+      "reason": "该条件为类别或算法而非数量。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 5,
+        "evidence_note": "印刷p9235，左栏首个完整段落：孤立脉冲及3s运动光栅结束200ms后测试；正文给约170/290ms和113/165ms，称适应后缩短。精确四值以Fig6b图注为准。",
+        "section": "Results / Altered velocity tuning is accounted for by shorter motion-detector time constants",
+        "paragraph": "左栏首个完整段落"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   },
+   {
+    "condition_id": "C-RUN04-Jung2011-Fig6b-after",
+    "factor": "adaptation_state",
+    "level_id": "after",
+    "quantity": null,
+    "description": "运动适应3s结束200ms后测试脉冲。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 5,
+      "evidence_note": "印刷p9235，左栏首个完整段落：孤立脉冲及3s运动光栅结束200ms后测试；正文给约170/290ms和113/165ms，称适应后缩短。精确四值以Fig6b图注为准。",
+      "section": "Results / Altered velocity tuning is accounted for by shorter motion-detector time constants",
+      "paragraph": "左栏首个完整段落"
+     }
+    ],
+    "field_states": {
+     "quantity": {
+      "status": "not_applicable",
+      "reason": "该条件为类别或算法而非数量。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 5,
+        "evidence_note": "印刷p9235，左栏首个完整段落：孤立脉冲及3s运动光栅结束200ms后测试；正文给约170/290ms和113/165ms，称适应后缩短。精确四值以Fig6b图注为准。",
+        "section": "Results / Altered velocity tuning is accounted for by shorter motion-detector time constants",
+        "paragraph": "左栏首个完整段落"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   },
+   {
+    "condition_id": "C-RUN04-Jung2011-Fig6b-nonflight",
+    "factor": "other_defined",
+    "level_id": "nonflight",
+    "quantity": null,
+    "description": "非飞行状态。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 4,
+      "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+      "figure": "6a;6b",
+      "section": "Figure 6 caption"
+     }
+    ],
+    "field_states": {
+     "quantity": {
+      "status": "not_applicable",
+      "reason": "该条件为类别或算法而非数量。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 4,
+        "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+        "figure": "6a;6b",
+        "section": "Figure 6 caption"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   },
+   {
+    "condition_id": "C-RUN04-Jung2011-Fig6b-tethered-flight",
+    "factor": "other_defined",
+    "level_id": "tethered-flight",
+    "quantity": null,
+    "description": "系留飞行状态；不是自由飞行。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 4,
+      "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+      "figure": "6a;6b",
+      "section": "Figure 6 caption"
+     }
+    ],
+    "field_states": {
+     "quantity": {
+      "status": "not_applicable",
+      "reason": "该条件为类别或算法而非数量。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 4,
+        "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+        "figure": "6a;6b",
+        "section": "Figure 6 caption"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   }
+  ],
+  "metric_records": [
+   {
+    "metric_id": "M-RUN04-Jung2011-nonflight-before",
+    "metric_name": "time_constant",
+    "definition": "非飞行适应前；作者从H1脉冲响应估计的衰减常数，在其模型中对应高通参数；不是起始潜伏期或低通拟合常数。Fig6b总样本标注n=5只蝇，不重复累加四组样本。",
+    "value": 0.171,
+    "unit": "s",
+    "statistic": "mean",
+    "sample_count": 5,
+    "dataset_id": "DS-RUN04-Jung2011-Fig6b-H1-impulse",
+    "baseline_id": null,
+    "alignment": "none",
+    "alignment_source": "none",
+    "interval": null,
+    "uncertainty": {
+     "kind": "sem",
+     "description": "Fig6b明确为均值±SEM；SEM幅度仅图示，未数字列出，本复核不从图估算或推导置信区间。"
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 4,
+      "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+      "figure": "6a;6b",
+      "section": "Figure 6 caption"
+     }
+    ],
+    "field_states": {
+     "baseline_id": {
+      "status": "not_applicable",
+      "reason": "该数值是自身或真值比较指标，未另设基准方法。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 4,
+        "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+        "figure": "6a;6b",
+        "section": "Figure 6 caption"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     },
+     "interval": {
+      "status": "not_applicable",
+      "reason": "不是 RPE 等依赖时间间隔的指标。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 4,
+        "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+        "figure": "6a;6b",
+        "section": "Figure 6 caption"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   },
+   {
+    "metric_id": "M-RUN04-Jung2011-nonflight-after",
+    "metric_name": "time_constant",
+    "definition": "非飞行适应后；作者从H1脉冲响应估计的衰减常数，在其模型中对应高通参数；不是起始潜伏期或低通拟合常数。Fig6b总样本标注n=5只蝇，不重复累加四组样本。",
+    "value": 0.113,
+    "unit": "s",
+    "statistic": "mean",
+    "sample_count": 5,
+    "dataset_id": "DS-RUN04-Jung2011-Fig6b-H1-impulse",
+    "baseline_id": "B-RUN04-Jung2011-nonflight-unadapted",
+    "alignment": "none",
+    "alignment_source": "none",
+    "interval": null,
+    "uncertainty": {
+     "kind": "sem",
+     "description": "Fig6b明确为均值±SEM；SEM幅度仅图示，未数字列出，本复核不从图估算或推导置信区间。"
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 4,
+      "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+      "figure": "6a;6b",
+      "section": "Figure 6 caption"
+     }
+    ],
+    "field_states": {
+     "interval": {
+      "status": "not_applicable",
+      "reason": "不是 RPE 等依赖时间间隔的指标。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 4,
+        "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+        "figure": "6a;6b",
+        "section": "Figure 6 caption"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   },
+   {
+    "metric_id": "M-RUN04-Jung2011-flight-before",
+    "metric_name": "time_constant",
+    "definition": "系留飞行适应前；作者从H1脉冲响应估计的衰减常数，在其模型中对应高通参数；不是起始潜伏期或低通拟合常数。Fig6b总样本标注n=5只蝇，不重复累加四组样本。",
+    "value": 0.289,
+    "unit": "s",
+    "statistic": "mean",
+    "sample_count": 5,
+    "dataset_id": "DS-RUN04-Jung2011-Fig6b-H1-impulse",
+    "baseline_id": null,
+    "alignment": "none",
+    "alignment_source": "none",
+    "interval": null,
+    "uncertainty": {
+     "kind": "sem",
+     "description": "Fig6b明确为均值±SEM；SEM幅度仅图示，未数字列出，本复核不从图估算或推导置信区间。"
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 4,
+      "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+      "figure": "6a;6b",
+      "section": "Figure 6 caption"
+     }
+    ],
+    "field_states": {
+     "baseline_id": {
+      "status": "not_applicable",
+      "reason": "该数值是自身或真值比较指标，未另设基准方法。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 4,
+        "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+        "figure": "6a;6b",
+        "section": "Figure 6 caption"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     },
+     "interval": {
+      "status": "not_applicable",
+      "reason": "不是 RPE 等依赖时间间隔的指标。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 4,
+        "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+        "figure": "6a;6b",
+        "section": "Figure 6 caption"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   },
+   {
+    "metric_id": "M-RUN04-Jung2011-flight-after",
+    "metric_name": "time_constant",
+    "definition": "系留飞行适应后；作者从H1脉冲响应估计的衰减常数，在其模型中对应高通参数；不是起始潜伏期或低通拟合常数。Fig6b总样本标注n=5只蝇，不重复累加四组样本。",
+    "value": 0.165,
+    "unit": "s",
+    "statistic": "mean",
+    "sample_count": 5,
+    "dataset_id": "DS-RUN04-Jung2011-Fig6b-H1-impulse",
+    "baseline_id": "B-RUN04-Jung2011-flight-unadapted",
+    "alignment": "none",
+    "alignment_source": "none",
+    "interval": null,
+    "uncertainty": {
+     "kind": "sem",
+     "description": "Fig6b明确为均值±SEM；SEM幅度仅图示，未数字列出，本复核不从图估算或推导置信区间。"
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 4,
+      "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+      "figure": "6a;6b",
+      "section": "Figure 6 caption"
+     }
+    ],
+    "field_states": {
+     "interval": {
+      "status": "not_applicable",
+      "reason": "不是 RPE 等依赖时间间隔的指标。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.1523/jneurosci.1138-11.2011",
+        "version_id": "V-W-Dabcb702a46d5671a-01",
+        "upload_id": "U-RUN02-Jung2011-PDF",
+        "page": 4,
+        "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+        "figure": "6a;6b",
+        "section": "Figure 6 caption"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   }
+  ],
+  "proof_record": null,
+  "evidence_admission_status": "eligible",
+  "rejection_codes": [],
+  "claims_absolute_scale": {
+   "status": "reported",
+   "value": false,
+   "evidence_locator": [
+    {
+     "source_id": "publisher",
+     "identifier": "10.1523/jneurosci.1138-11.2011",
+     "version_id": "V-W-Dabcb702a46d5671a-01",
+     "upload_id": "U-RUN02-Jung2011-PDF",
+     "page": 4,
+     "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+     "figure": "6a;6b",
+     "section": "Figure 6 caption"
+    }
+   ],
+   "reason": null,
+   "unknown_since_utc": null,
+   "review_task_id": null
+  },
+  "scale_prior_details": [],
+  "measurement_model": null,
+  "state_variables": [],
+  "gauge_freedoms": [],
+  "observability_assumptions": [],
+  "degeneracy_conditions": [],
+  "excitation_requirements": [],
+  "external_measurement_sources": [],
+  "observability_argument_locator": [],
+  "remaining_limitations": "仅准入该实验下作者报告的平均衰减常数变化，不证明生物高通滤波器的直接机制或一般瞬态模型已解决。种级身份仅为Lucilia spp.；日龄/温度未单列。Fig6b标注n=5只蝇，未列个体配对矩阵或该脉冲范式每条件试次数；不能套用Fig4的n=8和10次试验。SEM只图示、无数值；方法写配对t检验，Fig6b未给精确P、t、df、检验尾数或差值CI；不由误差条重建。衰减拟合函数、窗口、优化器和原始个体常数未单列，模型高通解释不等于测得突触时间常数；不作局部/广域分离、自然自由飞行、VS/Hx或L07平台幅值恢复外推。",
+  "counter_evidence": false,
+  "counter_evidence_types": [],
+  "evidence_locator": [
+   {
+    "source_id": "publisher",
+    "identifier": "10.1523/jneurosci.1138-11.2011",
+    "version_id": "V-W-Dabcb702a46d5671a-01",
+    "upload_id": "U-RUN02-Jung2011-PDF",
+    "page": 1,
+    "evidence_note": "印刷p9231，Preparation and set-up：仅雌性Lucilia spp.；固定头部和胸部、翅可自由运动，准备后恢复至少12h。未给种级名称或日龄。",
+    "section": "Materials and Methods / Preparation and set-up"
+   },
+   {
+    "source_id": "publisher",
+    "identifier": "10.1523/jneurosci.1138-11.2011",
+    "version_id": "V-W-Dabcb702a46d5671a-01",
+    "upload_id": "U-RUN02-Jung2011-PDF",
+    "page": 2,
+    "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+    "section": "Visual stimulation; Experimental protocol; Recording"
+   },
+   {
+    "source_id": "publisher",
+    "identifier": "10.1523/jneurosci.1138-11.2011",
+    "version_id": "V-W-Dabcb702a46d5671a-01",
+    "upload_id": "U-RUN02-Jung2011-PDF",
+    "page": 3,
+    "evidence_note": "印刷p9233，左栏最下方Data analysis续段：全部显著性检验使用配对t检验。此方法说明不提供Fig6b各比较的精确P值。",
+    "section": "Materials and Methods / Data analysis (continued)",
+    "paragraph": "左栏最后一段"
+   },
+   {
+    "source_id": "publisher",
+    "identifier": "10.1523/jneurosci.1138-11.2011",
+    "version_id": "V-W-Dabcb702a46d5671a-01",
+    "upload_id": "U-RUN02-Jung2011-PDF",
+    "page": 4,
+    "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+    "figure": "6a;6b",
+    "section": "Figure 6 caption"
+   },
+   {
+    "source_id": "publisher",
+    "identifier": "10.1523/jneurosci.1138-11.2011",
+    "version_id": "V-W-Dabcb702a46d5671a-01",
+    "upload_id": "U-RUN02-Jung2011-PDF",
+    "page": 5,
+    "evidence_note": "印刷p9235，左栏首个完整段落：孤立脉冲及3s运动光栅结束200ms后测试；正文给约170/290ms和113/165ms，称适应后缩短。精确四值以Fig6b图注为准。",
+    "section": "Results / Altered velocity tuning is accounted for by shorter motion-detector time constants",
+    "paragraph": "左栏首个完整段落"
+   }
+  ],
+  "provenance_upload_ids": [
+   "U-RUN02-Jung2011-PDF"
+  ],
+  "provenance_version_ids": [
+   "V-W-Dabcb702a46d5671a-01"
+  ],
+  "assessment_status": "active",
+  "superseded_by_assessment_id": null,
+  "cascade_event_id": null,
+  "discard_reason": null,
+  "fulltext_status": "available_verified",
+  "verification_status": "verified",
+  "citation_roles": [
+   "background"
+  ],
+  "project_relation": "not_applicable",
+  "statement_basis": "author_explicit",
+  "reviewer": "P6-RUN0004-joint-root-and-L07L09-review",
+  "date": "2026-11-26T16:18:01.561286Z",
+  "biological_implications": "运动刺激历史与行为状态约束H1的瞬态衰减动力学。仅支持所测响应估计结果，不定位真实突触滤波器或证明局部/广域适应机制。",
+  "engineering_implications": "瞬态模型需区分响应起始延迟、响应衰减与稳态调谐，并按适应和行为状态检验参数；本条不证明模型已复现全部瞬态波形或恢复平台内速度幅值。",
+  "field_states": {
+   "superseded_by_assessment_id": {
+    "status": "not_applicable",
+    "reason": "原始有效 Assessment；没有合并、去重级联或废弃事件。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 4,
+      "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+      "figure": "6a;6b",
+      "section": "Figure 6 caption"
+     }
+    ],
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "cascade_event_id": {
+    "status": "not_applicable",
+    "reason": "原始有效 Assessment；没有合并、去重级联或废弃事件。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 4,
+      "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+      "figure": "6a;6b",
+      "section": "Figure 6 caption"
+     }
+    ],
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "discard_reason": {
+    "status": "not_applicable",
+    "reason": "原始有效 Assessment；没有合并、去重级联或废弃事件。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 4,
+      "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+      "figure": "6a;6b",
+      "section": "Figure 6 caption"
+     }
+    ],
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "measurement_model": {
+    "status": "not_applicable",
+    "reason": "本条为实验/讨论证据而非独立可观测性或数学证明。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "proof_record": {
+    "status": "not_applicable",
+    "reason": "本条为实验/讨论证据而非独立可观测性或数学证明。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 2,
+      "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+      "section": "Visual stimulation; Experimental protocol; Recording"
+     }
+    ],
+    "unknown_since_utc": null,
+    "review_task_id": null
+   }
+  }
+ },
+ "cache_query_record": {
+  "query_id": "Q-RUN04-CACHE-Jung2011-adaptation-01",
+  "task_id": "T-assessment-W-Dabcb702a46d5671a",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "entity_id": "W-Dabcb702a46d5671a",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://www.jneurosci.org/content/jneuro/31/25/9231.full.pdf",
+  "api_version": null,
+  "query_kind": "local_fulltext_cache_review",
+  "raw_parameters": {
+   "doi": "10.1523/jneurosci.1138-11.2011",
+   "pdf_pages": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "claim": "H1-impulse-response-decay-adaptation"
+  },
+  "normalized_parameters": {
+   "doi": "10.1523/jneurosci.1138-11.2011",
+   "pdf_pages": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "claim": "H1-impulse-response-decay-adaptation"
+  },
+  "queried_at_utc": "2026-11-26T16:18:01.561286Z",
+  "cursor_in": null,
+  "cursor_out": null,
+  "page_index": 0,
+  "page_complete": true,
+  "visible_total": 1,
+  "returned_count": 1,
+  "count_before_dedup": 1,
+  "count_after_dedup": 1,
+  "new_work_ids": [],
+  "new_work_count": 0,
+  "result_identifiers": [
+   "10.1523/jneurosci.1138-11.2011"
+  ],
+  "status": "cache_hit",
+  "verification_status": "verified",
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "cache_path": "temp/query-results/Q-RUN02-L079-jung2011-pdf.json",
+  "cache_hit": true,
+  "reused_query_id": "Q-RUN02-L079-jung2011-pdf",
+  "rerun_reason": "复用已准入PDF缓存，一次联合单主张复核；无科研网络请求。",
+  "coverage_note": "只核对Fig6b适应前后衰减常数；page_complete仅指这次局部缓存阅读，不表示Work全部主张、参考文献或L07完成。root交叉目视复核并入同一活动，不另计查询/全文Work。",
+  "license_note": "仅原创中文报告、事实字段、定位与哈希；不上传PDF、页图或长段原文。",
+  "recorded_at_utc": "2026-11-26T16:18:01.561286Z",
+  "query_time_status": "exact",
+  "field_states": {
+   "api_version": {
+    "status": "not_applicable",
+    "reason": "本次为本地缓存读取，不调用供应方API。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.1523/jneurosci.1138-11.2011",
+      "version_id": "V-W-Dabcb702a46d5671a-01",
+      "upload_id": "U-RUN02-Jung2011-PDF",
+      "page": 4,
+      "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+      "figure": "6a;6b",
+      "section": "Figure 6 caption"
+     }
+    ],
+    "unknown_since_utc": null,
+    "review_task_id": null
+   }
+  }
+ },
+ "manual_review_record": {
+  "review_id": "MR-RUN04-Jung2011-adaptation-01",
+  "run_id": "RUN-0004",
+  "review_type": "fulltext_claim_review",
+  "entity_id": "AS-RUN04-Jung2011-L03-impulse-decay-adaptation",
+  "reviewer": "P6-RUN0004-joint-root-and-L07L09-review",
+  "recorded_at_utc": "2026-11-26T16:18:01.561286Z",
+  "artifact": "temp/reports/RUN-0004-Jung2011-adaptation-review.json",
+  "notes": "1次联合单项Assessment活动：L07/L09代理使用PDF skill渲染并目视pp1–5；root独立交叉目视pp2/4/5，四值、SEM、N、适应与脉冲时序相符；p3配对t方法由代理核对。两位复核者不重复计活动、全文Work或查询。"
+ },
+ "verified_finding": {
+  "claim_scope": "同一Fig6b中适应前/后×两个行为状态的H1脉冲响应衰减常数；仅此一个主张。",
+  "unit": "s",
+  "before_nonflight": 0.171,
+  "after_nonflight": 0.113,
+  "before_flight": 0.289,
+  "after_flight": 0.165,
+  "uncertainty": "mean ± SEM; SEM numerical magnitudes not tabulated",
+  "n": 5,
+  "n_unit": "flies reported for Fig6b; not 20 independent animals",
+  "data_locator": {
+   "source_id": "publisher",
+   "identifier": "10.1523/jneurosci.1138-11.2011",
+   "version_id": "V-W-Dabcb702a46d5671a-01",
+   "upload_id": "U-RUN02-Jung2011-PDF",
+   "page": 4,
+   "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+   "figure": "6a;6b",
+   "section": "Figure 6 caption"
+  },
+  "timing_locator": {
+   "source_id": "publisher",
+   "identifier": "10.1523/jneurosci.1138-11.2011",
+   "version_id": "V-W-Dabcb702a46d5671a-01",
+   "upload_id": "U-RUN02-Jung2011-PDF",
+   "page": 5,
+   "evidence_note": "印刷p9235，左栏首个完整段落：孤立脉冲及3s运动光栅结束200ms后测试；正文给约170/290ms和113/165ms，称适应后缩短。精确四值以Fig6b图注为准。",
+   "section": "Results / Altered velocity tuning is accounted for by shorter motion-detector time constants",
+   "paragraph": "左栏首个完整段落"
+  },
+  "test": "paired t-test per general Data analysis statement",
+  "test_locator": {
+   "source_id": "publisher",
+   "identifier": "10.1523/jneurosci.1138-11.2011",
+   "version_id": "V-W-Dabcb702a46d5671a-01",
+   "upload_id": "U-RUN02-Jung2011-PDF",
+   "page": 3,
+   "evidence_note": "印刷p9233，左栏最下方Data analysis续段：全部显著性检验使用配对t检验。此方法说明不提供Fig6b各比较的精确P值。",
+   "section": "Materials and Methods / Data analysis (continued)",
+   "paragraph": "左栏最后一段"
+  },
+  "exact_p_value_status": "not_reported_for_Fig6b",
+  "interpretation": "响应衰减估计在指定模型中映射为高通参数；没有直接测量生物高通元件。"
+ },
+ "verified_methods": {
+  "scientific_name": "Lucilia spp.",
+  "sex": "female",
+  "cell": "H1",
+  "recording_side": "right brain hemisphere, extracellular axonal arborization",
+  "stimulated_eye": "left",
+  "adaptation_duration_s": 3,
+  "adaptation_temporal_frequency_hz": 5,
+  "post_adapter_test_delay_s": 0.2,
+  "impulse": "sudden displacement of grating",
+  "impulse_displacement_magnitude_status": "not_reported",
+  "grating_spatial_period_deg": 40,
+  "reported_contrast_percent": 17.4,
+  "refresh_hz": 200,
+  "display_fov_deg": {
+   "horizontal": 170,
+   "vertical": 60
+  },
+  "mean_luminance_cd_m2": 5.3,
+  "spike_acquisition_hz": 30000,
+  "species_level_identity_status": "not_reported_beyond_genus",
+  "age_status": "not_reported",
+  "temperature_status": "not_reported",
+  "impulse_trial_count_status": "not_reported_separately",
+  "statistical_pairing": "配对t检验为总体方法；未列Fig6b逐动物配对矩阵。",
+  "decay_estimator_details_status": "fitting function, window and optimizer not individually specified",
+  "source_locators": [
+   {
+    "source_id": "publisher",
+    "identifier": "10.1523/jneurosci.1138-11.2011",
+    "version_id": "V-W-Dabcb702a46d5671a-01",
+    "upload_id": "U-RUN02-Jung2011-PDF",
+    "page": 1,
+    "evidence_note": "印刷p9231，Preparation and set-up：仅雌性Lucilia spp.；固定头部和胸部、翅可自由运动，准备后恢复至少12h。未给种级名称或日龄。",
+    "section": "Materials and Methods / Preparation and set-up"
+   },
+   {
+    "source_id": "publisher",
+    "identifier": "10.1523/jneurosci.1138-11.2011",
+    "version_id": "V-W-Dabcb702a46d5671a-01",
+    "upload_id": "U-RUN02-Jung2011-PDF",
+    "page": 2,
+    "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+    "section": "Visual stimulation; Experimental protocol; Recording"
+   },
+   {
+    "source_id": "publisher",
+    "identifier": "10.1523/jneurosci.1138-11.2011",
+    "version_id": "V-W-Dabcb702a46d5671a-01",
+    "upload_id": "U-RUN02-Jung2011-PDF",
+    "page": 3,
+    "evidence_note": "印刷p9233，左栏最下方Data analysis续段：全部显著性检验使用配对t检验。此方法说明不提供Fig6b各比较的精确P值。",
+    "section": "Materials and Methods / Data analysis (continued)",
+    "paragraph": "左栏最后一段"
+   },
+   {
+    "source_id": "publisher",
+    "identifier": "10.1523/jneurosci.1138-11.2011",
+    "version_id": "V-W-Dabcb702a46d5671a-01",
+    "upload_id": "U-RUN02-Jung2011-PDF",
+    "page": 4,
+    "evidence_note": "印刷p9234，Fig6b图注：非飞行适应前0.171s/后0.113s；飞行前0.289s/后0.165s；n=5只蝇，均值±SEM。图6a将H1脉冲响应估计对应高通参数，低通常数另行拟合。",
+    "figure": "6a;6b",
+    "section": "Figure 6 caption"
+   },
+   {
+    "source_id": "publisher",
+    "identifier": "10.1523/jneurosci.1138-11.2011",
+    "version_id": "V-W-Dabcb702a46d5671a-01",
+    "upload_id": "U-RUN02-Jung2011-PDF",
+    "page": 5,
+    "evidence_note": "印刷p9235，左栏首个完整段落：孤立脉冲及3s运动光栅结束200ms后测试；正文给约170/290ms和113/165ms，称适应后缩短。精确四值以Fig6b图注为准。",
+    "section": "Results / Altered velocity tuning is accounted for by shorter motion-detector time constants",
+    "paragraph": "左栏首个完整段落"
+   }
+  ]
+ },
+ "gate_review": {
+  "schema_version": "1.1.1",
+  "schema_path": "temp/schema.json",
+  "schema_sha256": "2e1a2803f15d9e3cc502ba555df08ac02d84874fd90879728a864156267cea97",
+  "assessment_schema_errors": [],
+  "query_schema_errors": [],
+  "automatic_evidence_gate_status": "eligible",
+  "automatic_rejection_codes": [],
+  "manual_admission_status": "eligible",
+  "manual_handling_level": "new_evidence_or_hypothesis",
+  "manual_checks": [
+   {
+    "gate": "单一独立主张与去重",
+    "passed": true,
+    "evidence": "已读取全部69条；无本Work的L03脉冲衰减主张。Longden的响应起始潜伏期、Jung/Longden原L07均保留。"
+   },
+   {
+    "gate": "全文原图与数值",
+    "passed": true,
+    "evidence": "pp1–5目视，Fig6b四值为0.171/0.113/0.289/0.165s；正文近似170/290ms不覆盖图注精确均值。"
+   },
+   {
+    "gate": "L03适应量化及可比较状态",
+    "passed": true,
+    "evidence": "至少一个time_constant指标，两个适应状态；每一行为状态有自身适应前基准，共一个2×2实验图组。"
+   },
+   {
+    "gate": "样本与不确定性边界",
+    "passed": true,
+    "evidence": "Fig6b n=5只蝇、mean±SEM；不套Fig4 n=8和10次或Fig7 n=3，不将四组累加为20动物。未披露细节明确标记。"
+   },
+   {
+    "gate": "统计设计边界",
+    "passed": true,
+    "evidence": "p3左栏Data analysis配对t方法；本比较精确P/SEM数值/df/t/CI未报，不重建或作统计等效判断。"
+   },
+   {
+    "gate": "实验与模型解释分开",
+    "passed": true,
+    "evidence": "仅报告响应衰减估计及模型对应，不把低通拟合69/24ms或生物突触常数纳入主张。"
+   },
+   {
+    "gate": "适用范围与门禁下限",
+    "passed": true,
+    "evidence": "准入仅限作者报告的适应前后响应均值和明确范式，满足L03定量/两个状态下限；缺拟合细节限制可复现精度，不据此宣称普遍机制或模型问题解决。"
+   }
+  ],
+  "statistical_limits": {
+   "exact_p_value": "not_reported",
+   "SEM_magnitudes": "graphical_only_not_digitized",
+   "t_statistic": "not_reported",
+   "degrees_of_freedom": "not_reported",
+   "tails": "not_reported",
+   "confidence_interval_of_change": "not_reported",
+   "individual_pair_mapping": "not_reported",
+   "multiplicity_correction": "not_reported",
+   "author_significance_wording": "正文称适应后常数缩短显著；本报告不补精确P或门槛。"
+  }
+ },
+ "preservation_guard": {
+  "canonical_files_edited": false,
+  "existing_assessment_count": 69,
+  "existing_assessments_logical_raw_sha256": "9eff3da3ef8a4e72418693f0882c8204ae97ac3e644f089434421768fe9e2828",
+  "all_existing_assessment_raw_line_sha256": {
+   "A-S01-L06-01": "809226cc5ec568d4ea3313356336fdd86d683255c87ecc6adf1d554d05b33676",
+   "A-S01-L08-01": "26b157c21b9c126a706dccc61ef8350ad1a3ee7dc1051265a8abc615157a0acb",
+   "A-S01-L02-01": "3cb06b690d22f42303fea8bffa33e153247fead55f50b8e039b969901b32d607",
+   "A-S02-L06-01": "bf9346bc7c10caacf361e0beddf59ff69fb13e60c607c487cd0c93648b0295d8",
+   "A-S02-L07-01": "f07b06568cd7bf9ec8d1ae88d255a0b884dc3e34cddf0be0490089aa0eee1d40",
+   "A-S03-L09-01": "e26cd5a979bb61d6ae8069a5db8a970ac29a7d789be22951d2fb16745de18545",
+   "A-S04-L08-01": "351de19d94f069473f136edfb72bc49095e6dbce163847723c1add4430da291b",
+   "A-S05-L06-01": "c923889e0fae4732736831bbaab9abbccba84d4d9e6c3aad2e3714a35f84f687",
+   "A-S05-L04-01": "1a95aeeb648fed2561c3a3400675c73b9a0e88ac137f4fc24281ef333153cf27",
+   "A-S06-L06-01": "d374eefc0243142398292bb873580c01d64a1d3422b557bb1887758f0a3a83b3",
+   "A-S06-L06-02": "e8d4b872fc30bcc66ec5740ededa368e819b0828595afbdb3d51cbad5dc9c25e",
+   "A-S07-L05-01": "6ca7e24a443c8573c05485bbd4bf1e370ee647cb97560c4b3f28efd7ba6f0df6",
+   "A-S07-L05-02": "8c8effba74b04e93c852a3c07f48a983e8023ffbee1f6d00c89ed6a29e670f1b",
+   "A-P6-S08-L02-dynamic_model": "c08555f537f6ad97f2f9ac60cc09d254904cddd23d3b1580306532b2286c58e5",
+   "A-P6-S08-L04-dynamic_model": "96b451d7459d64a7360d038f08ea28321906b63af1860563ea2da5ee82cd133c",
+   "A-P6-S08-L03-rapid_compression": "2019a8de6ff9a13ae1c45e2d41abd93f57d039cc7c664a63e975a1cc40db47c4",
+   "A-P6-S09-L03-local_wide": "317cd47aea086351a37ec012af9c688bdabfbb59c386190081fab6357aa0ea21",
+   "A-P6-S09-L06-direction_hypothesis": "808631514d87c07e3957af82e59d85bf93daafacaca4ccbc1b2a12993702fb06",
+   "A-P6-S10-L05-VS_network": "92055713f55716e029c745ffd707d8cf6857de26d5661a4021d55258fba498ee",
+   "A-P6-S11-L04-natural_optic_flow": "8f73db249ad4c55104fd16104fee4ff6c846e98aa78c50228f1787eaec80402d",
+   "A-P6-S11-L02-texture_conditions": "aba6dd8aef9c708754a815c9c9cd7b37adacc238f699714bce67b35f4d3d45ec",
+   "A-P6-S11-L03-adaptation_constraint": "90c4136fd2b8ab91e6910137fa1ffb3664daa3e17793331bfb7433e0d5524eec",
+   "A-P6-S12-L06-transient_axis": "56e4c7b0b06cb51e0122f07c56e81a97e5c8ecf0770492502b9a056c162a355d",
+   "A-P6-S12-L03-transient_axis": "816aa3bc17135880cc5a1e7ce823551ddd628d3f8898840dafc88b6318c844b3",
+   "A-P6-S13-L02-nonlinear_cascade": "eeebbfc5447f2a698c38acbf8203bcedfa22e177c4f2ecfbdf7da69b6e694f81",
+   "A-P6-S13-L04-dynamic_limits": "02b0f6fd243d4de87f0698e69f70d24a017bd702a169f51786fbb1fb9e723a44",
+   "A-P6-S14-L01-local_nearness": "8540d21af3372038bcc05988d9c6fd5fd4d9d3f3cb8993fead327d680517c1ee",
+   "A-P6-S14-L04-local_nearness": "8bbe9db3e1d79c53e1627a3a88f427e0a3de60a133490bc2af4857683a8cb664",
+   "AS-S15-L01-depth-moments": "fde11e910dc18ecb3532df361f70a19a0998bfe87f691112403c5e34c899281e",
+   "AS-S15-L06-scale-gauge": "84fc70ba5a0de761504ec5fa6c228603eefd0cdf2d13c1ef8417f26780b83171",
+   "AS-S15-L08-adaptive-sphere": "03bf743a3f0be8fadffde43269655aaae28e6bfda64e76dbee29cbbe4fecd51d",
+   "AS-S16-L01-relative-nearness": "c7053571d9fdfc8fbd92e1baf1d632211305f24142e3a1c706b32bf1e557d29f",
+   "AS-S16-L06-mixed-outdoor": "213d47efb03d60fdf83cc35b148ba0864f7f7a7becf015ebdc72f0c91e53ad63",
+   "AS-S17-L06-joint-linear-gantry": "f1ec27b7b7edbccda598a29a7e888000abd675d42e0303a6a96db886e67a329b",
+   "AS-S17-L07-plateau-suggestion": "ff7aafd19f0385528ec0dce95884ed31875b233fbc3e0f8f5e60ccfe87f88d31",
+   "AS-S18-L06-frequency-separation": "90d15582d4f0304cb432c51192c75f6edcab7d971cffb79dfe347c754265951a",
+   "AS-S18-L01-wall-distance": "0d166a3b485c2b83f65e7b5b33c419f4bb1c0c8ddab4e29df49e7610437881b7",
+   "AS-S19-L07-baseline-plateau": "f14bbb29c86d463e91c725292a9668cf2c2290a1056b2d12c816cb5a9f93e4ce",
+   "AS-S19-L05-baseline-receptive-field": "c46ddd65c55c70056382853b5044c040be5728919d488195896ac27e767c38f1",
+   "AS-S20-L06-precursor-scale": "9eb314ff74734884a5b6187e8f52162a156dad3a1bedb5f235a2ba523ed030c2",
+   "AS-S20-L05-precursor-ensemble": "6016f8bfac3b3c1dc35ace7a40d90ef6e2131fc60d36051b2fba1b69fac58f73",
+   "AS-S18-L04-naturalistic-replay": "f33a0234906ca8ceb29e66c12d12688e0e96cf87115daae44d820a09910c11de",
+   "A-IT2A-N01-L01-01": "d480d4533f785a2708d4ccbe80cb6a3096a3184173dd0f3772f78a0b7298bff5",
+   "A-IT2A-N01-L02-01": "b67f1eb985152502baa9bd93a34fa36887daf1b2b489092d9d5d9188423bc256",
+   "A-IT2A-N02-L01-01": "5cf05a9c5b103868bff7486245fac28223589ca6cc913789c0d97011fbb2edec",
+   "A-IT2A-N02-L08-01": "48b5c7bbd10f346e2214a8fd872a40835a841b6ecb7316843b06cb560348b115",
+   "A-IT2A-N04-L03-01": "df9a0cb104f21c7b87cf03a75e0f352202e7cde4d017b5b2e69afb4c89144013",
+   "A-IT2A-N05-L03-01": "340dadf88e14be2e20d8f5dfcb1bdfe772423efa6814ebbd7e3b8c7698e63c24",
+   "A-IT2A-N05-L03-02": "55b3f19e843ee65a3bc3ea0a5e3a83393e1522b80bc7e64befc37619be76664b",
+   "A-P6-B201-L01-peripheral_cwn": "4aa8c36de6831494ecfcfc4a0753b15100b1c14c9b5d531d80904891b9422640",
+   "A-P6-B201-L03-brightness_dynamics": "6b2b7f0e4fa5934985bb0831ea8157bb9becb1783bbae09dec36c4d38fa48d12",
+   "A-P6-B203-L06-direction_speed": "a83f86c343671447e4f7e660baa7b5f8a8c9a16c300adf1ffe9066cc8fcc3638",
+   "A-P6-B203-L04-partial_flow": "53746ac981e56e96a3ffaf342dc10d71b1a6ffeded677d0b596bfbb044784e98",
+   "A-P6-B204-L04-world_motion_rejection": "b388c449fad56c2d77940a8fa830623ab7ec6474c4482fbdba12cb6e8de7f8c5",
+   "A-P6-B204-L03-counterevidence_onset": "d5c10153a7cf5457dc2214cc3e0e196dfa5cc39ee4b3f412ef92b5c388ed44ff",
+   "A-P6-B205-L03-dynamic_tuning": "77eb423dac2fd6cbe1c84c50bc6e5165fd73e64a4e3c8146ceb1b192cdac2c4b",
+   "A-P6-B205-L04-natural_scenes": "495864c53456f8903ebbe747537d167d6f26ef9a8813d671b476aa70cd1a27c9",
+   "AS-contrast2022-L02-contrast-tti": "fcb05ff6104a4333bcd9d0e4055e8840e644e35dd83f8ed1021da0153de23068",
+   "AS-clutter2019-L01-obstacle-selective-pooling": "f4f3d8fc1fec195aba65a74f0beba48163d29533c643cdca0d9d67cd2f893bfc",
+   "AS-pool2021-L06-imu-metric-speed": "30864ed36cf7e5ab6c8f6c112f0d2e8dc628c24d6b45aa9a80bb3aaf676e3cb0",
+   "AS-pool2021-L01-metric-depth": "f780e734ab96b6b4c99d3208bc7a0737ebe2be3d8fea1e60e595f362035d1e4c",
+   "AS-energy2026-L05-mode-sensing-preprint": "f48be50a54bffee0fc1cd30c7469bbb9498a0bda678dbdee395bc93913cb3124",
+   "AS-energy2026-L08-flight-coupling-preprint": "2888150e2fc61c183e7fe1bcda575b093f8d16692dff51c77ad45b9a56f77bed",
+   "AS-nearness2026-L01-relative-nearness-candidate": "f150435adf4eb0b30c9bc1b4fdda24de171aa55c68f1059d746ec7a041aa472a",
+   "AS-RUN02-Krapp1998-L09-mapped-Hx-field": "4be4ea9bdbed43f99b08cf05224fd52454936714f5892b2e6fb5f04e03888e1e",
+   "AS-RUN02-Jung2011-L07-state-dependent-tuning": "b7b87b2854232e08e2379a0c99f34845c6e98e0f01a028c0a6e4369e39c7ff43",
+   "AS-RUN02-Shoemaker2005-L07-scene-invariance-candidate": "0e078f3cd0671a85ca16c0e11898d6b267ba9b47a7630652aba870fca4da2f32",
+   "AS-RUN02-Longden2010-L07-positive-speed-information": "6c5b21eb9491173939f6a39ff0042d704ab84dd1288a23d1079d7b9bec5879ab",
+   "AS-RUN03-Longden2010-L03-onset-latency": "d81680e6fc4c822fc7e8523c42ddd0f273d7795385c579a6b0b1d218bd75c9ac"
+  },
+  "critical_unchanged_records": {
+   "AS-RUN02-Jung2011-L07-state-dependent-tuning": "b7b87b2854232e08e2379a0c99f34845c6e98e0f01a028c0a6e4369e39c7ff43",
+   "AS-RUN02-Longden2010-L07-positive-speed-information": "6c5b21eb9491173939f6a39ff0042d704ab84dd1288a23d1079d7b9bec5879ab",
+   "AS-RUN03-Longden2010-L03-onset-latency": "d81680e6fc4c822fc7e8523c42ddd0f273d7795385c579a6b0b1d218bd75c9ac"
+  },
+  "hash_convention": "SHA256 over original UTF-8 JSONL line including terminating newline; all prior records must remain byte-identical.",
+  "new_assessment_count": 1,
+  "Jung_L07_status": "insufficient_evidence",
+  "Longden_L07_status": "insufficient_evidence",
+  "Longden_L03_status": "eligible; pre-existing and not counted again"
+ },
+ "task_recommendations": [
+  {
+   "task_id": "T-assessment-W-Dabcb702a46d5671a",
+   "action": "append one single-claim review event while retaining partial",
+   "recommended_task_state": "partial",
+   "reason": "本Fig6b单主张已复核；原L07及本Work其他主张/参考文献覆盖未完成。"
+  },
+  {
+   "task_id": "T-RUN02-L079-91bb7d3ba167e6fc",
+   "action": "preserve",
+   "recommended_task_state": "partial",
+   "reason": "本次不开展参考文献边界/身份扩展。"
+  },
+  {
+   "task_id": "T-RUN02-L079-52be803112553492",
+   "action": "preserve",
+   "recommended_task_state": "pending",
+   "reason": "本次不开展施引扩展。"
+  },
+  {
+   "task_id": "T-RUN02-L079-4426c4dc035807f4",
+   "action": "preserve",
+   "recommended_task_state": "pending",
+   "reason": "Longden平台条件速率信息缺口未改变。"
+  }
+ ],
+ "joint_review": {
+  "primary_visual_reviewer": "L07/L09 evidence agent",
+  "primary_visual_pages": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "cross_reviewer": "root",
+  "cross_review_pages": [
+   2,
+   4,
+   5
+  ],
+  "joint_manual_activity_count": 1,
+  "separate_duplicate_query_or_fulltext_work_count": 0
+ },
+ "activity_accounting": {
+  "manual_review_activities": 1,
+  "cached_resources_reused": 1,
+  "cache_query_records": 1,
+  "new_scientific_network_requests": 0,
+  "new_fulltext_downloads": 0,
+  "newly_reviewed_distinct_fulltext_works": 0,
+  "new_claims_reviewed": 1,
+  "whole_work_or_L07_closed": false
+ },
+ "integration_note": "立即由root上传本sanitized报告并精确回读；成功后再集成附带1条Assessment、1条缓存复用记录、1次联合人工活动。不得修改旧69条或把本报告视为CP6/Work完成；canonical审计与提交由root处理。"
+}

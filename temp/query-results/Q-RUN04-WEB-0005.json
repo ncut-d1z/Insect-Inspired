@@ -1,0 +1,127 @@
+{
+  "query_id": "Q-RUN04-WEB-0005",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "institutional_repository",
+  "source_name": "NCBI PubMed",
+  "entity_id": "W-R549b18c83390cdad",
+  "work_key": "TempWR549b18c83390cdad",
+  "endpoint_or_url": "https://pubmed.ncbi.nlm.nih.gov/27147991/",
+  "transport": "web_retrieval",
+  "queried_at_utc": "2026-11-26T16:16:52.017Z",
+  "completed_at_utc": "2026-11-26T16:16:53.042Z",
+  "query_time_status": "exact",
+  "raw_parameters": {
+    "open": [
+      {
+        "ref_id": "https://pubmed.ncbi.nlm.nih.gov/27147991/"
+      }
+    ],
+    "response_length": "long"
+  },
+  "normalized_parameters": {
+    "pmid": "27147991",
+    "resource_kind": "PubMed record"
+  },
+  "status": "success",
+  "http_status": null,
+  "response_kind": "bibliographic_record",
+  "returned_count": 1,
+  "visible_total": 1,
+  "count_scope": "One exact PubMed identity only; no corpus/citation-list/fulltext/author-entity coverage is inferred.",
+  "result_identifiers": [
+    "MED:27147991",
+    "DOI:10.3389/fnbeh.2016.00069",
+    "PMCID:PMC4829585"
+  ],
+  "external_requests_performed": 1,
+  "manual_review_items": 0,
+  "cache_hit": false,
+  "retrieval_cache_note": "Web retrieval service controls its own upstream cache; this is a new tool access, not proof of a new origin HTTP response.",
+  "timeout_note": "Web retrieval tool exposes no caller timeout parameter; actual timestamps retained.",
+  "retry_of_query_id": "Q-RUN03-WEB-0005",
+  "source_refs": [
+    "turn603471445view0"
+  ],
+  "source_locators": [
+    {
+      "source_ref": "turn603471445view0",
+      "line_start": 177,
+      "line_end": 192,
+      "fields": [
+        "publication_date",
+        "volume",
+        "issue_or_article_number_or_pages",
+        "title",
+        "byline",
+        "publication_affiliations",
+        "PMID",
+        "DOI",
+        "PMCID_if_reported"
+      ]
+    }
+  ],
+  "metadata": {
+    "pmid": "27147991",
+    "pmcid": "PMC4829585",
+    "doi": "10.3389/fnbeh.2016.00069",
+    "title": "Ant Homing Ability Is Not Diminished When Traveling Backwards",
+    "publication_date": "2016-04-13",
+    "publication_date_kind": "publication_date_as_shown",
+    "collection_year": 2016,
+    "year": 2016,
+    "venue_abbreviation": "Front Behav Neurosci",
+    "volume": "10",
+    "article_number": "69",
+    "authors": [
+      {
+        "position": 1,
+        "display_name": "Paul B Ardin",
+        "affiliation_numbers": [
+          1
+        ]
+      },
+      {
+        "position": 2,
+        "display_name": "Michael Mangan",
+        "affiliation_numbers": [
+          1
+        ]
+      },
+      {
+        "position": 3,
+        "display_name": "Barbara Webb",
+        "affiliation_numbers": [
+          1
+        ]
+      }
+    ],
+    "publication_affiliations": [
+      {
+        "affiliation_number": 1,
+        "organization_names": [
+          "Insect Robotics Lab",
+          "School of Informatics",
+          "University of Edinburgh"
+        ],
+        "country": "United Kingdom"
+      }
+    ]
+  },
+  "metadata_pending_review": {
+    "language": "not explicitly established by retrieved citation header",
+    "publisher": "not independently established in this receipt",
+    "cross_work_person_identity": "Names and work-scoped affiliation facts alone must not automatically merge Person entities."
+  },
+  "integration_guard": "Retain the existing work_id/work_key and check the complete canonical DOI/title index before any merge. No new Work is asserted; exact byline identity is scoped to this article. Preserve existing Version/Person records.",
+  "error_code": null,
+  "error_message": null,
+  "sanitized": true,
+  "payload_retained": false,
+  "metadata_allowlist_retained": true,
+  "license_note": "Bibliographic facts and locators only; original abstracts/fulltext/figure text/references payload/street addresses/email/credentials excluded.",
+  "raw_tool_response_sha256": "0868282d57447d97285e38c69f0ee790d41da38c05e6ce90dbaba02d5ba5cf2d",
+  "raw_tool_response_bytes": 14427,
+  "raw_response_retention": "Private local tool-response cache outside repository; not for Git publication."
+}

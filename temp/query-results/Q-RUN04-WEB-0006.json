@@ -1,0 +1,145 @@
+{
+  "query_id": "Q-RUN04-WEB-0006",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "institutional_repository",
+  "source_name": "NCBI PubMed",
+  "entity_id": "W-R6d661a159e646e16",
+  "work_key": "TempWR6d661a159e646e16",
+  "endpoint_or_url": "https://pubmed.ncbi.nlm.nih.gov/26994172/",
+  "transport": "web_retrieval",
+  "queried_at_utc": "2026-11-26T16:16:56.970Z",
+  "completed_at_utc": "2026-11-26T16:16:57.680Z",
+  "query_time_status": "exact",
+  "raw_parameters": {
+    "open": [
+      {
+        "ref_id": "https://pubmed.ncbi.nlm.nih.gov/26994172/"
+      }
+    ],
+    "response_length": "long"
+  },
+  "normalized_parameters": {
+    "pmid": "26994172",
+    "resource_kind": "PubMed record"
+  },
+  "status": "success",
+  "http_status": null,
+  "response_kind": "bibliographic_record",
+  "returned_count": 1,
+  "visible_total": 1,
+  "count_scope": "One exact PubMed identity only; no corpus/citation-list/fulltext/author-entity coverage is inferred.",
+  "result_identifiers": [
+    "MED:26994172",
+    "DOI:10.1242/jeb.134049"
+  ],
+  "external_requests_performed": 1,
+  "manual_review_items": 0,
+  "cache_hit": false,
+  "retrieval_cache_note": "Web retrieval service controls its own upstream cache; this is a new tool access, not proof of a new origin HTTP response.",
+  "timeout_note": "Web retrieval tool exposes no caller timeout parameter; actual timestamps retained.",
+  "retry_of_query_id": "Q-RUN03-WEB-0006",
+  "source_refs": [
+    "turn159895037view0"
+  ],
+  "source_locators": [
+    {
+      "source_ref": "turn159895037view0",
+      "line_start": 177,
+      "line_end": 191,
+      "fields": [
+        "publication_date",
+        "volume",
+        "issue_or_article_number_or_pages",
+        "title",
+        "byline",
+        "publication_affiliations",
+        "PMID",
+        "DOI",
+        "PMCID_if_reported"
+      ]
+    }
+  ],
+  "metadata": {
+    "pmid": "26994172",
+    "doi": "10.1242/jeb.134049",
+    "title": "Head roll stabilisation in the nocturnal bull ant Myrmecia pyriformis: implications for visual navigation",
+    "publication_date": "2016-03-18",
+    "publication_date_kind": "electronic_publication_date",
+    "issue_date": "2016-05-15",
+    "electronic_publication_date": "2016-03-18",
+    "year": 2016,
+    "venue_abbreviation": "J Exp Biol",
+    "volume": "219",
+    "issue": "Pt 10",
+    "pages": "1449-1457",
+    "source_page_string": "1449-57",
+    "authors": [
+      {
+        "position": 1,
+        "display_name": "Chloé A Raderschall",
+        "affiliation_numbers": [
+          1
+        ]
+      },
+      {
+        "position": 2,
+        "display_name": "Ajay Narendra",
+        "affiliation_numbers": [
+          2
+        ]
+      },
+      {
+        "position": 3,
+        "display_name": "Jochen Zeil",
+        "affiliation_numbers": [
+          3
+        ]
+      }
+    ],
+    "publication_affiliations": [
+      {
+        "affiliation_number": 1,
+        "organization_names": [
+          "Research School of Biology",
+          "The Australian National University"
+        ],
+        "country": "Australia"
+      },
+      {
+        "affiliation_number": 2,
+        "organization_names": [
+          "Research School of Biology",
+          "The Australian National University",
+          "Department of Biological Sciences",
+          "Macquarie University"
+        ],
+        "country": "Australia"
+      },
+      {
+        "affiliation_number": 3,
+        "organization_names": [
+          "Research School of Biology",
+          "The Australian National University"
+        ],
+        "country": "Australia"
+      }
+    ]
+  },
+  "metadata_pending_review": {
+    "language": "not explicitly established by retrieved citation header",
+    "publisher": "not independently established in this receipt",
+    "cross_work_person_identity": "Names and work-scoped affiliation facts alone must not automatically merge Person entities."
+  },
+  "integration_guard": "Retain the existing work_id/work_key and check the complete canonical DOI/title index before any merge. No new Work is asserted; exact byline identity is scoped to this article. Preserve existing Version/Person records.",
+  "error_code": null,
+  "error_message": null,
+  "sanitized": true,
+  "payload_retained": false,
+  "metadata_allowlist_retained": true,
+  "license_note": "Bibliographic facts and locators only; original abstracts/fulltext/figure text/references payload/street addresses/email/credentials excluded.",
+  "raw_tool_response_sha256": "1bee9ac8e49d0a401b22b16b6dcbb9cf3427c979196c0bd67679268c36023172",
+  "raw_tool_response_bytes": 12411,
+  "raw_response_retention": "Private local tool-response cache outside repository; not for Git publication."
+}
