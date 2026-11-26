@@ -1,0 +1,27 @@
+{
+  "format_version": 1,
+  "repository": "ncut-d1z/Insect-Inspired",
+  "checkpoint_id": "CP-0005",
+  "scope_id": "SCOPE-0001",
+  "source_sync_ref": "refs/heads/sync/cp5-checkpoint-import",
+  "target_ref": "refs/heads/research/p3-p6-cp5",
+  "expected_baseline_commit": "95a0a218667333967f4a6c18f8b8b71df8b464e0",
+  "expected_parent_commit": "95a0a218667333967f4a6c18f8b8b71df8b464e0",
+  "expected_commit": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+  "expected_tree": "27b8ac91e5e86fca891dc24e0f08134aaab96ebd",
+  "bundle_kind": "incremental",
+  "bundle_name": "recovery.bundle",
+  "bundle_prerequisites": [
+    "95a0a218667333967f4a6c18f8b8b71df8b464e0"
+  ],
+  "bundle_bytes": 19638061,
+  "bundle_sha256": "29eefe39d95fecd6cbcb909a8cc8242fed6bb168bd42452d3232d881a386738e",
+  "checkpoint_path": "temp/snapshots/checkpoints/CP-0005.json",
+  "checkpoint_sha256": "ed0fa6a00066a82d1a9635cf6306b74a1982d3659911ded42c4087ddc443e270",
+  "parent_checkpoint_id": "CP-0004",
+  "canonical_file_count": 1188,
+  "artifact_hash_count": 1187,
+  "partition_dataset_count": 7,
+  "partition_manifest_sha256": "97e1286420002f40bcf599c350b3c96081eb7dc2dff35c11179b7c7d1e099bf6",
+  "readme_sha256": "e47b4e9332f060742dac60ca7f2c2855ccc8dadb7b9c037fc3c7816d326055d3"
+}
