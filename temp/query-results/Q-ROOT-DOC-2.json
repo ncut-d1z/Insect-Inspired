@@ -1,0 +1,15 @@
+{
+  "query_id": "Q-ROOT-DOC-2",
+  "entity_id": "SCOPE-0001",
+  "source_id": "openalex",
+  "endpoint_or_url": "https://help.openalex.org/api/paging/",
+  "api_version": null,
+  "queried_at_utc": null,
+  "query_time_status": "unavailable_exact",
+  "status": "partial",
+  "result_identifiers": [],
+  "visible_total": null,
+  "returned_count": 0,
+  "error_code": null,
+  "coverage_note": "Official documentation: cursor continuation needs key; actual list query quota failure separately logged. Exact web-tool timestamp not captured; day precision only."
+}

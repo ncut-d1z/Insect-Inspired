@@ -1,0 +1,15 @@
+{
+  "query_id": "Q-B-012",
+  "entity_id": "SCOPE-0001",
+  "source_id": "institutional_repository",
+  "endpoint_or_url": "https://pure.mpg.de/rest/items/item_1793457",
+  "api_version": "observed",
+  "queried_at_utc": "2026-11-26T05:26:02.267969Z",
+  "query_time_status": "exact",
+  "status": "success",
+  "result_identifiers": [],
+  "visible_total": 1,
+  "returned_count": 1,
+  "error_code": null,
+  "coverage_note": "Exact seed identity metadata, not citation or author corpus coverage."
+}

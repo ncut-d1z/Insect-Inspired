@@ -1,0 +1,17 @@
+{
+  "query_id": "Q-A-CR-S03",
+  "entity_id": "S03",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works/10.1016/j.cub.2014.12.012",
+  "api_version": "1.0.0",
+  "queried_at_utc": "2026-11-26T05:24:44.409675Z",
+  "query_time_status": "exact",
+  "status": "success",
+  "result_identifiers": [
+    "10.1016/j.cub.2014.12.012"
+  ],
+  "visible_total": 1,
+  "returned_count": 1,
+  "error_code": null,
+  "coverage_note": "Exact seed identity metadata, not citation or author corpus coverage."
+}

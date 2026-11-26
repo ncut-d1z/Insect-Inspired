@@ -1,0 +1,3012 @@
+{
+  "checkpoint_id": "CP-0001",
+  "scope_id": "SCOPE-0001",
+  "parent_checkpoint_id": null,
+  "schema_version": "1.1.0",
+  "created_at_utc": "2026-11-26T06:20:49.936542Z",
+  "task_cursor_state": {
+    "T-Assessment-S01": {
+      "event_sequence": 5,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S02": {
+      "event_sequence": 11,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S03": {
+      "event_sequence": 17,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S04": {
+      "event_sequence": 23,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S05": {
+      "event_sequence": 29,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S06": {
+      "event_sequence": 35,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S07": {
+      "event_sequence": 41,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S08": {
+      "event_sequence": 47,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S09": {
+      "event_sequence": 53,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S10": {
+      "event_sequence": 59,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S11": {
+      "event_sequence": 65,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S12": {
+      "event_sequence": 71,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S13": {
+      "event_sequence": 77,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S14": {
+      "event_sequence": 83,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S15": {
+      "event_sequence": 89,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S16": {
+      "event_sequence": 95,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S17": {
+      "event_sequence": 101,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S18": {
+      "event_sequence": 107,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S19": {
+      "event_sequence": 113,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Assessment-S20": {
+      "event_sequence": 119,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments.",
+      "retry_at": null,
+      "review_condition": "P6: extract full-text claim evidence, strong typed conditions, quantitative/scale gates and L01–L09 assessments."
+    },
+    "T-Authors-S01": {
+      "event_sequence": 3,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S02": {
+      "event_sequence": 9,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S03": {
+      "event_sequence": 15,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S04": {
+      "event_sequence": 21,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S05": {
+      "event_sequence": 27,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S06": {
+      "event_sequence": 33,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S07": {
+      "event_sequence": 39,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S08": {
+      "event_sequence": 45,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S09": {
+      "event_sequence": 51,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S10": {
+      "event_sequence": 57,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S11": {
+      "event_sequence": 63,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S12": {
+      "event_sequence": 69,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S13": {
+      "event_sequence": 75,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S14": {
+      "event_sequence": 81,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S15": {
+      "event_sequence": 87,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S16": {
+      "event_sequence": 93,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S17": {
+      "event_sequence": 99,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S18": {
+      "event_sequence": 105,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S19": {
+      "event_sequence": 111,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-Authors-S20": {
+      "event_sequence": 117,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: disambiguate every byline author and retrieve scoped publication/project outputs.",
+      "retry_at": null,
+      "review_condition": "P5: disambiguate every byline author and retrieve scoped publication/project outputs."
+    },
+    "T-BiblioConflict-S02": {
+      "event_sequence": 121,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "Official NeurIPS uses conference year2002/pages1343–1350; institution listing differs (2003 and1319–1326). Preserve canonical official values; verify paper-volume source before any correction.",
+      "retry_at": null,
+      "review_condition": "Official NeurIPS uses conference year2002/pages1343–1350; institution listing differs (2003 and1319–1326). Preserve canonical official values; verify paper-volume source before any correction."
+    },
+    "T-Citations-S01": {
+      "event_sequence": 2,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S02": {
+      "event_sequence": 8,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S03": {
+      "event_sequence": 14,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S04": {
+      "event_sequence": 20,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S05": {
+      "event_sequence": 26,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S06": {
+      "event_sequence": 32,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S07": {
+      "event_sequence": 38,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S08": {
+      "event_sequence": 44,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S09": {
+      "event_sequence": 50,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S10": {
+      "event_sequence": 56,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S11": {
+      "event_sequence": 62,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S12": {
+      "event_sequence": 68,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S13": {
+      "event_sequence": 74,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S14": {
+      "event_sequence": 80,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S15": {
+      "event_sequence": 86,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S16": {
+      "event_sequence": 92,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S17": {
+      "event_sequence": 98,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S18": {
+      "event_sequence": 104,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S19": {
+      "event_sequence": 110,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Citations-S20": {
+      "event_sequence": 116,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P4: verify forward citations with admitted indexes and paginate all visible results.",
+      "retry_at": null,
+      "review_condition": "P4: verify forward citations with admitted indexes and paginate all visible results."
+    },
+    "T-Import-S01": {
+      "event_sequence": 6,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S02": {
+      "event_sequence": 12,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S03": {
+      "event_sequence": 18,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S04": {
+      "event_sequence": 24,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S05": {
+      "event_sequence": 30,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S06": {
+      "event_sequence": 36,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S07": {
+      "event_sequence": 42,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S08": {
+      "event_sequence": 48,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S09": {
+      "event_sequence": 54,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S10": {
+      "event_sequence": 60,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S11": {
+      "event_sequence": 66,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S12": {
+      "event_sequence": 72,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S13": {
+      "event_sequence": 78,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S14": {
+      "event_sequence": 84,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S15": {
+      "event_sequence": 90,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S16": {
+      "event_sequence": 96,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S17": {
+      "event_sequence": 102,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S18": {
+      "event_sequence": 108,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S19": {
+      "event_sequence": 114,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-Import-S20": {
+      "event_sequence": 120,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified.",
+      "retry_at": null,
+      "review_condition": "Seed identity, byline, publication affiliation, version/file mapping and Chinese summary imported and verified."
+    },
+    "T-OpenAlex-Capability": {
+      "event_sequence": 123,
+      "task_state": "retryable_error",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 1,
+      "error_code": "HTTP_429_daily_budget",
+      "failure_reason": "Anonymous list query returned 429 daily_budget. Resume after provider quota resets or independently authorized credential becomes available; do not count failed paging as coverage.",
+      "retry_at": "2026-11-27T00:00:00Z",
+      "review_condition": "Anonymous list query returned 429 daily_budget. Resume after provider quota resets or independently authorized credential becomes available; do not count failed paging as coverage."
+    },
+    "T-Projects-S01": {
+      "event_sequence": 4,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S02": {
+      "event_sequence": 10,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S03": {
+      "event_sequence": 16,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S04": {
+      "event_sequence": 22,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S05": {
+      "event_sequence": 28,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S06": {
+      "event_sequence": 34,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S07": {
+      "event_sequence": 40,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S08": {
+      "event_sequence": 46,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S09": {
+      "event_sequence": 52,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S10": {
+      "event_sequence": 58,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S11": {
+      "event_sequence": 64,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S12": {
+      "event_sequence": 70,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S13": {
+      "event_sequence": 76,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S14": {
+      "event_sequence": 82,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S15": {
+      "event_sequence": 88,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S16": {
+      "event_sequence": 94,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S17": {
+      "event_sequence": 100,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S18": {
+      "event_sequence": 106,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S19": {
+      "event_sequence": 112,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Projects-S20": {
+      "event_sequence": 118,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence.",
+      "retry_at": null,
+      "review_condition": "P5: verify institutional hierarchy, historical affiliation and project/funding output evidence."
+    },
+    "T-Q-Q-A-CR-S03": {
+      "event_sequence": 144,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-A-CR-S03"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-A-CR-S04": {
+      "event_sequence": 145,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-A-CR-S04"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-A-CR-S05": {
+      "event_sequence": 146,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-A-CR-S05"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-A-CR-S06": {
+      "event_sequence": 147,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-A-CR-S06"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-A-CR-S07": {
+      "event_sequence": 149,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-A-CR-S07"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-A-CR-S08": {
+      "event_sequence": 151,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-A-CR-S08"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-A-CR-S09": {
+      "event_sequence": 153,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-A-CR-S09"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-A-CR-S10": {
+      "event_sequence": 158,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-A-CR-S10"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-A-S01-DATACITE": {
+      "event_sequence": 170,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-A-S01-DATACITE"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-A-S02-NEURIPS-BIBTEX": {
+      "event_sequence": 171,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-A-S02-NEURIPS-BIBTEX"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-A-S02-NEURIPS-METADATA": {
+      "event_sequence": 172,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-A-S02-NEURIPS-METADATA"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-001": {
+      "event_sequence": 148,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-001"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-002": {
+      "event_sequence": 150,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-002"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-003": {
+      "event_sequence": 152,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-003"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-004": {
+      "event_sequence": 154,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-004"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-005": {
+      "event_sequence": 159,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-005"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-006": {
+      "event_sequence": 162,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-006"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-007": {
+      "event_sequence": 164,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-007"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-008": {
+      "event_sequence": 165,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-008"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-009": {
+      "event_sequence": 166,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-009"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-010": {
+      "event_sequence": 167,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-010"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-011": {
+      "event_sequence": 168,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-011"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-012": {
+      "event_sequence": 169,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-012"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-B-013": {
+      "event_sequence": 174,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-B-013"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+      "retry_at": null,
+      "review_condition": "Exact seed identity metadata, not citation or author corpus coverage."
+    },
+    "T-Q-Q-EPMC-FIELDS": {
+      "event_sequence": 173,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-EPMC-FIELDS"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "HTTP200 but searchTermList empty; not accepted as field capability evidence. Positive/negative controlled search probes supersede this incomplete response.",
+      "retry_at": null,
+      "review_condition": "HTTP200 but searchTermList empty; not accepted as field capability evidence. Positive/negative controlled search probes supersede this incomplete response."
+    },
+    "T-Q-Q-INITIAL-crossref": {
+      "event_sequence": 179,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-INITIAL-crossref"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Initial HTTP200 availability probe; only status/byte count preview was retained, not full payload. Follow-up complete capability queries use their own logged observations.",
+      "retry_at": null,
+      "review_condition": "Initial HTTP200 availability probe; only status/byte count preview was retained, not full payload. Follow-up complete capability queries use their own logged observations."
+    },
+    "T-Q-Q-INITIAL-europepmc": {
+      "event_sequence": 180,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-INITIAL-europepmc"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Initial HTTP200 availability probe; only status/byte count preview was retained, not full payload. Follow-up complete capability queries use their own logged observations.",
+      "retry_at": null,
+      "review_condition": "Initial HTTP200 availability probe; only status/byte count preview was retained, not full payload. Follow-up complete capability queries use their own logged observations."
+    },
+    "T-Q-Q-INITIAL-openalex": {
+      "event_sequence": 181,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-INITIAL-openalex"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Initial HTTP200 availability probe; only status/byte count preview was retained, not full payload. Follow-up complete capability queries use their own logged observations.",
+      "retry_at": null,
+      "review_condition": "Initial HTTP200 availability probe; only status/byte count preview was retained, not full payload. Follow-up complete capability queries use their own logged observations."
+    },
+    "T-Q-Q-PDF-S01": {
+      "event_sequence": 124,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S01"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S02": {
+      "event_sequence": 125,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S02"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S03": {
+      "event_sequence": 126,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S03"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S04": {
+      "event_sequence": 127,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S04"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S05": {
+      "event_sequence": 128,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S05"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S06": {
+      "event_sequence": 129,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S06"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S07": {
+      "event_sequence": 130,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S07"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S08": {
+      "event_sequence": 131,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S08"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S09": {
+      "event_sequence": 132,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S09"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S10": {
+      "event_sequence": 133,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S10"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S11": {
+      "event_sequence": 134,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S11"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S12": {
+      "event_sequence": 135,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S12"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S13": {
+      "event_sequence": 136,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S13"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S14": {
+      "event_sequence": 137,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S14"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S15": {
+      "event_sequence": 138,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S15"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S16": {
+      "event_sequence": 139,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S16"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S17": {
+      "event_sequence": 140,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S17"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S18": {
+      "event_sequence": 141,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S18"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S19": {
+      "event_sequence": 142,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S19"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PDF-S20": {
+      "event_sequence": 143,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PDF-S20"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+      "retry_at": null,
+      "review_condition": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+    },
+    "T-Q-Q-PROBE-crossref-1": {
+      "event_sequence": 155,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PROBE-crossref-1"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness.",
+      "retry_at": null,
+      "review_condition": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness."
+    },
+    "T-Q-Q-PROBE-crossref-2": {
+      "event_sequence": 160,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PROBE-crossref-2"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness.",
+      "retry_at": null,
+      "review_condition": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness."
+    },
+    "T-Q-Q-PROBE-europepmc-1": {
+      "event_sequence": 156,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PROBE-europepmc-1"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness.",
+      "retry_at": null,
+      "review_condition": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness."
+    },
+    "T-Q-Q-PROBE-europepmc-2": {
+      "event_sequence": 161,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PROBE-europepmc-2"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness.",
+      "retry_at": null,
+      "review_condition": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness."
+    },
+    "T-Q-Q-PROBE-europepmc-3": {
+      "event_sequence": 163,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PROBE-europepmc-3"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness.",
+      "retry_at": null,
+      "review_condition": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness."
+    },
+    "T-Q-Q-PROBE-europepmc-date-1": {
+      "event_sequence": 177,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PROBE-europepmc-date-1"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness.",
+      "retry_at": null,
+      "review_condition": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness."
+    },
+    "T-Q-Q-PROBE-europepmc-date-2": {
+      "event_sequence": 178,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PROBE-europepmc-date-2"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness.",
+      "retry_at": null,
+      "review_condition": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness."
+    },
+    "T-Q-Q-PROBE-europepmc-field-1": {
+      "event_sequence": 175,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PROBE-europepmc-field-1"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness.",
+      "retry_at": null,
+      "review_condition": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness."
+    },
+    "T-Q-Q-PROBE-europepmc-field-2": {
+      "event_sequence": 176,
+      "task_state": "verified_complete",
+      "cursor": null,
+      "query_ids": [
+        "Q-PROBE-europepmc-field-2"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness.",
+      "retry_at": null,
+      "review_condition": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness."
+    },
+    "T-Q-Q-PROBE-openalex-1": {
+      "event_sequence": 157,
+      "task_state": "retryable_error",
+      "cursor": null,
+      "query_ids": [
+        "Q-PROBE-openalex-1"
+      ],
+      "attempt_count": 1,
+      "error_code": "HTTP_429_daily_budget",
+      "failure_reason": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness.",
+      "retry_at": "2026-11-27T00:00:00Z",
+      "review_condition": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness."
+    },
+    "T-Q-Q-ROOT-DOC-1": {
+      "event_sequence": 182,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-ROOT-DOC-1"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Official API access, concurrency and rate-limit documentation. Exact web-tool timestamp not captured; day precision only.",
+      "retry_at": null,
+      "review_condition": "Official API access, concurrency and rate-limit documentation. Exact web-tool timestamp not captured; day precision only."
+    },
+    "T-Q-Q-ROOT-DOC-2": {
+      "event_sequence": 183,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-ROOT-DOC-2"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Official documentation: cursor continuation needs key; actual list query quota failure separately logged. Exact web-tool timestamp not captured; day precision only.",
+      "retry_at": null,
+      "review_condition": "Official documentation: cursor continuation needs key; actual list query quota failure separately logged. Exact web-tool timestamp not captured; day precision only."
+    },
+    "T-Q-Q-ROOT-DOC-3": {
+      "event_sequence": 184,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-ROOT-DOC-3"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Web retrieval route returned403; actual API pagination tests succeeded. Exact web-tool timestamp not captured; day precision only.",
+      "retry_at": null,
+      "review_condition": "Web retrieval route returned403; actual API pagination tests succeeded. Exact web-tool timestamp not captured; day precision only."
+    },
+    "T-Q-Q-ROOT-DOC-4": {
+      "event_sequence": 185,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-ROOT-DOC-4"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Web retrieval route returned403; TITLE_ABS/AFF syntax independently checked with known-positive and known-negative API probes. Exact web-tool timestamp not captured; day precision only.",
+      "retry_at": null,
+      "review_condition": "Web retrieval route returned403; TITLE_ABS/AFF syntax independently checked with known-positive and known-negative API probes. Exact web-tool timestamp not captured; day precision only."
+    },
+    "T-Q-Q-ROOT-OPEN-1": {
+      "event_sequence": 186,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-ROOT-OPEN-1"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Search retrieval route could not open; successful direct REST source logged separately. Exact web-tool timestamp not captured; day precision only.",
+      "retry_at": null,
+      "review_condition": "Search retrieval route could not open; successful direct REST source logged separately. Exact web-tool timestamp not captured; day precision only."
+    },
+    "T-Q-Q-ROOT-OPEN-2": {
+      "event_sequence": 187,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-ROOT-OPEN-2"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Search retrieval route could not open; successful direct API source logged separately. Exact web-tool timestamp not captured; day precision only.",
+      "retry_at": null,
+      "review_condition": "Search retrieval route could not open; successful direct API source logged separately. Exact web-tool timestamp not captured; day precision only."
+    },
+    "T-Q-Q-ROOT-SEARCH-1": {
+      "event_sequence": 188,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-ROOT-SEARCH-1"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Official Crossref/OpenAlex/EuropePMC capability documentation discovery; no research Works imported. Exact web-tool timestamp not captured; day precision only.",
+      "retry_at": null,
+      "review_condition": "Official Crossref/OpenAlex/EuropePMC capability documentation discovery; no research Works imported. Exact web-tool timestamp not captured; day precision only."
+    },
+    "T-Q-Q-ROOT-SEARCH-2": {
+      "event_sequence": 189,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-ROOT-SEARCH-2"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "EuropePMC field-syntax source discovery; third-party snippets not treated as authoritative capability evidence. Exact web-tool timestamp not captured; day precision only.",
+      "retry_at": null,
+      "review_condition": "EuropePMC field-syntax source discovery; third-party snippets not treated as authoritative capability evidence. Exact web-tool timestamp not captured; day precision only."
+    },
+    "T-Q-Q-WEB-A-001": {
+      "event_sequence": 190,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-A-001"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-A-002": {
+      "event_sequence": 191,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-A-002"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-A-003": {
+      "event_sequence": 192,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-A-003"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-A-004": {
+      "event_sequence": 193,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-A-004"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-A-005": {
+      "event_sequence": 194,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-A-005"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-001": {
+      "event_sequence": 195,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-001"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-002": {
+      "event_sequence": 196,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-002"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-003": {
+      "event_sequence": 197,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-003"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-004": {
+      "event_sequence": 198,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-004"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-005": {
+      "event_sequence": 199,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-005"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-006": {
+      "event_sequence": 200,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-006"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-007": {
+      "event_sequence": 201,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-007"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-008": {
+      "event_sequence": 202,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-008"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-009": {
+      "event_sequence": 203,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-009"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-010": {
+      "event_sequence": 204,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-010"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-011": {
+      "event_sequence": 205,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-011"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-012": {
+      "event_sequence": 206,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-012"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-013": {
+      "event_sequence": 207,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-013"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-014": {
+      "event_sequence": 208,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-014"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-015": {
+      "event_sequence": 209,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-015"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-Q-Q-WEB-B-016": {
+      "event_sequence": 210,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [
+        "Q-WEB-B-016"
+      ],
+      "attempt_count": 1,
+      "error_code": null,
+      "failure_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+      "retry_at": null,
+      "review_condition": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+    },
+    "T-References-S01": {
+      "event_sequence": 1,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S02": {
+      "event_sequence": 7,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S03": {
+      "event_sequence": 13,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S04": {
+      "event_sequence": 19,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S05": {
+      "event_sequence": 25,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S06": {
+      "event_sequence": 31,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S07": {
+      "event_sequence": 37,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S08": {
+      "event_sequence": 43,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S09": {
+      "event_sequence": 49,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S10": {
+      "event_sequence": 55,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S11": {
+      "event_sequence": 61,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S12": {
+      "event_sequence": 67,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S13": {
+      "event_sequence": 73,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S14": {
+      "event_sequence": 79,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S15": {
+      "event_sequence": 85,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S16": {
+      "event_sequence": 91,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S17": {
+      "event_sequence": 97,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S18": {
+      "event_sequence": 103,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S19": {
+      "event_sequence": 109,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-References-S20": {
+      "event_sequence": 115,
+      "task_state": "pending",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "P3: parse all reference lists, appendices and proof additions; verify full page coverage.",
+      "retry_at": null,
+      "review_condition": "P3: parse all reference lists, appendices and proof additions; verify full page coverage."
+    },
+    "T-UploadHistory": {
+      "event_sequence": 122,
+      "task_state": "partial",
+      "cursor": null,
+      "query_ids": [],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "Retained attachments expose only current seed files. Original identifiers/bytes of historically removed duplicate uploads are absent; do not fabricate hashes or Upload events. Append audit only when original evidence becomes available.",
+      "retry_at": null,
+      "review_condition": "Retained attachments expose only current seed files. Original identifiers/bytes of historically removed duplicate uploads are absent; do not fabricate hashes or Upload events. Append audit only when original evidence becomes available."
+    }
+  },
+  "query_log_high_watermark": 87,
+  "counts": {
+    "seed_records": 20,
+    "retained_uploads": 20,
+    "distinct_pdf_sha256": 20,
+    "canonical_works": 20,
+    "versions": 21,
+    "file_backed_versions": 20,
+    "bibliographic_only_versions": 1,
+    "people": 64,
+    "byline_authors": 57,
+    "editors": 7,
+    "reported_orcid": 7,
+    "organizations": 60,
+    "projects": 0,
+    "research_entity_relations": 189,
+    "fixed_work_relations": 3,
+    "reference_occurrences": 0,
+    "citation_edges": 0,
+    "assessments": 0,
+    "u00_works": 20,
+    "unique_tasks": 210,
+    "task_events": 210,
+    "unresolved_tasks": 137,
+    "future_phase_entry_tasks": 100,
+    "queries": 87,
+    "exact_query_timestamps": 55,
+    "unavailable_exact_query_timestamps": 32,
+    "rejected_uploads": 0,
+    "cascade_events": 0,
+    "unknown_conditions": 0,
+    "unknown_review_required_conditions": 0,
+    "overdue_unescalated_unknown": 0,
+    "L01_works": 0,
+    "L02_works": 0,
+    "L03_works": 0,
+    "L04_works": 0,
+    "L05_works": 0,
+    "L06_works": 0,
+    "L07_works": 0,
+    "L08_works": 0,
+    "L09_works": 0
+  },
+  "coverage": {
+    "metadata": {
+      "denominator": 20,
+      "states": {
+        "verified_complete": 19,
+        "partial": 1
+      },
+      "verified_complete": 19
+    },
+    "fulltext": {
+      "denominator": 20,
+      "states": {
+        "verified_complete": 20
+      },
+      "verified_complete": 20
+    },
+    "abstract": {
+      "denominator": 20,
+      "states": {
+        "verified_complete": 20
+      },
+      "verified_complete": 20
+    },
+    "references": {
+      "denominator": 20,
+      "states": {
+        "pending": 20
+      },
+      "verified_complete": 0
+    },
+    "citations": {
+      "denominator": 20,
+      "states": {
+        "pending": 20
+      },
+      "verified_complete": 0
+    },
+    "authors": {
+      "denominator": 20,
+      "states": {
+        "verified_complete": 20
+      },
+      "verified_complete": 20
+    },
+    "affiliations_projects": {
+      "denominator": 20,
+      "states": {
+        "partial": 20
+      },
+      "verified_complete": 0
+    },
+    "assessment": {
+      "denominator": 20,
+      "states": {
+        "pending": 20
+      },
+      "verified_complete": 0
+    },
+    "phase_status": {
+      "P0": "completed",
+      "P1": "completed",
+      "P2": "completed",
+      "P3": "pending",
+      "P4": "pending",
+      "P5": "pending",
+      "P6": "pending",
+      "P7": "not_started",
+      "P8": "not_triggered"
+    },
+    "fulltext_meaning": {
+      "interpretation": "Availability and file completeness only; not full scientific review",
+      "partially_extractable_versions": [
+        "V-S19-01",
+        "V-S20-01"
+      ]
+    },
+    "task_states": {
+      "pending": 100,
+      "verified_complete": 73,
+      "partial": 35,
+      "retryable_error": 2
+    },
+    "closure": {
+      "established": false,
+      "reason": "P3–P6 entry tasks remain unexecuted; no exhaustive literature or index-coverage claim."
+    },
+    "scientific_gates": {
+      "assessed_claims": 0,
+      "accepted_claims": 0,
+      "rejected_claims": 0,
+      "rejection_code_counts": {},
+      "absolute_scale_claims": 0,
+      "status": "not_executed_on_formal_literature",
+      "controlled_test_report": "temp/validation/p1-gates.json"
+    },
+    "queries": {
+      "exact_time": 55,
+      "unavailable_exact_time": 32,
+      "query_receipts": 87
+    },
+    "source_admission": {
+      "source_count": 22,
+      "snapshot": "temp/snapshots/scopes/SCOPE-0001.json",
+      "openalex_list_traversal": "not_admitted_http429",
+      "historical_index_snapshot_claim": false
+    },
+    "research_views": {
+      "citation_graph.json": {
+        "sha256": "f1bc9b92abd84dbeeb20797b2766eef27e928fc8c848eb8cbd51aeaa8cf980b8",
+        "record_count": 20
+      },
+      "evidence_matrix.csv": {
+        "sha256": "84f46d770f563bcc38b85b13479cf98a58b8c1599621183ea3ef70c4939e71d4",
+        "record_count": 0
+      },
+      "research_entities.json": {
+        "sha256": "44026679f3f245a07c08009545a4bb819bb1422733aab9a0e4eaba9423b36429",
+        "record_count": 313
+      },
+      "research_implications.csv": {
+        "sha256": "f3004fe4f73ee0752caf3bc998f7385a66fadf005c8c87ce68fe614142f9d2ad",
+        "record_count": 0
+      },
+      "research_paths.json": {
+        "sha256": "a1d12f36832e348cfab74901aac107820ba1c4e1f1c2733a1c5612cc23fb779c",
+        "record_count": 0
+      }
+    }
+  },
+  "unresolved_tasks": [
+    "T-Assessment-S01",
+    "T-Assessment-S02",
+    "T-Assessment-S03",
+    "T-Assessment-S04",
+    "T-Assessment-S05",
+    "T-Assessment-S06",
+    "T-Assessment-S07",
+    "T-Assessment-S08",
+    "T-Assessment-S09",
+    "T-Assessment-S10",
+    "T-Assessment-S11",
+    "T-Assessment-S12",
+    "T-Assessment-S13",
+    "T-Assessment-S14",
+    "T-Assessment-S15",
+    "T-Assessment-S16",
+    "T-Assessment-S17",
+    "T-Assessment-S18",
+    "T-Assessment-S19",
+    "T-Assessment-S20",
+    "T-Authors-S01",
+    "T-Authors-S02",
+    "T-Authors-S03",
+    "T-Authors-S04",
+    "T-Authors-S05",
+    "T-Authors-S06",
+    "T-Authors-S07",
+    "T-Authors-S08",
+    "T-Authors-S09",
+    "T-Authors-S10",
+    "T-Authors-S11",
+    "T-Authors-S12",
+    "T-Authors-S13",
+    "T-Authors-S14",
+    "T-Authors-S15",
+    "T-Authors-S16",
+    "T-Authors-S17",
+    "T-Authors-S18",
+    "T-Authors-S19",
+    "T-Authors-S20",
+    "T-BiblioConflict-S02",
+    "T-Citations-S01",
+    "T-Citations-S02",
+    "T-Citations-S03",
+    "T-Citations-S04",
+    "T-Citations-S05",
+    "T-Citations-S06",
+    "T-Citations-S07",
+    "T-Citations-S08",
+    "T-Citations-S09",
+    "T-Citations-S10",
+    "T-Citations-S11",
+    "T-Citations-S12",
+    "T-Citations-S13",
+    "T-Citations-S14",
+    "T-Citations-S15",
+    "T-Citations-S16",
+    "T-Citations-S17",
+    "T-Citations-S18",
+    "T-Citations-S19",
+    "T-Citations-S20",
+    "T-OpenAlex-Capability",
+    "T-Projects-S01",
+    "T-Projects-S02",
+    "T-Projects-S03",
+    "T-Projects-S04",
+    "T-Projects-S05",
+    "T-Projects-S06",
+    "T-Projects-S07",
+    "T-Projects-S08",
+    "T-Projects-S09",
+    "T-Projects-S10",
+    "T-Projects-S11",
+    "T-Projects-S12",
+    "T-Projects-S13",
+    "T-Projects-S14",
+    "T-Projects-S15",
+    "T-Projects-S16",
+    "T-Projects-S17",
+    "T-Projects-S18",
+    "T-Projects-S19",
+    "T-Projects-S20",
+    "T-Q-Q-EPMC-FIELDS",
+    "T-Q-Q-INITIAL-crossref",
+    "T-Q-Q-INITIAL-europepmc",
+    "T-Q-Q-INITIAL-openalex",
+    "T-Q-Q-PROBE-openalex-1",
+    "T-Q-Q-ROOT-DOC-1",
+    "T-Q-Q-ROOT-DOC-2",
+    "T-Q-Q-ROOT-DOC-3",
+    "T-Q-Q-ROOT-DOC-4",
+    "T-Q-Q-ROOT-OPEN-1",
+    "T-Q-Q-ROOT-OPEN-2",
+    "T-Q-Q-ROOT-SEARCH-1",
+    "T-Q-Q-ROOT-SEARCH-2",
+    "T-Q-Q-WEB-A-001",
+    "T-Q-Q-WEB-A-002",
+    "T-Q-Q-WEB-A-003",
+    "T-Q-Q-WEB-A-004",
+    "T-Q-Q-WEB-A-005",
+    "T-Q-Q-WEB-B-001",
+    "T-Q-Q-WEB-B-002",
+    "T-Q-Q-WEB-B-003",
+    "T-Q-Q-WEB-B-004",
+    "T-Q-Q-WEB-B-005",
+    "T-Q-Q-WEB-B-006",
+    "T-Q-Q-WEB-B-007",
+    "T-Q-Q-WEB-B-008",
+    "T-Q-Q-WEB-B-009",
+    "T-Q-Q-WEB-B-010",
+    "T-Q-Q-WEB-B-011",
+    "T-Q-Q-WEB-B-012",
+    "T-Q-Q-WEB-B-013",
+    "T-Q-Q-WEB-B-014",
+    "T-Q-Q-WEB-B-015",
+    "T-Q-Q-WEB-B-016",
+    "T-References-S01",
+    "T-References-S02",
+    "T-References-S03",
+    "T-References-S04",
+    "T-References-S05",
+    "T-References-S06",
+    "T-References-S07",
+    "T-References-S08",
+    "T-References-S09",
+    "T-References-S10",
+    "T-References-S11",
+    "T-References-S12",
+    "T-References-S13",
+    "T-References-S14",
+    "T-References-S15",
+    "T-References-S16",
+    "T-References-S17",
+    "T-References-S18",
+    "T-References-S19",
+    "T-References-S20",
+    "T-UploadHistory"
+  ],
+  "failure_reasons": [
+    "S02 official proceedings and institutional record have different year/pagination; bibliographic conflict task remains partial.",
+    "S19 and S20 have partially reliable text layers; applicable P3/P6 pages require OCR and visual verification.",
+    "Historical removed Upload bytes/identifiers are unavailable in current supplied metadata; no audit event or hash was invented.",
+    "OpenAlex list API returned HTTP 429 daily_budget; pagination/citation coverage not admitted and retry is retained.",
+    "32 supplementary query observations lack exact original UTC timestamps; no precise-time coverage claim is made.",
+    "P3–P6 research queues are pending by stage scope; their pending state is not an execution failure."
+  ],
+  "artifact_hashes": {
+    "README.md": "5172509313859446edbdd652acb0c3a5d47b0973a54fda451bbb8049bc5c907d",
+    "ref.bib": "c7acd4363ff2106fb978f03e5c9c0c1cf184b0d8c9d419aaf1a8ee63c60bcbef",
+    "ref.html": "f53563f146119e9dcbe385cc0eb56e7bce7e663eaee978ea9655883c6ce54e93",
+    "temp/aliases.jsonl": "d2e2d18fbb7ec17383f7ec06191ec2fd902c0326438e567643fbae55ca5463fd",
+    "temp/assessments.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "temp/authors.jsonl": "2a05bc855f5ebdaad891a7fe9d529c8ddbbc083e808051bea900772cbb0916fd",
+    "temp/cascade-events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "temp/change-log.md": "f37acbf81016af231985e837209746f0a7e572a4cea1819e38ef7773cc64b170",
+    "temp/citation-edges.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "temp/exports/citation_graph.json": "f1bc9b92abd84dbeeb20797b2766eef27e928fc8c848eb8cbd51aeaa8cf980b8",
+    "temp/exports/evidence_matrix.csv": "84f46d770f563bcc38b85b13479cf98a58b8c1599621183ea3ef70c4939e71d4",
+    "temp/exports/research_entities.json": "44026679f3f245a07c08009545a4bb819bb1422733aab9a0e4eaba9423b36429",
+    "temp/exports/research_implications.csv": "f3004fe4f73ee0752caf3bc998f7385a66fadf005c8c87ce68fe614142f9d2ad",
+    "temp/exports/research_paths.json": "a1d12f36832e348cfab74901aac107820ba1c4e1f1c2733a1c5612cc23fb779c",
+    "temp/organizations.jsonl": "3557b7f99defde7fdb6ce26739e6b98eb4f7f01f296e457643e4db8fbe380626",
+    "temp/progress.md": "a843d4de95bc94001ba3ca9beae7f58748e9217cc49a787df45d64da71328061",
+    "temp/projects.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "temp/queries.jsonl": "5c25c652937530d634378bae7bda0a5f76fa929d0de8cdbc402a47071e6684b7",
+    "temp/query-results/Q-A-CR-S03.json": "f9def57723fcb16013998befa727332e0eff88426b1d586d610e9058584a084a",
+    "temp/query-results/Q-A-CR-S04.json": "44967415de0cb26b33d32850e95949b0e26ae0ac93cccc53b92c043ed3c49059",
+    "temp/query-results/Q-A-CR-S05.json": "bded305e99ebc6e6e8327fd56da09a3330bd88dbbb6c5dc5f609af05227cbb8e",
+    "temp/query-results/Q-A-CR-S06.json": "736b7852a1e3e8d04cf69869026231b6de7005dc7db267aabe61bb299799a435",
+    "temp/query-results/Q-A-CR-S07.json": "3b6992aa3e73ff9a5f82370119ce14fcff2f5344b44368250142be3b20546fcc",
+    "temp/query-results/Q-A-CR-S08.json": "d052af466698d78d2b8dcf45ed8681c4b55e6a828286da614ec686c44287230c",
+    "temp/query-results/Q-A-CR-S09.json": "b6026fedced2623ecf12e9edfe5f5bc61a0cbac682e39de4887a1686e4d1da99",
+    "temp/query-results/Q-A-CR-S10.json": "bd5cc1aacf59032130b787ad80b26172d5917edbbf8748d149ae8e723afbb6ee",
+    "temp/query-results/Q-A-S01-DATACITE.json": "020b73a9065c036b3aaafa36bfccb0e4cf882861b6edc8546b2204033e604bf4",
+    "temp/query-results/Q-A-S02-NEURIPS-BIBTEX.json": "a8ab0977b875a84946ccb5a4c1aa7b3486a7c33b3c49fc561fcf3a11e654fc52",
+    "temp/query-results/Q-A-S02-NEURIPS-METADATA.json": "7b0da29f34f51d025effe1592184a81b289d99466b601a1755209fc946fa4a22",
+    "temp/query-results/Q-B-001.json": "1e4414ea6da28acaf2bfd04507e4adb5d1e4023b1160cb770cd9cbe591184381",
+    "temp/query-results/Q-B-002.json": "4594d6c222c25d2d1e1ceb03a0b91d7abd09e344122d4ae4f07da0e77148b2ee",
+    "temp/query-results/Q-B-003.json": "4b6a23f87f5c5933a9dd2e17a2cb865f55803b2a3cf531527e8fde44aa4ae9c7",
+    "temp/query-results/Q-B-004.json": "2b58c5451221d52523e88120a6ae4e8f26fc85f7fc290fb5b123a9b24e583435",
+    "temp/query-results/Q-B-005.json": "c39f6194d439ce861adfec1c4434d6996d4a85e40100aa98d70b665f12ab2d08",
+    "temp/query-results/Q-B-006.json": "270a616232dfb0492c322758e4dbc00da501e384edfbd98f726d99c7a5bb9593",
+    "temp/query-results/Q-B-007.json": "f67988f8217a2c5a865eecd2f0426f7f220c8da406bc30d77f01f007029be597",
+    "temp/query-results/Q-B-008.json": "6c1b562980b6b5ba0b4d4cde89a469c70365a0b9fdcb8d43d079b7abb3e4a26b",
+    "temp/query-results/Q-B-009.json": "0f0b0ec0ba6d5082d9249a4d429665a0acc47b3fb22e4c55d981f7b0b8eb61fc",
+    "temp/query-results/Q-B-010.json": "8783825ad2cf6c74255c2d4e9d3f4f95ec7911ea75e12e62fa3373cd86974062",
+    "temp/query-results/Q-B-011.json": "bb54a7242c1633c0b8003078df6407801c63f151fa287ca76040f4543b024121",
+    "temp/query-results/Q-B-012.json": "fb46bc8f0496b72d6c4f2211590d65e05847535ca47a9d61a96bda63d5273007",
+    "temp/query-results/Q-B-013.json": "f7661f92ec429903e13d1293d6e5596e6aae424eecd17825a71722c7631c458f",
+    "temp/query-results/Q-EPMC-FIELDS.json": "961d3014edc37db9a7db30b8e91c8572b84fd7c0a50f7c0cf9098517b2096125",
+    "temp/query-results/Q-INITIAL-crossref.json": "21bca912dd7a6d7d5531b7d9cdc4e25021e349a78be33de65cb647e403bcfc31",
+    "temp/query-results/Q-INITIAL-europepmc.json": "da94cec382679fcef54c06cdbfdff03f1f4e71080df71ac5f23ca9e0ee11a671",
+    "temp/query-results/Q-INITIAL-openalex.json": "15cda2f9df0964ffd74d9aa96fc8dfd35bbc635a2149611ccb29838c522f2668",
+    "temp/query-results/Q-PDF-S01.json": "bdb8edb095559cc49712ae076156977f4973a96e4bde9b93f8bd9b04df8bff5b",
+    "temp/query-results/Q-PDF-S02.json": "c659eb148c9eff15dd8fcc79b3925086ca65a2271ac49c77fe13ec55cf87a98c",
+    "temp/query-results/Q-PDF-S03.json": "a59c904f05065b231292c9be49659ce3d8448277d1f8b74227dfc31cf5ea37ba",
+    "temp/query-results/Q-PDF-S04.json": "9d81e62c34452b052d86fe8602213c0830a2dc180afab0ead92d0e85eaf6b2c3",
+    "temp/query-results/Q-PDF-S05.json": "2ddea470af44ec078ccac93d1fbff24db365a9ce60a58cbfad910c7c69b70087",
+    "temp/query-results/Q-PDF-S06.json": "4c33baa2ed704efc5a232cacd8e2077d7b1b69140871ab42479962f36765b548",
+    "temp/query-results/Q-PDF-S07.json": "c230d797a1ce0d27e06dcba13d45ff63698bdc0ddadb6ab5a2f71f3be5faf39f",
+    "temp/query-results/Q-PDF-S08.json": "704418236d9460cc53ac2ecc21c674cc949971bfc4f28044f4b2c4fbe45ac548",
+    "temp/query-results/Q-PDF-S09.json": "2f681770c5738e9b9c98f691bb8615cdbcbfd56a6b35dc2dd611f08677b93c6e",
+    "temp/query-results/Q-PDF-S10.json": "b7d296a73b6aae849de9a4aacbee8bbab2ec800728d2a36d539000f4082df468",
+    "temp/query-results/Q-PDF-S11.json": "e999d25b8a70b8ed26a89a473258cb901a0d7b4fa8540363e77bbae4745a06b4",
+    "temp/query-results/Q-PDF-S12.json": "b4ccc4ba8ceb18446275aabb33c016832f8050bbf4d1a4ef64fac2683e1af36c",
+    "temp/query-results/Q-PDF-S13.json": "f2a24ab2a8d28d1cc42d714484f488a057204f2d9853aed2a0cea8547cfe0461",
+    "temp/query-results/Q-PDF-S14.json": "353ca8e8aaa2374642e91ebb67b60d3b673d1961a75ab731a86104356c1641cf",
+    "temp/query-results/Q-PDF-S15.json": "b62e0cc311c5e5f2755dfdfca8f9d1375a01654457ccf7c4e70a52ceb9847ff4",
+    "temp/query-results/Q-PDF-S16.json": "9fdf07447dda2dc589e2d34dfd4157e1c4d6ae7fa8eef8455c4c10df44f44c4d",
+    "temp/query-results/Q-PDF-S17.json": "1bd24024a1060d0c460b94c82813e8377a62f3d71ed855d7a2399823cd924c8d",
+    "temp/query-results/Q-PDF-S18.json": "af8225c3bc6f09b4c8462481bb2a4b67d60a23c72adfec8407ab23c6ddebafb1",
+    "temp/query-results/Q-PDF-S19.json": "cc62efdcf1b50866ac9369164f69dd129e512dd06c9326aac1805a470f682665",
+    "temp/query-results/Q-PDF-S20.json": "d99b61dfc120a295dce9ca6237dd46f63e55dd2cf186137e9f808299b830616c",
+    "temp/query-results/Q-PROBE-crossref-1.json": "bebe86b048eb2ea30cec68be5b8c57061903b77ea722cd0dc4fccd75546d31d9",
+    "temp/query-results/Q-PROBE-crossref-2.json": "652251ebcd8e67b2ac81dfcc792c319cf05dff43533a1feb5a014a2972661771",
+    "temp/query-results/Q-PROBE-europepmc-1.json": "26539a959d4ac40fe19e31cd0e543544a1f630cc2b18b01babd5512a25a14b3b",
+    "temp/query-results/Q-PROBE-europepmc-2.json": "a2af68487111bf4e8ea293681286ef9b673a19a5274ca73af354007d1c8f2be1",
+    "temp/query-results/Q-PROBE-europepmc-3.json": "7f623e394d44f04be0ca8bd85b8d59abadc8ffd861567944c92e43d5dc04df9f",
+    "temp/query-results/Q-PROBE-europepmc-date-1.json": "c06d227c8c77ea55eab495c58dedf9f149058c8a6ba3b0e08be744eb0903f7b7",
+    "temp/query-results/Q-PROBE-europepmc-date-2.json": "a6f334500a369b8fb7e2964208b55506cf513a1e070cba13c8c3e1a9d62deec0",
+    "temp/query-results/Q-PROBE-europepmc-field-1.json": "8fdc2772094758323dcf6e2dc6727aa71f90a825f2b437e4bd0d0c9fa4063a70",
+    "temp/query-results/Q-PROBE-europepmc-field-2.json": "21baabb0b952c521e359222f775b78fb0858f1be6f9a7113f1cb54e08c18add6",
+    "temp/query-results/Q-PROBE-openalex-1.json": "2706ee109a5b9f7a030dcab5337652cd99aef56e162019248cced73954ed3e19",
+    "temp/query-results/Q-ROOT-DOC-1.json": "f0bbc49ab2dcc74cd292ad16c242d76997ae431cc98e77f5cd34b4df1e503614",
+    "temp/query-results/Q-ROOT-DOC-2.json": "bc4fa5bf438cdfd99683947ab8cda0c32d2229feac5b066771054f35c18d6b9a",
+    "temp/query-results/Q-ROOT-DOC-3.json": "308363795da8ae937f7179e49764580320a61948c1be136edcffe8aa10c63181",
+    "temp/query-results/Q-ROOT-DOC-4.json": "fcd6ae79c69f5ef0d5462f59e1bf0a03d3df7f7a4c6094102e895b76f040e71c",
+    "temp/query-results/Q-ROOT-OPEN-1.json": "9548f87cd00e8bcca694dbaf9a0990b43b27b13980f79735b649d8edda23bc11",
+    "temp/query-results/Q-ROOT-OPEN-2.json": "2cb13dca5d20ef5a20082b2a6ab27e716cecd82a60ed1ec219cb4861a8b4d429",
+    "temp/query-results/Q-ROOT-SEARCH-1.json": "0c59bde7473fee6932e24dcdc5f5328912ef8728fd40b8d6fcffe897cf86e37a",
+    "temp/query-results/Q-ROOT-SEARCH-2.json": "091e4624f09c8dd6425e4e4fbb05224b83b30db05e2fd9cb3de83dc558f0a180",
+    "temp/query-results/Q-WEB-A-001.json": "7ce66f5fbc6f7cfe466ddee0ed6af40726bee37477e65643a6bd8213687277b8",
+    "temp/query-results/Q-WEB-A-002.json": "7398fc283a9977af624530d9acb1758331be0344a9408c23298c091071efeec3",
+    "temp/query-results/Q-WEB-A-003.json": "8339cff80085ae5431560df1137ac2b3e2fd4fb80d785058eb0de4f297a6ce33",
+    "temp/query-results/Q-WEB-A-004.json": "ebd1701b2750fcb74cf9dd57c1fa7ba2c2e19582409c024fc68e145ccc9c3b45",
+    "temp/query-results/Q-WEB-A-005.json": "754a8eea003337827a46d8cfad1554ec4982bb6103be0a22b378a8f35eff2464",
+    "temp/query-results/Q-WEB-B-001.json": "fce5dba98d820aab1f17b9a3c254bfae7c4bdf4f719b809adc187cf383f1c7b0",
+    "temp/query-results/Q-WEB-B-002.json": "3cde4bcf034cbcb18799d47e80d4a8afb239ce27e57243225563efcec1046794",
+    "temp/query-results/Q-WEB-B-003.json": "861e5aa8515b6b93c415e7372cba80c5a68b5884928ca6bfb58e1e88ba642105",
+    "temp/query-results/Q-WEB-B-004.json": "4e21cb6129cd5eb8e7a92f54b6c541847a7392c5b564de1e5b36bf7a7773ca55",
+    "temp/query-results/Q-WEB-B-005.json": "20b485aee66ed96d08a3daf02865364c511ae5b981699468db4763e6934583c9",
+    "temp/query-results/Q-WEB-B-006.json": "33f6273779973455b1d3f472b72318d7d985cb2511aee12bcff3918651cdb6b0",
+    "temp/query-results/Q-WEB-B-007.json": "7cfc38240a927d20aa3723671a2c80fe716a350d445238cbdf2763fbd674cdc1",
+    "temp/query-results/Q-WEB-B-008.json": "fd3fec3101139f621559b6055cb81dc39af76d554e6db629439fe69de003bec9",
+    "temp/query-results/Q-WEB-B-009.json": "b7bfd05d0e61b5b1f2159dc8d5fa9b953c4b1395a551090006f94944e14cffe1",
+    "temp/query-results/Q-WEB-B-010.json": "0d734f1edc7b39893d6a4cd54984fee47e8a28e8f9979965f634ffa2abbce3d0",
+    "temp/query-results/Q-WEB-B-011.json": "921430c61485abe0a0af75ff06ab6bac406776b8ebbbf6ac254b0a6b39890bd6",
+    "temp/query-results/Q-WEB-B-012.json": "c23ca10d5be1b01ff9b42f31b5cab1ee8fe6c2ac5058c7193a5066ad7c297518",
+    "temp/query-results/Q-WEB-B-013.json": "3bac00238157492f5d2d609f4a4cba0a421edd12658fc104e451c083c2518ee2",
+    "temp/query-results/Q-WEB-B-014.json": "ed4d7301b5018fa72ec5d903c37e510a01df9c37b3ad95cfeb36e580cb1441fd",
+    "temp/query-results/Q-WEB-B-015.json": "97b55a5300a406f96db0b0150c7de0ccc3ce965d1e3d6879da8d27d5a649e380",
+    "temp/query-results/Q-WEB-B-016.json": "c7fc22d3be93848447eeec04d159b40d2d9ae8f8e98dfa521abd8300068da7a5",
+    "temp/reference-occurrences.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "temp/rejected_uploads.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "temp/reports/P1-P2.md": "751e0678dd6b0932cdfdf85195b05e5696a0236f6d0ce75aa5777511fa45d351",
+    "temp/risk-register.md": "578220cba508b6433c8364551ff26c67a070ceb5c2e305b33db4a46c44ffbfd1",
+    "temp/schema.json": "e7540cb7770878813b3a8ae20560226183e34dd2e2b31e3f46a85fbbbe7990a9",
+    "temp/seed-manifest.jsonl": "f8da5ca1a64e494867937c1686b1db8e3b07ea01026a1acbd9ef7ffaf9e57b34",
+    "temp/snapshots/scope.json": "45150b8374103fa15e2d2e16626c86ad884126006d0ceab99eafab41589838e9",
+    "temp/snapshots/scopes/SCOPE-0001.json": "45150b8374103fa15e2d2e16626c86ad884126006d0ceab99eafab41589838e9",
+    "temp/tasks.jsonl": "ef2b0e3764dbb07d064586011be22160cbe2a8e7f7bc918ed7008a005287ab77",
+    "temp/uploads.jsonl": "c1367c89b90449daf95aef4806b1342dd5dac450f29f46ac31af2ec30a37fdcf",
+    "temp/validation/orcid-field-review.json": "7844111d4a5138fca7cc5a1a23e337cd807a618149798bec159adccdca289086",
+    "temp/validation/p1-acceptance.md": "836fcc52ec543446269108ec04cb8966c8feb95d2f163b72f2fe26731890409b",
+    "temp/validation/p1-gates.json": "9736760e059c34b543322cb8a0af7bdb96d4cad7c0fcda7b26558f31c4d90d5d",
+    "temp/validation/p1-real-sample-events.jsonl": "8587cc745ff30f3b8ecd525ed73d5d1fe0a6a4dd96769abce1a78113697335b6",
+    "temp/validation/p1-real-samples.json": "2078601d5b7c81155fb3c42d947fbf428506c88229dedf7f1caa6bc066d37535",
+    "temp/validation/p2-data-validation.json": "8f3d13e653d782d80c7b7dd363427a179a1e0a8bd259faeb3874afd055ddca63",
+    "temp/validation/p2-determinism.json": "97be4a94e9e10ec317c861354da6978ca797f5a4577572c519d27e6c71483cdd",
+    "temp/validation/p2-ui-validation.json": "d5fb726ba2cd138ef44066786d92e7adb3e67b29f82ca8e30cf6215713ad3bd6",
+    "temp/validation/p2-validation-events.jsonl": "e6b1629243dab11e0a283995cc788316437d57821e2fe3c92bc3c503164f75cd",
+    "temp/validation/sample-repair-history/README.md": "989047ff0c7a7e0db19d7ecbd22eba7d9443f71058b74c4a428eddd7d8e3b8cf",
+    "temp/validation/sample-repair-history/after-p1-real-samples.json": "2078601d5b7c81155fb3c42d947fbf428506c88229dedf7f1caa6bc066d37535",
+    "temp/validation/sample-repair-history/after-sample-checkpoint.json": "685b0ac7d8e3e56a9d721958b280c111d8a0e5c9bf3c4e858862d6a2b98dab54",
+    "temp/validation/sample-repair-history/before-p1-real-samples.json": "103e00c0ff6b597edf19f7ff1aa260822cc20c14ab067a5c3abb0b6708c8adee",
+    "temp/validation/sample-repair-history/before-sample-checkpoint.json": "55d5985df2dcac341db10560094da693779929e61bca4f6b8a17de231b779ee6",
+    "temp/validation/sample-repair-history/repair-audit.json": "e21582e66ed16df4191e4da1cad19a1b003e068fff4d130f04c37e324a10eeb5",
+    "temp/validation/samples/SCOPE-P1-REAL-SAMPLE/README.md": "f07202c7b018ae0f417e11d8e5fccd3ccb4cdc6c281dc5cadcca80c4df5ab46f",
+    "temp/validation/samples/SCOPE-P1-REAL-SAMPLE/checkpoint.json": "685b0ac7d8e3e56a9d721958b280c111d8a0e5c9bf3c4e858862d6a2b98dab54",
+    "temp/validation/samples/SCOPE-P1-REAL-SAMPLE/citation_graph.json": "bc0104ae51d400b95f83b471609c2da4a78c4903df2cf1a6162fb400b23d3577",
+    "temp/validation/samples/SCOPE-P1-REAL-SAMPLE/evidence_matrix.csv": "84f46d770f563bcc38b85b13479cf98a58b8c1599621183ea3ef70c4939e71d4",
+    "temp/validation/samples/SCOPE-P1-REAL-SAMPLE/ref.bib": "0adf986e8a78337303a9d68ae3aec15db22c825dd2d044bda13934fb54b0e5d9",
+    "temp/validation/samples/SCOPE-P1-REAL-SAMPLE/ref.html": "30837c297e5fd324506b62b865901f0a5f4f7b1c0190d70f5858e5ddb4889da3",
+    "temp/validation/samples/SCOPE-P1-REAL-SAMPLE/research_entities.json": "c51c05baa57795da7ce71a3db8d2309c42cef67fa571d01f1fae3a2c984f332e",
+    "temp/validation/samples/SCOPE-P1-REAL-SAMPLE/research_implications.csv": "f3004fe4f73ee0752caf3bc998f7385a66fadf005c8c87ce68fe614142f9d2ad",
+    "temp/validation/samples/SCOPE-P1-REAL-SAMPLE/research_paths.json": "a036a13e24d3fa93ca35022265c53bb088baa2ddcba6ca87d518a7f95fedf670",
+    "temp/validation/samples/SCOPE-P1-REAL-SAMPLE/sample-entities.json": "2d0e72f1034806658dc717ff60b6eff3ac7712831bc5cba1c332fb450e6ef50f",
+    "temp/versions.jsonl": "3fe727b628865a25eb723be82ee98ea442ed2e66fc6a18098a31fddc80d2911a",
+    "temp/work-relations.jsonl": "90ec1d73a583442e4d9a1a004e847ac4168509408c426891eabafce533b9bfc5",
+    "temp/works.jsonl": "8885fd2cc36924716895c83226b763b6393d19869fd78323bf70f5186fab0482"
+  },
+  "validation_results": {
+    "p1-gates.json": {
+      "passed": 58,
+      "failed": 0,
+      "report": "temp/validation/p1-gates.json",
+      "report_sha256": "9736760e059c34b543322cb8a0af7bdb96d4cad7c0fcda7b26558f31c4d90d5d"
+    },
+    "p1-real-samples.json": {
+      "passed": 45,
+      "failed": 0,
+      "report": "temp/validation/p1-real-samples.json",
+      "report_sha256": "2078601d5b7c81155fb3c42d947fbf428506c88229dedf7f1caa6bc066d37535"
+    },
+    "p2-data-validation.json": {
+      "passed": 34,
+      "failed": 0,
+      "report": "temp/validation/p2-data-validation.json",
+      "report_sha256": "8f3d13e653d782d80c7b7dd363427a179a1e0a8bd259faeb3874afd055ddca63"
+    },
+    "p2-ui-validation.json": {
+      "passed": 23,
+      "failed": 0,
+      "report": "temp/validation/p2-ui-validation.json",
+      "report_sha256": "d5fb726ba2cd138ef44066786d92e7adb3e67b29f82ca8e30cf6215713ad3bd6"
+    },
+    "p2-determinism.json": {
+      "passed": 7,
+      "failed": 0,
+      "report": "temp/validation/p2-determinism.json",
+      "report_sha256": "97be4a94e9e10ec317c861354da6978ca797f5a4577572c519d27e6c71483cdd"
+    },
+    "sample_artifact_hashes_match": true,
+    "frozen_scope_matches_current": true,
+    "output_and_ui_hashes_match": true,
+    "all_unknowns_have_tasks_and_no_unescalated_expiry": true,
+    "checkpoint_self_hash_excluded": true,
+    "set_reconciliation": {
+      "K": 20,
+      "U": 20,
+      "T1_to_T9": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bibtex_html_keys_equal": true,
+      "U_is_complement_of_union_T": true
+    }
+  },
+  "status": "valid"
+}

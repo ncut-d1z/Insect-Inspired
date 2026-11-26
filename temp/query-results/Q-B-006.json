@@ -1,0 +1,17 @@
+{
+  "query_id": "Q-B-006",
+  "entity_id": "S16",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works/10.1007/978-3-540-89393-6_9",
+  "api_version": "1.0.0",
+  "queried_at_utc": "2026-11-26T05:25:28.621151Z",
+  "query_time_status": "exact",
+  "status": "success",
+  "result_identifiers": [
+    "10.1007/978-3-540-89393-6_9"
+  ],
+  "visible_total": 1,
+  "returned_count": 1,
+  "error_code": null,
+  "coverage_note": "Exact seed identity metadata, not citation or author corpus coverage."
+}

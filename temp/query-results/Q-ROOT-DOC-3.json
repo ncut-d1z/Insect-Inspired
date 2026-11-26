@@ -1,0 +1,15 @@
+{
+  "query_id": "Q-ROOT-DOC-3",
+  "entity_id": "SCOPE-0001",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://europepmc.org/RestfulWebService",
+  "api_version": null,
+  "queried_at_utc": null,
+  "query_time_status": "unavailable_exact",
+  "status": "partial",
+  "result_identifiers": [],
+  "visible_total": null,
+  "returned_count": 0,
+  "error_code": null,
+  "coverage_note": "Web retrieval route returned403; actual API pagination tests succeeded. Exact web-tool timestamp not captured; day precision only."
+}

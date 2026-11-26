@@ -1,0 +1,454 @@
+{
+  "report_type": "P1_controlled_gate_tests",
+  "scope": "isolated synthetic fixtures only; no test Work enters formal data",
+  "schema_version": "1.1.0",
+  "run_at_utc": "2026-11-26T05:36:54Z",
+  "test_count": 58,
+  "passed": 58,
+  "failed": 0,
+  "results": [
+    {
+      "test_id": "P1-T01",
+      "name": "Schema self-validation",
+      "requirement": "§3.1 / §4.2",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "test_id": "P1-T02",
+      "name": "Valid motion enum accepted",
+      "requirement": "§3.1",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "test_id": "P1-T03",
+      "name": "Invalid motion enum rejected",
+      "requirement": "§3.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T04",
+      "name": "Wrong scalar type rejected",
+      "requirement": "§3.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T05",
+      "name": "Free-text classification property rejected",
+      "requirement": "§3.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T06",
+      "name": "Reported null rejected",
+      "requirement": "§3.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T07",
+      "name": "Not-reported actual value rejected",
+      "requirement": "§3.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T08",
+      "name": "Not-reported without examined locator rejected",
+      "requirement": "§3.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T09",
+      "name": "Unknown without task rejected",
+      "requirement": "§3.1.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T10",
+      "name": "Unknown first-write ticket and exact 24h escalation",
+      "requirement": "§3.1.1",
+      "status": "passed",
+      "detail": "One unique review task; stable origin; exactly 24 h escalates, an event is appended, and overdue un-escalated checkpoint validation fails."
+    },
+    {
+      "test_id": "P1-T11",
+      "name": "Unknown cannot be relabeled not-reported without review",
+      "requirement": "§3.1.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T12",
+      "name": "Completed relevant fulltext review can resolve not-reported",
+      "requirement": "§3.1.1",
+      "status": "passed",
+      "detail": {
+        "status": "not_reported",
+        "value": null,
+        "evidence_locator": [
+          {
+            "source_id": "SRC-TEST-ISOLATED",
+            "version_id": "V-TEST",
+            "upload_id": "UP-TEST",
+            "page": 1,
+            "evidence_note": "Synthetic isolated evidence locator; not literature evidence."
+          }
+        ],
+        "reason": "Controlled isolated test reason",
+        "unknown_since_utc": null,
+        "review_task_id": null
+      }
+    },
+    {
+      "test_id": "P1-T13",
+      "name": "Scale prior none must be exclusive",
+      "requirement": "§3.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T14",
+      "name": "Reversed quantity range rejected",
+      "requirement": "§3.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T15",
+      "name": "Incompatible quantity unit rejected",
+      "requirement": "§3.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T16",
+      "name": "Nonfinite number rejected",
+      "requirement": "§3.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T17",
+      "name": "DOI case, URL prefix, single percent decode and suffix punctuation preserved",
+      "requirement": "§4.3",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "test_id": "P1-T18",
+      "name": "All fixed seed pointers and inverse relationships accepted",
+      "requirement": "§2.2",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "test_id": "P1-T19",
+      "name": "Changed fixed seed pointer rejected",
+      "requirement": "§2.2",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T20",
+      "name": "Related independent seed Work merge rejected",
+      "requirement": "§2.2 / §4.3",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T21",
+      "name": "Nonseed orphan blocked before parsing",
+      "requirement": "§2.3",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "test_id": "P1-T22",
+      "name": "Verified cited path admitted",
+      "requirement": "§2.3",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "test_id": "P1-T23",
+      "name": "Unlisted seed rejected",
+      "requirement": "§2.3",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "test_id": "P1-T24",
+      "name": "Seed identity mismatch rejected",
+      "requirement": "§2.3",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "test_id": "P1-T25",
+      "name": "Verified listed seed admitted",
+      "requirement": "§2.3",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "test_id": "P1-T26",
+      "name": "Unauthorized path rejected",
+      "requirement": "§2.3",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "test_id": "P1-T27",
+      "name": "Cross-scope path rejected",
+      "requirement": "§2.3",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "test_id": "P1-T28",
+      "name": "Broken path continuity rejected",
+      "requirement": "§2.3",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "test_id": "P1-T29",
+      "name": "Unverified source or relation cannot be admission proof",
+      "requirement": "§2.3",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "test_id": "P1-T30",
+      "name": "Cascade merge, discard and counter-evidence preservation",
+      "requirement": "§1.3",
+      "status": "passed",
+      "detail": "Equivalent assessment merged, independent counter-evidence preserved, unlocatable assessment discarded with review entry; original state retained until commit."
+    },
+    {
+      "test_id": "P1-T31",
+      "name": "Atomic cascade rollback",
+      "requirement": "§1.3",
+      "status": "passed",
+      "detail": "Injected integrity failure leaves byte-equivalent input state unchanged."
+    },
+    {
+      "test_id": "P1-T32",
+      "name": "Different Work upload cannot be deduplicated",
+      "requirement": "§1.3",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T33",
+      "name": "Work without Version rejected",
+      "requirement": "§1.3",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T34",
+      "name": "Duplicate pointer cycle rejected",
+      "requirement": "§1.3",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T35",
+      "name": "Located quantified relative claim accepted",
+      "requirement": "§3.2",
+      "status": "passed",
+      "detail": "Eligible on controlled fixture; scientific evidence is synthetic and never published."
+    },
+    {
+      "test_id": "P1-T36",
+      "name": "Quantitative evidence missing downrated",
+      "requirement": "§3.2",
+      "status": "passed",
+      "detail": [
+        "missing_quantitative_result"
+      ]
+    },
+    {
+      "test_id": "P1-T37",
+      "name": "Rigorous derivation missing downrated",
+      "requirement": "§3.2",
+      "status": "passed",
+      "detail": [
+        "missing_rigorous_derivation"
+      ]
+    },
+    {
+      "test_id": "P1-T38",
+      "name": "Only abstract cannot be eligible",
+      "requirement": "§7.1",
+      "status": "passed",
+      "detail": [
+        "missing_fulltext_evidence"
+      ]
+    },
+    {
+      "test_id": "P1-T39",
+      "name": "Trajectory without ATE/RPE downrated",
+      "requirement": "§3.2",
+      "status": "passed",
+      "detail": [
+        "missing_trajectory_metrics"
+      ]
+    },
+    {
+      "test_id": "P1-T40",
+      "name": "Defined ATE and interval-bound RPE accepted",
+      "requirement": "§3.2",
+      "status": "passed",
+      "detail": "Eligible on controlled fixture; scientific evidence is synthetic and never published."
+    },
+    {
+      "test_id": "P1-T41",
+      "name": "Unconstrained monocular absolute-scale claim downrated",
+      "requirement": "§3.3",
+      "status": "passed",
+      "detail": [
+        "missing_metric_scale_prior",
+        "scale_observability_not_demonstrated"
+      ]
+    },
+    {
+      "test_id": "P1-T42",
+      "name": "Located metric source and observability derivation accepted",
+      "requirement": "§3.3",
+      "status": "passed",
+      "detail": "Eligible on controlled fixture; scientific evidence is synthetic and never published."
+    },
+    {
+      "test_id": "P1-T43",
+      "name": "Ground-truth Sim3 fitting is not metric-scale evidence",
+      "requirement": "§3.3",
+      "status": "passed",
+      "detail": [
+        "invalid_metric_alignment"
+      ]
+    },
+    {
+      "test_id": "P1-T44",
+      "name": "Scale unobservability counterproof accepted as counter-evidence",
+      "requirement": "§3.3 / §7.2",
+      "status": "passed",
+      "detail": "Eligible on controlled fixture; scientific evidence is synthetic and never published."
+    },
+    {
+      "test_id": "P1-T45",
+      "name": "Five-view and K/T/U reconciliation accepted",
+      "requirement": "§8.4 / §9.2",
+      "status": "passed",
+      "detail": {
+        "K": 1,
+        "T_union": 0,
+        "U": 1,
+        "tables": 10,
+        "active_assessments": 0
+      }
+    },
+    {
+      "test_id": "P1-T46",
+      "name": "Invented Assessment export row rejected",
+      "requirement": "§8.4",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T47",
+      "name": "Theme/U00 overlap rejected",
+      "requirement": "§9.2",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T48",
+      "name": "Eleventh HTML table rejected",
+      "requirement": "§8.2",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T49",
+      "name": "Checkpoint interruption/API-limit/parse-failure resume",
+      "requirement": "§9.2",
+      "status": "passed",
+      "detail": "Persisted interruption retains API 429 and parser errors plus independent cursors; failed snapshot cannot replace valid checkpoint."
+    },
+    {
+      "test_id": "P1-T50",
+      "name": "Corrupted checkpoint rejected",
+      "requirement": "§9.2",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T51",
+      "name": "Deterministic query cache and scope isolation",
+      "requirement": "§8.3",
+      "status": "passed",
+      "detail": "Normalized parameter order reuses cache; changed scope invalidates key."
+    },
+    {
+      "test_id": "P1-T52",
+      "name": "Deterministic serialized output hashes",
+      "requirement": "§8.1 / §8.4",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "test_id": "P1-T53",
+      "name": "Exact request timestamp accepted",
+      "requirement": "§6.2 / P1 log precision definition",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "test_id": "P1-T54",
+      "name": "Unavailable exact query time explicitly recorded without invented timestamp",
+      "requirement": "§6.2 / P1 log precision definition",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "test_id": "P1-T55",
+      "name": "Unknown query time cannot masquerade as complete success",
+      "requirement": "§6.2 / P1 log precision definition",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T56",
+      "name": "Bare null query timestamp rejected",
+      "requirement": "§6.2 / P1 log precision definition",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    },
+    {
+      "test_id": "P1-T57",
+      "name": "Actual admitted source configuration passes typed schema",
+      "requirement": "§6.1",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "test_id": "P1-T58",
+      "name": "Unverified source cannot carry admitted capabilities",
+      "requirement": "§6.1",
+      "status": "passed",
+      "detail": "Invalid state rejected before commit."
+    }
+  ],
+  "real_sample_gate": "pending separate p1-real-samples.json; controlled tests alone do not authorize P2",
+  "script_sha256": "210c6fc5d2d140fea6c06e163115ee514557d376684de95b20cced62895857a4",
+  "validator_sha256": "3d5564e91129df3aeaa331b9273e0e0cee6958c7ddd3b470a9e6373518a59c87"
+}

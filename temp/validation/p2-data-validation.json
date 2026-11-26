@@ -1,0 +1,229 @@
+{
+  "report_type": "P2_formal_data_validation",
+  "run_at_utc": "2026-11-26T06:17:31Z",
+  "scope_id": "SCOPE-0001",
+  "schema_version": "1.1.0",
+  "passed": 34,
+  "failed": 0,
+  "status": "passed",
+  "entity_counts": {
+    "seed-manifest.jsonl": 20,
+    "uploads.jsonl": 20,
+    "works.jsonl": 20,
+    "versions.jsonl": 21,
+    "reference-occurrences.jsonl": 0,
+    "citation-edges.jsonl": 0,
+    "authors.jsonl": 64,
+    "organizations.jsonl": 60,
+    "projects.jsonl": 0,
+    "assessments.jsonl": 0,
+    "aliases.jsonl": 78,
+    "queries.jsonl": 87,
+    "tasks.jsonl": 210,
+    "work-relations.jsonl": 3,
+    "rejected_uploads.log": 0,
+    "cascade-events.jsonl": 0
+  },
+  "checks": [
+    {
+      "check": "All canonical JSONL entity schemas and ownership topology",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Scope closed schema and source admission policy",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Cutoff local offset equals cutoff UTC",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Unique Work keys, author IDs, organization IDs and project IDs",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "All seeded mappings resolve consistent Upload/Work/Version",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "All Work-author and editor references resolve",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "All Work publication-affiliation references resolve",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "All Person affiliation history Work/Organization references resolve",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "All organization parent pointers resolve and are acyclic",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Distinct related seed pairs retain exactly three semantic relationships",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Fixed relationship types and inverse types match norm",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Verified DOI values canonical and collision-free",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "S17 source-file Version and final bibliographic-only Version differentiated",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Actual supplied PDFs match all admitted SHA-256 and page counts",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "P1 synthetic fixture identities absent from formal entities",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "All aliases target valid canonical entities",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Source locators resolve IDs and actual PDF page bounds",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Task IDs, dependencies, query pointers and append-event order",
+      "status": "passed",
+      "detail": {
+        "distinct_tasks": 210,
+        "unresolved": 137
+      }
+    },
+    {
+      "check": "Query log counts, identities, sources and precision semantics",
+      "status": "passed",
+      "detail": {
+        "exact_request_times": 55,
+        "unavailable_exact_times": 32
+      }
+    },
+    {
+      "check": "BibTeX standard parser agrees with canonical Work set",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Parsed BibTeX DOI and URL equal exact canonical identifiers",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "BibTeX deterministic key sort and unique records",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Ten HTML tables and K/T/U / active Assessment set reconciliation",
+      "status": "passed",
+      "detail": {
+        "K": 20,
+        "T_union": 0,
+        "U": 20,
+        "tables": 10,
+        "active_assessments": 0
+      }
+    },
+    {
+      "check": "citation_graph.json full schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "research_entities.json full schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "research_paths.json full schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Research entities equal canonical Person/Organization/Project records",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Entity export relation IDs and canonical authorship/affiliation sets reconcile",
+      "status": "passed",
+      "detail": {
+        "relations": 189,
+        "authorship_observations": 80,
+        "affiliation_role_work_observations": 109,
+        "editor_person_references": 7
+      }
+    },
+    {
+      "check": "Graph actual edge set equals citation-edges source (no related_work pseudo-citations)",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "evidence_matrix.csv exact normative CSV header",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "research_implications.csv exact normative CSV header",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "All JSON export scope/version/checkpoint identifiers agree",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "No external script/CDN or unsafe script content in HTML",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "No raw PDF or executable source in submission tree",
+      "status": "passed",
+      "detail": true
+    }
+  ],
+  "validated_artifact_hashes": {
+    "ref.bib": "c7acd4363ff2106fb978f03e5c9c0c1cf184b0d8c9d419aaf1a8ee63c60bcbef",
+    "ref.html": "f53563f146119e9dcbe385cc0eb56e7bce7e663eaee978ea9655883c6ce54e93",
+    "temp/schema.json": "e7540cb7770878813b3a8ae20560226183e34dd2e2b31e3f46a85fbbbe7990a9",
+    "temp/snapshots/scope.json": "45150b8374103fa15e2d2e16626c86ad884126006d0ceab99eafab41589838e9",
+    "temp/exports/citation_graph.json": "f1bc9b92abd84dbeeb20797b2766eef27e928fc8c848eb8cbd51aeaa8cf980b8",
+    "temp/exports/evidence_matrix.csv": "84f46d770f563bcc38b85b13479cf98a58b8c1599621183ea3ef70c4939e71d4",
+    "temp/exports/research_entities.json": "44026679f3f245a07c08009545a4bb819bb1422733aab9a0e4eaba9423b36429",
+    "temp/exports/research_implications.csv": "f3004fe4f73ee0752caf3bc998f7385a66fadf005c8c87ce68fe614142f9d2ad",
+    "temp/exports/research_paths.json": "a1d12f36832e348cfab74901aac107820ba1c4e1f1c2733a1c5612cc23fb779c"
+  },
+  "limits": "Validates data integrity and the P2 seed snapshot; does not certify literature closure or scientific Assessment findings. Rendered UI behavior and source scientific interpretation remain separately reviewed.",
+  "validator_sha256": "183d9d616d427ae9ec9347cf1b624a1f453bbdb8ea08e7f827856d601c87c499"
+}

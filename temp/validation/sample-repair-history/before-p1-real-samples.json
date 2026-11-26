@@ -1,0 +1,390 @@
+{
+  "report_type": "P1_real_sample_gate",
+  "run_at_utc": "2026-11-26T05:33:46Z",
+  "schema_version": "1.1.0",
+  "isolated_scope_id": "SCOPE-P1-REAL-SAMPLE",
+  "production_data_contaminated": false,
+  "sample_categories": [
+    "DOI journal: S18",
+    "Authority-identified technical report without DOI in its released record: S20",
+    "Actual-byte replay and distinct actual author-formatted/bibliographic-only VOR representations: S18/S17"
+  ],
+  "samples": [
+    {
+      "sample_id": "S18",
+      "source_url": "https://doi.org/10.1371/journal.pbio.0030171",
+      "sha256": "adc73bc0aa854f7e2c53e0ee90df2aaeabf4a53d204ac14e48a0f1b730744dac",
+      "pages": 9,
+      "reference_pages": [
+        8,
+        9
+      ],
+      "reference_status": "boundary identified; sample citations only, P3 full parsing remains pending",
+      "summary_status": "chinese_summary_from_abstract",
+      "authors_verified_count": 5,
+      "affiliations": [
+        "Department of Neurobiology, Faculty for Biology, Bielefeld University, Bielefeld, Germany",
+        "Department of Neurobiophysics, University of Groningen, Groningen, The Netherlands"
+      ],
+      "metadata_locators": [
+        {
+          "source_id": "USER-PDF-S18",
+          "version_id": "V-S18-01",
+          "pdf_page": 1,
+          "section": "Title / author affiliations / publication imprint",
+          "detail": "题名、作者顺序、署名机构及版记核验；DOI注册信息交叉核验。"
+        }
+      ],
+      "version_note": [
+        "参考文献主列表编号1–56跨PDF第8–9页；第9页另有Note Added in Proof提及已发表相关论文，P3不得漏计此附加文献。"
+      ]
+    },
+    {
+      "sample_id": "S20",
+      "source_url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+      "sha256": "bdbc08d860636bd8bbd7912e5c359dcd2ff40d0311a70c1ef544f92401984410",
+      "pages": 18,
+      "reference_pages": [
+        17,
+        18
+      ],
+      "reference_status": "boundary identified; sample citations only, P3 full parsing remains pending",
+      "summary_status": "chinese_summary_from_abstract",
+      "authors_verified_count": 2,
+      "affiliations": [
+        "AG Bülthoff, Max-Planck-Institut für biologische Kybernetik, Tübingen, Germany",
+        "Lehrstuhl für Neurobiologie, Universität Bielefeld, Bielefeld, Germany"
+      ],
+      "metadata_locators": [
+        {
+          "source_id": "USER-PDF-S20",
+          "version_id": "V-S20-01",
+          "pdf_page": 1,
+          "section": "Technical report cover",
+          "detail": "No.61；June 1998；作者和上标机构脚注；官方文件MD5一致"
+        }
+      ],
+      "version_note": [
+        "官方记录Handle:11858/00-001M-0000-0013-E875-C；正式报告18页。",
+        "上传文件MD5=34dd59a510407ffba25b97e91286cbd4，与官方MPG.PuRe file_3010383校验和完全相同；SHA-256另记录。",
+        "文字层存在数字/连字/符号丢失，标partial；年月、编号、机构经视觉核验，P3/P6解析须复核。",
+        "S20与S19为相关独立Work，不能自动合并。"
+      ]
+    },
+    {
+      "sample_id": "S17",
+      "source_url": "https://doi.org/10.1162/0899766041941899",
+      "sha256": "9b082fd0c001b107ee02b9b05cf925772c4d13c751be73506470625b308a20bc",
+      "pages": 13,
+      "reference_pages": [
+        12,
+        13
+      ],
+      "reference_status": "boundary identified; sample citations only, P3 full parsing remains pending",
+      "summary_status": "chinese_summary_from_abstract",
+      "authors_verified_count": 3,
+      "affiliations": [
+        "Center of Visual Sciences, Research School of Biological Sciences, Australian National University, Canberra, Australia",
+        "Department of Zoology, University of Cambridge, United Kingdom",
+        "Max-Planck-Institut für biologische Kybernetik, Tübingen, Germany"
+      ],
+      "metadata_locators": [
+        {
+          "source_id": "USER-PDF-S17",
+          "version_id": "V-S17-01",
+          "pdf_page": 1,
+          "section": "Title / author affiliations / publication imprint",
+          "detail": "题名、作者顺序、署名机构及版记核验；DOI注册信息交叉核验。"
+        }
+      ],
+      "version_note": [
+        "上传件为作者排版13页，首面无期刊卷期页、DOI或明确接收/预印本版本声明；正文末尾含Acknowledgments与References。",
+        "Work的正式期刊身份由Crossref和MPG.PuRe item_1791720核验；上传件精确投稿/接受阶段not_reported，version_type=other，不冒称VOR或accepted_manuscript。",
+        "作者机构从上传件首面核验，并与Crossref一致；不能将13页PDF页码替代正式期刊2245–2260。"
+      ]
+    }
+  ],
+  "official_report_evidence": {
+    "source_url": "https://pure.mpg.de/rest/items/item_1793954",
+    "record_version": 5,
+    "identifier_types": [
+      "REPORT_NR",
+      "BIBTEX_CITEKEY"
+    ],
+    "handle": "hdl:11858/00-001M-0000-0013-E875-C",
+    "official_file_md5": "34dd59a510407ffba25b97e91286cbd4",
+    "interpretation": "Authoritative released report record identifies the report without a DOI; this is not a claim that every possible identifier database was exhausted."
+  },
+  "checks": [
+    {
+      "check": "S18 actual SHA-256",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S18 actual PDF page count",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S18 Work schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "S18 Version schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "S18 Upload schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "S18 seed admission",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S20 actual SHA-256",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S20 actual PDF page count",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S20 Work schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "S20 Version schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "S20 Upload schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "S20 seed admission",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S17 actual SHA-256",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S17 actual PDF page count",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S17 Work schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "S17 Version schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "S17 Upload schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "S17 seed admission",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "Sample Person schemas and author IDs",
+      "status": "passed",
+      "detail": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "check": "Sample Organization schemas and affiliation IDs",
+      "status": "passed",
+      "detail": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "check": "Sample author/affiliation foreign keys resolve",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S17 official VOR bibliographic-only Version schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Real-file Work/Version/Upload ownership",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Metadata-only Version has no invented Upload/PDF",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S18 registered DOI exact identity",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S18 title registry concordance",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S20 official report identity",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S20 report number 61",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S20 authority identifier list contains no DOI",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S20 uploaded bytes match official MD5",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S18 reference 4 located on actual PDF page 8",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "S18 reference 5 located on actual PDF page 8",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "Sample reference occurrence schemas",
+      "status": "passed",
+      "detail": [
+        true,
+        true
+      ]
+    },
+    {
+      "check": "Real-byte replay collapses to existing file/Work/Version",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "Repeated lookup detects already retained SHA instead of creating Work",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "evidence_matrix.csv exact fixed header",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "research_implications.csv exact fixed header",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "Real-sample BibTeX standard parser",
+      "status": "passed",
+      "detail": "Assertion passed."
+    },
+    {
+      "check": "Real-sample ten tables and five-view reconciliation",
+      "status": "passed",
+      "detail": {
+        "K": 3,
+        "T_union": 0,
+        "U": 3,
+        "tables": 10,
+        "active_assessments": 0
+      }
+    },
+    {
+      "check": "citation_graph.json JSON schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "research_entities.json JSON schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "research_paths.json JSON schema",
+      "status": "passed",
+      "detail": true
+    },
+    {
+      "check": "Real-sample checkpoint resumes hashes and pending reference cursor",
+      "status": "passed",
+      "detail": "Assertion passed."
+    }
+  ],
+  "passed": 43,
+  "failed": 0,
+  "status": "passed",
+  "sample_counts": {
+    "works": 3,
+    "versions": 4,
+    "retained_uploads": 3,
+    "isolated_replay_uploads": 1,
+    "reference_occurrences": 2,
+    "assessment_records": 0
+  },
+  "limitations": [
+    "Replay is an isolated idempotence test, not a recovered historical Upload.",
+    "No entire bibliography or citation index is claimed complete.",
+    "No scientific limitation Assessment is accepted in P1/P2.",
+    "S17 exact submitted/accepted manuscript stage is not reported; it remains version_type other."
+  ],
+  "sample_artifact_hashes": {
+    "checkpoint.json": "0eacfdad6f58b757c395aa35d2370f61f760b44a65a3924ad7575db545c55b57",
+    "citation_graph.json": "309a7a8d504a26135b401c7c4f9463550cc2d470de73683e7ebd29a19d297902",
+    "evidence_matrix.csv": "84f46d770f563bcc38b85b13479cf98a58b8c1599621183ea3ef70c4939e71d4",
+    "ref.bib": "0adf986e8a78337303a9d68ae3aec15db22c825dd2d044bda13934fb54b0e5d9",
+    "ref.html": "30837c297e5fd324506b62b865901f0a5f4f7b1c0190d70f5858e5ddb4889da3",
+    "research_entities.json": "b8e8fd8470bebd0520370fb68eaa119532f6aac81d7423d1b75f0e470c4191de",
+    "research_implications.csv": "f3004fe4f73ee0752caf3bc998f7385a66fadf005c8c87ce68fe614142f9d2ad",
+    "research_paths.json": "a036a13e24d3fa93ca35022265c53bb088baa2ddcba6ca87d518a7f95fedf670",
+    "sample-entities.json": "2c1181088ab585429e717b825b425e4e6de7f1d24932620bfd335d71ca780526"
+  },
+  "script_sha256": "7b29992a19c75849ce5ac9e44d6a7d9297bb1952adad36e0090b0832111e0606"
+}

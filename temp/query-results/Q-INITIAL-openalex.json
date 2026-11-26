@@ -1,0 +1,15 @@
+{
+  "query_id": "Q-INITIAL-openalex",
+  "entity_id": "SCOPE-0001",
+  "source_id": "openalex",
+  "endpoint_or_url": "https://api.openalex.org/works/https://doi.org/10.1371/journal.pbio.0030171",
+  "api_version": null,
+  "queried_at_utc": null,
+  "query_time_status": "unavailable_exact",
+  "status": "partial",
+  "result_identifiers": [],
+  "visible_total": null,
+  "returned_count": 1,
+  "error_code": null,
+  "coverage_note": "Initial HTTP200 availability probe; only status/byte count preview was retained, not full payload. Follow-up complete capability queries use their own logged observations."
+}

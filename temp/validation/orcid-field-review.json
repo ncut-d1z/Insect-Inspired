@@ -1,0 +1,444 @@
+{
+  "run_at_utc": "2026-11-26T06:06:07.483302Z",
+  "change_type": "extract_existing_official_author_identifiers",
+  "changes": [
+    {
+      "person_id": "P-0020",
+      "display_name": "Mert Erginkaya",
+      "work_id": "W-S06",
+      "before_orcid": null,
+      "before_field_state": {
+        "status": "not_reported",
+        "reason": "The seed byline/metadata used for this identity does not supply a verified ORCID. ORCID disambiguation remains a P5 task.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 1,
+            "section": "Article title, byline and numbered affiliations",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 13,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 14,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 15,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 20,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "after_orcid": "0000-0001-9031-895X",
+      "source_query_id": "Q-A-CR-S06",
+      "source_url": "https://api.crossref.org/works/10.1038/s41593-025-01948-9"
+    },
+    {
+      "person_id": "P-0021",
+      "display_name": "Tomás Cruz",
+      "work_id": "W-S06",
+      "before_orcid": null,
+      "before_field_state": {
+        "status": "not_reported",
+        "reason": "The seed byline/metadata used for this identity does not supply a verified ORCID. ORCID disambiguation remains a P5 task.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 1,
+            "section": "Article title, byline and numbered affiliations",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 13,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 14,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 15,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 20,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "after_orcid": "0000-0001-6622-1541",
+      "source_query_id": "Q-A-CR-S06",
+      "source_url": "https://api.crossref.org/works/10.1038/s41593-025-01948-9"
+    },
+    {
+      "person_id": "P-0025",
+      "display_name": "Aljoscha Nern",
+      "work_id": "W-S06",
+      "before_orcid": null,
+      "before_field_state": {
+        "status": "not_reported",
+        "reason": "The seed byline/metadata used for this identity does not supply a verified ORCID. ORCID disambiguation remains a P5 task.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 1,
+            "section": "Article title, byline and numbered affiliations",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 13,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 14,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 15,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 20,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "after_orcid": "0000-0002-3822-489X",
+      "source_query_id": "Q-A-CR-S06",
+      "source_url": "https://api.crossref.org/works/10.1038/s41593-025-01948-9"
+    },
+    {
+      "person_id": "P-0026",
+      "display_name": "Filipa Torrão",
+      "work_id": "W-S06",
+      "before_orcid": null,
+      "before_field_state": {
+        "status": "not_reported",
+        "reason": "The seed byline/metadata used for this identity does not supply a verified ORCID. ORCID disambiguation remains a P5 task.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 1,
+            "section": "Article title, byline and numbered affiliations",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 13,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 14,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 15,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 20,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "after_orcid": "0000-0002-5837-5214",
+      "source_query_id": "Q-A-CR-S06",
+      "source_url": "https://api.crossref.org/works/10.1038/s41593-025-01948-9"
+    },
+    {
+      "person_id": "P-0029",
+      "display_name": "Michael Reiser",
+      "work_id": "W-S06",
+      "before_orcid": null,
+      "before_field_state": {
+        "status": "not_reported",
+        "reason": "The seed byline/metadata used for this identity does not supply a verified ORCID. ORCID disambiguation remains a P5 task.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 1,
+            "section": "Article title, byline and numbered affiliations",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 13,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 14,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 15,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 20,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "after_orcid": "0000-0002-4108-4517",
+      "source_query_id": "Q-A-CR-S06",
+      "source_url": "https://api.crossref.org/works/10.1038/s41593-025-01948-9"
+    },
+    {
+      "person_id": "P-0030",
+      "display_name": "M. Eugenia Chiappe",
+      "work_id": "W-S06",
+      "before_orcid": null,
+      "before_field_state": {
+        "status": "not_reported",
+        "reason": "The seed byline/metadata used for this identity does not supply a verified ORCID. ORCID disambiguation remains a P5 task.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 1,
+            "section": "Article title, byline and numbered affiliations",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 13,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 14,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 15,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S06-01",
+            "upload_id": "U-S06-01",
+            "identifier": "S06",
+            "page": 20,
+            "section": "References boundary and ending",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "Author byline and publication metadata checked."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "after_orcid": "0000-0003-1761-0457",
+      "source_query_id": "Q-A-CR-S06",
+      "source_url": "https://api.crossref.org/works/10.1038/s41593-025-01948-9"
+    },
+    {
+      "person_id": "P-0049",
+      "display_name": "Krešimir Josić",
+      "work_id": "W-S12",
+      "before_orcid": null,
+      "before_field_state": {
+        "status": "not_reported",
+        "reason": "The seed byline/metadata used for this identity does not supply a verified ORCID. ORCID disambiguation remains a P5 task.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S12-01",
+            "upload_id": "U-S12-01",
+            "identifier": "S12",
+            "page": 1,
+            "section": "Title / author affiliations / publication imprint",
+            "accessed_at": "2026-11-26",
+            "evidence_note": "题名、作者顺序、署名机构及版记核验；DOI注册信息交叉核验。"
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "after_orcid": "0000-0002-1975-3913",
+      "source_query_id": "Q-B-002",
+      "source_url": "https://api.crossref.org/works/10.1523/jneurosci.2671-13.2014"
+    }
+  ],
+  "corrected_identifiers": 7,
+  "remaining_null_orcid": 57,
+  "new_tasks": 0,
+  "person_ids_changed": false,
+  "affiliations_changed": false,
+  "other_identity_confidence_changed": false,
+  "before_sha256": "36942e2f28308260933b6d267297d210cc6c8d2814ae4c01b37cbd24c5c3381d",
+  "after_sha256": "2a05bc855f5ebdaad891a7fe9d529c8ddbbc083e808051bea900772cbb0916fd",
+  "remaining_review_basis": "Scanned all cached official Crossref/DataCite/MPG/publisher metadata for ORCID identifiers and the extracted seed PDF text; the only supplied ORCIDs were the seven applied above. Remaining not_reported is restricted to checked source byline/metadata, with P5 external identity work retained."
+}

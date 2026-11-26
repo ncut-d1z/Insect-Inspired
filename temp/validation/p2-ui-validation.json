@@ -1,0 +1,119 @@
+{
+  "report_type": "P2_offline_browser_validation",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0001",
+  "run_at_utc": "2026-11-26T05:55:01.358Z",
+  "browser_package": "@sparticuz/chromium 158.0.0",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "passed": 23,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Ten fixed tables",
+      "status": "passed"
+    },
+    {
+      "name": "Twenty initial Work rows",
+      "status": "passed"
+    },
+    {
+      "name": "Case-insensitive key search",
+      "status": "passed"
+    },
+    {
+      "name": "Author multi-token search",
+      "status": "passed"
+    },
+    {
+      "name": "Institution search",
+      "status": "passed"
+    },
+    {
+      "name": "Year search",
+      "status": "passed"
+    },
+    {
+      "name": "No-match search",
+      "status": "passed"
+    },
+    {
+      "name": "Clear restores all records",
+      "status": "passed"
+    },
+    {
+      "name": "L06 filter preserves empty evidence table",
+      "status": "passed"
+    },
+    {
+      "name": "Eligible filter does not invent evidence",
+      "status": "passed"
+    },
+    {
+      "name": "Expand all abstracts",
+      "status": "passed"
+    },
+    {
+      "name": "Collapse all abstracts",
+      "status": "passed"
+    },
+    {
+      "name": "Year ascending sort",
+      "status": "passed"
+    },
+    {
+      "name": "Year descending sort",
+      "status": "passed"
+    },
+    {
+      "name": "Key ascending sort",
+      "status": "passed"
+    },
+    {
+      "name": "Back-to-top anchor",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard reaches theme filter",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile page fits viewport",
+      "status": "passed"
+    },
+    {
+      "name": "No browser script errors",
+      "status": "passed",
+      "details": []
+    },
+    {
+      "name": "No external runtime dependency requests",
+      "status": "passed",
+      "details": []
+    },
+    {
+      "name": "Local deliverable links exist",
+      "status": "passed",
+      "details": []
+    },
+    {
+      "name": "Readable without JavaScript",
+      "status": "passed"
+    },
+    {
+      "name": "Native abstract disclosure without JavaScript",
+      "status": "passed"
+    }
+  ],
+  "html_sha256": "f53563f146119e9dcbe385cc0eb56e7bce7e663eaee978ea9655883c6ce54e93",
+  "script_sha256": "ea9723166537d201101156963eba8515ea13498f0ec1988b8e5d7943a84e30c3",
+  "notes": "Runtime test and screenshots use only the local HTML. Screenshots and test code remain private; no source PDFs or credentials are in the deliverable."
+}

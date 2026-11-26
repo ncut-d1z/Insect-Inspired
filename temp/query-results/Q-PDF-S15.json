@@ -1,0 +1,17 @@
+{
+  "query_id": "Q-PDF-S15",
+  "entity_id": "W-S15",
+  "source_id": "SRC-PDF",
+  "endpoint_or_url": "seed-manifest.jsonl#S15",
+  "api_version": "supplied_file",
+  "queried_at_utc": "2026-11-26T05:24:08Z",
+  "query_time_status": "exact",
+  "status": "success",
+  "result_identifiers": [
+    "W-S15"
+  ],
+  "visible_total": 1,
+  "returned_count": 1,
+  "error_code": null,
+  "coverage_note": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+}

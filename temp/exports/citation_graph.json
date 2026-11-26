@@ -1,0 +1,150 @@
+{
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0001",
+  "schema_version": "1.1.0",
+  "nodes": [
+    {
+      "work_id": "W-S01",
+      "work_key": "Strubbe2019",
+      "canonical_title": "Insect-Inspired Visual Self-Motion Estimation",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S02",
+      "work_key": "Franz2002",
+      "canonical_title": "Linear Combinations of Optic Flow Vectors for Estimating Self-Motion - a Real-World Test of a Neural Model",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S03",
+      "work_key": "Wasserman2015",
+      "canonical_title": "Olfactory Neuromodulation of Motion Vision Circuitry in Drosophila",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S04",
+      "work_key": "Kern2012",
+      "canonical_title": "Blowfly flight characteristics are shaped by environmental features and controlled by optic flow information",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S05",
+      "work_key": "Karmeier2005",
+      "canonical_title": "Population Coding of Self-Motion: Applying Bayesian Analysis to a Population of Visual Interneurons in the Fly",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S06",
+      "work_key": "Erginkaya2025",
+      "canonical_title": "A competitive disinhibitory network for robust optic flow processing in Drosophila",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S07",
+      "work_key": "Farrow2005",
+      "canonical_title": "Sharing Receptive Fields with Your Neighbors: Tuning the Vertical System Cells to Wide Field Motion",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S08",
+      "work_key": "Drews2020",
+      "canonical_title": "Dynamic Signal Compression for Robust Motion Vision in Flies",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S09",
+      "work_key": "Li2021",
+      "canonical_title": "Disentangling of Local and Wide-Field Motion Adaptation",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S10",
+      "work_key": "Haag2004",
+      "canonical_title": "Neural mechanism underlying complex receptive field properties of motion-sensitive interneurons",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S11",
+      "work_key": "Lindemann2005",
+      "canonical_title": "On the Computations Analyzing Natural Optic Flow: Quantitative Model Analysis of the Blowfly Motion Vision Pathway",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S12",
+      "work_key": "Trousdale2014",
+      "canonical_title": "Near-Optimal Decoding of Transient Stimuli from Coupled Neuronal Subpopulations",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S13",
+      "work_key": "Brinkworth2009",
+      "canonical_title": "Robust Models for Optic Flow Coding in Natural Scenes Inspired by Insect Biology",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S14",
+      "work_key": "Schwegmann2014",
+      "canonical_title": "Depth information in natural environments derived from optic flow by insect motion detection system: a model analysis",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S15",
+      "work_key": "Strubbe2015",
+      "canonical_title": "Insect-Inspired Self-Motion Estimation with Dense Flow Fields—An Adaptive Matched Filter Approach",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S16",
+      "work_key": "Dahmen2009",
+      "canonical_title": "Insect-Inspired Odometry by Optic Flow Recorded with Optical Mouse Chips",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S17",
+      "work_key": "Franz2004",
+      "canonical_title": "Insect-Inspired Estimation of Egomotion",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S18",
+      "work_key": "Kern2005",
+      "canonical_title": "Function of a Fly Motion-Sensitive Neuron Matches Eye Movements during Free Flight",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S19",
+      "work_key": "Franz2000",
+      "canonical_title": "Wide-field, motion-sensitive neurons and matched filters for optic flow fields",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    },
+    {
+      "work_id": "W-S20",
+      "work_key": "Franz1998",
+      "canonical_title": "Wide-Field, Motion-Sensitive Neurons and Optimal Matched Filters for Optic Flow",
+      "identity_confidence": "confirmed",
+      "publication_status": "published"
+    }
+  ],
+  "edges": [],
+  "independent_progress": [],
+  "unresolved_occurrences": []
+}

@@ -1,0 +1,17 @@
+{
+  "query_id": "Q-B-004",
+  "entity_id": "S14",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works/10.3389/fncom.2014.00083",
+  "api_version": "1.0.0",
+  "queried_at_utc": "2026-11-26T05:25:15.965324Z",
+  "query_time_status": "exact",
+  "status": "success",
+  "result_identifiers": [
+    "10.3389/fncom.2014.00083"
+  ],
+  "visible_total": 1,
+  "returned_count": 1,
+  "error_code": null,
+  "coverage_note": "Exact seed identity metadata, not citation or author corpus coverage."
+}

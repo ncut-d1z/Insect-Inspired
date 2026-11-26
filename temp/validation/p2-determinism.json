@@ -1,0 +1,20 @@
+{
+  "report_type": "P2_deterministic_generation",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0001",
+  "run_at_utc": "2026-11-26T06:17:29.458968Z",
+  "input_policy": "Identical canonical entities, scope and checkpoint identifiers; byte hashes compared before and after independent regeneration.",
+  "artifact_count": 7,
+  "passed": 7,
+  "failed": 0,
+  "artifact_hashes": {
+    "ref.bib": "c7acd4363ff2106fb978f03e5c9c0c1cf184b0d8c9d419aaf1a8ee63c60bcbef",
+    "ref.html": "f53563f146119e9dcbe385cc0eb56e7bce7e663eaee978ea9655883c6ce54e93",
+    "temp/exports/citation_graph.json": "f1bc9b92abd84dbeeb20797b2766eef27e928fc8c848eb8cbd51aeaa8cf980b8",
+    "temp/exports/evidence_matrix.csv": "84f46d770f563bcc38b85b13479cf98a58b8c1599621183ea3ef70c4939e71d4",
+    "temp/exports/research_entities.json": "44026679f3f245a07c08009545a4bb819bb1422733aab9a0e4eaba9423b36429",
+    "temp/exports/research_implications.csv": "f3004fe4f73ee0752caf3bc998f7385a66fadf005c8c87ce68fe614142f9d2ad",
+    "temp/exports/research_paths.json": "a1d12f36832e348cfab74901aac107820ba1c4e1f1c2733a1c5612cc23fb779c"
+  },
+  "renderer_sha256": "d436f9853ca7f788566ad1aa5cf72eea409b29dd177b7cfb6ce7c268437b4a01"
+}

@@ -1,0 +1,35 @@
+{
+  "repair_id": "P1-SAMPLE-HASH-REPAIR-001",
+  "detected_at_utc": "2026-11-26T06:17:20.606254Z",
+  "issue": "Repeated execution included the previous checkpoint.json in its own artifact manifest before rewriting it. The report consequently referred to the previous checkpoint bytes.",
+  "root_cause": "Self-file hash included while iterating an existing sample output directory; not a mutation caused by resume testing.",
+  "before_report_sha256": "103e00c0ff6b597edf19f7ff1aa260822cc20c14ab067a5c3abb0b6708c8adee",
+  "before_checkpoint_actual_sha256": "55d5985df2dcac341db10560094da693779929e61bca4f6b8a17de231b779ee6",
+  "before_checkpoint_recorded_sha256": "0eacfdad6f58b757c395aa35d2370f61f760b44a65a3924ad7575db545c55b57",
+  "before_noncheckpoint_hashes_match": true,
+  "status": "repaired_and_verified",
+  "preserved_files": [
+    "before-p1-real-samples.json",
+    "before-sample-checkpoint.json"
+  ],
+  "completed_at_utc": "2026-11-26T06:18:28.087169Z",
+  "after_report_sha256": "2078601d5b7c81155fb3c42d947fbf428506c88229dedf7f1caa6bc066d37535",
+  "after_checkpoint_actual_sha256": "685b0ac7d8e3e56a9d721958b280c111d8a0e5c9bf3c4e858862d6a2b98dab54",
+  "after_checkpoint_recorded_sha256": "685b0ac7d8e3e56a9d721958b280c111d8a0e5c9bf3c4e858862d6a2b98dab54",
+  "after_all_nine_hashes_match": true,
+  "checkpoint_internal_self_reference": false,
+  "checkpoint_referenced_nonself_files": 8,
+  "passed_checks": 45,
+  "failed_checks": 0,
+  "persisted_sample_directory": "temp/validation/samples/SCOPE-P1-REAL-SAMPLE",
+  "preserved_after_files": [
+    "after-p1-real-samples.json",
+    "after-sample-checkpoint.json"
+  ],
+  "copy_validation": {
+    "artifact_count": 9,
+    "readme_count": 1,
+    "all_report_hashes_matched": true,
+    "sensitive_markers_found": 0
+  }
+}

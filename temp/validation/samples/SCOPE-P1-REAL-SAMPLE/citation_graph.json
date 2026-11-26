@@ -1,0 +1,104 @@
+{
+  "checkpoint_id": "CP-P1-REAL-SAMPLE",
+  "edges": [],
+  "independent_progress": [],
+  "nodes": [
+    {
+      "canonical_title": "Function of a Fly Motion-Sensitive Neuron Matches Eye Movements during Free Flight",
+      "identity_confidence": "confirmed",
+      "publication_status": "published",
+      "work_id": "W-S18",
+      "work_key": "Kern2005"
+    },
+    {
+      "canonical_title": "Wide-Field, Motion-Sensitive Neurons and Optimal Matched Filters for Optic Flow",
+      "identity_confidence": "confirmed",
+      "publication_status": "published",
+      "work_id": "W-S20",
+      "work_key": "Franz1998"
+    },
+    {
+      "canonical_title": "Insect-Inspired Estimation of Egomotion",
+      "identity_confidence": "confirmed",
+      "publication_status": "published",
+      "work_id": "W-S17",
+      "work_key": "Franz2004"
+    }
+  ],
+  "schema_version": "1.1.0",
+  "scope_id": "SCOPE-P1-REAL-SAMPLE",
+  "unresolved_occurrences": [
+    {
+      "candidate_ids": [],
+      "cited_work_id": null,
+      "citing_work_id": "W-S18",
+      "failure_reason": "P1 isolated parsing sample; cited Work discovery is queued for P3.",
+      "identity_confidence": "unresolved",
+      "occurrence_id": "OCC-TEST-S18-4",
+      "page": 8,
+      "raw_fingerprint": "7d1a192e62616127f66adc2a42e0c089c226f1d2671af0e7782f74917d5cae69",
+      "raw_reference": "Schilstra C, van Hateren JH (1999) Blowfly flight and optic flow. I. Thorax kinematics and flight dynamics. J Exp Biol 202: 1481–1490.",
+      "reference_label": "4",
+      "section": "References",
+      "source": {
+        "accessed_at": "2026-11-26T06:17:20Z",
+        "evidence_locator": [
+          {
+            "accessed_at": "2026-11-26T06:17:20Z",
+            "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+            "page": 1,
+            "section": "Title, abstract and affiliation",
+            "source_id": "SRC-PDF",
+            "upload_id": "UP-S18-TEST",
+            "url": "https://doi.org/10.1371/journal.pbio.0030171",
+            "version_id": "V-S18-01"
+          }
+        ],
+        "identifier": "sha256:adc73bc0aa854f7e2c53e0ee90df2aaeabf4a53d204ac14e48a0f1b730744dac",
+        "license": "user-provided-for-research; PDF not redistributed",
+        "source_id": "SRC-PDF",
+        "url": "https://doi.org/10.1371/journal.pbio.0030171",
+        "verification_status": "verified",
+        "version": "uploaded-file"
+      },
+      "verification_status": "source_supported",
+      "version_id": "V-S18-01"
+    },
+    {
+      "candidate_ids": [],
+      "cited_work_id": null,
+      "citing_work_id": "W-S18",
+      "failure_reason": "P1 isolated parsing sample; cited Work discovery is queued for P3.",
+      "identity_confidence": "unresolved",
+      "occurrence_id": "OCC-TEST-S18-5",
+      "page": 8,
+      "raw_fingerprint": "4bbb25235283e12e5d4e9415866f682924df55b7b9793ea787a8e30a8a9ac45a",
+      "raw_reference": "van Hateren JH, Schilstra C (1999) Blowfly flight and optic flow. II. Head movements during flight. J Exp Biol 202: 1491–1500.",
+      "reference_label": "5",
+      "section": "References",
+      "source": {
+        "accessed_at": "2026-11-26T06:17:20Z",
+        "evidence_locator": [
+          {
+            "accessed_at": "2026-11-26T06:17:20Z",
+            "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+            "page": 1,
+            "section": "Title, abstract and affiliation",
+            "source_id": "SRC-PDF",
+            "upload_id": "UP-S18-TEST",
+            "url": "https://doi.org/10.1371/journal.pbio.0030171",
+            "version_id": "V-S18-01"
+          }
+        ],
+        "identifier": "sha256:adc73bc0aa854f7e2c53e0ee90df2aaeabf4a53d204ac14e48a0f1b730744dac",
+        "license": "user-provided-for-research; PDF not redistributed",
+        "source_id": "SRC-PDF",
+        "url": "https://doi.org/10.1371/journal.pbio.0030171",
+        "verification_status": "verified",
+        "version": "uploaded-file"
+      },
+      "verification_status": "source_supported",
+      "version_id": "V-S18-01"
+    }
+  ]
+}

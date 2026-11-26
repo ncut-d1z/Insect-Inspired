@@ -1,0 +1,1223 @@
+{
+  "checkpoint_id": "CP-P1-REAL-SAMPLE",
+  "organizations": [
+    {
+      "canonical_name": "Department of Neurobiology, Faculty for Biology, Bielefeld University, Bielefeld, Germany",
+      "external_ids": {},
+      "historical_relations": [],
+      "name_variants": [],
+      "org_id": "ORG-SAMPLE-4e3c965d5bab",
+      "organization_level": "other",
+      "parent_org_id": null,
+      "raw_affiliations": [
+        "Department of Neurobiology, Faculty for Biology, Bielefeld University, Bielefeld, Germany"
+      ],
+      "ror": null,
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S18-TEST",
+              "url": "https://doi.org/10.1371/journal.pbio.0030171",
+              "version_id": "V-S18-01"
+            }
+          ],
+          "identifier": "sha256:adc73bc0aa854f7e2c53e0ee90df2aaeabf4a53d204ac14e48a0f1b730744dac",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "verification_status": "source_supported"
+    },
+    {
+      "canonical_name": "Department of Neurobiophysics, University of Groningen, Groningen, The Netherlands",
+      "external_ids": {},
+      "historical_relations": [],
+      "name_variants": [],
+      "org_id": "ORG-SAMPLE-03cac182ace7",
+      "organization_level": "other",
+      "parent_org_id": null,
+      "raw_affiliations": [
+        "Department of Neurobiophysics, University of Groningen, Groningen, The Netherlands"
+      ],
+      "ror": null,
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S18-TEST",
+              "url": "https://doi.org/10.1371/journal.pbio.0030171",
+              "version_id": "V-S18-01"
+            }
+          ],
+          "identifier": "sha256:adc73bc0aa854f7e2c53e0ee90df2aaeabf4a53d204ac14e48a0f1b730744dac",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "verification_status": "source_supported"
+    },
+    {
+      "canonical_name": "AG Bülthoff, Max-Planck-Institut für biologische Kybernetik, Tübingen, Germany",
+      "external_ids": {},
+      "historical_relations": [],
+      "name_variants": [],
+      "org_id": "ORG-SAMPLE-f747dc7cb0c7",
+      "organization_level": "other",
+      "parent_org_id": null,
+      "raw_affiliations": [
+        "AG Bülthoff, Max-Planck-Institut für biologische Kybernetik, Tübingen, Germany"
+      ],
+      "ror": null,
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S20-TEST",
+              "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+              "version_id": "V-S20-01"
+            }
+          ],
+          "identifier": "sha256:bdbc08d860636bd8bbd7912e5c359dcd2ff40d0311a70c1ef544f92401984410",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "verification_status": "source_supported"
+    },
+    {
+      "canonical_name": "Lehrstuhl für Neurobiologie, Universität Bielefeld, Bielefeld, Germany",
+      "external_ids": {},
+      "historical_relations": [],
+      "name_variants": [],
+      "org_id": "ORG-SAMPLE-74aadd24966d",
+      "organization_level": "other",
+      "parent_org_id": null,
+      "raw_affiliations": [
+        "Lehrstuhl für Neurobiologie, Universität Bielefeld, Bielefeld, Germany"
+      ],
+      "ror": null,
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S20-TEST",
+              "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+              "version_id": "V-S20-01"
+            }
+          ],
+          "identifier": "sha256:bdbc08d860636bd8bbd7912e5c359dcd2ff40d0311a70c1ef544f92401984410",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "verification_status": "source_supported"
+    },
+    {
+      "canonical_name": "Max-Planck-Institut für biologische Kybernetik, Tübingen, Germany",
+      "external_ids": {},
+      "historical_relations": [],
+      "name_variants": [],
+      "org_id": "ORG-SAMPLE-36520ed7512d",
+      "organization_level": "other",
+      "parent_org_id": null,
+      "raw_affiliations": [
+        "Max-Planck-Institut für biologische Kybernetik, Tübingen, Germany"
+      ],
+      "ror": null,
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S17-TEST",
+              "url": "https://doi.org/10.1162/0899766041941899",
+              "version_id": "V-S17-01"
+            }
+          ],
+          "identifier": "sha256:9b082fd0c001b107ee02b9b05cf925772c4d13c751be73506470625b308a20bc",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1162/0899766041941899",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "verification_status": "source_supported"
+    },
+    {
+      "canonical_name": "Center of Visual Sciences, Research School of Biological Sciences, Australian National University, Canberra, Australia",
+      "external_ids": {},
+      "historical_relations": [],
+      "name_variants": [],
+      "org_id": "ORG-SAMPLE-6079d3af885b",
+      "organization_level": "other",
+      "parent_org_id": null,
+      "raw_affiliations": [
+        "Center of Visual Sciences, Research School of Biological Sciences, Australian National University, Canberra, Australia"
+      ],
+      "ror": null,
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S17-TEST",
+              "url": "https://doi.org/10.1162/0899766041941899",
+              "version_id": "V-S17-01"
+            }
+          ],
+          "identifier": "sha256:9b082fd0c001b107ee02b9b05cf925772c4d13c751be73506470625b308a20bc",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1162/0899766041941899",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "verification_status": "source_supported"
+    },
+    {
+      "canonical_name": "Department of Zoology, University of Cambridge, United Kingdom",
+      "external_ids": {},
+      "historical_relations": [],
+      "name_variants": [],
+      "org_id": "ORG-SAMPLE-88de076bfac7",
+      "organization_level": "other",
+      "parent_org_id": null,
+      "raw_affiliations": [
+        "Department of Zoology, University of Cambridge, United Kingdom"
+      ],
+      "ror": null,
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S17-TEST",
+              "url": "https://doi.org/10.1162/0899766041941899",
+              "version_id": "V-S17-01"
+            }
+          ],
+          "identifier": "sha256:9b082fd0c001b107ee02b9b05cf925772c4d13c751be73506470625b308a20bc",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1162/0899766041941899",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "verification_status": "source_supported"
+    }
+  ],
+  "people": [
+    {
+      "affiliation_history": [
+        {
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S18-TEST",
+              "url": "https://doi.org/10.1371/journal.pbio.0030171",
+              "version_id": "V-S18-01"
+            }
+          ],
+          "org_id": "ORG-SAMPLE-4e3c965d5bab",
+          "role": "author publication affiliation",
+          "valid_from": "2005-05-17",
+          "valid_to": "2005-05-17",
+          "work_id": "W-S18"
+        }
+      ],
+      "display_name": "Roland Kern",
+      "external_ids": {},
+      "identity_confidence": "confirmed",
+      "name_variants": [],
+      "orcid": null,
+      "person_id": "P-SAMPLE-03ec85597552",
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S18-TEST",
+              "url": "https://doi.org/10.1371/journal.pbio.0030171",
+              "version_id": "V-S18-01"
+            }
+          ],
+          "identifier": "sha256:adc73bc0aa854f7e2c53e0ee90df2aaeabf4a53d204ac14e48a0f1b730744dac",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "verification_status": "source_supported"
+    },
+    {
+      "affiliation_history": [
+        {
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S18-TEST",
+              "url": "https://doi.org/10.1371/journal.pbio.0030171",
+              "version_id": "V-S18-01"
+            }
+          ],
+          "org_id": "ORG-SAMPLE-03cac182ace7",
+          "role": "author publication affiliation",
+          "valid_from": "2005-05-17",
+          "valid_to": "2005-05-17",
+          "work_id": "W-S18"
+        }
+      ],
+      "display_name": "J. H. van Hateren",
+      "external_ids": {},
+      "identity_confidence": "confirmed",
+      "name_variants": [],
+      "orcid": null,
+      "person_id": "P-SAMPLE-654e7d03231b",
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S18-TEST",
+              "url": "https://doi.org/10.1371/journal.pbio.0030171",
+              "version_id": "V-S18-01"
+            }
+          ],
+          "identifier": "sha256:adc73bc0aa854f7e2c53e0ee90df2aaeabf4a53d204ac14e48a0f1b730744dac",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "verification_status": "source_supported"
+    },
+    {
+      "affiliation_history": [
+        {
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S18-TEST",
+              "url": "https://doi.org/10.1371/journal.pbio.0030171",
+              "version_id": "V-S18-01"
+            }
+          ],
+          "org_id": "ORG-SAMPLE-4e3c965d5bab",
+          "role": "author publication affiliation",
+          "valid_from": "2005-05-17",
+          "valid_to": "2005-05-17",
+          "work_id": "W-S18"
+        }
+      ],
+      "display_name": "Christian Michaelis",
+      "external_ids": {},
+      "identity_confidence": "confirmed",
+      "name_variants": [],
+      "orcid": null,
+      "person_id": "P-SAMPLE-f2561f04678c",
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S18-TEST",
+              "url": "https://doi.org/10.1371/journal.pbio.0030171",
+              "version_id": "V-S18-01"
+            }
+          ],
+          "identifier": "sha256:adc73bc0aa854f7e2c53e0ee90df2aaeabf4a53d204ac14e48a0f1b730744dac",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "verification_status": "source_supported"
+    },
+    {
+      "affiliation_history": [
+        {
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S18-TEST",
+              "url": "https://doi.org/10.1371/journal.pbio.0030171",
+              "version_id": "V-S18-01"
+            }
+          ],
+          "org_id": "ORG-SAMPLE-4e3c965d5bab",
+          "role": "author publication affiliation",
+          "valid_from": "2005-05-17",
+          "valid_to": "2005-05-17",
+          "work_id": "W-S18"
+        }
+      ],
+      "display_name": "Jens Peter Lindemann",
+      "external_ids": {},
+      "identity_confidence": "confirmed",
+      "name_variants": [],
+      "orcid": null,
+      "person_id": "P-SAMPLE-922787ddec3f",
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S18-TEST",
+              "url": "https://doi.org/10.1371/journal.pbio.0030171",
+              "version_id": "V-S18-01"
+            }
+          ],
+          "identifier": "sha256:adc73bc0aa854f7e2c53e0ee90df2aaeabf4a53d204ac14e48a0f1b730744dac",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "verification_status": "source_supported"
+    },
+    {
+      "affiliation_history": [
+        {
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S18-TEST",
+              "url": "https://doi.org/10.1371/journal.pbio.0030171",
+              "version_id": "V-S18-01"
+            }
+          ],
+          "org_id": "ORG-SAMPLE-4e3c965d5bab",
+          "role": "author publication affiliation",
+          "valid_from": "2005-05-17",
+          "valid_to": "2005-05-17",
+          "work_id": "W-S18"
+        }
+      ],
+      "display_name": "Martin Egelhaaf",
+      "external_ids": {},
+      "identity_confidence": "confirmed",
+      "name_variants": [],
+      "orcid": null,
+      "person_id": "P-SAMPLE-5e6de4d20f91",
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S18-TEST",
+              "url": "https://doi.org/10.1371/journal.pbio.0030171",
+              "version_id": "V-S18-01"
+            }
+          ],
+          "identifier": "sha256:adc73bc0aa854f7e2c53e0ee90df2aaeabf4a53d204ac14e48a0f1b730744dac",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "verification_status": "source_supported"
+    },
+    {
+      "affiliation_history": [
+        {
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S20-TEST",
+              "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+              "version_id": "V-S20-01"
+            }
+          ],
+          "org_id": "ORG-SAMPLE-f747dc7cb0c7",
+          "role": "author publication affiliation",
+          "valid_from": "1998-06",
+          "valid_to": "1998-06",
+          "work_id": "W-S20"
+        },
+        {
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S17-TEST",
+              "url": "https://doi.org/10.1162/0899766041941899",
+              "version_id": "V-S17-01"
+            }
+          ],
+          "org_id": "ORG-SAMPLE-36520ed7512d",
+          "role": "author publication affiliation",
+          "valid_from": "2004-11-01",
+          "valid_to": "2004-11-01",
+          "work_id": "W-S17"
+        }
+      ],
+      "display_name": "Matthias O. Franz",
+      "external_ids": {},
+      "identity_confidence": "confirmed",
+      "name_variants": [],
+      "orcid": null,
+      "person_id": "P-SAMPLE-e74a561201b2",
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S20-TEST",
+              "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+              "version_id": "V-S20-01"
+            }
+          ],
+          "identifier": "sha256:bdbc08d860636bd8bbd7912e5c359dcd2ff40d0311a70c1ef544f92401984410",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        },
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S17-TEST",
+              "url": "https://doi.org/10.1162/0899766041941899",
+              "version_id": "V-S17-01"
+            }
+          ],
+          "identifier": "sha256:9b082fd0c001b107ee02b9b05cf925772c4d13c751be73506470625b308a20bc",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1162/0899766041941899",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "verification_status": "source_supported"
+    },
+    {
+      "affiliation_history": [
+        {
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S20-TEST",
+              "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+              "version_id": "V-S20-01"
+            }
+          ],
+          "org_id": "ORG-SAMPLE-74aadd24966d",
+          "role": "author publication affiliation",
+          "valid_from": "1998-06",
+          "valid_to": "1998-06",
+          "work_id": "W-S20"
+        },
+        {
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S17-TEST",
+              "url": "https://doi.org/10.1162/0899766041941899",
+              "version_id": "V-S17-01"
+            }
+          ],
+          "org_id": "ORG-SAMPLE-88de076bfac7",
+          "role": "author publication affiliation",
+          "valid_from": "2004-11-01",
+          "valid_to": "2004-11-01",
+          "work_id": "W-S17"
+        }
+      ],
+      "display_name": "Holger G. Krapp",
+      "external_ids": {},
+      "identity_confidence": "confirmed",
+      "name_variants": [],
+      "orcid": null,
+      "person_id": "P-SAMPLE-87fdf7927446",
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S20-TEST",
+              "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+              "version_id": "V-S20-01"
+            }
+          ],
+          "identifier": "sha256:bdbc08d860636bd8bbd7912e5c359dcd2ff40d0311a70c1ef544f92401984410",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        },
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S17-TEST",
+              "url": "https://doi.org/10.1162/0899766041941899",
+              "version_id": "V-S17-01"
+            }
+          ],
+          "identifier": "sha256:9b082fd0c001b107ee02b9b05cf925772c4d13c751be73506470625b308a20bc",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1162/0899766041941899",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "verification_status": "source_supported"
+    },
+    {
+      "affiliation_history": [
+        {
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S17-TEST",
+              "url": "https://doi.org/10.1162/0899766041941899",
+              "version_id": "V-S17-01"
+            }
+          ],
+          "org_id": "ORG-SAMPLE-6079d3af885b",
+          "role": "author publication affiliation",
+          "valid_from": "2004-11-01",
+          "valid_to": "2004-11-01",
+          "work_id": "W-S17"
+        }
+      ],
+      "display_name": "Javaan S. Chahl",
+      "external_ids": {},
+      "identity_confidence": "confirmed",
+      "name_variants": [],
+      "orcid": null,
+      "person_id": "P-SAMPLE-73cc8766e371",
+      "sources": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_locator": [
+            {
+              "accessed_at": "2026-11-26T06:17:20Z",
+              "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+              "page": 1,
+              "section": "Title, abstract and affiliation",
+              "source_id": "SRC-PDF",
+              "upload_id": "UP-S17-TEST",
+              "url": "https://doi.org/10.1162/0899766041941899",
+              "version_id": "V-S17-01"
+            }
+          ],
+          "identifier": "sha256:9b082fd0c001b107ee02b9b05cf925772c4d13c751be73506470625b308a20bc",
+          "license": "user-provided-for-research; PDF not redistributed",
+          "source_id": "SRC-PDF",
+          "url": "https://doi.org/10.1162/0899766041941899",
+          "verification_status": "verified",
+          "version": "uploaded-file"
+        }
+      ],
+      "verification_status": "source_supported"
+    }
+  ],
+  "projects": [],
+  "relations": [
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S18-TEST",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "version_id": "V-S18-01"
+        }
+      ],
+      "from_id": "W-S18",
+      "relation_id": "REL-AUTHOR-S18-0",
+      "relation_type": "authored_by",
+      "to_id": "P-SAMPLE-03ec85597552",
+      "valid_from": "2005-05-17",
+      "valid_to": "2005-05-17",
+      "verification_status": "verified"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S18-TEST",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "version_id": "V-S18-01"
+        }
+      ],
+      "from_id": "P-SAMPLE-03ec85597552",
+      "relation_id": "REL-AFF-S18-0-ORG-SAMPLE-4e3c965d5bab",
+      "relation_type": "affiliated_with",
+      "to_id": "ORG-SAMPLE-4e3c965d5bab",
+      "valid_from": "2005-05-17",
+      "valid_to": "2005-05-17",
+      "verification_status": "source_supported"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S18-TEST",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "version_id": "V-S18-01"
+        }
+      ],
+      "from_id": "W-S18",
+      "relation_id": "REL-AUTHOR-S18-1",
+      "relation_type": "authored_by",
+      "to_id": "P-SAMPLE-654e7d03231b",
+      "valid_from": "2005-05-17",
+      "valid_to": "2005-05-17",
+      "verification_status": "verified"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S18-TEST",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "version_id": "V-S18-01"
+        }
+      ],
+      "from_id": "P-SAMPLE-654e7d03231b",
+      "relation_id": "REL-AFF-S18-1-ORG-SAMPLE-03cac182ace7",
+      "relation_type": "affiliated_with",
+      "to_id": "ORG-SAMPLE-03cac182ace7",
+      "valid_from": "2005-05-17",
+      "valid_to": "2005-05-17",
+      "verification_status": "source_supported"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S18-TEST",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "version_id": "V-S18-01"
+        }
+      ],
+      "from_id": "W-S18",
+      "relation_id": "REL-AUTHOR-S18-2",
+      "relation_type": "authored_by",
+      "to_id": "P-SAMPLE-f2561f04678c",
+      "valid_from": "2005-05-17",
+      "valid_to": "2005-05-17",
+      "verification_status": "verified"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S18-TEST",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "version_id": "V-S18-01"
+        }
+      ],
+      "from_id": "P-SAMPLE-f2561f04678c",
+      "relation_id": "REL-AFF-S18-2-ORG-SAMPLE-4e3c965d5bab",
+      "relation_type": "affiliated_with",
+      "to_id": "ORG-SAMPLE-4e3c965d5bab",
+      "valid_from": "2005-05-17",
+      "valid_to": "2005-05-17",
+      "verification_status": "source_supported"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S18-TEST",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "version_id": "V-S18-01"
+        }
+      ],
+      "from_id": "W-S18",
+      "relation_id": "REL-AUTHOR-S18-3",
+      "relation_type": "authored_by",
+      "to_id": "P-SAMPLE-922787ddec3f",
+      "valid_from": "2005-05-17",
+      "valid_to": "2005-05-17",
+      "verification_status": "verified"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S18-TEST",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "version_id": "V-S18-01"
+        }
+      ],
+      "from_id": "P-SAMPLE-922787ddec3f",
+      "relation_id": "REL-AFF-S18-3-ORG-SAMPLE-4e3c965d5bab",
+      "relation_type": "affiliated_with",
+      "to_id": "ORG-SAMPLE-4e3c965d5bab",
+      "valid_from": "2005-05-17",
+      "valid_to": "2005-05-17",
+      "verification_status": "source_supported"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S18-TEST",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "version_id": "V-S18-01"
+        }
+      ],
+      "from_id": "W-S18",
+      "relation_id": "REL-AUTHOR-S18-4",
+      "relation_type": "authored_by",
+      "to_id": "P-SAMPLE-5e6de4d20f91",
+      "valid_from": "2005-05-17",
+      "valid_to": "2005-05-17",
+      "verification_status": "verified"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S18-TEST",
+          "url": "https://doi.org/10.1371/journal.pbio.0030171",
+          "version_id": "V-S18-01"
+        }
+      ],
+      "from_id": "P-SAMPLE-5e6de4d20f91",
+      "relation_id": "REL-AFF-S18-4-ORG-SAMPLE-4e3c965d5bab",
+      "relation_type": "affiliated_with",
+      "to_id": "ORG-SAMPLE-4e3c965d5bab",
+      "valid_from": "2005-05-17",
+      "valid_to": "2005-05-17",
+      "verification_status": "source_supported"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S20-TEST",
+          "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+          "version_id": "V-S20-01"
+        }
+      ],
+      "from_id": "W-S20",
+      "relation_id": "REL-AUTHOR-S20-0",
+      "relation_type": "authored_by",
+      "to_id": "P-SAMPLE-e74a561201b2",
+      "valid_from": "1998-06",
+      "valid_to": "1998-06",
+      "verification_status": "verified"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S20-TEST",
+          "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+          "version_id": "V-S20-01"
+        }
+      ],
+      "from_id": "P-SAMPLE-e74a561201b2",
+      "relation_id": "REL-AFF-S20-0-ORG-SAMPLE-f747dc7cb0c7",
+      "relation_type": "affiliated_with",
+      "to_id": "ORG-SAMPLE-f747dc7cb0c7",
+      "valid_from": "1998-06",
+      "valid_to": "1998-06",
+      "verification_status": "source_supported"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S20-TEST",
+          "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+          "version_id": "V-S20-01"
+        }
+      ],
+      "from_id": "W-S20",
+      "relation_id": "REL-AUTHOR-S20-1",
+      "relation_type": "authored_by",
+      "to_id": "P-SAMPLE-87fdf7927446",
+      "valid_from": "1998-06",
+      "valid_to": "1998-06",
+      "verification_status": "verified"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S20-TEST",
+          "url": "https://hdl.handle.net/11858/00-001M-0000-0013-E875-C",
+          "version_id": "V-S20-01"
+        }
+      ],
+      "from_id": "P-SAMPLE-87fdf7927446",
+      "relation_id": "REL-AFF-S20-1-ORG-SAMPLE-74aadd24966d",
+      "relation_type": "affiliated_with",
+      "to_id": "ORG-SAMPLE-74aadd24966d",
+      "valid_from": "1998-06",
+      "valid_to": "1998-06",
+      "verification_status": "source_supported"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S17-TEST",
+          "url": "https://doi.org/10.1162/0899766041941899",
+          "version_id": "V-S17-01"
+        }
+      ],
+      "from_id": "W-S17",
+      "relation_id": "REL-AUTHOR-S17-0",
+      "relation_type": "authored_by",
+      "to_id": "P-SAMPLE-e74a561201b2",
+      "valid_from": "2004-11-01",
+      "valid_to": "2004-11-01",
+      "verification_status": "verified"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S17-TEST",
+          "url": "https://doi.org/10.1162/0899766041941899",
+          "version_id": "V-S17-01"
+        }
+      ],
+      "from_id": "P-SAMPLE-e74a561201b2",
+      "relation_id": "REL-AFF-S17-0-ORG-SAMPLE-36520ed7512d",
+      "relation_type": "affiliated_with",
+      "to_id": "ORG-SAMPLE-36520ed7512d",
+      "valid_from": "2004-11-01",
+      "valid_to": "2004-11-01",
+      "verification_status": "source_supported"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S17-TEST",
+          "url": "https://doi.org/10.1162/0899766041941899",
+          "version_id": "V-S17-01"
+        }
+      ],
+      "from_id": "W-S17",
+      "relation_id": "REL-AUTHOR-S17-1",
+      "relation_type": "authored_by",
+      "to_id": "P-SAMPLE-73cc8766e371",
+      "valid_from": "2004-11-01",
+      "valid_to": "2004-11-01",
+      "verification_status": "verified"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S17-TEST",
+          "url": "https://doi.org/10.1162/0899766041941899",
+          "version_id": "V-S17-01"
+        }
+      ],
+      "from_id": "P-SAMPLE-73cc8766e371",
+      "relation_id": "REL-AFF-S17-1-ORG-SAMPLE-6079d3af885b",
+      "relation_type": "affiliated_with",
+      "to_id": "ORG-SAMPLE-6079d3af885b",
+      "valid_from": "2004-11-01",
+      "valid_to": "2004-11-01",
+      "verification_status": "source_supported"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S17-TEST",
+          "url": "https://doi.org/10.1162/0899766041941899",
+          "version_id": "V-S17-01"
+        }
+      ],
+      "from_id": "W-S17",
+      "relation_id": "REL-AUTHOR-S17-2",
+      "relation_type": "authored_by",
+      "to_id": "P-SAMPLE-87fdf7927446",
+      "valid_from": "2004-11-01",
+      "valid_to": "2004-11-01",
+      "verification_status": "verified"
+    },
+    {
+      "evidence_locator": [
+        {
+          "accessed_at": "2026-11-26T06:17:20Z",
+          "evidence_note": "P1 isolated sample; verified against uploaded PDF and cited authoritative record.",
+          "page": 1,
+          "section": "Title, abstract and affiliation",
+          "source_id": "SRC-PDF",
+          "upload_id": "UP-S17-TEST",
+          "url": "https://doi.org/10.1162/0899766041941899",
+          "version_id": "V-S17-01"
+        }
+      ],
+      "from_id": "P-SAMPLE-87fdf7927446",
+      "relation_id": "REL-AFF-S17-2-ORG-SAMPLE-88de076bfac7",
+      "relation_type": "affiliated_with",
+      "to_id": "ORG-SAMPLE-88de076bfac7",
+      "valid_from": "2004-11-01",
+      "valid_to": "2004-11-01",
+      "verification_status": "source_supported"
+    }
+  ],
+  "schema_version": "1.1.0",
+  "scope_id": "SCOPE-P1-REAL-SAMPLE",
+  "work_refs": [
+    {
+      "work_id": "W-S18",
+      "work_key": "Kern2005"
+    },
+    {
+      "work_id": "W-S20",
+      "work_key": "Franz1998"
+    },
+    {
+      "work_id": "W-S17",
+      "work_key": "Franz2004"
+    }
+  ]
+}

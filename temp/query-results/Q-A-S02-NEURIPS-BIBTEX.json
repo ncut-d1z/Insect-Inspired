@@ -1,0 +1,15 @@
+{
+  "query_id": "Q-A-S02-NEURIPS-BIBTEX",
+  "entity_id": "S02",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://proceedings.neurips.cc/paper_files/paper/2002/file/df1f1d20ee86704251795841e6a9405a-Bibtex.bib",
+  "api_version": "observed",
+  "queried_at_utc": "2026-11-26T05:26:26.345051Z",
+  "query_time_status": "exact",
+  "status": "success",
+  "result_identifiers": [],
+  "visible_total": 1,
+  "returned_count": 1,
+  "error_code": null,
+  "coverage_note": "Exact seed identity metadata, not citation or author corpus coverage."
+}
