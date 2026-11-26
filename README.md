@@ -1,6 +1,6 @@
 # Insect-Inspired：昆虫启发的视觉自运动估计文献追踪与局限性研究
 
-> 版本：1.0；生效日期：2026-11-26。  
+> 版本：1.1；生效日期：2026-11-26。  
 > 本文件是最终执行规范，规定文献数据库、递归引文检索、作者/机构/项目追踪、局限性证据分析与验收要求；不包含检索结果、数据文件或运行日志。数据文件与日志按 §8 生成，审计数据与日志保存于 `temp/`。
 
 ## 1. 研究背景与任务目标
@@ -14,6 +14,18 @@
 3. 哪些 Work 实际引用前作，引用作用是继承、改进、验证、质疑、应用还是背景介绍？哪些 Work 独立推进同类问题？
 4. 各项研究依赖哪些前期工作？依据已核验的关系重建研究脉络，保留负结果、相互矛盾的证据及未解决问题。
 5. 哪些结论对昆虫视觉、自运动估计和纯视觉里程计具有启示？
+
+五个研究问题与机器可读交付物建立强制主映射。每个有效 Checkpoint 必须从规范数据确定性生成以下全部视图；零记录使用合法空集合或仅表头，不填造记录。P7 必须交付这些文件及覆盖说明，字段与对账规则见 §8.4。
+
+| 研究问题 | 固定交付路径 | 对账对象及必须表达的结果 |
+| --- | --- | --- |
+| Q1 局限性证据及剩余问题 | `temp/exports/evidence_matrix.csv` | 每个有效 Assessment 一行，记录 L、证据路线、量化门禁、条件、结果、反证及定位 |
+| Q2 作者、团队、机构与项目成果 | `temp/exports/research_entities.json` | Person、Organization、Project、Work 及带时间、来源、核验状态的关系 |
+| Q3 引用关系、引用作用及独立研究 | `temp/exports/citation_graph.json` | 有效 Work 节点、实际引用边及语境；独立进展以 Assessment 关联单列，不虚构引用 |
+| Q4 前期研究、继承路线及冲突证据 | `temp/exports/research_paths.json` | 各 L、各 Assessment 的可追溯发现路径与核验关系、反证及路径缺口 |
+| Q5 生物、计算模型及工程启示 | `temp/exports/research_implications.csv` | 按 L、路线和 Assessment 表达启示、条件、剩余问题及外推边界 |
+
+ref.bib 和 ref.html 仍为根目录强制交付物；最终报告按 §9.4 汇总这些视图，不独立维护相互冲突的数据。
 
 每条 Assessment 必须绑定 §7.2 定义的 evidence_route：生物机制、数学/计算模型或工程实现。工程可行性不直接证明动物实现同一计算；神经元响应选择性不直接证明六自由度运动可恢复；仿真结果不直接证明真实系统性能。
 
@@ -30,6 +42,22 @@
 | Assessment（主题证据） | Work 对特定局限性、证据路线及条件的独立评价，以 assessment_id 标识；记录结论和可核验依据 |
 | Checkpoint（检查点） | 同一 scope_id 内经一致性校验提交的可恢复状态，以 checkpoint_id 标识，含队列、游标、统计、产物版本与缺口 |
 
+### 1.3 实体基数与去重级联
+
+有效实体拓扑固定为 Work (1) → Version (1..N) → Upload (0..N)。每个有效 Work 至少一个 Version，每个 Version 必须且只能归属一个 Work。只有书目、尚无全文时建立 bibliographic_only Version，file_records 为空，不虚构 PDF。Version 可无 Upload（例如通过合法外部来源发现），每个已准入且身份核验的 Upload 必须且只能指向一个 Version，其 work_id 必须等于该 Version 的 work_id。Seed record 映射一个 Work；无文件时 Upload 指针为空并登记任务。身份未决的输入为隔离记录，不构成有效所有权关系。被拒文件不进入拓扑；去重 Upload 仅保留审计身份，不增加 Work 或 Version 数。
+
+Assessment 唯一归属 Work 而非 Upload；evidence_locator、provenance_upload_ids、provenance_version_ids 必须支持证据追踪。无 Upload 的合法外部证据通过 Version 或官方来源定位。
+
+Upload 确认重复并生成 duplicate_of_upload_id 时，必须自动执行同一事务内的级联：
+
+1. 核验重复目标、文件/版本身份及无环指针，规范到保留 Upload；禁止将独立出版身份或不同实质内容误判为重复。
+2. 枚举受影响的 Assessment、Version/Work、证据定位、原始引文、引文边、任务及别名；映射至保留实体，保存原 Upload/位置历史。
+3. 以 work_id、limitation_id、evidence_route、claim_id 所表达的主张、规范化条件、结论及证据定位判定等价性。等价 Assessment 自动合并证据来源，保留 canonical assessment_id，重复记录标为 merged 并记录 superseded_by_assessment_id；条件、结果、反证或路线不等价者分别保留。
+4. 经级联仍无可定位有效依据的 Assessment 标为 discarded（废弃），记录原因、原 ID、cascade_event_id 与复查任务；存在定位或身份冲突者标为 pending_review，生成工单。仍有独立有效依据者不得废弃。不得物理删除审计历史。
+5. 重算准入、引用关系、T_i/U、导出与统计，核验无悬空外键、重复有效 Assessment 或丢失反证；不通过则回滚，不发布有效 Checkpoint。
+
+未完成级联不得标记去重完成。Work/Version 合并同样执行上述事务；级联仅处理受影响记录。
+
 规范性关键词：必须/不得表示强制约束；允许表示在适用条件内的合法选择。缺失或不确定事实以结构化字段、枚举及证据记录表示，不以推测替代事实。
 
 ## 2. 输入材料与种子范围
@@ -45,30 +73,44 @@
 
 规范 Work 初判固定为 independent（独立书目身份）或 related_independent（具有相关文献关系的独立书目身份）。初判不是已经生成的 Work ID 或全文核验结果；身份核验由 identity_confidence 和 verification_status 表示。
 
-| S 编号 | 题名 | 文献类型 | 规范 Work 初判 | 版本/关系备注 |
-| --- | --- | --- | --- | --- |
-| S01 | Insect-Inspired Visual Self-Motion Estimation | 学位论文 | related_independent | 与 S15 存在章节内容关系，独立学位论文 |
-| S02 | Linear Combinations of Optic Flow Vectors for Estimating Self-Motion – a Real-World Test of a Neural Model | 会议论文 | related_independent | 与 S17 存在前期研究关系，独立书目 |
-| S03 | Olfactory Neuromodulation of Motion Vision Circuitry in Drosophila | 期刊论文 | independent | — |
-| S04 | Blowfly flight characteristics are shaped by environmental features and controlled by optic flow information | 期刊论文 | independent | — |
-| S05 | Population Coding of Self-Motion: Applying Bayesian Analysis to a Population of Visual Interneurons in the Fly | 期刊论文 | independent | — |
-| S06 | A competitive disinhibitory network for robust optic flow processing in Drosophila | 期刊论文 | independent | — |
-| S07 | Sharing Receptive Fields with Your Neighbors: Tuning the Vertical System Cells to Wide Field Motion | 期刊论文 | independent | — |
-| S08 | Dynamic Signal Compression for Robust Motion Vision in Flies | 期刊论文 | independent | — |
-| S09 | Disentangling of Local and Wide-Field Motion Adaptation | 期刊论文 | independent | — |
-| S10 | Neural mechanism underlying complex receptive field properties of motion-sensitive interneurons | 期刊论文 | independent | — |
-| S11 | On the computations analyzing natural optic flow: Quantitative model analysis of the blowfly motion vision pathway | 期刊论文 | independent | 机构库文件含封面及出版版本 |
-| S12 | Near-Optimal Decoding of Transient Stimuli from Coupled Neuronal Subpopulations | 期刊论文 | independent | — |
-| S13 | Robust Models for Optic Flow Coding in Natural Scenes Inspired by Insect Biology | 期刊论文 | independent | — |
-| S14 | Depth information in natural environments derived from optic flow by insect motion detection system: a model analysis | 期刊论文 | independent | — |
-| S15 | Insect-Inspired Self-Motion Estimation with Dense Flow Fields—An Adaptive Matched Filter Approach | 期刊论文 | related_independent | 与 S01 存在章节内容关系，独立期刊论文 |
-| S16 | Insect-Inspired Odometry by Optic Flow Recorded with Optical Mouse Chips | 书籍章节 | independent | — |
-| S17 | Insect-Inspired Estimation of Egomotion | 期刊论文 | related_independent | 与 S02 存在扩展研究关系，独立书目；所供文件的版本类型单独核验 |
-| S18 | Function of a Fly Motion-Sensitive Neuron Matches Eye Movements during Free Flight | 期刊论文 | independent | — |
-| S19 | Wide-field, motion-sensitive neurons and matched filters for optic flow fields | 期刊论文 | related_independent | Franz & Krapp，2000；正式基准论文 |
-| S20 | Wide-Field, Motion-Sensitive Neurons and Optimal Matched Filters for Optic Flow | 技术报告 | related_independent | Franz & Krapp，1998 年 6 月；Max-Planck-Institut für biologische Kybernetik，Technical Report No. 61；与 S19 分立 |
+| S 编号 | 题名 | 文献类型 | 规范 Work 初判 | target_related_id | seed_relation_type | 版本/关系备注 |
+| --- | --- | --- | --- | --- | --- | --- |
+| S01 | Insect-Inspired Visual Self-Motion Estimation | 学位论文 | related_independent | S15 | contains_publication | 与 S15 存在章节内容关系，独立学位论文 |
+| S02 | Linear Combinations of Optic Flow Vectors for Estimating Self-Motion – a Real-World Test of a Neural Model | 会议论文 | related_independent | S17 | preliminary_of | 与 S17 存在前期研究关系，独立书目 |
+| S03 | Olfactory Neuromodulation of Motion Vision Circuitry in Drosophila | 期刊论文 | independent | null | null | — |
+| S04 | Blowfly flight characteristics are shaped by environmental features and controlled by optic flow information | 期刊论文 | independent | null | null | — |
+| S05 | Population Coding of Self-Motion: Applying Bayesian Analysis to a Population of Visual Interneurons in the Fly | 期刊论文 | independent | null | null | — |
+| S06 | A competitive disinhibitory network for robust optic flow processing in Drosophila | 期刊论文 | independent | null | null | — |
+| S07 | Sharing Receptive Fields with Your Neighbors: Tuning the Vertical System Cells to Wide Field Motion | 期刊论文 | independent | null | null | — |
+| S08 | Dynamic Signal Compression for Robust Motion Vision in Flies | 期刊论文 | independent | null | null | — |
+| S09 | Disentangling of Local and Wide-Field Motion Adaptation | 期刊论文 | independent | null | null | — |
+| S10 | Neural mechanism underlying complex receptive field properties of motion-sensitive interneurons | 期刊论文 | independent | null | null | — |
+| S11 | On the computations analyzing natural optic flow: Quantitative model analysis of the blowfly motion vision pathway | 期刊论文 | independent | null | null | 机构库文件含封面及出版版本 |
+| S12 | Near-Optimal Decoding of Transient Stimuli from Coupled Neuronal Subpopulations | 期刊论文 | independent | null | null | — |
+| S13 | Robust Models for Optic Flow Coding in Natural Scenes Inspired by Insect Biology | 期刊论文 | independent | null | null | — |
+| S14 | Depth information in natural environments derived from optic flow by insect motion detection system: a model analysis | 期刊论文 | independent | null | null | — |
+| S15 | Insect-Inspired Self-Motion Estimation with Dense Flow Fields—An Adaptive Matched Filter Approach | 期刊论文 | related_independent | S01 | included_in_thesis | 与 S01 存在章节内容关系，独立期刊论文 |
+| S16 | Insect-Inspired Odometry by Optic Flow Recorded with Optical Mouse Chips | 书籍章节 | independent | null | null | — |
+| S17 | Insect-Inspired Estimation of Egomotion | 期刊论文 | related_independent | S02 | expanded_from | 与 S02 存在扩展研究关系，独立书目；所供文件的版本类型单独核验 |
+| S18 | Function of a Fly Motion-Sensitive Neuron Matches Eye Movements during Free Flight | 期刊论文 | independent | null | null | — |
+| S19 | Wide-field, motion-sensitive neurons and matched filters for optic flow fields | 期刊论文 | related_independent | S20 | related_report | Franz & Krapp，2000；正式基准论文 |
+| S20 | Wide-Field, Motion-Sensitive Neurons and Optimal Matched Filters for Optic Flow | 技术报告 | related_independent | S19 | related_report | Franz & Krapp，1998 年 6 月；Max-Planck-Institut für biologische Kybernetik，Technical Report No. 61；与 S19 分立 |
+
+target_related_id 为可空 Seed record 外键，seed_relation_type 为可空枚举；independent 的两字段均为 null，related_independent 必须具有非空目标及类型。互逆类型固定为 contains_publication ↔ included_in_thesis、preliminary_of ↔ expanded_from、related_report ↔ related_report；目标必须存在、不得自引用，互逆关系只计一个语义关系。
+
+上述指针是初始化硬约束：P1 直接从本表生成带外键的初始化记录，P2 经 seed_id → work_id 映射生成 related_work；不得依赖后续文本算法推断、覆盖或自动改号。关系的来源核验与预置拓扑分开记录；缺文件仍保留预置关系及其核验状态。禁止将这些关系用作合并独立 Work、确认实际引用或科学结论的证据。证据冲突记为 conflicting 并生成复核任务；修改规范拓扑必须经用户批准。
 
 每条 Seed record 必须在 seed-manifest 中有映射。被去重 Upload 使用独立 upload_id，seed_id 为 null，记录原文件名、SHA-256、来源、对应 work_id、version_id、duplicate_of_upload_id 和 verification_status；不得为其另建 Seed record 或 Work。真实关系尚未核验时，相关字段为 null 并标记状态；文件缺失记录于 tasks.jsonl，不得假设可用。完整字段、文件归属和计数规则见 §4.2–§4.3、§8.3。种子表不得由运行数据自动改号或扩充；输入范围变更必须修订规范并经用户批准。
+
+### 2.3 输入准入及边界外文件拦截
+
+任何文件进入正文/参考文献深度解析、Work/Version 创建或 Assessment 提取之前，必须满足以下一种准入条件：seed（按 §2.2 核验 Seed record 和文件身份）；verified_discovery（具备冻结作用域内、连接至已准入 Seed record/Work 的合法且可核验的发现路径）。
+
+discovery_route 枚举：seed、backward_citation、forward_citation、author_publication、institution_publication、project_output。discovery_path 为有序关系边数组，每跳包含 from_entity_id、to_entity_id、discovery_route、source_id、evidence_locator、verification_status、scope_id；路径连续、端点可解析、来源及范围符合 §5–§6。实际引用边和作者/机构/项目关联分开；独立研究不要求直接引用基准论文。文件名、关键词、姓名相似及孤立 URL 不构成合法路径。evidence_route 专用于 §7.2 的科学证据路线，不能代替发现路径。
+
+未列于 §2.2 且无合格 discovery_path 的游离文件立即阻断解析链，不提取正文/参考文献、不创建有效 Upload/Work/Version 或 Assessment、不产生扩展任务；仅允许准入必需的安全文件指纹及最小身份核验。拒绝事件直接追加至 `temp/rejected_uploads.log`（UTF-8 JSONL），字段：rejection_id、upload_id、filename、sha256（无法安全取得则 null）、received_at_utc、scope_id、claimed_seed_id、attempted_discovery_path、reason_code、verification_status、review_condition、related_task_id、decided_at_utc。reason_code 固定为 seed_not_listed、seed_identity_mismatch、missing_discovery_path、unverified_discovery_path、out_of_scope、access_not_authorized、unsafe_or_unreadable_file。提供合格路径、纠正身份或取得授权后以新事件复查；不得覆盖拒绝历史。拒绝日志不是书目或引文证据。
+
+已经通过合法元数据/发现路径识别的 Work，即使某个文件被拒，仍按 DEC-08 入库；文件准入失败不得删除既有合法书目。缺失或待核验的授权种子按 §2.2 记录任务，不假设文件存在。
 
 ## 3. 局限性分类与研究问题
 
@@ -86,23 +128,88 @@ PPT 第 22 页的七个一级项目固定细分为 L01–L09。第二个一级�
 | L08 | 世界模型简单；距离统计与飞行统计缺少充分实测依据，旋转平移可能耦合 | 自然环境深度与飞行运动联合统计如何建模？自适应距离先验能否跨环境工作？ | 测量数据与统计先验、当前环境自适应分开；采样偏差、运动耦合、尺度 | 深度/轨迹实测及统计、模型推导、跨环境对比与消融 | 将固定距离先验当真实当前环境；由仿真直接证明自然飞行统计或绝对尺度可恢复 |
 | L09 | Hx 数据不足，缺少与 VS 同等假设检验 | 是否有 Hx 解剖、生理、感受野、平移选择性数据及对匹配滤波假设的直接检验？ | 丽蝇与果蝇分开；功能相似、跨模态调节、同等假设检验分开 | Hx 记录、解剖/连接组、明确统计检验和模型比较 | 以不同物种同名细胞或嗅觉调节证明原 Hx 匹配滤波假设已通过检验 |
 
-### 3.1 最小可判定条件
+### 3.1 最小可判定条件与强类型 Schema
 
-每条 Assessment 的 conditions 必须包含下列字段。数值含单位、坐标系、测量/估计对象及来源；原文未披露标记 not_reported，未知标记 unknown，不适用标记 not_applicable，不得省略字段或填入未经证实的默认值。
+所有 Assessment 的核心字段必须通过 schema.json 强类型验证；required、type、enum、数组唯一性、数值区间、条件依赖、外键检查均为强制约束。核心分类只能使用本节及 §7.2 的枚举，不接受自由文本或隐式类型转换；自由文本仅用于说明、原文证据及备注。
 
-| 字段 | 最低内容 |
+统一类型 Condition<T> 为封闭对象：
+
+    status: enum(reported, not_reported, unknown, unknown_review_required, not_applicable)
+    value: T | null
+    evidence_locator: array<Locator>
+    reason: string | null
+    unknown_since_utc: UTC timestamp | null
+    review_task_id: string | null
+
+reported 要求非空且符合 T 的 value 及支持定位；其余状态 value 必须为 null、reason 必填。not_reported 必须定位已核查的完整相关原文及说明确未披露；not_applicable 必须有不适用依据；unknown 和 unknown_review_required 必须有原始时间及复核工单。未取得全文、解析失败、OCR 错误或尚未检查不能标为 not_reported。
+
+| 条件字段 | 强类型（统一外层 Condition<T>） | 值域与约束 |
+| --- | --- | --- |
+| species | array<object> | reported 时至少一项；scientific_name:string、taxon_id:string/null、cell_type:string/null、cell_identifiers:array<string>；非生物研究标不适用 |
+| motion_type | Enum | pure_rotation、pure_translation、mixed_rotation_translation、stationary、other_specified |
+| motion_dof | object | rotation_dof、translation_dof 为 0..3 的整数；estimated_components 为去重枚举数组：rotation_axis、rotation_direction、rotation_rate、rotation_angle、rotation_3d、translation_direction、translation_relative、translation_metric、depth_relative、depth_metric |
+| known_translation | Enum | externally_known、partially_known、not_known；附条件来源 |
+| speed_range | array<QuantityRange> | 角速度、线速度、帧间角位移、线位移、采样间隔分别记录；reported 至少一项 |
+| environment | Enum | laboratory_controlled、natural_environment、indoor_structured、outdoor_structured、synthetic_simulation、reconstructed_simulation、mixed_environments、other_specified |
+| environment_details | object | dataset_ids:array<string>、scene_count:integer≥1/null、fov_deg:QuantityRange/null、distance_range:QuantityRange/null、distance_distribution:Enum（fixed、measured、statistical_prior、estimated）、scene_dynamics:Enum（static、dynamic、mixed）、distance_knowledge:Enum（known_metric、known_relative、partially_known、not_known）；未披露/未知/不适用的子字段按状态记录 |
+| texture_noise | object | stimulus_type:Enum（periodic_grating、random_pattern、natural_image、synthetic_pattern、natural_video、other_specified）、contrast、spatial_frequency、illumination、noise 为 QuantityRange/null；outlier_fraction、occlusion_fraction 为 number/null 且 0..1 |
+| scale | Enum | absolute_metric、relative_scale、direction_only、scale_unobservable；空值状态不属于实际值域 |
+| scale_source_prior | array<Enum> | inertial_metric、known_baseline、known_scene_geometry、known_camera_height、known_metric_motion、metric_range_sensor、metric_training_prior、other_metric_prior、none；reported 非空无重复，none 互斥 |
+| scale_observability | Enum | proven_under_assumptions、empirically_validated_under_assumptions、unobservable、not_demonstrated |
+| method_and_validation | object | assumptions:array<string>、validation_types:array<evidence_kind Enum>、dataset_ids:array<string>、sample_count/trial_count:integer≥1/null、baseline_ids/metric_ids/failure_conditions:array<string> |
+
+QuantityRange 固定为 quantity:Enum（angular_velocity、linear_velocity、angular_displacement、linear_displacement、sample_interval、fov、distance、contrast、spatial_frequency、illumination、noise、other_specified）、min/max:number（有限且 min≤max，单值 min=max）、unit:string、coordinate_frame:string/null、measurement_role:Enum（ground_truth、measured、estimated、assumed）、evidence_locator:array<Locator>。单位须与 quantity 相容，不猜测单位、坐标系及数值；other_specified 必须附明确定义及定位。嵌套可空字段采用相同 Condition 包装或 schema 固定的 field_states 路径映射，禁止无状态裸 null。Locator 定义见 §4.2。conditions 为上述字段的封闭对象（additionalProperties=false），同名 Assessment 投影确定性生成，不得另录矛盾值。JSON Schema 合格不等同科学门禁合格。
+
+#### 3.1.1 空值隔离及人工复核时限
+
+unknown 仅表示提取、解析、访问失败或尚未核验。首次持久化 unknown 即自动追加人工复核工单至 tasks.jsonl，含 assessment_id、field_path、scope_id、unknown_since_utc、failure_reason、来源 Version、review_condition、deadline_at_utc、review_task_id；同实体、字段、作用域的开放工单唯一，重试不得刷新起始时间或重复创建。
+
+unknown 未升级驻留上限固定为 **24 小时（UTC，自 unknown_since_utc 起）**。每次写入、任务恢复和 Checkpoint 校验时检查；到期未解决必须自动转为 unknown_review_required，保留原时间、原因及工单，标记超时和优先级。不以重建 ID、刷新时间或改成 not_reported 消除超时。离线期间不虚构后台执行，恢复时立即补做检查；存在未升级超期 unknown 不得通过有效 Checkpoint。
+
+人工复核有证据方可转 reported；核查完整相关原文确未披露方可转 not_reported；有不适用依据方可转 not_applicable；仍无法核验则维持 unknown_review_required 和未完成工单。影响主张判断的 unknown、unknown_review_required、关键 not_reported 均使 handling_level=insufficient_evidence；不影响独立子主张的缺失字段不拒收整个 Work。引用作用等非 conditions 的 unknown 按各自核验语义处理，不混入本空值枚举。
+
+### 3.2 量化证据准入与拒收阈值
+
+拒收对象是具体主张的合格证据资格，不是合法发现的 Work。Assessment 必须记录 claim_id、claim_type（theoretical、biological_mechanism、engineering_performance、engineering_trajectory、other_specified）、evidence_admission_status（eligible、insufficient_evidence、pending_review）、rejection_codes、metric_records、proof_record。
+
+统一门禁：主张必须具有与证据路线、条件相符的严密数学推导或量化实验/仿真支撑；不以与主张无关的量化数据代替证明。
+
+- 理论主张：至少一个可核验结论、完整推导定位、模型、关键假设、变量/尺度、适用条件、退化及反例边界。proof_record 包含 assumption_locators、derivation_locators、conclusion_locator、checked_by、verification_status。定性描述、无推导的公式及假说不是证明。
+- 实验/仿真、生物机制与工程效果：至少 1 项与主张直接对应的可核验量化结果（数值或可复核原始数据）、指标定义、单位、数据/刺激/仿真出处及条件；记录适用样本数/试验数、变异或不确定性及缺失状态。改善声明至少 1 个可比较基线/对照及效果量；因果主张须有适用干预或识别依据。决定性对照、样本或统计设计缺失不得凭数字本身通过。
+- 工程轨迹主张：必须有基准数据集出处（名称、版本、URL/DOI 或原文定位、序列/划分、真值来源）、运动/噪声条件、至少 1 条评估序列及 ATE 与 RPE 的明确数值/量级、定义、单位、对齐方式、RPE 时间/距离间隔、统计量和失败样本口径；数学等价指标须给出定义与等价关系，不伪造 ATE/RPE。非轨迹工程主张（如两帧旋转/平移方向、速度编码、传感器延迟）必须提供相应真值指标和数据出处，不要求不适用的轨迹指标，不得升格为轨迹性能结论。
+
+MetricRecord 类型固定：metric_id:string、metric_name:Enum（ATE、RPE_translation、RPE_rotation、rotation_geodesic_error、translation_direction_error、angular_velocity_error、linear_velocity_error、depth_error、correlation、response_amplitude、response_latency、time_constant、adaptation_gain、receptive_field_error、selectivity_index、contrast_sensitivity、effect_size、runtime、failure_rate、other_defined）、definition:string、value:number/null、unit:string、statistic:Enum（single、mean、median、rmse、std、quantile、confidence_interval、other_defined）、sample_count:integer/null、dataset_id:string/null、baseline_id:string/null、alignment:Enum（none、SE3、Sim3、scale_only、other_defined、not_applicable）、alignment_source:Enum（ground_truth_fit、external_metric_calibration、none、not_applicable）、interval:QuantityRange/null、uncertainty:object/null、evidence_locator:array<Locator>、field_states:object。metric_records 为该类型数组。数值有限且满足对应物理值域；估读图表标明方法、精度及来源；未取得数值不得编造。other_defined 不能绕过门禁。
+
+各 L 的最低定量阈值（严格理论证明按相应理论路径审核）：
+
+| L | 最低可核验阈值 |
 | --- | --- |
-| species | 物种、细胞类型及编号；非生物研究标记不适用 |
-| motion_type | 纯旋转、纯平移、混合运动、静止或其他；自由度、是否外部给定平移 known_translation、所用先验及其来源 |
-| speed_range | 角速度、线速度、帧间位移、采样间隔及单位，按研究对象分别记录 |
-| environment | 场景、视域/采样分布、距离范围、距离分布、距离是否已知、静态/动态 |
-| texture_noise | 刺激类型、对比度、空间频率、纹理、照明、噪声、外点及遮挡条件 |
-| scale | absolute_metric、relative_scale、direction_only、scale_unobservable、not_applicable 或 unknown；说明尺度来源 |
-| method_and_validation | 模型假设、样本/数据、基线、指标、结果、验证类型及失效条件 |
+| L01 | ≥1 深度/邻近度/空间信息量化指标及真值、可比较空间条件或明确任务；完整重建须有结构/深度误差与平移尺度条件 |
+| L02 | 每个声称消除依赖的因素 ≥2 个受控水平/图案条件及 ≥1 速度误差或稳定性指标；改善须有对照 |
+| L03 | ≥1 瞬态/适应量化指标；适应效应 ≥2 个可比较状态，局部/广域分离须有对应控制 |
+| L04 | ≥1 明确自然/高速/复杂刺激条件及 ≥1 量化结果；速度泛化 ≥2 个可比较速度条件且覆盖主张范围 |
+| L05 | ≥1 明确物种及 VS 细胞编号/特征，≥1 定量感受野比较或机制相关响应/连接强度数据；因果解释须有干预/比较 |
+| L06 | 每个声称恢复的运动分量 ≥1 对应误差、解码或串扰指标；混合运动主张 ≥1 混合运动验证条件；绝对尺度另过 §3.3 |
+| L07 | 幅值编码 ≥2 个真实速率/幅值水平，涵盖所主张平台区，报告幅值误差或可区分性；仅方向不能通过幅值门禁 |
+| L08 | ≥1 有出处的距离/飞行统计量及样本信息或自适应效果量；跨环境声明 ≥2 个明确不同环境及比较；绝对尺度另过 §3.3 |
+| L09 | ≥1 明确 Hx 细胞/物种及量化感受野、响应或选择性；同等假设检验须有假设、统计量/效应与比较依据 |
 
-仅对与结论相关且证据充分的条件作出处理程度判断；对关键条件未披露导致无法判断的主张，不得标记为已直接处理或部分处理。可对有明确边界的子问题作独立 Assessment。
+这些阈值是证据完整性下限，不是跨学科统一准确度或显著性门槛。特定准确度声明须按其预先定义的误差界或判据核验。
 
-同一 Work 可归入多个 L，每个 L 必须具有独立证据；不同证据路线或条件的结论分别建立 Assessment。多主题计数相加不等于独立 Work 数。
+rejection_codes 白名单：missing_fulltext_evidence、missing_rigorous_derivation、missing_quantitative_result、missing_metric_definition_or_unit、missing_dataset_provenance、missing_baseline_or_control、missing_sample_information、missing_critical_conditions、threshold_not_met、missing_trajectory_metrics、invalid_metric_alignment、missing_metric_scale_prior、scale_observability_not_demonstrated、unsupported_generalization、conflicting_evidence_unresolved、schema_invalid。任何必要门禁失败，记录代码、依据及复查条件，强制 handling_level=insufficient_evidence；不列为合格进展。可定位的失败 Assessment 留在证据矩阵与审计数据；完全无定位则仅记录任务。合格负证据及不可观测性证明仍可纳入主题表。不得据此拒收整篇 Work。
+
+### 3.3 L06/L08 绝对尺度可观测性门禁
+
+已标定单目中心投影、未知场景结构且无度量约束时，同时缩放平移与场景距离不改变图像观测。固定任意尺度、平移范数归一化、相对深度及以真值进行 Sim(3) 对齐均不能证明绝对平移尺度恢复。
+
+凡声称完整六自由度且包含绝对尺度的 L06/L08 主张，必须登记：
+
+- claims_absolute_scale:boolean，§3.1 的 scale、scale_source_prior、scale_observability、motion_dof、known_translation；scale_prior_details 为结构化数组，包含先验类型、物理量/单位、数值或标定依据、证据定位、获取阶段及独立于待估尺度的程度。
+- measurement_model、state_variables、gauge_freedoms、observability_assumptions、observability_argument_locator、degeneracy_conditions、excitation_requirements、external_measurement_sources；明确先验如何破除尺度自由度及成立、退化条件。IMU 融合、已知基线/场景、特定机动等只是潜在来源，不自动意味着尺度可观测。度量训练先验须说明训练/测试与泛化限制，不等同严格几何可观测性。
+- 经验主张必须提供未依赖真值拟合比例的度量尺度误差及实际平移误差、真值独立性、对齐方式和尺度标定来源；仅 Sim(3) 结果不是绝对尺度证据。严格理论主张必须提供尺度破除的推导及条件，不强制要求不适用的实验。
+- 无有效尺度来源（none、未披露或未知）、无可核验可辨识性说明、经验验证缺失或仅用真值拟合尺度时，禁止收录为已证实的绝对尺度主张：evidence_admission_status=insufficient_evidence，handling_level=insufficient_evidence，记录 §3.2 对应代码。Work、原主张及证据定位仍保留；旋转、方向、相对尺度的独立合格结论另建 Assessment；不可观测性证明作为合格反证。
+
+同一 Work 可归多个 L，每个 L 具有独立证据；不同路线、条件、主张分别建立 Assessment。多主题计数之和不等于独立 Work 数。
 
 ## 4. 数据库定义与基本原则
 
@@ -113,7 +220,7 @@ PPT 第 22 页的七个一级项目固定细分为 L01–L09。第二个一级�
 - ref.bib 是规范书目全集，每个有效 Work 恰有一条 BibTeX 条目。
 - ref.html 是该全集的离线文献索引及证据视图，含九张 L 表和一张 U00 表；所有有效 Work 至少出现于一张表，摘要及状态必填。
 - 所有已识别的 Work 均入库，包括无关、背景、全文不可得、书目暂定、范围外和非学术资源。相关性筛选只影响分类及已声明的扩展范围，不删除已发现书目。不能定位独立书目身份的原始引文出现项依 §4.3 保留，不制造虚假 Work。
-- 每个 Checkpoint 同步提交两份输出及对应审计数据。只有通过 §9 对账的提交才可作为有效 Checkpoint。
+- 每个 Checkpoint 同步提交两份根目录输出、§8.4 五个研究视图及对应审计数据。只有通过 §9 对账的提交才可作为有效 Checkpoint。
 
 ### 4.2 实体及固定最低字段
 
@@ -121,22 +228,22 @@ PPT 第 22 页的七个一级项目固定细分为 L01–L09。第二个一级�
 
 | 实体 | 固定最低字段 |
 | --- | --- |
-| Seed mapping | seed_id、upload_id、work_id、version_id、relation_type、verification_status、notes；去重审计见 §2.2 |
-| Upload | upload_id、filename、sha256、pages、text_extractability、source、received_at、internal_batch_id（仅内部，不在正文或 HTML 展示）、work_id、version_id、duplicate_of_upload_id、relation_type、verification_status、notes |
+| Seed mapping | seed_id、upload_id、work_id、version_id、target_related_id、seed_relation_type、relation_type、verification_status、notes；去重审计见 §2.2 |
+| Upload | upload_id、filename、sha256、pages、text_extractability、source、received_at、internal_batch_id（仅内部，不在正文或 HTML 展示）、work_id、version_id、duplicate_of_upload_id、discovery_route、discovery_path、admission_status、relation_type、verification_status、notes |
 | Work | work_id、work_key（BibTeX key）、canonical_title、title_variants、authors、document_type、publication_status、year、publication_date、venue、volume、number、pages/eid、publisher、identifiers、doi、url、language、discovery_sources、identity_confidence、verification_status、merge_history、fulltext_status、abstract_status、abstract_source、abstract_items、license、u00_reasons、review_condition、dimension_status |
-| Version | version_id、work_id、version_type、version_date、identifiers、source、url、file_records（sha256、pages、text_extractability、取得时间、许可、解析状态）、verification_status、related_version_ids |
+| Version | version_id、work_id、version_type、version_date、identifiers、source、url、file_records（sha256、pages、text_extractability、取得时间、许可、解析状态）、verification_status、related_version_ids、version_materialization |
 | ReferenceOccurrence | occurrence_id、citing_work_id、version_id、reference_label、section、page、raw_reference、raw_fingerprint、candidate_ids、cited_work_id、identity_confidence、verification_status、source、failure_reason |
 | CitationEdge | edge_id、citing_key、cited_key、occurrence_ids、discovery_sources、verification_status、citation_roles、context_locators、date；方向恒为 citing → cited |
 | Person | person_id、display_name、name_variants、orcid、external_ids、identity_confidence、verification_status、affiliation_history（org_id、角色、起止时间及依据）、sources |
 | Organization | org_id、canonical_name、name_variants、raw_affiliations、ror、external_ids、organization_level、parent_org_id、historical_relations、valid_from、valid_to、verification_status、sources |
 | Project | project_id、canonical_name、grant_id、org_ids、person_ids、start_date、end_date、objective、url、output_work_ids、project_relation、evidence_locator、verification_status、sources |
-| Assessment | assessment_id、work_id、work_key、limitation_id、relation_type、handling_level、evidence_level、evidence_kind、evidence_route、conditions、species、motion_type、environment、scale、method、results、baseline、effect、remaining_limitations、counter_evidence、counter_evidence_types、evidence_locator、fulltext_status、verification_status、citation_roles、project_relation、statement_basis、reviewer、date、biological_implications、engineering_implications |
+| Assessment | assessment_id、work_id、work_key、limitation_id、claim_id、claim_type、relation_type、handling_level、evidence_level、evidence_kind、evidence_route、conditions、species、motion_type、environment、scale、method、results、baseline、effect、metric_records、proof_record、evidence_admission_status、rejection_codes、claims_absolute_scale、scale_prior_details、measurement_model、state_variables、gauge_freedoms、observability_assumptions、observability_argument_locator、degeneracy_conditions、excitation_requirements、external_measurement_sources、remaining_limitations、counter_evidence、counter_evidence_types、evidence_locator、provenance_upload_ids、provenance_version_ids、assessment_status、superseded_by_assessment_id、cascade_event_id、discard_reason、fulltext_status、verification_status、citation_roles、project_relation、statement_basis、reviewer、date、biological_implications、engineering_implications |
 | Alias | alias_id、entity_type、raw_identifier、normalized_identifier、target_id、historical_key、reason、source、verification_status、date |
 | Query / Task / Checkpoint / Scope | 采用 §5.6、§6.2、§8.3、§9.1 定义的固定字段 |
 
-Assessment 的 species、motion_type、environment、scale 是 conditions 对应字段的确定性投影，不得独立录入冲突值。evidence_locator 为数组；每项含 source_id、version_id（适用时）、URL/标识、页码/节/图/式/表/段落中适用的位置、访问日期及证据说明。文献全文、摘要、引用关系、项目关系的核验状态独立记录。
+Assessment 的 species、motion_type、environment、scale 是 conditions 对应字段的确定性投影，不得独立录入冲突值。evidence_locator 为数组；每项含 source_id、version_id（适用时）、upload_id（适用时）、URL/标识、页码/节/图/式/表/段落中适用的位置、访问日期及证据说明。文献全文、摘要、引用关系、项目关系的核验状态独立记录。
 
-关系类型固定为 cites、authored_by、affiliated_with、participates_in、funded_by、project_output、version_of、related_work、related_to_limitation；发表机构关联必须带时间及来源。Work 间 related_work 的子类型固定为 preliminary_of、expanded_by、related_report、included_in_thesis、translation_of、correction_of、other_verified_relation、unverified_relation；不同 Work 不能仅以 version_of 替代实质出版关系。共作者或同机构不证明实际引用、方法继承或共同参加项目。
+关系类型固定为 cites、authored_by、affiliated_with、participates_in、funded_by、project_output、version_of、related_work、related_to_limitation；发表机构关联必须带时间及来源。Work 间 related_work 的子类型固定为 preliminary_of、expanded_from、contains_publication、included_in_thesis、related_report、translation_of、correction_of、other_verified_relation、unverified_relation；不同 Work 不能仅以 version_of 替代实质出版关系。共作者或同机构不证明实际引用、方法继承或共同参加项目。
 
 通用状态枚举：
 
@@ -147,21 +254,26 @@ Assessment 的 species、motion_type、environment、scale 是 conditions 对应
 | document_type | journal_article、conference_paper、preprint、thesis、technical_report、book、book_chapter、patent、software、dataset、project_resource、web_resource、personal_communication、other |
 | publication_status | published、accepted、preprint、unpublished、withdrawn、retracted、unknown、not_applicable |
 | version_type | version_of_record、accepted_manuscript、preprint、submitted_manuscript、institutional_copy、translation、corrected_version、other、unknown |
+| version_materialization | bibliographic_only、file_available、structured_fulltext、partial |
+| admission_status | admitted、pending_identity；拒绝文件只在 rejected_uploads.log 记录 rejected |
+| assessment_status | active、pending_review、merged、discarded；merged 须有 canonical 指针，discarded 须有废弃理由 |
 | text_extractability | extractable、partial、image_only、unreadable、unknown、not_applicable |
 | Upload / Seed mapping 的 relation_type | canonical、additional_version、duplicate_upload、unresolved |
 | organization_level | university、research_institute、faculty、department、laboratory、research_group、research_center、other、unknown |
 
 confirmed 或 verified 必须有支持依据。撤稿及更正记录保留原书目与状态，不将撤稿结果当作有效的正面结论。
 
+所有实体核心 ID、外键、key、枚举与时间为 string（符合固定格式/枚举）；标志为 boolean；计数为非负 integer；测量为有限 number；多值字段为带 item schema 的 array；嵌套关系、证据及条件为封闭 object；null 仅在字段明确可空且具有状态依据时允许。Assessment 的 claim_id 为稳定字符串，§7.2 多标签为去重枚举数组，handling_level、evidence_level、evidence_route、evidence_admission_status、assessment_status 为单值枚举；核心条件及指标按 §3.1–§3.3。provenance_upload_ids、provenance_version_ids 为唯一外键数组，superseded_by_assessment_id 为可空 Assessment 外键，cascade_event_id 为可空事务 ID；discard_reason 为可空说明。scale_prior_details 每项为 object（prior_type:Enum、quantity:QuantityRange/null、calibration_basis:string、independence_basis:string、acquisition_stage:Enum[training, calibration, runtime, evaluation, other_specified]、conditions:string、evidence_locator:array<Locator>）；claims_absolute_scale 为 boolean，measurement_model 为 string/null，state_variables、gauge_freedoms、observability_assumptions、degeneracy_conditions、excitation_requirements、external_measurement_sources 为结构化对象数组（description:string、evidence_locator:array<Locator>），observability_argument_locator 为 Locator 数组；绝对尺度主张必须满足 §3.3，其他主张按不适用状态处理。proof_record 为 §3.2 的 object/null。字段缺失/不适用理由按 §3.1 记录。schema.json 必须实现字段级校验与跨实体语义检查，不把任何核心枚举降级为自由文本。
+
 ### 4.3 书目身份归一化、去重与计数
 
 1. 优先使用可核验的 DOI 或稳定出版标识。DOI 归一化：去除外围空白、doi: 前缀及 http(s)://doi.org/、http(s)://dx.doi.org/ 解析器前缀；解析 URL 时将路径内合法百分号编码解码一次，去除解析器 URL 的查询参数和片段；保留 DOI 本身有效标点，禁止盲目删除末尾字符；ASCII 字母转小写并核对 DOI 注册记录的题名、作者、年份及类型。原始 DOI 与规范 DOI 同时存入别名索引；错误或冲突 DOI 不自动合并。
 2. 无 DOI 文献按规范化题名、作者/机构作者、年代、出版物、卷页、报告编号/ISBN/专利号等组合核验。Unicode NFC/NFKC、空白、大小写、重音、连字符、OCR 与译名差异仅用于匹配候选，原始题名和姓名必须保留。模糊匹配不得单独作为合并依据；冲突交人工复核。
-3. 相同字节内容只保留一个文件内容身份；相同 Work 的不同 Version 均保留。作者稿、镜像、正式版的对应关系依证据确认；具有独立出版身份的会议论文、期刊扩展版、章节、学位论文及 §2.2 指定的独立书目不得因内容相似而误合并。已去重 Upload 按 §2.2 和 §8.3 审计；其映射指向既有实体。
+3. 相同字节内容只保留一个文件内容身份；相同 Work 的不同 Version 均保留。作者稿、镜像、正式版的对应关系依证据确认；具有独立出版身份的会议论文、期刊扩展版、章节、学位论文及 §2.2 指定的独立书目不得因内容相似而误合并。已去重 Upload 按 §2.2、§8.3 审计，指向既有实体并强制执行 §1.3 级联。
 4. 能识别独立书目但字段不足或存在合并疑义的 Work 使用暂定 key、真实已知字段和 identity_confidence，进入 ref.bib 与 U00。无法建立独立身份的原始引文标记 unresolved，保留 occurrence_id、原始字符串、指纹、查询记录及重试入口，不计为 Work。项目实体与可独立引用的项目资源分开。
-5. 发现已存在 Work 时仅补充来源、Version、引文边、缺失字段和未完成任务。经核验合并重复 Work 时，保留被合并 work_id、历史 key 与迁移证据，更新全部外键、合并关系及评估；不删除原始引文出现项、失败记录和历史 Checkpoint。
+5. 发现已存在 Work 时仅补充来源、Version、引文边、缺失字段和未完成任务。经核验合并重复 Work 时，保留被合并 work_id、历史 key 与迁移证据，更新全部外键、合并关系及评估，执行 §1.3 级联；不删除原始引文出现项、失败记录和历史 Checkpoint。
 6. BibTeX key 使用第一作者姓氏的 ASCII 转写（保留原姓名于 author）加四位出版年，如 Kern2005。机构作者采用其已核验的规范短名 ASCII 转写；转写去除组合重音及非 ASCII 标点，空白转为下划线，无法可靠转写使用稳定的 ID 后缀。不知道作者或年份时使用 Temp 加不可复用的 work_id 安全片段，标记暂定。冲突按首次分配顺序使用 a、b、…、z、aa、ab… 后缀；已分配 key 永不因插入或排序重排，合并及必要纠错保留历史别名，禁止复用废弃 key。
-7. 计数：Seed record 数仅由 §2.2 得出；Upload 数为 uploads 与 seed-manifest 中去重审计 Upload 的唯一 upload_id 并集；文件数为已核验非空 SHA-256 的不同值数（缺失哈希单列）；Version 数为有效 version_id 数；规范 Work 数为有效 work_id 数（confirmed 与暂定分别报告，已合并别名及 unresolved occurrence 不计）；引文出现项、唯一有向边、Assessment、主题表行数分别统计。
+7. 计数：Seed record 数仅由 §2.2 得出；Upload 数为 uploads 与 seed-manifest 中去重审计 Upload 的唯一 upload_id 并集；文件数为已核验非空 SHA-256 的不同值数（缺失哈希单列）；Version 数为有效 version_id 数；规范 Work 数为有效 work_id 数（confirmed 与暂定分别报告，已合并别名及 unresolved occurrence 不计）；引文出现项、唯一有向边、有效 Assessment（active，按 evidence_admission_status 分组）、pending_review、merged/discarded 审计记录、拒绝文件事件及主题表行数分别统计。
 
 ## 5. 文献发现与递归检索
 
@@ -169,7 +281,7 @@ confirmed 或 verified 必须有支持依据。撤稿及更正记录保留原书
 
 ### 5.1 阶段 A：种子导入
 
-- 按 §2.2 建立 Seed record 与 seed-manifest、Upload、Work、Version 映射；核验文件可读性、完整性、哈希及版本，提取作者、发表时机构、出版信息和摘要。
+- 按 §2.2 固定种子拓扑、建立 Seed record 与 seed-manifest、Upload、Work、Version 映射，先执行 §2.3 准入；核验文件可读性、完整性、哈希及版本，提取作者、发表时机构、出版信息和摘要。
 - 按 §4.3 识别重复与相关独立书目；已去重 Upload 按 §2.2 保存，不另建 Work；PPT 仅为分类来源，不作为论文引用，不建立 Work。
 - 所有种子进入处理队列；文件不可得而身份可确认时仍入库，记录缺口。
 - 载入既有规范数据、历史 key 和任务状态，按 §8 生成输出。
@@ -217,8 +329,8 @@ confirmed 或 verified 必须有支持依据。撤稿及更正记录保留原书
 1. 载入规范数据、Seed record 映射和未完成任务。
 2. 按广度优先处理适用的向后引文队列，归一化发现对象并生成任务。
 3. 对已冻结的当前工作集合处理适用的施引、作者、机构及项目扩展任务。
-4. 每个新增 Work 执行去重、入库及任务登记，返回第 2 步；已存在 Work 补充新增关系，不重复已成功的同参数查询。
-5. 对已发现 Work 执行主题评估并生成十表视图；检索与评估允许交错，阶段门禁按 §10。
+4. 每个新增 Work 执行发现路径核验、文件准入（§2.3）、去重级联（§1.3）、入库及任务登记，返回第 2 步；已存在 Work 补充新增关系，不重复已成功的同参数查询。
+5. 对已发现 Work 执行强类型、量化及尺度门禁，生成十表及 §8.4 五个研究视图；检索与评估允许交错，阶段门禁按 §10。
 6. 保存并校验 Checkpoint；只要存在适用且未完成的任务，就继续在固定作用域内处理；闭包及停止声明依据本节条件。
 
 采用分阶段扩展、完整递归目标和持久化队列。不得未经批准设置最大深度、每篇文献数量上限、仅处理种子施引者或只保留正面/相关结果。记录最短发现距离及来源链；优先级只决定调度顺序。每个任务以实体、任务类型、scope_id、来源、规范参数及快照版本确定身份，使用持久化 visited/缓存索引；新发现的关系或未完成维度仍生成适用任务。
@@ -298,7 +410,7 @@ fulltext_status 固定为 pending、available_unverified、available_verified、
 
 ### 7.2 固定证据矩阵
 
-每条 Assessment 绑定一个 limitation_id 和一个 evidence_route，独立记录条件及证据定位。多标签字段为数组、同一标签不重复；单值字段不可同时赋多个互斥状态。跨路线证据分别建立 Assessment，不进行未经验证的外推。
+每条 Assessment 绑定一个 limitation_id、一个 evidence_route、一个 claim_id，独立记录 §3.1 强类型条件及证据定位，执行 §3.2–§3.3 门禁。多标签字段为数组、同一标签不重复；单值字段不可同时赋多个互斥状态。跨路线证据分别建立 Assessment，不进行未经验证的外推。
 
 | 字段 | 类型 | 固定枚举及含义 |
 | --- | --- | --- |
@@ -312,13 +424,18 @@ fulltext_status 固定为 pending、available_unverified、available_verified、
 | counter_evidence | 布尔值 | true、false；未取得证据时 false 不表示不存在反例 |
 | counter_evidence_types | 多标签 | negative_result、counterexample、replication_failure、cross_species_conflict、cross_condition_conflict、methodological_conflict |
 | statement_basis | 单值 | author_explicit（原作者明确主张）、reviewer_inference（有依据的分析推断）、unverified_hypothesis（未验证猜想） |
+| evidence_admission_status | 单值 | eligible、insufficient_evidence、pending_review；判定按 §3.2–§3.3 |
+| claim_type | 单值 | theoretical、biological_mechanism、engineering_performance、engineering_trajectory、other_specified |
+| assessment_status | 单值 | active、pending_review、merged、discarded；级联见 §1.3 |
+| rejection_codes | 多标签 | §3.2 白名单；不足证据必须记录原因 |
+
 | 摘要/全文状态 | 单值 | 见 §6.3 |
 | U00 原因 | 多标签 | 见 §8.2 |
 
 强制判定门禁：
 
 - 每条 Assessment 必须具有可定位的证据条目（具体 Version 的页码、节、图、式、表、段落或精确 URL/定位）。无法定位的 Work 保留待评估任务，不生成虚假 Assessment。
-- directly_addressed_under_conditions、partially_addressed 必须具有与路线一致的全文结果或等价的合法原始研究证据、符合 §3.1 的最小条件、明确处理对象和结果、证据定位以及未覆盖条件。仅讨论/假说只能支持对应假说或提出未验证等状态；仅摘要/书目不能满足该门禁。
+- directly_addressed_under_conditions、partially_addressed 必须具有与路线一致的全文结果或等价合法原始证据、符合 §3.1 强类型条件、通过 §3.2 量化/推导及适用的 §3.3 尺度门禁、明确处理对象和结果、证据定位及未覆盖条件。仅讨论/假说且无严格推导或量化支撑者只能作为候选、handling_level=insufficient_evidence；原作者的未验证假说在说明及 statement_basis 中保留。仅摘要/书目不能满足门禁。
 - evidence_level 表示来源及内容类型，不是跨学科绝对质量排名。理论证明、仿真、神经因果实验和真实工程实验按各自适用域评价；不由单项成功推及全场景。
 - counter_evidence 为 true 时必须记录具体类型、相反结论、适用条件及依据；不得用剩余局限字段代替负证据。互相矛盾的 Assessment 分别保存，说明冲突而非删除。
 - 引用关系不等于引用作用，只有已核验正文引用语境方可确认具体作用；索引只能证明索引支持的边。项目关系不从共同署名或机构归属直接推出。
@@ -364,7 +481,7 @@ UTF-8、语义化 HTML、响应式布局，可离线打开，无登录、CDN 或
 | 摘要 | 中文概括及许可允许的原摘要、状态、依据版本、概括者与日期 |
 | 来源链路 | Seed record、施引/被引 key、作者/机构/项目路径及来源 |
 | 研究问题、方法、结果 | 当前 L 对应的具体内容、基线与指标 |
-| Assessment | 路线、关系类型、处理程度、证据等级、最小条件、效果、剩余问题、负证据、研究启示 |
+| Assessment | 路线、关系类型、处理程度、证据等级、强类型条件、指标/推导、量化及尺度门禁、拒收原因、效果、剩余问题、负证据、研究启示 |
 | 引用及作用 | 实际引文关系、作用、语境、核验状态 |
 | 研究项目 | 项目名称、机构、时间、证据链接及关系 |
 | 证据与处理状态 | 原文定位、全文/摘要状态、核验者及日期 |
@@ -383,7 +500,7 @@ U00 固定保留 BibTeX key、题名/作者/年份/来源、作者及机构、�
 | out_of_scope | 范围外 |
 | duplicate_pending_merge | 重复待合并 |
 
-duplicate_pending_merge 仅指身份未定的 Work 合并疑义，不是已经去重的 Upload。复查条件必须指出缺失证据、待办任务或明确不再展开的范围依据。某 Work 获得至少一个合格主题 Assessment 时进入对应 L 表并从 U00 移除，保留既有 key、审计历史及其他未完成任务。U00 与所有主题表互斥；完整集合对账按 §9.2。
+duplicate_pending_merge 仅指身份未定的 Work 合并疑义，不是已经去重的 Upload。复查条件必须指出缺失证据、待办任务或明确不再展开的范围依据。某 Work 获得至少一个 assessment_status=active 且 evidence_admission_status=eligible 的实质相关 Assessment（含合格反证，不含背景/候选）时进入对应 L 表并从 U00 移除，保留既有 key、审计历史及其他未完成任务。U00 与所有主题表互斥；完整集合对账按 §9.2。
 
 ### 8.3 temp/ 数据及日志
 
@@ -392,6 +509,9 @@ duplicate_pending_merge 仅指身份未定的 Work 合并疑义，不是已经�
     temp/
       seed-manifest.jsonl          # Seed mapping；去重 Upload 的唯一完整审计记录
       uploads.jsonl                # 保留的非去重 Upload 规范记录
+      rejected_uploads.log         # 文件准入拒绝事件（JSONL）
+      cascade-events.jsonl         # 去重/合并级联事务及审计记录
+      work-relations.jsonl         # 独立 Work 关系及固定种子外键映射
       works.jsonl                  # 有效及历史 Work、状态、摘要
       versions.jsonl               # Version、文件内容身份及合法来源
       aliases.jsonl                # 标识、题名变体、历史 key 及合并映射
@@ -406,6 +526,12 @@ duplicate_pending_merge 仅指身份未定的 Work 合并疑义，不是已经�
       schema.json                  # 字段定义、类型、枚举、主外键、schema_version
       risk-register.md             # 风险登记
       change-log.md                # 规范数据及状态迁移、合并和范围变更
+      exports/                     # §1.1 研究问题的确定性视图
+        citation_graph.json
+        evidence_matrix.csv
+        research_entities.json
+        research_paths.json
+        research_implications.csv
       snapshots/
         scope.json                 # 当前活动作用域的规范执行参数
         scopes/                    # 不可变的各 scope_id JSON 快照
@@ -416,13 +542,15 @@ Seed mapping 与去重 Upload 记录通过 record_type（seed_mapping、duplicat
     upload_id | filename | sha256 | pages | work_id | version_id |
     duplicate_of_upload_id | relation_type | verification_status | notes
 
+work-relations.jsonl 最低字段：relation_id、from_work_id、to_work_id、relation_type、inverse_relation_type、source_seed_ids、evidence_locator、verification_status、scope_id；种子指针由 §2.2 确定性生成，互逆关系以同一 relation_id 统计。cascade-events.jsonl 最低字段：cascade_event_id、scope_id、checkpoint_id、trigger_upload_id、canonical_upload_id、affected_work_ids、affected_version_ids、affected_assessment_ids、merged_assessment_map、discarded_assessment_ids、pending_review_ids、affected_edges、before_after_counts、reason、validation_results、transaction_status（committed、rolled_back）、created_at_utc；与 §1.3 级联保持同一事务。rejected_uploads.log 按 §2.3 追加事件，不包含受限原文。
+
 scope.json 字段固定为 scope_id、schema_version、cutoff_at、cutoff_at_utc、index_observed_at、sources（§6.1 准入表）、document_types、languages、date_range、institution_scope（§5.5 关键词/检索式/层级表）、expansion_policy、exclusions、access_and_license、resource_limits、budget、approval、created_at。活动 scope 变更通过新 scope_id 和不可变 scopes 记录追踪。
 
 Checkpoint 清单字段固定为 checkpoint_id、scope_id、parent_checkpoint_id、schema_version、created_at_utc、task_cursor_state、query_log_high_watermark、counts、coverage、unresolved_tasks、failure_reasons、artifact_hashes、validation_results、status。status 仅为 valid 或 invalid；有效性须满足 §9。保存 Git 提交与 Checkpoint 的对应关系（可由 Git 历史及 Checkpoint ID 定位，不在同一提交内嵌该提交自身哈希）。
 
 查询前必须检查 ref.bib、works、aliases、原始引文指纹、queries 和 tasks；缓存键为规范实体 ID、任务类型、source_id、API 版本、规范化参数、scope_id 与快照版本。相同键下已成功的查询复用结果，不再次访问来源；仅补漏、冲突核验、失败重试或快照更新允许重新查询并写明原因。合并 Work 时别名和已完成查询状态随映射迁移，既有新关系或未完成任务仍须处理。
 
-Checkpoint 提交前统一生成并校验 ref.bib、ref.html 与对应 temp 状态，失败不得标记有效；恢复时从最后有效 Checkpoint 的游标及任务事件继续。temp 审计数据纳入 Git，不得因阶段完成清空、覆盖不可变快照或将其作为普通缓存删除。受限全文、认证信息和私人数据按 §6.3 留于合法本地缓存；不提交包含秘密的查询参数、路径或错误日志。
+Checkpoint 提交前统一生成并校验 ref.bib、ref.html、§8.4 五个研究视图与对应 temp 状态，失败不得标记有效；恢复时从最后有效 Checkpoint 的游标及任务事件继续。temp 审计数据纳入 Git，不得因阶段完成清空、覆盖不可变快照或将其作为普通缓存删除。受限全文、认证信息和私人数据按 §6.3 留于合法本地缓存；不提交包含秘密的查询参数、路径或错误日志。
 
 风险登记册字段固定为 risk_id、风险、触发条件、影响、控制措施、状态、责任角色、证据/复查条件。最低风险项：
 
@@ -438,6 +566,25 @@ Checkpoint 提交前统一生成并校验 ref.bib、ref.html 与对应 temp 状�
 | R08 | 项目关系证据不足 | 官方记录、资助致谢与间接线索分级 |
 | R09 | HTML 对账失败 | §9.2 集合校验，不通过禁止有效提交 |
 | R10 | 重复合并误判 | DOI/书目联合核验、历史别名及可追溯迁移 |
+| R11 | 游离文件或伪造发现路径 | §2.3 解析前阻断及拒绝日志 |
+| R12 | Assessment 级联丢证据或重复 | §1.3 原子级联、外键及反证对账 |
+| R13 | 量化门禁或尺度假设误判 | §3.2–§3.3 逐主张核验与拒收代码 |
+| R14 | 非法枚举或 unknown 超时 | §3.1 强类型及复核工单 |
+| R15 | 研究视图与规范库不一致 | §8.4、§9.2 导出对账 |
+
+### 8.4 研究问题交付视图及格式
+
+固定路径见 §1.1。所有视图均含 scope_id、checkpoint_id、schema_version（JSON 顶层；CSV 每行），使用 UTF-8、LF、确定性排序、有限数值、无凭据/受限正文；JSON 为合法对象及数组，CSV 为 RFC 4180 风格逗号分隔、固定表头、正确引用/转义，复合字段以合法 JSON 编码在单元格内，空值按 schema 状态表示。每次有效 Checkpoint 的视图均由规范实体生成，禁止手工补填不在源记录中的事实。
+
+| 文件 | 固定结构与最小字段 |
+| --- | --- |
+| citation_graph.json | nodes（work_id、work_key、canonical_title、identity_confidence、publication_status）；edges（edge_id、citing_work_id、cited_work_id、citing_key、cited_key、verification_status、citation_roles、context_locators、occurrence_ids、discovery_sources）；independent_progress（assessment_id、work_id、limitation_id、relation_type）；未解析端点单列 unresolved_occurrences，不作虚假边 |
+| research_entities.json | people、organizations、projects、work_refs、relations；关系字段 relation_id、relation_type、from_id、to_id、valid_from、valid_to、verification_status、evidence_locator；分别区分发表时隶属、历史隶属、资助、项目参与及实际成果 |
+| evidence_matrix.csv | 固定列 scope_id,checkpoint_id,schema_version,assessment_id,work_id,work_key,limitation_id,claim_id,claim_type,evidence_route,relation_type,handling_level,evidence_level,evidence_kind,evidence_admission_status,rejection_codes,conditions,metric_records,proof_record,claims_absolute_scale,scale_prior_details,observability_argument_locator,effect,remaining_limitations,counter_evidence,counter_evidence_types,evidence_locator,provenance_upload_ids,provenance_version_ids,verification_status,reviewer,date；一行一个 active Assessment，含不足证据主张；pending_review/merged/discarded 不计有效行，保留于审计源 |
+| research_paths.json | paths（path_id、limitation_id、assessment_id、seed_id、work_id、ordered_steps、path_type、verification_status、evidence_locators、counter_evidence、gap_reason）；每步含 from_id、to_id、relation_id、relation_type、source_id、locator；至少保存各已核验发现路径类型的代表路径，不枚举全部可能组合；不将种子预置关系或作者关联伪作引用 |
+| research_implications.csv | 固定列 scope_id,checkpoint_id,schema_version,assessment_id,work_key,limitation_id,evidence_route,evidence_admission_status,biological_implications,engineering_implications,conditions,remaining_limitations,statement_basis,evidence_locator；每个 active Assessment 一行，未验证启示明确标记，不得据不足证据宣称有效 |
+
+全部节点、边、Assessment、路径、启示必须可按规范 ID 回溯至 temp 原始数据与证据，覆盖不足及 pending_review 状态在 Checkpoint 报告单列。citation_graph.json 的实际引用边与 citation-edges.jsonl 有效边集合相等；work-relations 不混入 cites。两份 CSV 的 assessment_id 集合等于 active Assessment 集合；research_entities 的实体/关系集合与规范记录对账；research_paths 的每一跳核验端点、来源及关系类型，缺口显式记录。校验五文件存在、格式、表头、排序、外键、计数、哈希及作用域一致性，结果写入 Checkpoint validation_results。
 
 ## 9. 质量控制、状态及验收
 
@@ -460,9 +607,9 @@ Checkpoint 提交前统一生成并校验 ref.bib、ref.html 与对应 temp 状�
 | unavailable_final | 已核验不可得，记录原因、证据及复查条件；不等同已完成覆盖 |
 | not_applicable | 经核验不适用，记录理由 |
 
-tasks.jsonl 最低字段：task_id、entity_type、entity_id、task_type、scope_id、source_id、normalized_parameters、task_state、cursor、dependency_ids、query_ids、attempt_count、error_code、failure_reason、retry_at、review_condition、created_at_utc、updated_at_utc、checkpoint_id、event_sequence。状态变更以追加事件保留历史，当前状态取相同 task_id 最新事件；已完成状态必须引用支持记录。
+tasks.jsonl 最低字段：task_id、entity_type、entity_id、task_type、scope_id、source_id、normalized_parameters、task_state、cursor、dependency_ids、query_ids、attempt_count、error_code、failure_reason、retry_at、review_condition、created_at_utc、updated_at_utc、checkpoint_id、event_sequence、assessment_id、field_path、unknown_since_utc、deadline_at_utc、review_task_id、priority、overdue。人工复核工单按 §3.1.1 生成，其他任务不适用字段按 schema 标记。状态变更以追加事件保留历史，当前状态取相同 task_id 最新事件；已完成状态必须引用支持记录。
 
-种子验收以 §2.2 为准：逐条核对 seed-manifest 映射、独立书目及版本/相关关系；去重 Upload 的原始哈希、来源和映射完整保留；计数严格按 §4.3，不得用 Seed record 数替代 Work 数。文件缺失及身份疑义必须有任务记录。
+种子验收以 §2.2 为准：逐条核对 seed-manifest 映射、独立书目及版本/相关关系；去重 Upload 的原始哈希、来源和映射完整保留；计数严格按 §4.3，不得用 Seed record 数替代 Work 数。文件缺失及身份疑义必须有任务记录；核验 §2.2 所有预置外键、互逆类型及 Work 分立身份、§2.3 准入日志和 §1.3 基数与级联。
 
 ### 9.2 自动校验和人工抽查
 
@@ -478,6 +625,11 @@ tasks.jsonl 最低字段：task_id、entity_type、entity_id、task_type、scope
 - 按 §7.2 检查 Assessment 条件、路线、等级、证据定位、负证据和处理程度；人工抽查原文、摘要概括、引用语境、身份消歧、机构历史及项目关系；发现错误建立纠正任务。
 - HTML 离线可读、可搜索、筛选、排序及展开；转义不可信外部内容，不执行外部脚本，不泄漏受限原文、秘密或私人数据。
 - 相同结构化输入及快照重复生成，输出字节一致。通过中断、API 限流、解析失败、重复导入及恢复测试，必须从最后有效 Checkpoint 继续，保留任务和日志，无重复条目、遗漏或错误完成状态。
+- §1.3：所有有效 Work/Version/Upload 满足基数及唯一所有者，去重指针无环；核对级联前后有效 Assessment、证据与反证、外键及审计记录；失败事务不得部分提交。
+- §2.2–§2.3：种子预置关系逐项对账；边界外无合法发现路径文件必须在解析前被拒且仅留审计事件，合法发现的 Work 不因文件被拒而丢失。
+- §3.1–§3.3：强类型校验拒绝非法枚举、错误类型及无状态空值；unknown 必须有工单且无未升级超期记录；证据不足主张强制降级。逐项核验工程轨迹指标、L06/L08 的尺度先验、可观测性和真值对齐口径，不将相对尺度判为绝对尺度。
+- §8.4：五个导出文件及格式、集合、主外键、状态、哈希与规范数据一致；引用/主体/路径关系不得混同，合格主题表只包含 eligible 的实质 Assessment 支持的 Work。
+
 - 未通过任一强制校验的产物不得作为有效 Checkpoint 或完整覆盖证据。
 
 ### 9.3 P1 样本门禁
@@ -490,11 +642,13 @@ tasks.jsonl 最低字段：task_id、entity_type、entity_id、task_type、scope
 | 无 DOI 技术报告 | 以报告编号、机构、题名、作者、日期等建立可核验身份；不杜撰 DOI；分别核验版本和与相关 Work 的关系；生成书目、HTML 落位及日志 |
 | 重复 Upload/Version 关系 | 复核文件指纹、同 Work 不同 Version、独立相关出版物的区别；去重 Upload 只留审计映射，引用和身份合并不丢失关系；验证重跑不重复入库 |
 
+P1 还必须执行以下受控正/反例测试，不将虚构测试数据写入正式库：非法枚举及类型、not_reported 与 unknown 的隔离、首次自动复核工单及 24 小时超时升级（可控测试时钟）、游离文件拒收和合法发现路径准入、种子硬编码外键及逆向一致性、Assessment 等价合并/无依据废弃/独立反证保留及级联回滚、量化证据缺失和工程轨迹指标缺失降级、无度量先验的单目绝对尺度主张拒收与合法尺度证据/不可观测性反证通过、五个研究视图格式及 ID 对账。任何门禁失败阻断 P2，记录失败及重试入口。
+
 所有样本均执行 Upload/Work/Version 映射、解析、去重、HTML 落位、日志与 K/T/U 对账，并验证来源准入及 Checkpoint 恢复。样本产物使用隔离验证目录或明确隔离的样本 scope，不污染正式书目。失败必须记录具体错误、证据、影响及重试入口；未通过门禁不得进入 P2，不能以失败记录代替通过。合规不可得情况通过替代样本验证能力，同时保留原样本的缺口记录。
 
 ### 9.4 Checkpoint 报告与最终结论模板
 
-每个有效 Checkpoint 报告 scope_id、checkpoint_id、输入及新增/重复/待消歧 Work、§4.3 各计数、引文边、元数据/全文/摘要/参考文献/施引/作者/机构与项目/Assessment 各维度覆盖、L 与 U00 数量、分页对账、风险、剩余任务、失败原因和复查条件。各完成度明确分子、分母和不适用项；未解决或受限项不得计入 verified_complete。
+每个有效 Checkpoint 报告 scope_id、checkpoint_id、输入及新增/重复/待消歧 Work、§4.3 各计数、引文边、元数据/全文/摘要/参考文献/施引/作者/机构与项目/Assessment 各维度覆盖、L 与 U00 数量、分页对账、风险、剩余任务、失败原因和复查条件。报告必须包括五个视图的路径、哈希、记录数及对账结果，拒绝文件与级联计数、证据拒收代码分布、绝对尺度门禁结果、unknown 工单及超期计数。各完成度明确分子、分母和不适用项；未解决或受限项不得计入 verified_complete。
 
 最终报告逐项采用固定结论模板：
 
@@ -520,13 +674,13 @@ tasks.jsonl 最低字段：task_id、entity_type、entity_id、task_type、scope
 | 阶段 | 输入 | 任务及验收产物 | 门禁 |
 | --- | --- | --- | --- |
 | P0 | 研究问题与用户决策 | 规范基线：交付本文件；不生成数据文件 | 规范内容、分类和编号一致 |
-| P1 | 启动指令、§2.2、P0 | 建立 seed-manifest、uploads、数据模型/schema、来源准入表、scope.json、样本验收和 Checkpoint 协议 | §9.3 通过；来源能力、范围及预算明确 |
-| P2 | P1 合格产物、§2.2 | 导入种子表，初始化 ref.bib、ref.html、temp 状态、关系和扩展队列 | §9.1–§9.2 映射及对账通过 |
+| P1 | 启动指令、§2.2、P0 | 建立 seed-manifest、uploads、固定关系初始化、强类型 schema、准入/级联/复核协议、来源准入表、scope.json、样本验收及五视图格式 | §9.3 通过；来源能力、范围及预算明确 |
+| P2 | P1 合格产物、§2.2 | 导入种子表，锁定预置关系及外键，初始化 ref.bib、ref.html、temp 状态、五视图和扩展队列 | §9.1–§9.2 映射及对账通过 |
 | P3 | 待处理向后任务 | 递归参考文献解析、去重、合法全文与摘要获取；引文边、更新后的规范输出及缺口 | §5.2、§9.2；未完成任务保留 |
 | P4 | 适用的施引任务 | 查找施引文献、核验关系及语境，生成引用作用及扩展任务 | §5.3；新增 Work 返回 P3 |
 | P5 | 适用的作者/机构/项目任务 | 主体消歧、机构与项目追踪，生成关系、成果及证据 | §5.4–§5.5；新增 Work 返回 P3 |
-| P6 | P3–P5 任务队列及已发现 Work | 按 §5.6 递归扩展，完成证据阅读、Assessment 与九项综合说明 | §7、§9；保留全部缺口，不因阶段完成宣称闭包 |
-| P7 | Checkpoint、规范输出、证据及风险 | 数据一致性、覆盖及科学结论审计，冻结验收快照，交付 §9.4 报告 | §9 强制校验通过；闭包声明满足 §5.6，未成立必须明示 |
+| P6 | P3–P5 任务队列及已发现 Work | 按 §5.6 递归扩展，完成证据阅读、强类型/量化/尺度门禁、Assessment、九项综合说明与五视图 | §7、§9；保留全部缺口，不因阶段完成宣称闭包 |
+| P7 | Checkpoint、规范输出、证据及风险 | 数据一致性、覆盖及科学结论审计，冻结验收快照，交付 §1.1、§8.4 全部产物与 §9.4 报告 | §9 强制校验通过；闭包声明满足 §5.6，未成立必须明示 |
 | P8 | 新发表文献或索引更新且用户批准 | 增量更新：建立新 scope_id、差异记录及 Checkpoint；复用历史身份与查询记录，按范围重新核验 | 保留历史快照；执行 §5–§9 |
 
 P3–P6 是可循环阶段，不是只执行一次的线性流水线。Checkpoint 可交付阶段性成果，但只有对应门禁及覆盖条件成立才可标记相应阶段或任务完成。
@@ -537,14 +691,14 @@ P3–P6 是可循环阶段，不是只执行一次的线性流水线。Checkpoin
 
 | 决策 ID | 生效规则 |
 | --- | --- |
-| DEC-01 | 种子集合及编号固定为 §2.2；去重 Upload 不进入种子表、不建立 Work，其哈希、来源和映射仅保存于 seed-manifest；分别统计 Seed record、Upload、文件哈希、Work、Version（§4.3）。 |
+| DEC-01 | 种子集合及编号固定为 §2.2；去重 Upload 不进入种子表、不建立 Work，其哈希、来源和映射仅保存于 seed-manifest；分别统计 Seed record、Upload、文件哈希、Work、Version（§4.3）；执行 §1.3、§2.2–§2.3 基数、级联、预置关系及准入。 |
 | DEC-02 | 采用核心实验室/课题组/项目及所属机构其他团队的主题相关成果范围；固定机构层级、关键词、检索式、准入边界和依据（§5.5）。 |
 | DEC-03 | 分阶段扩展、完整递归目标、持久化 Checkpoint；使用 scope_id/checkpoint_id；预算仅暂停，不得未经批准硬截断（§5.6）。 |
-| DEC-04 | L01–L09 九项局限性分类固定为 §3。 |
+| DEC-04 | L01–L09 九项局限性分类固定为 §3；强类型、量化及尺度门禁按 §3.1–§3.3。 |
 | DEC-05 | P1 执行参数记录于 temp/snapshots/scope.json：检索截止时间、来源可用性、许可/访问状态、覆盖、资源及预算；只使用合法资料（§5.6、§6、§8.3）。 |
 | DEC-06 | 中文忠实概括及原文链接必备；原摘要须具备公开许可，缺失或受限显式标注（§6.3）。 |
-| DEC-07 | temp/ 为持久化审计数据目录，纳入 Git，不得清空；目录、字段、查询及 Checkpoint 规则固定为 §8.3。 |
-| DEC-08 | 全部已识别 Work 入 ref.bib；九张 L 表与第十张 U00 对账；以 ref.bib 和 temp 防止重复检索（§4、§8、§9.2）。 |
+| DEC-07 | temp/ 为持久化审计数据目录，纳入 Git，不得清空；目录、字段、查询及 Checkpoint 规则固定为 §8.3；拒绝事件、级联及复核工单必须可追溯。 |
+| DEC-08 | 全部已识别 Work 入 ref.bib；九张 L 表与第十张 U00 对账；以 ref.bib 和 temp 防止重复检索（§4、§8、§9.2）；五个研究问题交付物固定为 §1.1、§8.4。 |
 | DEC-09 | 项目目标为具体文献调查，不开发通用检索软件；采用 §6 的允许来源及工具，来源可用性、许可/访问状态、资源与预算在 P1 写入 scope.json。 |
 
 实质性范围变更、访问授权或无法自行消歧的冲突，须登记风险或决策记录并获得必要的用户批准。
@@ -552,6 +706,6 @@ P3–P6 是可循环阶段，不是只执行一次的线性流水线。Checkpoin
 ## 12. 本文件不包含/不产生的事项
 
 - 本文件不执行 PDF 参考文献解析、外部学术检索、作者/机构/项目调查、全文获取或自动递归。
-- 本文件不创建或填充 ref.bib、ref.html、temp 数据文件，不产生或虚构检索结果、引文统计、研究成果与局限性处理结论。
+- 本文件不创建或填充 ref.bib、ref.html、§8.4 研究视图及 temp 数据文件，不产生或虚构检索结果、引文统计、研究成果与局限性处理结论。
 - 本文件不修改 PPT、不上传 PDF、不提交运行代码；P1 允许提交合规配置模板、字段定义和必要的审计记录，不提交密钥、受限数据或私人信息。
 - 启动 P1 的条件是用户发布启动指令；启动后按本文件执行，不再重复确认 DEC-01–DEC-09。
