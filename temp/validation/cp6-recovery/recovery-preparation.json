@@ -1,0 +1,33 @@
+{
+  "prepared_at_utc": "2026-11-26T23:00:07.274745Z",
+  "purpose": "Restore and resynchronize the already reviewed RUN4 batch after runtime replacement; no new research",
+  "previous_published_source_commit": "e82f0c3d31777edffb767218745035433e8a5238",
+  "historical_preparation_manifests": "Preserved unchanged; the following explicitly supersede only the listed helper/document bytes",
+  "files": [
+    {
+      "canonical_path": "temp/reports/RUN-0004-runtime-recovery.json",
+      "bytes": 3579,
+      "sha256": "8996ce523b6fe36d9d2b1ad466eecbae3ca20ca6047156f4ac5e853502cb1781"
+    },
+    {
+      "canonical_path": "temp/validation/cp6-tools/integrate_cp6.py",
+      "bytes": 42575,
+      "sha256": "6dd1d39cd548c120e16eca382aa5e4830a359164b15137340163b27fc0720678"
+    },
+    {
+      "canonical_path": "temp/validation/cp6-tools/checkpoint_cp6.py",
+      "bytes": 52083,
+      "sha256": "10f43c8e86b5c3812833bd18a7b20d4e1079682ad72039d4e2cfdafe11ae8a54"
+    },
+    {
+      "canonical_path": "temp/validation/cp6-recovery/RUNTIME-RECOVERY-NOTES.md",
+      "bytes": 4752,
+      "sha256": "b690585a3dccf7ce16e2236d1bce342d54cb5248bceafae4f0b20fbc1419916a"
+    },
+    {
+      "canonical_path": "temp/validation/cp6-recovery/dependency-restoration.json",
+      "bytes": 3768,
+      "sha256": "0213e3cf1eea935e3b60b13f850ddcb9f00a42dd9a7c6fc17a1d49c8ae6b893a"
+    }
+  ]
+}

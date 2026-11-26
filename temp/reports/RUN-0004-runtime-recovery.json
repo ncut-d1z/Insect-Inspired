@@ -1,0 +1,69 @@
+{
+  "report_id": "RUN-0004-runtime-recovery",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "recorded_at_utc": "2026-11-26T22:58:55.162845Z",
+  "recovery_kind": "replay_already_reviewed_events_after_runtime_loss",
+  "published_source_commit": "e82f0c3d31777edffb767218745035433e8a5238",
+  "lost_prior_local_commit": "74a6a9b38fc02564d2782e30038eeda237bb7c9e",
+  "lost_prior_local_tree": "687821dae62ebef5d58455881b8cde9eec20e793",
+  "lost_prior_checkpoint_sha256": "011de82c27e6c2d2f921923ccba0a0c7819e3eeabe0f24a632259cb33984d911",
+  "original_integration_at_utc": "2026-11-26T16:58:00.155120Z",
+  "original_finalization_at_utc": "2026-11-26T17:04:36.429365Z",
+  "original_local_validation_observed": {
+    "data_audit_errors": 0,
+    "unchanged_existing_warnings": 16,
+    "old_assessment_rows_byte_preserved": 69,
+    "old_checkpoint_scope_seed_files_byte_preserved": 8,
+    "exports_byte_equal": 7,
+    "ui_checks_passed": 10,
+    "status_note": "Historical tool observations only. Prior final Git object, QA output files, bundle and final checkpoint are no longer available in the replacement runtime; these observations do not establish current reconstruction or remote sync."
+  },
+  "remote_at_recovery": {
+    "main": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+    "research/p3-p6-cp5": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+    "research/p3-p6-cp6": "e82f0c3d31777edffb767218745035433e8a5238",
+    "research_cp6_final_snapshot_uploaded": false
+  },
+  "retained_inputs": {
+    "source_receipts": 22,
+    "identity_review": {
+      "path": "temp/reports/RUN-0004-identity-review.json",
+      "bytes": 160954,
+      "sha256": "a498c3646fdcd65eafc88ddc743a9dd7dc564e4974830a08edf9c1e69dee799c"
+    },
+    "science_review": {
+      "path": "temp/reports/RUN-0004-Jung2011-adaptation-review.json",
+      "bytes": 85629,
+      "sha256": "ce8e5e43c3795828ab39234b3047c94c10e8430a8873ce37a60c35e08596cfc7"
+    }
+  },
+  "recovery_policy": {
+    "new_scientific_queries": false,
+    "repeat_manual_activity_accounting": false,
+    "existing_event_and_unknown_since_time": "Preserve observed original 2026-11-26T16:58:00.155120Z for replayed integration events; do not reset deadlines.",
+    "actual_recovery_audit_and_budget_time": "Use current UTC and preserve original RUN4 started_at_utc=2026-11-26T16:08:25Z. Six-hour research budget elapsed at 22:08:25Z; no new research is authorized within this exhausted run.",
+    "prior_commit_reproduction_claimed": false,
+    "new_commit_required": true,
+    "fresh_full_validation_required": true,
+    "independent_remote_full_readback_required": true,
+    "main_write_authorized_for_assistant": false
+  },
+  "validation_dependency_restore": [
+    {
+      "artifact": "krapp1998.pdf",
+      "purpose": "Restore exact existing S19 historical QA input; not a new scientific review or corpus source",
+      "url": "https://noah.nrw/ubbihs/download/pdf/5105349",
+      "downloaded_at_utc": "2026-11-26T22:57:29.119204Z",
+      "bytes": 411083,
+      "sha256": "ace2812b8bb45ef53a56d3ed34c33a67e4bfddb4dbfd06f6dcfa1bf70fa86b38",
+      "original_bytes_match": true,
+      "network_requests_for_dependency_recovery": 1,
+      "original_pdf_redistributed": false
+    }
+  ],
+  "current_status": "source_snapshot_restored; reconstruction_and_fresh_QA_pending",
+  "validation_dependency_restoration_report": "temp/validation/cp6-recovery/dependency-restoration.json",
+  "legacy_s19_artifact_checks": "All five original bytes and SHA-256 matches restored; no historical gate or certificate changed."
+}

@@ -445,6 +445,18 @@ def documents(state, valid=False, qa=None):
     local_now = now.astimezone(ZoneInfo('Asia/Singapore'))
     stamp = local_now.strftime('%Y-%m-%d %H:%M:%S') + ' UTC+8 (Asia/Singapore)'
     source = cov['sources']
+    budget = state['run']['budget']
+    elapsed_hours = (now - utc(state['run']['started_at_utc'])).total_seconds() / 3600
+    exhausted_reasons = []
+    if elapsed_hours >= budget['wall_clock_hours']:
+        exhausted_reasons.append('墙钟')
+    if d['new_external_invocations'] >= budget['external_requests']:
+        exhausted_reasons.append('外部科研调用')
+    if d['manual_review_activities'] >= budget['manual_review_items']:
+        exhausted_reasons.append('人工复核')
+    budget_exhausted = bool(exhausted_reasons)
+    budget_note = ('预算已达到暂停条件（' + '、'.join(exhausted_reasons) + '）；新增研究保持暂停，当前仅恢复已留存输入、完成验收和同步。'
+                   if budget_exhausted else '当前尚未达到所列预算暂停条件；最终同步通过前仍不开启下一研究批。')
     state_word = 'valid 数据检查点' if valid else 'invalid 候选，完整验收待完成'
     acceptance = ('完整数据审计 0 错误、' + str(qa['warning_count']) + ' 项已报告警告；七产物字节一致，十项 UI 通过。'
                   if valid else '完整数据审计、七产物确定性、十项 UI 和最终 artifact hashes 尚待验收。')
@@ -512,7 +524,7 @@ K={c['canonical_works']}，T_union={c['topic_work_union']}，U={c['u00_works']}�
 
 关闭字段 unknown 工单 {d['unknown_field_tasks_closed']}，本轮逾期升级 {d['overdue_unknown_tasks_escalated']}；未结任务净变化 {state['delta']['unresolved_tasks']:+,}，不能把关闭工单数当净减少数。开放 unknown 工单 {c['open_unknown_review_tasks']:,}，到期仍开放 {c['overdue_open_unknown_review_tasks']:,}；字段/共享投影状态对象共 {c['unknown_fields']:,}，该数不是独立工单数。原始时钟保留，完整审计检查24小时升级规则。
 
-本轮查询 {c['run4_query_rows']}：外部科研调用 {d['new_external_invocations']}/{state['run']['budget']['external_requests']}；缓存 {d['cache_reuses']} 次另计；手工活动 {d['manual_review_activities']}/{state['run']['budget']['manual_review_items']}；付费 {state['run']['paid_spend']}；墙钟预算 {state['run']['budget']['wall_clock_hours']} 小时。本次验收暂停不意味着预算耗尽。
+本轮查询 {c['run4_query_rows']}：外部科研调用 {d['new_external_invocations']}/{budget['external_requests']}；缓存 {d['cache_reuses']} 次另计；手工活动 {d['manual_review_activities']}/{budget['manual_review_items']}；付费 {state['run']['paid_spend']}；自原始启动时刻 `{state['run']['started_at_utc']}` 至本次记录时刻的墙钟 {elapsed_hours:.4f}/{budget['wall_clock_hours']} 小时（包含环境中断和恢复时间），`budget_exhausted={str(budget_exhausted).lower()}`。{budget_note} 不重置 RUN4 启动时刻、不延长原预算，预算暂停不表示研究闭包成立。
 
 不足主张 {c['insufficient_claims']}，拒收代码分布 `{json.dumps(cov['scientific_gates']['rejection_codes'], ensure_ascii=False, sort_keys=True)}`。绝对尺度主张 {cov['scientific_gates']['absolute_scale_claims']}，合格 {cov['scientific_gates']['absolute_scale_eligible']}、不足 {cov['scientific_gates']['absolute_scale_insufficient']}；本批 Jung 条目不提供绝对尺度或平台速度恢复结论。
 

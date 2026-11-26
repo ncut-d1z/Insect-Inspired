@@ -1,0 +1,118 @@
+{
+  "purpose": "Restore an existing exact-byte CP4 validation dependency after runtime loss; no new scientific review or source request by this agent.",
+  "restored_at_utc": "2026-11-26T22:59:37.418403Z",
+  "action": "restored_missing_private_validation_dependency",
+  "destination": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/krapp_methods-04.png",
+  "bytes": 248970,
+  "sha256": "2731538ec01e9268afd589eed111cffd4b268d86a3d66ef7bd1092a1c2f6eff6",
+  "pdftoppm_version": "pdftoppm version 26.05.0",
+  "attempts": [
+    {
+      "command": [
+        "pdftoppm",
+        "-f",
+        "4",
+        "-l",
+        "4",
+        "-r",
+        "150",
+        "-png",
+        "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/krapp1998.pdf",
+        "/workspace/scratch/2e518600ca4c/cp6_krapp_restore_ug9gn134/krapp_methods"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "outputs": [
+        {
+          "path": "/workspace/scratch/2e518600ca4c/cp6_krapp_restore_ug9gn134/krapp_methods-04.png",
+          "bytes": 371316,
+          "sha256": "3a26c57bc3f2de8502dc2e74542491564a1c6deb2ab28a214e407dba55f28de4",
+          "matches_expected": false
+        }
+      ]
+    },
+    {
+      "command": [
+        "pdftoppm",
+        "-f",
+        "4",
+        "-l",
+        "4",
+        "-r",
+        "120",
+        "-png",
+        "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/krapp1998.pdf",
+        "/workspace/scratch/2e518600ca4c/cp6_krapp_restore_ug9gn134/krapp_methods_120"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "path": "/workspace/scratch/2e518600ca4c/cp6_krapp_restore_ug9gn134/krapp_methods_120-04.png",
+      "bytes": 301708,
+      "sha256": "a3be13abe1741868786e4485690f74c7be6954c8622ea31842d589a3efdf1e99",
+      "matches_expected": false
+    },
+    {
+      "command": [
+        "pdftoppm",
+        "-f",
+        "4",
+        "-l",
+        "4",
+        "-r",
+        "100",
+        "-png",
+        "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/krapp1998.pdf",
+        "/workspace/scratch/2e518600ca4c/cp6_krapp_restore_ug9gn134/krapp_methods_100"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "path": "/workspace/scratch/2e518600ca4c/cp6_krapp_restore_ug9gn134/krapp_methods_100-04.png",
+      "bytes": 248970,
+      "sha256": "2731538ec01e9268afd589eed111cffd4b268d86a3d66ef7bd1092a1c2f6eff6",
+      "matches_expected": true
+    }
+  ],
+  "proof_artifact_checks": [
+    {
+      "role": "unchanged_original_audit",
+      "path": "/workspace/scratch/9d487ee78414/p3p6_work/audit_run.py",
+      "present": true,
+      "bytes_match": true,
+      "sha256_match": true
+    },
+    {
+      "role": "unchanged_legacy_manual_baseline",
+      "path": "/workspace/scratch/9d487ee78414/p3p6_work/agent_c/assessments.json",
+      "present": true,
+      "bytes_match": true,
+      "sha256_match": true
+    },
+    {
+      "role": "original_Krapp1998_PDF",
+      "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/krapp1998.pdf",
+      "present": true,
+      "bytes_match": true,
+      "sha256_match": true
+    },
+    {
+      "role": "visually_reviewed_Krapp_methods_page",
+      "path": "/workspace/scratch/2e518600ca4c/research_l07_l09/sources/krapp_methods-04.png",
+      "present": true,
+      "bytes_match": true,
+      "sha256_match": true
+    },
+    {
+      "role": "visually_reviewed_S19_data_reuse_page",
+      "path": "/workspace/scratch/9d487ee78414/p3p6_work/agent_c/S19-p7.png",
+      "present": true,
+      "bytes_match": true,
+      "sha256_match": true
+    }
+  ],
+  "all_existing_proof_artifacts_restored": true,
+  "certificate_modified": false,
+  "canonical_modified": false,
+  "remote_modified": false,
+  "external_requests": 0,
+  "new_scientific_manual_reviews": 0
+}

@@ -24,7 +24,20 @@ from storage import read_logical, replace_logical
 
 CP, RUN, SCOPE = 'CP-0006', 'RUN-0004', 'SCOPE-0001'
 BASE = '82f759ce71e7b532f03cd4ba54a1fcc77c4f4006'
-NOW = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
+ACTUAL_NOW = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
+recovery_path = TEMP / 'reports/RUN-0004-runtime-recovery.json'
+recovery = json.loads(recovery_path.read_text()) if recovery_path.exists() else None
+if recovery:
+    assert recovery['run_id'] == RUN and recovery['checkpoint_id'] == CP
+    assert recovery['recovery_kind'] == 'replay_already_reviewed_events_after_runtime_loss'
+    assert recovery['published_source_commit'] == 'e82f0c3d31777edffb767218745035433e8a5238'
+    # This was the observed time of the original successful integration. Reuse
+    # it only for those already-reviewed events and their unknown-field clocks.
+    NOW = recovery['original_integration_at_utc']
+    assert NOW == '2026-11-26T16:58:00.155120Z'
+    assert datetime.fromisoformat(NOW.replace('Z', '+00:00')) <= datetime.fromisoformat(ACTUAL_NOW.replace('Z', '+00:00'))
+else:
+    NOW = ACTUAL_NOW
 OUT = TEMP / 'reports/RUN-0004-integration.json'
 assert not OUT.exists(), 'One-shot RUN-0004 integration has already run'
 assert not subprocess.check_output(['git', '-C', str(REPO), 'status', '--porcelain=v1', '--untracked-files=all']).strip(), 'Start from published clean receipts'
@@ -454,7 +467,7 @@ events.append(dict(kind='new_independent_scientific_claim', assessment_id=a['ass
 
 # The fixed 24-hour rule applies without resetting prior clocks.
 escalated = set()
-now_dt = datetime.fromisoformat(NOW.replace('Z', '+00:00'))
+now_dt = datetime.fromisoformat(ACTUAL_NOW.replace('Z', '+00:00'))
 def walk_unknown(obj):
     if isinstance(obj, list):
         for x in obj:
@@ -524,5 +537,15 @@ report = dict(report_id='RUN-0004-integration', scope_id=SCOPE, run_id=RUN, chec
               new_person_ids=new_person_ids, reference_resolution_ids=resolved, closed_field_task_ids=[t['task_id'] for t in field_completions],
               retained_bibliographic_differences=conflicts, schema_validation=validation, changed_records=changed_records,
               events=events, closure_established=False)
+if recovery:
+    report['runtime_recovery'] = dict(recovered_at_utc=ACTUAL_NOW,
+        recovery_receipt='temp/reports/RUN-0004-runtime-recovery.json',
+        original_event_time_preserved=NOW, original_unknown_clocks_preserved=True,
+        fresh_current_clock_used_for_overdue_checks=True,
+        new_research_requests=0, new_manual_research_reviews=0,
+        lost_prior_local_commit=recovery['lost_prior_local_commit'],
+        original_commit_or_tree_identity_claimed=False)
+    run['runtime_recovery'] = report['runtime_recovery']
+    dump(TEMP / 'runs/RUN-0004.json', run)
 dump(OUT, report)
 print(json.dumps({k: v for k, v in report.items() if k not in {'changed_records', 'events', 'schema_validation'}}, ensure_ascii=False))
