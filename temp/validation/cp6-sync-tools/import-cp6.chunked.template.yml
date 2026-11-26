@@ -1,0 +1,312 @@
+name: Import reviewed CP6 chunked increment
+
+on:
+  push:
+    branches:
+      - sync/cp6-checkpoint-import
+    paths:
+      - .github/workflows/import-cp6.yml
+
+permissions: {}
+
+concurrency:
+  group: reviewed-cp6-checkpoint-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    if: >-
+      github.repository == 'ncut-d1z/Insect-Inspired' &&
+      github.ref == 'refs/heads/sync/cp6-checkpoint-import' &&
+      github.event_name == 'push'
+    permissions:
+      contents: write
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GIT_TERMINAL_PROMPT: '0'
+      GIT_CONFIG_NOSYSTEM: '1'
+      GIT_CONFIG_GLOBAL: /dev/null
+      GIT_NO_REPLACE_OBJECTS: '1'
+      GIT_ALTERNATE_OBJECT_DIRECTORIES: ''
+    steps:
+      - name: Verify fixed binary parts, import, and independently read back CP6
+        shell: bash
+        env:
+          IMPORT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          readonly REMOTE='https://github.com/ncut-d1z/Insect-Inspired.git'
+          readonly TARGET='refs/heads/research/p3-p6-cp6'
+          readonly BASE='__BASE_SHA__'
+          readonly CP6='__CP6_SHA__'
+          readonly TREE='__CP6_TREE__'
+          [[ "$GITHUB_REPOSITORY" == 'ncut-d1z/Insect-Inspired' ]]
+          [[ "$GITHUB_REF" == 'refs/heads/sync/cp6-checkpoint-import' ]]
+          [[ "$GITHUB_EVENT_NAME" == 'push' ]]
+          [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$BASE" =~ ^[0-9a-f]{40}$ && "$CP6" =~ ^[0-9a-f]{40}$ && "$TREE" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$CP6" != "$BASE" ]]
+          command -v git >/dev/null
+          command -v python3 >/dev/null
+
+          # The job token remains only in ephemeral process configuration.
+          set +x
+          auth_header="$(printf 'x-access-token:%s' "$IMPORT_TOKEN" | base64 -w 0)"
+          printf '::add-mask::%s\n' "$auth_header"
+          export GIT_CONFIG_COUNT=3
+          export GIT_CONFIG_KEY_0='http.https://github.com/.extraheader'
+          export GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $auth_header"
+          export GIT_CONFIG_KEY_1='core.hooksPath'
+          export GIT_CONFIG_VALUE_1='/dev/null'
+          export GIT_CONFIG_KEY_2='push.followTags'
+          export GIT_CONFIG_VALUE_2='false'
+          unset IMPORT_TOKEN auth_header
+
+          import_tmp="$(mktemp -d "$RUNNER_TEMP/cp6-sync.XXXXXX")"
+          input_repo="$import_tmp/input.git"
+          import_repo="$import_tmp/import.git"
+          verify_repo="$import_tmp/remote-verify.git"
+          bundle_path="$import_tmp/recovery.bundle"
+
+          # Fixed upload commit, manifest, README, and ordered binary parts; no checkout or project code.
+          git init --bare --quiet "$input_repo"
+          git --git-dir="$input_repo" fetch --quiet --no-tags --depth=1 "$REMOTE" "$GITHUB_SHA"
+          [[ "$(git --git-dir="$input_repo" rev-parse FETCH_HEAD)" == "$GITHUB_SHA" ]]
+          python3 - "$input_repo" "$GITHUB_SHA" "$bundle_path" <<'PYINPUT'
+          import hashlib, json, re, subprocess, sys
+          repo, commit, output = sys.argv[1:]
+          base = '__BASE_SHA__'
+          cp6 = '__CP6_SHA__'
+          target = 'refs/heads/research/p3-p6-cp6'
+          def blob(path):
+              return subprocess.check_output(['git', '--git-dir='+repo, 'cat-file', 'blob', commit+':temp/sync/CP-0006/'+path])
+          def unique_keys(items):
+              result = {}
+              for key, value in items:
+                  assert key not in result, 'duplicate JSON key: '+str(key)
+                  result[key] = value
+              return result
+          manifest_raw = blob('manifest.json')
+          assert hashlib.sha256(manifest_raw).hexdigest() == '__CP6_MANIFEST_SHA256__', 'manifest SHA-256 mismatch'
+          m = json.loads(manifest_raw, object_pairs_hook=unique_keys)
+          assert m['format_version'] == 1
+          assert m['repository'] == 'ncut-d1z/Insect-Inspired'
+          assert m['checkpoint_id'] == 'CP-0006' and m['scope_id'] == 'SCOPE-0001'
+          assert m['source_sync_ref'] == 'refs/heads/sync/cp6-checkpoint-import'
+          assert m['target_ref'] == target
+          assert m['expected_baseline_commit'] == m['expected_parent_commit'] == base
+          assert m['expected_commit'] == cp6 and m['expected_tree'] == '__CP6_TREE__'
+          assert m['bundle_name'] == 'recovery.bundle' and m['bundle_kind'] == 'incremental'
+          assert m['bundle_prerequisites'] == [base]
+          assert type(m['bundle_bytes']) is int and m['bundle_bytes'] == int('__CP6_BUNDLE_SIZE_BYTES__')
+          assert m['bundle_sha256'] == '__CP6_BUNDLE_SHA256__'
+          assert m['checkpoint_path'] == 'temp/snapshots/checkpoints/CP-0006.json'
+          assert m['checkpoint_sha256'] == '__CP6_CHECKPOINT_SHA256__'
+          assert m['parent_checkpoint_id'] == 'CP-0005'
+          assert m['canonical_file_count'] == int('__CP6_FILE_COUNT__')
+          assert m['artifact_hash_count'] == int('__CP6_ARTIFACT_HASH_COUNT__')
+          assert m['partition_dataset_count'] == int('__CP6_PARTITION_DATASET_COUNT__')
+          assert m['partition_manifest_sha256'] == '__CP6_PARTITION_MANIFEST_SHA256__'
+          assert m['readme_sha256'] == '__CP6_README_SHA256__'
+          assert hashlib.sha256(blob('README.md')).hexdigest() == m['readme_sha256']
+          # The manifest pins the bytes of each original binary blob, not base64 text.
+          assert m['bundle_storage'] == 'ordered_binary_parts'
+          parts = m['parts']
+          assert isinstance(parts, list) and parts, 'missing ordered binary parts'
+          seen_paths, declared_bytes = set(), 0
+          for ordinal, part in enumerate(parts, 1):
+              assert isinstance(part, dict), 'invalid part record'
+              assert type(part['index']) is int and part['index'] == ordinal, 'parts must be consecutive and ordered from 1'
+              path = part['path']
+              assert isinstance(path, str) and re.fullmatch(r'recovery\.bundle\.part-[0-9]{4,}', path), 'unsafe part path'
+              assert path == 'recovery.bundle.part-'+format(ordinal, '04d'), 'part name/index mismatch'
+              assert path not in seen_paths, 'duplicate part path'
+              seen_paths.add(path)
+              assert type(part['bytes']) is int and part['bytes'] > 0, 'invalid part byte count'
+              assert isinstance(part['sha256'], str) and re.fullmatch('[0-9a-f]{64}', part['sha256']), 'invalid part SHA-256'
+              declared_bytes += part['bytes']
+          assert declared_bytes == m['bundle_bytes'], 'part byte sum mismatch'
+          prefix = 'temp/sync/CP-0006/'
+          input_paths = subprocess.check_output(['git', '--git-dir='+repo, 'ls-tree', '-r', '-z', '--name-only', commit, '--', prefix]).split(b'\0')
+          actual_parts = set()
+          for raw_path in input_paths:
+              if not raw_path:
+                  continue
+              full_path = raw_path.decode('utf-8')
+              assert full_path.startswith(prefix)
+              relative_path = full_path[len(prefix):]
+              if relative_path.startswith('recovery.bundle.part-'):
+                  actual_parts.add(relative_path)
+          assert actual_parts == seen_paths, 'missing or unlisted binary part'
+          chunks = []
+          for part in parts:
+              chunk = blob(part['path'])
+              assert len(chunk) == part['bytes'], 'binary part length mismatch: '+part['path']
+              assert hashlib.sha256(chunk).hexdigest() == part['sha256'], 'binary part SHA-256 mismatch: '+part['path']
+              chunks.append(chunk)
+          data = b''.join(chunks)
+          del chunks
+          assert len(data) == m['bundle_bytes'], 'bundle length mismatch'
+          assert hashlib.sha256(data).hexdigest() == m['bundle_sha256'], 'bundle SHA-256 mismatch'
+          # Require the one advertised target and the exact remote prerequisite.
+          signature, _, remainder = data.partition(b'\n')
+          assert signature in (b'# v2 git bundle', b'# v3 git bundle'), 'unexpected bundle format'
+          header, separator, _ = remainder.partition(b'\n\n')
+          assert separator, 'missing bundle header terminator'
+          prerequisites, heads = [], []
+          for line in header.decode('utf-8').splitlines():
+              if line.startswith('@'):
+                  assert line == '@object-format=sha1', 'unexpected bundle capability'
+              elif line.startswith('-'):
+                  sha = line[1:].split(' ', 1)[0]
+                  assert re.fullmatch('[0-9a-f]{40}', sha)
+                  prerequisites.append(sha)
+              else:
+                  heads.append(line)
+          assert prerequisites == [base], 'bundle prerequisite mismatch'
+          assert heads == [cp6+' '+target], 'unexpected or additional bundle head'
+          with open(output, 'xb') as f:
+              f.write(data)
+          print('Verified fixed manifest, README, every ordered binary part, assembled bundle bytes/hash, head, and prerequisite.')
+          PYINPUT
+
+          # The target must exist at exactly the known remote base or the idempotent CP6.
+          git init --bare --quiet "$import_repo"
+          check_remote_target() {
+            local line sha ref
+            line="$(git --git-dir="$import_repo" ls-remote --heads "$REMOTE" "$TARGET")" || return 1
+            [[ -n "$line" ]] || return 1
+            read -r sha ref <<< "$line" || return 1
+            [[ "$line" == "$sha"$'\t'"$TARGET" ]] || return 1
+            case "$sha" in
+              "$BASE"|"$CP6") printf '%s' "$sha" ;;
+              *) printf '%s\n' 'Unexpected target state; no push permitted.' >&2; return 1 ;;
+            esac
+          }
+          remote_sha="$(check_remote_target)"
+
+          # This is an increment: obtain its exact prerequisite from the real remote first.
+          # No local bundle seed, alternate object store, depth limit, or partial filter.
+          git --git-dir="$import_repo" fetch --quiet --no-tags "$REMOTE" "$BASE:refs/heads/cp6-baseline"
+          [[ "$(git --git-dir="$import_repo" rev-parse 'refs/heads/cp6-baseline^{commit}')" == "$BASE" ]]
+          [[ ! -s "$import_repo/shallow" && ! -s "$import_repo/objects/info/alternates" ]]
+          git --git-dir="$import_repo" bundle verify "$bundle_path"
+          [[ "$(git --git-dir="$import_repo" bundle list-heads "$bundle_path")" == "$CP6 $TARGET" ]]
+          git --git-dir="$import_repo" fetch --quiet --no-tags "$bundle_path" "$TARGET:refs/heads/import-cp6"
+          [[ "$(git --git-dir="$import_repo" rev-parse 'refs/heads/import-cp6^{commit}')" == "$CP6" ]]
+
+          check_history() {
+            local git_dir="$1"
+            [[ "$(git --git-dir="$git_dir" rev-parse "$CP6^{commit}")" == "$CP6" ]]
+            [[ "$(git --git-dir="$git_dir" show -s --format=%T "$CP6")" == "$TREE" ]]
+            [[ "$(git --git-dir="$git_dir" show -s --format=%P "$CP6")" == "$BASE" ]]
+            git --git-dir="$git_dir" merge-base --is-ancestor "$BASE" "$CP6"
+            [[ ! -s "$git_dir/shallow" && ! -s "$git_dir/objects/info/alternates" ]]
+            git --git-dir="$git_dir" fsck --full --strict --no-reflogs "$CP6"
+          }
+          verify_snapshot() {
+            local git_dir="$1"
+            python3 - "$git_dir" "$CP6" <<'PYACCEPT'
+          import hashlib, json, subprocess, sys
+          repo, commit = sys.argv[1:]
+          def git(*args):
+              return subprocess.check_output(['git', '--git-dir='+repo, *args])
+          entries = {}
+          for item in git('ls-tree', '-r', '-z', commit).split(b'\0'):
+              if not item:
+                  continue
+              header, name = item.split(b'\t', 1)
+              mode, kind, oid = header.decode('ascii').split()
+              assert kind == 'blob' and mode in ('100644', '100755'), 'unexpected tree entry'
+              path = name.decode('utf-8')
+              assert path not in entries
+              entries[path] = oid
+          assert len(entries) == int('__CP6_FILE_COUNT__'), 'canonical file count mismatch'
+          reader = subprocess.Popen(['git', '--git-dir='+repo, 'cat-file', '--batch'], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+          def read_blob(path):
+              reader.stdin.write((entries[path]+'\n').encode('ascii'))
+              reader.stdin.flush()
+              oid, kind, size = reader.stdout.readline().decode('ascii').split()
+              assert oid == entries[path] and kind == 'blob'
+              data = reader.stdout.read(int(size))
+              assert len(data) == int(size) and reader.stdout.read(1) == b'\n'
+              return data
+          cp_path = 'temp/snapshots/checkpoints/CP-0006.json'
+          cp_raw = read_blob(cp_path)
+          assert hashlib.sha256(cp_raw).hexdigest() == '__CP6_CHECKPOINT_SHA256__', 'CP6 self hash mismatch'
+          cp = json.loads(cp_raw)
+          assert cp['checkpoint_id'] == 'CP-0006' and cp['scope_id'] == 'SCOPE-0001'
+          assert cp['status'] == 'valid' and cp['parent_checkpoint_id'] == 'CP-0005'
+          hashes = cp['artifact_hashes']
+          assert len(hashes) == int('__CP6_ARTIFACT_HASH_COUNT__')
+          assert cp_path not in hashes and set(hashes) | {cp_path} == set(entries), 'checkpoint does not cover the full tree'
+          for path, expected in hashes.items():
+              assert hashlib.sha256(read_blob(path)).hexdigest() == expected, 'canonical SHA-256 mismatch: '+path
+          pm_raw = read_blob('temp/partitions/manifest.json')
+          assert hashlib.sha256(pm_raw).hexdigest() == '__CP6_PARTITION_MANIFEST_SHA256__'
+          pm = json.loads(pm_raw)
+          assert len(pm['datasets']) == int('__CP6_PARTITION_DATASET_COUNT__')
+          for name, dataset in pm['datasets'].items():
+              logical, records = hashlib.sha256(), 0
+              seen = set()
+              for part in dataset['parts']:
+                  assert part['path'] not in seen, 'duplicate logical partition'
+                  seen.add(part['path'])
+                  data = read_blob('temp/'+part['path'])
+                  assert len(data) == part['bytes']
+                  assert hashlib.sha256(data).hexdigest() == part['sha256']
+                  count = len(data.splitlines())
+                  assert count == part['records']
+                  records += count
+                  logical.update(data)
+              assert records == dataset['logical_records']
+              assert logical.hexdigest() == dataset['logical_sha256']
+          reader.stdin.close()
+          assert reader.wait() == 0
+          print('Verified every canonical file, CP6 self hash, and all complete partitioned logical datasets.')
+          PYACCEPT
+          }
+          check_history "$import_repo"
+          verify_snapshot "$import_repo"
+
+          # Pin the remote value actually advertised during the ordinary non-force push.
+          # This fixed job-authored hook is the only enabled hook; no project hook is run.
+          guard_dir="$import_tmp/push-guard"
+          mkdir "$guard_dir"
+          export CP6_IMPORT_COMMIT="$CP6" CP6_IMPORT_BASE="$BASE" CP6_IMPORT_TARGET="$TARGET"
+          cat > "$guard_dir/pre-push" <<'PUSHCHECK'
+          #!/usr/bin/env bash
+          set -euo pipefail
+          count=0
+          while read -r local_ref local_sha remote_ref remote_sha; do
+            count=$((count+1))
+            [[ "$count" == 1 ]]
+            [[ "$local_sha" == "$CP6_IMPORT_COMMIT" && "$remote_ref" == "$CP6_IMPORT_TARGET" ]]
+            case "$remote_sha" in
+              "$CP6_IMPORT_BASE"|"$CP6_IMPORT_COMMIT") ;;
+              *) printf '%s\n' 'Advertised target differs from the fixed baseline; push stopped.' >&2; exit 1 ;;
+            esac
+          done
+          # Zero updates are harmless if Git found the exact target already up to date.
+          PUSHCHECK
+          chmod 700 "$guard_dir/pre-push"
+          remote_sha="$(check_remote_target)"
+          if [[ "$remote_sha" != "$CP6" ]]; then
+            git --git-dir="$import_repo" -c core.hooksPath="$guard_dir" push --porcelain "$REMOTE" "$CP6:$TARGET"
+          fi
+          [[ "$(git --git-dir="$import_repo" ls-remote --heads "$REMOTE" "$TARGET")" == "$CP6"$'\t'"$TARGET" ]]
+
+          # Fresh full readback from GitHub: no bundle, local objects, alternates, or checkout.
+          git init --bare --quiet "$verify_repo"
+          git --git-dir="$verify_repo" fetch --quiet --no-tags "$REMOTE" "$TARGET:refs/heads/cp6-readback"
+          [[ "$(git --git-dir="$verify_repo" rev-parse 'refs/heads/cp6-readback^{commit}')" == "$CP6" ]]
+          check_history "$verify_repo"
+          verify_snapshot "$verify_repo"
+          [[ "$(git --git-dir="$verify_repo" ls-remote --heads "$REMOTE" "$TARGET")" == "$CP6"$'\t'"$TARGET" ]]
+          printf '%s\n' '## CP6 increment verified' \
+            'Target: `research/p3-p6-cp6`' \
+            'Original CP6 commit: `__CP6_SHA__`' \
+            'Direct parent: `__BASE_SHA__`' \
+            'Independent full remote readback passed: all files, CP6 self hash, and all logical partitions.' \
+            'The fixed research ref was the only possible write; no main/tag/force operation or project code execution.' >> "$GITHUB_STEP_SUMMARY"
