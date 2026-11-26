@@ -1,0 +1,87 @@
+{
+  "query_id": "Q-RUN04-EPMC-0001",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "europepmc",
+  "entity_id": "W-Da5cfde2e7ea2196d",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?cursorMark=%2A&format=json&pageSize=1000&query=%28SRC%3AMED+AND+EXT_ID%3A28193813%29+OR+%28SRC%3AMED+AND+EXT_ID%3A27147991%29+OR+%28SRC%3AMED+AND+EXT_ID%3A26994172%29+OR+%28SRC%3AMED+AND+EXT_ID%3A27436729%29+OR+%28SRC%3AMED+AND+EXT_ID%3A27436728%29+OR+%28SRC%3AMED+AND+EXT_ID%3A26898725%29+OR+%28SRC%3AMED+AND+EXT_ID%3A26877083%29+OR+%28SRC%3AMED+AND+EXT_ID%3A26582183%29+OR+%28SRC%3AMED+AND+EXT_ID%3A25994678%29&resultType=core",
+  "api_version": null,
+  "transport": "direct_HTTP_GET",
+  "queried_at_utc": "2026-11-26T16:12:05.061456Z",
+  "completed_at_utc": "2026-11-26T16:12:36.655966Z",
+  "elapsed_seconds": 31.594466,
+  "request_timeout_seconds": 25,
+  "raw_parameters": {
+    "query": "(SRC:MED AND EXT_ID:28193813) OR (SRC:MED AND EXT_ID:27147991) OR (SRC:MED AND EXT_ID:26994172) OR (SRC:MED AND EXT_ID:27436729) OR (SRC:MED AND EXT_ID:27436728) OR (SRC:MED AND EXT_ID:26898725) OR (SRC:MED AND EXT_ID:26877083) OR (SRC:MED AND EXT_ID:26582183) OR (SRC:MED AND EXT_ID:25994678)",
+    "format": "json",
+    "resultType": "core",
+    "pageSize": 1000,
+    "cursorMark": "*"
+  },
+  "normalized_parameters": {
+    "query": "(SRC:MED AND EXT_ID:28193813) OR (SRC:MED AND EXT_ID:27147991) OR (SRC:MED AND EXT_ID:26994172) OR (SRC:MED AND EXT_ID:27436729) OR (SRC:MED AND EXT_ID:27436728) OR (SRC:MED AND EXT_ID:26898725) OR (SRC:MED AND EXT_ID:26877083) OR (SRC:MED AND EXT_ID:26582183) OR (SRC:MED AND EXT_ID:25994678)",
+    "format": "json",
+    "resultType": "core",
+    "pageSize": 1000,
+    "cursorMark": "*"
+  },
+  "requested_pmids": [
+    "28193813",
+    "27147991",
+    "26994172",
+    "27436729",
+    "27436728",
+    "26898725",
+    "26877083",
+    "26582183",
+    "25994678"
+  ],
+  "http_status": null,
+  "response_headers": {},
+  "status": "error",
+  "error": {
+    "code": "TimeoutError",
+    "message": "The read operation timed out"
+  },
+  "external_requests_performed": 1,
+  "manual_review_items": 0,
+  "cache_hit": false,
+  "retry_of_query_ids": [
+    "Q-RUN02-ENT-0198",
+    "Q-RUN03-EPMC-0001"
+  ],
+  "rerun_reason": "Nine exact pending identities remain after failed core batch and unreadable PubMed records; exclude five previously successful RUN-0003 identities. No project/citer list is re-requested.",
+  "raw_response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "raw_response_bytes": 0,
+  "raw_response_retention": "Preserved in private local HTTP cache outside repository; not included in public receipt.",
+  "sanitized": true,
+  "payload_retained": false,
+  "metadata_allowlist_retained": true,
+  "metadata": [],
+  "visible_total": null,
+  "returned_count": null,
+  "count_before_dedup": null,
+  "count_after_dedup": null,
+  "cursor_in": "*",
+  "cursor_out": null,
+  "page_complete": false,
+  "result_identifiers": [],
+  "count_scope": "Exact nine MED identifiers only; a successful response establishes only metadata retrieval for returned identities, not citation-list/fulltext/author-entity coverage.",
+  "precheck": {
+    "canonical_manifest_sha256": "97e1286420002f40bcf599c350b3c96081eb7dc2dff35c11179b7c7d1e099bf6",
+    "logical_works_scanned": 5085,
+    "logical_task_events_scanned": 134773,
+    "logical_reference_occurrences_scanned": 158544,
+    "queries_scanned": 889,
+    "latest_tasks_policy": "maximum event_sequence per task_id",
+    "successful_RUN03_queries_reused_not_requeried": [
+      "Q-RUN03-WEB-0002",
+      "Q-RUN03-WEB-0004",
+      "Q-RUN03-WEB-0011",
+      "Q-RUN03-WEB-0012",
+      "Q-RUN03-WEB-0015"
+    ]
+  },
+  "license_note": "Bibliographic facts and provenance only. Original abstracts/full text/contact addresses are excluded. Created/indexed dates are not treated as publication dates."
+}
