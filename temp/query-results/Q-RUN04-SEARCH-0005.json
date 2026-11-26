@@ -1,0 +1,243 @@
+{
+  "query_id": "Q-RUN04-SEARCH-0005",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "web_search",
+  "underlying_source_id": "institutional_repository",
+  "underlying_source_name": "NCBI PubMed indexed metadata; publisher/PMC indexed metadata where explicitly identified",
+  "entity_id": "W-R6c60f443a13cd0ad",
+  "work_key": "TempWR6c60f443a13cd0ad",
+  "endpoint_or_url": "https://pubmed.ncbi.nlm.nih.gov/26582183/",
+  "transport": "system1_search_query",
+  "queried_at_utc": "2026-11-26T16:30:56.195Z",
+  "completed_at_utc": "2026-11-26T16:30:57.153Z",
+  "query_time_status": "exact",
+  "raw_parameters": {
+    "system1_search_query": [
+      {
+        "q": "\"26582183\" \"How do field of view and resolution\"",
+        "domains": [
+          "pubmed.ncbi.nlm.nih.gov",
+          "ncbi.nlm.nih.gov",
+          "europepmc.org",
+          "link.springer.com",
+          "sciencedirect.com"
+        ]
+      }
+    ],
+    "response_length": "long"
+  },
+  "normalized_parameters": {
+    "pmid": "26582183",
+    "q": "\"26582183\" \"How do field of view and resolution\"",
+    "domains": [
+      "pubmed.ncbi.nlm.nih.gov",
+      "ncbi.nlm.nih.gov",
+      "europepmc.org",
+      "link.springer.com",
+      "sciencedirect.com"
+    ]
+  },
+  "status": "success",
+  "http_status": null,
+  "response_kind": "indexed_bibliographic_metadata",
+  "verification_status": "source_supported",
+  "returned_count": 7,
+  "visible_total": null,
+  "target_identity_count": 1,
+  "count_before_dedup": 7,
+  "count_after_dedup": 7,
+  "page_complete": false,
+  "pagination_note": "Search tool exposed no total or pagination cursor; list completeness is not asserted.",
+  "count_scope": "returned_count counts visible indexed hits; one exact target PMID/DOI identity was established. No fulltext/citation-context/corpus completeness follows.",
+  "result_identifiers": [
+    "MED:26582183",
+    "DOI:10.1007/s00359-015-1052-1",
+    "PMCID:PMC4722065"
+  ],
+  "external_requests_performed": 1,
+  "external_request_unit": "One system1 search tool query; upstream engine/source HTTP count unknown.",
+  "manual_review_items": 0,
+  "cache_hit": false,
+  "source_refs": [
+    "turn665349503search0",
+    "turn665349503search1",
+    "turn665349503search2"
+  ],
+  "source_locators": [
+    {
+      "source_ref": "turn665349503search0",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26582183/",
+      "section": "Indexed bibliographic identity / publication dates / author information",
+      "evidence_note": "Official PubMed indexed record explicitly exposes exact PMID, DOI, matching title and ordered byline."
+    },
+    {
+      "source_ref": "turn665349503search1",
+      "url": "https://link.springer.com/article/10.1007/s00359-015-1052-1",
+      "section": "Indexed bibliographic identity / publication dates / author information",
+      "evidence_note": "Official publisher/PMC indexed record corroborates electronic publication date or author-affiliation mapping; fulltext excerpts are not used as scientific evidence."
+    },
+    {
+      "source_ref": "turn665349503search2",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4722065/",
+      "section": "Indexed bibliographic identity / publication dates / author information",
+      "evidence_note": "Official publisher/PMC indexed record corroborates electronic publication date or author-affiliation mapping; fulltext excerpts are not used as scientific evidence."
+    }
+  ],
+  "metadata": {
+    "pmid": "26582183",
+    "pmcid": "PMC4722065",
+    "doi": "10.1007/s00359-015-1052-1",
+    "title": "How do field of view and resolution affect the information content of panoramic scenes for visual navigation? A computational investigation",
+    "year": 2016,
+    "year_semantics": "Journal issue/citation year, distinct from first electronic publication in 2015",
+    "publication_date": "2015-11-18",
+    "publication_date_kind": "electronic_publication_date",
+    "electronic_publication_date": "2015-11-18",
+    "issue_date": "2016-02",
+    "venue": "Journal of comparative physiology. A, Neuroethology, sensory, neural, and behavioral physiology",
+    "venue_abbreviation": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+    "volume": "202",
+    "issue": "2",
+    "pages": "87-95",
+    "language": "en",
+    "language_source_code": "eng",
+    "document_type": "journal_article",
+    "publication_status_source": "ppublish",
+    "authors": [
+      {
+        "position": 1,
+        "display_name": "Antoine Wystrach",
+        "affiliation_numbers": [
+          1,
+          2
+        ]
+      },
+      {
+        "position": 2,
+        "display_name": "Alex Dewar",
+        "affiliation_numbers": [
+          2
+        ]
+      },
+      {
+        "position": 3,
+        "display_name": "Andrew Philippides",
+        "affiliation_numbers": [
+          2
+        ]
+      },
+      {
+        "position": 4,
+        "display_name": "Paul Graham",
+        "affiliation_numbers": [
+          2
+        ]
+      }
+    ],
+    "publication_affiliations": [
+      {
+        "affiliation_number": 1,
+        "organization_names": [
+          "School of Informatics",
+          "University of Edinburgh"
+        ],
+        "country": "United Kingdom"
+      },
+      {
+        "affiliation_number": 2,
+        "organization_names": [
+          "Centre for Computational Neuroscience and Robotics",
+          "University of Sussex"
+        ],
+        "country": "United Kingdom"
+      }
+    ]
+  },
+  "search_hits": [
+    {
+      "title": "How do field of view and resolution affect the information content of panoramic scenes for visual navigation? A computational investigation.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26582183/",
+      "source_ref": "turn665349503search0",
+      "within_requested_domain_filter": true,
+      "used_for_target_metadata": true,
+      "disposition": "admitted_indexed_bibliographic_metadata"
+    },
+    {
+      "title": "How do field of view and resolution affect the information content of panoramic scenes for visual navigation? A computational investigation",
+      "url": "https://link.springer.com/article/10.1007/s00359-015-1052-1",
+      "source_ref": "turn665349503search1",
+      "within_requested_domain_filter": true,
+      "used_for_target_metadata": true,
+      "disposition": "admitted_indexed_bibliographic_metadata"
+    },
+    {
+      "title": "How do field of view and resolution affect the information",
+      "url": "https://www.pure.ed.ac.uk/ws/portalfiles/portal/25064358/art_3A10.1007_2Fs00359_015_1052_1.pdf",
+      "source_ref": "turn665349503search5",
+      "within_requested_domain_filter": false,
+      "used_for_target_metadata": false,
+      "disposition": "returned_despite_domain_filter_not_admitted"
+    },
+    {
+      "title": "How do field of view and resolution affect the information content of panoramic scenes for visual navigation? A computational investigation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4722065/",
+      "source_ref": "turn665349503search2",
+      "within_requested_domain_filter": true,
+      "used_for_target_metadata": true,
+      "disposition": "admitted_indexed_bibliographic_metadata"
+    },
+    {
+      "title": "How do field of view and resolution affect the information content of panoramic scenes for visual navigation? A computational investigation",
+      "url": "https://openalex.org/W2248483872",
+      "source_ref": "turn665349503search3",
+      "within_requested_domain_filter": false,
+      "used_for_target_metadata": false,
+      "disposition": "returned_despite_domain_filter_not_admitted"
+    },
+    {
+      "title": "Sussex Research",
+      "url": "https://link.springer.com/content/pdf/10.1007%2Fs00359-015-1052-1.pdf",
+      "source_ref": "turn665349503search6",
+      "within_requested_domain_filter": true,
+      "used_for_target_metadata": false,
+      "disposition": "retained_search_hit_pending_matching_and_scope_review"
+    },
+    {
+      "title": "How do field of view and resolution affect the information content of panoramic scenes for visual navigation? A computational investigation. | GreenMedInfo",
+      "url": "https://uat.greenmedinfo.com/abstracts/how-do-field-of-view-and-resolution-affect-the-information-content-of--26582183",
+      "source_ref": "turn665349503search4",
+      "within_requested_domain_filter": false,
+      "used_for_target_metadata": false,
+      "disposition": "returned_despite_domain_filter_not_admitted"
+    }
+  ],
+  "domain_filter_note": "Some returned entries are outside the requested domain filter. Only the explicitly identified official PubMed/publisher/PMC metadata records are admitted; other hits are audit entries only.",
+  "metadata_pending_review": {
+    "publisher": "No publisher field is established by this receipt.",
+    "global_person_identity": "Work-scoped byline and publication affiliation facts do not establish cross-Work Person identity."
+  },
+  "integration_guard": "Preserve the existing Work ID/key, compare the full DOI index, and do not create duplicate Works. The 2015 electronic date and 2016 issue year (where present) are distinct facts, not a DOI/identity conflict.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Bibliographic facts and source locators only. Abstracts, fulltext, scientific result excerpts, figures, references bodies, contact/street addresses and credentials are excluded.",
+  "metadata_field_evidence": {
+    "pmid": "turn665349503search0",
+    "doi": "turn665349503search0",
+    "title": "turn665349503search0",
+    "byline": "turn665349503search0",
+    "language": "turn665349503search0",
+    "publication_date": [
+      "turn665349503search0",
+      "turn665349503search1",
+      "turn665349503search2"
+    ],
+    "publication_affiliation_mapping": [
+      "turn665349503search1",
+      "turn665349503search2"
+    ]
+  },
+  "raw_tool_response_sha256": "3a16b4b40f94382169061b5dd050609392295aa32f43cb473a47261b3d562566",
+  "raw_tool_response_bytes": 30898
+}
