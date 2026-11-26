@@ -5,7 +5,7 @@
  "intended_checkpoint_id": "CP-0005",
  "base_git_commit": "54394bcf81d6ac993b676b09b176b025d839c7a6",
  "reviewed_at_utc": "2026-11-26T14:35:08.315278Z",
- "review_status": "verified_scientific_receipt_complete_assessment_pending",
+ "review_status": "single_claim_review_complete_pending_canonical_ingestion",
  "source": {
   "doi": "10.3389/fnsys.2010.00153",
   "work_id": "W-D6e117a3d967ebdc0",
@@ -21,7 +21,11 @@
    4,
    5,
    6
-  ]
+  ],
+  "original_retrieved_at_utc": "2026-11-26T09:48:03.067768Z",
+  "cache_receipt_path": "temp/query-results/Q-RUN02-L079-longden2010-pdf.json",
+  "fulltext_access_level": "cached_primary_publisher_fulltext_pdf",
+  "visual_review_method": "Poppler渲染原始PDF pp2–6，并逐页目视核对；无新网络访问。"
  },
  "verified_finding": {
   "claim": "在固定制备的雌性 Calliphora vicina H2 细胞记录中，CDM 条件下刺激响应起始潜伏期缩短；该结果提供瞬态响应的量化生理约束。",
@@ -87,7 +91,8 @@
   "work_level_assessment_task_status": "partial",
   "L07_followup_task": "T-RUN02-L079-4426c4dc035807f4",
   "L07_followup_task_status": "pending",
-  "canonical_files_edited": false
+  "canonical_files_edited": false,
+  "new_assessment_count": 1
  },
  "activity_accounting": {
   "manual_review_activities": 1,
@@ -96,5 +101,1344 @@
   "new_fulltext_downloads": 0,
   "whole_work_or_L07_closed": false
  },
- "integration_note": "该报告先提交已核对科学结果；后续在同一路径补入完整 Assessment、门禁和缓存复用记录。规范库由 root 集成；此报告提交不等同于 canonical ingestion 或 CP5 完成。"
+ "integration_note": "仅新增所附1条Assessment及相应1条缓存查询/人工复核记录。原L07 Assessment字节及Work assessment partial、L07后续任务pending保持。由root执行canonical集成、审计及即时同步；本报告不构成CP5完成。",
+ "completed_at_utc": "2026-11-26T14:37:50.411669Z",
+ "assessment": {
+  "assessment_id": "AS-RUN03-Longden2010-L03-onset-latency",
+  "work_id": "W-D6e117a3d967ebdc0",
+  "work_key": "Longden2010",
+  "limitation_id": "L03",
+  "claim_id": "CLAIM-RUN03-Longden2010-CDM-onset-latency",
+  "claim_type": "biological_mechanism",
+  "relation_type": [
+   "foundational_support"
+  ],
+  "handling_level": "new_evidence_or_hypothesis",
+  "evidence_level": "fulltext_result",
+  "evidence_kind": [
+   "electrophysiology",
+   "controlled_experiment"
+  ],
+  "evidence_route": "biological_mechanism",
+  "conditions": {
+   "species": {
+    "status": "reported",
+    "value": [
+     {
+      "scientific_name": "Calliphora vicina",
+      "taxon_id": null,
+      "cell_type": "H2 LPTC",
+      "cell_identifiers": [
+       "H2"
+      ],
+      "field_states": {
+       "taxon_id": {
+        "status": "not_reported",
+        "reason": "论文未给出分类数据库标识符。",
+        "evidence_locator": [
+         {
+          "source_id": "publisher",
+          "identifier": "10.3389/fnsys.2010.00153",
+          "version_id": "V-W-D6e117a3d967ebdc0-01",
+          "upload_id": "U-RUN02-Longden2010-PDF",
+          "page": 2,
+          "evidence_note": "Methods：2–11日龄雌性 Calliphora vicina，右侧 H2 胞外记录；CDM 2.5 µM、10 µl；速度调谐实验21.7–24.3°C。",
+          "section": "Materials and Methods"
+         }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+       }
+      }
+     }
+    ],
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 2,
+      "evidence_note": "Methods：2–11日龄雌性 Calliphora vicina，右侧 H2 胞外记录；CDM 2.5 µM、10 µl；速度调谐实验21.7–24.3°C。",
+      "section": "Materials and Methods"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "motion_type": {
+    "status": "reported",
+    "value": "other_specified",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 4,
+      "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+      "section": "Data analysis / Stimulus response latency"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "motion_dof": {
+    "status": "not_applicable",
+    "value": null,
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 4,
+      "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+      "section": "Data analysis / Stimulus response latency"
+     }
+    ],
+    "reason": "显示光栅刺激，不估计动物运动自由度。",
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "known_translation": {
+    "status": "not_applicable",
+    "value": null,
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 4,
+      "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+      "section": "Data analysis / Stimulus response latency"
+     }
+    ],
+    "reason": "不估计动物平移。",
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "speed_range": {
+    "status": "reported",
+    "value": [
+     {
+      "quantity": "other_specified",
+      "min": 0.85,
+      "max": 8,
+      "unit": "Hz",
+      "coordinate_frame": "paper-defined sensor/body frame",
+      "measurement_role": "ground_truth",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 5,
+        "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+        "section": "Statistics; Response latency"
+       }
+      ],
+      "definition": "本主张汇总的显示光栅时间频率；全速度调谐设计为−25至+25Hz。"
+     }
+    ],
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 5,
+      "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+      "section": "Statistics; Response latency"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "environment": {
+    "status": "reported",
+    "value": "laboratory_controlled",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 4,
+      "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+      "section": "Data analysis / Stimulus response latency"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "environment_details": {
+    "status": "reported",
+    "value": {
+     "dataset_ids": [
+      "DS-RUN03-Longden2010-H2-latency"
+     ],
+     "scene_count": 1,
+     "fov_deg": {
+      "quantity": "fov",
+      "min": 24,
+      "max": 24,
+      "unit": "deg",
+      "coordinate_frame": "paper-defined sensor/body frame",
+      "measurement_role": "ground_truth",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 3,
+        "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+        "section": "Visual stimulation; Velocity tuning"
+       }
+      ],
+      "definition": "圆孔直径；中心方位30°、仰角0°。"
+     },
+     "distance_range": null,
+     "distance_distribution": null,
+     "scene_dynamics": "dynamic",
+     "distance_knowledge": null,
+     "field_states": {
+      "distance_range": {
+       "status": "not_applicable",
+       "reason": "本条为显示器光栅的时间潜伏期实验，不提出场景距离或深度分布推断。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.3389/fnsys.2010.00153",
+         "version_id": "V-W-D6e117a3d967ebdc0-01",
+         "upload_id": "U-RUN02-Longden2010-PDF",
+         "page": 3,
+         "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+         "section": "Visual stimulation; Velocity tuning"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      },
+      "distance_distribution": {
+       "status": "not_applicable",
+       "reason": "本条为显示器光栅的时间潜伏期实验，不提出场景距离或深度分布推断。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.3389/fnsys.2010.00153",
+         "version_id": "V-W-D6e117a3d967ebdc0-01",
+         "upload_id": "U-RUN02-Longden2010-PDF",
+         "page": 3,
+         "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+         "section": "Visual stimulation; Velocity tuning"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      },
+      "distance_knowledge": {
+       "status": "not_applicable",
+       "reason": "本潜伏期实验不估计场景距离。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.3389/fnsys.2010.00153",
+         "version_id": "V-W-D6e117a3d967ebdc0-01",
+         "upload_id": "U-RUN02-Longden2010-PDF",
+         "page": 3,
+         "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+         "section": "Visual stimulation; Velocity tuning"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      }
+     }
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 3,
+      "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+      "section": "Visual stimulation; Velocity tuning"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "texture_noise": {
+    "status": "reported",
+    "value": {
+     "stimulus_type": "periodic_grating",
+     "contrast": {
+      "quantity": "contrast",
+      "min": 0.95,
+      "max": 0.95,
+      "unit": "Michelson_fraction",
+      "coordinate_frame": "paper-defined sensor/body frame",
+      "measurement_role": "ground_truth",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 3,
+        "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+        "section": "Visual stimulation; Velocity tuning"
+       }
+      ],
+      "definition": "方波光栅Michelson对比度。"
+     },
+     "spatial_frequency": {
+      "quantity": "spatial_frequency",
+      "min": 0.08771929824561403,
+      "max": 0.08771929824561403,
+      "unit": "cycles/deg",
+      "coordinate_frame": "paper-defined sensor/body frame",
+      "measurement_role": "ground_truth",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 3,
+        "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+        "section": "Visual stimulation; Velocity tuning"
+       }
+      ],
+      "definition": "由报告的11.4°/周期取倒数；这是刺激单位换算。"
+     },
+     "illumination": null,
+     "noise": null,
+     "outlier_fraction": null,
+     "occlusion_fraction": null,
+     "field_states": {
+      "illumination": {
+       "status": "not_reported",
+       "reason": "所定位方法/刺激描述没有定量披露此条件；不把未报告当作零。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.3389/fnsys.2010.00153",
+         "version_id": "V-W-D6e117a3d967ebdc0-01",
+         "upload_id": "U-RUN02-Longden2010-PDF",
+         "page": 3,
+         "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+         "section": "Visual stimulation; Velocity tuning"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      },
+      "noise": {
+       "status": "not_reported",
+       "reason": "所定位方法/刺激描述没有定量披露此条件；不把未报告当作零。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.3389/fnsys.2010.00153",
+         "version_id": "V-W-D6e117a3d967ebdc0-01",
+         "upload_id": "U-RUN02-Longden2010-PDF",
+         "page": 3,
+         "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+         "section": "Visual stimulation; Velocity tuning"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      },
+      "outlier_fraction": {
+       "status": "not_reported",
+       "reason": "所定位方法/刺激描述没有定量披露此条件；不把未报告当作零。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.3389/fnsys.2010.00153",
+         "version_id": "V-W-D6e117a3d967ebdc0-01",
+         "upload_id": "U-RUN02-Longden2010-PDF",
+         "page": 3,
+         "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+         "section": "Visual stimulation; Velocity tuning"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      },
+      "occlusion_fraction": {
+       "status": "not_reported",
+       "reason": "所定位方法/刺激描述没有定量披露此条件；不把未报告当作零。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.3389/fnsys.2010.00153",
+         "version_id": "V-W-D6e117a3d967ebdc0-01",
+         "upload_id": "U-RUN02-Longden2010-PDF",
+         "page": 3,
+         "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+         "section": "Visual stimulation; Velocity tuning"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      }
+     }
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 3,
+      "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+      "section": "Visual stimulation; Velocity tuning"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "scale": {
+    "status": "not_applicable",
+    "value": null,
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 4,
+      "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+      "section": "Data analysis / Stimulus response latency"
+     }
+    ],
+    "reason": "潜伏期量化不涉及自运动的尺度恢复。",
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "scale_source_prior": {
+    "status": "not_applicable",
+    "value": null,
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 4,
+      "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+      "section": "Data analysis / Stimulus response latency"
+     }
+    ],
+    "reason": "无公制自运动尺度主张。",
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "scale_observability": {
+    "status": "not_applicable",
+    "value": null,
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 4,
+      "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+      "section": "Data analysis / Stimulus response latency"
+     }
+    ],
+    "reason": "无自运动尺度可观测性主张。",
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "method_and_validation": {
+    "status": "reported",
+    "value": {
+     "assumptions": [
+      "雌性2–11日龄固定制备；右H2胞外记录",
+      "温度21.7–24.3°C；CDM2.5µM、10µl",
+      "31频率、25组；每频率25次重复，不能套用信息率实验的100次",
+      "SD3ms平滑用于潜伏期算法；不是Fig2D显示用SD6ms",
+      "阈值时刻是操作定义，不是直接测得轴突传导延迟",
+      "N=7配对H2记录；独立动物分配未逐项给出"
+     ],
+     "validation_types": [
+      "electrophysiology",
+      "controlled_experiment"
+     ],
+     "dataset_ids": [
+      "DS-RUN03-Longden2010-H2-latency"
+     ],
+     "sample_count": 7,
+     "trial_count": 25,
+     "baseline_ids": [
+      "B-RUN03-Longden2010-pre-CDM"
+     ],
+     "metric_ids": [
+      "M-RUN03-Longden2010-pre-CDM-latency",
+      "M-RUN03-Longden2010-post-CDM-latency",
+      "M-RUN03-Longden2010-reported-latency-reduction"
+     ],
+     "failure_conditions": [
+      "仅支持该CDM固定制备的H2起始潜伏期变化，不证明自然飞行机制或瞬态模型已修复。峰值潜伏期不显著不等于相等；不推到所有频率分别显著。N=7是报告的配对H2记录样本数，独立动物分配未逐项给出；未报告配对差CI、精确t/df/尾数及该汇总比较的多重性修正。没有平台饱和区幅值解码，原L07不足保持。"
+     ],
+     "field_states": {}
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 4,
+      "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+      "section": "Data analysis / Stimulus response latency"
+     }
+    ],
+    "reason": null,
+    "unknown_since_utc": null,
+    "review_task_id": null
+   }
+  },
+  "species": {
+   "status": "reported",
+   "value": [
+    {
+     "scientific_name": "Calliphora vicina",
+     "taxon_id": null,
+     "cell_type": "H2 LPTC",
+     "cell_identifiers": [
+      "H2"
+     ],
+     "field_states": {
+      "taxon_id": {
+       "status": "not_reported",
+       "reason": "论文未给出分类数据库标识符。",
+       "evidence_locator": [
+        {
+         "source_id": "publisher",
+         "identifier": "10.3389/fnsys.2010.00153",
+         "version_id": "V-W-D6e117a3d967ebdc0-01",
+         "upload_id": "U-RUN02-Longden2010-PDF",
+         "page": 2,
+         "evidence_note": "Methods：2–11日龄雌性 Calliphora vicina，右侧 H2 胞外记录；CDM 2.5 µM、10 µl；速度调谐实验21.7–24.3°C。",
+         "section": "Materials and Methods"
+        }
+       ],
+       "unknown_since_utc": null,
+       "review_task_id": null
+      }
+     }
+    }
+   ],
+   "evidence_locator": [
+    {
+     "source_id": "publisher",
+     "identifier": "10.3389/fnsys.2010.00153",
+     "version_id": "V-W-D6e117a3d967ebdc0-01",
+     "upload_id": "U-RUN02-Longden2010-PDF",
+     "page": 2,
+     "evidence_note": "Methods：2–11日龄雌性 Calliphora vicina，右侧 H2 胞外记录；CDM 2.5 µM、10 µl；速度调谐实验21.7–24.3°C。",
+     "section": "Materials and Methods"
+    }
+   ],
+   "reason": null,
+   "unknown_since_utc": null,
+   "review_task_id": null
+  },
+  "motion_type": {
+   "status": "reported",
+   "value": "other_specified",
+   "evidence_locator": [
+    {
+     "source_id": "publisher",
+     "identifier": "10.3389/fnsys.2010.00153",
+     "version_id": "V-W-D6e117a3d967ebdc0-01",
+     "upload_id": "U-RUN02-Longden2010-PDF",
+     "page": 4,
+     "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+     "section": "Data analysis / Stimulus response latency"
+    }
+   ],
+   "reason": null,
+   "unknown_since_utc": null,
+   "review_task_id": null
+  },
+  "environment": {
+   "status": "reported",
+   "value": "laboratory_controlled",
+   "evidence_locator": [
+    {
+     "source_id": "publisher",
+     "identifier": "10.3389/fnsys.2010.00153",
+     "version_id": "V-W-D6e117a3d967ebdc0-01",
+     "upload_id": "U-RUN02-Longden2010-PDF",
+     "page": 4,
+     "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+     "section": "Data analysis / Stimulus response latency"
+    }
+   ],
+   "reason": null,
+   "unknown_since_utc": null,
+   "review_task_id": null
+  },
+  "scale": {
+   "status": "not_applicable",
+   "value": null,
+   "evidence_locator": [
+    {
+     "source_id": "publisher",
+     "identifier": "10.3389/fnsys.2010.00153",
+     "version_id": "V-W-D6e117a3d967ebdc0-01",
+     "upload_id": "U-RUN02-Longden2010-PDF",
+     "page": 4,
+     "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+     "section": "Data analysis / Stimulus response latency"
+    }
+   ],
+   "reason": "潜伏期量化不涉及自运动的尺度恢复。",
+   "unknown_since_utc": null,
+   "review_task_id": null
+  },
+  "method": "固定制备雌性Calliphora vicina、右侧H2胞外记录；2.5µM/10µl CDM前后配对。速度调谐每频率25次重复；跨试次平均以SD=3ms高斯平滑，刺激前375ms放电率均值+2SD作阈值，首次持续6ms越阈定义起始潜伏期。",
+  "results": "在0.85–8Hz刺激频率汇总中，H2响应起始潜伏期由CDM前44.8±1.3ms降至CDM后40.9±1.5ms（均值±SE，N=7，配对t检验P=.04；作者报约9%缩短）。峰值潜伏期未检出显著变化。",
+  "baseline": "相同H2细胞CDM给药前的起始潜伏期；同刺激和算法，与给药后配对。",
+  "effect": "给药后起始潜伏期约缩短9%；在所报检验下P=.04。峰值潜伏期的负结果约束了“整个响应均匀前移”的解释。",
+  "dataset_records": [
+   {
+    "dataset_id": "DS-RUN03-Longden2010-H2-latency",
+    "name": "H2速度调谐CDM前后配对潜伏期；Fig3，0.85–8Hz汇总",
+    "version": null,
+    "data_kind": "neural_recording",
+    "source_locator": {
+     "source_id": "publisher",
+     "identifier": "10.3389/fnsys.2010.00153",
+     "version_id": "V-W-D6e117a3d967ebdc0-01",
+     "upload_id": "U-RUN02-Longden2010-PDF",
+     "page": 3,
+     "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+     "section": "Visual stimulation; Velocity tuning"
+    },
+    "sequence_ids": [
+     "Figure3-velocity-tuning-0.85-to-8Hz"
+    ],
+    "split_id": null,
+    "ground_truth_source": null,
+    "ground_truth_independence": "not_applicable",
+    "field_states": {
+     "version": {
+      "status": "not_reported",
+      "reason": "论文未指定该数据的版本号。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 3,
+        "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+        "section": "Visual stimulation; Velocity tuning"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     },
+     "split_id": {
+      "status": "not_applicable",
+      "reason": "本实验不采用训练/测试 split 命名。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 3,
+        "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+        "section": "Visual stimulation; Velocity tuning"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     },
+     "ground_truth_source": {
+      "status": "not_applicable",
+      "reason": "此神经响应或理论记录没有外部运动真值需求。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 3,
+        "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+        "section": "Visual stimulation; Velocity tuning"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   }
+  ],
+  "baseline_records": [
+   {
+    "baseline_id": "B-RUN03-Longden2010-pre-CDM",
+    "baseline_type": "control_group",
+    "description": "相同H2细胞CDM给药前的起始潜伏期；同刺激和算法，与给药后配对。",
+    "dataset_id": "DS-RUN03-Longden2010-H2-latency",
+    "condition_ids": [
+     "C-RUN03-Longden2010-latency-pre-CDM"
+    ],
+    "metric_ids": [
+     "M-RUN03-Longden2010-pre-CDM-latency"
+    ],
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 5,
+      "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+      "section": "Statistics; Response latency"
+     }
+    ],
+    "field_states": {}
+   }
+  ],
+  "condition_levels": [
+   {
+    "condition_id": "C-RUN03-Longden2010-latency-pre-CDM",
+    "factor": "control_intervention",
+    "level_id": "pre-CDM",
+    "quantity": null,
+    "description": "给药前，对照条件。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 2,
+      "evidence_note": "Methods：2–11日龄雌性 Calliphora vicina，右侧 H2 胞外记录；CDM 2.5 µM、10 µl；速度调谐实验21.7–24.3°C。",
+      "section": "Materials and Methods"
+     }
+    ],
+    "field_states": {
+     "quantity": {
+      "status": "not_applicable",
+      "reason": "该条件为类别或算法而非数量。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 2,
+        "evidence_note": "Methods：2–11日龄雌性 Calliphora vicina，右侧 H2 胞外记录；CDM 2.5 µM、10 µl；速度调谐实验21.7–24.3°C。",
+        "section": "Materials and Methods"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   },
+   {
+    "condition_id": "C-RUN03-Longden2010-latency-post-CDM",
+    "factor": "control_intervention",
+    "level_id": "post-CDM",
+    "quantity": null,
+    "description": "右侧lobula plate给予CDM 2.5µM、10µl后。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 2,
+      "evidence_note": "Methods：2–11日龄雌性 Calliphora vicina，右侧 H2 胞外记录；CDM 2.5 µM、10 µl；速度调谐实验21.7–24.3°C。",
+      "section": "Materials and Methods"
+     }
+    ],
+    "field_states": {
+     "quantity": {
+      "status": "not_applicable",
+      "reason": "该条件为类别或算法而非数量。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 2,
+        "evidence_note": "Methods：2–11日龄雌性 Calliphora vicina，右侧 H2 胞外记录；CDM 2.5 µM、10 µl；速度调谐实验21.7–24.3°C。",
+        "section": "Materials and Methods"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   },
+   {
+    "condition_id": "C-RUN03-Longden2010-latency-pooled-0.85-8Hz",
+    "factor": "speed",
+    "level_id": "pooled-0.85-8Hz",
+    "quantity": {
+     "quantity": "other_specified",
+     "min": 0.85,
+     "max": 8,
+     "unit": "Hz",
+     "coordinate_frame": "paper-defined sensor/body frame",
+     "measurement_role": "ground_truth",
+     "evidence_locator": [
+      {
+       "source_id": "publisher",
+       "identifier": "10.3389/fnsys.2010.00153",
+       "version_id": "V-W-D6e117a3d967ebdc0-01",
+       "upload_id": "U-RUN02-Longden2010-PDF",
+       "page": 5,
+       "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+       "section": "Statistics; Response latency"
+      }
+     ],
+     "definition": "显示光栅时间频率；不是动物自旋转速率。"
+    },
+    "description": "此定量比较汇总0.85–8Hz；不等同于逐频率显著性。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 5,
+      "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+      "section": "Statistics; Response latency"
+     }
+    ],
+    "field_states": {}
+   }
+  ],
+  "metric_records": [
+   {
+    "metric_id": "M-RUN03-Longden2010-pre-CDM-latency",
+    "metric_name": "response_latency",
+    "definition": "CDM前起始潜伏期；按p4阈值法，汇总0.85–8Hz，N为配对H2记录数。",
+    "value": 44.8,
+    "unit": "ms",
+    "statistic": "mean",
+    "sample_count": 7,
+    "dataset_id": "DS-RUN03-Longden2010-H2-latency",
+    "baseline_id": null,
+    "alignment": "none",
+    "alignment_source": "none",
+    "interval": null,
+    "uncertainty": {
+     "kind": "sem",
+     "value": 1.3,
+     "unit": "ms",
+     "description": "原文p5规定均值±SE；不是SD或配对差置信区间。"
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 5,
+      "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+      "section": "Statistics; Response latency"
+     }
+    ],
+    "field_states": {
+     "baseline_id": {
+      "status": "not_applicable",
+      "reason": "该数值是自身或真值比较指标，未另设基准方法。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 5,
+        "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+        "section": "Statistics; Response latency"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     },
+     "interval": {
+      "status": "not_applicable",
+      "reason": "不是 RPE 等依赖时间间隔的指标。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 5,
+        "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+        "section": "Statistics; Response latency"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   },
+   {
+    "metric_id": "M-RUN03-Longden2010-post-CDM-latency",
+    "metric_name": "response_latency",
+    "definition": "CDM后起始潜伏期；同一算法及0.85–8Hz汇总；与前条件配对比较P=.04。",
+    "value": 40.9,
+    "unit": "ms",
+    "statistic": "mean",
+    "sample_count": 7,
+    "dataset_id": "DS-RUN03-Longden2010-H2-latency",
+    "baseline_id": "B-RUN03-Longden2010-pre-CDM",
+    "alignment": "none",
+    "alignment_source": "none",
+    "interval": null,
+    "uncertainty": {
+     "kind": "sem",
+     "value": 1.5,
+     "unit": "ms",
+     "description": "原文p5规定均值±SE；不是SD或配对差置信区间。"
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 5,
+      "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+      "section": "Statistics; Response latency"
+     }
+    ],
+    "field_states": {
+     "interval": {
+      "status": "not_applicable",
+      "reason": "不是 RPE 等依赖时间间隔的指标。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 5,
+        "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+        "section": "Statistics; Response latency"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   },
+   {
+    "metric_id": "M-RUN03-Longden2010-reported-latency-reduction",
+    "metric_name": "effect_size",
+    "definition": "作者报告的约9%潜伏期缩短；不将四舍五入均值计算值冒充额外精确效应量。",
+    "value": 9,
+    "unit": "percent",
+    "statistic": "other_defined",
+    "sample_count": 7,
+    "dataset_id": "DS-RUN03-Longden2010-H2-latency",
+    "baseline_id": "B-RUN03-Longden2010-pre-CDM",
+    "alignment": "none",
+    "alignment_source": "none",
+    "interval": null,
+    "uncertainty": {
+     "kind": "other_defined",
+     "description": "作者近似百分数，未给该效应的独立不确定度。"
+    },
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 5,
+      "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+      "section": "Statistics; Response latency"
+     }
+    ],
+    "field_states": {
+     "interval": {
+      "status": "not_applicable",
+      "reason": "不是 RPE 等依赖时间间隔的指标。",
+      "evidence_locator": [
+       {
+        "source_id": "publisher",
+        "identifier": "10.3389/fnsys.2010.00153",
+        "version_id": "V-W-D6e117a3d967ebdc0-01",
+        "upload_id": "U-RUN02-Longden2010-PDF",
+        "page": 5,
+        "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+        "section": "Statistics; Response latency"
+       }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null
+     }
+    }
+   }
+  ],
+  "proof_record": null,
+  "evidence_admission_status": "eligible",
+  "rejection_codes": [],
+  "claims_absolute_scale": {
+   "status": "reported",
+   "value": false,
+   "evidence_locator": [
+    {
+     "source_id": "publisher",
+     "identifier": "10.3389/fnsys.2010.00153",
+     "version_id": "V-W-D6e117a3d967ebdc0-01",
+     "upload_id": "U-RUN02-Longden2010-PDF",
+     "page": 5,
+     "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+     "section": "Statistics; Response latency"
+    }
+   ],
+   "reason": null,
+   "unknown_since_utc": null,
+   "review_task_id": null
+  },
+  "scale_prior_details": [],
+  "measurement_model": null,
+  "state_variables": [],
+  "gauge_freedoms": [],
+  "observability_assumptions": [],
+  "degeneracy_conditions": [],
+  "excitation_requirements": [],
+  "external_measurement_sources": [],
+  "observability_argument_locator": [],
+  "remaining_limitations": "仅支持该CDM固定制备的H2起始潜伏期变化，不证明自然飞行机制或瞬态模型已修复。峰值潜伏期不显著不等于相等；不推到所有频率分别显著。N=7是报告的配对H2记录样本数，独立动物分配未逐项给出；未报告配对差CI、精确t/df/尾数及该汇总比较的多重性修正。没有平台饱和区幅值解码，原L07不足保持。",
+  "counter_evidence": true,
+  "counter_evidence_types": [
+   "negative_result"
+  ],
+  "evidence_locator": [
+   {
+    "source_id": "publisher",
+    "identifier": "10.3389/fnsys.2010.00153",
+    "version_id": "V-W-D6e117a3d967ebdc0-01",
+    "upload_id": "U-RUN02-Longden2010-PDF",
+    "page": 2,
+    "evidence_note": "Methods：2–11日龄雌性 Calliphora vicina，右侧 H2 胞外记录；CDM 2.5 µM、10 µl；速度调谐实验21.7–24.3°C。",
+    "section": "Materials and Methods"
+   },
+   {
+    "source_id": "publisher",
+    "identifier": "10.3389/fnsys.2010.00153",
+    "version_id": "V-W-D6e117a3d967ebdc0-01",
+    "upload_id": "U-RUN02-Longden2010-PDF",
+    "page": 3,
+    "evidence_note": "Methods：11.4°周期方波光栅，95%对比，200Hz；24°孔径。速度调谐31个随机排序频率、25组，运动0.5s，前后各0.5s灰屏。",
+    "section": "Visual stimulation; Velocity tuning"
+   },
+   {
+    "source_id": "publisher",
+    "identifier": "10.3389/fnsys.2010.00153",
+    "version_id": "V-W-D6e117a3d967ebdc0-01",
+    "upload_id": "U-RUN02-Longden2010-PDF",
+    "page": 4,
+    "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+    "section": "Data analysis / Stimulus response latency"
+   },
+   {
+    "source_id": "publisher",
+    "identifier": "10.3389/fnsys.2010.00153",
+    "version_id": "V-W-D6e117a3d967ebdc0-01",
+    "upload_id": "U-RUN02-Longden2010-PDF",
+    "page": 5,
+    "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+    "section": "Statistics; Response latency"
+   },
+   {
+    "source_id": "publisher",
+    "identifier": "10.3389/fnsys.2010.00153",
+    "version_id": "V-W-D6e117a3d967ebdc0-01",
+    "upload_id": "U-RUN02-Longden2010-PDF",
+    "page": 6,
+    "evidence_note": "Fig3A以大点表示N=7均值±SE，区分起始和峰值潜伏期；Fig3B为各正频率潜伏期增益。",
+    "figure": "3A;3B"
+   }
+  ],
+  "provenance_upload_ids": [
+   "U-RUN02-Longden2010-PDF"
+  ],
+  "provenance_version_ids": [
+   "V-W-D6e117a3d967ebdc0-01"
+  ],
+  "assessment_status": "active",
+  "superseded_by_assessment_id": null,
+  "cascade_event_id": null,
+  "discard_reason": null,
+  "fulltext_status": "available_verified",
+  "verification_status": "verified",
+  "citation_roles": [
+   "background"
+  ],
+  "project_relation": "not_applicable",
+  "statement_basis": "author_explicit",
+  "reviewer": "P6-RUN0003-cached-fulltext-review",
+  "date": "2026-11-26T14:37:50.411669Z",
+  "biological_implications": "对CDM受控干预下H2起始响应时间给出量化约束；不将药理状态直接等同自然飞行时的因果机制。",
+  "engineering_implications": "瞬态模型评估可同时检验起始潜伏期与峰值时刻，区分响应形状和时间变化；本文没有工程模型误差或L07平台幅值恢复证据。",
+  "field_states": {
+   "superseded_by_assessment_id": {
+    "status": "not_applicable",
+    "reason": "原始有效 Assessment；没有合并、去重级联或废弃事件。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 5,
+      "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+      "section": "Statistics; Response latency"
+     }
+    ],
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "cascade_event_id": {
+    "status": "not_applicable",
+    "reason": "原始有效 Assessment；没有合并、去重级联或废弃事件。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 5,
+      "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+      "section": "Statistics; Response latency"
+     }
+    ],
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "discard_reason": {
+    "status": "not_applicable",
+    "reason": "原始有效 Assessment；没有合并、去重级联或废弃事件。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 5,
+      "evidence_note": "0.85–8Hz汇总：44.8±1.3ms→40.9±1.5ms，均值±SE、N=7、配对t检验P=.04，作者报约9%；峰值潜伏期无显著变化。",
+      "section": "Statistics; Response latency"
+     }
+    ],
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "measurement_model": {
+    "status": "not_applicable",
+    "reason": "本条为实验/讨论证据而非独立可观测性或数学证明。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 4,
+      "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+      "section": "Data analysis / Stimulus response latency"
+     }
+    ],
+    "unknown_since_utc": null,
+    "review_task_id": null
+   },
+   "proof_record": {
+    "status": "not_applicable",
+    "reason": "本条为实验/讨论证据而非独立可观测性或数学证明。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 4,
+      "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+      "section": "Data analysis / Stimulus response latency"
+     }
+    ],
+    "unknown_since_utc": null,
+    "review_task_id": null
+   }
+  }
+ },
+ "cache_query_record": {
+  "query_id": "Q-RUN03-CACHE-Longden2010-latency-01",
+  "task_id": "T-assessment-W-D6e117a3d967ebdc0",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0005",
+  "entity_id": "W-D6e117a3d967ebdc0",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://www.frontiersin.org/journals/systems-neuroscience/articles/10.3389/fnsys.2010.00153/pdf",
+  "api_version": null,
+  "query_kind": "local_fulltext_cache_review",
+  "raw_parameters": {
+   "doi": "10.3389/fnsys.2010.00153",
+   "pdf_pages": [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "claim": "response-onset-latency"
+  },
+  "normalized_parameters": {
+   "doi": "10.3389/fnsys.2010.00153",
+   "pdf_pages": [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "claim": "response-onset-latency"
+  },
+  "queried_at_utc": "2026-11-26T14:37:50.411669Z",
+  "cursor_in": null,
+  "cursor_out": null,
+  "page_index": 0,
+  "page_complete": true,
+  "visible_total": 1,
+  "returned_count": 1,
+  "count_before_dedup": 1,
+  "count_after_dedup": 1,
+  "new_work_ids": [],
+  "new_work_count": 0,
+  "result_identifiers": [
+   "10.3389/fnsys.2010.00153"
+  ],
+  "status": "cache_hit",
+  "verification_status": "verified",
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "cache_path": "temp/query-results/Q-RUN02-L079-longden2010-pdf.json",
+  "cache_hit": true,
+  "reused_query_id": "Q-RUN02-L079-longden2010-pdf",
+  "rerun_reason": "原始PDF缓存复用，只核对潜伏期单主张；本次无科研网络请求。",
+  "coverage_note": "本次只覆盖Methods与Fig3对应单主张；page_complete只表示这次局部缓存阅读完成，不关闭Work其他主张或P3–P6。",
+  "license_note": "不上传PDF、页图或连续原文；仅原创中文分析与事实字段。",
+  "recorded_at_utc": "2026-11-26T14:37:50.411669Z",
+  "query_time_status": "exact",
+  "field_states": {
+   "api_version": {
+    "status": "not_applicable",
+    "reason": "本次为本地缓存读取，不调用供应方API。",
+    "evidence_locator": [
+     {
+      "source_id": "publisher",
+      "identifier": "10.3389/fnsys.2010.00153",
+      "version_id": "V-W-D6e117a3d967ebdc0-01",
+      "upload_id": "U-RUN02-Longden2010-PDF",
+      "page": 4,
+      "evidence_note": "潜伏期算法：跨试次平均，SD=3ms高斯平滑，前375ms基线均值+2SD阈值，首次持续6ms越阈。",
+      "section": "Data analysis / Stimulus response latency"
+     }
+    ],
+    "unknown_since_utc": null,
+    "review_task_id": null
+   }
+  }
+ },
+ "manual_review_record": {
+  "review_id": "MR-RUN03-Longden2010-latency-01",
+  "run_id": "RUN-0003",
+  "review_type": "fulltext_claim_review",
+  "entity_id": "AS-RUN03-Longden2010-L03-onset-latency",
+  "reviewer": "P6-RUN0003-cached-fulltext-review",
+  "recorded_at_utc": "2026-11-26T14:37:50.411669Z",
+  "artifact": "temp/reports/RUN-0003-Longden2010-latency-review.json",
+  "notes": "1次人工复核活动：PDF skill，原始PDF p2–6渲染目视核对Methods、Statistics、Response latency及Fig3；文本辅助定位。仅1条潜伏期主张；不扩展其他实验。"
+ },
+ "gate_review": {
+  "schema_version": "1.1.1",
+  "assessment_schema_errors": [],
+  "query_schema_errors": [],
+  "automatic_evidence_gate_status": "eligible",
+  "automatic_rejection_codes": [],
+  "manual_checks": [
+   {
+    "gate": "全文结果与图形定位",
+    "passed": true,
+    "evidence": "原PDF p5文本量化，p6 Fig3图形和N/SE；p2–4条件。"
+   },
+   {
+    "gate": "L03定量瞬态指标",
+    "passed": true,
+    "evidence": "response_latency，ms；p4可复现的阈值定义；p5前后配对数值。"
+   },
+   {
+    "gate": "至少两个对照条件及基准",
+    "passed": true,
+    "evidence": "CDM前/后；同H2的配对控制，N=7。不是适应时间常数主张。"
+   },
+   {
+    "gate": "关键生物及刺激条件",
+    "passed": true,
+    "evidence": "物种、性别/日龄、细胞、药量、温度、光栅、视野、时间频率与重复设计均定位。"
+   },
+   {
+    "gate": "不夸大处理程度",
+    "passed": true,
+    "evidence": "eligible/new_evidence_or_hypothesis；仅量化生理约束；没有模型解决或L07恢复结论。"
+   },
+   {
+    "gate": "统计与负结果边界",
+    "passed": true,
+    "evidence": "SE而非SD；N为H2记录；P=.04配对t；峰值非显著不作等同性。"
+   }
+  ],
+  "statistics_detail": {
+   "test": "paired t-test",
+   "p_value": 0.04,
+   "sample_count": 7,
+   "sample_unit": "reported paired H2 recordings",
+   "independent_animal_allocation": "not_reported_separately",
+   "uncertainty_type": "standard_error_of_mean",
+   "t_statistic": "not_reported",
+   "degrees_of_freedom": "not_reported",
+   "tails": "not_reported",
+   "paired_difference_confidence_interval": "not_reported",
+   "multiplicity_correction": "not_reported_for_this_pooled_comparison",
+   "negative_result": "peak-response latency not significantly changed"
+  }
+ },
+ "publication_provenance": {
+  "initial_receipt_commit": "888ec54460d99415845cca5075a94c34c7f6228a",
+  "initial_receipt_blob_sha1": "8c9d05ee247dfd0e5823d72b165e747175672ee2",
+  "complete_record_replaces_receipt_at_same_path": true
+ }
 }
