@@ -1,0 +1,64 @@
+{
+  "run_id": "RUN-0003",
+  "scope_id": "SCOPE-0001",
+  "start_checkpoint_id": "CP-0004",
+  "start_commit_sha": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+  "started_at_utc": "2026-11-26T14:10:40Z",
+  "authorization": "检查进度，继续工作；反复迭代或递归执行 P3,P4,P5,P6；新产生的数据必须即时提交和推送；本地已有数据未完整、无误同步到 GitHub 时停止其他任务。",
+  "authorized_stages": [
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "approval_effect": "Latest user instruction resumes P3-P6 after the earlier pause. SCOPE-0001 cutoff, seed set, expansion policy and DEC rules are unchanged.",
+  "budget": {
+    "wall_clock_hours": 6,
+    "external_requests": 2000,
+    "manual_review_items": 200,
+    "paid_spend": 0
+  },
+  "manual_review_unit": "A separately logged Work fulltext/bibliography review, Person disambiguation review, Project review, or Assessment adjudication. Automated metadata matching is logged separately.",
+  "external_requests_used": 0,
+  "manual_review_items_used": 0,
+  "cache_reuse_events": 0,
+  "paid_spend": 0,
+  "status": "running",
+  "branch": "research/p3-p6-cp5",
+  "sync_policy": "Persist each bounded receipt/review immediately to GitHub and read it back before starting the next research batch. Canonical integration and checkpoint export are followed by exact remote verification; any failed sync blocks further research.",
+  "start_sync_gate": {
+    "status": "passed",
+    "remote_branch": "main",
+    "remote_commit_sha": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+    "tree_sha": "b5e8357991b95662a30629883e5a6a81917013b9",
+    "verified_files": 1129,
+    "sha256_mismatches": 0,
+    "untracked_files": 0,
+    "ignored_files": 0,
+    "worktree_clean": true,
+    "independent_remote_verification_sha256": "833051af5801c4f0218b0985b441893c70ff9b4bf7c6a09daa34bddc7eb5900f",
+    "local_integrity_manifest_sha256": "afe4018ac3e50c7ea81d4c1af4a1a8151f42be7e054ffe543f5d88e65bbf9dea"
+  },
+  "first_batch": {
+    "purpose": "Retry the 14 exact MED identities from Q-RUN02-ENT-0198 and repair existing task evidence associations without re-fetching completed citation lists.",
+    "origin_work_id": "W-Da5cfde2e7ea2196d",
+    "source": "EuropePMC",
+    "pending_identity_ids": [
+      "28347859",
+      "28193813",
+      "27346905",
+      "27147991",
+      "26994172",
+      "27436729",
+      "27436728",
+      "26898725",
+      "26877083",
+      "26866692",
+      "26781051",
+      "26582183",
+      "25994678",
+      "25841648"
+    ]
+  },
+  "closure": false
+}
