@@ -1,0 +1,64 @@
+{
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "start_checkpoint_id": "CP-0005",
+  "start_commit_sha": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+  "started_at_utc": "2026-11-26T16:08:25Z",
+  "authorization": "检查进度，继续工作；反复迭代或递归执行P3,P4,P5,P6；新产生的数据必须即时提交和推送；已有数据未完整、无误同步到GitHub时停止其他任务。打包上传时在打包目录提供PowerShell恢复、合并main和清理说明，由用户在主机执行。",
+  "authorized_stages": [
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "approval_effect": "Continue the existing SCOPE-0001 queues. No scope, seed, cutoff, budget, main-branch or remote-deletion authorization is inferred.",
+  "budget": {
+    "wall_clock_hours": 6,
+    "external_requests": 2000,
+    "manual_review_items": 200,
+    "paid_spend": 0
+  },
+  "manual_review_unit": "A separately logged Work fulltext/bibliography review, Person disambiguation review, Project review, or Assessment adjudication. Automated metadata matching is logged separately.",
+  "external_requests_used": 0,
+  "manual_review_items_used": 0,
+  "cache_reuse_events": 0,
+  "paid_spend": 0,
+  "status": "running",
+  "branch": "research/p3-p6-cp6",
+  "sync_policy": "Immediately commit/publish each bounded source receipt or review and verify exact remote bytes before the next batch. Canonical integration is atomic, followed by full checkpoint validation and exact remote verification. Any failed synchronization blocks further research.",
+  "start_sync_gate": {
+    "status": "passed",
+    "checked_at_utc": "2026-11-26T16:06:54.227818Z",
+    "remote_branch": "research/p3-p6-cp5",
+    "remote_commit_sha": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+    "tree_sha": "27b8ac91e5e86fca891dc24e0f08134aaab96ebd",
+    "verified_files": 1188,
+    "verified_file_bytes": 828160944,
+    "sha256_mismatches": 0,
+    "untracked_files": 0,
+    "ignored_files": 0,
+    "worktree_clean": true,
+    "local_branch_commits_not_reachable_from_actual_remote_heads": 0,
+    "remote_main": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+    "cp5_transport_head": "b0e87ab4669e8c1c7832a2187314c90a41dca438",
+    "independent_remote_verification_sha256": "0d2a2bd00cee43395ab8f6d053b1315fea56604a1badd1fc0719cf8a0e830388"
+  },
+  "first_batch": {
+    "purpose": "Resume the nine exact project-citer identities still unresolved after RUN-0003; process resulting existing-reference/author gaps. Select a distinct, already-admitted L07/L09 fulltext evidence task after cache and task checks.",
+    "pending_identity_ids": [
+      "28193813",
+      "27147991",
+      "26994172",
+      "27436729",
+      "27436728",
+      "26898725",
+      "26877083",
+      "26582183",
+      "25994678"
+    ],
+    "origin_work_id": "W-Da5cfde2e7ea2196d",
+    "source": "EuropePMC",
+    "research_cutoff_at_utc": "2026-11-26T05:24:08Z"
+  },
+  "closure": false
+}
