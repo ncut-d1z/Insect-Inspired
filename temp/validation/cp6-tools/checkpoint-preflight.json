@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-11-26T16:34:45.598190Z",
+  "scope": "AST/import/CLI and exact historical Git baseline checks only; no canonical write, full collection, candidate build, export, finalization or QA executed.",
+  "python_syntax": [
+    "checkpoint_cp6.py",
+    "finalize_cp6.py"
+  ],
+  "default_preview_requires_explicit_apply_for_canonical_writes": true,
+  "canonical_write_whitelist": [
+    "README.md",
+    "temp/change-log.md",
+    "temp/progress.md",
+    "temp/reports/P3-P6-CP0006.md",
+    "temp/runs/RUN-0004.json",
+    "temp/snapshots/checkpoints/CP-0006.json"
+  ],
+  "logical_baseline_dataset_count": 19,
+  "historical_files_verified": {
+    "temp/snapshots/checkpoints/CP-0001.json": "eeb15790d9c2006ac4fd1cd8c2d1ec26d43b56cc62fb3d084b15452d6214e4d1",
+    "temp/snapshots/checkpoints/CP-0002.json": "eb2fa4f2c32b39e03ed844fab8c42149a2ca51f9927fe72b07de77484a6d7fd2",
+    "temp/snapshots/checkpoints/CP-0003.json": "d671e41d72412c4785a61513b47421235011f4fb3d9ec6bfe8f799da3ff08f10",
+    "temp/snapshots/checkpoints/CP-0004.json": "4ba1a26755f2e370b64a9bae336e3cd78961637e2e6dbcd9cbe8b80e064668fd",
+    "temp/snapshots/checkpoints/CP-0005.json": "ed0fa6a00066a82d1a9635cf6306b74a1982d3659911ded42c4087ddc443e270",
+    "temp/snapshots/scope.json": "45150b8374103fa15e2d2e16626c86ad884126006d0ceab99eafab41589838e9",
+    "temp/snapshots/scopes/SCOPE-0001.json": "45150b8374103fa15e2d2e16626c86ad884126006d0ceab99eafab41589838e9",
+    "temp/seed-manifest.jsonl": "f8da5ca1a64e494867937c1686b1db8e3b07ea01026a1acbd9ef7ffaf9e57b34"
+  },
+  "baseline_assessment_records": 69,
+  "latest_task_reducer_handles_out_of_order_events": true,
+  "duplicate_sequence_probe_rejected": true,
+  "canonical_writes": false,
+  "full_qa_executed": false,
+  "research_requests": 0,
+  "remote_writes": false,
+  "integration_report_not_yet_consumed": true
+}

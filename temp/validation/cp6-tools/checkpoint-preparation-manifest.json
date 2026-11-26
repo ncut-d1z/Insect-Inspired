@@ -1,0 +1,47 @@
+{
+  "prepared_at_utc": "2026-11-26T16:34:45.598190Z",
+  "scope_id": "SCOPE-0001",
+  "run_id": "RUN-0004",
+  "checkpoint_id": "CP-0006",
+  "baseline_commit": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+  "baseline_tree": "27b8ac91e5e86fca891dc24e0f08134aaab96ebd",
+  "files": [
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp6_work/checkpoint_cp6.py",
+      "bytes": 50431,
+      "sha256": "0975f1eda645030d9b99948c2e3d39447770730443dd66d09c865e531ff86920"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp6_work/finalize_cp6.py",
+      "bytes": 14520,
+      "sha256": "ebe9ef9b5a8da954647bc53860c1569c7b81190147934d4e9b67ecf8da205213"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp6_work/CHECKPOINT-RUN.md",
+      "bytes": 5519,
+      "sha256": "2cb2fed81f06d080f0f802aac0cded9b655972d399a3649626781cb6d82acead"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp6_work/checkpoint-preflight.json",
+      "bytes": 1870,
+      "sha256": "fbd690666ee8f451f947b13728ea5a63f3c5b89e1a0c15f057af394ab410f64a"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "/workspace/scratch/9d487ee78414/p3p6_work/storage.py",
+      "bytes": 3112,
+      "sha256": "c2ec74208b22b338d25700ce61f4f8cc272ec66b3a53eca5bccdd748e5071cbd"
+    }
+  ],
+  "canonical_write_whitelist": [
+    "README.md",
+    "temp/change-log.md",
+    "temp/progress.md",
+    "temp/reports/P3-P6-CP0006.md",
+    "temp/runs/RUN-0004.json",
+    "temp/snapshots/checkpoints/CP-0006.json"
+  ],
+  "implementation_note": "Counts and all 19 preservation checks derive from complete logical canonical data; integration declared deltas and changed_records must reconcile exactly. Finalization verifies root-archived QA without adding files outside the six-path whitelist.",
+  "has_not_executed_candidate_or_finalizer": true
+}
