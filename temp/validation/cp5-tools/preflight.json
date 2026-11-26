@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-11-26T14:27:38.579878Z",
+  "scope": "Syntax, exact frozen CP4 source bytes, and isolated supplemental-veto behavior only; no canonical export or full CP5 audit executed.",
+  "python_syntax": [
+    "audit_cp5.py",
+    "export_run.py",
+    "render_html.py",
+    "check_determinism.py"
+  ],
+  "isolated_baseline_checks": [
+    {
+      "case": "unchanged_frozen_CP4_passes",
+      "passed": true,
+      "expected_error": null,
+      "observed_error_categories": []
+    },
+    {
+      "case": "manual_upgrade_is_rejected",
+      "passed": true,
+      "expected_error": "cp4_manual_rejection_upgraded",
+      "observed_error_categories": [
+        "cp4_manual_rejection_codes_removed",
+        "cp4_manual_rejection_handling_changed",
+        "cp4_manual_rejection_upgraded"
+      ]
+    },
+    {
+      "case": "counter_evidence_removal_is_rejected",
+      "passed": true,
+      "expected_error": "cp4_manual_counterevidence_lost",
+      "observed_error_categories": [
+        "cp4_manual_counterevidence_lost"
+      ]
+    },
+    {
+      "case": "protected_record_removal_is_rejected",
+      "passed": true,
+      "expected_error": "cp4_manual_record_missing",
+      "observed_error_categories": [
+        "cp4_manual_record_missing"
+      ]
+    }
+  ],
+  "baseline_records": 68,
+  "protected_union": 30,
+  "manual_insufficient": 9,
+  "counter_evidence": 22,
+  "canonical_writes": false,
+  "research_requests": 0,
+  "unchanged_dependency_hashes_verified": true,
+  "historical_s19_policy": "Inherited exact CP4 adapter; no new exception.",
+  "javascript_syntax": {
+    "path": "html-smoke.mjs",
+    "node_check_passed": true
+  }
+}

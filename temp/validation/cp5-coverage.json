@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "denominator": 5085,
+    "states": {
+      "verified_complete": 19,
+      "partial": 5066
+    }
+  },
+  "fulltext": {
+    "denominator": 5085,
+    "states": {
+      "verified_complete": 34,
+      "pending": 5044,
+      "partial": 6,
+      "restricted": 1
+    }
+  },
+  "abstract": {
+    "denominator": 5085,
+    "states": {
+      "verified_complete": 41,
+      "restricted": 561,
+      "pending": 4079,
+      "partial": 404
+    }
+  },
+  "references": {
+    "denominator": 5085,
+    "states": {
+      "partial": 2345,
+      "pending": 2740
+    }
+  },
+  "citations": {
+    "denominator": 5085,
+    "states": {
+      "partial": 25,
+      "pending": 5060
+    }
+  },
+  "authors": {
+    "denominator": 5085,
+    "states": {
+      "verified_complete": 20,
+      "pending": 5060,
+      "partial": 5
+    }
+  },
+  "affiliations_projects": {
+    "denominator": 5085,
+    "states": {
+      "partial": 20,
+      "pending": 5065
+    }
+  },
+  "assessment": {
+    "denominator": 5085,
+    "states": {
+      "partial": 37,
+      "pending": 5045,
+      "verified_complete": 1,
+      "not_applicable": 2
+    }
+  },
+  "phase_status": {
+    "P0": "completed",
+    "P1": "completed",
+    "P2": "completed",
+    "P3": "iterated_partial_checkpointed",
+    "P4": "iterated_partial_checkpointed",
+    "P5": "iterated_partial_checkpointed",
+    "P6": "iterated_partial_checkpointed",
+    "P7": "not_started_final_research_acceptance",
+    "P8": "not_triggered"
+  },
+  "closure": {
+    "established": false,
+    "reason": "Unresolved references, original fulltext/supplements, identity, pagination count discrepancies, scientific conditions and citation contexts remain open."
+  },
+  "fulltext_meaning": {
+    "scientific_fulltext_works_reviewed": 37,
+    "run3_new_works": 0,
+    "run3_new_files": 0,
+    "scope": "The established CP4 set of 37 claim-reviewed Works is unchanged; the cached Longden single-claim review does not increase it. S01 remains partial. This is not complete claim/supplement coverage."
+  },
+  "scientific_gates": {
+    "eligible": 60,
+    "insufficient": 9,
+    "counter_evidence": 23,
+    "fully_resolved": 0,
+    "cp4_assessments_preserved": 68,
+    "old_L07_unchanged": true,
+    "absolute_scale_claims": 3,
+    "absolute_scale_eligible": 2,
+    "absolute_scale_insufficient": 1,
+    "rejection_codes": {
+      "missing_quantitative_result": 7,
+      "missing_baseline_or_control": 1,
+      "missing_rigorous_derivation": 2,
+      "threshold_not_met": 5,
+      "unsupported_generalization": 1,
+      "missing_fulltext_evidence": 2,
+      "missing_dataset_provenance": 2,
+      "missing_metric_scale_prior": 1,
+      "scale_observability_not_demonstrated": 1,
+      "missing_critical_conditions": 2
+    }
+  },
+  "sources": {
+    "project_citation_list_returned": 42,
+    "project_citation_list_total": 42,
+    "project_epmc_core_metadata": 28,
+    "project_identity_cross_source": 33,
+    "project_identity_pending": 9,
+    "seed_author_total": 57,
+    "seed_author_lists_paginated": 57,
+    "seed_author_lists_reconciled": 53,
+    "index_snapshot_historical": false
+  },
+  "reconciliation": {
+    "K": 5085,
+    "T_union": 34,
+    "U": 5051,
+    "T_i": {
+      "L01": 9,
+      "L02": 5,
+      "L03": 10,
+      "L04": 9,
+      "L05": 5,
+      "L06": 12,
+      "L07": 1,
+      "L08": 4,
+      "L09": 2
+    },
+    "multi_label_sum_is_not_independent_work_count": true
+  },
+  "task_states": {
+    "partial": 8928,
+    "pending": 119172,
+    "verified_complete": 734,
+    "retryable_error": 16,
+    "needs_disambiguation": 1497,
+    "restricted": 589
+  },
+  "queries": {
+    "unavailable_exact": 55,
+    "exact": 834
+  },
+  "run3_accounting": {
+    "external_invocations": 16,
+    "cache_reuses": 1,
+    "manual_reviews": 13,
+    "query_rows": 17,
+    "new_fulltext_works": 0,
+    "new_fulltext_files": 0
+  },
+  "unknown_review": {
+    "field_states": {
+      "unknown": 65001
+    },
+    "open_tasks": 64707,
+    "overdue_open_tasks": 0,
+    "closed_field_tasks_this_run": 25,
+    "original_clocks_preserved": true
+  },
+  "delta_from_cp4": {
+    "seed_records": 0,
+    "canonical_works": 0,
+    "versions": 0,
+    "retained_uploads": 0,
+    "distinct_seed_pdf_sha256": 0,
+    "distinct_files": 0,
+    "file_backed_versions": 0,
+    "people_records": 20,
+    "organizations": 0,
+    "projects": 0,
+    "reference_occurrences": 0,
+    "resolved_occurrences": 7,
+    "unresolved_occurrences": -7,
+    "citation_edges": 7,
+    "context_reviewed_edges": 0,
+    "assessments": 1,
+    "eligible_claims": 1,
+    "insufficient_claims": 0,
+    "counter_evidence_claims": 1,
+    "topic_work_union": 1,
+    "u00_works": -1,
+    "task_events": 144,
+    "unique_tasks": 83,
+    "unresolved_tasks": 48,
+    "queries": 17,
+    "exact_query_timestamps": 17,
+    "unavailable_exact_query_timestamps": 0,
+    "merged_work_pairs": 0,
+    "seed_reference_occurrences": 0,
+    "iteration2_reviewed_reference_occurrences": 0,
+    "scientific_fulltext_works_reviewed": 0,
+    "seed_s2_lists_reconciled": 0,
+    "seed_epmc_lists_reconciled": 0,
+    "seed_author_lists_paginated": 0,
+    "seed_author_lists_reconciled": 0,
+    "manual_review_activities": 13,
+    "fully_resolved_claims": 0,
+    "L01_works": 0,
+    "L02_works": 0,
+    "L03_works": 1,
+    "L04_works": 0,
+    "L05_works": 0,
+    "L06_works": 0,
+    "L07_works": 0,
+    "L08_works": 0,
+    "L09_works": 0
+  },
+  "synchronization": {
+    "recorded_at_utc": "2026-11-26T14:54:33.747157Z",
+    "source_receipts_previously_synced": true,
+    "canonical_snapshot_at_checkpoint_write": "pending_final_export_audit_and_exact_remote_verification",
+    "research_gate": "closed_until_final_sync_verified",
+    "subsequent_proof_location": "Fixed synchronization workflow logs and a verification receipt on the separate transport branch; this historical pending observation does not imply a later sync failure."
+  },
+  "derived_views": {
+    "state": "generated_pending_complete_audit",
+    "views": [
+      {
+        "path": "temp/exports/citation_graph.json",
+        "sha256": "8f4fd722687be19bf7514f7b5a7e1510484608079c752cd27e76b4590b78d326",
+        "records": 5085,
+        "record_basis": "nodes"
+      },
+      {
+        "path": "temp/exports/research_entities.json",
+        "sha256": "1da451cb0c2fe535096c9875aa70df12bb79fa62055d75c35df25f788065eb8a",
+        "records": 25617,
+        "record_basis": "relations"
+      },
+      {
+        "path": "temp/exports/research_paths.json",
+        "sha256": "c05e10aa4ca43f939b1c3aba9484a219664d3251618cb7260077cfff22ea4d37",
+        "records": 69,
+        "record_basis": "paths"
+      },
+      {
+        "path": "temp/exports/evidence_matrix.csv",
+        "sha256": "6cb2fff15706b5e5beafacbaf0a9f39876878dbcad52a1608f0be0fdbe2a219c",
+        "records": 69,
+        "record_basis": "rows"
+      },
+      {
+        "path": "temp/exports/research_implications.csv",
+        "sha256": "41a5bae1b6d200d305823390c56faee09b4a6bae343262d283228d93015874cf",
+        "records": 69,
+        "record_basis": "rows"
+      }
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "status": "passed",
+  "checkpoint_id": "CP-0005",
+  "baseline_commit": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+  "verified_at_utc": "2026-11-26T14:55:43.540303Z",
+  "method": "Compare every prior logical record/event to the independently cloned CP4 snapshot, using full partition manifests. Only the explicit reviewed delta is permitted.",
+  "checks": [
+    {
+      "dataset": "works",
+      "old_records": 5085,
+      "new_records": 5085,
+      "missing_records": 0,
+      "added_records": 0,
+      "changed_existing_ids": [
+        "W-D6e117a3d967ebdc0",
+        "W-R525f36f1c11284ce",
+        "W-Re46890f5a27ec270",
+        "W-Rb7fb4e1b3303e196",
+        "W-R24127d96a1e10330",
+        "W-R4ee6870ac8ca1a67"
+      ],
+      "expected_changes_only": true
+    },
+    {
+      "dataset": "versions",
+      "old_records": 5134,
+      "new_records": 5134,
+      "missing_records": 0,
+      "added_records": 0,
+      "changed_existing_ids": [
+        "V-W-R525f36f1c11284ce-01",
+        "V-W-Re46890f5a27ec270-01",
+        "V-W-Rb7fb4e1b3303e196-01",
+        "V-W-R24127d96a1e10330-01",
+        "V-W-R4ee6870ac8ca1a67-01"
+      ],
+      "expected_changes_only": true
+    },
+    {
+      "dataset": "authors",
+      "old_records": 20529,
+      "new_records": 20549,
+      "missing_records": 0,
+      "added_records": 20,
+      "changed_existing_ids": [],
+      "expected_changes_only": true
+    },
+    {
+      "dataset": "reference-occurrences",
+      "old_records": 158544,
+      "new_records": 158544,
+      "missing_records": 0,
+      "added_records": 0,
+      "changed_existing_ids": [
+        "R-CR-56c2114c5bb5f63a",
+        "R-CR-6793bac6c2fcb72c",
+        "R-CR-3945df2169377bee",
+        "R-CR-1f050672c5cd15bd",
+        "R-CR-152c8905f0db25c4",
+        "R-CR-8d38a87ac2259f57",
+        "R-CR-1eb95e311ab92d4b"
+      ],
+      "expected_changes_only": true
+    },
+    {
+      "dataset": "tasks",
+      "old_records": 134629,
+      "new_records": 134773,
+      "old_event_record_prefix_identical": true,
+      "appended_records": 144
+    },
+    {
+      "dataset": "queries",
+      "old_records": 872,
+      "new_records": 889,
+      "old_event_record_prefix_identical": true,
+      "appended_records": 17
+    },
+    {
+      "dataset": "citation-edges",
+      "old_records": 31804,
+      "new_records": 31811,
+      "old_event_record_prefix_identical": true,
+      "appended_records": 7
+    },
+    {
+      "dataset": "discovery-paths",
+      "old_records": 40552,
+      "new_records": 40559,
+      "old_event_record_prefix_identical": true,
+      "appended_records": 7
+    },
+    {
+      "dataset": "assessments",
+      "old_records": 68,
+      "new_records": 69,
+      "old_event_record_prefix_identical": true,
+      "appended_records": 1
+    },
+    {
+      "dataset": "manual-reviews",
+      "old_records": 251,
+      "new_records": 264,
+      "old_event_record_prefix_identical": true,
+      "appended_records": 13
+    },
+    {
+      "dataset": "source-observations",
+      "old_records": 873,
+      "new_records": 890,
+      "old_event_record_prefix_identical": true,
+      "appended_records": 17
+    },
+    {
+      "dataset": "organizations",
+      "records": 1414,
+      "entire_logical_dataset_unchanged": true
+    },
+    {
+      "dataset": "projects",
+      "records": 4,
+      "entire_logical_dataset_unchanged": true
+    },
+    {
+      "dataset": "aliases",
+      "records": 205,
+      "entire_logical_dataset_unchanged": true
+    },
+    {
+      "dataset": "work-relations",
+      "records": 3,
+      "entire_logical_dataset_unchanged": true
+    },
+    {
+      "dataset": "uploads",
+      "records": 24,
+      "entire_logical_dataset_unchanged": true
+    },
+    {
+      "dataset": "seed-manifest",
+      "records": 20,
+      "entire_logical_dataset_unchanged": true
+    },
+    {
+      "dataset": "reference-coverage",
+      "records": 2381,
+      "entire_logical_dataset_unchanged": true
+    },
+    {
+      "dataset": "source-list-coverage",
+      "records": 96,
+      "changed_existing_ids": [
+        "COV-T-author_source_pagination-P-0014",
+        "COV-T-author_source_pagination-P-0017",
+        "COV-T-author_source_pagination-P-0048",
+        "COV-T-author_source_pagination-P-0056",
+        "COV-T-CP4-project-3d-citers-epmc"
+      ],
+      "only_four_author_discrepancy_notes_and_one_project_identity_note_changed": true
+    }
+  ],
+  "raw_reference_text_and_fingerprints_preserved": true,
+  "old_scientific_assessments_preserved": 68,
+  "existing_records_lost": 0
+}

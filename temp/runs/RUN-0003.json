@@ -19,11 +19,11 @@
     "paid_spend": 0
   },
   "manual_review_unit": "A separately logged Work fulltext/bibliography review, Person disambiguation review, Project review, or Assessment adjudication. Automated metadata matching is logged separately.",
-  "external_requests_used": 0,
-  "manual_review_items_used": 0,
-  "cache_reuse_events": 0,
+  "external_requests_used": 16,
+  "manual_review_items_used": 13,
+  "cache_reuse_events": 1,
   "paid_spend": 0,
-  "status": "running",
+  "status": "checkpointed_open",
   "branch": "research/p3-p6-cp5",
   "sync_policy": "Persist each bounded receipt/review immediately to GitHub and read it back before starting the next research batch. Canonical integration and checkpoint export are followed by exact remote verification; any failed sync blocks further research.",
   "start_sync_gate": {
@@ -60,5 +60,18 @@
       "25841648"
     ]
   },
-  "closure": false
+  "closure": false,
+  "external_request_count_status": "exact_retained_invocations",
+  "external_requests_note": "One direct EPMC HTTP attempt and 15 recorded web retrieval calls; five PubMed records readable. Git transport is not a research-source query.",
+  "end_checkpoint_id": "CP-0005",
+  "last_completed_batch": "Five existing identities, seven retained reference targets, author-task evidence clarification and one independent L03 cached-fulltext claim.",
+  "sync_state": "Snapshot-creation timestamp: source receipts and review decisions are already remotely verified; final canonical commit/readback is a later event recorded in the external verification receipt. This historical state does not imply a later sync failure.",
+  "checkpoint_status": "valid",
+  "checkpoint_validation_state": "passed",
+  "checkpoint_candidate_created_at_utc": "2026-11-26T14:54:33.747157Z",
+  "checkpoint_completed_at_utc": "2026-11-26T15:06:43.160073Z",
+  "budget_exhausted": false,
+  "checkpoint_wall_clock_hours": 0.9342,
+  "pause_reason": "Reviewed batches consolidated into an audited checkpoint. Publication/readback must finish before the next research batch; research closure and budget exhaustion are not asserted.",
+  "post_commit_verification_url": "https://github.com/ncut-d1z/Insect-Inspired/blob/sync/cp5-checkpoint-import/temp/sync/CP-0005/verification.json"
 }

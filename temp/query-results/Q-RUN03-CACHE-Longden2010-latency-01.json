@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN03-CACHE-Longden2010-latency-01",
+  "run_id": "RUN-0003",
+  "scope_id": "SCOPE-0001",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://www.frontiersin.org/journals/systems-neuroscience/articles/10.3389/fnsys.2010.00153/pdf",
+  "queried_at_utc": "2026-11-26T14:37:50.411669Z",
+  "completed_at_utc": "2026-11-26T14:37:50.411669Z",
+  "query_time_status": "exact",
+  "cache_hit": true,
+  "reused_query_id": "Q-RUN02-L079-longden2010-pdf",
+  "external_request_performed": false,
+  "response_kind": "cached_primary_pdf_review",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.3389/fnsys.2010.00153"
+  ],
+  "body_sha256": "23989196daa8ed304a4f9a6901257afd38bad7c0a3ca5eefb98cf2b80b569948",
+  "body_bytes": 812062,
+  "sanitized": true,
+  "payload_retained": false,
+  "original_retrieved_at_utc": "2026-11-26T09:48:03.067768Z",
+  "review_report": "temp/reports/RUN-0003-Longden2010-latency-review.json",
+  "timing_note": "Timestamp records the completed local cache review; no new origin HTTP request is asserted."
+}

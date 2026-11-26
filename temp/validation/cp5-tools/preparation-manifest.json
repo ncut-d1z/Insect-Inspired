@@ -1,0 +1,95 @@
+{
+  "purpose": "Private CP5 export/audit preparation; no canonical writes or research requests executed.",
+  "copy_edits": [
+    {
+      "source": "/workspace/scratch/2e518600ca4c/cp4_work/export_run.py",
+      "destination": "/workspace/scratch/2e518600ca4c/cp5_qa/export_run.py",
+      "source_sha256": "98d57574116976ffade10d9db2defd41ebd26a491cdc5e7d84a2c29d5c455de2",
+      "prepared_sha256": "f6f69f641c512ba46210290fbfd3723bd89710ff62fdde775b9e22d086521623",
+      "literal_replacements": 6
+    },
+    {
+      "source": "/workspace/scratch/2e518600ca4c/cp4_work/render_html.py",
+      "destination": "/workspace/scratch/2e518600ca4c/cp5_qa/render_html.py",
+      "source_sha256": "fad4482150e86f2143dea20e80786d105fbaad98d60c69e43991f9aa39f5f4bb",
+      "prepared_sha256": "d0ad5d310028c9266b51481966c723d5e297255615c67d1b90ac3690bbbab4e4",
+      "literal_replacements": 3
+    },
+    {
+      "source": "/workspace/scratch/2e518600ca4c/cp4_qa/check_determinism.py",
+      "destination": "/workspace/scratch/2e518600ca4c/cp5_qa/check_determinism.py",
+      "source_sha256": "47ea4e18d3eb9e959df90efac1653bf16926b4dc920178027a04b3570538c1df",
+      "prepared_sha256": "8229a2807f278a065e7f0ec2744da3020ee0a46e2d53f11c43746af24ab61c7d",
+      "literal_replacements": 6
+    },
+    {
+      "source": "/workspace/scratch/2e518600ca4c/cp4_qa/html-smoke.mjs",
+      "destination": "/workspace/scratch/2e518600ca4c/cp5_qa/html-smoke.mjs",
+      "source_sha256": "349a5071b3dd40ff733a92089ac57a9cd1ee6146906320728f20160ff2289da8",
+      "prepared_sha256": "a32e8593923a9d8a712bfca489b7721a950c79fcb5e26aa0e15958468c1998cc",
+      "literal_replacements": 4
+    }
+  ],
+  "unchanged_dependencies": [
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp4_qa/audit_cp4.py",
+      "sha256": "2df055077bb33ec6ee908ddab6b785d5b1f2f5cfe38ce8cbcd73fac8d30b01c2"
+    },
+    {
+      "path": "/workspace/scratch/9d487ee78414/p3p6_work/audit_run.py",
+      "sha256": "bce5f6b8387dce5d9d8c6c56bf38695ff6ad9b729f2f8c1461c5925aa052c2d9"
+    },
+    {
+      "path": "/workspace/scratch/9d487ee78414/p3p6_work/storage.py",
+      "sha256": "c2ec74208b22b338d25700ce61f4f8cc272ec66b3a53eca5bccdd748e5071cbd"
+    }
+  ],
+  "prepared_files": [
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/RUN.md",
+      "bytes": 4529,
+      "sha256": "d819f87a6b0c966b1883eaa833c378a6afc07314f887482b0fba5341da22aeb6"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/audit_cp5.py",
+      "bytes": 7523,
+      "sha256": "e79371b595da703382b5d754d81eb91c7653a8815b89731021171c95da34ea93"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/check_determinism.py",
+      "bytes": 2541,
+      "sha256": "8229a2807f278a065e7f0ec2744da3020ee0a46e2d53f11c43746af24ab61c7d"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/cp4-assessment-baseline.json",
+      "bytes": 1996,
+      "sha256": "f6d208a673d2d440491edbe158a382bf0f9380f9648bf375141feec0fcb1a18d"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/cp4-assessments.jsonl",
+      "bytes": 3518021,
+      "sha256": "80429e385bce83bbd7e5a42f2aac417b8afb39253b731b3eb4098b3f401eb6df"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/export_run.py",
+      "bytes": 23906,
+      "sha256": "f6f69f641c512ba46210290fbfd3723bd89710ff62fdde775b9e22d086521623"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/html-smoke.mjs",
+      "bytes": 6082,
+      "sha256": "a32e8593923a9d8a712bfca489b7721a950c79fcb5e26aa0e15958468c1998cc"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/preflight.json",
+      "bytes": 1672,
+      "sha256": "9f30b06ab9f0013025e28c7010fb4da43e192548f33f64b84ea4299e5924990b"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/render_html.py",
+      "bytes": 53495,
+      "sha256": "d0ad5d310028c9266b51481966c723d5e297255615c67d1b90ac3690bbbab4e4"
+    }
+  ],
+  "archive_note": "Private QA preparation files only; root will persist them. No canonical repository file or remote ref was changed by this preparation."
+}

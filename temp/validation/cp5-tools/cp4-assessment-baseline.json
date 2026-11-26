@@ -1,0 +1,54 @@
+{
+  "source_commit": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+  "source_tree": "b5e8357991b95662a30629883e5a6a81917013b9",
+  "checkpoint_id": "CP-0004",
+  "scope_id": "SCOPE-0001",
+  "source_parts": [
+    {
+      "path": "temp/assessments.jsonl",
+      "blob": "a99511a4416eea783d8ab2124de87a468c5bd1e1",
+      "bytes": 3518021,
+      "sha256": "80429e385bce83bbd7e5a42f2aac417b8afb39253b731b3eb4098b3f401eb6df"
+    }
+  ],
+  "logical_sha256": "80429e385bce83bbd7e5a42f2aac417b8afb39253b731b3eb4098b3f401eb6df",
+  "records": 68,
+  "active_records": 68,
+  "insufficient_ids": [
+    "A-IT2A-N02-L08-01",
+    "A-P6-S09-L06-direction_hypothesis",
+    "A-S01-L02-01",
+    "A-S02-L07-01",
+    "AS-RUN02-Jung2011-L07-state-dependent-tuning",
+    "AS-RUN02-Longden2010-L07-positive-speed-information",
+    "AS-RUN02-Shoemaker2005-L07-scene-invariance-candidate",
+    "AS-S17-L07-plateau-suggestion",
+    "AS-nearness2026-L01-relative-nearness-candidate"
+  ],
+  "counter_evidence_ids": [
+    "A-IT2A-N01-L02-01",
+    "A-IT2A-N05-L03-02",
+    "A-P6-B201-L03-brightness_dynamics",
+    "A-P6-B203-L04-partial_flow",
+    "A-P6-B203-L06-direction_speed",
+    "A-P6-B204-L04-world_motion_rejection",
+    "A-P6-B205-L03-dynamic_tuning",
+    "A-P6-S11-L03-adaptation_constraint",
+    "A-P6-S13-L04-dynamic_limits",
+    "A-S01-L02-01",
+    "A-S07-L05-02",
+    "AS-S15-L06-scale-gauge",
+    "AS-S16-L06-mixed-outdoor",
+    "AS-S19-L05-baseline-receptive-field",
+    "AS-S19-L07-baseline-plateau",
+    "AS-S20-L06-precursor-scale",
+    "AS-clutter2019-L01-obstacle-selective-pooling",
+    "AS-contrast2022-L02-contrast-tti",
+    "AS-energy2026-L05-mode-sensing-preprint",
+    "AS-energy2026-L08-flight-coupling-preprint",
+    "AS-pool2021-L01-metric-depth",
+    "AS-pool2021-L06-imu-metric-speed"
+  ],
+  "protected_union_count": 30,
+  "selection": "All active CP4 insufficient_evidence or counter_evidence records, a conservative superset of manual vetoes. No new exception or evidence admission is authorized."
+}

@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "checkpoint_id": "CP-0005",
+  "scope_id": "SCOPE-0001",
+  "completed_at_utc": "2026-11-26T15:02:39.478042Z",
+  "canonical_writes_performed": false,
+  "candidate_promotion_performed": false,
+  "remote_write_performed": false,
+  "data_audit": {
+    "status": "passed",
+    "error_count": 0,
+    "warning_count": 16,
+    "duration_seconds": 114.313,
+    "changed_inputs": []
+  },
+  "audit_counters": {
+    "assertions": 3666017,
+    "schema_records": 358579,
+    "unknown_fields": 65001,
+    "explicit_manual_reassessments": 1,
+    "cp4_protected_assessments_compared": 30,
+    "cp4_manual_rejections_preserved": 9,
+    "cp4_manual_counterevidence_preserved": 22
+  },
+  "warning_categories": {
+    "unregistered_auxiliary_schema": 16
+  },
+  "determinism": {
+    "status": "passed",
+    "artifacts": 7,
+    "all_byte_equal": true,
+    "changed_inputs": []
+  },
+  "ui": {
+    "passed": true,
+    "checks": {
+      "ten_fixed_tables": true,
+      "search_and_theme": true,
+      "abstract_expand_collapse": true,
+      "evidence_expand_collapse": true,
+      "back_to_top": true,
+      "clear": true,
+      "counter_evidence_filter": true,
+      "year_sort": true,
+      "mobile_no_document_overflow": true,
+      "no_javascript_errors": true
+    },
+    "javascript_errors": [],
+    "input_changed": false
+  },
+  "html": {
+    "bytes": 47616487,
+    "sha256": "993d3f66ad66858f8a987f0ae93157bda62a7f9215472af73f096aa0abb67009"
+  },
+  "raw_evidence_files": {
+    "data-audit-final.json": {
+      "bytes": 8153,
+      "sha256": "cdd791438affd3deb2926a17a50f3e205645f09c8fa0fd927222efc6754f7042"
+    },
+    "cp5-determinism.json": {
+      "bytes": 2457,
+      "sha256": "a5124f251b1676a44bcde522666300cd56d7a431603cf0a85431c1b82ea10f65"
+    },
+    "ui-audit-final.json": {
+      "bytes": 1845,
+      "sha256": "11c6b742f02e153aa57a823d7c8a0c4c8d2644dbc413b52d12b62d8ca3180bcd"
+    },
+    "html-browser-check.json": {
+      "bytes": 1845,
+      "sha256": "11c6b742f02e153aa57a823d7c8a0c4c8d2644dbc413b52d12b62d8ca3180bcd"
+    },
+    "html-desktop.png": {
+      "bytes": 237728,
+      "sha256": "94cd914c4f367e1a831993415307258139bd27a5edba100be0c4cc3811b1f485"
+    },
+    "html-topic.png": {
+      "bytes": 235817,
+      "sha256": "26dafde8ce53bff5af48afd42d4b4d4dbddd548fa95d2654c157c9712e2e2157"
+    },
+    "html-mobile.png": {
+      "bytes": 86149,
+      "sha256": "e10cfcff61eee769cae9cb6efb6ae5d63a5c8bf451682a89ed4bbd6dcfc7c621"
+    },
+    "html-mobile-controls.png": {
+      "bytes": 92784,
+      "sha256": "fa59a9faa71e006e93624a33e3d40a872c3b7d3fb4f005a46311af97b6981840"
+    }
+  },
+  "scope_note": "Complete read-only QA of the frozen candidate. Final documentation/report publication, candidate promotion and post-write remote verification remain root responsibilities. Original report bytes must be preserved when archived."
+}
