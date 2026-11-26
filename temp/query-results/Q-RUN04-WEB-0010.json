@@ -1,0 +1,51 @@
+{
+  "query_id": "Q-RUN04-WEB-0010",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "institutional_repository",
+  "source_name": "NCBI PubMed",
+  "entity_id": "W-Df5bc290638e00b69",
+  "endpoint_or_url": "https://pubmed.ncbi.nlm.nih.gov/27436728/?format=pubmed",
+  "transport": "web_retrieval",
+  "queried_at_utc": "2026-11-26T16:23:14.113Z",
+  "completed_at_utc": "2026-11-26T16:23:14.509Z",
+  "query_time_status": "exact",
+  "raw_parameters": {
+    "open": [
+      {
+        "ref_id": "https://pubmed.ncbi.nlm.nih.gov/27436728/?format=pubmed"
+      }
+    ],
+    "response_length": "long"
+  },
+  "normalized_parameters": {
+    "pmid": "27436728",
+    "format": "pubmed",
+    "resource_kind": "PubMed MEDLINE display"
+  },
+  "status": "error",
+  "http_status": null,
+  "response_kind": "tool_resource_unavailable",
+  "returned_count": null,
+  "visible_total": null,
+  "count_scope": "Exact identifier requested; failed tool access supplied no bibliographic count or metadata.",
+  "result_identifiers": [],
+  "metadata": null,
+  "external_requests_performed": 1,
+  "external_request_unit": "One web retrieval tool access; upstream origin HTTP count unknown.",
+  "manual_review_items": 0,
+  "cache_hit": false,
+  "source_refs": [
+    "turn981213507view0"
+  ],
+  "retry_of_query_id": "Q-RUN04-WEB-0001",
+  "rerun_reason": "One bounded attempt at the official alternate PubMed display format after the default article page exposed only a footer; no successful record is repeated.",
+  "error_code": "WEB_RESOURCE_UNAVAILABLE",
+  "error_message": "The official alternate-format PubMed URL is not accessible via this tool. No provider response or global source-capability claim follows.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "No article abstract/fulltext/contact data retained; failed-access provenance only.",
+  "raw_tool_response_sha256": "4ccc4a9838bccb5dd536057bd4d32703cb020c82b0c33b3f50187ae54eafa44e",
+  "raw_tool_response_bytes": 657
+}
