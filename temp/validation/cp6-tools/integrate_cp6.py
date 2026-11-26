@@ -133,6 +133,33 @@ for path in sorted((TEMP / 'query-results').glob('Q-RUN04-*.json')):
 review_path = TEMP / 'reports/RUN-0004-identity-review.json'
 review = json.loads(review_path.read_text())
 assert review['status'] == 'reviewed'
+snapshot = review['input_snapshot']
+assert hashlib.sha256((TEMP / 'partitions/manifest.json').read_bytes()).hexdigest() == snapshot['partition_manifest_sha256'], 'Reviewed logical snapshot changed'
+subprocess.run(['git', '-C', str(REPO), 'merge-base', '--is-ancestor', snapshot['git_head'], head], check=True)
+for name, count in snapshot['logical_counts_scanned'].items():
+    assert len(data[name.removesuffix('.jsonl')]) == count, ('Reviewed input count changed', name)
+assert {x['query_id'] for x in snapshot['source_receipt_hashes']} == set(receipts)
+for spec in snapshot['source_receipt_hashes']:
+    raw = (TEMP / 'query-results' / (spec['query_id'] + '.json')).read_bytes()
+    assert len(raw) == spec['bytes'] and hashlib.sha256(raw).hexdigest() == spec['sha256'], ('Reviewed receipt changed', spec['query_id'])
+reference_reviews = {x['occurrence_id']: x for x in review['reference_reviews']}
+assert len(reference_reviews) == len(review['reference_resolution_ids'])
+assert set(reference_reviews) == set(review['reference_resolution_ids'])
+original_occurrences = {x['occurrence_id']: x for x in data['reference-occurrences']}
+reference_source_times = {}
+for oid, rr in reference_reviews.items():
+    original = original_occurrences[oid]
+    for field in ['citing_work_id', 'candidate_ids', 'reference_label', 'raw_reference', 'raw_fingerprint']:
+        assert original[field] == rr[field], ('Reviewed reference changed', oid, field)
+    assert original['version_id'] == rr['citing_version_id']
+    assert versions[original['version_id']]['work_id'] == original['citing_work_id']
+    assert original['cited_work_id'] is None
+    assert all(original['source'].get(k) == v for k, v in rr['source'].items())
+    source_raw = (TEMP / 'query-results' / (rr['source_query_id'] + '.json')).read_bytes()
+    assert hashlib.sha256(source_raw).hexdigest() == rr['source_query_receipt_sha256']
+    source_receipt = json.loads(source_raw)
+    assert source_receipt['body_sha256'] == rr['source_response_body_sha256']
+    reference_source_times[oid] = source_receipt['queried_at_utc']
 approved = {str(r['pmid']): r for r in review['records']}
 run = json.loads((TEMP / 'runs/RUN-0004.json').read_text())
 pending_ids = run['first_batch']['pending_identity_ids']
@@ -147,6 +174,9 @@ for pmid, decision in approved.items():
     assert all(r['status'] == 'success' and r.get('metadata', {}).get('pmid') == pmid for r in candidates)
     r = candidates[0]
     m = decision['preferred_metadata']
+    assert set(decision['field_query_ids']) == set(m)
+    for field, qid in decision['field_query_ids'].items():
+        assert qid in qids and receipts[qid]['metadata'][field] == m[field], ('Field evidence differs from reviewed receipt', pmid, field)
     assert m['pmid'] == pmid and m['doi']
     wid = decision['work_id']
     assert wid in works and decision['work_key'] == works[wid]['work_key']
@@ -160,7 +190,7 @@ for pmid, decision in approved.items():
     indexed = r['source_id'] == 'web_search'
     loc = dict(source_id=sid, url=r['endpoint_or_url'], identifier=r['query_id'],
                accessed_at=r['queried_at_utc'], section='Official PubMed indexed bibliographic header' if indexed else 'Official PubMed bibliographic header and byline',
-               evidence_note='Exact PMID/DOI/title/byline reviewed. ' + ('Indexed official metadata; no new origin article-body fetch is asserted.' if indexed else 'Readable bibliographic record; not a scientific fulltext review.'))
+               evidence_note='Exact PMID/DOI/title/byline reviewed. ' + ('Indexed official metadata; no new origin article-body fetch is asserted. Per-field provenance and any official publisher/PMC corroboration are retained in this receipt metadata_field_evidence/source_locators and the identity review field_source_refs.' if indexed else 'Readable bibliographic record; not a scientific fulltext review.'))
     src = dict(source_id=sid, url=r['endpoint_or_url'], identifier='MED:' + pmid,
                accessed_at=r['queried_at_utc'], verification_status='source_supported',
                license='Bibliographic facts and original review only; no original abstract/fulltext redistribution.', evidence_locator=[loc])
@@ -195,7 +225,7 @@ for pmid, decision in approved.items():
         if value:
             assert w['identifiers'].get(key) in (None, value)
             w['identifiers'][key] = value
-    fields = {'venue': m.get('journal') or m.get('venue_abbreviation'), 'volume': m.get('volume'),
+    fields = {'venue': m.get('venue') or m.get('journal') or m.get('venue_abbreviation'), 'volume': m.get('volume'),
               'number': m.get('issue'), 'pages': m.get('pages'), 'eid': m.get('article_number'),
               'publisher': m.get('publisher'), 'language': m.get('language')}
     field_updates = []
@@ -275,11 +305,19 @@ for pmid in pending_ids:
          cursor=None if ok else old['cursor'], error_code=None if ok else 'OFFICIAL_METADATA_RETRY_INCOMPLETE',
          normalized_parameters={**old['normalized_parameters'], 'epmc_core_success': False, 'identity_via_pubmed': ok, 'identity_access_method': method})
 all_initial_ids = json.loads((TEMP / 'runs/RUN-0003.json').read_text())['first_batch']['pending_identity_ids']
+assert len(set(all_initial_ids)) == len(all_initial_ids)
+assert {'T-CP4-CiterIdentity-MED-' + p for p in all_initial_ids} == {tid for tid in latest if tid.startswith('T-CP4-CiterIdentity-')}
 recovered = sum(latest['T-CP4-CiterIdentity-MED-' + p]['task_state'] == 'verified_complete' for p in all_initial_ids)
 for row in data['source-list-coverage']:
     if row['coverage_id'] == 'COV-T-CP4-project-3d-citers-epmc':
         before = deepcopy(row)
-        row['coverage_note'] = f'One-source citation list remains 42/42. EPMC core remains 28/42; {recovered} further exact identities are supported by official PubMed evidence, giving {28 + recovered}/42 across sources and {14 - recovered} unresolved. Direct records and indexed official metadata are distinguished in receipts. No source-wide or scientific citation-context completion is inferred.'
+        original_list_query = next(q for q in data['queries'] if q['query_id'] == 'Q-RUN02-ENT-0104')
+        total = row['visible_total']
+        assert total == row['returned_count'] == row['distinct_count'] == len(set(original_list_query['result_identifiers']))
+        assert {'MED:' + p for p in all_initial_ids} <= set(original_list_query['result_identifiers'])
+        core_count = total - len(all_initial_ids)
+        assert all(latest['T-CP4-CiterIdentity-MED-' + p]['normalized_parameters']['epmc_core_success'] is False for p in all_initial_ids)
+        row['coverage_note'] = f'One-source citation list remains {total}/{total}. EPMC core remains {core_count}/{total}; {recovered} further exact identities are supported by official PubMed evidence, giving {core_count + recovered}/{total} across sources and {len(all_initial_ids) - recovered} unresolved. Direct records and indexed official metadata are distinguished in receipts. No source-wide or scientific citation-context completion is inferred.'
         row['query_ids'] = list(dict.fromkeys(row['query_ids'] + list(receipts)))
         change('source-list-coverage', before, row)
 
@@ -298,6 +336,8 @@ for o in data['reference-occurrences']:
     matches = [str(x).lower() for x in o['candidate_ids'] if str(x).lower() in doi_target]
     assert len(matches) == 1
     target, before = doi_target[matches[0]], deepcopy(o)
+    rr = reference_reviews[o['occurrence_id']]
+    assert target == rr['cited_work_id'] and matches[0] == rr['target_doi']
     citing = o['citing_work_id']
     assert citing != target and citing in works
     o.update(cited_work_id=target, identity_confidence='confirmed', verification_status='source_supported', failure_reason=None)
@@ -305,8 +345,8 @@ for o in data['reference-occurrences']:
     cited_source = next(v['source'] for v in successful.values() if v['work_id'] == target)
     citing_doi = source['identifier'].split('#')[0]
     loc = dict(source_id=source['source_id'], identifier=source['identifier'], url=source.get('url') or 'https://api.crossref.org/works/' + quote(citing_doi, safe=''),
-               section='Retained deposited reference ' + str(o['reference_label']), accessed_at=NOW,
-               evidence_note='Manual review matches the original deposited exact target DOI and bibliographic string to the existing canonical identity. This is source-supported citation evidence; citing fulltext context is not reviewed.')
+               section='Retained deposited reference ' + str(o['reference_label']), accessed_at=reference_source_times[o['occurrence_id']],
+               evidence_note=rr['qualification'] + ' Local review at ' + review['reviewed_at_utc'] + '; no new source retrieval. Citing fulltext context and citation role are not reviewed.')
     source['evidence_locator'] = list(source.get('evidence_locator', [])) + [loc] + cited_source['evidence_locator']
     o['source'] = source
     pair = (works[citing]['work_key'], works[target]['work_key'])
@@ -333,11 +373,12 @@ for o in data['reference-occurrences']:
     data['discovery-paths'].append(dict(discovery_id='D-RUN04-' + h(citing + '|' + target + '|' + o['occurrence_id']), scope_id=SCOPE, work_id=target, root_seed_id=existing_path['root_seed_id'], depth=existing_path['depth'] + 1, steps=deepcopy(existing_path['steps']) + [step], source_supported_relation=True))
     data['manual-reviews'].append(dict(review_id='MR-RUN04-REFERENCE-' + o['occurrence_id'], run_id=RUN, review_type='bibliography_target_identity_review', entity_id=citing,
         reviewer='Joint source/citation agent and root review', recorded_at_utc=review['reviewed_at_utc'], artifact='temp/reports/RUN-0004-identity-review.json',
-        notes='One retained occurrence reviewed against exact DOI/title/byline/year evidence; original raw reference preserved and scientific citation context remains open.'))
+        notes=rr['qualification'] + ' Original raw reference preserved; scientific citation context remains open.'))
     change('reference-occurrences', before, o)
     resolved.append(o['occurrence_id'])
     events.append(dict(kind='reference_identity_resolution', occurrence_id=o['occurrence_id'], citing_work_id=citing, cited_work_id=target, edge_id=edge['edge_id']))
 assert set(resolved) == approved_refs
+assert not augmented_edges, 'This reviewed batch permits only new pairs; historic citation edges must remain byte-preserved'
 for wid in sorted({o['citing_work_id'] for o in data['reference-occurrences'] if o['occurrence_id'] in approved_refs}):
     tid = 'T-ReferenceIdentity-' + wid
     old = latest[tid]
