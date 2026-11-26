@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00375",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Motion+vector+estimation+of+video+image+by+pyramidal+implementation+of+Lucas+Kanade+optical+flow+Sukeshni+N+Tamgade+and+Vibha+R+Bora+2009&rows=5",
+  "queried_at_utc": "2026-11-26T07:26:23.621557Z",
+  "completed_at_utc": "2026-11-26T07:26:29.172542Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "888b94e901643a928d333b7e40e555f447ced1816a38354ae84b8485ea5bf3ae",
+  "body_bytes": 23749,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 17631,
+  "result_identifiers": [
+    "10.1109/icetet.2009.154",
+    "10.1109/icip.2009.5413382",
+    "10.1109/isocc47750.2019.9027696",
+    "10.2139/ssrn.7009678",
+    "10.3390/electronics13050812"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

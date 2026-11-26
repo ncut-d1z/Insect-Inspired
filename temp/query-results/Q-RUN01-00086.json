@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00086",
+  "origin_log_id": "shared_http_events",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?format=json&pageSize=10&query=DOI%3A%2210.1371%2Fjournal.pbio.0030171%22&resultType=core",
+  "queried_at_utc": "2026-11-26T07:02:36.561566Z",
+  "completed_at_utc": "2026-11-26T07:02:45.790664Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "body_sha256": "6c6f05f227ad927e1ce02b07edbf92080139dd4198c9993bae4c85229d2e316e",
+  "body_bytes": 6176,
+  "response_kind": "europepmc_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.1371/journal.pbio.0030171"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

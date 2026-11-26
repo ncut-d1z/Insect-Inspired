@@ -1,17 +1,18 @@
 {
   "query_id": "Q-PROBE-crossref-1",
-  "entity_id": "SCOPE-0001",
   "source_id": "crossref",
-  "endpoint_or_url": "https://api.crossref.org/works?filter=doi:10.1371/journal.pbio.0030171&rows=1&cursor=*",
-  "api_version": "1.0.0",
+  "endpoint_or_url": "https://api.crossref.org/works?filter=doi%3A10.1371%2Fjournal.pbio.0030171&rows=1&cursor=%2A",
   "queried_at_utc": "2026-11-26T05:25:16.224480Z",
   "query_time_status": "exact",
   "status": "success",
+  "returned_count": 1,
+  "visible_total": 1,
   "result_identifiers": [
     "10.1371/journal.pbio.0030171"
   ],
-  "visible_total": 1,
-  "returned_count": 1,
-  "error_code": null,
-  "coverage_note": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness."
+  "origin_log_id": "baseline_queries",
+  "response_kind": "baseline_observation",
+  "count_reason": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness.",
+  "sanitized": true,
+  "payload_retained": false
 }

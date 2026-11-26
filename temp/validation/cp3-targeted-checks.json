@@ -1,0 +1,59 @@
+{
+  "passed": 10,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "locked independent seed Work pairs",
+      "passed": true,
+      "note": "No content similarity or preprint relation collapsed the three protected pairs."
+    },
+    {
+      "check": "all Assessment version ownership",
+      "passed": true,
+      "note": "Each reviewed claim remains attached to its own canonical Work and explicit version after merge."
+    },
+    {
+      "check": "unread fulltext remains non-eligible",
+      "passed": true,
+      "note": "Abstract-only candidate not promoted by DOI match."
+    },
+    {
+      "check": "manual rejection survives mechanical eligibility",
+      "passed": true,
+      "note": "A coarse programmatic pass cannot override stricter species-sensitive evidence review."
+    },
+    {
+      "check": "metric velocity accepted with actual prior",
+      "passed": true,
+      "note": "m/s is a valid absolute velocity unit; the original metric is root-median-squared and IMU acceleration supplies scale."
+    },
+    {
+      "check": "absolute metric claim without prior rejected",
+      "passed": true,
+      "note": "Controlled negative case only; never stored as a scientific Assessment."
+    },
+    {
+      "check": "online-first cutoff honored",
+      "passed": true,
+      "note": "2026-12 issue date does not exclude an online-publication date within frozen cutoff."
+    },
+    {
+      "check": "registry occurrence ordinal unique",
+      "passed": true,
+      "note": "Provider reference keys may repeat; immutable ordinal prevents overwrite. Full cross-registry target verification remains open."
+    },
+    {
+      "check": "XML and HTML page semantics",
+      "passed": true,
+      "note": "No fake page 1 for structured whole documents; evidence uses sections and figures."
+    },
+    {
+      "check": "all active claims retained",
+      "passed": true,
+      "note": "Version merge preserved all scientific claims, including independent contradictions."
+    }
+  ],
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0003",
+  "test_data_isolation": "Negative controls in memory only; no synthetic Works/Uploads/Assessments added."
+}

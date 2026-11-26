@@ -1,0 +1,291 @@
+{
+  "artifact_type": "sanitized_historical_review_audit",
+  "checkpoint_id": "CP-0003",
+  "files": [
+    {
+      "bytes": 4514,
+      "name": "access-failures.json",
+      "sha256": "4775765d00da9efdf4f78e8ebdb28ba8fc435b3103eabbcb1d2d6ed0cb37028a"
+    },
+    {
+      "bytes": 20053,
+      "name": "citation-context-audits.jsonl",
+      "sha256": "28aaad657413c0fcfee7e3d3039fb04b34f3597a61b825a7c237fe556ad4ce7c"
+    },
+    {
+      "bytes": 2497,
+      "name": "derived-measurement-audit.json",
+      "sha256": "b637fc773b5e896a3ea651786765d05108aaf5e9ae19bc1b7d290b32c31c65bd"
+    },
+    {
+      "bytes": 3042,
+      "name": "embedded-review-resource-audit.json",
+      "sha256": "c624f078bd0b1d435286d2a50f345f941ae5b83d5d289eebb0bac1163fce7644"
+    },
+    {
+      "bytes": 23374,
+      "name": "historical-review-activities.jsonl",
+      "sha256": "bb5f5c2b2fbe9c81b02d15598f3165dd1a6678520e1dc58bfba97399e9ed71ab"
+    },
+    {
+      "bytes": 7328,
+      "name": "independent-resource-observations.json",
+      "sha256": "01ed00db24c3fb3816e6dc9793eb1960139d5820d13376072d4b426f48b775a1"
+    },
+    {
+      "bytes": 25132,
+      "name": "iteration2-reference-coverage.jsonl",
+      "sha256": "73774a4a31b313eb78d2d8e5c3e812474715666e9ed5cf4f77a010f7c1bde470"
+    },
+    {
+      "bytes": 14295,
+      "name": "iteration2-review-coverage.jsonl",
+      "sha256": "ae3410e311759c89714b875a844309263322121f60690a56a8da1e7c9abc1eb3"
+    },
+    {
+      "bytes": 85701,
+      "name": "missing-assets-and-followups.json",
+      "sha256": "52fe8b9ec176e6eff6ffec258a55b73b56cf599eb5983aebb57ae5da96c1c313"
+    },
+    {
+      "bytes": 4862,
+      "name": "peer-repair-status.json",
+      "sha256": "5397448ad0587a9aa30a9bd497ea7df5a8bf6c0a2162e0a4d25772025ec606fb"
+    },
+    {
+      "bytes": 18230,
+      "name": "peer-reviews.json",
+      "sha256": "5cad6c7bd5cda1e0ef73f2263a7005dba35ab56fbd81bcfdd285ea8fd0c036a8"
+    },
+    {
+      "bytes": 65835,
+      "name": "research-entity-facts.jsonl",
+      "sha256": "bd85f8f2298851a04f9f209293f6a1454bfa6d6e94e76731437d46ec1f8223c0"
+    },
+    {
+      "bytes": 9765,
+      "name": "review-issues.jsonl",
+      "sha256": "07b011b453ebe699a3305a4c3a10f30cfebdff0a26c04141a196c1ecdfa23b42"
+    },
+    {
+      "bytes": 1704,
+      "name": "validation.json",
+      "sha256": "966378a60160a290fd90d0db462909d6dae45117c19675e0b029222b23647211"
+    },
+    {
+      "bytes": 27494,
+      "name": "version-assets.jsonl",
+      "sha256": "0075f72e01b64229a7b26e4697dbbc9275e3ff7f37fa48b832077cd689213237"
+    },
+    {
+      "bytes": 7383,
+      "name": "version-relations-and-gaps.json",
+      "sha256": "10ee675bf1139918ad528647e1c0a0975889265cdb9062b68c285486de55227e"
+    }
+  ],
+  "finalized_at_utc": "2026-11-26T08:26:33.721005Z",
+  "input_audit_hashes": [
+    {
+      "audit_source_label": "iteration2-mappings.json",
+      "bytes": 5196,
+      "sha256": "7ed073bb60930e08c0dc63127d54998e12381276dce4a3701d5e45f73227fe46"
+    },
+    {
+      "audit_source_label": "merge-map.json",
+      "bytes": 3583,
+      "sha256": "80e7c6e4a9bbc304db396f203f1aec9ea5a46638696a83a79a5b6ae2067f9347"
+    },
+    {
+      "audit_source_label": "peer-review-c.json",
+      "bytes": 17264,
+      "sha256": "6f008b03fed252b0c1fb030edd942a97d789fdcd9a9a538e39002a7c756a7c11"
+    },
+    {
+      "audit_source_label": "agent_a--provenance-facts.json",
+      "bytes": 11350,
+      "sha256": "4f349ea9de2b469375a8e976fe4f5734c53991c59232e4a9c0dc34c3b153bfe4"
+    },
+    {
+      "audit_source_label": "agent_b--funding-facts.json",
+      "bytes": 16715,
+      "sha256": "4f719e72d524c95567a16ff017bca02b834919b93dd99a05ca826b10e5a3f2c4"
+    },
+    {
+      "audit_source_label": "agent_c--fulltext-facts.json",
+      "bytes": 18285,
+      "sha256": "b96e583cc2f18c84521d0478bd3c7419c0094ea9b11b41cc6d3769f64aacd9b8"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--version-manifest.json",
+      "bytes": 6715,
+      "sha256": "94e5419806370ad000754255f97df23ab12c95d207b314b07ac056edf39653bd"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--fulltext-review.json",
+      "bytes": 4970,
+      "sha256": "9a59184f8f3c83d0c99e7d2ad360277d76832ca215b3b0e80b24146d8b9b2528"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--reference-review-report.json",
+      "bytes": 1800,
+      "sha256": "f4727b80234b19959676e3408fa92f176a6085c41b1a8b9bdb4aef291eba0268"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--project-facts.json",
+      "bytes": 5539,
+      "sha256": "28889401e278ee3576fab59937798e1fae79ee18d303b3a6d047175f4a2de397"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--version-relations.json",
+      "bytes": 2929,
+      "sha256": "53086c4f75ebb51fa1a2694a44c790fb476d7d22f2d2f917f3eb5bbbadbcbb8e"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--digitization.json",
+      "bytes": 2496,
+      "sha256": "af2be964f7449df2f04c1217a4fcdda0058efae68e7659218e34f8ef5b7e5ffa"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--resource-observations.json",
+      "bytes": 5666,
+      "sha256": "4defce4d951d9081c5bc56c3b5613184685f439efa528792ee6b2a28b887f82a"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--embedded-review-resources.json",
+      "bytes": 1609,
+      "sha256": "058a3c90a724989a20abdcff9b3bc414d3898f6d09707253f38fed9bc212413e"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--embedded-review-reference-observations.json",
+      "bytes": 1212,
+      "sha256": "aec8914ff1e76022c976a80df8e928ef5d6617db92116a818e18990ed0287407"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--review-activities.jsonl",
+      "bytes": 5243,
+      "sha256": "59b9dabf72261c71e7dce9b50c1ae1708e8193abccb62768be49a915eda19e3a"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--citation-context-facts.json",
+      "bytes": 2849,
+      "sha256": "6ea3508c44a037302bf8200726f8cb4472657f9c450ba7430d05fce0f536b0e4"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--N01-references.json",
+      "bytes": 90981,
+      "sha256": "77d315e4eabd912ce989b449029756fad005fc10e0765a0ee8d28e7308999f2c"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--N02-references.json",
+      "bytes": 125323,
+      "sha256": "02c207bc6354a43584e6d60660b9a5d552e6cae69dea19e6c96afd025cad6dc0"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--N03-references.json",
+      "bytes": 234116,
+      "sha256": "9497dca5184ac980aec30f1d644f622bcdbfbc1f6a0826f939a56990eb0f95e5"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--N04-references.json",
+      "bytes": 230659,
+      "sha256": "e90734912f70acc082ed292c9d9facd67a15dfd0734e762c9b55ae0657d93afb"
+    },
+    {
+      "audit_source_label": "agent_a--iteration2--N05-references.json",
+      "bytes": 214888,
+      "sha256": "a5bc560b0ef24fdbf93ea4b7824db3e994a6fe36d7309cd1311ebf0e5d7883df"
+    },
+    {
+      "audit_source_label": "agent_b--iteration2--version-manifest.json",
+      "bytes": 5818,
+      "sha256": "c66a7b794b045142fe77984312a653c65635a71d38913316deb1f2de4f67d1b6"
+    },
+    {
+      "audit_source_label": "agent_b--iteration2--review-coverage.json",
+      "bytes": 7172,
+      "sha256": "c040ecb3a1a8c9a0beff8407f323e07ef436a3ab6a774a2ac2b26297ba9c49e9"
+    },
+    {
+      "audit_source_label": "agent_b--iteration2--reference-review-audit.json",
+      "bytes": 8087,
+      "sha256": "b936c8f2838f5b63e6ce84242b13d450a80be5f1ff2bb42d1bec9a76d71880e4"
+    },
+    {
+      "audit_source_label": "agent_b--iteration2--review-issues.json",
+      "bytes": 3493,
+      "sha256": "b0ee5c5be3045e65931f0601988eebfc090becde544142400c53361f930c3531"
+    },
+    {
+      "audit_source_label": "agent_b--iteration2--research-entity-facts.json",
+      "bytes": 17224,
+      "sha256": "08817f0bd60039313e77532dc6e82e8093625468201cd85fe4c66cbe35d5939a"
+    },
+    {
+      "audit_source_label": "agent_b--iteration2--citation-contexts.json",
+      "bytes": 3971,
+      "sha256": "90dd8554d22b72d5c7874f0d9344c17d1e8b8ff44be243caee0027c15865d3dc"
+    },
+    {
+      "audit_source_label": "agent_b--iteration2--manual-review-events.jsonl",
+      "bytes": 4700,
+      "sha256": "503234b83cb71a1357579efa4d43653037c8cf0c50162dba9bf5675af8dbed91"
+    },
+    {
+      "audit_source_label": "agent_c--iteration2--version-file-inventory.json",
+      "bytes": 8746,
+      "sha256": "835924ccf41ae29242a34e9daf07662cc6af90e56f62443cb613e0c79dfc01c8"
+    },
+    {
+      "audit_source_label": "agent_c--iteration2--fulltext-review-audit.json",
+      "bytes": 3305,
+      "sha256": "603a6d50a0bc5ea955a0261a746fbb5a3a622664e596d95fe6678bdf330c1c66"
+    },
+    {
+      "audit_source_label": "agent_c--iteration2--reference-review-audit.json",
+      "bytes": 4778,
+      "sha256": "71925a7f0646d2162de46dc68f5d8a0d0ce9ae9caa8d8a617cbbc160372c9867"
+    },
+    {
+      "audit_source_label": "agent_c--iteration2--risk-events.json",
+      "bytes": 2071,
+      "sha256": "734c69279832451c9dc68d3fa4ff9e33bc82388d4c9dd1b04274846b30ec7510"
+    },
+    {
+      "audit_source_label": "agent_c--iteration2--author-affiliation-funding-facts.json",
+      "bytes": 18627,
+      "sha256": "3ca0c9eb00c32df39c59a9509ab84dd9a1fad0950609d16aff80641f790717f5"
+    },
+    {
+      "audit_source_label": "agent_c--iteration2--version-audit.json",
+      "bytes": 10955,
+      "sha256": "09f75688f7e8da206658987c4e48a45075f945033e6b4084818daf0a63d19331"
+    },
+    {
+      "audit_source_label": "agent_c--iteration2--followup-tasks.json",
+      "bytes": 8332,
+      "sha256": "97afb82a9a9ef3b7d64a7e0b64c3cf74dc0833ace117386f77f4bb51aaf05bcb"
+    },
+    {
+      "audit_source_label": "agent_c--iteration2--access-failures.json",
+      "bytes": 4908,
+      "sha256": "e1705e9ab35de9f4d1821d9ffb514f074279db9a95ac40d420c0425325e02192"
+    },
+    {
+      "audit_source_label": "agent_c--iteration2--manual-review-activities.json",
+      "bytes": 7644,
+      "sha256": "f3f0c9d9720c03c8b4ff63d9220f2dabb9a6b55742902c7fe309918470365b46"
+    },
+    {
+      "audit_source_label": "agent_c--iteration2--citation-role-facts.json",
+      "bytes": 15221,
+      "sha256": "828637dfea96f60ff014a9842cbe0e29c2de91a2510cf48e023514b255bd28c0"
+    }
+  ],
+  "new_manual_review_items": 0,
+  "new_research_performed": false,
+  "prepared_at_utc": "2026-11-26T08:23:52.300413Z",
+  "ready_for_root_integration": true,
+  "research_paused_at_utc": "2026-11-26T08:10:58Z",
+  "research_task_requests_sha256": "9ec65932b61f7010efdbc91256bb80fc5917fb8c37009a2172eddd8df41459f6",
+  "scope_id": "SCOPE-0001"
+}

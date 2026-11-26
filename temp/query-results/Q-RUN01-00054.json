@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00054",
+  "origin_log_id": "shared_http_events",
+  "source_id": "semantic_scholar",
+  "endpoint_or_url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.3389/fncom.2014.00083?fields=title%2Cyear%2CpublicationDate%2Cauthors%2CexternalIds%2CcitationCount%2CreferenceCount%2CopenAccessPdf%2Cjournal%2Cvenue%2CpublicationTypes%2Curl%2Cabstract",
+  "queried_at_utc": "2026-11-26T06:59:00.514634Z",
+  "completed_at_utc": "2026-11-26T06:59:05.065460Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "cdd5e4837072ab7452f4c141b7d62a7d35a1e38e5e9c4913f2ff859d14ebca7e",
+  "body_bytes": 2930,
+  "response_kind": "api_singleton",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "23531bc8dde4161b69912c36ebe9247d118f4a15"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

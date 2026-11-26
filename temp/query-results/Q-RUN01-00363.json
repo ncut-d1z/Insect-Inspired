@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00363",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Dendritic+computation+of+direction+selectivity+and+gain+control+in+visual+interneurons+Sandra+Single%2C+Juergen+Haag%2C+and+Alexander+Borst+1997&rows=5",
+  "queried_at_utc": "2026-11-26T07:25:59.483874Z",
+  "completed_at_utc": "2026-11-26T07:26:04.372556Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "2ec18e229d1d00f0d359849cf97ac8067be6825173af443fe0e7a56f0854b02e",
+  "body_bytes": 35041,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 1891,
+  "result_identifiers": [
+    "10.1007/bf00962705",
+    "10.1016/0304-3940(92)90095-o",
+    "10.1101/2022.07.01.498438",
+    "10.1523/jneurosci.17-16-06023.1997",
+    "10.1523/jneurosci.21-15-05685.2001"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

@@ -1,0 +1,41 @@
+{
+  "artifact_hashes": {
+    "ref.bib": "91423fe112f453beef13950294a2e3e47fdf36cb04b220604b8b702e8c285ac8",
+    "temp/exports/citation_graph.json": "570651f50467d7b786f62cef1fe718127160e112faf22fd4fe20a1bc2214f2ae",
+    "temp/exports/evidence_matrix.csv": "712f7b3184ee933abaca0e7abe05d9fca6ee13dc0901ce9ab28588f6d4b9660a",
+    "temp/exports/research_entities.json": "574108afd00eb320bc9d17e18a59c46aa97b06aee1f0fc1510bc2d65e85c8e1f",
+    "temp/exports/research_implications.csv": "e13d7c97bd98888f539abf0845ac4b34223b671588feaa04bd38c04e0b8068ab",
+    "temp/exports/research_paths.json": "40d07f49a2f8511868314abd4447afd6f22c3de1445ea1ad3617c0e1b69497d8"
+  },
+  "authorship_statuses": {
+    "source_supported": 16490
+  },
+  "canonical_schema_pointer_patch_needed": false,
+  "checkpoint_id": "CP-0003",
+  "counts": {
+    "active_assessments": 64,
+    "bibtex_entries": 4057,
+    "entity_relations": 20247,
+    "graph_edges": 28557,
+    "graph_nodes": 4057,
+    "independent_progress": 6,
+    "path_gaps": 0,
+    "paths": 64,
+    "unresolved_pointers": 116142
+  },
+  "input_record_counts": {
+    "assessments.jsonl": 64,
+    "authors.jsonl": 15478,
+    "citation-edges.jsonl": 28557,
+    "discovery-paths.jsonl": 37755,
+    "organizations.jsonl": 1304,
+    "project-relations.jsonl": 11,
+    "projects.jsonl": 2,
+    "reference-occurrences.jsonl": 146872,
+    "seed-manifest.jsonl": 20,
+    "works.jsonl": 4057
+  },
+  "schema_errors": [],
+  "schema_version": "1.1.1",
+  "scope_id": "SCOPE-0001"
+}

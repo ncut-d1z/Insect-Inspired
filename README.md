@@ -1,6 +1,6 @@
 # Insect-Inspired：昆虫启发的视觉自运动估计文献追踪与局限性研究
 
-> 版本：1.1；生效日期：2026-11-26。  
+> 版本：1.1.1；生效日期：2026-11-26。  
 > 本文件是最终执行规范，规定文献数据库、递归引文检索、作者/机构/项目追踪、局限性证据分析与验收要求；不包含检索结果、数据文件或运行日志。数据文件与日志按 §8 生成，审计数据与日志保存于 `temp/`。
 
 ## 1. 研究背景与任务目标
@@ -389,7 +389,7 @@ Scope 以 SCOPE- 加稳定序号标识；每次运行绑定一个 scope_id 和�
     cache_path, cache_hit, reused_query_id, rerun_reason,
     coverage_note, license_note
 
-可见总数未知时用 null 并注明来源限制；不得以 returned_count 代替全量总数。合并不同来源结果时按 Work 身份去重，同时保留各来源计数和关系证据。缓存键及重查规则见 §8.3。遵守来源限额、分页协议及服务条款，采用退避、受控重试和可恢复任务。索引缺失不是未引用证据，未收录不是不存在。
+查询计数（returned_count、count_before_dedup、count_after_dedup、new_work_count）确实不可得时采用 null，并由 field_states 记录 unknown 或 not_applicable 及依据；unknown 必须关联复核工单，禁止伪造为 0。原始查询UTC不可得时采用 query_time_status=unavailable_exact、queried_at_utc=null，另记 recorded_at_utc 和可核验日期，不据此证明精确时间覆盖。可见总数未知时用 null 并注明来源限制；不得以 returned_count 代替全量总数。合并不同来源结果时按 Work 身份去重，同时保留各来源计数和关系证据。缓存键及重查规则见 §8.3。遵守来源限额、分页协议及服务条款，采用退避、受控重试和可恢复任务。索引缺失不是未引用证据，未收录不是不存在。
 
 ### 6.3 摘要、全文及版权
 
@@ -532,6 +532,14 @@ duplicate_pending_merge 仅指身份未定的 Work 合并疑义，不是已经�
       assessments.jsonl            # Assessment、分类与证据
       queries.jsonl                # 查询、分页、缓存、错误、重试
       tasks.jsonl                  # 任务、游标、状态事件及恢复入口
+      partitions/                  # 大型 JSONL 的无损物理分片及 manifest.json
+      discovery-paths.jsonl        # 已核验的发现路径；关系真实性与发现记录分级
+      author-publication-leads.jsonl # 作者索引候选归属及逐 Work 消歧状态
+      project-relations.jsonl       # 项目资助、参与及成果关系
+      reference-coverage.jsonl      # 原文/注册参考表覆盖与缺口
+      manual-reviews.jsonl          # 实际复核活动与预算核算
+      runs.jsonl                    # 运行授权、预算与停止条件
+      source-observations.jsonl     # 冻结作用域内追加的能力核验
       schema.json                  # 字段定义、类型、枚举、主外键、schema_version
       risk-register.md             # 风险登记
       change-log.md                # 规范数据及状态迁移、合并和范围变更
@@ -545,6 +553,8 @@ duplicate_pending_merge 仅指身份未定的 Work 合并疑义，不是已经�
         scope.json                 # 当前活动作用域的规范执行参数
         scopes/                    # 不可变的各 scope_id JSON 快照
         checkpoints/               # 每个 checkpoint_id 的 JSON 清单与审计统计
+
+**大型 JSONL 的存储规则。** 上表路径为逻辑数据集名称。单个 JSONL 超过 4 MiB 时，按完整行顺序无损分片：第一片保留原路径，其他片保存于 `temp/partitions/<数据集名>/<SHA-256>.jsonl`；`temp/partitions/manifest.json` 固定记录有序片路径、逐片记录数、字节数及 SHA-256，以及逻辑全集记录数和拼接哈希。每片仍逐行服从同一实体 Schema，ID 不得跨片重复；读取、去重、队列恢复、导出和验收必须按 manifest 读取逻辑全集，禁止只读取第一片。分片仅处理仓库存储与传输，不改变研究范围、队列、实体身份、原始证据或统计分母；全部分片纳入 Checkpoint 哈希和 Git。该规则适配 [GitHub 单文件限制](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)。
 
 Seed mapping 与去重 Upload 记录通过 record_type（seed_mapping、duplicate_upload）区分，去重记录的 seed_id 为 null；保留非去重 Upload 的完整记录仅位于 uploads.jsonl。两份文件中的 upload_id 映射构成 Upload 视图，禁止重复存放同一去重审计实体。seed-manifest 中 Seed mapping 只引用对应保留 Upload，不重复维护其原文件属性；去重记录指向已存在 Upload、Work、Version，无独立 Work。上传出现项的最低审计字段如下（含内部字段见 §4.2）：
 
@@ -587,7 +597,7 @@ Checkpoint 提交前统一生成并校验 ref.bib、ref.html、§8.4 五个研�
 
 | 文件 | 固定结构与最小字段 |
 | --- | --- |
-| citation_graph.json | nodes（work_id、work_key、canonical_title、identity_confidence、publication_status）；edges（edge_id、citing_work_id、cited_work_id、citing_key、cited_key、verification_status、citation_roles、context_locators、occurrence_ids、discovery_sources）；independent_progress（assessment_id、work_id、limitation_id、relation_type）；未解析端点单列 unresolved_occurrences，不作虚假边 |
+| citation_graph.json | nodes（work_id、work_key、canonical_title、identity_confidence、publication_status）；edges（edge_id、citing_work_id、cited_work_id、citing_key、cited_key、verification_status、citation_roles、context_locators、occurrence_ids、discovery_sources）；independent_progress（assessment_id、work_id、limitation_id、relation_type）；未解析端点单列 unresolved_occurrences（occurrence_id、citing_work_id、candidate_ids、failure_reason、canonical_dataset），按 occurrence_id 回溯原始引文逻辑数据集，不复制整段证据、不作虚假边 |
 | research_entities.json | people、organizations、projects、work_refs、relations；关系字段 relation_id、relation_type、from_id、to_id、valid_from、valid_to、verification_status、evidence_locator；分别区分发表时隶属、历史隶属、资助、项目参与及实际成果 |
 | evidence_matrix.csv | 固定列 scope_id,checkpoint_id,schema_version,assessment_id,work_id,work_key,limitation_id,claim_id,claim_type,evidence_route,relation_type,handling_level,evidence_level,evidence_kind,evidence_admission_status,rejection_codes,conditions,dataset_records,baseline_records,condition_levels,metric_records,proof_record,claims_absolute_scale,scale_prior_details,observability_argument_locator,effect,remaining_limitations,counter_evidence,counter_evidence_types,evidence_locator,provenance_upload_ids,provenance_version_ids,verification_status,reviewer,date；一行一个 active Assessment，含不足证据主张；pending_review/merged/discarded 不计有效行，保留于审计源 |
 | research_paths.json | paths（path_id、limitation_id、assessment_id、seed_id、work_id、ordered_steps、path_type、verification_status、evidence_locators、counter_evidence、gap_reason）；每步含 from_id、to_id、relation_id、relation_type、source_id、locator；至少保存各已核验发现路径类型的代表路径，不枚举全部可能组合；不将种子预置关系或作者关联伪作引用 |
@@ -680,7 +690,7 @@ P1 还必须执行以下受控正/反例测试，不将虚构测试数据写入�
 
 ## 10. 路线图及门禁
 
-执行状态统一记录于 [进度追踪](temp/progress.md)；阶段验收见 [P1/P2 报告](temp/reports/P1-P2.md)，有效快照见 [CP-0002](temp/snapshots/checkpoints/CP-0002.json)。本节定义阶段门禁，不另行维护执行状态。
+执行状态统一记录于 [进度追踪](temp/progress.md)；阶段验收见 [P1/P2 报告](temp/reports/P1-P2.md)，P3–P6 阶段报告见 [CP-0003 报告](temp/reports/P3-P6-CP0003.md)，有效快照见 [CP-0003](temp/snapshots/checkpoints/CP-0003.json)。本节定义阶段门禁，不另行维护执行状态。
 
 | 阶段 | 输入 | 任务及验收产物 | 门禁 |
 | --- | --- | --- | --- |

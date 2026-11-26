@@ -1,0 +1,26 @@
+{
+  "query_id": "AG-A-CR-S04-RETRY1",
+  "origin_log_id": "early_agent_a",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works/10.1242/jeb.061713",
+  "queried_at_utc": "2026-11-26T06:43:41.286278Z",
+  "completed_at_utc": "2026-11-26T06:43:44.846553Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": null,
+  "body_sha256": "11d75e60021ad078e4aa4de5df3715d46cd896e817ad6ee0ae87db54820db487",
+  "body_bytes": 27429,
+  "response_kind": "crossref_singleton",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.1242/jeb.061713"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 1,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

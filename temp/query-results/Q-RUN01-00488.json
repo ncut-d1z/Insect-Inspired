@@ -1,0 +1,33 @@
+{
+  "query_id": "Q-RUN01-00488",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?filter=doi%3A10.7554%2Felife.00231%2Cdoi%3A10.7554%2Felife.102230%2Cdoi%3A10.7554%2Felife.26117%2Cdoi%3A10.7554%2Felife.26410%2Cdoi%3A10.7554%2Felife.34272%2Cdoi%3A10.7554%2Felife.46409%2Cdoi%3A10.7554%2Felife.65878%2Cdoi%3A10.7554%2Felife.82587&rows=8",
+  "queried_at_utc": "2026-11-26T07:48:20.269023Z",
+  "completed_at_utc": "2026-11-26T07:48:24.368803Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "b140c13776f8160be7dfabcb16c161234827a64477335541d72e75638681160f",
+  "body_bytes": 325572,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 8,
+  "visible_total": 8,
+  "result_identifiers": [
+    "10.7554/elife.00231",
+    "10.7554/elife.102230",
+    "10.7554/elife.26117",
+    "10.7554/elife.26410",
+    "10.7554/elife.34272",
+    "10.7554/elife.46409",
+    "10.7554/elife.65878",
+    "10.7554/elife.82587"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

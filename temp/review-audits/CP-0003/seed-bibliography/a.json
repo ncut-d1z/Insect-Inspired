@@ -1,0 +1,113 @@
+{
+  "source_record_sha256": "5feda274df18a6aa6b98873366d19643f8b45aa43b8cd67fd24fa652a0a9df93",
+  "scope_id": "SCOPE-0001",
+  "audit": {
+    "completed_at_utc": "2026-11-26T06:50:42.835182Z",
+    "scope": "P3 supplied seed PDFs S01-S07; no recursive-descendant completeness claim",
+    "manual_review_items": 7,
+    "source_pdf_list_complete": 7,
+    "bibliography_occurrences": 439,
+    "additional_note_occurrences": 1,
+    "all_occurrences": 440,
+    "doi_candidates": 307,
+    "distinct_doi_candidates": 287,
+    "title_extracted": 438,
+    "crossref_http_requests": 6,
+    "crossref_success": 5,
+    "crossref_429": 1,
+    "manifest": [
+      {
+        "seed_id": "S01",
+        "path": "p3p6_work/agent_a/S01-references.json",
+        "references": 106,
+        "bibliography": 106,
+        "additional": 0,
+        "source_pdf_status": "complete_for_supplied_pdf",
+        "external_supplement_status": "no_external_supplement_reference_list_identified_in_supplied_file",
+        "crossref_count": null,
+        "sha256": "49cc0123a648c8c33ab24ff067d03ffb97b84a0f335f8dee269143c8aaf9f855"
+      },
+      {
+        "seed_id": "S02",
+        "path": "p3p6_work/agent_a/S02-references.json",
+        "references": 5,
+        "bibliography": 5,
+        "additional": 0,
+        "source_pdf_status": "complete_for_supplied_pdf",
+        "external_supplement_status": "no_external_supplement_reference_list_identified_in_supplied_file",
+        "crossref_count": null,
+        "sha256": "f97bd4b94e3becf160e96a35df56e450c3ea6de6a86aa3e4f20163345896f76a"
+      },
+      {
+        "seed_id": "S03",
+        "path": "p3p6_work/agent_a/S03-references.json",
+        "references": 40,
+        "bibliography": 40,
+        "additional": 0,
+        "source_pdf_status": "complete_for_supplied_pdf",
+        "external_supplement_status": "not_retrieved",
+        "crossref_count": 40,
+        "sha256": "34f0bfc03e9191c95dd7f4122865e22bdf256b8ea4dd89448863455261f06d99"
+      },
+      {
+        "seed_id": "S04",
+        "path": "p3p6_work/agent_a/S04-references.json",
+        "references": 85,
+        "bibliography": 84,
+        "additional": 1,
+        "source_pdf_status": "complete_for_supplied_pdf",
+        "external_supplement_status": "no_external_supplement_reference_list_identified_in_supplied_file",
+        "crossref_count": 84,
+        "sha256": "cab7613585ae4a58a7e5f67f9be33c3c1e7b82dc64495d67782595794661cfb7"
+      },
+      {
+        "seed_id": "S05",
+        "path": "p3p6_work/agent_a/S05-references.json",
+        "references": 74,
+        "bibliography": 74,
+        "additional": 0,
+        "source_pdf_status": "complete_for_supplied_pdf",
+        "external_supplement_status": "no_external_supplement_reference_list_identified_in_supplied_file",
+        "crossref_count": 73,
+        "sha256": "0803dcbb87c5e136faef4d31edfb44d089ddbd9a8bb38ff481eeabdf97ca548c"
+      },
+      {
+        "seed_id": "S06",
+        "path": "p3p6_work/agent_a/S06-references.json",
+        "references": 91,
+        "bibliography": 91,
+        "additional": 0,
+        "source_pdf_status": "complete_for_supplied_pdf",
+        "external_supplement_status": "not_retrieved",
+        "crossref_count": 91,
+        "sha256": "fcf74257138505907e094557966dcc6c02f4b4a087e715725854ca0865660afc"
+      },
+      {
+        "seed_id": "S07",
+        "path": "p3p6_work/agent_a/S07-references.json",
+        "references": 39,
+        "bibliography": 39,
+        "additional": 0,
+        "source_pdf_status": "complete_for_supplied_pdf",
+        "external_supplement_status": "no_external_supplement_reference_list_identified_in_supplied_file",
+        "crossref_count": 39,
+        "sha256": "d212e00b0824462a5a64b77e61cf5fcee6df5db23efae13822e1bad8f777cd12"
+      }
+    ],
+    "pending_gaps": [
+      "S03 externally linked Supplemental Experimental Procedures not retrieved; supplied-PDF references complete.",
+      "S06 external supplementary material not retrieved; main+Methods1-91 and supplied extended data checked.",
+      "Bibliographic identities remain candidate/source-supported until authority verification; source DOI assignments can contain errors.",
+      "S06 references18 and37 omit chapter titles in printed references; do not invent titles."
+    ],
+    "validation": [
+      "Printed numbered sequences S01=1-106,S02=1-5,S03=1-40,S06=1-91 complete.",
+      "Alphabetic and hanging-indent boundaries examined for S04,S05,S07.",
+      "S05 Crossref73 vs PDF74 reconciled as missing R66, with insertion R21A preserved.",
+      "S04 proof-note occurrence links to bibliography75, not new Work.",
+      "No source PDF, full original abstract or private download footer in reference outputs.",
+      "S06 ref91 false title-only W-S06 match removed; distinct dataset DOI preserved."
+    ],
+    "final_audit_at_utc": "2026-11-26T07:13:37.115667Z"
+  }
+}

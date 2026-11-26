@@ -1,0 +1,177 @@
+[
+  {
+    "canonical_work_doi": "10.64898/2026.05.07.723493",
+    "content_acquired_for_this_preprint": true,
+    "jatsxml_url": "https://www.biorxiv.org/content/early/2026/05/11/2026.05.07.723493.source.xml",
+    "origin_review_agent": "a",
+    "preprint_date": "2026-05-11",
+    "preprint_doi": "10.64898/2026.05.07.723493",
+    "preprint_license": "cc_by_nc",
+    "preprint_version": "1",
+    "published_doi": null,
+    "relationship_evidence": "bioRxiv API published field plus Crossref relation for N02/N05; N01 remains version1 preprint",
+    "source_query_id": "Q-RUN01-00218",
+    "work_id": "W-D4bc7cdf0840a9a74",
+    "work_key": "Prech2026"
+  },
+  {
+    "canonical_work_doi": "10.1242/jeb.249763",
+    "content_acquired_for_this_preprint": false,
+    "jatsxml_url": "https://www.biorxiv.org/content/early/2024/09/03/2024.09.02.610798.source.xml",
+    "origin_review_agent": "a",
+    "preprint_date": "2024-09-03",
+    "preprint_doi": "10.1101/2024.09.02.610798",
+    "preprint_license": "cc_by",
+    "preprint_version": "1",
+    "published_doi": "10.1242/jeb.249763",
+    "relationship_evidence": "bioRxiv API published field plus Crossref relation for N02/N05; N01 remains version1 preprint",
+    "source_query_id": "Q-RUN01-00221",
+    "work_id": "W-D2ed2f966c2d4ca85",
+    "work_key": "Sonntag2025a"
+  },
+  {
+    "canonical_work_doi": "10.1242/jeb.249763",
+    "content_acquired_for_this_preprint": false,
+    "jatsxml_url": "https://www.biorxiv.org/content/early/2025/03/03/2024.09.02.610798.source.xml",
+    "origin_review_agent": "a",
+    "preprint_date": "2025-03-03",
+    "preprint_doi": "10.1101/2024.09.02.610798",
+    "preprint_license": "cc_by",
+    "preprint_version": "2",
+    "published_doi": "10.1242/jeb.249763",
+    "relationship_evidence": "bioRxiv API published field plus Crossref relation for N02/N05; N01 remains version1 preprint",
+    "source_query_id": "Q-RUN01-00221",
+    "work_id": "W-D2ed2f966c2d4ca85",
+    "work_key": "Sonntag2025a"
+  },
+  {
+    "canonical_work_doi": "10.7554/elife.86076",
+    "content_acquired_for_this_preprint": false,
+    "jatsxml_url": "https://www.biorxiv.org/content/early/2023/01/07/2023.01.06.523055.source.xml",
+    "origin_review_agent": "a",
+    "preprint_date": "2023-01-07",
+    "preprint_doi": "10.1101/2023.01.06.523055",
+    "preprint_license": "cc_by_nc_nd",
+    "preprint_version": "1",
+    "published_doi": "10.7554/elife.86076",
+    "relationship_evidence": "bioRxiv API published field plus Crossref relation for N02/N05; N01 remains version1 preprint",
+    "source_query_id": "Q-RUN01-00224",
+    "work_id": "W-D1693c1bfa8c466e3",
+    "work_key": "Mano2023a"
+  },
+  {
+    "canonical_work_doi": "10.7554/elife.86076",
+    "content_acquired_for_this_preprint": false,
+    "jatsxml_url": "https://www.biorxiv.org/content/early/2023/04/15/2023.01.06.523055.source.xml",
+    "origin_review_agent": "a",
+    "preprint_date": "2023-04-15",
+    "preprint_doi": "10.1101/2023.01.06.523055",
+    "preprint_license": "cc_by_nc_nd",
+    "preprint_version": "2",
+    "published_doi": "10.7554/elife.86076",
+    "relationship_evidence": "bioRxiv API published field plus Crossref relation for N02/N05; N01 remains version1 preprint",
+    "source_query_id": "Q-RUN01-00224",
+    "work_id": "W-D1693c1bfa8c466e3",
+    "work_key": "Mano2023a"
+  },
+  {
+    "audit_type": "version_evidence_boundary",
+    "journal_body_status": "retryable_error",
+    "journal_date": "2026-03-11",
+    "journal_doi": "10.1126/scirobotics.adx7524",
+    "journal_license_deposit": [
+      {
+        "URL": "https://www.science.org/content/page/science-licenses-journal-article-reuse",
+        "content-version": "vor",
+        "delay-in-days": 365,
+        "start": {
+          "date-parts": [
+            [
+              2027,
+              3,
+              11
+            ]
+          ],
+          "date-time": "2027-03-11T00:00:00Z",
+          "timestamp": 1804723200000
+        }
+      }
+    ],
+    "journal_reference_deposit_count": 86,
+    "journal_title": "Fly motion vision maximizes signal energy transfer between mechanical input and sensor output",
+    "preprint_doi": "10.1101/2024.03.29.587347",
+    "preprint_versions": [
+      {
+        "api_published_relation": "NA",
+        "date": "2024-03-31",
+        "license": "cc_by",
+        "title": "Motion vision is tuned to maximize sensorimotor energy transfer in blowfly flight",
+        "version": "1"
+      },
+      {
+        "api_published_relation": "NA",
+        "date": "2025-08-09",
+        "license": "cc_by",
+        "title": "Fly motion vision is tuned to maximize signal energy transfer between mechanical input and sensor output",
+        "version": "2"
+      }
+    ],
+    "prohibited_inference": "Do not label preprint numerical claims as verified VOR results or apply preprint CC BY license to the journal.",
+    "relation_basis": "Same 17 named authors, closely matching titles and study, overlapping references/funders; no explicit publisher linking assertion was retrieved.",
+    "relation_confidence": "probable",
+    "reviewed_preprint_actual_author_count": 17,
+    "reviewed_preprint_reference_count": 83,
+    "reviewed_preprint_version": "2",
+    "unresolved": [
+      "VOR-to-preprint scientific changes",
+      "Version-specific affiliation differences",
+      "Journal deposit funder-award misassignments",
+      "v2 Results 274 flights versus Methods 205 flights",
+      "v2 says nine control variables but then equal dimension with eight-state vector"
+    ],
+    "work_id": "W-Da0499728f5d09799",
+    "work_key": "Humbert2026"
+  },
+  {
+    "accepted_date_lead": "2021-08-19",
+    "audit_type": "version_evidence_boundary",
+    "journal_body_not_acquired": true,
+    "license": "PMC manuscript explicitly available for text mining and use consistent with fair use; not CC BY",
+    "pmc_release": "2023-10-09",
+    "published_online": "2021-09-09",
+    "reviewed_representation": "NIHMS1932428 author manuscript via official NCBI JATS",
+    "supplement_body_not_acquired": true,
+    "work_id": "W-D43e98823d2ac6af2",
+    "work_key": "Lingenfelter2021"
+  },
+  {
+    "abstract_basis": "OpenAlex abstract_inverted_index; no quantitative evidence admitted",
+    "audit_type": "version_evidence_boundary",
+    "crossref_deposit_references": 59,
+    "fulltext_bibliography_audited": false,
+    "official_publisher_body_status": "HTTP 403",
+    "publication_date_precision": "month",
+    "published_print": "2026-06",
+    "publisher_filename_caution": "nearness2026-publisher.html contains Crossref content-negotiation JSON, not an article HTML fulltext.",
+    "work_id": "W-Dadd840d87e837cb3",
+    "work_key": "Zhou2026"
+  },
+  {
+    "category": "version_gap",
+    "details": "Final DOI identity verified, but onlypreprintv3 fulltext read; preserve version-specific evidence and compare final whenlawfully available.",
+    "issue_id": "I2-B203-FINAL",
+    "origin_review_agent": "b",
+    "status": "open",
+    "work_id": "W-D725818b672a64286",
+    "work_key": "Zhang2022"
+  },
+  {
+    "category": "version_gap",
+    "details": "PubMed37918398 Update of confirms preprint/final identity. Cell403; observedfreePMC PDFroute returned500. Finalbody notread; donot setVORavailable_verified.",
+    "issue_id": "I2-B204-FINAL",
+    "origin_review_agent": "b",
+    "status": "retry_required",
+    "work_id": "W-D949d6ef5b3f851e1",
+    "work_key": "Tanaka2023"
+  }
+]

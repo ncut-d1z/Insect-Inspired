@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00360",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Robust+local+optical+flow+for+feature+tracking+Tobias+Senst%2C+Volker+Eiselein%2C+and+Thomas+Sikora+2012&rows=5",
+  "queried_at_utc": "2026-11-26T07:25:54.056623Z",
+  "completed_at_utc": "2026-11-26T07:25:58.483677Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "88c16fc7f1222f8c40249ea1fa9d99ac6f059bbbc8e14daedba7ebdb82fb3741",
+  "body_bytes": 23097,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 183214,
+  "result_identifiers": [
+    "10.1109/icip.2011.6116111",
+    "10.1109/icip.2014.7026219",
+    "10.1109/pcs.2016.7906352",
+    "10.1109/tcsvt.2012.2202070",
+    "10.1109/wacv.2011.5711571"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

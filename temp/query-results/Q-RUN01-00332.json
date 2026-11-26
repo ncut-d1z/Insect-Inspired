@@ -1,0 +1,32 @@
+{
+  "query_id": "Q-RUN01-00332",
+  "origin_log_id": "shared_http_events",
+  "source_id": "semantic_scholar",
+  "endpoint_or_url": "https://api.semanticscholar.org/graph/v1/author/143796402/papers?fields=title%2Cyear%2CpublicationDate%2CexternalIds%2Cauthors%2Cvenue%2Cjournal%2Curl%2CopenAccessPdf%2CpublicationTypes&limit=1000&offset=0",
+  "queried_at_utc": "2026-11-26T07:24:07.726013Z",
+  "completed_at_utc": "2026-11-26T07:24:11.979585Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "205487b96f9855d7aa2d8bc412017401345dddaa7ba528428ec8a504c130e2b5",
+  "body_bytes": 7345,
+  "response_kind": "api_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 7,
+  "visible_total": null,
+  "result_identifiers": [
+    "6beba2f6f4b89419d7a29bb3632894d0951b4931",
+    "affb666f0652616b8db03f0a5ba8990bd739f007",
+    "d5364863a7a3aee64e9d3c91285015a8a037c7ca",
+    "dba8b2d2fc35aef27252119dfb5093d1bbfcb11b",
+    "ed8099525077317b1aea575e1ceef6c3f253d0ba",
+    "edb066e4f7e0f7e2f2557f2067ecd9f9383be764",
+    "f8c84277681777d4bb7b4b7aa078a314b5e34eb5"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

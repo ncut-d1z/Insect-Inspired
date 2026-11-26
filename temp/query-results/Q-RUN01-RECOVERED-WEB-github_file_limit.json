@@ -1,0 +1,17 @@
+{
+  "query_id": "Q-RUN01-RECOVERED-WEB-github_file_limit",
+  "origin_log_id": "recovered_web_github_file_limit",
+  "source_id": "web_search",
+  "endpoint_or_url": "recovered-web-tool-observation",
+  "queried_at_utc": null,
+  "query_time_status": "unavailable_exact",
+  "recorded_at_utc": "2026-11-26T08:25:30.520000Z",
+  "original_query_parameters_available": false,
+  "original_result_record_sha256": "ebd5f0de1d8359994b376d656e45840ac55de6c165e09e31e16a7ec84ef0c263",
+  "response_kind": "recovered_web_tool_result",
+  "budget_category": "engineering_delivery",
+  "initial_web_overlap_status": "unknown",
+  "count_reason": "Real stored tool result recovered; original request parameters and exact invocation UTC are unavailable. No reconstructed search expression or coverage claim. Possible overlap with initial three aggregate web calls remains unresolved.",
+  "sanitized": true,
+  "payload_retained": false
+}

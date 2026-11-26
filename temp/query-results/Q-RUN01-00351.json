@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00351",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Object+detection+in+the+fly+during+simulated+translatory+flight+Bernd+Kimmerle%2C+A-K+Warzecha%2C+and+Martin+Egelhaaf+1997&rows=5",
+  "queried_at_utc": "2026-11-26T07:25:19.268203Z",
+  "completed_at_utc": "2026-11-26T07:25:24.036631Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "595c873e6a0171ee1bcad7dcc9fe65f85142028ce41c6f3fd3414c4b84a97c5d",
+  "body_bytes": 21896,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 133385,
+  "result_identifiers": [
+    "10.1007/s001140050305",
+    "10.1007/s003590050003",
+    "10.1007/s003590050111",
+    "10.1242/jeb.203.11.1723",
+    "10.1523/jneurosci.20-16-06256.2000"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

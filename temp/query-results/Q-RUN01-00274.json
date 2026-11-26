@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00274",
+  "origin_log_id": "shared_http_events",
+  "source_id": "semantic_scholar",
+  "endpoint_or_url": "https://api.semanticscholar.org/graph/v1/author/2276570215?fields=name%2Caffiliations%2CexternalIds%2Chomepage%2CpaperCount",
+  "queried_at_utc": "2026-11-26T07:21:56.529028Z",
+  "completed_at_utc": "2026-11-26T07:22:01.169561Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "14936889d8b1b7b78ef9a639b6e9c1a4732752b2dfe1c1c2170ab8d689cb6a18",
+  "body_bytes": 131,
+  "response_kind": "api_singleton",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "2276570215"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

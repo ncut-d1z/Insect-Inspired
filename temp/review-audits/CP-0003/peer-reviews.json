@@ -1,0 +1,370 @@
+{
+  "audit_note": "Historical independent adjudication; this sanitization is not an additional manual review.",
+  "completed_items": 7,
+  "formal_data_modified": false,
+  "full_work_reextraction": false,
+  "issue_count": 1,
+  "manual_review_items": 7,
+  "new_http_requests": 0,
+  "pass_count": 6,
+  "requested_items": 7,
+  "review_type": "independent_cross_agent_scientific_adjudication",
+  "reviewed_at_utc": "2026-11-26T07:57:30Z",
+  "reviews": [
+    {
+      "activity_type": "peer_review_adjudication",
+      "assessment_file_sha256": "39b5f91e039a51ee1dbf51701b2397c3bb575b4366ac8053bba82b60c3fbf3ca",
+      "assessment_ids": [
+        "A-IT2A-N01-L01-01"
+      ],
+      "evidence": [
+        {
+          "inspection_method": "text extraction plus independent visual page inspection",
+          "locator": "PDF31, lines730–744, Trajectory-based reconstruction model",
+          "sha256": "66ac4e5da35685f784a948c09a946c85af3d684e55dc0ce07f8b67a182672be2",
+          "source_asset_id": "ASSET-66ac4e5da35685f784a948c0",
+          "source_asset_ids": [
+            "ASSET-66ac4e5da35685f784a948c0"
+          ],
+          "verified_fact_summary": "T4a逐次归一化；d=42−T4a×42；42cm来自实测距离90百分位；投影使用动物位置与朝向。"
+        }
+      ],
+      "findings": [
+        "已确认42cm是数据驱动的公制标定，并非视觉自行估出的尺度。世界坐标点云还依赖已知位置与朝向。",
+        "Assessment只把相关响应作为relative_scale深度线索证据，明确说未报告独立重建误差并保留外部轨迹/标定限制，故准入结论可维持。"
+      ],
+      "formal_data_modified": false,
+      "manual_review_items": 1,
+      "new_http_requests": 0,
+      "original_source_verified": true,
+      "required_repairs": [],
+      "result": "pass",
+      "retained_cautions": [
+        "不得把该Assessment的eligible解释为无外部先验的绝对地图重建；不能把r值转写为深度误差。"
+      ],
+      "review_id": "PEER-C-01",
+      "reviewed_at_utc": "2026-11-26T07:57:30Z",
+      "reviewer": "agent_c_independent_peer_review",
+      "scope_id": "SCOPE-0001",
+      "topic": "N01距离图的尺度来源与外部轨迹",
+      "work_ids": [
+        "W-D4bc7cdf0840a9a74"
+      ]
+    },
+    {
+      "activity_type": "peer_review_adjudication",
+      "assessment_file_sha256": "39b5f91e039a51ee1dbf51701b2397c3bb575b4366ac8053bba82b60c3fbf3ca",
+      "assessment_ids": [
+        "A-IT2A-N01-L02-01"
+      ],
+      "evidence": [
+        {
+          "inspection_method": "primary JATS paragraph/caption comparison",
+          "locator": "Results/Integrated responses track landmark proximity across velocities and scenes; Figure3e caption",
+          "sha256": "fba4ced57ad5f5469270cc1227f7f006810b13a88b4287ccd5d3fc785e18f7da",
+          "source_asset_id": "ASSET-fba4ced57ad5f5469270cc12",
+          "source_asset_ids": [
+            "ASSET-fba4ced57ad5f5469270cc12"
+          ],
+          "verified_fact_summary": "正文给高背景幅值下降、paired t P<.001、TOST P>.05、形状r=.98；图注却称幅值不受影响。"
+        },
+        {
+          "inspection_method": "independent visual inspection",
+          "locator": "native Figure3e",
+          "sha256": "b34f539c1b7920563304813b0bd05aa375d674d4e413ee9668f70543bfe66a46",
+          "source_asset_id": "ASSET-b34f539c1b7920563304813b",
+          "source_asset_ids": [
+            "ASSET-b34f539c1b7920563304813b"
+          ],
+          "verified_fact_summary": "蓝色高对比度曲线总体位于红色低对比度曲线之下，形状相近。"
+        },
+        {
+          "inspection_method": "read-only method audit",
+          "locator": "N01 entry",
+          "sha256": "af2be964f7449df2f04c1217a4fcdda0058efae68e7659218e34f8ef5b7e5ffa",
+          "source_asset_id": "ASSET-af2be964f7449df2f04c1217",
+          "source_asset_ids": [
+            "ASSET-af2be964f7449df2f04c1217"
+          ],
+          "verified_fact_summary": "约−.21ΔF/F是受限图像横窗的曲线差估计，不是作者配对检验的效应量；已记录选点偏差和±.02读图精度。"
+        }
+      ],
+      "findings": [
+        "正文、图形与图注存在真实源内冲突；Assessment的counter_evidence与methodological_conflict标签及not_resolved处理程度正确。",
+        "r=.98只支持形状一致，不能推出增益不变；TOST未通过不能单独证明不等效，但独立显著幅值检验和图形已支持限定反证。"
+      ],
+      "formal_data_modified": false,
+      "manual_review_items": 1,
+      "new_http_requests": 0,
+      "original_source_verified": true,
+      "required_repairs": [],
+      "result": "pass",
+      "retained_cautions": [
+        "必须始终把−.21标为代理读图估计且携带窗口/精度/可能偏差；不得冒充原文报告的配对效应或动物级统计。"
+      ],
+      "review_id": "PEER-C-02",
+      "reviewed_at_utc": "2026-11-26T07:57:30Z",
+      "reviewer": "agent_c_independent_peer_review",
+      "scope_id": "SCOPE-0001",
+      "topic": "N01图3背景对比度反证及正文/图注冲突",
+      "work_ids": [
+        "W-D4bc7cdf0840a9a74"
+      ]
+    },
+    {
+      "activity_type": "peer_review_adjudication",
+      "assessment_file_sha256": "39b5f91e039a51ee1dbf51701b2397c3bb575b4366ac8053bba82b60c3fbf3ca",
+      "assessment_ids": [
+        "A-IT2A-N02-L08-01"
+      ],
+      "evidence": [
+        {
+          "inspection_method": "primary JATS targeted read",
+          "locator": "Results/Height estimation, Figure8E; Discussion/Use of optic flow for flight control; Conclusions",
+          "sha256": "e874f98469713ffb4370a10dcb6be8b6748f32191c8af5fbdebe7e7556bdadb5",
+          "source_asset_id": "ASSET-e874f98469713ffb4370a10d",
+          "source_asset_ids": [
+            "ASSET-e874f98469713ffb4370a10d"
+          ],
+          "verified_fact_summary": "feeders-only ANOVA F15.398；低/无球配置目标1.24/1.00/.70m；作者以地面线索提出腹侧光流假说，并明确需要操控光流纹理进一步检验。"
+        }
+      ],
+      "findings": [
+        "高度偏好的行为效应可成立，但F值不是高度估计误差；实验没有给出足以识别绝对尺度的独立测量/前提。",
+        "原文承认速度—距离混杂，腹侧光流解释仍需干预。Assessment标insufficient_evidence且保留行为成立与机制未验证的区分正确。"
+      ],
+      "formal_data_modified": false,
+      "manual_review_items": 1,
+      "new_http_requests": 0,
+      "original_source_verified": true,
+      "required_repairs": [],
+      "result": "pass",
+      "retained_cautions": [
+        "训练装置的已知高度属于实验者掌握的信息，不自动等于动物可用的公制先验。"
+      ],
+      "review_id": "PEER-C-03",
+      "reviewed_at_utc": "2026-11-26T07:57:30Z",
+      "reviewer": "agent_c_independent_peer_review",
+      "scope_id": "SCOPE-0001",
+      "topic": "N02腹侧光流独立恢复绝对高度的机制准入",
+      "work_ids": [
+        "W-D2ed2f966c2d4ca85"
+      ]
+    },
+    {
+      "activity_type": "peer_review_adjudication",
+      "assessment_file_sha256": "36043254125bf1da885ad9aa35187200270876d28379875ce5425715481f9467",
+      "assessment_ids": [
+        "A-P6-B203-L06-direction_speed",
+        "A-P6-B203-L04-partial_flow"
+      ],
+      "evidence": [
+        {
+          "inspection_method": "targeted primary PDF text review",
+          "locator": "PDF1 version header; PDF9–12 Figures4–5; PDF21–24 Animals/optic-flow design; PDF32–34 decoders",
+          "sha256": "fe80ebef1cdc9799b406761e3894b320c619ac311ed88f2103e7564a62a8d8d3",
+          "source_asset_id": "ASSET-fe80ebef1cdc9799b406761e",
+          "source_asset_ids": [
+            "ASSET-fe80ebef1cdc9799b406761e"
+          ],
+          "verified_fact_summary": "2022-05-06v3；Danio rerio幼体；5–6dpf并筛选强OKR个体；369神经元来自2只鱼。6.6°/8.56°每秒来自单独40条件纯平移任务、leave-ten-out。混合任务另用138RF、24组合，不能共用其误差。"
+        }
+      ],
+      "findings": [
+        "Assessment目前已将6.6°方向与8.56°/s视网膜速度误差绑定pure_translation，且明确不等于物理线速度、绝对尺度或6DoF。",
+        "混合光流试验和遮挡模型已分开；遮挡方向误差8.7→14.4°来自相同RF函数编码/解码的模型，不能当真实动物轨迹精度。",
+        "物种与幼体年龄/选择偏差在L06条件中已保留，版本标签正确。"
+      ],
+      "formal_data_modified": false,
+      "manual_review_items": 1,
+      "new_http_requests": 0,
+      "original_source_verified": true,
+      "required_repairs": [],
+      "result": "pass",
+      "retained_cautions": [
+        "不能跨物种把斑马鱼前顶盖调谐当作昆虫VS直接机制；正式期刊全文未核对。"
+      ],
+      "review_id": "PEER-C-04",
+      "reviewed_at_utc": "2026-11-26T07:57:30Z",
+      "reviewer": "agent_c_independent_peer_review",
+      "scope_id": "SCOPE-0001",
+      "topic": "B203斑马鱼物种、纯/混合光流任务和解码边界",
+      "work_ids": [
+        "W-D725818b672a64286"
+      ]
+    },
+    {
+      "activity_type": "peer_review_adjudication",
+      "assessment_file_sha256": "36043254125bf1da885ad9aa35187200270876d28379875ce5425715481f9467",
+      "assessment_ids": [
+        "A-P6-B204-L04-world_motion_rejection",
+        "A-P6-B204-L03-counterevidence_onset"
+      ],
+      "evidence": [
+        {
+          "inspection_method": "primary JATS targeted read",
+          "locator": "front/article-meta epub-version; Results sections1–2; Figure1e–k and1r–t; Discussion Functional interpretation and Mi4; Methods Flies/Behavior",
+          "sha256": "7da60cefe4048e0922a04a3c302f98e98a9eee2dff1d33da22243d8bef214f44",
+          "source_asset_id": "ASSET-7da60cefe4048e0922a04a3c",
+          "source_asset_ids": [
+            "ASSET-7da60cefe4048e0922a04a3c"
+          ],
+          "verified_fact_summary": "v2发布日期2023-07-11；纯偏航转向抑制近10倍，23只；另有纯前向/后向平移对照Figure1g–k。Mi4下游neuronX仍是模型；混合运动推论未实测。成年非处女雌性Drosophila。"
+        },
+        {
+          "inspection_method": "cached metadata inspection only",
+          "locator": "response.resultList: journal metadata/MeSH",
+          "sha256": "e4f629fb2e7e8c7068ce2da3e491fd5c65d60d904cabd17a2740b919e1526768",
+          "source_asset_id": "ASSET-e4f629fb2e7e8c7068ce2da3",
+          "source_asset_ids": [
+            "ASSET-e4f629fb2e7e8c7068ce2da3"
+          ],
+          "verified_fact_summary": "正式版题名含self-movement，DOI10.1016/j.cub.2023.10.011，元数据首发2023-11-01；MeSH只列Drosophila，未提供种级名。"
+        },
+        {
+          "inspection_method": "format verification only; not treated as PDF",
+          "locator": "file magic and first bytes",
+          "sha256": "4e26474b76bafb4af75e11bdcb32ef5433ae54c2ce9d3a308de17516ab93d3a4",
+          "source_asset_id": "ASSET-4e26474b76bafb4af75e11bd",
+          "source_asset_ids": [
+            "ASSET-4e26474b76bafb4af75e11bd"
+          ],
+          "verified_fact_summary": "该后缀.pdf文件实际是HTML限流页面；其他所谓期刊PDF文件也是错误体。有效正文证据来自JATS。"
+        }
+      ],
+      "findings": [
+        "近10倍抑制/≈90%是行为转向幅值，不能当自运动估计准确率；当前Assessment对此限定正确。",
+        "300/150ms是行为组间显著性出现时间，不是Mi4时间常数；现记录已限定。Mi4作用有遗传/生理支持，但完整stationary detector及neuronX身份未确证。",
+        "“所有核心刺激针对纯偏航”表述过宽；Figure1g–k明确实验了纯平移对照。该问题不推翻本条纯偏航定量结果。",
+        "现有可读主要来源与缓存MeSH只明确属名Drosophila；未找到直接支持精确二名法melanogaster的正文/可读TableS1原始条目，不默认补全。",
+        "预印本与正式版被分开处理是正确的；不得把HTTP错误体计为已读期刊PDF。"
+      ],
+      "formal_data_modified": false,
+      "manual_review_items": 1,
+      "new_http_requests": 0,
+      "original_source_verified": true,
+      "required_repairs": [
+        {
+          "action": "改为：本条定量转向抑制比较针对纯偏航；原文另有纯平移对照，但未测试同时旋转与平移。",
+          "assessment_id": "A-P6-B204-L04-world_motion_rejection",
+          "eligibility_change_required": false,
+          "field": "remaining_limitations; matching evidence notes",
+          "severity": "medium"
+        },
+        {
+          "action": "精确种名须以已保存且可读的原始基因型/stock表确证；否则保留已验证的Drosophila属级事实并把种级身份标未核验，不从属名直接补为verified melanogaster。",
+          "assessment_ids": [
+            "A-P6-B204-L04-world_motion_rejection",
+            "A-P6-B204-L03-counterevidence_onset"
+          ],
+          "eligibility_change_required": false,
+          "field": "conditions.species / evidence provenance",
+          "severity": "medium"
+        }
+      ],
+      "result": "issue",
+      "retained_cautions": [
+        "修复上述表述与物种证据精度后，两个限定行为Assessment仍可准入；不得计入完整6DoF/完整神经电路覆盖。"
+      ],
+      "review_id": "PEER-C-05",
+      "reviewed_at_utc": "2026-11-26T07:57:30Z",
+      "reviewer": "agent_c_independent_peer_review",
+      "scope_id": "SCOPE-0001",
+      "topic": "B204视觉反证机制、物种精度与版本边界",
+      "work_ids": [
+        "W-D949d6ef5b3f851e1"
+      ]
+    },
+    {
+      "activity_type": "peer_review_adjudication",
+      "assessment_file_sha256": "d35ba11c0834d07dcbbaeeff9ba7428176f7b92888311dd6b365ca54707303fd",
+      "assessment_ids": [
+        "A-P6-S12-L06-transient_axis",
+        "A-P6-S12-L03-transient_axis"
+      ],
+      "evidence": [
+        {
+          "inspection_method": "targeted PDF text plus independent Figure6 visual inspection",
+          "locator": "PDF1 and4–5: stimulus generation and estimator; PDF9 Figure6D; PDF15 Discussion",
+          "sha256": "678e55f249fff6a3e3b9da89a355ac9a3f0045e902d0e9c5996c296520f63e0c",
+          "source_asset_id": "ASSET-678e55f249fff6a3e3b9da89",
+          "source_asset_ids": [
+            "ASSET-678e55f249fff6a3e3b9da89"
+          ],
+          "verified_fact_summary": "旋转轴在水平面、平移明确排除；主要刺激500°/s；输出轴方位角。Figure6D自然场景10ms下约36°降至13°；图值为读图量级。"
+        },
+        {
+          "inspection_method": "independent visual verification",
+          "locator": "Figure6D bars and caption",
+          "sha256": "2765fd6763a09a699ca5001276592abb9dec78093f94863227d4e270b69a2842",
+          "source_asset_id": "ASSET-2765fd6763a09a699ca50012",
+          "source_asset_ids": [
+            "ASSET-2765fd6763a09a699ca50012"
+          ],
+          "verified_fact_summary": "20°标尺与柱高支持约36°/13°；caption说明sqrt stimulus-averaged MSE及双侧VS5–7部分读出。"
+        }
+      ],
+      "findings": [
+        "现有记录准确区分固定输入转速与被估输出轴方位角；不宣称估计速度、平移或绝对尺度，亦不宣称一般三维旋转。",
+        "约36/13°与±1°读图精度合理；正文只说250/750°/s敏感性结果data not shown，不能当新增可验证数值。",
+        "完整群体最优读出不因耦合改善及生物下游实现未证实的限制已保留。"
+      ],
+      "formal_data_modified": false,
+      "manual_review_items": 1,
+      "new_http_requests": 0,
+      "original_source_verified": true,
+      "required_repairs": [],
+      "result": "pass",
+      "retained_cautions": [],
+      "review_id": "PEER-C-06",
+      "reviewed_at_utc": "2026-11-26T07:57:30Z",
+      "reviewer": "agent_c_independent_peer_review",
+      "scope_id": "SCOPE-0001",
+      "topic": "S12固定速率的水平旋转轴解码不能外推6DoF",
+      "work_ids": [
+        "W-S12"
+      ]
+    },
+    {
+      "activity_type": "peer_review_adjudication",
+      "assessment_file_sha256": "30b22444eb36d7184f6758d2c68a414de1b9769ca390dd21fa11ba20bdd9180b",
+      "assessment_ids": [
+        "A-S07-L05-02"
+      ],
+      "evidence": [
+        {
+          "inspection_method": "targeted original PDF text/caption review",
+          "locator": "PDF6 VS1 cell input; PDF7 Figure7A caption and residual responses; PDF8 VS1 cell ablation: why no effect?",
+          "sha256": "5b7e119f57db59f81a1a8d0eafb57ac99d2ab4da147e306f22baa4374c0a303d",
+          "source_asset_id": "ASSET-5b7e119f57db59f81a1a8d0e",
+          "source_asset_ids": [
+            "ASSET-5b7e119f57db59f81a1a8d0e"
+          ],
+          "verified_fact_summary": "单个VS8上向峰值3.5→3.7mV；另一次VS9亦未显示前方敏感性消失。作者保留不完全消融、VS2/3代偿和电流极性差异等解释。"
+        }
+      ],
+      "findings": [
+        "Assessment正确保留negative_result/counter_evidence，而不把非显著性当严格无效证明。",
+        "可支持“VS1不能单独解释所测内侧VS前方敏感性”，不能推出VS1无任何作用、所有VS10被实验覆盖或所有网络关系均被否定。",
+        "现记录已区分VS8上向3.5/3.7mV与下向2.6/2.1mV，未混用方向。"
+      ],
+      "formal_data_modified": false,
+      "manual_review_items": 1,
+      "new_http_requests": 0,
+      "original_source_verified": true,
+      "required_repairs": [],
+      "result": "pass",
+      "retained_cautions": [],
+      "review_id": "PEER-C-07",
+      "reviewed_at_utc": "2026-11-26T07:57:30Z",
+      "reviewer": "agent_c_independent_peer_review",
+      "scope_id": "SCOPE-0001",
+      "topic": "S07 VS1消融的反证及可外推范围",
+      "work_ids": [
+        "W-S07"
+      ]
+    }
+  ],
+  "scope_end": "No new scientific research after these seven reviews; further actions limited to QA/integration support.",
+  "targeted_source_text_reads": true
+}

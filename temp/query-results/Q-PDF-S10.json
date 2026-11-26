@@ -1,17 +1,18 @@
 {
   "query_id": "Q-PDF-S10",
-  "entity_id": "W-S10",
   "source_id": "SRC-PDF",
   "endpoint_or_url": "seed-manifest.jsonl#S10",
-  "api_version": "supplied_file",
   "queried_at_utc": "2026-11-26T05:24:08Z",
   "query_time_status": "exact",
   "status": "success",
+  "returned_count": 1,
+  "visible_total": 1,
   "result_identifiers": [
     "W-S10"
   ],
-  "visible_total": 1,
-  "returned_count": 1,
-  "error_code": null,
-  "coverage_note": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment."
+  "origin_log_id": "baseline_queries",
+  "response_kind": "baseline_observation",
+  "count_reason": "All pages extracted to private local cache; title/byline/abstract/imprint/boundary visually or text checked. This is not a full reference parse or Assessment.",
+  "sanitized": true,
+  "payload_retained": false
 }

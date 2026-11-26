@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00342",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Linear+Combinations+of+Optic+Flow+Vectors+for+Estimating+Self-Motion+-+a+Real-World+Test+of+a+Neural+Model+Matthias+O+Franz+and+Javaan+S+Chahl+2003&rows=5",
+  "queried_at_utc": "2026-11-26T07:24:37.517057Z",
+  "completed_at_utc": "2026-11-26T07:24:44.304495Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "921acc66ea23f53706bc3ecb402d2e470b10f11f24f3f0b026b99fb28b2d7514",
+  "body_bytes": 50305,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 24459,
+  "result_identifiers": [
+    "10.1007/3-540-36181-2_17",
+    "10.1007/978-3-642-56550-2_8",
+    "10.1088/1748-3190/ac709b",
+    "10.1167/17.10.211",
+    "10.1167/jov.25.9.2864"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

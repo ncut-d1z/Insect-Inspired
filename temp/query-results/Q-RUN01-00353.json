@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00353",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Error+Propagation+in+Monocular+Navigation+for+Zinf+Compared+to+Eightpoint+Algorithm+Elmar+Mair%2C+Michael+Suppa%2C+and+Darius+Burschka+2013&rows=5",
+  "queried_at_utc": "2026-11-26T07:25:30.146148Z",
+  "completed_at_utc": "2026-11-26T07:25:34.322153Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "386eb765016413f85a72fa2b2f4ac2aa08453b8fb93239c8451d67689cceb16f",
+  "body_bytes": 24078,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 1000,
+  "result_identifiers": [
+    "10.1080/01691864.2013.871770",
+    "10.1109/iros.2013.6696961",
+    "10.1109/robio.2011.6181345",
+    "10.1109/robio.2012.6490955",
+    "10.5772/8982"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

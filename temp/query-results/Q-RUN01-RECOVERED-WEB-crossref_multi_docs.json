@@ -1,0 +1,17 @@
+{
+  "query_id": "Q-RUN01-RECOVERED-WEB-crossref_multi_docs",
+  "origin_log_id": "recovered_web_crossref_multi_docs",
+  "source_id": "web_search",
+  "endpoint_or_url": "recovered-web-tool-observation",
+  "queried_at_utc": null,
+  "query_time_status": "unavailable_exact",
+  "recorded_at_utc": "2026-11-26T08:25:24.326000Z",
+  "original_query_parameters_available": false,
+  "original_result_record_sha256": "9633c62271d2effbf65a22a023e9d76d440aaced8dca2de31be5fd085d933b46",
+  "response_kind": "recovered_web_tool_result",
+  "budget_category": "research_or_source_capability",
+  "initial_web_overlap_status": "unknown",
+  "count_reason": "Real stored tool result recovered; original request parameters and exact invocation UTC are unavailable. No reconstructed search expression or coverage claim. Possible overlap with initial three aggregate web calls remains unresolved.",
+  "sanitized": true,
+  "payload_retained": false
+}

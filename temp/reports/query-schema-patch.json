@@ -1,0 +1,74 @@
+{
+  "authorized_by": "root explicit instruction",
+  "recorded_at_utc": "2026-11-26T08:27:01Z",
+  "purpose": "Represent genuinely unavailable query counts as null with explicit field_states, rather than fabricated zero. No entity_type expansion required: count audit tasks use source.",
+  "patch": [
+    {
+      "op": "replace",
+      "path": "/$defs/query/properties/returned_count",
+      "value": {
+        "anyOf": [
+          {
+            "type": "integer",
+            "minimum": 0
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/$defs/query/properties/count_before_dedup",
+      "value": {
+        "anyOf": [
+          {
+            "type": "integer",
+            "minimum": 0
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/$defs/query/properties/count_after_dedup",
+      "value": {
+        "anyOf": [
+          {
+            "type": "integer",
+            "minimum": 0
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/$defs/query/properties/new_work_count",
+      "value": {
+        "anyOf": [
+          {
+            "type": "integer",
+            "minimum": 0
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/$defs/query/properties/field_states",
+      "value": {
+        "$ref": "#/$defs/field_states"
+      }
+    }
+  ]
+}

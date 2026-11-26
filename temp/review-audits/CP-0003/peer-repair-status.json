@@ -1,0 +1,67 @@
+[
+  {
+    "engineering_observed_at_utc": "2026-11-26T08:20:31.335314Z",
+    "new_manual_review_items": 0,
+    "observations": [
+      {
+        "assessment_id": "A-P6-B204-L04-world_motion_rejection",
+        "canonical_assessment_sha256": "4995e5b0d6e263921fe3f5c1cac7b23d5e765812adf83acc22f5aaea52bbaa1d",
+        "existing_review_task_id": "T-Unknown-df9e5d557d5403c4",
+        "observed_remaining_limitations": "本条定量转向抑制比较针对纯偏航；真实平移叠加尚未实验验证。Mi4及中枢路径有约束但完整静止检测器身份未定；不能把转向抑制等同数值自运动估计准确率。正式版未读，证据绑定2023-07-11预印本v2。 本条量化比较针对纯偏航；原文另有纯前向/后向平移对照（Fig.1g–k），未测试同时旋转和平移。可读正文仅确认 Drosophila 属；精确种级身份须核查未取得的 stock/基因型表。",
+        "observed_species_reason": "可读正文仅明确 Drosophila 属、成年非处女雌性；种级身份待查原始 stock/基因型表，不能默认补为 melanogaster。",
+        "observed_species_status": "unknown",
+        "pure_translation_control_qualification_present": true,
+        "work_id": "W-D949d6ef5b3f851e1"
+      }
+    ],
+    "peer_review_id": "PEER-C-05",
+    "repair_audit_id": "REPAIR-811a8cd78b9482",
+    "requested_repair": {
+      "action": "改为：本条定量转向抑制比较针对纯偏航；原文另有纯平移对照，但未测试同时旋转与平移。",
+      "assessment_id": "A-P6-B204-L04-world_motion_rejection",
+      "eligibility_change_required": false,
+      "field": "remaining_limitations; matching evidence notes",
+      "severity": "medium"
+    },
+    "status": "documentation_repaired_species_identity_still_pending"
+  },
+  {
+    "engineering_observed_at_utc": "2026-11-26T08:20:31.335314Z",
+    "new_manual_review_items": 0,
+    "observations": [
+      {
+        "assessment_id": "A-P6-B204-L04-world_motion_rejection",
+        "canonical_assessment_sha256": "4995e5b0d6e263921fe3f5c1cac7b23d5e765812adf83acc22f5aaea52bbaa1d",
+        "existing_review_task_id": "T-Unknown-df9e5d557d5403c4",
+        "observed_remaining_limitations": "本条定量转向抑制比较针对纯偏航；真实平移叠加尚未实验验证。Mi4及中枢路径有约束但完整静止检测器身份未定；不能把转向抑制等同数值自运动估计准确率。正式版未读，证据绑定2023-07-11预印本v2。 本条量化比较针对纯偏航；原文另有纯前向/后向平移对照（Fig.1g–k），未测试同时旋转和平移。可读正文仅确认 Drosophila 属；精确种级身份须核查未取得的 stock/基因型表。",
+        "observed_species_reason": "可读正文仅明确 Drosophila 属、成年非处女雌性；种级身份待查原始 stock/基因型表，不能默认补为 melanogaster。",
+        "observed_species_status": "unknown",
+        "pure_translation_control_qualification_present": true,
+        "work_id": "W-D949d6ef5b3f851e1"
+      },
+      {
+        "assessment_id": "A-P6-B204-L03-counterevidence_onset",
+        "canonical_assessment_sha256": "19ca60701dece6408cf1b4ac88da0e2911ab602e5587acfb833cf3346674f84a",
+        "existing_review_task_id": "T-Unknown-e37ed08c6fe1dc1b",
+        "observed_remaining_limitations": "阈值是行为组间检验p=.05的出现时间，不是单神经元潜伏期或拟合适应常数。不同实验样本数不同，未给延迟差的独立置信区间；不能推广到所有VS细胞或高速6DoF。证据绑定预印本v2，图像型补充表仍未读取。 本条量化比较针对纯偏航；原文另有纯前向/后向平移对照（Fig.1g–k），未测试同时旋转和平移。可读正文仅确认 Drosophila 属；精确种级身份须核查未取得的 stock/基因型表。",
+        "observed_species_reason": "可读正文仅明确 Drosophila 属、成年非处女雌性；种级身份待查原始 stock/基因型表，不能默认补为 melanogaster。",
+        "observed_species_status": "unknown",
+        "pure_translation_control_qualification_present": true,
+        "work_id": "W-D949d6ef5b3f851e1"
+      }
+    ],
+    "peer_review_id": "PEER-C-05",
+    "repair_audit_id": "REPAIR-0c68440022d8af",
+    "requested_repair": {
+      "action": "精确种名须以已保存且可读的原始基因型/stock表确证；否则保留已验证的Drosophila属级事实并把种级身份标未核验，不从属名直接补为verified melanogaster。",
+      "assessment_ids": [
+        "A-P6-B204-L04-world_motion_rejection",
+        "A-P6-B204-L03-counterevidence_onset"
+      ],
+      "eligibility_change_required": false,
+      "field": "conditions.species / evidence provenance",
+      "severity": "medium"
+    },
+    "status": "documentation_repaired_species_identity_still_pending"
+  }
+]

@@ -1,15 +1,16 @@
 {
   "query_id": "Q-PROBE-europepmc-3",
-  "entity_id": "SCOPE-0001",
   "source_id": "europepmc",
-  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1371/journal.pbio.0030171%20OR%20DOI%3A10.1371/journal.pcbi.1000555&format=json&pageSize=1&cursorMark=AoIIPt60zSgxNjA1MjA1Ng%3D%3D",
-  "api_version": "6.9",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1371%2Fjournal.pbio.0030171+OR+DOI%3A10.1371%2Fjournal.pcbi.1000555&format=json&pageSize=1&cursorMark=AoIIPt60zSgxNjA1MjA1Ng%3D%3D",
   "queried_at_utc": "2026-11-26T05:25:29.526338Z",
   "query_time_status": "exact",
   "status": "success",
-  "result_identifiers": [],
-  "visible_total": 2,
   "returned_count": 0,
-  "error_code": null,
-  "coverage_note": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness."
+  "visible_total": 2,
+  "result_identifiers": [],
+  "origin_log_id": "baseline_queries",
+  "response_kind": "baseline_observation",
+  "count_reason": "Controlled known-seed query only. Successful pages prove this sample traversal, not corpus completeness.",
+  "sanitized": true,
+  "payload_retained": false
 }

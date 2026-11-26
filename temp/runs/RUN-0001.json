@@ -1,0 +1,30 @@
+{
+  "run_id": "RUN-0001",
+  "scope_id": "SCOPE-0001",
+  "start_checkpoint_id": "CP-0002",
+  "started_at_utc": "2026-11-26T06:44:02.827875Z",
+  "authorization": "反复迭代或递归执行 P3,P4,P5,P6 阶段任务。在输出对话回复时，评估任务进度。",
+  "authorized_stages": [
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "approval_effect": "Supersedes P1/P2 stage authorization only; frozen literature cutoff, seed set, expansion bounds and DEC rules remain unchanged.",
+  "budget": {
+    "wall_clock_hours": 6,
+    "external_requests": 2000,
+    "manual_review_items": 200,
+    "paid_spend": 0
+  },
+  "manual_review_unit": "A separately logged Work fulltext/bibliography review, Person disambiguation review, Project review, or Assessment adjudication. Automated metadata matching is logged separately.",
+  "external_requests_used": 511,
+  "external_requests_note": "Original reservation ledger511; later web invocations and recovered observations give515–518 research calls, unknown overlap of3 initial aggregate-only web calls. Engineering lookup separatelylogged. See temp/query-audit-reconciliation.json.",
+  "manual_review_items_used": 200,
+  "status": "paused_budget",
+  "research_paused_at_utc": "2026-11-26T08:10:58.716206Z",
+  "pause_reason": "Frozen RUN-0001 manual-review budget of 200 completed activities reached. No depth or per-paper truncation applied; remaining work retained. Snapshot consolidation/QA/commit continue.",
+  "external_requests_observed_lower_bound": 515,
+  "external_requests_observed_upper_bound": 518,
+  "external_request_count_status": "bounded_reconciliation"
+}

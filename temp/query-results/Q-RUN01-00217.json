@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00217",
+  "origin_log_id": "shared_http_events",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?format=json&query=DOI%3A10.7554%2Felife.86076&resultType=core",
+  "queried_at_utc": "2026-11-26T07:19:52.835614Z",
+  "completed_at_utc": "2026-11-26T07:19:57.156546Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "body_sha256": "16a115ff1f72bc33689d0d26a44600309812f68964bf812e64cb645dd702fc9f",
+  "body_bytes": 8975,
+  "response_kind": "europepmc_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.7554/elife.86076"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

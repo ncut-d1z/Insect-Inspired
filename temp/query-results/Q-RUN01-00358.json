@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00358",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Autocorrelation%2C+a+principle+for+the+evaluation+of+sensory+information+by+the+central+nervous+system+Werner+Reichardt+1961&rows=5",
+  "queried_at_utc": "2026-11-26T07:25:46.937113Z",
+  "completed_at_utc": "2026-11-26T07:25:53.052598Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "cb3a99e83a9a12269b0a077260ccc5c9a1e7a4fa9b7b91e17ad3f2cb9798b244",
+  "body_bytes": 8280,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 518639,
+  "result_identifiers": [
+    "10.1001/archneur.1961.00450090012003",
+    "10.1002/cpt196122268",
+    "10.1037/14281-001",
+    "10.1037/14281-012",
+    "10.7551/mitpress/9780262518420.003.0017"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

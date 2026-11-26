@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00402",
+  "origin_log_id": "shared_http_events",
+  "source_id": "openalex",
+  "endpoint_or_url": "https://api.openalex.org/works/https://doi.org/10.1016/j.neucom.2026.133380",
+  "queried_at_utc": "2026-11-26T07:29:04.610980Z",
+  "completed_at_utc": "2026-11-26T07:29:09.280097Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "5745ead643defd7b1c4ab475deb16e78c30d7ff3e91e1820fd1e51c3ab8a28b8",
+  "body_bytes": 18518,
+  "response_kind": "api_singleton",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "https://doi.org/10.1016/j.neucom.2026.133380"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

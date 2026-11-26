@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00079",
+  "origin_log_id": "shared_http_events",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?format=json&pageSize=10&query=DOI%3A%2210.3389%2Ffncom.2014.00083%22&resultType=core",
+  "queried_at_utc": "2026-11-26T07:00:43.720528Z",
+  "completed_at_utc": "2026-11-26T07:00:57.912436Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "body_sha256": "c53c152c60fad6b3f6ff506305aacf691625378ec64387cf63e08be3ec01b29d",
+  "body_bytes": 5296,
+  "response_kind": "europepmc_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.3389/fncom.2014.00083"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

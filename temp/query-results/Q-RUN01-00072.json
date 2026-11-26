@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00072",
+  "origin_log_id": "shared_http_events",
+  "source_id": "semantic_scholar",
+  "endpoint_or_url": "https://api.semanticscholar.org/graph/v1/paper/search/match?fields=title%2Cyear%2CpublicationDate%2Cauthors%2CexternalIds%2CcitationCount%2CreferenceCount%2CopenAccessPdf%2Cjournal%2Cvenue%2CpublicationTypes%2Curl%2Cabstract&query=Linear+Combinations+of+Optic+Flow+Vectors+for+Estimating+Self-Motion+-+a+Real-World+Test+of+a+Neural+Model",
+  "queried_at_utc": "2026-11-26T07:00:18.591990Z",
+  "completed_at_utc": "2026-11-26T07:00:22.817612Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "baab6321db30717836493a6c639a85ea9d76303c31cc6b131b9b3d0e08e339c8",
+  "body_bytes": 1246,
+  "response_kind": "api_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": null,
+  "result_identifiers": [
+    "0673a524f4ed0aedee2e98acb28aea7072e38b48"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 1,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

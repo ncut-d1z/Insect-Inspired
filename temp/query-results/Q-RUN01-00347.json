@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00347",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Contrast+gain%2C+signal-to-noise+ratio%2C+and+linearity+in+lightadapted+blowfly+photoreceptors+M+Juusola+et+al+1994&rows=5",
+  "queried_at_utc": "2026-11-26T07:24:57.817059Z",
+  "completed_at_utc": "2026-11-26T07:25:04.740943Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "302b28843b8dd3a36faf393c2bd58947d8721e6fa6e5633418816f86627e1976",
+  "body_bytes": 32074,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 316294,
+  "result_identifiers": [
+    "10.1007/bf00213533",
+    "10.1017/s095252380000701x",
+    "10.1085/jgp.104.3.593",
+    "10.1186/1471-2202-16-s1-p112",
+    "10.36939/ir.202505071558"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

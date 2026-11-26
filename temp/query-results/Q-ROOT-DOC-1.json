@@ -1,15 +1,16 @@
 {
   "query_id": "Q-ROOT-DOC-1",
-  "entity_id": "SCOPE-0001",
   "source_id": "crossref",
   "endpoint_or_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/access-and-authentication/",
-  "api_version": null,
   "queried_at_utc": null,
   "query_time_status": "unavailable_exact",
   "status": "partial",
-  "result_identifiers": [],
+  "returned_count": null,
   "visible_total": null,
-  "returned_count": 0,
-  "error_code": null,
-  "coverage_note": "Official API access, concurrency and rate-limit documentation. Exact web-tool timestamp not captured; day precision only."
+  "result_identifiers": [],
+  "origin_log_id": "baseline_queries",
+  "response_kind": "baseline_observation",
+  "count_reason": "Official API access, concurrency and rate-limit documentation. Exact web-tool timestamp not captured; day precision only.",
+  "sanitized": true,
+  "payload_retained": false
 }

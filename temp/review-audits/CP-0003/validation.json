@@ -1,0 +1,36 @@
+{
+  "canonical_works_referenced": 15,
+  "contact_resource_rows_removed": 1,
+  "existing_task_context_requests": 2,
+  "files_checked": 15,
+  "finalized_at_utc": "2026-11-26T08:26:33.720711Z",
+  "foreign_key_errors": [],
+  "historical_activity_records": 57,
+  "independent_peer_reviews": 7,
+  "iteration2_review_records": 15,
+  "known_source_error_handling": "N03 truncated DOI retained only as a source-error observation; full DOI from existing key-resource review remains separate.",
+  "new_http_requests": 0,
+  "new_manual_review_items": 0,
+  "new_task_requests": 47,
+  "notes": [
+    "Historical activity records do not add to the200-item run budget.",
+    "Only private audit output files and proposed task requests were written.",
+    "Version-specific bibliography completion is not Work reference closure.",
+    "Funding source level distinguishes fulltext acknowledgment, public acknowledgment without article body, publisher registry metadata and official project output confirmation.",
+    "B204 documentation qualification repaired; exact species identity remains unknown with existing review tasks."
+  ],
+  "prepared_at_utc": "2026-11-26T08:23:52.300413Z",
+  "privacy_scan_errors": [],
+  "raw_fulltext_included": false,
+  "registry_coverage_pointers_added": true,
+  "research_paused_at_utc": "2026-11-26T08:10:58Z",
+  "schema_errors": [],
+  "scope_id": "SCOPE-0001",
+  "source_asset_records": 45,
+  "source_mapping_hashes": {
+    "iteration2-mappings.json": "7ed073bb60930e08c0dc63127d54998e12381276dce4a3701d5e45f73227fe46",
+    "merge-map.json": "80e7c6e4a9bbc304db396f203f1aec9ea5a46638696a83a79a5b6ae2067f9347"
+  },
+  "temporary_id_errors": [],
+  "version_specific_reference_audits": 16
+}

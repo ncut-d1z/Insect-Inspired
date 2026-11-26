@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-EARLY-B-S10",
+  "origin_log_id": "early_agent_b",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works/10.1038/nn1245",
+  "queried_at_utc": "2026-11-26T06:40:40.044737Z",
+  "completed_at_utc": null,
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": null,
+  "body_sha256": "e130249fd56b038e185fbb9750591f0021fd8a46d34f6289abe28c928d632b54",
+  "body_bytes": 15286,
+  "response_kind": "crossref_singleton",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.1038/nn1245"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

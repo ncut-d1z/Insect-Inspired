@@ -1,0 +1,162 @@
+{
+  "source_record_sha256": "35c5fae0a6cca6fa1b63103eba719283fe699b98c7f0a6bcb60d8be0fc25e706",
+  "scope_id": "SCOPE-0001",
+  "audit": {
+    "schema": "agent_reference_extraction_handoff_v1",
+    "reviewed_at_utc": "2026-11-26T06:50:09.708259Z",
+    "manual_review_items": 6,
+    "reviewed_work_ids": [
+      "W-S15",
+      "W-S16",
+      "W-S17",
+      "W-S18",
+      "W-S19",
+      "W-S20"
+    ],
+    "reference_occurrence_count": 234,
+    "additional_resource_count": 2,
+    "external_http_requests": 0,
+    "new_original_fulltexts_fetched": 0,
+    "used_existing_crossref_cache_only": true,
+    "visual_reference_pages": {
+      "S15": [
+        33,
+        34,
+        35
+      ],
+      "S16": [
+        11,
+        12
+      ],
+      "S17": [
+        12,
+        13
+      ],
+      "S18": [
+        8,
+        9
+      ],
+      "S19": [
+        13
+      ],
+      "S20": [
+        17,
+        18
+      ]
+    },
+    "ocr_reference_pages": {
+      "S19": [
+        13
+      ],
+      "S20": [
+        17,
+        18
+      ]
+    },
+    "ocr_method": "Local PyMuPDF 3x rendering (216 dpi), column crops, Tesseract eng --psm 6, visual review of all OCR reference entries",
+    "per_seed": [
+      {
+        "seed_id": "S15",
+        "pdf_reference_pages": [
+          33,
+          34,
+          35
+        ],
+        "count": 51,
+        "provided_pdf_reference_list_status": "verified_complete",
+        "identity_resolution_status": "pending_main_thread",
+        "external_supplement_status": "no_external_reference_list_identified_in_supplied_file",
+        "notes": [
+          "Complete supplied-PDF reference sections and boundaries inspected; no claim of whole-literature closure."
+        ]
+      },
+      {
+        "seed_id": "S16",
+        "pdf_reference_pages": [
+          11,
+          12
+        ],
+        "count": 28,
+        "provided_pdf_reference_list_status": "verified_complete",
+        "identity_resolution_status": "pending_main_thread",
+        "external_supplement_status": "no_external_reference_list_identified_in_supplied_file",
+        "notes": [
+          "Complete supplied-PDF reference sections and boundaries inspected; no claim of whole-literature closure."
+        ]
+      },
+      {
+        "seed_id": "S17",
+        "pdf_reference_pages": [
+          12,
+          13
+        ],
+        "count": 24,
+        "provided_pdf_reference_list_status": "verified_complete",
+        "identity_resolution_status": "pending_main_thread",
+        "external_supplement_status": "no_external_reference_list_identified_in_supplied_file",
+        "notes": [
+          "Complete supplied-PDF reference sections and boundaries inspected; no claim of whole-literature closure.",
+          "Author-formatted manuscript references are the actually supplied version; published Version may differ."
+        ]
+      },
+      {
+        "seed_id": "S18",
+        "pdf_reference_pages": [
+          8,
+          9
+        ],
+        "count": 57,
+        "provided_pdf_reference_list_status": "verified_complete",
+        "identity_resolution_status": "pending_main_thread",
+        "external_supplement_status": "pending_video_archive_inspection",
+        "notes": [
+          "Complete supplied-PDF reference sections and boundaries inspected; no claim of whole-literature closure.",
+          "Numbered references 1–56 plus Note Added in Proof; reference51 spans PDF8–9; supplementary VideoS1/S2 DOI assets are separately handed off."
+        ]
+      },
+      {
+        "seed_id": "S19",
+        "pdf_reference_pages": [
+          13
+        ],
+        "count": 39,
+        "provided_pdf_reference_list_status": "verified_complete",
+        "identity_resolution_status": "pending_main_thread",
+        "external_supplement_status": "no_external_reference_list_identified_in_supplied_file",
+        "notes": [
+          "Complete supplied-PDF reference sections and boundaries inspected; no claim of whole-literature closure."
+        ]
+      },
+      {
+        "seed_id": "S20",
+        "pdf_reference_pages": [
+          17,
+          18
+        ],
+        "count": 35,
+        "provided_pdf_reference_list_status": "verified_complete",
+        "identity_resolution_status": "pending_main_thread",
+        "external_supplement_status": "no_external_reference_list_identified_in_supplied_file",
+        "notes": [
+          "Complete supplied-PDF reference sections and boundaries inspected; no claim of whole-literature closure."
+        ]
+      }
+    ],
+    "known_metadata_variants": [
+      "S15 and S17 cite S02 as2003, while canonical seed official proceedings year2002; preserve as-printed reference, avoid duplicate Work.",
+      "Krapp Neuronal matched filters chapter cited1999 in S15 and2000 in S17.",
+      "S15 refs29/30 page ranges differ from S18 refs34/35.",
+      "S19 and S20 Hausen1982a/b suffix order differs, match on title/volume/pages, not suffix alone.",
+      "Several Crossref reference deposit article-title fields name the host book rather than the chapter; PDF titles take priority for occurrence transcription and DOI target identity still needs verification.",
+      "S20 Horn & Schunk author spelling and Reichardt1988 third-author order are retained as printed; normalization requires official metadata."
+    ],
+    "output_files": {
+      "S15-references.json": "ca635bb1888dec84f38ebfbf331d73848ee7b7b207dd54871761685454a460b0",
+      "S16-references.json": "f64ce2b4e02ecbbf51b871af0ce4b593e516032aa96ca7866abc8f40a250e0c0",
+      "S17-references.json": "55b5d3e254deb7f3d94aebf7dea89b685a925ee02a504f5eacff17d4b537fce2",
+      "S18-references.json": "00e47cad682fc882471e27135577266213335151fe8537423550e2f2cc590b38",
+      "S19-references.json": "fe32215dc65ab5aadde567ab81eda75e4ff1673b85b2b303c50708ecfc0c7a02",
+      "S20-references.json": "7874fe0ba3ff677e9a44f790c57b2d617aa3cd9179d6c08b671545ba2e6c6a2b"
+    }
+  }
+}

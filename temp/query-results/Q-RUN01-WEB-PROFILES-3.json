@@ -1,0 +1,14 @@
+{
+  "query_id": "Q-RUN01-WEB-PROFILES-3",
+  "origin_log_id": "root_profile_web_invocation_3",
+  "source_id": "web_search",
+  "endpoint_or_url": "web-search-invocation",
+  "queried_at_utc": "2026-11-26T08:04:52.751000Z",
+  "completed_at_utc": "2026-11-26T08:04:53.884000Z",
+  "invocation_record_sha256": "cd41985f7e25f044cd0fe12f71d9b400365b780a69cafaa99d3cd38ec23926e2",
+  "response_kind": "web_tool_batch",
+  "count_reason": "One real web-tool batch invocation; expression count is not request count or exhaustive result coverage. Only invocation parameters and exact recorded call boundaries exported.",
+  "search_expression_count": 4,
+  "sanitized": true,
+  "payload_retained": false
+}

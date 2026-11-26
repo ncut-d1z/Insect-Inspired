@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00506",
+  "origin_log_id": "shared_http_events",
+  "source_id": "datacite",
+  "endpoint_or_url": "https://api.datacite.org/dois/10.4119/unibi/2689483",
+  "queried_at_utc": "2026-11-26T07:55:16.000346Z",
+  "completed_at_utc": "2026-11-26T07:55:22.988691Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "body_sha256": "95e5b2a6ec500ec32853686ba21e57b3f22f1b3b8a7a190775e1a6b7ced1c50c",
+  "body_bytes": 27940,
+  "response_kind": "api_singleton",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.4119/unibi/2689483"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

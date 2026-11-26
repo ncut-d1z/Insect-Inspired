@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00329",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Detecting+visual+motion%3A+theory+and+models+A+Borst+and+M+Egelhaaf+1993&rows=5",
+  "queried_at_utc": "2026-11-26T07:23:58.948437Z",
+  "completed_at_utc": "2026-11-26T07:24:05.549128Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "d18317ffa02cf2abd2d33d0650ea39073c19e206c1db493ac71ac6d38f6c58cc",
+  "body_bytes": 66169,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 5645312,
+  "result_identifiers": [
+    "10.1016/0006-8993(90)90325-6",
+    "10.1016/0166-2236(89)90010-6",
+    "10.1016/0300-9629(93)90144-s",
+    "10.1152/jn.1993.69.2.329",
+    "10.1162/neco.1993.5.6.856"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

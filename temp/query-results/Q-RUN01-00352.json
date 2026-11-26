@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00352",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=A+fast+stimulus+procedure+to+determine+local+receptive+field+properties+of+motion-sensitive+visual+interneurons+Holger+G+Krapp+and+Roland+Hengstenberg+1997&rows=5",
+  "queried_at_utc": "2026-11-26T07:25:25.037032Z",
+  "completed_at_utc": "2026-11-26T07:25:29.137146Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "43316d8b6706b961b0dc661dd6321efcb6a8bf5e9afe95cd01bbc8091d33ea86",
+  "body_bytes": 38193,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 4770,
+  "result_identifiers": [
+    "10.1016/s0042-6989(96)00114-9",
+    "10.1017/s0952523801181010",
+    "10.1038/384463a0",
+    "10.1152/jn.1998.79.4.1902",
+    "10.3410/f.1020791.247808"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

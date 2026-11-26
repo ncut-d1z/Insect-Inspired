@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00389",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Visual+homing%3A+an+insect+perspective+Jochen+Zeil+2012&rows=5",
+  "queried_at_utc": "2026-11-26T07:26:53.285023Z",
+  "completed_at_utc": "2026-11-26T07:26:58.237756Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "b882a2af467c75d49201d4ec0b65217b16be52804d1c3eb8d2fcebc7f6b12088",
+  "body_bytes": 74185,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 5930907,
+  "result_identifiers": [
+    "10.1007/978-3-540-89393-6_7",
+    "10.1007/s00422-019-00800-1",
+    "10.1016/j.conb.2011.12.008",
+    "10.1098/rspb.2025.2310/v1/review1",
+    "10.1098/rspb.2025.2310/v2/review1"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

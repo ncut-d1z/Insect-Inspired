@@ -1,0 +1,68 @@
+{
+  "reference_observations": [
+    {
+      "cited_doi": "10.1016/j.anbehav.2015.06.007",
+      "note": "Duplicate appearance in decision letter/reply; already main bibliography bib5; do not attribute review-resource edge to research article.",
+      "raw_reference": "Bak-Coleman, J., Smith, D., and Coombs, S. (2015). Animal Behaviour. Animal Behaviour, 107(C), 7-17. http://doi.org/10.1016/j.anbehav.2015.06.007",
+      "source_locator": {
+        "url": "https://cdn.elifesciences.org/articles/86076/elife-86076-v2.xml",
+        "xpath": "/article/sub-article[2]/body/p[11]"
+      },
+      "source_resource_doi": "10.7554/elife.86076.sa1"
+    },
+    {
+      "cited_doi": "10.1016/j.anbehav.2015.06.007",
+      "note": "Duplicate appearance in decision letter/reply; already main bibliography bib5; do not attribute review-resource edge to research article.",
+      "raw_reference": "Bak-Coleman, J., Smith, D., and Coombs, S. (2015). Animal Behaviour. Animal Behaviour, 107(C), 7-17. http://doi.org/10.1016/j.anbehav.2015.06.007",
+      "source_locator": {
+        "url": "https://cdn.elifesciences.org/articles/86076/elife-86076-v2.xml",
+        "xpath": "/article/sub-article[3]/body/disp-quote[4]/p[2]"
+      },
+      "source_resource_doi": "10.7554/elife.86076.sa2"
+    }
+  ],
+  "resources": [
+    {
+      "doi": "10.7554/elife.86076.sa0",
+      "fulltext_included_in_xml": true,
+      "notes": "Independent citable peer-review/editorial resource; U00 by default, not evidence of paper authors scientific claims.",
+      "source_locator": {
+        "url": "https://cdn.elifesciences.org/articles/86076/elife-86076-v2.xml",
+        "xpath": "/article/sub-article[1]"
+      },
+      "source_work_id": "W-D1693c1bfa8c466e3",
+      "sub_article_id": "sa0",
+      "title": "Editor's evaluation",
+      "type": "editor-report",
+      "verification_status": "source_supported"
+    },
+    {
+      "doi": "10.7554/elife.86076.sa1",
+      "fulltext_included_in_xml": true,
+      "notes": "Independent citable peer-review/editorial resource; U00 by default, not evidence of paper authors scientific claims.",
+      "source_locator": {
+        "url": "https://cdn.elifesciences.org/articles/86076/elife-86076-v2.xml",
+        "xpath": "/article/sub-article[2]"
+      },
+      "source_work_id": "W-D1693c1bfa8c466e3",
+      "sub_article_id": "sa1",
+      "title": "Decision letter",
+      "type": "decision-letter",
+      "verification_status": "source_supported"
+    },
+    {
+      "doi": "10.7554/elife.86076.sa2",
+      "fulltext_included_in_xml": true,
+      "notes": "Independent citable peer-review/editorial resource; U00 by default, not evidence of paper authors scientific claims.",
+      "source_locator": {
+        "url": "https://cdn.elifesciences.org/articles/86076/elife-86076-v2.xml",
+        "xpath": "/article/sub-article[3]"
+      },
+      "source_work_id": "W-D1693c1bfa8c466e3",
+      "sub_article_id": "sa2",
+      "title": "Author response",
+      "type": "reply",
+      "verification_status": "source_supported"
+    }
+  ]
+}

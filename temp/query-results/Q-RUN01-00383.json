@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00383",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Theoretical+predictions+of+spatiotemporal+receptive+fields+of+fly+LMCs%2C+and+experimental+validation+JH+Van+Hateren+1992&rows=5",
+  "queried_at_utc": "2026-11-26T07:26:36.596962Z",
+  "completed_at_utc": "2026-11-26T07:26:41.396742Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "a1d56c19a68177b72e18fad01c9be58e836ea2e940527fc2b7e469d9b206e938",
+  "body_bytes": 24364,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 204625,
+  "result_identifiers": [
+    "10.1007/bf00188924",
+    "10.1016/0042-6989(93)90163-q",
+    "10.1016/s0022-5193(89)80005-0",
+    "10.1021/acs.langmuir.4c01435.s001",
+    "10.1021/acs.langmuir.4c01435.s002"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

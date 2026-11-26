@@ -1,17 +1,18 @@
 {
   "query_id": "Q-B-002",
-  "entity_id": "S12",
   "source_id": "crossref",
   "endpoint_or_url": "https://api.crossref.org/works/10.1523/JNEUROSCI.2671-13.2014",
-  "api_version": "1.0.0",
   "queried_at_utc": "2026-11-26T05:25:06.250895Z",
   "query_time_status": "exact",
   "status": "success",
+  "returned_count": 1,
+  "visible_total": 1,
   "result_identifiers": [
     "10.1523/jneurosci.2671-13.2014"
   ],
-  "visible_total": 1,
-  "returned_count": 1,
-  "error_code": null,
-  "coverage_note": "Exact seed identity metadata, not citation or author corpus coverage."
+  "origin_log_id": "baseline_queries",
+  "response_kind": "baseline_observation",
+  "count_reason": "Exact seed identity metadata, not citation or author corpus coverage.",
+  "sanitized": true,
+  "payload_retained": false
 }

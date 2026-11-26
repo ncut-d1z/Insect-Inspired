@@ -1,0 +1,57 @@
+[
+  {
+    "biological_n_flies": 9,
+    "coordinate_window": {
+      "x_max": 290,
+      "x_min": 65,
+      "y_max": 1151,
+      "y_min": 1005
+    },
+    "exclusions": "Columns where overlap obscures one trace excluded; this may upward-bias difference magnitude and is not the authors paired t-test effect estimate. Use only to support lower high-contrast trace, alongside reported t-test and TOST.",
+    "figure": "3e",
+    "matched_columns": 226,
+    "mean_blue_minus_red_dff": -0.21,
+    "method": "Native embedded 720x1213 RGB raster. Identify red low-contrast and blue high-contrast traces by RGB inequalities; median colored pixel per x; compare x=65..290 where both traces are visible. Vertical separation divided by the 1 ΔF/F scale bar (73 px).",
+    "plot_domain": "position along depicted virtual translation; columns are not biological replicates",
+    "possible_columns": 226,
+    "precision_dff": 0.02,
+    "scale_bar_pixels": 73,
+    "source_consistency": "Main text p11 reports high-contrast attenuation; Fig3e visually agrees; caption p9 incorrectly states no amplitude effect. No silent correction of caption.",
+    "source_pdf_page": 9,
+    "work_local_id": "N01"
+  },
+  {
+    "baseline_y": 400.4310432450359,
+    "biological_n_flies": 10,
+    "dff_per_pdf_point": 0.023365592225920634,
+    "early_mean_dff": 0.79,
+    "early_window_fraction": [
+      0.25,
+      0.45
+    ],
+    "figure": "5d",
+    "interpretation_limit": "Approximate pooled mean trace only; SEM band not digitized. Does not establish statistical equivalence or exclude rapid voltage adaptation; positive sustained HS calcium contrasts with behavioral direction reversal.",
+    "late_mean_dff": 0.85,
+    "late_window_fraction": [
+      0.75,
+      0.95
+    ],
+    "method": "PyMuPDF drawing index 880 is filled dark-blue highest-contrast HS mean trace. Sample cubic Bezier outline, intersect vertical scanlines and use outline midpoint. Estimate zero from prestimulus x=280..289; calibrate 0.5 ΔF/F bar y=368.0998..389.4988. Windows are defined relative to gray stimulus extent, not assumed seconds.",
+    "precision_dff": 0.02,
+    "source_pdf_page": 10,
+    "source_trace_bbox": [
+      273.78558349609375,
+      360.99981689453125,
+      344.423583984375,
+      401.4988098144531
+    ],
+    "source_vector_color_rgb": [
+      0.019999999552965164,
+      0.18799999356269836,
+      0.3799999952316284
+    ],
+    "stimulus_x_end": 339.626,
+    "stimulus_x_start": 292.329,
+    "work_local_id": "N05"
+  }
+]

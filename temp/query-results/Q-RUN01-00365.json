@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00365",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Parallel+processing+in+the+optic+lobes+of+flies+and+the+occurrence+of+motion+computing+circuits+NJ+Strausfeld+et+al+2006&rows=5",
+  "queried_at_utc": "2026-11-26T07:26:05.372961Z",
+  "completed_at_utc": "2026-11-26T07:26:10.404029Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "5bb4771118c9800ba98dc79c37d5e5ea5ea0ff7bc0038f535f316d912b1798eb",
+  "body_bytes": 59869,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 563334,
+  "result_identifiers": [
+    "10.1002/cne.21195",
+    "10.1002/jemt.10367",
+    "10.1016/b978-0-12-374144-8.00042-4",
+    "10.1523/jneurosci.16-15-04551.1996",
+    "10.21236/ada590052"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

@@ -1,15 +1,16 @@
 {
   "query_id": "Q-WEB-B-014",
-  "entity_id": "SCOPE-0001",
   "source_id": "web_search",
   "endpoint_or_url": "web-search-observation",
-  "api_version": null,
   "queried_at_utc": null,
   "query_time_status": "unavailable_exact",
   "status": "partial",
-  "result_identifiers": [],
+  "returned_count": null,
   "visible_total": null,
-  "returned_count": 0,
-  "error_code": null,
-  "coverage_note": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence."
+  "result_identifiers": [],
+  "origin_log_id": "baseline_queries",
+  "response_kind": "baseline_observation",
+  "count_reason": "Exact tool-call UTC unavailable; recorded_at is ingestion time, queried_date is known. Not used for exact-time or exhaustive coverage evidence.",
+  "sanitized": true,
+  "payload_retained": false
 }

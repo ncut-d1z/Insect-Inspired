@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00348",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=The+rate+of+information+transfer+of+naturalistic+stimulation+by+graded+potentials+Mikko+Juusola+and+Gonzalo+G+de+Polavieja+2003&rows=5",
+  "queried_at_utc": "2026-11-26T07:25:05.741177Z",
+  "completed_at_utc": "2026-11-26T07:25:11.026590Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "0daf182ba83ac9ff95f0997f87b15043c4cded78cd62ea96038ffa097c27b8b0",
+  "body_bytes": 55177,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 301061,
+  "result_identifiers": [
+    "10.1002/bies.20532",
+    "10.1085/jgp.200308824",
+    "10.1371/journal.pone.0004307",
+    "10.3389/conf.fnins.2010.03.00285",
+    "10.7554/elife.26117.053"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

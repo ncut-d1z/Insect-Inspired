@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00350",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Information+processing+by+graded-potential+transmission+through+tonically+active+synapses+Mikko+Juusola+et+al+1996&rows=5",
+  "queried_at_utc": "2026-11-26T07:25:12.028874Z",
+  "completed_at_utc": "2026-11-26T07:25:18.268143Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "a0a13801fc661c25ae91a625e9f027a1ca0f6ee1324d6f0af50ca42283ad4296",
+  "body_bytes": 28303,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 745527,
+  "result_identifiers": [
+    "10.1007/978-1-4471-1013-2_25",
+    "10.1016/s0166-2236(96)10028-x",
+    "10.1038/379642a0",
+    "10.3389/conf.fnins.2010.03.00285",
+    "10.35802/059914"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

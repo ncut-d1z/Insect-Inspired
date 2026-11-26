@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00333",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Gauss-Markov+Theorem+John+S+Chipman+2011&rows=5",
+  "queried_at_utc": "2026-11-26T07:24:12.805377Z",
+  "completed_at_utc": "2026-11-26T07:24:17.237589Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "07634e7b7fcd83232375e4d0def7f22a88ee1b28bf63dcb4e196260995d6d1a3",
+  "body_bytes": 32009,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 4954506,
+  "result_identifiers": [
+    "10.1007/978-3-642-04898-2_270",
+    "10.1007/978-3-662-69359-9_245",
+    "10.1007/springerreference_205353",
+    "10.1007/springerreference_60923",
+    "10.1201/9781003505068-4"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

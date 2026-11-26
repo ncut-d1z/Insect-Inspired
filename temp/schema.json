@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/ncut-d1z/Insect-Inspired/temp/schema.json",
   "title": "Insect-Inspired P1/P2 data schema",
-  "schema_version": "1.1.0",
+  "schema_version": "1.1.1",
   "description": "README v1.1 field schema. Validate an entity using its $defs entry; cross-entity invariants are recorded in x-semantic-rules and executable local audit. Core enumerations are closed.",
   "type": "object",
   "$defs": {
@@ -4179,7 +4179,10 @@
           "pattern": "^[0-9a-f]{64}$"
         },
         "pages": {
-          "type": "integer",
+          "type": [
+            "integer",
+            "null"
+          ],
           "minimum": 1
         },
         "text_extractability": {
@@ -4198,6 +4201,16 @@
         },
         "field_states": {
           "$ref": "#/$defs/field_states"
+        },
+        "media_type": {
+          "type": "string",
+          "enum": [
+            "application/pdf",
+            "application/xml",
+            "text/html",
+            "application/json",
+            "text/plain"
+          ]
         }
       },
       "required": [
@@ -4365,7 +4378,31 @@
         "source_language",
         "verification_status"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "original_oa",
+                  "original_licensed",
+                  "chinese_summary_from_fulltext",
+                  "chinese_summary_from_abstract"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
     },
     "author_ref": {
       "type": "object",
@@ -4816,6 +4853,16 @@
           },
           "minItems": 0,
           "uniqueItems": true
+        },
+        "discovery_depth": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "discovery_path": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/discovery_step"
+          }
         }
       },
       "required": [
@@ -5640,6 +5687,9 @@
         },
         "field_states": {
           "$ref": "#/$defs/field_states"
+        },
+        "notes": {
+          "type": "string"
         }
       },
       "required": [
@@ -6482,16 +6532,37 @@
           ]
         },
         "returned_count": {
-          "type": "integer",
-          "minimum": 0
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "count_before_dedup": {
-          "type": "integer",
-          "minimum": 0
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "count_after_dedup": {
-          "type": "integer",
-          "minimum": 0
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "new_work_ids": {
           "type": "array",
@@ -6503,8 +6574,15 @@
           "uniqueItems": true
         },
         "new_work_count": {
-          "type": "integer",
-          "minimum": 0
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "result_identifiers": {
           "type": "array",
@@ -6625,6 +6703,9 @@
           "type": "string",
           "format": "date",
           "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "field_states": {
+          "$ref": "#/$defs/field_states"
         }
       },
       "required": [
@@ -7937,7 +8018,41 @@
         "unresolved_occurrences": {
           "type": "array",
           "items": {
-            "$ref": "#/$defs/reference_occurrence"
+            "additionalProperties": false,
+            "properties": {
+              "candidate_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "uniqueItems": true
+              },
+              "canonical_dataset": {
+                "const": "temp/reference-occurrences.jsonl"
+              },
+              "citing_work_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "failure_reason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "occurrence_id": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "occurrence_id",
+              "citing_work_id",
+              "candidate_ids",
+              "failure_reason",
+              "canonical_dataset"
+            ],
+            "type": "object"
           }
         }
       },

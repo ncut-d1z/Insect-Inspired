@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00340",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=The+neural+computation+of+visual+motion+information+Martin+Egelhaaf+2006&rows=5",
+  "queried_at_utc": "2026-11-26T07:24:30.094031Z",
+  "completed_at_utc": "2026-11-26T07:24:36.512759Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "d99b95b306cb9ed090b80853a40efa0e43be4b751b63c28ef90eab93d85851c6",
+  "body_bytes": 73043,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 7935158,
+  "result_identifiers": [
+    "10.1016/j.cub.2008.02.046",
+    "10.1016/s0166-2236(02)02063-5",
+    "10.1162/neco.1993.5.6.856",
+    "10.1162/neco_a_01112",
+    "10.3389/fncir.2014.00127"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

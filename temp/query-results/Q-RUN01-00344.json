@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00344",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Neuro+inspired+reconfigurable+architecture+for+hardware%2Fsoftware+co-design+Arfan+Ghani+et+al+2009&rows=5",
+  "queried_at_utc": "2026-11-26T07:24:45.305021Z",
+  "completed_at_utc": "2026-11-26T07:24:50.912671Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "a8a292bd2bf14358b6231e5d3ce07c036566a649aa40a3c710ad3ce1621571d9",
+  "body_bytes": 11223,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 629837,
+  "result_identifiers": [
+    "10.1109/soccon.2009.5398039",
+    "10.1201/9781584887423",
+    "10.1201/9781584887423.ch2",
+    "10.1201/9781584887423.ch6",
+    "10.3724/sp.j.1016.2008.02005"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

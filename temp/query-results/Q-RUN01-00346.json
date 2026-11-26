@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00346",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Visually+controlled+locomotion+and+visual+orientation+in+animals+James+J+Gibson+1958&rows=5",
+  "queried_at_utc": "2026-11-26T07:24:51.913308Z",
+  "completed_at_utc": "2026-11-26T07:24:56.816765Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "5f8c7de54a5e21d9438db140f222e12cfa79a701b309ffc25817021aa8248156",
+  "body_bytes": 16751,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 2389496,
+  "result_identifiers": [
+    "10.1080/10407413.1998.9652681",
+    "10.1111/j.2044-8295.1958.tb00656.x",
+    "10.1207/s15326969eco103&4_2",
+    "10.1348/000712608x336077",
+    "10.4324/9780367823771-15"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

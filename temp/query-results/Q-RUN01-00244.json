@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00244",
+  "origin_log_id": "shared_http_events",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://doi.org/10.1016/j.neucom.2026.133380",
+  "queried_at_utc": "2026-11-26T07:21:03.271635Z",
+  "completed_at_utc": "2026-11-26T07:21:13.908443Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "a3cce7a7a7fca576d2fc094400686747ab0fdbb42f2f4ebfc8bf286fa463f444",
+  "body_bytes": 21093,
+  "response_kind": "api_singleton",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.1016/j.neucom.2026.133380"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

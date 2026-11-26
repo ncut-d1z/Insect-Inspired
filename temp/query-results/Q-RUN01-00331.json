@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00331",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Lucas%2FKanade+meets+Horn%2FSchunck%3A+Combining+local+and+global+optic+flow+methods+Andr+%CC%81es+Bruhn%2C+Joachim+Weickert%2C+and+Christoph+Schn+%CC%88orr+2005&rows=5",
+  "queried_at_utc": "2026-11-26T07:24:06.549448Z",
+  "completed_at_utc": "2026-11-26T07:24:11.804893Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "c96c0da8f72474e850ca32d33bb40da761c556b45ebcf4d10633128a988ed176",
+  "body_bytes": 49252,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 107,
+  "result_identifiers": [
+    "10.1007/1-4020-3858-8_15",
+    "10.1007/3-540-45783-6_55",
+    "10.1023/b:visi.0000045324.43199.43",
+    "10.1109/icinfa.2006.374108",
+    "10.1109/idciot56793.2023.10053515"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

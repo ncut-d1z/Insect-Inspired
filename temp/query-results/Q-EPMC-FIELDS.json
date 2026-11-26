@@ -1,15 +1,16 @@
 {
   "query_id": "Q-EPMC-FIELDS",
-  "entity_id": "SCOPE-0001",
   "source_id": "europepmc",
   "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/fields?format=json",
-  "api_version": null,
   "queried_at_utc": "2026-11-26T05:29:37.267449Z",
   "query_time_status": "exact",
   "status": "partial",
-  "result_identifiers": [],
-  "visible_total": null,
   "returned_count": 0,
-  "error_code": null,
-  "coverage_note": "HTTP200 but searchTermList empty; not accepted as field capability evidence. Positive/negative controlled search probes supersede this incomplete response."
+  "visible_total": null,
+  "result_identifiers": [],
+  "origin_log_id": "baseline_queries",
+  "response_kind": "baseline_observation",
+  "count_reason": "HTTP200 but searchTermList empty; not accepted as field capability evidence. Positive/negative controlled search probes supersede this incomplete response.",
+  "sanitized": true,
+  "payload_retained": false
 }

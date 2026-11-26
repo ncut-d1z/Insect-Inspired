@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00369",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Monocular+ego-motion+estimation+with+a+compact+omnidirectional+camera+W+St+%CC%88urzl%2C+Darius+Burschka%2C+and+Michael+Suppa+2010&rows=5",
+  "queried_at_utc": "2026-11-26T07:26:11.407732Z",
+  "completed_at_utc": "2026-11-26T07:26:16.500696Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "6d25dd1a8774b7c7e7363420cc2d4819a4a521ca2c087cb929985a62977a2f24",
+  "body_bytes": 24030,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 70936,
+  "result_identifiers": [
+    "10.1007/978-3-540-78157-8_34",
+    "10.1007/s13177-010-0011-z",
+    "10.1109/icpr.2006.1165",
+    "10.1109/iros.2010.5649970",
+    "10.1109/ivs.2019.8814037"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

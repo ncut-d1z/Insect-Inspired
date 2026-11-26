@@ -1,15 +1,16 @@
 {
   "query_id": "Q-ROOT-OPEN-1",
-  "entity_id": "SCOPE-0001",
   "source_id": "institutional_repository",
   "endpoint_or_url": "https://pure.mpg.de/rest/items/item_1793954",
-  "api_version": null,
   "queried_at_utc": null,
   "query_time_status": "unavailable_exact",
   "status": "partial",
-  "result_identifiers": [],
+  "returned_count": null,
   "visible_total": null,
-  "returned_count": 0,
-  "error_code": null,
-  "coverage_note": "Search retrieval route could not open; successful direct REST source logged separately. Exact web-tool timestamp not captured; day precision only."
+  "result_identifiers": [],
+  "origin_log_id": "baseline_queries",
+  "response_kind": "baseline_observation",
+  "count_reason": "Search retrieval route could not open; successful direct REST source logged separately. Exact web-tool timestamp not captured; day precision only.",
+  "sanitized": true,
+  "payload_retained": false
 }

@@ -1,0 +1,199 @@
+{
+  "source_record_sha256": "515661de94c7098be825ad633676d1bedffab97736fa6bdcd6f3378fd95527dd",
+  "scope_id": "SCOPE-0001",
+  "audit": {
+    "seed_ids": [
+      "S08",
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14"
+    ],
+    "reference_occurrences": 499,
+    "canonical_resolution_status": "pending_central_resolver",
+    "new_external_queries": 3,
+    "query_log": "queries.jsonl",
+    "audits": [
+      {
+        "seed_id": "S08",
+        "pdf_sha256": "532be085148e15b688c86b78246073fc80b05c95d769f84b7fcfd313988a882c",
+        "pdf_page_count": 22,
+        "bibliography_pages": [
+          12,
+          13,
+          14
+        ],
+        "reference_count": 93,
+        "expected_count": 93,
+        "expected_count_basis": "Publisher registered references and observed PDF numbered sequence or hanging-indent reference starts",
+        "all_reference_numbers_present": true,
+        "count_matches_publisher": true,
+        "publisher_reference_count": 93,
+        "parser": "PyMuPDF horizontal span lines, column order, numbered or hanging-indent starts; rendered verification follows.",
+        "parsed_at_utc": "2026-11-26T06:45:30.281093+00:00",
+        "provided_pdf_status": "provided_pdf_reference_list_verified_complete",
+        "external_supplement_status": "identified_not_retrieved",
+        "notes": [
+          "All numbered references 1–93 included; STAR Methods PDF pages 15–22 refer into the same list; supplemental information is linked on PDF page 11 and is not present in this supplied PDF."
+        ],
+        "verified_at_utc": "2026-11-26T06:51:55.734442+00:00",
+        "verification_method": "Full bibliography text in column order reviewed; exact first/last and sequential or hanging-indent boundaries; main-PDF full text scanned for separate bibliography/appendix/Methods references; publisher registered count used only as an independent count check.",
+        "work_references_closure": "partial_external_supplement_unexamined"
+      },
+      {
+        "seed_id": "S09",
+        "pdf_sha256": "313bb8c77062b908d556768992dd2c5754510a2a8471bd99ee4c69d9f1a3d922",
+        "pdf_page_count": 13,
+        "bibliography_pages": [
+          12,
+          13
+        ],
+        "reference_count": 53,
+        "expected_count": 53,
+        "expected_count_basis": "Publisher registered references and observed PDF numbered sequence or hanging-indent reference starts",
+        "all_reference_numbers_present": null,
+        "count_matches_publisher": true,
+        "publisher_reference_count": 53,
+        "parser": "PyMuPDF horizontal span lines, column order, numbered or hanging-indent starts; rendered verification follows.",
+        "parsed_at_utc": "2026-11-26T06:45:30.326436+00:00",
+        "provided_pdf_status": "provided_pdf_reference_list_verified_complete",
+        "external_supplement_status": "none_identified_in_provided_pdf",
+        "notes": [
+          "Reference hyperlinks include punctuation in two DOI URLs; canonical DOI fields trim terminal punctuation while original links remain retained."
+        ],
+        "verified_at_utc": "2026-11-26T06:51:55.735487+00:00",
+        "verification_method": "Full bibliography text in column order reviewed; exact first/last and sequential or hanging-indent boundaries; main-PDF full text scanned for separate bibliography/appendix/Methods references; publisher registered count used only as an independent count check.",
+        "work_references_closure": "provided_fulltext_complete_external_availability_unverified"
+      },
+      {
+        "seed_id": "S10",
+        "pdf_sha256": "553c6723ce9c1ca1b905915f1683c95d1fcde3dbbfbac90e6c3c9f69fdb7f44f",
+        "pdf_page_count": 7,
+        "bibliography_pages": [
+          6,
+          7
+        ],
+        "reference_count": 34,
+        "expected_count": 34,
+        "expected_count_basis": "Publisher registered references and observed PDF numbered sequence or hanging-indent reference starts",
+        "all_reference_numbers_present": true,
+        "count_matches_publisher": true,
+        "publisher_reference_count": 34,
+        "parser": "PyMuPDF horizontal span lines, column order, numbered or hanging-indent starts; rendered verification follows.",
+        "parsed_at_utc": "2026-11-26T06:45:30.347636+00:00",
+        "provided_pdf_status": "provided_pdf_reference_list_verified_complete",
+        "external_supplement_status": "identified_not_retrieved",
+        "notes": [
+          "Reference 3 spans PDF pages 6–7; numbered markers were separate PDF spans and merged to body lines by y-position; online supplementary information is mentioned on PDF page 6 and not present in the supplied PDF."
+        ],
+        "verified_at_utc": "2026-11-26T06:51:55.736311+00:00",
+        "verification_method": "Full bibliography text in column order reviewed; exact first/last and sequential or hanging-indent boundaries; main-PDF full text scanned for separate bibliography/appendix/Methods references; publisher registered count used only as an independent count check.",
+        "work_references_closure": "partial_external_supplement_unexamined"
+      },
+      {
+        "seed_id": "S11",
+        "pdf_sha256": "998d97d5e271896fa12a656bd0581859b6546f4b22d38ac5eb1f3d6682523ecd",
+        "pdf_page_count": 15,
+        "bibliography_pages": [
+          14,
+          15
+        ],
+        "reference_count": 59,
+        "expected_count": 59,
+        "expected_count_basis": "Publisher registered references and observed PDF numbered sequence or hanging-indent reference starts",
+        "all_reference_numbers_present": null,
+        "count_matches_publisher": true,
+        "publisher_reference_count": 59,
+        "parser": "PyMuPDF horizontal span lines, column order, numbered or hanging-indent starts; rendered verification follows.",
+        "parsed_at_utc": "2026-11-26T06:45:30.361341+00:00",
+        "provided_pdf_status": "provided_pdf_reference_list_verified_complete",
+        "external_supplement_status": "none_identified_in_provided_pdf",
+        "notes": [
+          "PDF page 1 is the Groningen repository cover; bibliography PDF pages 14–15 are printed pages 6447–6448. Appendix appears on PDF page 14 before the same reference list, with no separate bibliography."
+        ],
+        "verified_at_utc": "2026-11-26T06:51:55.737312+00:00",
+        "verification_method": "Full bibliography text in column order reviewed; exact first/last and sequential or hanging-indent boundaries; main-PDF full text scanned for separate bibliography/appendix/Methods references; publisher registered count used only as an independent count check.",
+        "work_references_closure": "provided_fulltext_complete_external_availability_unverified"
+      },
+      {
+        "seed_id": "S12",
+        "pdf_sha256": "678e55f249fff6a3e3b9da89a355ac9a3f0045e902d0e9c5996c296520f63e0c",
+        "pdf_page_count": 17,
+        "bibliography_pages": [
+          15,
+          16,
+          17
+        ],
+        "reference_count": 79,
+        "expected_count": 79,
+        "expected_count_basis": "Publisher registered references and observed PDF numbered sequence or hanging-indent reference starts",
+        "all_reference_numbers_present": null,
+        "count_matches_publisher": true,
+        "publisher_reference_count": 79,
+        "parser": "PyMuPDF horizontal span lines, column order, numbered or hanging-indent starts; rendered verification follows.",
+        "parsed_at_utc": "2026-11-26T06:45:30.420191+00:00",
+        "provided_pdf_status": "provided_pdf_reference_list_verified_complete",
+        "external_supplement_status": "none_identified_in_provided_pdf",
+        "notes": [
+          "References span PDF pages 15–17; Haag2007 crosses columns; Roudi2009 crosses PDF pages 16–17; Strausfeld1985 crosses columns on PDF page 17."
+        ],
+        "verified_at_utc": "2026-11-26T06:51:55.738932+00:00",
+        "verification_method": "Full bibliography text in column order reviewed; exact first/last and sequential or hanging-indent boundaries; main-PDF full text scanned for separate bibliography/appendix/Methods references; publisher registered count used only as an independent count check.",
+        "work_references_closure": "provided_fulltext_complete_external_availability_unverified"
+      },
+      {
+        "seed_id": "S13",
+        "pdf_sha256": "6f4a4fe5fc499f63c588fb416440ef687eda0dcd355edafa57c52ebcc1caa9eb",
+        "pdf_page_count": 14,
+        "bibliography_pages": [
+          13,
+          14
+        ],
+        "reference_count": 103,
+        "expected_count": 103,
+        "expected_count_basis": "Publisher registered references and observed PDF numbered sequence or hanging-indent reference starts",
+        "all_reference_numbers_present": true,
+        "count_matches_publisher": true,
+        "publisher_reference_count": 103,
+        "parser": "PyMuPDF horizontal span lines, column order, numbered or hanging-indent starts; rendered verification follows.",
+        "parsed_at_utc": "2026-11-26T06:45:30.437637+00:00",
+        "provided_pdf_status": "provided_pdf_reference_list_verified_complete",
+        "external_supplement_status": "none_identified_in_provided_pdf",
+        "notes": [
+          "Author Contributions above reference 32 is explicitly excluded; references 1–103 retained; NVIDIA2008 vendor/software reference retained as a bibliographic occurrence."
+        ],
+        "verified_at_utc": "2026-11-26T06:51:55.740451+00:00",
+        "verification_method": "Full bibliography text in column order reviewed; exact first/last and sequential or hanging-indent boundaries; main-PDF full text scanned for separate bibliography/appendix/Methods references; publisher registered count used only as an independent count check.",
+        "work_references_closure": "provided_fulltext_complete_external_availability_unverified"
+      },
+      {
+        "seed_id": "S14",
+        "pdf_sha256": "de51ab764ad9cd01b78e9530e3fbb6341e38667e922b0800cc199ffa29a3e860",
+        "pdf_page_count": 15,
+        "bibliography_pages": [
+          13,
+          14,
+          15
+        ],
+        "reference_count": 78,
+        "expected_count": 78,
+        "expected_count_basis": "Publisher registered references and observed PDF numbered sequence or hanging-indent reference starts",
+        "all_reference_numbers_present": null,
+        "count_matches_publisher": true,
+        "publisher_reference_count": 78,
+        "parser": "PyMuPDF horizontal span lines, column order, numbered or hanging-indent starts; rendered verification follows.",
+        "parsed_at_utc": "2026-11-26T06:45:30.464732+00:00",
+        "provided_pdf_status": "provided_pdf_reference_list_verified_complete",
+        "external_supplement_status": "none_identified_in_provided_pdf",
+        "notes": [
+          "References 33 and 35 print the same Karmeier2006 DOI; both occurrences retained, with canonical Work deduplication left to the central resolver. Raw author and venue discrepancies are retained."
+        ],
+        "verified_at_utc": "2026-11-26T06:51:55.741893+00:00",
+        "verification_method": "Full bibliography text in column order reviewed; exact first/last and sequential or hanging-indent boundaries; main-PDF full text scanned for separate bibliography/appendix/Methods references; publisher registered count used only as an independent count check.",
+        "work_references_closure": "provided_fulltext_complete_external_availability_unverified"
+      }
+    ]
+  }
+}

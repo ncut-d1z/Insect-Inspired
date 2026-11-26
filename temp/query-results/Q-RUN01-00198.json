@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00198",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works/10.7554/elife.86076",
+  "queried_at_utc": "2026-11-26T07:19:02.306607Z",
+  "completed_at_utc": "2026-11-26T07:19:06.920855Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "d6e02173f6c91d9d903db9a71a13e0f3082956e422b064184c9dd7ac4a01a93a",
+  "body_bytes": 35760,
+  "response_kind": "crossref_singleton",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.7554/elife.86076"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

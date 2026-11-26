@@ -1,0 +1,153 @@
+[
+  {
+    "next_action": "Identify independent resource Work and deduplicate with structured dataset citations; do not parse resource until admission.",
+    "resource_access_status": "promised_upon_publication_not_verified_available",
+    "resource_type": "dataset_or_code",
+    "source_locator": {
+      "url": "https://www.biorxiv.org/content/early/2026/05/11/2026.05.07.723493.source.xml",
+      "xpath": "/article/body/sec[5]/p/ext-link"
+    },
+    "source_work_id": "W-D4bc7cdf0840a9a74",
+    "target_identity_status": "no_verified_canonical_match_in_observed_snapshot",
+    "title_from_source": null,
+    "url": "https://github.com/stefanprech/Motion-based-depth-estimation-in-Drosophila",
+    "verification_status": "source_supported"
+  },
+  {
+    "admission_instruction": "Do not create a separate Work for the truncated string. Preserve this source-error observation and use the separately recorded complete key-resources DOI.",
+    "complete_identifier_from_existing_key_resources_review": "10.17632/tvw5k48b6p.2",
+    "next_action": "Resolve the complete DOI against the separate recorded resource observation.",
+    "observation_type": "truncated_identifier_in_source",
+    "resource_access_status": "not_retrieved_or_availability_verified",
+    "resource_type": "dataset_or_code",
+    "source_locator": {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8556163/fullTextXML",
+      "xpath": "/article/back/sec[2]/p[1]/ext-link"
+    },
+    "source_work_id": "W-D1458be7ebf30875b",
+    "target_identity_status": "no_verified_canonical_match_in_observed_snapshot",
+    "title_from_source": null,
+    "url": "https://doi.org/10.17632/tvw",
+    "verification_status": "source_supported"
+  },
+  {
+    "next_action": "Identify independent resource Work and deduplicate with structured dataset citations; do not parse resource until admission.",
+    "resource_access_status": "not_retrieved_or_availability_verified",
+    "resource_type": "dataset_or_code",
+    "source_locator": {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8556163/fullTextXML",
+      "xpath": "/article/back/sec[2]/p[2]/ext-link"
+    },
+    "source_work_id": "W-D1458be7ebf30875b",
+    "target_identity_status": "no_verified_canonical_match_in_observed_snapshot",
+    "title_from_source": null,
+    "url": "https://github.com/ChiappeLab",
+    "verification_status": "source_supported"
+  },
+  {
+    "next_action": "Identify independent resource Work and deduplicate with structured dataset citations; do not parse resource until admission.",
+    "resource_access_status": "not_retrieved_or_availability_verified",
+    "resource_type": "dataset_or_code",
+    "source_locator": {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9275417/fullTextXML",
+      "xpath": "/article/back/sec[2]/p/list/list-item[1]/p/ext-link"
+    },
+    "source_work_id": "W-D96f5aa9a76c96df8",
+    "target_identity_status": "no_verified_canonical_match_in_observed_snapshot",
+    "title_from_source": null,
+    "url": "https://doi.org/10.5281/zenodo.6365304",
+    "verification_status": "source_supported"
+  },
+  {
+    "next_action": "Identify independent resource Work and deduplicate with structured dataset citations; do not parse resource until admission.",
+    "resource_access_status": "not_retrieved_or_availability_verified",
+    "resource_type": "dataset_or_code",
+    "source_locator": {
+      "url": "https://cdn.elifesciences.org/articles/86076/elife-86076-v2.xml",
+      "xpath": "/article/back/sec[3]/p[1]/ext-link"
+    },
+    "source_work_id": "W-D1693c1bfa8c466e3",
+    "target_identity_status": "no_verified_canonical_match_in_observed_snapshot",
+    "title_from_source": null,
+    "url": "https://doi.org/10.5281/zenodo.19424913",
+    "verification_status": "source_supported"
+  },
+  {
+    "notes": "Paper states availability upon publication; resource itself not yet retrieved.",
+    "resource_access_status": "promised_upon_publication_not_verified_available",
+    "resource_type": "dataset",
+    "source_locator": {
+      "pdf_page": 32,
+      "section": "Data availability",
+      "url": "https://www.biorxiv.org/content/early/2026/05/11/2026.05.07.723493.source.xml"
+    },
+    "source_work_id": "W-D4bc7cdf0840a9a74",
+    "target_identity_status": "no_verified_canonical_match_in_observed_snapshot",
+    "url": "https://doi.org/10.5281/zenodo.20049664",
+    "verification_status": "source_supported"
+  },
+  {
+    "notes": "Author announces future publication; repository availability not checked.",
+    "resource_access_status": "promised_upon_publication_not_verified_available",
+    "resource_type": "software",
+    "source_locator": {
+      "pdf_page": 32,
+      "section": "Code availability",
+      "url": "https://www.biorxiv.org/content/early/2026/05/11/2026.05.07.723493.source.xml"
+    },
+    "source_work_id": "W-D4bc7cdf0840a9a74",
+    "target_identity_status": "no_verified_canonical_match_in_observed_snapshot",
+    "url": "https://github.com/stefanprech/Motion-based-depth-estimation-in-Drosophila",
+    "verification_status": "source_supported"
+  },
+  {
+    "resource_access_status": "not_retrieved_or_availability_verified",
+    "resource_type": "dataset_or_code",
+    "source_locator": {
+      "section": "Data and resource availability",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12188239/fullTextXML"
+    },
+    "source_work_id": "W-D2ed2f966c2d4ca85",
+    "target_identity_status": "no_verified_canonical_match_in_observed_snapshot",
+    "url": "https://gitlab.ub.uni-bielefeld.de/a.sonntag/goal_localization_3d_bumblebees",
+    "verification_status": "source_supported"
+  },
+  {
+    "notes": "Back Data-availability text truncates DOI to 10.17632/tvw; full identifier is explicit in key resources table.",
+    "resource_access_status": "not_retrieved_or_availability_verified",
+    "resource_type": "dataset",
+    "source_locator": {
+      "section": "Key resources table",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8556163/fullTextXML"
+    },
+    "source_work_id": "W-D1458be7ebf30875b",
+    "target_identity_status": "no_verified_canonical_match_in_observed_snapshot",
+    "url": "https://doi.org/10.17632/tvw5k48b6p.2",
+    "verification_status": "source_supported"
+  },
+  {
+    "resource_access_status": "not_retrieved_or_availability_verified",
+    "resource_type": "dataset",
+    "source_locator": {
+      "section": "Data and code availability",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9275417/fullTextXML",
+      "xml_id": "da0010"
+    },
+    "source_work_id": "W-D96f5aa9a76c96df8",
+    "target_identity_status": "no_verified_canonical_match_in_observed_snapshot",
+    "url": "https://doi.org/10.5281/zenodo.6365304",
+    "verification_status": "source_supported"
+  },
+  {
+    "resource_access_status": "not_retrieved_or_availability_verified",
+    "resource_type": "software",
+    "source_locator": {
+      "section": "Key resources table",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9275417/fullTextXML"
+    },
+    "source_work_id": "W-D96f5aa9a76c96df8",
+    "target_identity_status": "no_verified_canonical_match_in_observed_snapshot",
+    "url": "https://github.com/ChiappeLab/Analysis-Walking-Stride-Modulation",
+    "verification_status": "source_supported"
+  }
+]

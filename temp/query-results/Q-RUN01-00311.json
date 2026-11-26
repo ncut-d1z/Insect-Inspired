@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00311",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works/10.1016/j.neucom.2026.133380",
+  "queried_at_utc": "2026-11-26T07:23:23.672816Z",
+  "completed_at_utc": "2026-11-26T07:23:27.977069Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "12510f2a69fdf74700475053bb0d49f96a5ea1683f486ef3d8f260db6ba864e8",
+  "body_bytes": 21222,
+  "response_kind": "crossref_singleton",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.1016/j.neucom.2026.133380"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

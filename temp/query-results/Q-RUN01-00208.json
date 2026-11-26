@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00208",
+  "origin_log_id": "shared_http_events",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?format=json&query=DOI%3A10.1016%2Fj.neuron.2022.04.008&resultType=core",
+  "queried_at_utc": "2026-11-26T07:19:31.121086Z",
+  "completed_at_utc": "2026-11-26T07:19:51.834999Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "body_sha256": "4c940facc7c6f2e7c018d4d33563d7b9829f48ef081086a3dc915391e62ad0df",
+  "body_bytes": 6081,
+  "response_kind": "europepmc_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.1016/j.neuron.2022.04.008"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

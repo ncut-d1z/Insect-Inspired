@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00338",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=The+behavioral+relevance+of+landmark+texture+for+honeybee+homing+Laura+Dittmar+et+al+2011&rows=5",
+  "queried_at_utc": "2026-11-26T07:24:24.469190Z",
+  "completed_at_utc": "2026-11-26T07:24:29.093657Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "4b7381b80a77162a2e1f8b126751b4b36ee13d8aa9d007f585dcaced944e039f",
+  "body_bytes": 25171,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 338602,
+  "result_identifiers": [
+    "10.1016/j.ins.2011.04.015",
+    "10.1016/j.sbspro.2012.06.109",
+    "10.3389/fnbeh.2011.00020",
+    "10.3389/fnbeh.2012.00001",
+    "10.7551/978-0-262-29714-1-ch135"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

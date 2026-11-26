@@ -1,0 +1,61 @@
+{
+  "started_at_utc": "2026-11-26T08:40:39.194Z",
+  "errors": [],
+  "checks": {
+    "ten_fixed_tables": true,
+    "search_and_theme": true,
+    "abstract_expand_collapse": true,
+    "evidence_expand_collapse": true,
+    "back_to_top": true,
+    "clear": true,
+    "counter_evidence_filter": true,
+    "year_sort": true,
+    "mobile_no_document_overflow": true,
+    "no_javascript_errors": true
+  },
+  "load_seconds": 9.047,
+  "summary": {
+    "K": 4057,
+    "T": {
+      "L01": 9,
+      "L02": 5,
+      "L03": 9,
+      "L04": 9,
+      "L05": 4,
+      "L06": 12,
+      "L07": 1,
+      "L08": 4,
+      "L09": 1
+    },
+    "U": 4025,
+    "active_assessments": 64,
+    "checkpoint_id": "CP-0003",
+    "citation_edges": 28557,
+    "closure_claim": false,
+    "cutoff_at_utc": "2026-11-26T05:24:08Z",
+    "distinct_file_hashes": 42,
+    "eligible_assessments": 57,
+    "insufficient_assessments": 7,
+    "latest_tasks": 101932,
+    "query_range_utc": [
+      "2026-11-26T05:24:08Z",
+      "2026-11-26T08:07:43.282112Z"
+    ],
+    "scope_id": "SCOPE-0001",
+    "seed_records": 20,
+    "seed_works": 20,
+    "table_rows": 4079,
+    "task_events": 104245,
+    "topic_union": 32,
+    "unresolved_tasks": 101747,
+    "uploads": 20,
+    "versions": 4104
+  },
+  "mobile_dimensions": {
+    "width": 390,
+    "scrollWidth": 390
+  },
+  "completed_at_utc": "2026-11-26T08:41:09.204Z",
+  "passed": true,
+  "html_sha256": "d1d89712a09c648bcf2aa3e26a1b0e820d79a1f728083658096c017415cc2cc5"
+}

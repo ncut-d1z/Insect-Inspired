@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00240",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works/10.1007/s00422-022-00948-3",
+  "queried_at_utc": "2026-11-26T07:20:56.005736Z",
+  "completed_at_utc": "2026-11-26T07:21:01.212607Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "71dd9d11fbf6ea43b8971bd045d533434ac0079494b506373edd020e2191ad90",
+  "body_bytes": 48490,
+  "response_kind": "crossref_singleton",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.1007/s00422-022-00948-3"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

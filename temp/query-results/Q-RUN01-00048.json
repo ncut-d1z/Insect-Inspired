@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00048",
+  "origin_log_id": "shared_http_events",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?format=json&pageSize=10&query=DOI%3A%2210.1038%2Fs41593-025-01948-9%22&resultType=core",
+  "queried_at_utc": "2026-11-26T06:58:34.720266Z",
+  "completed_at_utc": "2026-11-26T06:59:00.472613Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "body_sha256": "211ec0781b9702bb16c12b03e59211dd6257de8d3ae415055142162b77fa388c",
+  "body_bytes": 9352,
+  "response_kind": "europepmc_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.1038/s41593-025-01948-9"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

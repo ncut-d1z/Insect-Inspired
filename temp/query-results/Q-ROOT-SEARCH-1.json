@@ -1,15 +1,16 @@
 {
   "query_id": "Q-ROOT-SEARCH-1",
-  "entity_id": "SCOPE-0001",
   "source_id": "web_search",
   "endpoint_or_url": "web-search",
-  "api_version": null,
   "queried_at_utc": null,
   "query_time_status": "unavailable_exact",
   "status": "partial",
-  "result_identifiers": [],
+  "returned_count": null,
   "visible_total": null,
-  "returned_count": 0,
-  "error_code": null,
-  "coverage_note": "Official Crossref/OpenAlex/EuropePMC capability documentation discovery; no research Works imported. Exact web-tool timestamp not captured; day precision only."
+  "result_identifiers": [],
+  "origin_log_id": "baseline_queries",
+  "response_kind": "baseline_observation",
+  "count_reason": "Official Crossref/OpenAlex/EuropePMC capability documentation discovery; no research Works imported. Exact web-tool timestamp not captured; day precision only.",
+  "sanitized": true,
+  "payload_retained": false
 }

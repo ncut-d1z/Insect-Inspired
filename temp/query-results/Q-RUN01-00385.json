@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN01-00385",
+  "origin_log_id": "shared_http_events",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?query.bibliographic=Funktionalanalysis%2C+5.%2C+erw.+Dirk+Werner+2005&rows=5",
+  "queried_at_utc": "2026-11-26T07:26:42.397233Z",
+  "completed_at_utc": "2026-11-26T07:26:46.400832Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "cc031a9fdf2d165d9cb35990c58e9b3b3173e9b35ae9484256dbd2b6c5197119",
+  "body_bytes": 15253,
+  "response_kind": "crossref_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 5,
+  "visible_total": 2783617,
+  "result_identifiers": [
+    "10.1007/978-3-540-79696-1_5",
+    "10.1007/978-3-642-21017-4",
+    "10.1007/978-3-642-21017-4_1",
+    "10.1007/978-3-642-21017-4_5",
+    "10.1007/b138024"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}

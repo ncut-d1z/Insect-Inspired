@@ -1,0 +1,26 @@
+{
+  "query_id": "Q-RUN01-00218",
+  "origin_log_id": "shared_http_events",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://api.biorxiv.org/details/biorxiv/10.64898/2026.05.07.723493",
+  "queried_at_utc": "2026-11-26T07:19:57.280106Z",
+  "completed_at_utc": "2026-11-26T07:20:01.444050Z",
+  "query_time_status": "exact",
+  "http_status": 200,
+  "content_type": "application/json",
+  "body_sha256": "f7347d8319cce7a769cea0b52c423455719466da9e2d40b36f0bd06319067a08",
+  "body_bytes": 2224,
+  "response_kind": "biorxiv_version_list",
+  "count_reason": "Parsed exact response object/list cardinality; completeness applies to this response page only.",
+  "returned_count": 1,
+  "visible_total": null,
+  "result_identifiers": [
+    "10.64898/2026.05.07.723493"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "retry_count": 0,
+  "retry_at": null,
+  "sanitized": true,
+  "payload_retained": false
+}
