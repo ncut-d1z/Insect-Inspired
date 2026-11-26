@@ -48,8 +48,7 @@
 | S17 | Insect-Inspired Estimation of Egomotion |
 | S18 | Function of a Fly Motion-Sensitive Neuron Matches Eye Movements during Free Flight（第二批补传） |
 | S19 | Wide-field, motion-sensitive neurons and matched filters for optic flow fields（Franz & Krapp，2000，正式基准论文，第三批） |
-| S20 | Disentangling of Local and Wide-Field Motion Adaptation（Li et al.，2021，第三批重复上传，关联 S09；DOI：10.3389/fncir.2021.713285） |
-| S21 | Wide-Field, Motion-Sensitive Neurons and Optimal Matched Filters for Optic Flow（Franz & Krapp，1998 年 6 月，Max-Planck-Institut für biologische Kybernetik，Technical Report No. 61，第三批） |
+| S20 | Wide-Field, Motion-Sensitive Neurons and Optimal Matched Filters for Optic Flow（Franz & Krapp，1998 年 6 月，Max-Planck-Institut für biologische Kybernetik，Technical Report No. 61，第三批） |
 
 执行时应生成输入清单，记录文件名、SHA-256、页数、文献类型、来源、是否存在可提取文本和对应的正式书目身份。种子文件数不等于独立研究成果数；会议论文与期刊扩展版、博士论文与其中包含的论文需要识别关系，但不能仅因内容相似而误合并独立发表的作品。基准论文 S19 和技术报告 S21 均已计入 21 次上传，不额外增加输入数量。报告分别统计上传出现次数、不同文件哈希数、规范 Work 数及版本数；不得将预计数量作为已经核验的结果。
 
