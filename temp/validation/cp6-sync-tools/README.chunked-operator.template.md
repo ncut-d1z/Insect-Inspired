@@ -1,18 +1,20 @@
 # CP-0006 二进制分块包：主机 PowerShell 获取、恢复、合并与清理
 
-> 待冻结模板：所有 `__CP6_...__` 与 `__BASE_SHA__` 必须由本轮实际提交、包清单、Actions 和独立回读证明回填并复核，之后才能发布及执行。本文件准备不表示 CP6 已导入或同步通过；当前未执行下列任何用户主机命令。
+本指南锁定 `research/p3-p6-cp6` 的恢复提交 `__CP6_SHA__`。验收范围为 `__CP6_REMOTE_CHECK_COUNT__` 项检查、`__CP6_FILE_COUNT__` 个文件、`__CP6_FILE_BYTES__` 字节、`__CP6_ARTIFACT_HASH_COUNT__` 项制品哈希，以及当前分片清单的 `__CP6_PARTITION_DATASET_COUNT__` 个逻辑数据集、`__CP6_PARTITION_PART_COUNT__` 个分片。实际结果以第 4 节固定证明提交中的 `verification.json` 和独立回读报告为准；代码会核对它们的哈希、目标提交和通过状态，失败即停止。
 
-本指南对应 `research/p3-p6-cp6` 的原始 CP6 提交 `__CP6_SHA__`。最终独立 GitHub 回读记录应为：`__CP6_REMOTE_CHECK_COUNT__` 项检查、`__CP6_FILE_COUNT__` 个文件、`__CP6_FILE_BYTES__` 字节、`__CP6_ARTIFACT_HASH_COUNT__` 项制品哈希，以及当前分片清单的 `__CP6_PARTITION_DATASET_COUNT__` 个逻辑数据集、`__CP6_PARTITION_PART_COUNT__` 个分片。这些数量只从本轮冻结树和验收证明回填，不能使用 CP5 数量。
+本次交付是重新构建的 CP6。运行环境切换导致上一版仅保存在本地的提交 `74a6a9b38fc02564d2782e30038eeda237bb7c9e` 及其 bundle 丢失，该提交未完成远端全量验收。已提交远端的规范数据、审阅记录和代码仍可恢复；本次据此重建，并重新通过完整数据审计、七项导出确定性和十项 UI 检查。当前恢复提交是 `__CP6_SHA__`，所有校验均以本次交付的 commit、tree 和哈希为准，不能把旧提交视为已找回。
 
-准备本模板时，远端 `main` 仍为 CP4：`bb7726c2ef334df0d7069165156b1cbc2c4e2fd8`。实际合并不依赖它始终停在 CP4：本地和远端 `main` 可以是 CP4、CP5、其他 CP6 祖先或精确 CP6；必须现场验证祖先关系，发生分歧就停止。以下合并、推送和条件删除由用户在自己的主机执行，助手没有执行。
+本轮恢复准备时，远端 `main` 为 CP4：`bb7726c2ef334df0d7069165156b1cbc2c4e2fd8`。实际合并不依赖它始终停在 CP4：本地和远端 `main` 可以是 CP4、CP5、其他 CP6 祖先或精确 CP6；必须现场验证祖先关系，发生分歧就停止。以下合并、推送和条件删除由用户在自己的主机执行，助手没有执行。
 
-本轮 GitHub 连接器仍可提交并回读文本文件；执行器的 Git CLI 写入因无法取得密码而失败。当前传输方案采用 GitHub 连接器以 base64 编码创建原二进制块 blob，再提交到运输分支，由 GitHub Actions 按冻结清单验证、拼接增量 bundle 并导入原始 commit；不依赖浏览器上传。后续主机恢复优先直接 fetch 已通过完整验收的研究分支，不需要重复运行 Actions；bundle 只作为备用恢复路径。本指南不要求新增令牌、权限、付费功能或 GitHub CLI。
+传输采用 GitHub API 上传按顺序编号的原始二进制块。API 请求用 base64 表示字节，仓库中的 `recovery.bundle.part-0001` 等文件仍存放原始二进制内容；下载后直接按 manifest 顺序进行二进制拼接，不再做 base64 解码。GitHub Actions 验证每块和整包的字节数、SHA256、bundle 前提及目标提交，再将该提交普通快进写入 `research/p3-p6-cp6`。本轮助手没有合并、推送或删除 `main`；下文涉及 main 与分支清理的命令由用户在自己的主机执行。
+
+主机恢复优先直接 fetch 指定研究分支；第 4 节继续核验完整远端证明与每个工作树文件。增量分块包提供备用恢复路径，不需要重复运行 Actions。本指南不要求新增令牌、权限、付费功能或 GitHub CLI。
 
 ## 1. 固定输入、数据内容与两种 README
 
 有效数据检查点父项是 **CP-0005**，稳定 Git 锚点为 `82f759ce71e7b532f03cd4ba54a1fcc77c4f4006`。CP6 的唯一直接 Git parent 则是 **`__BASE_SHA__`**：研究分支最后一次 API 写入且精确回读成功的 commit。两者含义不同，增量 bundle 的唯一 prerequisite 必须是该直接 Git parent。
 
-`manifest.json` 的 `readme_sha256` 校验**导入时的原始 README**：固定输入提交 `__CP6_INPUT_COMMIT__` 中 `temp/sync/CP-0006/README.md` 的字节；下载时另存为 `README.import-input.md`。本文件是之后更新的操作指南，其哈希不能与 `manifest.readme_sha256` 比较。更新指南的最终 SHA256 应在独立交付回执中单列；不要把指南自身哈希回写到指南内容中造成自哈希循环。
+`manifest.json` 的 `readme_sha256` 校验**导入时的原始 README**：固定输入提交 `__CP6_INPUT_COMMIT__` 中 `temp/sync/CP-0006/README.md` 的字节；下载时另存为 `README.import-input.md`。本文件是之后更新的操作指南，其哈希不能与 `manifest.readme_sha256` 比较。本操作指南的 SHA256 由独立交付回执记录；校验本指南使用该回执，校验原始导入 README 使用 manifest 中的对应哈希。
 
 | 项目 | 冻结值 |
 |---|---|
@@ -30,11 +32,11 @@
 | 明确归档的证明文件数 | `__CP6_PROOF_FILE_COUNT__` |
 | 规范 Work / Assessment 总数 | `__CP6_CANONICAL_WORK_COUNT__` / `__CP6_ASSESSMENT_COUNT__` |
 
-恢复内容包括规范 Work、Version、Person、机构、项目及关系数据，查询日志、任务、回执、证据、检查点、分片清单和七项导出：`ref.bib`、`ref.html`、`evidence_matrix.csv`、`research_entities.json`、`citation_graph.json`、`research_paths.json`、`research_implications.csv`。本轮记录的推进包括 9 个既有 Work 的身份补全、15 个按具体署名记录限定身份的 Person、13 条参考文献解析，以及 1 条 Jung2011 独立 L03 Assessment；最终总数按冻结清单回填。原有科学记录与不足结论保留，不把该 L03 条目计作 L07 解决。本包不加入原始 PDF、受限全文或认证文件。
+恢复内容包括规范 Work、Version、Person、机构、项目及关系数据，查询日志、任务、回执、证据、检查点、分片清单和七项导出：`ref.bib`、`ref.html`、`evidence_matrix.csv`、`research_entities.json`、`citation_graph.json`、`research_paths.json`、`research_implications.csv`。本轮记录的推进包括 9 个既有 Work 的身份补全、15 个按具体署名记录限定身份的 Person、13 条参考文献解析，以及 1 条 Jung2011 独立 L03 Assessment；最终总数见上表及冻结证明清单。原有科学记录与不足结论保留，不把该 L03 条目计作 L07 解决。本包不加入原始 PDF、受限全文或认证文件。
 
 CP6 恢复的是完整规范工作树，`recovery.bundle` 只含 `__BASE_SHA__` 之后的增量 Git 对象。因此不能直接 `git clone recovery.bundle`；必须先从真实 GitHub 获取该 prerequisite。CP6 同步验收与 checkpoint 有效性不代表 P3–P6 研究闭合：四阶段仍为 `partial`，`closure=false`。
 
-最终导入记录：[Actions __CP6_ACTION_RUN_ID__](https://github.com/ncut-d1z/Insect-Inspired/actions/runs/__CP6_ACTION_RUN_ID__)。验收依据包括 [verification.json](verification.json)、[远端完整回读](remote-verification-cp6.json) 及下方冻结的完整证明清单。实际恢复验证状态与命令环境由这些证明记载；本模板的 PowerShell 代码沿用 Windows PowerShell 5.1 / PowerShell 7 兼容流程进行静态审阅。当前环境没有 PowerShell 运行时，未声称进行 PowerShell 实测。
+导入和验收记录：[Actions __CP6_ACTION_RUN_ID__](https://github.com/ncut-d1z/Insect-Inspired/actions/runs/__CP6_ACTION_RUN_ID__)。验收依据包括 [verification.json](verification.json)、[远端完整回读](remote-verification-cp6.json) 及下方冻结的完整证明清单。实际恢复验证状态与命令环境由这些证明记载；以下 PowerShell 代码按 Windows PowerShell 5.1 / PowerShell 7 兼容流程进行静态审阅。当前环境没有 PowerShell 运行时，未声称进行 PowerShell 实测。
 
 ## 2. 先执行一次：固定参数与失败即停
 
@@ -63,10 +65,10 @@ $Cp6InputReadmeHash = '__CP6_README_SHA256__'
 $Cp6VerificationHash = '__CP6_VERIFICATION_SHA256__'
 $Cp6ProofNames = @('__CP6_PROOF_FILE_NAMES_PIPE__' -split '\|')
 foreach ($cp6Digest in @($Cp6Commit, $Cp6Tree, $Cp6Base, $Cp5CheckpointAnchor, $Cp6InputCommit, $Cp6ProofCommit)) {
-    if ($cp6Digest -cnotmatch '^[0-9a-f]{40}$') { throw 'Unfilled or invalid frozen Git SHA; do not run a template.' }
+    if ($cp6Digest -cnotmatch '^[0-9a-f]{40}$') { throw 'Invalid documented Git SHA; stop.' }
 }
 foreach ($cp6Digest in @($Cp6CheckpointHash, $Cp6BundleHash, $Cp6ManifestHash, $Cp6InputReadmeHash, $Cp6VerificationHash)) {
-    if ($cp6Digest -cnotmatch '^[0-9a-f]{64}$') { throw 'Unfilled or invalid frozen SHA256; stop.' }
+    if ($cp6Digest -cnotmatch '^[0-9a-f]{64}$') { throw 'Invalid documented SHA256; stop.' }
 }
 $Cp6FileCount = [long]'__CP6_FILE_COUNT__'
 $Cp6FileBytes = [long]'__CP6_FILE_BYTES__'
@@ -84,7 +86,7 @@ if ($Cp6ProofNames.Count -ne $Cp6ProofFileCount -or
 }
 foreach ($cp6Name in $Cp6ProofNames) {
     if ($cp6Name -cnotmatch '^[A-Za-z0-9][A-Za-z0-9._-]*$' -or $cp6Name.Contains('__')) {
-        throw 'Unfilled or unsafe proof filename.'
+        throw 'Invalid or unsafe documented proof filename.'
     }
 }
 foreach ($cp6RequiredName in @('verification.json', 'local-integrity-cp6.json', 'remote-verification-cp6.json')) {
@@ -238,7 +240,7 @@ function Assert-Cp6Snapshot {
 Write-Host ('Host package and evidence directory: ' + $Cp6HostRoot)
 ```
 
-## 3A. 推荐：直接 fetch 已同步的研究分支
+## 3A. 推荐：直接 fetch 指定研究分支
 
 在已有 `Insect-Inspired` clone 内打开 PowerShell，然后运行本节。若没有 clone，把第一行改成 `$Cp6UseExistingClone = $false`，代码会在新建的独立目录 clone。已有工作树、暂存区或未跟踪文件不干净时会停止；代码不自动 stash、reset 或覆盖原有分支。
 
@@ -321,7 +323,7 @@ Assert-Cp6Snapshot
 
 ## 4. 删除临时分支前，先保存固定验收证明
 
-最终证明固定在 `__CP6_PROOF_COMMIT__`。完整文件名列表在第 2 节的 `__CP6_PROOF_FILE_NAMES_PIPE__` 回填为以 `|` 分隔的明确文件名，同时回填实际文件数；列表必须覆盖 `verification.json` 及其全部 `evidence_files`，并包含本地完整性清单和独立远端回读报告。它们是导入之后归档的文件，不属于原始 CP6 研究提交。
+验收证明固定在 `__CP6_PROOF_COMMIT__`。第 2 节的 `$Cp6ProofNames` 明确列出本次需要归档的 `__CP6_PROOF_FILE_COUNT__` 个文件，覆盖 `verification.json` 及其全部 `evidence_files`，包括本地完整性清单和独立远端回读报告。它们是导入之后归档的文件，不属于原始 CP6 研究提交。
 
 下面先从真实 GitHub fetch 固定证明提交，再用 Git 原生 `archive --output` 归档这份明确清单；先校验总回执 SHA256，再核对其列出的每份证明的字节数与 SHA256。同步分支实际 tip 也会记录，供后续精确条件删除使用。
 
