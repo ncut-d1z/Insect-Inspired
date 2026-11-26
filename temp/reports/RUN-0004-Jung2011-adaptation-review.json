@@ -180,7 +180,7 @@
       "min": 5,
       "max": 5,
       "unit": "Hz",
-      "coordinate_frame": "paper-defined sensor/body frame",
+      "coordinate_frame": null,
       "measurement_role": "ground_truth",
       "evidence_locator": [
        {
@@ -193,7 +193,26 @@
         "section": "Visual stimulation; Experimental protocol; Recording"
        }
       ],
-      "definition": "适应刺激时间频率；脉冲由突然位移产生，位移幅度未单列。"
+      "definition": "适应刺激时间频率；脉冲由突然位移产生，位移幅度未单列。",
+      "field_states": {
+       "coordinate_frame": {
+        "status": "not_applicable",
+        "reason": "适应刺激的时间频率为标量Hz，不是速度向量分量；其数值不需要坐标原点或轴。",
+        "evidence_locator": [
+         {
+          "source_id": "publisher",
+          "identifier": "10.1523/jneurosci.1138-11.2011",
+          "version_id": "V-W-Dabcb702a46d5671a-01",
+          "upload_id": "U-RUN02-Jung2011-PDF",
+          "page": 2,
+          "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+          "section": "Visual stimulation; Experimental protocol; Recording"
+         }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+       }
+      }
      }
     ],
     "evidence_locator": [
@@ -241,7 +260,7 @@
       "min": 170,
       "max": 170,
       "unit": "deg",
-      "coordinate_frame": "paper-defined sensor/body frame",
+      "coordinate_frame": null,
       "measurement_role": "ground_truth",
       "evidence_locator": [
        {
@@ -254,7 +273,26 @@
         "section": "Visual stimulation; Experimental protocol; Recording"
        }
       ],
-      "definition": "LED柱形显示器水平视野170°，垂直60°；不是全景自然光流。"
+      "definition": "LED柱形显示器水平视野170°，垂直60°；不是全景自然光流。",
+      "field_states": {
+       "coordinate_frame": {
+        "status": "not_applicable",
+        "reason": "此量是LED显示器覆盖的水平视觉角宽度；原文另给垂直宽度60°。角域宽度不是方向向量分量，不为它补设坐标原点或轴。",
+        "evidence_locator": [
+         {
+          "source_id": "publisher",
+          "identifier": "10.1523/jneurosci.1138-11.2011",
+          "version_id": "V-W-Dabcb702a46d5671a-01",
+          "upload_id": "U-RUN02-Jung2011-PDF",
+          "page": 2,
+          "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+          "section": "Visual stimulation; Experimental protocol; Recording"
+         }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+       }
+      }
      },
      "distance_range": null,
      "distance_distribution": null,
@@ -338,7 +376,7 @@
       "min": 0.174,
       "max": 0.174,
       "unit": "contrast_fraction",
-      "coordinate_frame": "paper-defined sensor/body frame",
+      "coordinate_frame": null,
       "measurement_role": "ground_truth",
       "evidence_locator": [
        {
@@ -351,14 +389,33 @@
         "section": "Visual stimulation; Experimental protocol; Recording"
        }
       ],
-      "definition": "原文报告17.4%对比；此字段仅换算为比例。"
+      "definition": "原文报告17.4%对比；此字段仅换算为比例。",
+      "field_states": {
+       "coordinate_frame": {
+        "status": "not_applicable",
+        "reason": "对比度是显示图样的无量纲标量，不涉及空间坐标系。",
+        "evidence_locator": [
+         {
+          "source_id": "publisher",
+          "identifier": "10.1523/jneurosci.1138-11.2011",
+          "version_id": "V-W-Dabcb702a46d5671a-01",
+          "upload_id": "U-RUN02-Jung2011-PDF",
+          "page": 2,
+          "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+          "section": "Visual stimulation; Experimental protocol; Recording"
+         }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+       }
+      }
      },
      "spatial_frequency": {
       "quantity": "spatial_frequency",
       "min": 0.025,
       "max": 0.025,
       "unit": "cycles/deg",
-      "coordinate_frame": "paper-defined sensor/body frame",
+      "coordinate_frame": null,
       "measurement_role": "ground_truth",
       "evidence_locator": [
        {
@@ -371,14 +428,33 @@
         "section": "Visual stimulation; Experimental protocol; Recording"
        }
       ],
-      "definition": "由40°/周期取倒数，属于刺激单位换算。"
+      "definition": "由40°/周期取倒数，属于刺激单位换算。",
+      "field_states": {
+       "coordinate_frame": {
+        "status": "not_applicable",
+        "reason": "由原文40°视觉角/周期换算的空间频率是周期/视觉角的标量；此换算不涉及向量分解或坐标原点、轴。",
+        "evidence_locator": [
+         {
+          "source_id": "publisher",
+          "identifier": "10.1523/jneurosci.1138-11.2011",
+          "version_id": "V-W-Dabcb702a46d5671a-01",
+          "upload_id": "U-RUN02-Jung2011-PDF",
+          "page": 2,
+          "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+          "section": "Visual stimulation; Experimental protocol; Recording"
+         }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+       }
+      }
      },
      "illumination": {
       "quantity": "illumination",
       "min": 5.3,
       "max": 5.3,
       "unit": "cd/m2",
-      "coordinate_frame": "paper-defined sensor/body frame",
+      "coordinate_frame": null,
       "measurement_role": "measured",
       "evidence_locator": [
        {
@@ -391,7 +467,26 @@
         "section": "Visual stimulation; Experimental protocol; Recording"
        }
       ],
-      "definition": "原文给显示屏平均亮度5.3cd/m²。"
+      "definition": "原文给显示屏平均亮度5.3cd/m²。",
+      "field_states": {
+       "coordinate_frame": {
+        "status": "not_applicable",
+        "reason": "此量是显示屏平均亮度cd/m²的标量，不涉及坐标系。",
+        "evidence_locator": [
+         {
+          "source_id": "publisher",
+          "identifier": "10.1523/jneurosci.1138-11.2011",
+          "version_id": "V-W-Dabcb702a46d5671a-01",
+          "upload_id": "U-RUN02-Jung2011-PDF",
+          "page": 2,
+          "evidence_note": "印刷p9232，Visual stimulation及Experimental protocol：40°正弦光栅、17.4%对比、200Hz、170°×60°、5.3cd/m²；适应3s/5Hz，脉冲为光栅突然位移。Recording：右脑H1胞外记录，刺激左眼。",
+          "section": "Visual stimulation; Experimental protocol; Recording"
+         }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+       }
+      }
      },
      "noise": null,
      "outlier_fraction": null,

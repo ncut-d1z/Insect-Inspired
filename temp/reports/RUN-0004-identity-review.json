@@ -1,0 +1,3887 @@
+{
+  "review_id": "RUN04-NINE-PMID-IDENTITY-AND-REFERENCE-REVIEW",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "status": "reviewed",
+  "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+  "canonical_modified": false,
+  "remote_written_by_this_agent": false,
+  "external_requests_during_final_review": 0,
+  "input_snapshot": {
+    "git_head": "2474c011c113f721f610879f13803f7c427cfb92",
+    "partition_manifest_sha256": "97e1286420002f40bcf599c350b3c96081eb7dc2dff35c11179b7c7d1e099bf6",
+    "logical_counts_scanned": {
+      "works.jsonl": 5085,
+      "authors.jsonl": 20549,
+      "versions.jsonl": 5134,
+      "queries.jsonl": 889,
+      "tasks.jsonl": 134773,
+      "reference-occurrences.jsonl": 158544,
+      "citation-edges.jsonl": 31811
+    },
+    "source_receipt_hashes": [
+      {
+        "query_id": "Q-RUN04-EPMC-0001",
+        "sha256": "a6bdfb8c2b3b5b62e85d85c2ab9e6dfec9f4d885baf4e170c9f6382f1c6cae40",
+        "bytes": 3952
+      },
+      {
+        "query_id": "Q-RUN04-NCBI-0001",
+        "sha256": "4d02322bc236bc693c911ab272e71ed1664f7ec868f3a610b79ab2e4159df0a6",
+        "bytes": 2530
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0001",
+        "sha256": "f6e6173c753f8fe0bdda49c0a40d6a9cffea3ef892403e95e230d49de1dc2939",
+        "bytes": 2692
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0002",
+        "sha256": "e03279e4bb48cb34bd63624f02aa7f1bf6f8bf8d8dc1c1aba14fd32677b7101c",
+        "bytes": 2691
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0003",
+        "sha256": "6f6c30755782ea2ed09b54ac4bfb4becab1a8bcef3666523a166e633ea5f4ce5",
+        "bytes": 5315
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0004",
+        "sha256": "fc4202374de75fdc7cb42d5dfdb8f9f11698298531035cd395effeddf599a758",
+        "bytes": 4244
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0005",
+        "sha256": "c20e82683505177fe0fff7f2edf577ecb78efa1e03934456e45ead6634d1d155",
+        "bytes": 4154
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0006",
+        "sha256": "a1c706ff98c31978741e855bf1951a240d3a9c6e0f6eb677721522ad4f4b5ca6",
+        "bytes": 4724
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0007",
+        "sha256": "d29a70f92025157c416afb9bab71e407f0bee96c9376ea914b5ab57fd7968d14",
+        "bytes": 2400
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0008",
+        "sha256": "d5ae7da458768c4573edce0bc88f0181a8a8c83208776c81cbfb40a45693382d",
+        "bytes": 2400
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0009",
+        "sha256": "c79d6cf1745e81f26ce1ef373729754c0cf22d6b022c5bf385f0cf9286099ed5",
+        "bytes": 2400
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0010",
+        "sha256": "88983d5d451c080e9be19c663e3c729434cc5754966b6bfcdb68fa602f9f5b91",
+        "bytes": 2017
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0011",
+        "sha256": "854e8d8e5812e6c535ae348f6cf2451f706384e804c1c68a66b1b53cd47997ea",
+        "bytes": 2017
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0012",
+        "sha256": "9bd9c55cbc348defe17bfa737ae3bd662341fea6f1e91e7ce26ba063d156c7f4",
+        "bytes": 2017
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0013",
+        "sha256": "4c8f69c4500faacc23118db9fdee6196495dd7ee5aff226eaa7907206dc6d746",
+        "bytes": 1706
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0014",
+        "sha256": "56a7fa607a99839867a49387e6613e75d2a2ded8c95a7f0535e4bd3a236a2a79",
+        "bytes": 1795
+      },
+      {
+        "query_id": "Q-RUN04-WEB-0015",
+        "sha256": "5d9b6ceacfa04b95c9bfb52f0cb69515ecb33576d3483a1f66b123be01cf48ff",
+        "bytes": 1795
+      },
+      {
+        "query_id": "Q-RUN04-SEARCH-0001",
+        "sha256": "3b5f3c75e74b590bcb1a2bdd6935dc479bb8f612b578c38fd8526b5c1b8202d8",
+        "bytes": 7621
+      },
+      {
+        "query_id": "Q-RUN04-SEARCH-0002",
+        "sha256": "e2655055d4d705af12fdee2700c76f3b979a2cd9730cad7cfa39018f972116c3",
+        "bytes": 8281
+      },
+      {
+        "query_id": "Q-RUN04-SEARCH-0003",
+        "sha256": "f2353c0034558b53a2e87ee11d823264a998c997b09cb09373fa1c38044a137e",
+        "bytes": 8494
+      },
+      {
+        "query_id": "Q-RUN04-SEARCH-0004",
+        "sha256": "98430b154671f3b53f7a75d327bd95e93b60eb3dfae3ddf4b77f2005433aed38",
+        "bytes": 6783
+      },
+      {
+        "query_id": "Q-RUN04-SEARCH-0005",
+        "sha256": "382fd117aece4a21b307852c8638289fa6ca7552eb090106e306f6f9f68b65ce",
+        "bytes": 9989
+      }
+    ],
+    "task_event_fold": "Maximum event_sequence for each task_id over the complete manifest logical dataset."
+  },
+  "summary": {
+    "exact_identities_reviewed": 9,
+    "direct_pubmed_metadata_records": 4,
+    "official_indexed_metadata_records": 5,
+    "new_Work_count": 0,
+    "existing_Work_count": 9,
+    "new_DOI_supplements": 6,
+    "Work_or_key_merges": 0,
+    "existing_byline_Person_IDs_reused": 11,
+    "new_work_scoped_byline_records_recommended": 15,
+    "global_Person_merges": 0,
+    "reference_occurrences_scanned": 158544,
+    "target_endpoint_or_exact_DOI_occurrences": 30,
+    "already_resolved_occurrences_preserved": 17,
+    "reference_occurrences_to_resolve": 13,
+    "new_unique_cites_edge_pairs_if_canonical_unchanged": 13,
+    "existing_edge_pairs_for_these_13": 0,
+    "reference_Doi_only_cases": 1,
+    "closable_work_level_unknown_field_tasks": 32,
+    "remaining_work_level_unknown_field_tasks": 20,
+    "query_access_attempts": 22,
+    "query_status_counts": {
+      "error": 8,
+      "partial": 5,
+      "success": 9
+    },
+    "manual_review_units": 22,
+    "scope_closure_established": false
+  },
+  "records": [
+    {
+      "pmid": "25994678",
+      "work_id": "W-Dbfce205be4b6d9df",
+      "work_key": "Ogawa2015",
+      "status": "reviewed",
+      "successful_query_ids": [
+        "Q-RUN04-WEB-0003"
+      ],
+      "preferred_metadata": {
+        "pmid": "25994678",
+        "pmcid": "PMC4455814",
+        "doi": "10.1098/rspb.2015.0673",
+        "title": "Three spectrally distinct photoreceptors in diurnal and nocturnal Australian ants",
+        "publication_date": "2015-06-07",
+        "publication_date_kind": "issue_date_as_shown_not_electronic_publication_date",
+        "year": 2015,
+        "venue_abbreviation": "Proc Biol Sci",
+        "volume": "282",
+        "issue": "1808",
+        "article_number": "20150673",
+        "publisher": "The Royal Society",
+        "authors": [
+          {
+            "position": 1,
+            "display_name": "Yuri Ogawa",
+            "affiliation_numbers": [
+              1
+            ]
+          },
+          {
+            "position": 2,
+            "display_name": "Marcin Falkowski",
+            "affiliation_numbers": [
+              2
+            ]
+          },
+          {
+            "position": 3,
+            "display_name": "Ajay Narendra",
+            "affiliation_numbers": [
+              3
+            ]
+          },
+          {
+            "position": 4,
+            "display_name": "Jochen Zeil",
+            "affiliation_numbers": [
+              4
+            ]
+          },
+          {
+            "position": 5,
+            "display_name": "Jan M Hemmi",
+            "affiliation_numbers": [
+              5
+            ]
+          }
+        ],
+        "publication_affiliations": [
+          {
+            "affiliation_number": 1,
+            "organization_names": [
+              "School of Animal Biology and UWA Oceans Institute",
+              "The University of Western Australia"
+            ],
+            "country": "Australia"
+          },
+          {
+            "affiliation_number": 2,
+            "organization_names": [
+              "School of Animal Biology and UWA Oceans Institute",
+              "The University of Western Australia",
+              "Research School of Biology",
+              "The Australian National University"
+            ],
+            "country": "Australia"
+          },
+          {
+            "affiliation_number": 3,
+            "organization_names": [
+              "Department of Biological Sciences",
+              "Macquarie University"
+            ],
+            "country": "Australia"
+          },
+          {
+            "affiliation_number": 4,
+            "organization_names": [
+              "Research School of Biology",
+              "The Australian National University"
+            ],
+            "country": "Australia"
+          },
+          {
+            "affiliation_number": 5,
+            "organization_names": [
+              "School of Animal Biology and UWA Oceans Institute",
+              "The University of Western Australia"
+            ],
+            "country": "Australia"
+          }
+        ]
+      },
+      "field_query_ids": {
+        "pmid": "Q-RUN04-WEB-0003",
+        "pmcid": "Q-RUN04-WEB-0003",
+        "doi": "Q-RUN04-WEB-0003",
+        "title": "Q-RUN04-WEB-0003",
+        "publication_date": "Q-RUN04-WEB-0003",
+        "publication_date_kind": "Q-RUN04-WEB-0003",
+        "year": "Q-RUN04-WEB-0003",
+        "venue_abbreviation": "Q-RUN04-WEB-0003",
+        "volume": "Q-RUN04-WEB-0003",
+        "issue": "Q-RUN04-WEB-0003",
+        "article_number": "Q-RUN04-WEB-0003",
+        "publisher": "Q-RUN04-WEB-0003",
+        "authors": "Q-RUN04-WEB-0003",
+        "publication_affiliations": "Q-RUN04-WEB-0003"
+      },
+      "field_source_refs": {},
+      "metadata_evidence_kind": "bibliographic_record",
+      "verification_status": "source_supported",
+      "canonical_identity_match": {
+        "exact_title_match_after_punctuation_normalization": true,
+        "existing_doi_matches": [
+          "W-Dbfce205be4b6d9df"
+        ],
+        "exact_title_work_matches": [
+          "W-Dbfce205be4b6d9df"
+        ],
+        "new_Work_required": false,
+        "merge_required": false
+      },
+      "original_identity_task": {
+        "task_id": "T-CP4-CiterIdentity-MED-25994678",
+        "entity_id": "W-Dbfce205be4b6d9df",
+        "event_sequence": 2,
+        "state": "retryable_error",
+        "cursor": {
+          "cursorMark": "*",
+          "source": "MED",
+          "id": "25994678"
+        },
+        "query_ids": [
+          "Q-RUN02-ENT-0104",
+          "Q-RUN02-ENT-0198",
+          "Q-RUN03-EPMC-0001",
+          "Q-RUN03-WEB-0001",
+          "Q-RUN03-WEB-0014"
+        ]
+      },
+      "identity_task_recommendation": {
+        "state": "verified_complete",
+        "narrow_completion_scope": "This exact MED identifier is mapped to the existing Work via official PMID/DOI/title metadata.",
+        "epmc_core_success": false,
+        "identity_via_direct_pubmed_page": true,
+        "identity_via_pubmed_indexed_metadata": false,
+        "supporting_query_ids": [
+          "Q-RUN04-WEB-0003"
+        ]
+      },
+      "existing_byline_preserved": true,
+      "reused_byline": [
+        {
+          "position": 1,
+          "person_id": "P-Rfb9e9873d11295f2",
+          "canonical_display_name": "Yuri Ogawa",
+          "source_display_name": "Yuri Ogawa",
+          "existing_organization_ids": [
+            "ORG-R144b0b3ab465b88e"
+          ],
+          "preserve_person_identity_confidence": "probable",
+          "source_affiliation_numbers": [
+            1
+          ],
+          "action": "reuse_same_Work_byline_Person_ID_no_global_merge"
+        },
+        {
+          "position": 2,
+          "person_id": "P-R6525f173df99301e",
+          "canonical_display_name": "Marcin Falkowski",
+          "source_display_name": "Marcin Falkowski",
+          "existing_organization_ids": [
+            "ORG-R144b0b3ab465b88e",
+            "ORG-Rd6644019edd2b6d2"
+          ],
+          "preserve_person_identity_confidence": "probable",
+          "source_affiliation_numbers": [
+            2
+          ],
+          "action": "reuse_same_Work_byline_Person_ID_no_global_merge"
+        },
+        {
+          "position": 3,
+          "person_id": "P-Ra1a5847272d83183",
+          "canonical_display_name": "Ajay Narendra",
+          "source_display_name": "Ajay Narendra",
+          "existing_organization_ids": [
+            "ORG-R7faf087a7f4f66d3"
+          ],
+          "preserve_person_identity_confidence": "probable",
+          "source_affiliation_numbers": [
+            3
+          ],
+          "action": "reuse_same_Work_byline_Person_ID_no_global_merge"
+        },
+        {
+          "position": 4,
+          "person_id": "P-R78e936dfacc64be8",
+          "canonical_display_name": "Jochen Zeil",
+          "source_display_name": "Jochen Zeil",
+          "existing_organization_ids": [
+            "ORG-Rd6644019edd2b6d2"
+          ],
+          "preserve_person_identity_confidence": "probable",
+          "source_affiliation_numbers": [
+            4
+          ],
+          "action": "reuse_same_Work_byline_Person_ID_no_global_merge"
+        },
+        {
+          "position": 5,
+          "person_id": "P-R0c83501d373ceafb",
+          "canonical_display_name": "Jan M. Hemmi",
+          "source_display_name": "Jan M Hemmi",
+          "existing_organization_ids": [
+            "ORG-R144b0b3ab465b88e"
+          ],
+          "preserve_person_identity_confidence": "probable",
+          "source_affiliation_numbers": [
+            5
+          ],
+          "action": "reuse_same_Work_byline_Person_ID_no_global_merge"
+        }
+      ],
+      "new_byline_record_count_recommendation": 0,
+      "byline_recommendation": "Preserve all existing ordered Person IDs and attach work-scoped publication affiliation facts only.",
+      "publication_affiliation_facts": [
+        {
+          "affiliation_number": 1,
+          "organization_names": [
+            "School of Animal Biology and UWA Oceans Institute",
+            "The University of Western Australia"
+          ],
+          "country": "Australia"
+        },
+        {
+          "affiliation_number": 2,
+          "organization_names": [
+            "School of Animal Biology and UWA Oceans Institute",
+            "The University of Western Australia",
+            "Research School of Biology",
+            "The Australian National University"
+          ],
+          "country": "Australia"
+        },
+        {
+          "affiliation_number": 3,
+          "organization_names": [
+            "Department of Biological Sciences",
+            "Macquarie University"
+          ],
+          "country": "Australia"
+        },
+        {
+          "affiliation_number": 4,
+          "organization_names": [
+            "Research School of Biology",
+            "The Australian National University"
+          ],
+          "country": "Australia"
+        },
+        {
+          "affiliation_number": 5,
+          "organization_names": [
+            "School of Animal Biology and UWA Oceans Institute",
+            "The University of Western Australia"
+          ],
+          "country": "Australia"
+        }
+      ],
+      "organization_guard": "These are source-supported publication-time affiliation strings. Preserve existing Ogawa2015 organization mappings. Do not infer current employment, employment dates, ROR identities or organization hierarchy from name coincidence.",
+      "date_recommendation": {
+        "original_year": 2015,
+        "original_publication_date": "2015-06-07",
+        "preferred_publication_date": "2015-06-07",
+        "preferred_date_kind": "issue_date_as_shown_not_electronic_publication_date",
+        "issue_date": null,
+        "note_to_append": "Keep the existing journal/citation year and key. The selected date is issue_date_as_shown_not_electronic_publication_date; no earlier electronic date is inferred.",
+        "preserve_year": true,
+        "preserve_work_key": true
+      },
+      "closable_unknown_field_tasks": [
+        {
+          "field_path": "eid",
+          "task_id": "T-Unknown-7c8510574e25018b",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "20150673",
+          "query_id": "Q-RUN04-WEB-0003",
+          "metadata_field": "article_number"
+        }
+      ],
+      "remaining_unknown_field_tasks": [],
+      "reference_resolution_ids": [],
+      "existing_version_ids": [
+        "V-W-Dbfce205be4b6d9df-01"
+      ],
+      "do_not_overwrite_fields": [
+        "work_id",
+        "work_key",
+        "year",
+        "existing_Version_IDs",
+        "existing_byline_Person_IDs",
+        "existing_nonempty_venue_with_an_abbreviation",
+        "existing_publisher_or_language_when_absent_from_new_receipt",
+        "fulltext_or_abstract_status_without_separate_content_review",
+        "assessment",
+        "citation_roles"
+      ],
+      "conflicts": [],
+      "remaining_dimension_scope": "Metadata remains partial where fields are unknown. Existing fulltext, abstract, citation-list, author cross-Work disambiguation, organization/project and Assessment queues are not completed by this identity review.",
+      "normalization_note": "Current pages contains the same electronic article number. Populate eid from explicit metadata but preserve/audit the existing pages representation under the canonical schema; do not silently invent a page range."
+    },
+    {
+      "pmid": "26582183",
+      "work_id": "W-R6c60f443a13cd0ad",
+      "work_key": "TempWR6c60f443a13cd0ad",
+      "status": "reviewed",
+      "successful_query_ids": [
+        "Q-RUN04-SEARCH-0005"
+      ],
+      "preferred_metadata": {
+        "pmid": "26582183",
+        "pmcid": "PMC4722065",
+        "doi": "10.1007/s00359-015-1052-1",
+        "title": "How do field of view and resolution affect the information content of panoramic scenes for visual navigation? A computational investigation",
+        "year": 2016,
+        "year_semantics": "Journal issue/citation year, distinct from first electronic publication in 2015",
+        "publication_date": "2015-11-18",
+        "publication_date_kind": "electronic_publication_date",
+        "electronic_publication_date": "2015-11-18",
+        "issue_date": "2016-02",
+        "venue": "Journal of comparative physiology. A, Neuroethology, sensory, neural, and behavioral physiology",
+        "venue_abbreviation": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+        "volume": "202",
+        "issue": "2",
+        "pages": "87-95",
+        "language": "en",
+        "language_source_code": "eng",
+        "document_type": "journal_article",
+        "publication_status_source": "ppublish",
+        "authors": [
+          {
+            "position": 1,
+            "display_name": "Antoine Wystrach",
+            "affiliation_numbers": [
+              1,
+              2
+            ]
+          },
+          {
+            "position": 2,
+            "display_name": "Alex Dewar",
+            "affiliation_numbers": [
+              2
+            ]
+          },
+          {
+            "position": 3,
+            "display_name": "Andrew Philippides",
+            "affiliation_numbers": [
+              2
+            ]
+          },
+          {
+            "position": 4,
+            "display_name": "Paul Graham",
+            "affiliation_numbers": [
+              2
+            ]
+          }
+        ],
+        "publication_affiliations": [
+          {
+            "affiliation_number": 1,
+            "organization_names": [
+              "School of Informatics",
+              "University of Edinburgh"
+            ],
+            "country": "United Kingdom"
+          },
+          {
+            "affiliation_number": 2,
+            "organization_names": [
+              "Centre for Computational Neuroscience and Robotics",
+              "University of Sussex"
+            ],
+            "country": "United Kingdom"
+          }
+        ]
+      },
+      "field_query_ids": {
+        "pmid": "Q-RUN04-SEARCH-0005",
+        "pmcid": "Q-RUN04-SEARCH-0005",
+        "doi": "Q-RUN04-SEARCH-0005",
+        "title": "Q-RUN04-SEARCH-0005",
+        "year": "Q-RUN04-SEARCH-0005",
+        "year_semantics": "Q-RUN04-SEARCH-0005",
+        "publication_date": "Q-RUN04-SEARCH-0005",
+        "publication_date_kind": "Q-RUN04-SEARCH-0005",
+        "electronic_publication_date": "Q-RUN04-SEARCH-0005",
+        "issue_date": "Q-RUN04-SEARCH-0005",
+        "venue": "Q-RUN04-SEARCH-0005",
+        "venue_abbreviation": "Q-RUN04-SEARCH-0005",
+        "volume": "Q-RUN04-SEARCH-0005",
+        "issue": "Q-RUN04-SEARCH-0005",
+        "pages": "Q-RUN04-SEARCH-0005",
+        "language": "Q-RUN04-SEARCH-0005",
+        "language_source_code": "Q-RUN04-SEARCH-0005",
+        "document_type": "Q-RUN04-SEARCH-0005",
+        "publication_status_source": "Q-RUN04-SEARCH-0005",
+        "authors": "Q-RUN04-SEARCH-0005",
+        "publication_affiliations": "Q-RUN04-SEARCH-0005"
+      },
+      "field_source_refs": {
+        "pmid": "turn665349503search0",
+        "doi": "turn665349503search0",
+        "title": "turn665349503search0",
+        "byline": "turn665349503search0",
+        "language": "turn665349503search0",
+        "publication_date": [
+          "turn665349503search0",
+          "turn665349503search1",
+          "turn665349503search2"
+        ],
+        "publication_affiliation_mapping": [
+          "turn665349503search1",
+          "turn665349503search2"
+        ]
+      },
+      "metadata_evidence_kind": "indexed_bibliographic_metadata",
+      "verification_status": "source_supported",
+      "canonical_identity_match": {
+        "exact_title_match_after_punctuation_normalization": true,
+        "existing_doi_matches": [],
+        "exact_title_work_matches": [
+          "W-R6c60f443a13cd0ad"
+        ],
+        "new_Work_required": false,
+        "merge_required": false
+      },
+      "original_identity_task": {
+        "task_id": "T-CP4-CiterIdentity-MED-26582183",
+        "entity_id": "W-R6c60f443a13cd0ad",
+        "event_sequence": 2,
+        "state": "retryable_error",
+        "cursor": {
+          "cursorMark": "*",
+          "source": "MED",
+          "id": "26582183"
+        },
+        "query_ids": [
+          "Q-RUN02-ENT-0104",
+          "Q-RUN02-ENT-0198",
+          "Q-RUN03-EPMC-0001",
+          "Q-RUN03-WEB-0001",
+          "Q-RUN03-WEB-0013"
+        ]
+      },
+      "identity_task_recommendation": {
+        "state": "verified_complete",
+        "narrow_completion_scope": "This exact MED identifier is mapped to the existing Work via official PMID/DOI/title metadata.",
+        "epmc_core_success": false,
+        "identity_via_direct_pubmed_page": false,
+        "identity_via_pubmed_indexed_metadata": true,
+        "supporting_query_ids": [
+          "Q-RUN04-SEARCH-0005"
+        ]
+      },
+      "existing_byline_preserved": true,
+      "reused_byline": [],
+      "new_byline_record_count_recommendation": 4,
+      "byline_recommendation": "Create only work-scoped byline Person identities after checking exact Work/DOI provenance; do not merge with any global same-name Person. No existing DOI-provenance orphan Person was found by full 20,549-Person peer review.",
+      "publication_affiliation_facts": [
+        {
+          "affiliation_number": 1,
+          "organization_names": [
+            "School of Informatics",
+            "University of Edinburgh"
+          ],
+          "country": "United Kingdom"
+        },
+        {
+          "affiliation_number": 2,
+          "organization_names": [
+            "Centre for Computational Neuroscience and Robotics",
+            "University of Sussex"
+          ],
+          "country": "United Kingdom"
+        }
+      ],
+      "organization_guard": "These are source-supported publication-time affiliation strings. Preserve existing Ogawa2015 organization mappings. Do not infer current employment, employment dates, ROR identities or organization hierarchy from name coincidence.",
+      "date_recommendation": {
+        "original_year": 2016,
+        "original_publication_date": "2016",
+        "preferred_publication_date": "2015-11-18",
+        "preferred_date_kind": "electronic_publication_date",
+        "issue_date": "2016-02",
+        "note_to_append": "Keep the existing journal/citation year and key. Electronic publication 2015-11-18; issue 2016-02.",
+        "preserve_year": true,
+        "preserve_work_key": true
+      },
+      "closable_unknown_field_tasks": [
+        {
+          "field_path": "authors",
+          "task_id": "T-Unknown-300348b04edbb21f",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": [
+            {
+              "position": 1,
+              "display_name": "Antoine Wystrach",
+              "affiliation_numbers": [
+                1,
+                2
+              ]
+            },
+            {
+              "position": 2,
+              "display_name": "Alex Dewar",
+              "affiliation_numbers": [
+                2
+              ]
+            },
+            {
+              "position": 3,
+              "display_name": "Andrew Philippides",
+              "affiliation_numbers": [
+                2
+              ]
+            },
+            {
+              "position": 4,
+              "display_name": "Paul Graham",
+              "affiliation_numbers": [
+                2
+              ]
+            }
+          ],
+          "query_id": "Q-RUN04-SEARCH-0005",
+          "metadata_field": "authors"
+        },
+        {
+          "field_path": "venue",
+          "task_id": "T-Unknown-334f7cb8a25a5b5b",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "Journal of comparative physiology. A, Neuroethology, sensory, neural, and behavioral physiology",
+          "query_id": "Q-RUN04-SEARCH-0005",
+          "metadata_field": "venue"
+        },
+        {
+          "field_path": "volume",
+          "task_id": "T-Unknown-07a9566c8ca179e0",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "202",
+          "query_id": "Q-RUN04-SEARCH-0005",
+          "metadata_field": "volume"
+        },
+        {
+          "field_path": "number",
+          "task_id": "T-Unknown-decece25c2fb4058",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "2",
+          "query_id": "Q-RUN04-SEARCH-0005",
+          "metadata_field": "issue"
+        },
+        {
+          "field_path": "doi",
+          "task_id": "T-Unknown-6aa993d745fdfc29",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "10.1007/s00359-015-1052-1",
+          "query_id": "Q-RUN04-SEARCH-0005",
+          "metadata_field": "doi"
+        },
+        {
+          "field_path": "language",
+          "task_id": "T-Unknown-d7231c4c599697f1",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "en",
+          "query_id": "Q-RUN04-SEARCH-0005",
+          "metadata_field": "language"
+        }
+      ],
+      "remaining_unknown_field_tasks": [
+        {
+          "field_path": "eid",
+          "task_id": "T-Unknown-74cc837c9f077a37",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        },
+        {
+          "field_path": "publisher",
+          "task_id": "T-Unknown-a6ae9c97b16f6804",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        }
+      ],
+      "reference_resolution_ids": [
+        "R-CR-a3cc6372cc069be7"
+      ],
+      "existing_version_ids": [
+        "V-W-R6c60f443a13cd0ad-01"
+      ],
+      "do_not_overwrite_fields": [
+        "work_id",
+        "work_key",
+        "year",
+        "existing_Version_IDs",
+        "existing_byline_Person_IDs",
+        "existing_nonempty_venue_with_an_abbreviation",
+        "existing_publisher_or_language_when_absent_from_new_receipt",
+        "fulltext_or_abstract_status_without_separate_content_review",
+        "assessment",
+        "citation_roles"
+      ],
+      "conflicts": [
+        {
+          "kind": "different_date_semantics_not_identity_conflict",
+          "electronic_date": "2015-11-18",
+          "journal_issue_year": 2016,
+          "resolution": "Retain canonical year=2016 and existing key; store electronic publication date with explicit issue-date note."
+        }
+      ],
+      "remaining_dimension_scope": "Metadata remains partial where fields are unknown. Existing fulltext, abstract, citation-list, author cross-Work disambiguation, organization/project and Assessment queues are not completed by this identity review."
+    },
+    {
+      "pmid": "26877083",
+      "work_id": "W-D982fbc0c39deffe0",
+      "work_key": "Sturzl2016",
+      "status": "reviewed",
+      "successful_query_ids": [
+        "Q-RUN04-SEARCH-0002"
+      ],
+      "preferred_metadata": {
+        "pmid": "26877083",
+        "doi": "10.1016/j.cub.2015.12.052",
+        "title": "How Wasps Acquire and Use Views for Homing",
+        "year": 2016,
+        "publication_date": "2016-02-11",
+        "publication_date_kind": "electronic_publication_date",
+        "electronic_publication_date": "2016-02-11",
+        "issue_date": "2016-02-22",
+        "venue_abbreviation": "Curr Biol",
+        "volume": "26",
+        "issue": "4",
+        "pages": "470-482",
+        "source_page_string": "470-82",
+        "authors": [
+          {
+            "position": 1,
+            "display_name": "Wolfgang Stürzl",
+            "affiliation_numbers": [
+              1
+            ]
+          },
+          {
+            "position": 2,
+            "display_name": "Jochen Zeil",
+            "affiliation_numbers": [
+              2
+            ]
+          },
+          {
+            "position": 3,
+            "display_name": "Norbert Boeddeker",
+            "affiliation_numbers": [
+              3
+            ]
+          },
+          {
+            "position": 4,
+            "display_name": "Jan M Hemmi",
+            "affiliation_numbers": [
+              4
+            ]
+          }
+        ],
+        "publication_affiliations": [
+          {
+            "affiliation_number": 1,
+            "organization_names": [
+              "Institute of Robotics and Mechatronics",
+              "German Aerospace Center (DLR)"
+            ],
+            "country": "Germany"
+          },
+          {
+            "affiliation_number": 2,
+            "organization_names": [
+              "Research School of Biology",
+              "The Australian National University"
+            ],
+            "country": "Australia"
+          },
+          {
+            "affiliation_number": 3,
+            "organization_names": [
+              "Department of Cognitive Neuroscience",
+              "Bielefeld University"
+            ],
+            "country": "Germany"
+          },
+          {
+            "affiliation_number": 4,
+            "organization_names": [
+              "School of Animal Biology",
+              "UWA Oceans Institute",
+              "The University of Western Australia"
+            ],
+            "country": "Australia"
+          }
+        ]
+      },
+      "field_query_ids": {
+        "pmid": "Q-RUN04-SEARCH-0002",
+        "doi": "Q-RUN04-SEARCH-0002",
+        "title": "Q-RUN04-SEARCH-0002",
+        "year": "Q-RUN04-SEARCH-0002",
+        "publication_date": "Q-RUN04-SEARCH-0002",
+        "publication_date_kind": "Q-RUN04-SEARCH-0002",
+        "electronic_publication_date": "Q-RUN04-SEARCH-0002",
+        "issue_date": "Q-RUN04-SEARCH-0002",
+        "venue_abbreviation": "Q-RUN04-SEARCH-0002",
+        "volume": "Q-RUN04-SEARCH-0002",
+        "issue": "Q-RUN04-SEARCH-0002",
+        "pages": "Q-RUN04-SEARCH-0002",
+        "source_page_string": "Q-RUN04-SEARCH-0002",
+        "authors": "Q-RUN04-SEARCH-0002",
+        "publication_affiliations": "Q-RUN04-SEARCH-0002"
+      },
+      "field_source_refs": {},
+      "metadata_evidence_kind": "indexed_bibliographic_metadata",
+      "verification_status": "source_supported",
+      "canonical_identity_match": {
+        "exact_title_match_after_punctuation_normalization": true,
+        "existing_doi_matches": [
+          "W-D982fbc0c39deffe0"
+        ],
+        "exact_title_work_matches": [
+          "W-D982fbc0c39deffe0"
+        ],
+        "new_Work_required": false,
+        "merge_required": false
+      },
+      "original_identity_task": {
+        "task_id": "T-CP4-CiterIdentity-MED-26877083",
+        "entity_id": "W-D982fbc0c39deffe0",
+        "event_sequence": 2,
+        "state": "retryable_error",
+        "cursor": {
+          "cursorMark": "*",
+          "source": "MED",
+          "id": "26877083"
+        },
+        "query_ids": [
+          "Q-RUN02-ENT-0104",
+          "Q-RUN02-ENT-0198",
+          "Q-RUN03-EPMC-0001",
+          "Q-RUN03-WEB-0001",
+          "Q-RUN03-WEB-0010"
+        ]
+      },
+      "identity_task_recommendation": {
+        "state": "verified_complete",
+        "narrow_completion_scope": "This exact MED identifier is mapped to the existing Work via official PMID/DOI/title metadata.",
+        "epmc_core_success": false,
+        "identity_via_direct_pubmed_page": false,
+        "identity_via_pubmed_indexed_metadata": true,
+        "supporting_query_ids": [
+          "Q-RUN04-SEARCH-0002"
+        ]
+      },
+      "existing_byline_preserved": true,
+      "reused_byline": [
+        {
+          "position": 1,
+          "person_id": "P-R40dc8afd8903b93b",
+          "canonical_display_name": "Wolfgang Stürzl",
+          "source_display_name": "Wolfgang Stürzl",
+          "existing_organization_ids": [],
+          "preserve_person_identity_confidence": "probable",
+          "source_affiliation_numbers": [
+            1
+          ],
+          "action": "reuse_same_Work_byline_Person_ID_no_global_merge"
+        },
+        {
+          "position": 2,
+          "person_id": "P-Re83597efcb7527a3",
+          "canonical_display_name": "Jochen Zeil",
+          "source_display_name": "Jochen Zeil",
+          "existing_organization_ids": [],
+          "preserve_person_identity_confidence": "probable",
+          "source_affiliation_numbers": [
+            2
+          ],
+          "action": "reuse_same_Work_byline_Person_ID_no_global_merge"
+        },
+        {
+          "position": 3,
+          "person_id": "P-R2cc3d85bd3b07665",
+          "canonical_display_name": "Norbert Boeddeker",
+          "source_display_name": "Norbert Boeddeker",
+          "existing_organization_ids": [],
+          "preserve_person_identity_confidence": "probable",
+          "source_affiliation_numbers": [
+            3
+          ],
+          "action": "reuse_same_Work_byline_Person_ID_no_global_merge"
+        },
+        {
+          "position": 4,
+          "person_id": "P-R04c9880067c34ada",
+          "canonical_display_name": "Jan M. Hemmi",
+          "source_display_name": "Jan M Hemmi",
+          "existing_organization_ids": [],
+          "preserve_person_identity_confidence": "probable",
+          "source_affiliation_numbers": [
+            4
+          ],
+          "action": "reuse_same_Work_byline_Person_ID_no_global_merge"
+        }
+      ],
+      "new_byline_record_count_recommendation": 0,
+      "byline_recommendation": "Preserve all existing ordered Person IDs and attach work-scoped publication affiliation facts only.",
+      "publication_affiliation_facts": [
+        {
+          "affiliation_number": 1,
+          "organization_names": [
+            "Institute of Robotics and Mechatronics",
+            "German Aerospace Center (DLR)"
+          ],
+          "country": "Germany"
+        },
+        {
+          "affiliation_number": 2,
+          "organization_names": [
+            "Research School of Biology",
+            "The Australian National University"
+          ],
+          "country": "Australia"
+        },
+        {
+          "affiliation_number": 3,
+          "organization_names": [
+            "Department of Cognitive Neuroscience",
+            "Bielefeld University"
+          ],
+          "country": "Germany"
+        },
+        {
+          "affiliation_number": 4,
+          "organization_names": [
+            "School of Animal Biology",
+            "UWA Oceans Institute",
+            "The University of Western Australia"
+          ],
+          "country": "Australia"
+        }
+      ],
+      "organization_guard": "These are source-supported publication-time affiliation strings. Preserve existing Ogawa2015 organization mappings. Do not infer current employment, employment dates, ROR identities or organization hierarchy from name coincidence.",
+      "date_recommendation": {
+        "original_year": 2016,
+        "original_publication_date": "2016-02",
+        "preferred_publication_date": "2016-02-11",
+        "preferred_date_kind": "electronic_publication_date",
+        "issue_date": "2016-02-22",
+        "note_to_append": "Keep the existing journal/citation year and key. Electronic publication 2016-02-11; issue 2016-02-22.",
+        "preserve_year": true,
+        "preserve_work_key": true
+      },
+      "closable_unknown_field_tasks": [],
+      "remaining_unknown_field_tasks": [
+        {
+          "field_path": "eid",
+          "task_id": "T-Unknown-376b4d825e0a8cef",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        }
+      ],
+      "reference_resolution_ids": [],
+      "existing_version_ids": [
+        "V-W-D982fbc0c39deffe0-01"
+      ],
+      "do_not_overwrite_fields": [
+        "work_id",
+        "work_key",
+        "year",
+        "existing_Version_IDs",
+        "existing_byline_Person_IDs",
+        "existing_nonempty_venue_with_an_abbreviation",
+        "existing_publisher_or_language_when_absent_from_new_receipt",
+        "fulltext_or_abstract_status_without_separate_content_review",
+        "assessment",
+        "citation_roles"
+      ],
+      "conflicts": [],
+      "remaining_dimension_scope": "Metadata remains partial where fields are unknown. Existing fulltext, abstract, citation-list, author cross-Work disambiguation, organization/project and Assessment queues are not completed by this identity review."
+    },
+    {
+      "pmid": "26898725",
+      "work_id": "W-Rd1e5a7dad924a37d",
+      "work_key": "TempWRd1e5a7dad924a37d",
+      "status": "reviewed",
+      "successful_query_ids": [
+        "Q-RUN04-SEARCH-0004"
+      ],
+      "preferred_metadata": {
+        "pmid": "26898725",
+        "doi": "10.1007/s00359-015-1060-1",
+        "title": "Early ant trajectories: spatial behaviour before behaviourism",
+        "year": 2016,
+        "publication_date": "2016-02-22",
+        "publication_date_kind": "electronic_publication_date",
+        "electronic_publication_date": "2016-02-22",
+        "issue_date": "2016-04",
+        "venue_abbreviation": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+        "volume": "202",
+        "issue": "4",
+        "pages": "247-266",
+        "source_page_string": "247-66",
+        "authors": [
+          {
+            "position": 1,
+            "display_name": "Rüdiger Wehner",
+            "affiliation_numbers": [
+              1
+            ]
+          }
+        ],
+        "publication_affiliations": [
+          {
+            "affiliation_number": 1,
+            "organization_names": [
+              "Brain Research Institute",
+              "University of Zürich"
+            ],
+            "country": "Switzerland"
+          }
+        ]
+      },
+      "field_query_ids": {
+        "pmid": "Q-RUN04-SEARCH-0004",
+        "doi": "Q-RUN04-SEARCH-0004",
+        "title": "Q-RUN04-SEARCH-0004",
+        "year": "Q-RUN04-SEARCH-0004",
+        "publication_date": "Q-RUN04-SEARCH-0004",
+        "publication_date_kind": "Q-RUN04-SEARCH-0004",
+        "electronic_publication_date": "Q-RUN04-SEARCH-0004",
+        "issue_date": "Q-RUN04-SEARCH-0004",
+        "venue_abbreviation": "Q-RUN04-SEARCH-0004",
+        "volume": "Q-RUN04-SEARCH-0004",
+        "issue": "Q-RUN04-SEARCH-0004",
+        "pages": "Q-RUN04-SEARCH-0004",
+        "source_page_string": "Q-RUN04-SEARCH-0004",
+        "authors": "Q-RUN04-SEARCH-0004",
+        "publication_affiliations": "Q-RUN04-SEARCH-0004"
+      },
+      "field_source_refs": {},
+      "metadata_evidence_kind": "indexed_bibliographic_metadata",
+      "verification_status": "source_supported",
+      "canonical_identity_match": {
+        "exact_title_match_after_punctuation_normalization": true,
+        "existing_doi_matches": [],
+        "exact_title_work_matches": [
+          "W-Rd1e5a7dad924a37d"
+        ],
+        "new_Work_required": false,
+        "merge_required": false
+      },
+      "original_identity_task": {
+        "task_id": "T-CP4-CiterIdentity-MED-26898725",
+        "entity_id": "W-Rd1e5a7dad924a37d",
+        "event_sequence": 2,
+        "state": "retryable_error",
+        "cursor": {
+          "cursorMark": "*",
+          "source": "MED",
+          "id": "26898725"
+        },
+        "query_ids": [
+          "Q-RUN02-ENT-0104",
+          "Q-RUN02-ENT-0198",
+          "Q-RUN03-EPMC-0001",
+          "Q-RUN03-WEB-0001",
+          "Q-RUN03-WEB-0009"
+        ]
+      },
+      "identity_task_recommendation": {
+        "state": "verified_complete",
+        "narrow_completion_scope": "This exact MED identifier is mapped to the existing Work via official PMID/DOI/title metadata.",
+        "epmc_core_success": false,
+        "identity_via_direct_pubmed_page": false,
+        "identity_via_pubmed_indexed_metadata": true,
+        "supporting_query_ids": [
+          "Q-RUN04-SEARCH-0004"
+        ]
+      },
+      "existing_byline_preserved": true,
+      "reused_byline": [],
+      "new_byline_record_count_recommendation": 1,
+      "byline_recommendation": "Create only work-scoped byline Person identities after checking exact Work/DOI provenance; do not merge with any global same-name Person. No existing DOI-provenance orphan Person was found by full 20,549-Person peer review.",
+      "publication_affiliation_facts": [
+        {
+          "affiliation_number": 1,
+          "organization_names": [
+            "Brain Research Institute",
+            "University of Zürich"
+          ],
+          "country": "Switzerland"
+        }
+      ],
+      "organization_guard": "These are source-supported publication-time affiliation strings. Preserve existing Ogawa2015 organization mappings. Do not infer current employment, employment dates, ROR identities or organization hierarchy from name coincidence.",
+      "date_recommendation": {
+        "original_year": 2016,
+        "original_publication_date": "2016",
+        "preferred_publication_date": "2016-02-22",
+        "preferred_date_kind": "electronic_publication_date",
+        "issue_date": "2016-04",
+        "note_to_append": "Keep the existing journal/citation year and key. Electronic publication 2016-02-22; issue 2016-04.",
+        "preserve_year": true,
+        "preserve_work_key": true
+      },
+      "closable_unknown_field_tasks": [
+        {
+          "field_path": "authors",
+          "task_id": "T-Unknown-e0d54c1e57ff9273",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": [
+            {
+              "position": 1,
+              "display_name": "Rüdiger Wehner",
+              "affiliation_numbers": [
+                1
+              ]
+            }
+          ],
+          "query_id": "Q-RUN04-SEARCH-0004",
+          "metadata_field": "authors"
+        },
+        {
+          "field_path": "venue",
+          "task_id": "T-Unknown-947c3e774bd3496f",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+          "query_id": "Q-RUN04-SEARCH-0004",
+          "metadata_field": "venue_abbreviation"
+        },
+        {
+          "field_path": "volume",
+          "task_id": "T-Unknown-63c2b423bda43819",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "202",
+          "query_id": "Q-RUN04-SEARCH-0004",
+          "metadata_field": "volume"
+        },
+        {
+          "field_path": "number",
+          "task_id": "T-Unknown-60d2d81ef354c9a5",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "4",
+          "query_id": "Q-RUN04-SEARCH-0004",
+          "metadata_field": "issue"
+        },
+        {
+          "field_path": "doi",
+          "task_id": "T-Unknown-de480ec90130421b",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "10.1007/s00359-015-1060-1",
+          "query_id": "Q-RUN04-SEARCH-0004",
+          "metadata_field": "doi"
+        }
+      ],
+      "remaining_unknown_field_tasks": [
+        {
+          "field_path": "eid",
+          "task_id": "T-Unknown-b487266d78595978",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        },
+        {
+          "field_path": "publisher",
+          "task_id": "T-Unknown-7145887f7820404b",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        },
+        {
+          "field_path": "language",
+          "task_id": "T-Unknown-489dc19bb760f851",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        }
+      ],
+      "reference_resolution_ids": [],
+      "existing_version_ids": [
+        "V-W-Rd1e5a7dad924a37d-01"
+      ],
+      "do_not_overwrite_fields": [
+        "work_id",
+        "work_key",
+        "year",
+        "existing_Version_IDs",
+        "existing_byline_Person_IDs",
+        "existing_nonempty_venue_with_an_abbreviation",
+        "existing_publisher_or_language_when_absent_from_new_receipt",
+        "fulltext_or_abstract_status_without_separate_content_review",
+        "assessment",
+        "citation_roles"
+      ],
+      "conflicts": [],
+      "remaining_dimension_scope": "Metadata remains partial where fields are unknown. Existing fulltext, abstract, citation-list, author cross-Work disambiguation, organization/project and Assessment queues are not completed by this identity review."
+    },
+    {
+      "pmid": "26994172",
+      "work_id": "W-R6d661a159e646e16",
+      "work_key": "TempWR6d661a159e646e16",
+      "status": "reviewed",
+      "successful_query_ids": [
+        "Q-RUN04-WEB-0006"
+      ],
+      "preferred_metadata": {
+        "pmid": "26994172",
+        "doi": "10.1242/jeb.134049",
+        "title": "Head roll stabilisation in the nocturnal bull ant Myrmecia pyriformis: implications for visual navigation",
+        "publication_date": "2016-03-18",
+        "publication_date_kind": "electronic_publication_date",
+        "issue_date": "2016-05-15",
+        "electronic_publication_date": "2016-03-18",
+        "year": 2016,
+        "venue_abbreviation": "J Exp Biol",
+        "volume": "219",
+        "issue": "Pt 10",
+        "pages": "1449-1457",
+        "source_page_string": "1449-57",
+        "authors": [
+          {
+            "position": 1,
+            "display_name": "Chloé A Raderschall",
+            "affiliation_numbers": [
+              1
+            ]
+          },
+          {
+            "position": 2,
+            "display_name": "Ajay Narendra",
+            "affiliation_numbers": [
+              2
+            ]
+          },
+          {
+            "position": 3,
+            "display_name": "Jochen Zeil",
+            "affiliation_numbers": [
+              3
+            ]
+          }
+        ],
+        "publication_affiliations": [
+          {
+            "affiliation_number": 1,
+            "organization_names": [
+              "Research School of Biology",
+              "The Australian National University"
+            ],
+            "country": "Australia"
+          },
+          {
+            "affiliation_number": 2,
+            "organization_names": [
+              "Research School of Biology",
+              "The Australian National University",
+              "Department of Biological Sciences",
+              "Macquarie University"
+            ],
+            "country": "Australia"
+          },
+          {
+            "affiliation_number": 3,
+            "organization_names": [
+              "Research School of Biology",
+              "The Australian National University"
+            ],
+            "country": "Australia"
+          }
+        ]
+      },
+      "field_query_ids": {
+        "pmid": "Q-RUN04-WEB-0006",
+        "doi": "Q-RUN04-WEB-0006",
+        "title": "Q-RUN04-WEB-0006",
+        "publication_date": "Q-RUN04-WEB-0006",
+        "publication_date_kind": "Q-RUN04-WEB-0006",
+        "issue_date": "Q-RUN04-WEB-0006",
+        "electronic_publication_date": "Q-RUN04-WEB-0006",
+        "year": "Q-RUN04-WEB-0006",
+        "venue_abbreviation": "Q-RUN04-WEB-0006",
+        "volume": "Q-RUN04-WEB-0006",
+        "issue": "Q-RUN04-WEB-0006",
+        "pages": "Q-RUN04-WEB-0006",
+        "source_page_string": "Q-RUN04-WEB-0006",
+        "authors": "Q-RUN04-WEB-0006",
+        "publication_affiliations": "Q-RUN04-WEB-0006"
+      },
+      "field_source_refs": {},
+      "metadata_evidence_kind": "bibliographic_record",
+      "verification_status": "source_supported",
+      "canonical_identity_match": {
+        "exact_title_match_after_punctuation_normalization": true,
+        "existing_doi_matches": [],
+        "exact_title_work_matches": [
+          "W-R6d661a159e646e16"
+        ],
+        "new_Work_required": false,
+        "merge_required": false
+      },
+      "original_identity_task": {
+        "task_id": "T-CP4-CiterIdentity-MED-26994172",
+        "entity_id": "W-R6d661a159e646e16",
+        "event_sequence": 2,
+        "state": "retryable_error",
+        "cursor": {
+          "cursorMark": "*",
+          "source": "MED",
+          "id": "26994172"
+        },
+        "query_ids": [
+          "Q-RUN02-ENT-0104",
+          "Q-RUN02-ENT-0198",
+          "Q-RUN03-EPMC-0001",
+          "Q-RUN03-WEB-0001",
+          "Q-RUN03-WEB-0006"
+        ]
+      },
+      "identity_task_recommendation": {
+        "state": "verified_complete",
+        "narrow_completion_scope": "This exact MED identifier is mapped to the existing Work via official PMID/DOI/title metadata.",
+        "epmc_core_success": false,
+        "identity_via_direct_pubmed_page": true,
+        "identity_via_pubmed_indexed_metadata": false,
+        "supporting_query_ids": [
+          "Q-RUN04-WEB-0006"
+        ]
+      },
+      "existing_byline_preserved": true,
+      "reused_byline": [],
+      "new_byline_record_count_recommendation": 3,
+      "byline_recommendation": "Create only work-scoped byline Person identities after checking exact Work/DOI provenance; do not merge with any global same-name Person. No existing DOI-provenance orphan Person was found by full 20,549-Person peer review.",
+      "publication_affiliation_facts": [
+        {
+          "affiliation_number": 1,
+          "organization_names": [
+            "Research School of Biology",
+            "The Australian National University"
+          ],
+          "country": "Australia"
+        },
+        {
+          "affiliation_number": 2,
+          "organization_names": [
+            "Research School of Biology",
+            "The Australian National University",
+            "Department of Biological Sciences",
+            "Macquarie University"
+          ],
+          "country": "Australia"
+        },
+        {
+          "affiliation_number": 3,
+          "organization_names": [
+            "Research School of Biology",
+            "The Australian National University"
+          ],
+          "country": "Australia"
+        }
+      ],
+      "organization_guard": "These are source-supported publication-time affiliation strings. Preserve existing Ogawa2015 organization mappings. Do not infer current employment, employment dates, ROR identities or organization hierarchy from name coincidence.",
+      "date_recommendation": {
+        "original_year": 2016,
+        "original_publication_date": "2016",
+        "preferred_publication_date": "2016-03-18",
+        "preferred_date_kind": "electronic_publication_date",
+        "issue_date": "2016-05-15",
+        "note_to_append": "Keep the existing journal/citation year and key. Electronic publication 2016-03-18; issue 2016-05-15.",
+        "preserve_year": true,
+        "preserve_work_key": true
+      },
+      "closable_unknown_field_tasks": [
+        {
+          "field_path": "authors",
+          "task_id": "T-Unknown-b323e543aead28eb",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": [
+            {
+              "position": 1,
+              "display_name": "Chloé A Raderschall",
+              "affiliation_numbers": [
+                1
+              ]
+            },
+            {
+              "position": 2,
+              "display_name": "Ajay Narendra",
+              "affiliation_numbers": [
+                2
+              ]
+            },
+            {
+              "position": 3,
+              "display_name": "Jochen Zeil",
+              "affiliation_numbers": [
+                3
+              ]
+            }
+          ],
+          "query_id": "Q-RUN04-WEB-0006",
+          "metadata_field": "authors"
+        },
+        {
+          "field_path": "venue",
+          "task_id": "T-Unknown-dad930c8f5683dfa",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "J Exp Biol",
+          "query_id": "Q-RUN04-WEB-0006",
+          "metadata_field": "venue_abbreviation"
+        },
+        {
+          "field_path": "volume",
+          "task_id": "T-Unknown-3a0bf1cd1244bf52",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "219",
+          "query_id": "Q-RUN04-WEB-0006",
+          "metadata_field": "volume"
+        },
+        {
+          "field_path": "number",
+          "task_id": "T-Unknown-05f3ca9db067ba5b",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "Pt 10",
+          "query_id": "Q-RUN04-WEB-0006",
+          "metadata_field": "issue"
+        },
+        {
+          "field_path": "doi",
+          "task_id": "T-Unknown-a07117a3a312179e",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "10.1242/jeb.134049",
+          "query_id": "Q-RUN04-WEB-0006",
+          "metadata_field": "doi"
+        }
+      ],
+      "remaining_unknown_field_tasks": [
+        {
+          "field_path": "eid",
+          "task_id": "T-Unknown-dada299676dfd75f",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        },
+        {
+          "field_path": "publisher",
+          "task_id": "T-Unknown-b2c0ce4ed2e24e6f",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        },
+        {
+          "field_path": "language",
+          "task_id": "T-Unknown-8c53d25c05991c11",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        }
+      ],
+      "reference_resolution_ids": [
+        "R-CR-36fa978b023b9f54",
+        "R-CR-3c44d4bfcdd0bd08",
+        "R-CR-ed5d877cf2576ce0"
+      ],
+      "existing_version_ids": [
+        "V-W-R6d661a159e646e16-01"
+      ],
+      "do_not_overwrite_fields": [
+        "work_id",
+        "work_key",
+        "year",
+        "existing_Version_IDs",
+        "existing_byline_Person_IDs",
+        "existing_nonempty_venue_with_an_abbreviation",
+        "existing_publisher_or_language_when_absent_from_new_receipt",
+        "fulltext_or_abstract_status_without_separate_content_review",
+        "assessment",
+        "citation_roles"
+      ],
+      "conflicts": [],
+      "remaining_dimension_scope": "Metadata remains partial where fields are unknown. Existing fulltext, abstract, citation-list, author cross-Work disambiguation, organization/project and Assessment queues are not completed by this identity review."
+    },
+    {
+      "pmid": "27147991",
+      "work_id": "W-R549b18c83390cdad",
+      "work_key": "TempWR549b18c83390cdad",
+      "status": "reviewed",
+      "successful_query_ids": [
+        "Q-RUN04-WEB-0005"
+      ],
+      "preferred_metadata": {
+        "pmid": "27147991",
+        "pmcid": "PMC4829585",
+        "doi": "10.3389/fnbeh.2016.00069",
+        "title": "Ant Homing Ability Is Not Diminished When Traveling Backwards",
+        "publication_date": "2016-04-13",
+        "publication_date_kind": "publication_date_as_shown",
+        "collection_year": 2016,
+        "year": 2016,
+        "venue_abbreviation": "Front Behav Neurosci",
+        "volume": "10",
+        "article_number": "69",
+        "authors": [
+          {
+            "position": 1,
+            "display_name": "Paul B Ardin",
+            "affiliation_numbers": [
+              1
+            ]
+          },
+          {
+            "position": 2,
+            "display_name": "Michael Mangan",
+            "affiliation_numbers": [
+              1
+            ]
+          },
+          {
+            "position": 3,
+            "display_name": "Barbara Webb",
+            "affiliation_numbers": [
+              1
+            ]
+          }
+        ],
+        "publication_affiliations": [
+          {
+            "affiliation_number": 1,
+            "organization_names": [
+              "Insect Robotics Lab",
+              "School of Informatics",
+              "University of Edinburgh"
+            ],
+            "country": "United Kingdom"
+          }
+        ]
+      },
+      "field_query_ids": {
+        "pmid": "Q-RUN04-WEB-0005",
+        "pmcid": "Q-RUN04-WEB-0005",
+        "doi": "Q-RUN04-WEB-0005",
+        "title": "Q-RUN04-WEB-0005",
+        "publication_date": "Q-RUN04-WEB-0005",
+        "publication_date_kind": "Q-RUN04-WEB-0005",
+        "collection_year": "Q-RUN04-WEB-0005",
+        "year": "Q-RUN04-WEB-0005",
+        "venue_abbreviation": "Q-RUN04-WEB-0005",
+        "volume": "Q-RUN04-WEB-0005",
+        "article_number": "Q-RUN04-WEB-0005",
+        "authors": "Q-RUN04-WEB-0005",
+        "publication_affiliations": "Q-RUN04-WEB-0005"
+      },
+      "field_source_refs": {},
+      "metadata_evidence_kind": "bibliographic_record",
+      "verification_status": "source_supported",
+      "canonical_identity_match": {
+        "exact_title_match_after_punctuation_normalization": true,
+        "existing_doi_matches": [],
+        "exact_title_work_matches": [
+          "W-R549b18c83390cdad"
+        ],
+        "new_Work_required": false,
+        "merge_required": false
+      },
+      "original_identity_task": {
+        "task_id": "T-CP4-CiterIdentity-MED-27147991",
+        "entity_id": "W-R549b18c83390cdad",
+        "event_sequence": 2,
+        "state": "retryable_error",
+        "cursor": {
+          "cursorMark": "*",
+          "source": "MED",
+          "id": "27147991"
+        },
+        "query_ids": [
+          "Q-RUN02-ENT-0104",
+          "Q-RUN02-ENT-0198",
+          "Q-RUN03-EPMC-0001",
+          "Q-RUN03-WEB-0001",
+          "Q-RUN03-WEB-0005"
+        ]
+      },
+      "identity_task_recommendation": {
+        "state": "verified_complete",
+        "narrow_completion_scope": "This exact MED identifier is mapped to the existing Work via official PMID/DOI/title metadata.",
+        "epmc_core_success": false,
+        "identity_via_direct_pubmed_page": true,
+        "identity_via_pubmed_indexed_metadata": false,
+        "supporting_query_ids": [
+          "Q-RUN04-WEB-0005"
+        ]
+      },
+      "existing_byline_preserved": true,
+      "reused_byline": [],
+      "new_byline_record_count_recommendation": 3,
+      "byline_recommendation": "Create only work-scoped byline Person identities after checking exact Work/DOI provenance; do not merge with any global same-name Person. No existing DOI-provenance orphan Person was found by full 20,549-Person peer review.",
+      "publication_affiliation_facts": [
+        {
+          "affiliation_number": 1,
+          "organization_names": [
+            "Insect Robotics Lab",
+            "School of Informatics",
+            "University of Edinburgh"
+          ],
+          "country": "United Kingdom"
+        }
+      ],
+      "organization_guard": "These are source-supported publication-time affiliation strings. Preserve existing Ogawa2015 organization mappings. Do not infer current employment, employment dates, ROR identities or organization hierarchy from name coincidence.",
+      "date_recommendation": {
+        "original_year": 2016,
+        "original_publication_date": "2016",
+        "preferred_publication_date": "2016-04-13",
+        "preferred_date_kind": "publication_date_as_shown",
+        "issue_date": null,
+        "note_to_append": "Keep the existing journal/citation year and key. The selected date is publication_date_as_shown; no earlier electronic date is inferred.",
+        "preserve_year": true,
+        "preserve_work_key": true
+      },
+      "closable_unknown_field_tasks": [
+        {
+          "field_path": "authors",
+          "task_id": "T-Unknown-f8784a178a0e48ea",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": [
+            {
+              "position": 1,
+              "display_name": "Paul B Ardin",
+              "affiliation_numbers": [
+                1
+              ]
+            },
+            {
+              "position": 2,
+              "display_name": "Michael Mangan",
+              "affiliation_numbers": [
+                1
+              ]
+            },
+            {
+              "position": 3,
+              "display_name": "Barbara Webb",
+              "affiliation_numbers": [
+                1
+              ]
+            }
+          ],
+          "query_id": "Q-RUN04-WEB-0005",
+          "metadata_field": "authors"
+        },
+        {
+          "field_path": "venue",
+          "task_id": "T-Unknown-77b0963c37d1fc7e",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "Front Behav Neurosci",
+          "query_id": "Q-RUN04-WEB-0005",
+          "metadata_field": "venue_abbreviation"
+        },
+        {
+          "field_path": "volume",
+          "task_id": "T-Unknown-698c5e59c42c423c",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "10",
+          "query_id": "Q-RUN04-WEB-0005",
+          "metadata_field": "volume"
+        },
+        {
+          "field_path": "eid",
+          "task_id": "T-Unknown-35e4c69147da2b0c",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "69",
+          "query_id": "Q-RUN04-WEB-0005",
+          "metadata_field": "article_number"
+        },
+        {
+          "field_path": "doi",
+          "task_id": "T-Unknown-70b2328c33d7738a",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "10.3389/fnbeh.2016.00069",
+          "query_id": "Q-RUN04-WEB-0005",
+          "metadata_field": "doi"
+        }
+      ],
+      "remaining_unknown_field_tasks": [
+        {
+          "field_path": "number",
+          "task_id": "T-Unknown-5c7abcb6257fbebe",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        },
+        {
+          "field_path": "publisher",
+          "task_id": "T-Unknown-1669544e27d77abf",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        },
+        {
+          "field_path": "language",
+          "task_id": "T-Unknown-9f5520484bbee1fa",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        }
+      ],
+      "reference_resolution_ids": [
+        "R-CR-6041dda688262aae"
+      ],
+      "existing_version_ids": [
+        "V-W-R549b18c83390cdad-01"
+      ],
+      "do_not_overwrite_fields": [
+        "work_id",
+        "work_key",
+        "year",
+        "existing_Version_IDs",
+        "existing_byline_Person_IDs",
+        "existing_nonempty_venue_with_an_abbreviation",
+        "existing_publisher_or_language_when_absent_from_new_receipt",
+        "fulltext_or_abstract_status_without_separate_content_review",
+        "assessment",
+        "citation_roles"
+      ],
+      "conflicts": [],
+      "remaining_dimension_scope": "Metadata remains partial where fields are unknown. Existing fulltext, abstract, citation-list, author cross-Work disambiguation, organization/project and Assessment queues are not completed by this identity review.",
+      "normalization_note": "Current pages contains the same electronic article number. Populate eid from explicit metadata but preserve/audit the existing pages representation under the canonical schema; do not silently invent a page range."
+    },
+    {
+      "pmid": "27436728",
+      "work_id": "W-Df5bc290638e00b69",
+      "work_key": "Namiki2016a",
+      "status": "reviewed",
+      "successful_query_ids": [
+        "Q-RUN04-SEARCH-0001"
+      ],
+      "preferred_metadata": {
+        "pmid": "27436728",
+        "doi": "10.1016/j.cois.2016.02.009",
+        "title": "The neurobiological basis of orientation in insects: insights from the silkmoth mating dance",
+        "year": 2016,
+        "publication_date": "2016-02-22",
+        "publication_date_kind": "electronic_publication_date",
+        "electronic_publication_date": "2016-02-22",
+        "issue_date": "2016-06",
+        "venue_abbreviation": "Curr Opin Insect Sci",
+        "volume": "15",
+        "pages": "16-26",
+        "authors": [
+          {
+            "position": 1,
+            "display_name": "Shigehiro Namiki",
+            "affiliation_numbers": [
+              1
+            ]
+          },
+          {
+            "position": 2,
+            "display_name": "Ryohei Kanzaki",
+            "affiliation_numbers": [
+              2
+            ]
+          }
+        ],
+        "publication_affiliations": [
+          {
+            "affiliation_number": 1,
+            "organization_names": [
+              "Research Center for Advanced Science and Technology",
+              "The University of Tokyo"
+            ],
+            "country": "Japan"
+          },
+          {
+            "affiliation_number": 2,
+            "organization_names": [
+              "Research Center for Advanced Science and Technology",
+              "The University of Tokyo"
+            ],
+            "country": "Japan"
+          }
+        ]
+      },
+      "field_query_ids": {
+        "pmid": "Q-RUN04-SEARCH-0001",
+        "doi": "Q-RUN04-SEARCH-0001",
+        "title": "Q-RUN04-SEARCH-0001",
+        "year": "Q-RUN04-SEARCH-0001",
+        "publication_date": "Q-RUN04-SEARCH-0001",
+        "publication_date_kind": "Q-RUN04-SEARCH-0001",
+        "electronic_publication_date": "Q-RUN04-SEARCH-0001",
+        "issue_date": "Q-RUN04-SEARCH-0001",
+        "venue_abbreviation": "Q-RUN04-SEARCH-0001",
+        "volume": "Q-RUN04-SEARCH-0001",
+        "pages": "Q-RUN04-SEARCH-0001",
+        "authors": "Q-RUN04-SEARCH-0001",
+        "publication_affiliations": "Q-RUN04-SEARCH-0001"
+      },
+      "field_source_refs": {},
+      "metadata_evidence_kind": "indexed_bibliographic_metadata",
+      "verification_status": "source_supported",
+      "canonical_identity_match": {
+        "exact_title_match_after_punctuation_normalization": true,
+        "existing_doi_matches": [
+          "W-Df5bc290638e00b69"
+        ],
+        "exact_title_work_matches": [
+          "W-Df5bc290638e00b69"
+        ],
+        "new_Work_required": false,
+        "merge_required": false
+      },
+      "original_identity_task": {
+        "task_id": "T-CP4-CiterIdentity-MED-27436728",
+        "entity_id": "W-Df5bc290638e00b69",
+        "event_sequence": 2,
+        "state": "retryable_error",
+        "cursor": {
+          "cursorMark": "*",
+          "source": "MED",
+          "id": "27436728"
+        },
+        "query_ids": [
+          "Q-RUN02-ENT-0104",
+          "Q-RUN02-ENT-0198",
+          "Q-RUN03-EPMC-0001",
+          "Q-RUN03-WEB-0001",
+          "Q-RUN03-WEB-0008"
+        ]
+      },
+      "identity_task_recommendation": {
+        "state": "verified_complete",
+        "narrow_completion_scope": "This exact MED identifier is mapped to the existing Work via official PMID/DOI/title metadata.",
+        "epmc_core_success": false,
+        "identity_via_direct_pubmed_page": false,
+        "identity_via_pubmed_indexed_metadata": true,
+        "supporting_query_ids": [
+          "Q-RUN04-SEARCH-0001"
+        ]
+      },
+      "existing_byline_preserved": true,
+      "reused_byline": [
+        {
+          "position": 1,
+          "person_id": "P-Rae538aca1aeeac48",
+          "canonical_display_name": "Shigehiro Namiki",
+          "source_display_name": "Shigehiro Namiki",
+          "existing_organization_ids": [],
+          "preserve_person_identity_confidence": "probable",
+          "source_affiliation_numbers": [
+            1
+          ],
+          "action": "reuse_same_Work_byline_Person_ID_no_global_merge"
+        },
+        {
+          "position": 2,
+          "person_id": "P-Rbbe9313f64a7e31b",
+          "canonical_display_name": "Ryohei Kanzaki",
+          "source_display_name": "Ryohei Kanzaki",
+          "existing_organization_ids": [],
+          "preserve_person_identity_confidence": "probable",
+          "source_affiliation_numbers": [
+            2
+          ],
+          "action": "reuse_same_Work_byline_Person_ID_no_global_merge"
+        }
+      ],
+      "new_byline_record_count_recommendation": 0,
+      "byline_recommendation": "Preserve all existing ordered Person IDs and attach work-scoped publication affiliation facts only.",
+      "publication_affiliation_facts": [
+        {
+          "affiliation_number": 1,
+          "organization_names": [
+            "Research Center for Advanced Science and Technology",
+            "The University of Tokyo"
+          ],
+          "country": "Japan"
+        },
+        {
+          "affiliation_number": 2,
+          "organization_names": [
+            "Research Center for Advanced Science and Technology",
+            "The University of Tokyo"
+          ],
+          "country": "Japan"
+        }
+      ],
+      "organization_guard": "These are source-supported publication-time affiliation strings. Preserve existing Ogawa2015 organization mappings. Do not infer current employment, employment dates, ROR identities or organization hierarchy from name coincidence.",
+      "date_recommendation": {
+        "original_year": 2016,
+        "original_publication_date": "2016-06",
+        "preferred_publication_date": "2016-02-22",
+        "preferred_date_kind": "electronic_publication_date",
+        "issue_date": "2016-06",
+        "note_to_append": "Keep the existing journal/citation year and key. Electronic publication 2016-02-22; issue 2016-06.",
+        "preserve_year": true,
+        "preserve_work_key": true
+      },
+      "closable_unknown_field_tasks": [],
+      "remaining_unknown_field_tasks": [
+        {
+          "field_path": "number",
+          "task_id": "T-Unknown-4932843bead50d6d",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        },
+        {
+          "field_path": "eid",
+          "task_id": "T-Unknown-c4c4812a8e5473c8",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        }
+      ],
+      "reference_resolution_ids": [],
+      "existing_version_ids": [
+        "V-W-Df5bc290638e00b69-01"
+      ],
+      "do_not_overwrite_fields": [
+        "work_id",
+        "work_key",
+        "year",
+        "existing_Version_IDs",
+        "existing_byline_Person_IDs",
+        "existing_nonempty_venue_with_an_abbreviation",
+        "existing_publisher_or_language_when_absent_from_new_receipt",
+        "fulltext_or_abstract_status_without_separate_content_review",
+        "assessment",
+        "citation_roles"
+      ],
+      "conflicts": [],
+      "remaining_dimension_scope": "Metadata remains partial where fields are unknown. Existing fulltext, abstract, citation-list, author cross-Work disambiguation, organization/project and Assessment queues are not completed by this identity review."
+    },
+    {
+      "pmid": "27436729",
+      "work_id": "W-Raab0f78cce8a781f",
+      "work_key": "TempWRaab0f78cce8a781f",
+      "status": "reviewed",
+      "successful_query_ids": [
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "preferred_metadata": {
+        "pmid": "27436729",
+        "doi": "10.1016/j.cois.2016.02.011",
+        "title": "Neural mechanisms of insect navigation",
+        "year": 2016,
+        "publication_date": "2016-03-03",
+        "publication_date_kind": "electronic_publication_date",
+        "electronic_publication_date": "2016-03-03",
+        "issue_date": "2016-06",
+        "venue_abbreviation": "Curr Opin Insect Sci",
+        "volume": "15",
+        "pages": "27-39",
+        "authors": [
+          {
+            "position": 1,
+            "display_name": "Barbara Webb",
+            "affiliation_numbers": [
+              1
+            ]
+          },
+          {
+            "position": 2,
+            "display_name": "Antoine Wystrach",
+            "affiliation_numbers": [
+              2
+            ]
+          }
+        ],
+        "publication_affiliations": [
+          {
+            "affiliation_number": 1,
+            "organization_names": [
+              "School of Informatics",
+              "University of Edinburgh"
+            ],
+            "country": "United Kingdom"
+          },
+          {
+            "affiliation_number": 2,
+            "organization_names": [
+              "Centre de Recherches sur la Cognition Animale",
+              "Centre National de la Recherche Scientifique",
+              "Universite Paul Sabatier"
+            ],
+            "city": "Toulouse",
+            "country": "France"
+          }
+        ]
+      },
+      "field_query_ids": {
+        "pmid": "Q-RUN04-SEARCH-0003",
+        "doi": "Q-RUN04-SEARCH-0003",
+        "title": "Q-RUN04-SEARCH-0003",
+        "year": "Q-RUN04-SEARCH-0003",
+        "publication_date": "Q-RUN04-SEARCH-0003",
+        "publication_date_kind": "Q-RUN04-SEARCH-0003",
+        "electronic_publication_date": "Q-RUN04-SEARCH-0003",
+        "issue_date": "Q-RUN04-SEARCH-0003",
+        "venue_abbreviation": "Q-RUN04-SEARCH-0003",
+        "volume": "Q-RUN04-SEARCH-0003",
+        "pages": "Q-RUN04-SEARCH-0003",
+        "authors": "Q-RUN04-SEARCH-0003",
+        "publication_affiliations": "Q-RUN04-SEARCH-0003"
+      },
+      "field_source_refs": {},
+      "metadata_evidence_kind": "indexed_bibliographic_metadata",
+      "verification_status": "source_supported",
+      "canonical_identity_match": {
+        "exact_title_match_after_punctuation_normalization": true,
+        "existing_doi_matches": [],
+        "exact_title_work_matches": [
+          "W-Raab0f78cce8a781f"
+        ],
+        "new_Work_required": false,
+        "merge_required": false
+      },
+      "original_identity_task": {
+        "task_id": "T-CP4-CiterIdentity-MED-27436729",
+        "entity_id": "W-Raab0f78cce8a781f",
+        "event_sequence": 2,
+        "state": "retryable_error",
+        "cursor": {
+          "cursorMark": "*",
+          "source": "MED",
+          "id": "27436729"
+        },
+        "query_ids": [
+          "Q-RUN02-ENT-0104",
+          "Q-RUN02-ENT-0198",
+          "Q-RUN03-EPMC-0001",
+          "Q-RUN03-WEB-0001",
+          "Q-RUN03-WEB-0007"
+        ]
+      },
+      "identity_task_recommendation": {
+        "state": "verified_complete",
+        "narrow_completion_scope": "This exact MED identifier is mapped to the existing Work via official PMID/DOI/title metadata.",
+        "epmc_core_success": false,
+        "identity_via_direct_pubmed_page": false,
+        "identity_via_pubmed_indexed_metadata": true,
+        "supporting_query_ids": [
+          "Q-RUN04-SEARCH-0003"
+        ]
+      },
+      "existing_byline_preserved": true,
+      "reused_byline": [],
+      "new_byline_record_count_recommendation": 2,
+      "byline_recommendation": "Create only work-scoped byline Person identities after checking exact Work/DOI provenance; do not merge with any global same-name Person. No existing DOI-provenance orphan Person was found by full 20,549-Person peer review.",
+      "publication_affiliation_facts": [
+        {
+          "affiliation_number": 1,
+          "organization_names": [
+            "School of Informatics",
+            "University of Edinburgh"
+          ],
+          "country": "United Kingdom"
+        },
+        {
+          "affiliation_number": 2,
+          "organization_names": [
+            "Centre de Recherches sur la Cognition Animale",
+            "Centre National de la Recherche Scientifique",
+            "Universite Paul Sabatier"
+          ],
+          "city": "Toulouse",
+          "country": "France"
+        }
+      ],
+      "organization_guard": "These are source-supported publication-time affiliation strings. Preserve existing Ogawa2015 organization mappings. Do not infer current employment, employment dates, ROR identities or organization hierarchy from name coincidence.",
+      "date_recommendation": {
+        "original_year": 2016,
+        "original_publication_date": "2016",
+        "preferred_publication_date": "2016-03-03",
+        "preferred_date_kind": "electronic_publication_date",
+        "issue_date": "2016-06",
+        "note_to_append": "Keep the existing journal/citation year and key. Electronic publication 2016-03-03; issue 2016-06.",
+        "preserve_year": true,
+        "preserve_work_key": true
+      },
+      "closable_unknown_field_tasks": [
+        {
+          "field_path": "authors",
+          "task_id": "T-Unknown-47573d59308ef7c5",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": [
+            {
+              "position": 1,
+              "display_name": "Barbara Webb",
+              "affiliation_numbers": [
+                1
+              ]
+            },
+            {
+              "position": 2,
+              "display_name": "Antoine Wystrach",
+              "affiliation_numbers": [
+                2
+              ]
+            }
+          ],
+          "query_id": "Q-RUN04-SEARCH-0003",
+          "metadata_field": "authors"
+        },
+        {
+          "field_path": "venue",
+          "task_id": "T-Unknown-c5a886e55e140369",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "Curr Opin Insect Sci",
+          "query_id": "Q-RUN04-SEARCH-0003",
+          "metadata_field": "venue_abbreviation"
+        },
+        {
+          "field_path": "volume",
+          "task_id": "T-Unknown-7701628a08214755",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "15",
+          "query_id": "Q-RUN04-SEARCH-0003",
+          "metadata_field": "volume"
+        },
+        {
+          "field_path": "doi",
+          "task_id": "T-Unknown-764e0ec3a472d5f1",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "10.1016/j.cois.2016.02.011",
+          "query_id": "Q-RUN04-SEARCH-0003",
+          "metadata_field": "doi"
+        }
+      ],
+      "remaining_unknown_field_tasks": [
+        {
+          "field_path": "number",
+          "task_id": "T-Unknown-352eec7a79ea7b18",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        },
+        {
+          "field_path": "eid",
+          "task_id": "T-Unknown-e216da42f1c16433",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        },
+        {
+          "field_path": "publisher",
+          "task_id": "T-Unknown-ed0bb5d9eb0a8c30",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        },
+        {
+          "field_path": "language",
+          "task_id": "T-Unknown-7b168fccfe50dde4",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        }
+      ],
+      "reference_resolution_ids": [
+        "R-CR-02d30df6f9944d40",
+        "R-CR-150817d424b00086",
+        "R-CR-2ecb200a6afd8ae8",
+        "R-CR-5b9636e6ee6fe4fe",
+        "R-CR-65cd034ca81a311a",
+        "R-CR-806ddbf87711af18",
+        "R-CR-dd25bb995c5f7006"
+      ],
+      "existing_version_ids": [
+        "V-W-Raab0f78cce8a781f-01"
+      ],
+      "do_not_overwrite_fields": [
+        "work_id",
+        "work_key",
+        "year",
+        "existing_Version_IDs",
+        "existing_byline_Person_IDs",
+        "existing_nonempty_venue_with_an_abbreviation",
+        "existing_publisher_or_language_when_absent_from_new_receipt",
+        "fulltext_or_abstract_status_without_separate_content_review",
+        "assessment",
+        "citation_roles"
+      ],
+      "conflicts": [],
+      "remaining_dimension_scope": "Metadata remains partial where fields are unknown. Existing fulltext, abstract, citation-list, author cross-Work disambiguation, organization/project and Assessment queues are not completed by this identity review."
+    },
+    {
+      "pmid": "28193813",
+      "work_id": "W-R5c6074f5a61518d4",
+      "work_key": "TempWR5c6074f5a61518d4",
+      "status": "reviewed",
+      "successful_query_ids": [
+        "Q-RUN04-WEB-0004"
+      ],
+      "preferred_metadata": {
+        "pmid": "28193813",
+        "pmcid": "PMC5312018",
+        "doi": "10.1098/rstb.2016.0068",
+        "title": "Subtle changes in the landmark panorama disrupt visual navigation in a nocturnal bull ant",
+        "publication_date": "2017-04-05",
+        "publication_date_kind": "issue_date_as_shown",
+        "year": 2017,
+        "venue_abbreviation": "Philos Trans R Soc Lond B Biol Sci",
+        "volume": "372",
+        "issue": "1717",
+        "article_number": "20160068",
+        "authors": [
+          {
+            "position": 1,
+            "display_name": "Ajay Narendra",
+            "affiliation_numbers": [
+              1
+            ]
+          },
+          {
+            "position": 2,
+            "display_name": "Fiorella Ramirez-Esquivel",
+            "affiliation_numbers": [
+              2
+            ]
+          }
+        ],
+        "publication_affiliations": [
+          {
+            "affiliation_number": 1,
+            "organization_names": [
+              "Department of Biological Sciences",
+              "Macquarie University"
+            ],
+            "country": "Australia"
+          },
+          {
+            "affiliation_number": 2,
+            "organization_names": [
+              "Research School of Biology",
+              "The Australian National University"
+            ],
+            "country": "Australia"
+          }
+        ]
+      },
+      "field_query_ids": {
+        "pmid": "Q-RUN04-WEB-0004",
+        "pmcid": "Q-RUN04-WEB-0004",
+        "doi": "Q-RUN04-WEB-0004",
+        "title": "Q-RUN04-WEB-0004",
+        "publication_date": "Q-RUN04-WEB-0004",
+        "publication_date_kind": "Q-RUN04-WEB-0004",
+        "year": "Q-RUN04-WEB-0004",
+        "venue_abbreviation": "Q-RUN04-WEB-0004",
+        "volume": "Q-RUN04-WEB-0004",
+        "issue": "Q-RUN04-WEB-0004",
+        "article_number": "Q-RUN04-WEB-0004",
+        "authors": "Q-RUN04-WEB-0004",
+        "publication_affiliations": "Q-RUN04-WEB-0004"
+      },
+      "field_source_refs": {},
+      "metadata_evidence_kind": "bibliographic_record",
+      "verification_status": "source_supported",
+      "canonical_identity_match": {
+        "exact_title_match_after_punctuation_normalization": true,
+        "existing_doi_matches": [],
+        "exact_title_work_matches": [
+          "W-R5c6074f5a61518d4"
+        ],
+        "new_Work_required": false,
+        "merge_required": false
+      },
+      "original_identity_task": {
+        "task_id": "T-CP4-CiterIdentity-MED-28193813",
+        "entity_id": "W-R5c6074f5a61518d4",
+        "event_sequence": 2,
+        "state": "retryable_error",
+        "cursor": {
+          "cursorMark": "*",
+          "source": "MED",
+          "id": "28193813"
+        },
+        "query_ids": [
+          "Q-RUN02-ENT-0104",
+          "Q-RUN02-ENT-0198",
+          "Q-RUN03-EPMC-0001",
+          "Q-RUN03-WEB-0001",
+          "Q-RUN03-WEB-0003"
+        ]
+      },
+      "identity_task_recommendation": {
+        "state": "verified_complete",
+        "narrow_completion_scope": "This exact MED identifier is mapped to the existing Work via official PMID/DOI/title metadata.",
+        "epmc_core_success": false,
+        "identity_via_direct_pubmed_page": true,
+        "identity_via_pubmed_indexed_metadata": false,
+        "supporting_query_ids": [
+          "Q-RUN04-WEB-0004"
+        ]
+      },
+      "existing_byline_preserved": true,
+      "reused_byline": [],
+      "new_byline_record_count_recommendation": 2,
+      "byline_recommendation": "Create only work-scoped byline Person identities after checking exact Work/DOI provenance; do not merge with any global same-name Person. No existing DOI-provenance orphan Person was found by full 20,549-Person peer review.",
+      "publication_affiliation_facts": [
+        {
+          "affiliation_number": 1,
+          "organization_names": [
+            "Department of Biological Sciences",
+            "Macquarie University"
+          ],
+          "country": "Australia"
+        },
+        {
+          "affiliation_number": 2,
+          "organization_names": [
+            "Research School of Biology",
+            "The Australian National University"
+          ],
+          "country": "Australia"
+        }
+      ],
+      "organization_guard": "These are source-supported publication-time affiliation strings. Preserve existing Ogawa2015 organization mappings. Do not infer current employment, employment dates, ROR identities or organization hierarchy from name coincidence.",
+      "date_recommendation": {
+        "original_year": 2017,
+        "original_publication_date": "2017",
+        "preferred_publication_date": "2017-04-05",
+        "preferred_date_kind": "issue_date_as_shown",
+        "issue_date": "2017-04-05",
+        "note_to_append": "Keep the existing journal/citation year and key. The selected date is issue_date_as_shown; no earlier electronic date is inferred.",
+        "preserve_year": true,
+        "preserve_work_key": true
+      },
+      "closable_unknown_field_tasks": [
+        {
+          "field_path": "authors",
+          "task_id": "T-Unknown-f0bf66247cfa79cc",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": [
+            {
+              "position": 1,
+              "display_name": "Ajay Narendra",
+              "affiliation_numbers": [
+                1
+              ]
+            },
+            {
+              "position": 2,
+              "display_name": "Fiorella Ramirez-Esquivel",
+              "affiliation_numbers": [
+                2
+              ]
+            }
+          ],
+          "query_id": "Q-RUN04-WEB-0004",
+          "metadata_field": "authors"
+        },
+        {
+          "field_path": "venue",
+          "task_id": "T-Unknown-0c04b454e3fdec8c",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "Philos Trans R Soc Lond B Biol Sci",
+          "query_id": "Q-RUN04-WEB-0004",
+          "metadata_field": "venue_abbreviation"
+        },
+        {
+          "field_path": "volume",
+          "task_id": "T-Unknown-3bec5618a0b9bbb8",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "372",
+          "query_id": "Q-RUN04-WEB-0004",
+          "metadata_field": "volume"
+        },
+        {
+          "field_path": "number",
+          "task_id": "T-Unknown-0c8e7d76593c4bdc",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "1717",
+          "query_id": "Q-RUN04-WEB-0004",
+          "metadata_field": "issue"
+        },
+        {
+          "field_path": "eid",
+          "task_id": "T-Unknown-10a0d36b2eed7f2e",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "20160068",
+          "query_id": "Q-RUN04-WEB-0004",
+          "metadata_field": "article_number"
+        },
+        {
+          "field_path": "doi",
+          "task_id": "T-Unknown-82ca9110f990116c",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "Explicit selected bibliographic evidence supports this field; close only after the corresponding field/byline is integrated.",
+          "value": "10.1098/rstb.2016.0068",
+          "query_id": "Q-RUN04-WEB-0004",
+          "metadata_field": "doi"
+        }
+      ],
+      "remaining_unknown_field_tasks": [
+        {
+          "field_path": "publisher",
+          "task_id": "T-Unknown-e876883d93357911",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        },
+        {
+          "field_path": "language",
+          "task_id": "T-Unknown-dc01e3c0d29d6ecf",
+          "latest_event_sequence": 1,
+          "current_state": "pending",
+          "reason": "No explicit value for this field in the selected successful metadata; preserve existing unknown/review task."
+        }
+      ],
+      "reference_resolution_ids": [
+        "R-CR-ea55490ba8b76419"
+      ],
+      "existing_version_ids": [
+        "V-W-R5c6074f5a61518d4-01"
+      ],
+      "do_not_overwrite_fields": [
+        "work_id",
+        "work_key",
+        "year",
+        "existing_Version_IDs",
+        "existing_byline_Person_IDs",
+        "existing_nonempty_venue_with_an_abbreviation",
+        "existing_publisher_or_language_when_absent_from_new_receipt",
+        "fulltext_or_abstract_status_without_separate_content_review",
+        "assessment",
+        "citation_roles"
+      ],
+      "conflicts": [],
+      "remaining_dimension_scope": "Metadata remains partial where fields are unknown. Existing fulltext, abstract, citation-list, author cross-Work disambiguation, organization/project and Assessment queues are not completed by this identity review.",
+      "normalization_note": "Current pages contains the same electronic article number. Populate eid from explicit metadata but preserve/audit the existing pages representation under the canonical schema; do not silently invent a page range."
+    }
+  ],
+  "reference_resolution_ids": [
+    "R-CR-02d30df6f9944d40",
+    "R-CR-150817d424b00086",
+    "R-CR-2ecb200a6afd8ae8",
+    "R-CR-36fa978b023b9f54",
+    "R-CR-3c44d4bfcdd0bd08",
+    "R-CR-5b9636e6ee6fe4fe",
+    "R-CR-6041dda688262aae",
+    "R-CR-65cd034ca81a311a",
+    "R-CR-806ddbf87711af18",
+    "R-CR-a3cc6372cc069be7",
+    "R-CR-dd25bb995c5f7006",
+    "R-CR-ea55490ba8b76419",
+    "R-CR-ed5d877cf2576ce0"
+  ],
+  "reference_reviews": [
+    {
+      "occurrence_id": "R-CR-02d30df6f9944d40",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-Df325f490eea3ef7e",
+      "citing_key": "Currier2020",
+      "citing_doi": "10.1016/j.conb.2019.11.017",
+      "citing_version_id": "V-W-Df325f490eea3ef7e-01",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "cited_key": "TempWRaab0f78cce8a781f",
+      "target_doi": "10.1016/j.cois.2016.02.011",
+      "target_pmid": "27436729",
+      "candidate_ids": [
+        "10.1016/j.cois.2016.02.011"
+      ],
+      "reference_label": "10.1016/j.conb.2019.11.017_bib0005",
+      "raw_reference": "{\"DOI\":\"10.1016/j.cois.2016.02.011\",\"article-title\":\"Neural mechanisms of insect navigation\",\"author\":\"Webb\",\"doi-asserted-by\":\"crossref\",\"first-page\":\"27\",\"journal-title\":\"Curr Opin Insect Sci\",\"key\":\"10.1016/j.conb.2019.11.017_bib0005\",\"volume\":\"15\",\"year\":\"2016\"}",
+      "raw_fingerprint": "f6c4afc4b9fa8d473546cb5534882bbca7398b6ce63bd880b465c2c0934b96ed",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.1016/j.cois.2016.02.011",
+        "article-title": "Neural mechanisms of insect navigation",
+        "author": "Webb",
+        "doi-asserted-by": "crossref",
+        "first-page": "27",
+        "journal-title": "Curr Opin Insect Sci",
+        "key": "10.1016/j.conb.2019.11.017_bib0005",
+        "volume": "15",
+        "year": "2016"
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.1016/j.conb.2019.11.017#ordinal=1;key=10.1016/j.conb.2019.11.017_bib0005",
+        "version": "Q-RUN01-00250",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00250",
+      "source_query_receipt_sha256": "c8a47f561ca434d1fe80b02149b73de723544fb76c580d60a920384a46fcc5e2",
+      "source_response_body_sha256": "4810939addad4ae2ff5c1eec2e2597b81e48f8be704872353a64f646a61bf750",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 20,
+      "target_identity_query_ids": [
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": true,
+        "author_alignment": true,
+        "issue_year_alignment": true
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact DOI plus consistent title/first-author/issue-year in retained deposited bibliography; citation role and body context not reviewed.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Currier2020",
+        "TempWRaab0f78cce8a781f"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-Df325f490eea3ef7e",
+      "related_task_latest_event_sequence": 2,
+      "unresolved_occurrences_for_citing_work_before": 57,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 56,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    },
+    {
+      "occurrence_id": "R-CR-150817d424b00086",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-D0e452f7c7f0913e9",
+      "citing_key": "Wechsler2023",
+      "citing_doi": "10.1242/jeb.200261",
+      "citing_version_id": "V-W-D0e452f7c7f0913e9-01",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "cited_key": "TempWRaab0f78cce8a781f",
+      "target_doi": "10.1016/j.cois.2016.02.011",
+      "target_pmid": "27436729",
+      "candidate_ids": [
+        "10.1016/j.cois.2016.02.011"
+      ],
+      "reference_label": "2023011314335353800_JEB200261C200",
+      "raw_reference": "{\"DOI\":\"10.1016/j.cois.2016.02.011\",\"article-title\":\"Neural mechanisms of insect navigation\",\"author\":\"Webb\",\"doi-asserted-by\":\"publisher\",\"first-page\":\"27\",\"journal-title\":\"Curr. Opin. Insect Sci.\",\"key\":\"2023011314335353800_JEB200261C200\",\"volume\":\"15\",\"year\":\"2016\"}",
+      "raw_fingerprint": "bddfb8d2adf7dd5ca6afaf677ed819619ae11cd0d835615afdcf9894f8a907d1",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.1016/j.cois.2016.02.011",
+        "article-title": "Neural mechanisms of insect navigation",
+        "author": "Webb",
+        "doi-asserted-by": "publisher",
+        "first-page": "27",
+        "journal-title": "Curr. Opin. Insect Sci.",
+        "key": "2023011314335353800_JEB200261C200",
+        "volume": "15",
+        "year": "2016"
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.1242/jeb.200261#ordinal=200;key=2023011314335353800_JEB200261C200",
+        "version": "Q-RUN01-00303",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00303",
+      "source_query_receipt_sha256": "c823be39d294a22869ee9b33b41b6d5159f8b9e6bb73ee67bfef2d9d87a56804",
+      "source_response_body_sha256": "425c6186c5ecd28ef290d9f1c5be81a507f4fc44d1b621e43133b3f5c0da603f",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 19,
+      "target_identity_query_ids": [
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": true,
+        "author_alignment": true,
+        "issue_year_alignment": true
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact DOI plus consistent title/first-author/issue-year in retained deposited bibliography; citation role and body context not reviewed.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Wechsler2023",
+        "TempWRaab0f78cce8a781f"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-D0e452f7c7f0913e9",
+      "related_task_latest_event_sequence": 2,
+      "unresolved_occurrences_for_citing_work_before": 177,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 176,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    },
+    {
+      "occurrence_id": "R-CR-2ecb200a6afd8ae8",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-Dd68c4a56e44c2590",
+      "citing_key": "Madhav2024",
+      "citing_doi": "10.1038/s41593-024-01681-9",
+      "citing_version_id": "V-W-Dd68c4a56e44c2590-01",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "cited_key": "TempWRaab0f78cce8a781f",
+      "target_doi": "10.1016/j.cois.2016.02.011",
+      "target_pmid": "27436729",
+      "candidate_ids": [
+        "10.1016/j.cois.2016.02.011"
+      ],
+      "reference_label": "1681_CR39",
+      "raw_reference": "{\"DOI\":\"10.1016/j.cois.2016.02.011\",\"author\":\"B Webb\",\"doi-asserted-by\":\"publisher\",\"first-page\":\"27\",\"journal-title\":\"Curr. Opin. Insect Sci.\",\"key\":\"1681_CR39\",\"unstructured\":\"Webb, B. & Wystrach, A. Neural mechanisms of insect navigation. Curr. Opin. Insect Sci. 15, 27–39 (2016).\",\"volume\":\"15\",\"year\":\"2016\"}",
+      "raw_fingerprint": "c4084c8a25a000c3952043607499002570a96079784bee6b4a7df3993dcc7739",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.1016/j.cois.2016.02.011",
+        "author": "B Webb",
+        "doi-asserted-by": "publisher",
+        "first-page": "27",
+        "journal-title": "Curr. Opin. Insect Sci.",
+        "key": "1681_CR39",
+        "unstructured": "Webb, B. & Wystrach, A. Neural mechanisms of insect navigation. Curr. Opin. Insect Sci. 15, 27–39 (2016).",
+        "volume": "15",
+        "year": "2016"
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.1038/s41593-024-01681-9#ordinal=39;key=1681_CR39",
+        "version": "Q-RUN01-00105",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00105",
+      "source_query_receipt_sha256": "37355b37318340e77478d10c4e65785a52b19606cc1e278c5171d074723f110d",
+      "source_response_body_sha256": "9884d6473299d4f1b211c0796746cd6605cb60d39cfeb90e328d9e4582c8c45a",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 20,
+      "target_identity_query_ids": [
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": true,
+        "author_alignment": true,
+        "issue_year_alignment": true
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact DOI plus consistent title/first-author/issue-year in retained deposited bibliography; citation role and body context not reviewed.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Madhav2024",
+        "TempWRaab0f78cce8a781f"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-Dd68c4a56e44c2590",
+      "related_task_latest_event_sequence": 1,
+      "unresolved_occurrences_for_citing_work_before": 63,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 62,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    },
+    {
+      "occurrence_id": "R-CR-36fa978b023b9f54",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-D9666259bb252a197",
+      "citing_key": "Odenthal2021",
+      "citing_doi": "10.3389/fnbeh.2020.610029",
+      "citing_version_id": "V-W-D9666259bb252a197-01",
+      "cited_work_id": "W-R6d661a159e646e16",
+      "cited_key": "TempWR6d661a159e646e16",
+      "target_doi": "10.1242/jeb.134049",
+      "target_pmid": "26994172",
+      "candidate_ids": [
+        "10.1242/jeb.134049"
+      ],
+      "reference_label": "B34",
+      "raw_reference": "{\"DOI\":\"10.1242/jeb.134049\",\"article-title\":\"Head roll stabilisation in the nocturnal bull ant Myrmecia pyriformis: implications for visual navigation\",\"author\":\"Raderschall\",\"doi-asserted-by\":\"publisher\",\"first-page\":\"1449\",\"journal-title\":\"J. Exp. Biol.\",\"key\":\"B34\",\"volume\":\"219\",\"year\":\"2016\"}",
+      "raw_fingerprint": "9bbbc050aad153a1282628f8b3555f4c148be791f30d39bf7a4acdbd3f08a09f",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.1242/jeb.134049",
+        "article-title": "Head roll stabilisation in the nocturnal bull ant Myrmecia pyriformis: implications for visual navigation",
+        "author": "Raderschall",
+        "doi-asserted-by": "publisher",
+        "first-page": "1449",
+        "journal-title": "J. Exp. Biol.",
+        "key": "B34",
+        "volume": "219",
+        "year": "2016"
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.3389/fnbeh.2020.610029#ordinal=34;key=B34",
+        "version": "Q-RUN01-00313",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00313",
+      "source_query_receipt_sha256": "cc9f6a328d01ca7f74df185620d319fe51493a78f3d315f61a8e9763d2f520ab",
+      "source_response_body_sha256": "5f398b8d2825d2250c0ca378f31c501f9ce8692d5be237482c3d930cca1af88e",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 16,
+      "target_identity_query_ids": [
+        "Q-RUN04-WEB-0006"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": true,
+        "author_alignment": true,
+        "issue_year_alignment": true
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact DOI plus consistent title/first-author/issue-year in retained deposited bibliography; citation role and body context not reviewed.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Odenthal2021",
+        "TempWR6d661a159e646e16"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-D9666259bb252a197",
+      "related_task_latest_event_sequence": 2,
+      "unresolved_occurrences_for_citing_work_before": 39,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 38,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    },
+    {
+      "occurrence_id": "R-CR-3c44d4bfcdd0bd08",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-D5ed4b706e3c127ff",
+      "citing_key": "Doussot2021",
+      "citing_doi": "10.3389/fnbeh.2020.606590",
+      "citing_version_id": "V-W-D5ed4b706e3c127ff-01",
+      "cited_work_id": "W-R6d661a159e646e16",
+      "cited_key": "TempWR6d661a159e646e16",
+      "target_doi": "10.1242/jeb.134049",
+      "target_pmid": "26994172",
+      "candidate_ids": [
+        "10.1242/jeb.134049"
+      ],
+      "reference_label": "B53",
+      "raw_reference": "{\"DOI\":\"10.1242/jeb.134049\",\"article-title\":\"Head roll stabilisation in the nocturnal bull ant Myrmecia pyriformis: implications for visual navigation\",\"author\":\"Raderschall\",\"doi-asserted-by\":\"publisher\",\"first-page\":\"1449\",\"journal-title\":\"J. Exp. Biol.\",\"key\":\"B53\",\"volume\":\"219\",\"year\":\"2016\"}",
+      "raw_fingerprint": "eda3498aba3c61992f296e44727539b8cbaed47a460d1bc91133ee96c903495a",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.1242/jeb.134049",
+        "article-title": "Head roll stabilisation in the nocturnal bull ant Myrmecia pyriformis: implications for visual navigation",
+        "author": "Raderschall",
+        "doi-asserted-by": "publisher",
+        "first-page": "1449",
+        "journal-title": "J. Exp. Biol.",
+        "key": "B53",
+        "volume": "219",
+        "year": "2016"
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.3389/fnbeh.2020.606590#ordinal=53;key=B53",
+        "version": "Q-RUN01-00313",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00313",
+      "source_query_receipt_sha256": "cc9f6a328d01ca7f74df185620d319fe51493a78f3d315f61a8e9763d2f520ab",
+      "source_response_body_sha256": "5f398b8d2825d2250c0ca378f31c501f9ce8692d5be237482c3d930cca1af88e",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 16,
+      "target_identity_query_ids": [
+        "Q-RUN04-WEB-0006"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": true,
+        "author_alignment": true,
+        "issue_year_alignment": true
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact DOI plus consistent title/first-author/issue-year in retained deposited bibliography; citation role and body context not reviewed.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Doussot2021",
+        "TempWR6d661a159e646e16"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-D5ed4b706e3c127ff",
+      "related_task_latest_event_sequence": 2,
+      "unresolved_occurrences_for_citing_work_before": 41,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 40,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    },
+    {
+      "occurrence_id": "R-CR-5b9636e6ee6fe4fe",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-D40ff2e9387285a1f",
+      "citing_key": "Serres2017",
+      "citing_doi": "10.1016/j.asd.2017.06.003",
+      "citing_version_id": "V-W-D40ff2e9387285a1f-01",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "cited_key": "TempWRaab0f78cce8a781f",
+      "target_doi": "10.1016/j.cois.2016.02.011",
+      "target_pmid": "27436729",
+      "candidate_ids": [
+        "10.1016/j.cois.2016.02.011"
+      ],
+      "reference_label": "10.1016/j.asd.2017.06.003_bib136",
+      "raw_reference": "{\"DOI\":\"10.1016/j.cois.2016.02.011\",\"article-title\":\"Neural mechanisms of insect navigation\",\"author\":\"Webb\",\"doi-asserted-by\":\"crossref\",\"first-page\":\"27\",\"journal-title\":\"Curr. Opin. Insect Sci.\",\"key\":\"10.1016/j.asd.2017.06.003_bib136\",\"volume\":\"15\",\"year\":\"2016\"}",
+      "raw_fingerprint": "13e0b4d301e5a0453acef3b025c54b3e847681dbbc2e61049a69265d9026af37",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.1016/j.cois.2016.02.011",
+        "article-title": "Neural mechanisms of insect navigation",
+        "author": "Webb",
+        "doi-asserted-by": "crossref",
+        "first-page": "27",
+        "journal-title": "Curr. Opin. Insect Sci.",
+        "key": "10.1016/j.asd.2017.06.003_bib136",
+        "volume": "15",
+        "year": "2016"
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.1016/j.asd.2017.06.003#ordinal=136;key=10.1016/j.asd.2017.06.003_bib136",
+        "version": "Q-RUN01-00250",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00250",
+      "source_query_receipt_sha256": "c8a47f561ca434d1fe80b02149b73de723544fb76c580d60a920384a46fcc5e2",
+      "source_response_body_sha256": "4810939addad4ae2ff5c1eec2e2597b81e48f8be704872353a64f646a61bf750",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 20,
+      "target_identity_query_ids": [
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": true,
+        "author_alignment": true,
+        "issue_year_alignment": true
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact DOI plus consistent title/first-author/issue-year in retained deposited bibliography; citation role and body context not reviewed.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Serres2017",
+        "TempWRaab0f78cce8a781f"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-D40ff2e9387285a1f",
+      "related_task_latest_event_sequence": 1,
+      "unresolved_occurrences_for_citing_work_before": 81,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 80,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    },
+    {
+      "occurrence_id": "R-CR-6041dda688262aae",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-Dbbcdbe70bf29af03",
+      "citing_key": "Lyu2022",
+      "citing_doi": "10.1038/s41586-021-04067-0",
+      "citing_version_id": "V-W-Dbbcdbe70bf29af03-01",
+      "cited_work_id": "W-R549b18c83390cdad",
+      "cited_key": "TempWR549b18c83390cdad",
+      "target_doi": "10.3389/fnbeh.2016.00069",
+      "target_pmid": "27147991",
+      "candidate_ids": [
+        "10.3389/fnbeh.2016.00069"
+      ],
+      "reference_label": "4067_CR17",
+      "raw_reference": "{\"DOI\":\"10.3389/fnbeh.2016.00069\",\"doi-asserted-by\":\"crossref\",\"key\":\"4067_CR17\",\"unstructured\":\"Ardin, P. B., Mangan, M. & Webb, B. Ant homing ability is not diminished when traveling backwards. Front. Behav. Neurosci. 10, 69 (2016).\"}",
+      "raw_fingerprint": "dcb03e5340339d2c711ea76c8281a18864b19e0a5de4ae372eb9e46f4c2ae745",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.3389/fnbeh.2016.00069",
+        "doi-asserted-by": "crossref",
+        "key": "4067_CR17",
+        "unstructured": "Ardin, P. B., Mangan, M. & Webb, B. Ant homing ability is not diminished when traveling backwards. Front. Behav. Neurosci. 10, 69 (2016)."
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.1038/s41586-021-04067-0#ordinal=17;key=4067_CR17",
+        "version": "Q-RUN01-00104",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00104",
+      "source_query_receipt_sha256": "bc8fb8ef59a7118de675e33380443ecdf16e15c67ef9c82283f1a535a108c896",
+      "source_response_body_sha256": "b19504e69f4ff052f78e73cc20b0fbcd813a4b4e5d531ded08393ca21ac50e39",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 20,
+      "target_identity_query_ids": [
+        "Q-RUN04-WEB-0005"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": true,
+        "author_alignment": true,
+        "issue_year_alignment": true
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact DOI plus consistent title/first-author/issue-year in retained deposited bibliography; citation role and body context not reviewed.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Lyu2022",
+        "TempWR549b18c83390cdad"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-Dbbcdbe70bf29af03",
+      "related_task_latest_event_sequence": 2,
+      "unresolved_occurrences_for_citing_work_before": 29,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 28,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    },
+    {
+      "occurrence_id": "R-CR-65cd034ca81a311a",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-D0f5e53ca30b3a9ea",
+      "citing_key": "Egelhaaf2023",
+      "citing_doi": "10.1007/s00359-022-01610-w",
+      "citing_version_id": "V-W-D0f5e53ca30b3a9ea-01",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "cited_key": "TempWRaab0f78cce8a781f",
+      "target_doi": "10.1016/j.cois.2016.02.011",
+      "target_pmid": "27436729",
+      "candidate_ids": [
+        "10.1016/j.cois.2016.02.011"
+      ],
+      "reference_label": "1610_CR163",
+      "raw_reference": "{\"DOI\":\"10.1016/j.cois.2016.02.011\",\"author\":\"B Webb\",\"doi-asserted-by\":\"publisher\",\"first-page\":\"27\",\"journal-title\":\"Curr Opin Insect Sci\",\"key\":\"1610_CR163\",\"unstructured\":\"Webb B, Wystrach A (2016) Neural mechanisms of insect navigation. Curr Opin Insect Sci 15:27–39\",\"volume\":\"15\",\"year\":\"2016\"}",
+      "raw_fingerprint": "a1f2bd48586f0f0352238c6d792035c92ea3f1eeccf09c08f851d39e987802e2",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.1016/j.cois.2016.02.011",
+        "author": "B Webb",
+        "doi-asserted-by": "publisher",
+        "first-page": "27",
+        "journal-title": "Curr Opin Insect Sci",
+        "key": "1610_CR163",
+        "unstructured": "Webb B, Wystrach A (2016) Neural mechanisms of insect navigation. Curr Opin Insect Sci 15:27–39",
+        "volume": "15",
+        "year": "2016"
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.1007/s00359-022-01610-w#ordinal=163;key=1610_CR163",
+        "version": "Q-RUN01-00236",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00236",
+      "source_query_receipt_sha256": "c3e57ea64fd385e1843ef9e66f5a5e1a79db0dcd8dceb303f4d42264dbe8ce6b",
+      "source_response_body_sha256": "74f7ef2010fa45e2e101a1bd37b0312bbcf826f61b4d3940a4d95dba9729b4c8",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 20,
+      "target_identity_query_ids": [
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": true,
+        "author_alignment": true,
+        "issue_year_alignment": true
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact DOI plus consistent title/first-author/issue-year in retained deposited bibliography; citation role and body context not reviewed.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Egelhaaf2023",
+        "TempWRaab0f78cce8a781f"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-D0f5e53ca30b3a9ea",
+      "related_task_latest_event_sequence": 2,
+      "unresolved_occurrences_for_citing_work_before": 67,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 66,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    },
+    {
+      "occurrence_id": "R-CR-806ddbf87711af18",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-D0516f32ef83ece28",
+      "citing_key": "Egelhaaf2025",
+      "citing_doi": "10.1007/s00359-025-01734-9",
+      "citing_version_id": "V-W-D0516f32ef83ece28-01",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "cited_key": "TempWRaab0f78cce8a781f",
+      "target_doi": "10.1016/j.cois.2016.02.011",
+      "target_pmid": "27436729",
+      "candidate_ids": [
+        "10.1016/j.cois.2016.02.011"
+      ],
+      "reference_label": "1734_CR130",
+      "raw_reference": "{\"DOI\":\"10.1016/j.cois.2016.02.011\",\"author\":\"B Webb\",\"doi-asserted-by\":\"publisher\",\"first-page\":\"27\",\"journal-title\":\"Curr Opin Insect Sci\",\"key\":\"1734_CR130\",\"unstructured\":\"Webb B, Wystrach A (2016) Neural mechanisms of insect navigation. Curr Opin Insect Sci 15:27–39. https://doi.org/10.1016/j.cois.2016.02.011\",\"volume\":\"15\",\"year\":\"2016\"}",
+      "raw_fingerprint": "e40d4e0da5e3d832aa0b21d014636426163710fcb4ede588ad0bc609ae0928d0",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.1016/j.cois.2016.02.011",
+        "author": "B Webb",
+        "doi-asserted-by": "publisher",
+        "first-page": "27",
+        "journal-title": "Curr Opin Insect Sci",
+        "key": "1734_CR130",
+        "unstructured": "Webb B, Wystrach A (2016) Neural mechanisms of insect navigation. Curr Opin Insect Sci 15:27–39. https://doi.org/10.1016/j.cois.2016.02.011",
+        "volume": "15",
+        "year": "2016"
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.1007/s00359-025-01734-9#ordinal=130;key=1734_CR130",
+        "version": "Q-RUN01-00236",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00236",
+      "source_query_receipt_sha256": "c3e57ea64fd385e1843ef9e66f5a5e1a79db0dcd8dceb303f4d42264dbe8ce6b",
+      "source_response_body_sha256": "74f7ef2010fa45e2e101a1bd37b0312bbcf826f61b4d3940a4d95dba9729b4c8",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 20,
+      "target_identity_query_ids": [
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": true,
+        "author_alignment": true,
+        "issue_year_alignment": true
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact DOI plus consistent title/first-author/issue-year in retained deposited bibliography; citation role and body context not reviewed.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Egelhaaf2025",
+        "TempWRaab0f78cce8a781f"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-D0516f32ef83ece28",
+      "related_task_latest_event_sequence": 3,
+      "unresolved_occurrences_for_citing_work_before": 98,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 97,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    },
+    {
+      "occurrence_id": "R-CR-a3cc6372cc069be7",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-De94a10dc73154fb5",
+      "citing_key": "Taylor2018",
+      "citing_doi": "10.1101/380527",
+      "citing_version_id": "V-W-De94a10dc73154fb5-01",
+      "cited_work_id": "W-R6c60f443a13cd0ad",
+      "cited_key": "TempWR6c60f443a13cd0ad",
+      "target_doi": "10.1007/s00359-015-1052-1",
+      "target_pmid": "26582183",
+      "candidate_ids": [
+        "10.1007/s00359-015-1052-1"
+      ],
+      "reference_label": "2019072202503329000_380527v1.75",
+      "raw_reference": "{\"DOI\":\"10.1007/s00359-015-1052-1\",\"doi-asserted-by\":\"publisher\",\"key\":\"2019072202503329000_380527v1.75\"}",
+      "raw_fingerprint": "218dfe567b0c801c935f530243f44c9b738d5b11d6b8f64255366d8856d95f26",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.1007/s00359-015-1052-1",
+        "doi-asserted-by": "publisher",
+        "key": "2019072202503329000_380527v1.75"
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.1101/380527#ordinal=75;key=2019072202503329000_380527v1.75",
+        "version": "Q-RUN01-00281",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00281",
+      "source_query_receipt_sha256": "256a47ef7387936e200d4ba1bbd90a84abac3fb0f2d81d249b49df2166ef1466",
+      "source_response_body_sha256": "6890bab1c41e0dde886153f61c92d1974ff7de732c7c94c8b76bc3ee837ffce9",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 20,
+      "target_identity_query_ids": [
+        "Q-RUN04-SEARCH-0005"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": null,
+        "author_alignment": null,
+        "issue_year_alignment": null
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact publisher-asserted DOI only; title, authors and year absent in the deposited reference. Resolve the unique target identity but do not claim bibliography-text corroboration or fulltext context.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Taylor2018",
+        "TempWR6c60f443a13cd0ad"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-De94a10dc73154fb5",
+      "related_task_latest_event_sequence": 2,
+      "unresolved_occurrences_for_citing_work_before": 65,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 64,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    },
+    {
+      "occurrence_id": "R-CR-dd25bb995c5f7006",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-D5000aca86e25cd69",
+      "citing_key": "Mauss2020",
+      "citing_doi": "10.1016/j.conb.2019.10.007",
+      "citing_version_id": "V-W-D5000aca86e25cd69-01",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "cited_key": "TempWRaab0f78cce8a781f",
+      "target_doi": "10.1016/j.cois.2016.02.011",
+      "target_pmid": "27436729",
+      "candidate_ids": [
+        "10.1016/j.cois.2016.02.011"
+      ],
+      "reference_label": "10.1016/j.conb.2019.10.007_bib0010",
+      "raw_reference": "{\"DOI\":\"10.1016/j.cois.2016.02.011\",\"article-title\":\"Neural mechanisms of insect navigation\",\"author\":\"Webb\",\"doi-asserted-by\":\"crossref\",\"first-page\":\"27\",\"journal-title\":\"Curr Opin Insect Sci\",\"key\":\"10.1016/j.conb.2019.10.007_bib0010\",\"volume\":\"15\",\"year\":\"2016\"}",
+      "raw_fingerprint": "16844f6fb7923224e1fdbc1e330e1051331cbf50147f4d001cd1924fe72d5504",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.1016/j.cois.2016.02.011",
+        "article-title": "Neural mechanisms of insect navigation",
+        "author": "Webb",
+        "doi-asserted-by": "crossref",
+        "first-page": "27",
+        "journal-title": "Curr Opin Insect Sci",
+        "key": "10.1016/j.conb.2019.10.007_bib0010",
+        "volume": "15",
+        "year": "2016"
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.1016/j.conb.2019.10.007#ordinal=2;key=10.1016/j.conb.2019.10.007_bib0010",
+        "version": "Q-RUN01-00096",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00096",
+      "source_query_receipt_sha256": "167eaa430c765f2831a8d52fdf28e00641bec24c8013b4ccd0e382807122cf57",
+      "source_response_body_sha256": "983999eadd0825dc80d9d2c2b0983634e1998d19e8278ee18b1c190e43c8cf15",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 20,
+      "target_identity_query_ids": [
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": true,
+        "author_alignment": true,
+        "issue_year_alignment": true
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact DOI plus consistent title/first-author/issue-year in retained deposited bibliography; citation role and body context not reviewed.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Mauss2020",
+        "TempWRaab0f78cce8a781f"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-D5000aca86e25cd69",
+      "related_task_latest_event_sequence": 1,
+      "unresolved_occurrences_for_citing_work_before": 11,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 10,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    },
+    {
+      "occurrence_id": "R-CR-ea55490ba8b76419",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-D27e8e3a6693efb07",
+      "citing_key": "Eckel2023",
+      "citing_doi": "10.3389/fnbeh.2023.1155223",
+      "citing_version_id": "V-W-D27e8e3a6693efb07-01",
+      "cited_work_id": "W-R5c6074f5a61518d4",
+      "cited_key": "TempWR5c6074f5a61518d4",
+      "target_doi": "10.1098/rstb.2016.0068",
+      "target_pmid": "28193813",
+      "candidate_ids": [
+        "10.1098/rstb.2016.0068"
+      ],
+      "reference_label": "B32",
+      "raw_reference": "{\"DOI\":\"10.1098/rstb.2016.0068\",\"article-title\":\"Subtle changes in the landmark panorama disrupt visual navigation in a nocturnal bull ant.\",\"author\":\"Narendra\",\"doi-asserted-by\":\"publisher\",\"journal-title\":\"Philos. Trans. R. Soc. Lond. B Biol. Sci.\",\"key\":\"B32\",\"volume\":\"372\",\"year\":\"2017\"}",
+      "raw_fingerprint": "a48c464e514a171f8ff2b79f91cff3ac5639f709eb23c43ba3a5e587e1d95cb6",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.1098/rstb.2016.0068",
+        "article-title": "Subtle changes in the landmark panorama disrupt visual navigation in a nocturnal bull ant.",
+        "author": "Narendra",
+        "doi-asserted-by": "publisher",
+        "journal-title": "Philos. Trans. R. Soc. Lond. B Biol. Sci.",
+        "key": "B32",
+        "volume": "372",
+        "year": "2017"
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.3389/fnbeh.2023.1155223#ordinal=32;key=B32",
+        "version": "Q-RUN01-00460",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00460",
+      "source_query_receipt_sha256": "f26d8a859987f939c0360c645b79ad8e39eccc46260ca3bfd20e2a06a5583a79",
+      "source_response_body_sha256": "bfdf53e31896dc862ed38fc45fb809ff45ad40ac4700e23f48e18b39e0bac04d",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 20,
+      "target_identity_query_ids": [
+        "Q-RUN04-WEB-0004"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": true,
+        "author_alignment": true,
+        "issue_year_alignment": true
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact DOI plus consistent title/first-author/issue-year in retained deposited bibliography; citation role and body context not reviewed.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Eckel2023",
+        "TempWR5c6074f5a61518d4"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-D27e8e3a6693efb07",
+      "related_task_latest_event_sequence": 2,
+      "unresolved_occurrences_for_citing_work_before": 39,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 38,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    },
+    {
+      "occurrence_id": "R-CR-ed5d877cf2576ce0",
+      "action": "resolve_existing_occurrence",
+      "citing_work_id": "W-D18532d66e4e2f0a8",
+      "citing_key": "Pritchard2018",
+      "citing_doi": "10.3758/s13420-018-0314-5",
+      "citing_version_id": "V-W-D18532d66e4e2f0a8-01",
+      "cited_work_id": "W-R6d661a159e646e16",
+      "cited_key": "TempWR6d661a159e646e16",
+      "target_doi": "10.1242/jeb.134049",
+      "target_pmid": "26994172",
+      "candidate_ids": [
+        "10.1242/jeb.134049"
+      ],
+      "reference_label": "314_CR91",
+      "raw_reference": "{\"DOI\":\"10.1242/jeb.134049\",\"author\":\"CA Raderschall\",\"doi-asserted-by\":\"publisher\",\"first-page\":\"1449\",\"journal-title\":\"The Journal of Experimental Biology\",\"key\":\"314_CR91\",\"unstructured\":\"Raderschall, C. A., Narendra, A., & Zeil, J. (2016). Head roll stabilisation in the nocturnal bull ant Myrmecia pyriformis: Implications for visual navigation. The Journal of Experimental Biology, 219, 1449-1457. https://doi.org/10.1242/jeb.134049\",\"volume\":\"219\",\"year\":\"2016\"}",
+      "raw_fingerprint": "db3aa32ada91f396add04c6e361a4b3c005a05c01f6f905064231cd369669546",
+      "raw_bibliographic_metadata": {
+        "DOI": "10.1242/jeb.134049",
+        "author": "CA Raderschall",
+        "doi-asserted-by": "publisher",
+        "first-page": "1449",
+        "journal-title": "The Journal of Experimental Biology",
+        "key": "314_CR91",
+        "unstructured": "Raderschall, C. A., Narendra, A., & Zeil, J. (2016). Head roll stabilisation in the nocturnal bull ant Myrmecia pyriformis: Implications for visual navigation. The Journal of Experimental Biology, 219, 1449-1457. https://doi.org/10.1242/jeb.134049",
+        "volume": "219",
+        "year": "2016"
+      },
+      "source": {
+        "source_id": "crossref",
+        "identifier": "10.3758/s13420-018-0314-5#ordinal=91;key=314_CR91",
+        "version": "Q-RUN01-00322",
+        "verification_status": "source_supported"
+      },
+      "source_query_id": "Q-RUN01-00322",
+      "source_query_receipt_sha256": "62f4b4b902aa76aeb79adf166fe1ce6b70769f4ec6a2112e3a6093f2446ec35a",
+      "source_response_body_sha256": "45c1a7bb62da900b033dd6192b0d4b0a3fd8699689f4a415fee9480a933988e9",
+      "source_response_kind": "crossref_list",
+      "source_response_returned_count": 14,
+      "target_identity_query_ids": [
+        "Q-RUN04-WEB-0006"
+      ],
+      "checks": {
+        "candidate_doi_matches_target": true,
+        "target_doi_unique_after_supplement": true,
+        "citing_work_exists": true,
+        "citing_version_owned_by_citing_work": true,
+        "source_identifier_names_citing_doi": true,
+        "source_query_successful": true,
+        "citing_doi_in_saved_source_query_result": true,
+        "raw_fingerprint_matches": true,
+        "existing_cited_endpoint_is_unresolved": true,
+        "existing_edge_pair_absent": true,
+        "title_alignment": true,
+        "author_alignment": true,
+        "issue_year_alignment": true
+      },
+      "identity_confidence_recommendation": "confirmed",
+      "verification_status_recommendation": "source_supported",
+      "citation_roles": [],
+      "citation_context_status": "not_reviewed",
+      "qualification": "Exact DOI plus consistent title/first-author/issue-year in retained deposited bibliography; citation role and body context not reviewed.",
+      "edge_action": "add_source_supported_cites_edge_if_pair_still_absent",
+      "edge_dedup_key": [
+        "Pritchard2018",
+        "TempWR6d661a159e646e16"
+      ],
+      "related_reference_identity_task_id": "T-ReferenceIdentity-W-D18532d66e4e2f0a8",
+      "related_task_latest_event_sequence": 2,
+      "unresolved_occurrences_for_citing_work_before": 97,
+      "unresolved_occurrences_for_citing_work_after_this_single_resolution": 96,
+      "related_task_recommendation": "Remove only this occurrence from the retained unresolved queue, recalculate the remaining count/cursor and keep other pending references; do not declare complete bibliography coverage."
+    }
+  ],
+  "manual_activities": [
+    {
+      "activity_id": "MR-RUN04-ID-25994678",
+      "activity_type": "work_identity_review",
+      "work_id": "W-Dbfce205be4b6d9df",
+      "pmid": "25994678",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN04-WEB-0003"
+      ],
+      "scope": "Exact DOI/PMID/title mapping, ordered byline, existing ID preservation and publication-date semantics. Independent peer review of the same item is not a second unit."
+    },
+    {
+      "activity_id": "MR-RUN04-ID-26582183",
+      "activity_type": "work_identity_review",
+      "work_id": "W-R6c60f443a13cd0ad",
+      "pmid": "26582183",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN04-SEARCH-0005"
+      ],
+      "scope": "Exact DOI/PMID/title mapping, ordered byline, existing ID preservation and publication-date semantics. Independent peer review of the same item is not a second unit."
+    },
+    {
+      "activity_id": "MR-RUN04-ID-26877083",
+      "activity_type": "work_identity_review",
+      "work_id": "W-D982fbc0c39deffe0",
+      "pmid": "26877083",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN04-SEARCH-0002"
+      ],
+      "scope": "Exact DOI/PMID/title mapping, ordered byline, existing ID preservation and publication-date semantics. Independent peer review of the same item is not a second unit."
+    },
+    {
+      "activity_id": "MR-RUN04-ID-26898725",
+      "activity_type": "work_identity_review",
+      "work_id": "W-Rd1e5a7dad924a37d",
+      "pmid": "26898725",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN04-SEARCH-0004"
+      ],
+      "scope": "Exact DOI/PMID/title mapping, ordered byline, existing ID preservation and publication-date semantics. Independent peer review of the same item is not a second unit."
+    },
+    {
+      "activity_id": "MR-RUN04-ID-26994172",
+      "activity_type": "work_identity_review",
+      "work_id": "W-R6d661a159e646e16",
+      "pmid": "26994172",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN04-WEB-0006"
+      ],
+      "scope": "Exact DOI/PMID/title mapping, ordered byline, existing ID preservation and publication-date semantics. Independent peer review of the same item is not a second unit."
+    },
+    {
+      "activity_id": "MR-RUN04-ID-27147991",
+      "activity_type": "work_identity_review",
+      "work_id": "W-R549b18c83390cdad",
+      "pmid": "27147991",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN04-WEB-0005"
+      ],
+      "scope": "Exact DOI/PMID/title mapping, ordered byline, existing ID preservation and publication-date semantics. Independent peer review of the same item is not a second unit."
+    },
+    {
+      "activity_id": "MR-RUN04-ID-27436728",
+      "activity_type": "work_identity_review",
+      "work_id": "W-Df5bc290638e00b69",
+      "pmid": "27436728",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN04-SEARCH-0001"
+      ],
+      "scope": "Exact DOI/PMID/title mapping, ordered byline, existing ID preservation and publication-date semantics. Independent peer review of the same item is not a second unit."
+    },
+    {
+      "activity_id": "MR-RUN04-ID-27436729",
+      "activity_type": "work_identity_review",
+      "work_id": "W-Raab0f78cce8a781f",
+      "pmid": "27436729",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "scope": "Exact DOI/PMID/title mapping, ordered byline, existing ID preservation and publication-date semantics. Independent peer review of the same item is not a second unit."
+    },
+    {
+      "activity_id": "MR-RUN04-ID-28193813",
+      "activity_type": "work_identity_review",
+      "work_id": "W-R5c6074f5a61518d4",
+      "pmid": "28193813",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN04-WEB-0004"
+      ],
+      "scope": "Exact DOI/PMID/title mapping, ordered byline, existing ID preservation and publication-date semantics. Independent peer review of the same item is not a second unit."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-02d30df6f9944d40",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-02d30df6f9944d40",
+      "work_id": "W-Df325f490eea3ef7e",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00250",
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-150817d424b00086",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-150817d424b00086",
+      "work_id": "W-D0e452f7c7f0913e9",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00303",
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-2ecb200a6afd8ae8",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-2ecb200a6afd8ae8",
+      "work_id": "W-Dd68c4a56e44c2590",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00105",
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-36fa978b023b9f54",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-36fa978b023b9f54",
+      "work_id": "W-D9666259bb252a197",
+      "cited_work_id": "W-R6d661a159e646e16",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00313",
+        "Q-RUN04-WEB-0006"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-3c44d4bfcdd0bd08",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-3c44d4bfcdd0bd08",
+      "work_id": "W-D5ed4b706e3c127ff",
+      "cited_work_id": "W-R6d661a159e646e16",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00313",
+        "Q-RUN04-WEB-0006"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-5b9636e6ee6fe4fe",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-5b9636e6ee6fe4fe",
+      "work_id": "W-D40ff2e9387285a1f",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00250",
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-6041dda688262aae",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-6041dda688262aae",
+      "work_id": "W-Dbbcdbe70bf29af03",
+      "cited_work_id": "W-R549b18c83390cdad",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00104",
+        "Q-RUN04-WEB-0005"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-65cd034ca81a311a",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-65cd034ca81a311a",
+      "work_id": "W-D0f5e53ca30b3a9ea",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00236",
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-806ddbf87711af18",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-806ddbf87711af18",
+      "work_id": "W-D0516f32ef83ece28",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00236",
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-a3cc6372cc069be7",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-a3cc6372cc069be7",
+      "work_id": "W-De94a10dc73154fb5",
+      "cited_work_id": "W-R6c60f443a13cd0ad",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00281",
+        "Q-RUN04-SEARCH-0005"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-dd25bb995c5f7006",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-dd25bb995c5f7006",
+      "work_id": "W-D5000aca86e25cd69",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00096",
+        "Q-RUN04-SEARCH-0003"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-ea55490ba8b76419",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-ea55490ba8b76419",
+      "work_id": "W-D27e8e3a6693efb07",
+      "cited_work_id": "W-R5c6074f5a61518d4",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00460",
+        "Q-RUN04-WEB-0004"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    },
+    {
+      "activity_id": "MR-RUN04-REF-R-CR-ed5d877cf2576ce0",
+      "activity_type": "reference_occurrence_identity_review",
+      "occurrence_id": "R-CR-ed5d877cf2576ce0",
+      "work_id": "W-D18532d66e4e2f0a8",
+      "cited_work_id": "W-R6d661a159e646e16",
+      "reviewed_at_utc": "2026-11-26T16:44:51.862355Z",
+      "manual_review_units": 1,
+      "query_ids": [
+        "Q-RUN01-00322",
+        "Q-RUN04-WEB-0006"
+      ],
+      "scope": "Retained raw DOI/reference, bibliography fields where present, citing/version/source-query provenance and existing edge-pair check; body citation role not reviewed."
+    }
+  ],
+  "peer_review": {
+    "reviewer": "cp6_identity_peer_review",
+    "scope": "Full 5,085-Work and 20,549-Person identity/byline comparison; nine selected successful receipts; no network and no file writes.",
+    "findings": "No duplicate DOI/title conflict. Three existing bylines preserve eleven Person IDs. Six blank bylines need fifteen Work-scoped Person records; no same-DOI orphan Person found. Global homonym merging is not supported.",
+    "counting": "Covered the same nine Work identity items; not counted again."
+  },
+  "shared_source_query_check": {
+    "query_id": "Q-RUN01-00313",
+    "query_kind": "http_get_crossref_list",
+    "saved_returned_count": 16,
+    "distinct_citing_dois": [
+      "10.3389/fnbeh.2020.606590",
+      "10.3389/fnbeh.2020.610029"
+    ],
+    "distinct_occurrence_ids": [
+      "R-CR-3c44d4bfcdd0bd08",
+      "R-CR-36fa978b023b9f54"
+    ],
+    "conclusion": "A single successful DOI-filter batch returned both citing Works. Their version/ordinal/reference keys and occurrence IDs differ; both occurrences and both edge pairs must be retained."
+  },
+  "reference_matching_policy": "Match candidate_ids or the DOI field/actual unstructured citation text. Do not match a citing DOI embedded in Crossref reference.key, source.identifier or source URL. Match existing edges by citing_key/cited_key, not only by Work IDs.",
+  "query_audit_qualification": "Failed source-access receipts remain failures and their unknown counts remain unknown. Indexed search receipts have visible search-hit counts but unknown source total and pagination; query-audit completion remains partial independently of target identity-task closure.",
+  "next_queue": [
+    {
+      "kind": "existing_unknown_fields",
+      "count": 20,
+      "action": "Retain each recorded unknown field task and existing metadata/content review queues; no permanent cutoff."
+    },
+    {
+      "kind": "cross_work_Person_disambiguation",
+      "action": "Retain existing identity confidence and authoritative-identifier review tasks; fifteen proposed byline Person records are article-scoped."
+    },
+    {
+      "kind": "citation_context",
+      "count": 13,
+      "action": "Retain or create original-fulltext context review tasks for the thirteen source-supported deposited-reference edges; no role inferred."
+    },
+    {
+      "kind": "search_frontier",
+      "action": "All visible search hits are preserved in the five synced search receipts; non-target hits require deduplication and scope review before any new Work import; out-of-domain hits were not admitted."
+    },
+    {
+      "kind": "project_funding_lead",
+      "query_id": "Q-RUN04-SEARCH-0003",
+      "action": "Check existing MINIMAL/Bayesian ants project records and official original acknowledgement before adding a funding relation."
+    }
+  ],
+  "license_note": "Bibliographic facts, retained reference metadata and source locators only; no source abstract/fulltext, credentials or contact addresses are republished."
+}
