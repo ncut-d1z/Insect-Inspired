@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-11-26T16:16:17.503775Z",
+  "scope": "Syntax, runtime dependency availability, exact CP5 Git baseline and isolated supplemental-veto checks only; no full CP6 audit/export/UI execution.",
+  "python_syntax": [
+    {
+      "path": "audit_cp6.py",
+      "syntax_passed": true
+    },
+    {
+      "path": "check_determinism.py",
+      "syntax_passed": true
+    }
+  ],
+  "javascript_syntax_passed": true,
+  "playwright_module": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+  "baseline_records": 69,
+  "protected_union": 31,
+  "manual_insufficient": 9,
+  "counter_evidence": 23,
+  "frozen_files": 8,
+  "isolated_baseline_checks": [
+    {
+      "case": "unchanged_CP5_records_and_eight_historical_files_pass",
+      "passed": true,
+      "counters": {
+        "cp5_assessments_compared": 69,
+        "assertions": 154,
+        "cp5_assessments_byte_preserved": 69,
+        "cp5_manual_rejections_preserved": 9,
+        "cp5_manual_counterevidence_preserved": 23,
+        "cp5_frozen_files_byte_preserved": 8
+      }
+    },
+    {
+      "case": "in_memory_CP5_counterevidence_change_is_rejected",
+      "passed": true,
+      "observed_error_categories": [
+        "cp5_assessment_record_changed"
+      ]
+    }
+  ],
+  "canonical_writes": false,
+  "research_requests": 0,
+  "full_audit_executed": false,
+  "historical_s19_policy": "Unchanged inherited sole CP4 exception; no additional exception."
+}

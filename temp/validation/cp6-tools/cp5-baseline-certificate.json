@@ -1,0 +1,90 @@
+{
+  "source_commit": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+  "source_tree": "27b8ac91e5e86fca891dc24e0f08134aaab96ebd",
+  "manifest_sha256": "97e1286420002f40bcf599c350b3c96081eb7dc2dff35c11179b7c7d1e099bf6",
+  "logical_sha256": "9eff3da3ef8a4e72418693f0882c8204ae97ac3e644f089434421768fe9e2828",
+  "logical_bytes": 3554350,
+  "baseline_records": 69,
+  "active_records": 69,
+  "insufficient_ids": [
+    "A-IT2A-N02-L08-01",
+    "A-P6-S09-L06-direction_hypothesis",
+    "A-S01-L02-01",
+    "A-S02-L07-01",
+    "AS-RUN02-Jung2011-L07-state-dependent-tuning",
+    "AS-RUN02-Longden2010-L07-positive-speed-information",
+    "AS-RUN02-Shoemaker2005-L07-scene-invariance-candidate",
+    "AS-S17-L07-plateau-suggestion",
+    "AS-nearness2026-L01-relative-nearness-candidate"
+  ],
+  "counter_evidence_ids": [
+    "A-IT2A-N01-L02-01",
+    "A-IT2A-N05-L03-02",
+    "A-P6-B201-L03-brightness_dynamics",
+    "A-P6-B203-L04-partial_flow",
+    "A-P6-B203-L06-direction_speed",
+    "A-P6-B204-L04-world_motion_rejection",
+    "A-P6-B205-L03-dynamic_tuning",
+    "A-P6-S11-L03-adaptation_constraint",
+    "A-P6-S13-L04-dynamic_limits",
+    "A-S01-L02-01",
+    "A-S07-L05-02",
+    "AS-RUN03-Longden2010-L03-onset-latency",
+    "AS-S15-L06-scale-gauge",
+    "AS-S16-L06-mixed-outdoor",
+    "AS-S19-L05-baseline-receptive-field",
+    "AS-S19-L07-baseline-plateau",
+    "AS-S20-L06-precursor-scale",
+    "AS-clutter2019-L01-obstacle-selective-pooling",
+    "AS-contrast2022-L02-contrast-tti",
+    "AS-energy2026-L05-mode-sensing-preprint",
+    "AS-energy2026-L08-flight-coupling-preprint",
+    "AS-pool2021-L01-metric-depth",
+    "AS-pool2021-L06-imu-metric-speed"
+  ],
+  "protected_union": 31,
+  "frozen_files": [
+    {
+      "path": "temp/snapshots/checkpoints/CP-0001.json",
+      "bytes": 132109,
+      "sha256": "eeb15790d9c2006ac4fd1cd8c2d1ec26d43b56cc62fb3d084b15452d6214e4d1"
+    },
+    {
+      "path": "temp/snapshots/checkpoints/CP-0002.json",
+      "bytes": 132229,
+      "sha256": "eb2fa4f2c32b39e03ed844fab8c42149a2ca51f9927fe72b07de77484a6d7fd2"
+    },
+    {
+      "path": "temp/snapshots/checkpoints/CP-0003.json",
+      "bytes": 39823075,
+      "sha256": "d671e41d72412c4785a61513b47421235011f4fb3d9ec6bfe8f799da3ff08f10"
+    },
+    {
+      "path": "temp/snapshots/checkpoints/CP-0004.json",
+      "bytes": 51101569,
+      "sha256": "4ba1a26755f2e370b64a9bae336e3cd78961637e2e6dbcd9cbe8b80e064668fd"
+    },
+    {
+      "path": "temp/snapshots/checkpoints/CP-0005.json",
+      "bytes": 51156691,
+      "sha256": "ed0fa6a00066a82d1a9635cf6306b74a1982d3659911ded42c4087ddc443e270"
+    },
+    {
+      "path": "temp/snapshots/scope.json",
+      "bytes": 2376299,
+      "sha256": "45150b8374103fa15e2d2e16626c86ad884126006d0ceab99eafab41589838e9"
+    },
+    {
+      "path": "temp/snapshots/scopes/SCOPE-0001.json",
+      "bytes": 2376299,
+      "sha256": "45150b8374103fa15e2d2e16626c86ad884126006d0ceab99eafab41589838e9"
+    },
+    {
+      "path": "temp/seed-manifest.jsonl",
+      "bytes": 12007,
+      "sha256": "f8da5ca1a64e494867937c1686b1db8e3b07ea01026a1acbd9ef7ffaf9e57b34"
+    }
+  ],
+  "rule": "All 69 complete Assessment records and their original JSONL line bytes remain unchanged; new distinct claims use all inherited gates.",
+  "additional_exceptions_allowed": 0
+}

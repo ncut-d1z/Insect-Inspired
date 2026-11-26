@@ -1,0 +1,97 @@
+{
+  "prepared_at_utc": "2026-11-26T16:16:17.503775Z",
+  "scope_id": "SCOPE-0001",
+  "run_id": "RUN-0004",
+  "checkpoint_id": "CP-0006",
+  "baseline_commit": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+  "baseline_tree": "27b8ac91e5e86fca891dc24e0f08134aaab96ebd",
+  "dependencies": [
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/audit_cp5.py",
+      "bytes": 7523,
+      "sha256": "e79371b595da703382b5d754d81eb91c7653a8815b89731021171c95da34ea93"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/export_run.py",
+      "bytes": 23906,
+      "sha256": "f6f69f641c512ba46210290fbfd3723bd89710ff62fdde775b9e22d086521623"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/render_html.py",
+      "bytes": 53440,
+      "sha256": "89946ab939c16942d8bb69cac4220e1df499094f24539fc14c5729329d1a2c37"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/index-base.css",
+      "bytes": 4999,
+      "sha256": "88cbec7c0c4c7ffc51049fdcd29f575eaab74abe7da9b718a1a8d7cee59da021"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/cp4-assessments.jsonl",
+      "bytes": 3518021,
+      "sha256": "80429e385bce83bbd7e5a42f2aac417b8afb39253b731b3eb4098b3f401eb6df"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_qa/cp4-assessment-baseline.json",
+      "bytes": 1996,
+      "sha256": "f6d208a673d2d440491edbe158a382bf0f9380f9648bf375141feec0fcb1a18d"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp4_qa/audit_cp4.py",
+      "bytes": 10908,
+      "sha256": "2df055077bb33ec6ee908ddab6b785d5b1f2f5cfe38ce8cbcd73fac8d30b01c2"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp4_qa/explicit-manual-reassessment-evidence.json",
+      "bytes": 6036,
+      "sha256": "2326bf4aa991fe1b990a93eeacbe1b6d3d3e833db59aa15f4b8c21f873806f88"
+    },
+    {
+      "path": "/workspace/scratch/9d487ee78414/p3p6_work/audit_run.py",
+      "bytes": 67549,
+      "sha256": "bce5f6b8387dce5d9d8c6c56bf38695ff6ad9b729f2f8c1461c5925aa052c2d9"
+    },
+    {
+      "path": "/workspace/scratch/9d487ee78414/p3p6_work/storage.py",
+      "bytes": 3112,
+      "sha256": "c2ec74208b22b338d25700ce61f4f8cc272ec66b3a53eca5bccdd748e5071cbd"
+    }
+  ],
+  "prepared_files": [
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp6_qa/RUN.md",
+      "bytes": 4995,
+      "sha256": "4d74bce247b1548ebc590bbac3a954861a68f43dffda63921109984c8195e209"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp6_qa/audit_cp6.py",
+      "bytes": 8790,
+      "sha256": "0b044eef00b4ff534d9785dd4593bbd7abab4187d6a54f3d0aada8416d9d706c"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp6_qa/check_determinism.py",
+      "bytes": 2541,
+      "sha256": "16ba4c449e6004e726aeea9a63661173af6952493614884c413d0b5f9c3ac4d3"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp6_qa/cp5-baseline-certificate.json",
+      "bytes": 3275,
+      "sha256": "a18644d1a8b5b58ba4d29d20d7d5aa031b16590b33e8b00648726c9c58790b58"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp6_qa/html-smoke.mjs",
+      "bytes": 6082,
+      "sha256": "974cf0b7b68ae526d61b9351f118b907df46ce4968c454c971d1b716a8dc1939"
+    },
+    {
+      "path": "/workspace/scratch/2e518600ca4c/cp6_qa/preflight.json",
+      "bytes": 1487,
+      "sha256": "a125dbaaa992c946e768804cd7f1fd12ee3c92b91e502b90ed8b0422acfd453e"
+    }
+  ],
+  "copy_changes": {
+    "check_determinism.py": "Only CP6 labels/output directory/report name; exporters continue to use unchanged cp5_qa files.",
+    "html-smoke.mjs": "Only checkpoint_id changed from CP-0005 to CP-0006; original ten checks retained."
+  },
+  "full_validation_not_yet_run": true
+}
