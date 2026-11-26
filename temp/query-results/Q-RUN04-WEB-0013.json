@@ -1,0 +1,49 @@
+{
+  "query_id": "Q-RUN04-WEB-0013",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "europepmc",
+  "entity_id": "W-Df5bc290638e00b69",
+  "endpoint_or_url": "https://europepmc.org/article/MED/27436728",
+  "transport": "web_retrieval",
+  "queried_at_utc": "2026-11-26T16:25:27.025Z",
+  "completed_at_utc": "2026-11-26T16:25:27.395Z",
+  "query_time_status": "exact",
+  "raw_parameters": {
+    "open": [
+      {
+        "ref_id": "https://europepmc.org/article/MED/27436728"
+      }
+    ],
+    "response_length": "long"
+  },
+  "normalized_parameters": {
+    "source": "MED",
+    "pmid": "27436728",
+    "resource_kind": "Europe PMC article metadata page"
+  },
+  "status": "error",
+  "http_status": null,
+  "http_status_basis": "No HTTP status exposed.",
+  "response_kind": "tool_resource_unavailable",
+  "returned_count": null,
+  "visible_total": null,
+  "count_scope": "Exact MED identifier requested; failed access establishes no absence/count/identity bridge.",
+  "result_identifiers": [],
+  "metadata": null,
+  "external_requests_performed": 1,
+  "external_request_unit": "One web retrieval tool access; upstream origin request count unknown.",
+  "manual_review_items": 0,
+  "cache_hit": false,
+  "source_refs": [
+    "turn215528446view0"
+  ],
+  "error_code": "WEB_RESOURCE_UNAVAILABLE",
+  "error_message": "Official Europe PMC article URL was not accessible via this tool.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Failed-access facts only; no abstract/fulltext/contact information retained.",
+  "raw_tool_response_sha256": "15189aa3972a633ee76619f212acdbf8bfc70251bbdf9d10b1113dc936569cad",
+  "raw_tool_response_bytes": 618
+}
