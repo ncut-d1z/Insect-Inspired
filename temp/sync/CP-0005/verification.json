@@ -1,0 +1,123 @@
+{
+  "format_version": 1,
+  "checkpoint_id": "CP-0005",
+  "scope_id": "SCOPE-0001",
+  "verified_at_utc": "2026-11-26T15:29:10.303385Z",
+  "repository": "ncut-d1z/Insect-Inspired",
+  "status": "passed",
+  "research_snapshot_synced": true,
+  "canonical_branch": "research/p3-p6-cp5",
+  "canonical_commit": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+  "canonical_tree": "27b8ac91e5e86fca891dc24e0f08134aaab96ebd",
+  "git_parent": "95a0a218667333967f4a6c18f8b8b71df8b464e0",
+  "parent_checkpoint_id": "CP-0004",
+  "main": {
+    "commit": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+    "updated_by_assistant": false,
+    "note": "main remains at CP4. Automatic approval review declined the proposed main fast-forward; the user requested PowerShell instructions to perform the merge, push and temporary-branch cleanup on their host."
+  },
+  "independent_verification": {
+    "status": "passed",
+    "completed_at_utc": "2026-11-26T15:23:31.981161Z",
+    "check_count": 5069,
+    "failed_checks": 0,
+    "file_count": 1188,
+    "file_bytes": 828160944,
+    "artifact_hash_count": 1187,
+    "artifact_hash_matched_count": 1187,
+    "checkpoint_sha256": "ed0fa6a00066a82d1a9635cf6306b74a1982d3659911ded42c4087ddc443e270",
+    "logical_dataset_count": 7,
+    "partition_count": 120,
+    "reachable_objects": 1640,
+    "git_fsck_exit_code": 0,
+    "local_objects_borrowed": false,
+    "shallow": false,
+    "full_file_inventory": "remote-verification-cp5.json",
+    "trusted_local_inventory": "local-integrity-cp5.json"
+  },
+  "local_repository_recheck": {
+    "branch": "research/p3-p6-cp5",
+    "head": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+    "worktree_clean": true,
+    "untracked_or_ignored_repository_files": 0,
+    "ahead": 0,
+    "behind": 0,
+    "local_commits_not_present_on_remote_refs": 0,
+    "all_1188_working_files_rehashed_against_independent_clone": true
+  },
+  "transport": {
+    "branch": "sync/cp5-checkpoint-import",
+    "upload_bundle_commit": "8791a9d2f72a898ef260676d72408b134c5165a3",
+    "workflow_input_commit": "d5ee82ff400cb907daa23ed2e3b332940ee92675",
+    "action_run_url": "https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45848216143",
+    "action_job_id": 140007331633,
+    "action_conclusion": "success",
+    "bundle_sha256": "29eefe39d95fecd6cbcb909a8cc8242fed6bb168bd42452d3232d881a386738e",
+    "bundle_bytes": 19638061,
+    "original_readme_backup": "README.import-input.md",
+    "operator_readme_note": "README.md is updated after import with user-requested PowerShell recovery/merge/cleanup instructions. Original manifest readme_sha256 applies to the frozen README in workflow_input_commit or the byte-identical backup, not the later operator guide."
+  },
+  "manual_restore": {
+    "status": "passed",
+    "evidence_file": "manual-restore-validation.json",
+    "executed_shell": "Bash",
+    "powershell_execution": "not_executed_here_no_PowerShell_runtime",
+    "remote_writes_performed": false
+  },
+  "research_status": {
+    "P3": "partial",
+    "P4": "partial",
+    "P5": "partial",
+    "P6": "partial",
+    "closure_established": false,
+    "scientific_completion_claimed": false
+  },
+  "evidence_files": [
+    {
+      "path": "local-integrity-cp5.json",
+      "bytes": 1414280,
+      "sha256": "50685a4bc3cd3ce90af262dfc01bdef5733c721d771f7d1add32f4e8283a3298"
+    },
+    {
+      "path": "remote-verification-cp5.json",
+      "bytes": 1410816,
+      "sha256": "0d2a2bd00cee43395ab8f6d053b1315fea56604a1badd1fc0719cf8a0e830388"
+    },
+    {
+      "path": "manual-restore-validation.json",
+      "bytes": 3394,
+      "sha256": "717413bcc741391a1a7659e20aae726bec967b7cb99eb5313a34087efe68b86a"
+    },
+    {
+      "path": "manual-restore-commands.sh",
+      "bytes": 4096,
+      "sha256": "5c8882de06d8dadc3e1cefba6e456f3076cbfa8423d0eef6922d6dcfcb6ea4e7"
+    },
+    {
+      "path": "manual-restore-commands.log",
+      "bytes": 6720,
+      "sha256": "22f76da84668eec8068aa8dcf7d57afeee48691f54f54f4b7fa191955d477611"
+    },
+    {
+      "path": "action-run-cp5.json",
+      "bytes": 473,
+      "sha256": "4f0dcc20d1ae0f458f6c3b893a383b644fee607f672aac0887174332d4f79c46"
+    },
+    {
+      "path": "action-job-cp5.log",
+      "bytes": 25025,
+      "sha256": "a2ea608369c512532d60128b04d575cd91f54a888d293ddd310d171f744d8f53"
+    },
+    {
+      "path": "upload-byte-verification.json",
+      "bytes": 1053,
+      "sha256": "0f85a191c1e5dfcdf3b5a82b474485af01e6a52667335784e26d1dd6edd1d159"
+    },
+    {
+      "path": "README.import-input.md",
+      "bytes": 11227,
+      "sha256": "e47b4e9332f060742dac60ca7f2c2855ccc8dadb7b9c037fc3c7816d326055d3"
+    }
+  ],
+  "scope_note": "This post-commit synchronization receipt records publication checks for the fixed research snapshot. It does not change canonical research data or the frozen CP5 checkpoint. Its own publication is checked by final Git readback and cannot contain its own future commit hash."
+}

@@ -1,0 +1,54 @@
++ line 3: set -euo pipefail
+++ line 4: mktemp -d /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.XXXXXX
++ line 4: cp5_recovery_root=/workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm
++ line 5: cp5_package_dir=/workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/package
++ line 6: mkdir /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/package
++ line 7: printf '请将 README.md、manifest.json、recovery.bundle 下载到：%s\n' /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/package
+请将 README.md、manifest.json、recovery.bundle 下载到：/workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/package
++ line 8: cp -- /workspace/scratch/2e518600ca4c/cp5_sync/README.md /workspace/scratch/2e518600ca4c/cp5_sync/manifest.json /workspace/scratch/2e518600ca4c/cp5_sync/recovery.bundle /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/package/
++ line 9: printf '%s\n' /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm
++ line 10: python3 - /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/package
+输入文件校验通过；manifest SHA-256: 4a9faedaaf9463346292a3d5fd18ae3e6373deef8a7668372957b02d9e92bd39
++ line 30: set -euo pipefail
++ line 31: cp5_repo_url=https://github.com/ncut-d1z/Insect-Inspired.git
++ line 32: cp5_expected_base=95a0a218667333967f4a6c18f8b8b71df8b464e0
++ line 33: cp5_expected_commit=82f759ce71e7b532f03cd4ba54a1fcc77c4f4006
++ line 34: cp5_expected_tree=27b8ac91e5e86fca891dc24e0f08134aaab96ebd
++ line 35: cp5_restore_dir=/workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5
++ line 36: test '!' -e /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5
++ line 37: git clone -c core.autocrlf=false -c core.eol=lf -c core.hooksPath=/dev/null --no-checkout --no-tags https://github.com/ncut-d1z/Insect-Inspired.git /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5
+Cloning into '/workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5'...
++ line 38: git -C /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5 fetch --no-tags origin 95a0a218667333967f4a6c18f8b8b71df8b464e0
+From https://github.com/ncut-d1z/Insect-Inspired
+ * branch            95a0a218667333967f4a6c18f8b8b71df8b464e0 -> FETCH_HEAD
+++ line 39: git -C /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5 rev-parse 'FETCH_HEAD^{commit}'
++ line 39: test 95a0a218667333967f4a6c18f8b8b71df8b464e0 = 95a0a218667333967f4a6c18f8b8b71df8b464e0
++ line 40: test '!' -s /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5/.git/shallow
++ line 41: test '!' -s /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5/.git/objects/info/alternates
++ line 42: git -C /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5 bundle verify /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/package/recovery.bundle
+/workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/package/recovery.bundle is okay
+The bundle contains this ref:
+82f759ce71e7b532f03cd4ba54a1fcc77c4f4006 refs/heads/research/p3-p6-cp5
+The bundle requires this ref:
+95a0a218667333967f4a6c18f8b8b71df8b464e0 
+The bundle uses this hash algorithm: sha1
+++ line 43: git -C /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5 bundle list-heads /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/package/recovery.bundle
++ line 43: test '82f759ce71e7b532f03cd4ba54a1fcc77c4f4006 refs/heads/research/p3-p6-cp5' = '82f759ce71e7b532f03cd4ba54a1fcc77c4f4006 refs/heads/research/p3-p6-cp5'
+++ line 44: git -C /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5 for-each-ref '--format=%(refname)' refs/heads/restored-cp5
++ line 44: test -z ''
++ line 45: git -C /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5 fetch --no-tags /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/package/recovery.bundle refs/heads/research/p3-p6-cp5:refs/heads/restored-cp5
+From /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/package/recovery.bundle
+ * [new branch]      research/p3-p6-cp5 -> restored-cp5
+++ line 46: git -C /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5 rev-parse 'refs/heads/restored-cp5^{commit}'
++ line 46: test 82f759ce71e7b532f03cd4ba54a1fcc77c4f4006 = 82f759ce71e7b532f03cd4ba54a1fcc77c4f4006
+++ line 47: git -C /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5 show -s --format=%T restored-cp5
++ line 47: test 27b8ac91e5e86fca891dc24e0f08134aaab96ebd = 27b8ac91e5e86fca891dc24e0f08134aaab96ebd
+++ line 48: git -C /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5 show -s --format=%P restored-cp5
++ line 48: test 95a0a218667333967f4a6c18f8b8b71df8b464e0 = 95a0a218667333967f4a6c18f8b8b71df8b464e0
++ line 49: git -C /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5 checkout restored-cp5
+Switched to branch 'restored-cp5'
++ line 50: git -C /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5 fsck --full --strict
+++ line 51: git -C /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5 status --porcelain=v1 --untracked-files=all
++ line 51: test -z ''
++ line 52: python3 - /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5
+本地恢复与检查点哈希校验通过： /workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5

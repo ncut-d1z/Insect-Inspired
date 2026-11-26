@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "upload_commit": "8791a9d2f72a898ef260676d72408b134c5165a3",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 11227,
+      "sha256": "e47b4e9332f060742dac60ca7f2c2855ccc8dadb7b9c037fc3c7816d326055d3",
+      "matches_local": true
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 1249,
+      "sha256": "4a9faedaaf9463346292a3d5fd18ae3e6373deef8a7668372957b02d9e92bd39",
+      "matches_local": true
+    },
+    {
+      "path": "recovery.bundle",
+      "bytes": 19638061,
+      "sha256": "29eefe39d95fecd6cbcb909a8cc8242fed6bb168bd42452d3232d881a386738e",
+      "matches_local": true
+    },
+    {
+      "path": "verification-tools/verify_remote_cp5.py",
+      "bytes": 29475,
+      "sha256": "1a66c1e196ca2922b4fcf23050d5dc72113dcae0bf3a32a3ce0be2004ba39d9a",
+      "matches_local": true
+    },
+    {
+      "path": "verification-tools/make_local_integrity_cp5.py",
+      "bytes": 3427,
+      "sha256": "9a02d50c4ea7eff34519fceec75530c40fc9054d8875cc6e267c16ee05cf6ebb",
+      "matches_local": true
+    }
+  ]
+}

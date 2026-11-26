@@ -1,0 +1,73 @@
+{
+  "audit_id": "CP5-README-ACTUAL-MANUAL-RESTORE",
+  "status": "passed",
+  "started_at_utc": "2026-11-26T15:23:29.911316Z",
+  "audit_directory": "/workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1",
+  "canonical_modified": false,
+  "remote_ref_writes": 0,
+  "main_workflow_executed": false,
+  "remote_CP5_sync_claim": false,
+  "frozen_inputs_before": {
+    "README.md": {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_sync/README.md",
+      "bytes": 11227,
+      "sha256": "e47b4e9332f060742dac60ca7f2c2855ccc8dadb7b9c037fc3c7816d326055d3"
+    },
+    "manifest.json": {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_sync/manifest.json",
+      "bytes": 1249,
+      "sha256": "4a9faedaaf9463346292a3d5fd18ae3e6373deef8a7668372957b02d9e92bd39"
+    },
+    "recovery.bundle": {
+      "path": "/workspace/scratch/2e518600ca4c/cp5_sync/recovery.bundle",
+      "bytes": 19638061,
+      "sha256": "29eefe39d95fecd6cbcb909a8cc8242fed6bb168bd42452d3232d881a386738e"
+    }
+  },
+  "manifest_matches_frozen_workflow_pin": true,
+  "workflow_sha256": "5935a86b101826fb513c5459dc3f9fadf9d2eeb7e230bd8310c22684bbf6a0fc",
+  "documented_command_blocks_sha256": [
+    "a20e396a410ccf62263aba23c68f5582f096641e4397646c05b3ab5209a6f4ea",
+    "821838a840f05caf01e3677c47ece3bd96d201fa79a236c8e9fc063f01644ef9",
+    "27b00b2026c81eeaf47188064ef3893ea6114ff3b6a1beb51f2f04f99deabca8"
+  ],
+  "input_staging_method": "Byte-for-byte copies of the three frozen files supplied by root into the fresh package directory; browser download is not claimed. Real GitHub clone/fetch is executed below.",
+  "commands_file": "/workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/commands.sh",
+  "commands_sha256": "5c8882de06d8dadc3e1cefba6e456f3076cbfa8423d0eef6922d6dcfcb6ea4e7",
+  "log_file": "/workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/commands.log",
+  "documented_commands_exit_code": 0,
+  "recovery_root": "/workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm",
+  "restored_repository": "/workspace/scratch/2e518600ca4c/cp5_sync/manual-restore-run-hs_11ne1/insect-cp5-recovery.DnTXSm/restored-cp5",
+  "observed": {
+    "commit": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+    "tree": "27b8ac91e5e86fca891dc24e0f08134aaab96ebd",
+    "parents": [
+      "95a0a218667333967f4a6c18f8b8b71df8b464e0"
+    ],
+    "local_branch": "restored-cp5",
+    "origin_url": "https://github.com/ncut-d1z/Insect-Inspired.git",
+    "porcelain": "",
+    "checkpoint_sha256": "ed0fa6a00066a82d1a9635cf6306b74a1982d3659911ded42c4087ddc443e270",
+    "checkpoint_status": "valid",
+    "parent_checkpoint_id": "CP-0004"
+  },
+  "checks": {
+    "exact_commit": true,
+    "exact_tree": true,
+    "only_parent_is_exact_95a": true,
+    "new_local_branch_restored_cp5": true,
+    "origin_is_real_fixed_github": true,
+    "clean_worktree": true,
+    "checkpoint_self_sha256": true,
+    "checkpoint_valid_parent_cp4": true,
+    "not_shallow": true,
+    "no_alternate_object_store": true,
+    "documented_bundle_verify_and_fsck_passed": true,
+    "documented_exact_remote_base_fetch_passed": true
+  },
+  "frozen_inputs_unchanged": true,
+  "package_copies_match_frozen_inputs": true,
+  "log_sha256": "22f76da84668eec8068aa8dcf7d57afeee48691f54f54f4b7fa191955d477611",
+  "completed_at_utc": "2026-11-26T15:24:05.205430Z",
+  "elapsed_seconds": 35.294
+}
