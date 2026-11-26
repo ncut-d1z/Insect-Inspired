@@ -19,11 +19,11 @@
     "paid_spend": 0
   },
   "manual_review_unit": "A separately logged Work fulltext/bibliography review, Person disambiguation review, Project review, or Assessment adjudication. Automated metadata matching is logged separately.",
-  "external_requests_used": 0,
-  "manual_review_items_used": 0,
-  "cache_reuse_events": 0,
+  "external_requests_used": 22,
+  "manual_review_items_used": 23,
+  "cache_reuse_events": 1,
   "paid_spend": 0,
-  "status": "running",
+  "status": "checkpointed_open",
   "branch": "research/p3-p6-cp6",
   "sync_policy": "Immediately commit/publish each bounded source receipt or review and verify exact remote bytes before the next batch. Canonical integration is atomic, followed by full checkpoint validation and exact remote verification. Any failed synchronization blocks further research.",
   "start_sync_gate": {
@@ -60,5 +60,29 @@
     "source": "EuropePMC",
     "research_cutoff_at_utc": "2026-11-26T05:24:08Z"
   },
-  "closure": false
+  "closure": false,
+  "external_request_count_status": "exact_retained_invocations",
+  "external_requests_note": "One receipt per actual tool/direct-source operation; upstream web cache behavior is disclosed. Git transport is not a research query.",
+  "end_checkpoint_id": "CP-0006",
+  "last_completed_batch": "9 exact existing identities, 13 retained reference targets and one distinct Jung2011 L03 cached-fulltext claim.",
+  "sync_state": "At snapshot creation the final canonical commit and remote readback are later events. Their independent receipt does not rewrite this frozen checkpoint or turn this historical pending observation into a later failure.",
+  "runtime_recovery": {
+    "recovered_at_utc": "2026-11-26T23:01:46.384619Z",
+    "recovery_receipt": "temp/reports/RUN-0004-runtime-recovery.json",
+    "original_event_time_preserved": "2026-11-26T16:58:00.155120Z",
+    "original_unknown_clocks_preserved": true,
+    "fresh_current_clock_used_for_overdue_checks": true,
+    "new_research_requests": 0,
+    "new_manual_research_reviews": 0,
+    "lost_prior_local_commit": "74a6a9b38fc02564d2782e30038eeda237bb7c9e",
+    "original_commit_or_tree_identity_claimed": false
+  },
+  "checkpoint_status": "valid",
+  "checkpoint_validation_state": "passed",
+  "checkpoint_candidate_created_at_utc": "2026-11-26T23:05:24.549102Z",
+  "post_commit_verification_url": "https://github.com/ncut-d1z/Insect-Inspired/blob/sync/cp6-checkpoint-import/temp/sync/CP-0006/verification.json",
+  "checkpoint_completed_at_utc": "2026-11-26T23:14:59.732678Z",
+  "checkpoint_wall_clock_hours": 7.1096,
+  "budget_exhausted": true,
+  "pause_reason": "Bounded research batch consolidated into an audited checkpoint; post-commit remote verification must pass before the next research batch. Research closure remains open."
 }

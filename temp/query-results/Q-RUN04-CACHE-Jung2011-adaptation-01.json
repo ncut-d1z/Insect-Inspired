@@ -1,0 +1,27 @@
+{
+  "query_id": "Q-RUN04-CACHE-Jung2011-adaptation-01",
+  "run_id": "RUN-0004",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://www.jneurosci.org/content/jneuro/31/25/9231.full.pdf",
+  "queried_at_utc": "2026-11-26T16:18:01.561286Z",
+  "query_time_status": "exact",
+  "cache_hit": true,
+  "reused_query_id": "Q-RUN02-L079-jung2011-pdf",
+  "external_request_performed": false,
+  "status": "cache_hit",
+  "response_kind": "cached_primary_pdf_review",
+  "returned_count": 1,
+  "visible_total": 1,
+  "result_identifiers": [
+    "10.1523/jneurosci.1138-11.2011"
+  ],
+  "body_sha256": "05efa9a082c08496422012a814b5715f0b51719407fbe07403abd547d1bf6852",
+  "body_bytes": 1482077,
+  "sanitized": true,
+  "payload_retained": false,
+  "original_retrieved_at_utc": "2026-11-26T09:42:54.439428Z",
+  "review_report": "temp/reports/RUN-0004-Jung2011-adaptation-review.json",
+  "timing_note": "Joint cached single-claim review timestamp; no new HTTP retrieval or new fulltext Work."
+}

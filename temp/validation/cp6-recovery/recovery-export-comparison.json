@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "checkpoint_id": "CP-0006",
+  "run_id": "RUN-0004",
+  "checked_at_utc": "2026-11-26T23:05:46.420275Z",
+  "comparison_basis": "Exact original-runtime export byte counts and SHA-256 values preserved in earlier tool observations and supplied by the root agent after recovery. The unavailable prior Git object or file contents were not used as a present baseline.",
+  "scope_note": "This verifies reproduction of seven scientific exports; it does not assert reproduction of the lost commit, final checkpoint, or old QA artifacts and does not replace fresh full QA or remote verification.",
+  "exports_compared": 7,
+  "exports_equal": 7,
+  "artifacts": [
+    {
+      "path": "ref.bib",
+      "observed_prior_bytes": 2571501,
+      "observed_prior_sha256": "a38e15682314723e48f550fc92f394ec22fa5b86f313fca19fc1096b188ea424",
+      "current_bytes": 2571501,
+      "current_sha256": "a38e15682314723e48f550fc92f394ec22fa5b86f313fca19fc1096b188ea424",
+      "bytes_equal": true,
+      "sha256_equal": true
+    },
+    {
+      "path": "ref.html",
+      "observed_prior_bytes": 47640531,
+      "observed_prior_sha256": "597f9876f2729a56c1e8c2488ff60bc96c0aea1ddfc64a70268d7899efc9bd14",
+      "current_bytes": 47640531,
+      "current_sha256": "597f9876f2729a56c1e8c2488ff60bc96c0aea1ddfc64a70268d7899efc9bd14",
+      "bytes_equal": true,
+      "sha256_equal": true
+    },
+    {
+      "path": "temp/exports/citation_graph.json",
+      "observed_prior_bytes": 53625819,
+      "observed_prior_sha256": "db58404d0c7b9c48311bc75878be738973f078050c218c88120bf0a94e1c05c3",
+      "current_bytes": 53625819,
+      "current_sha256": "db58404d0c7b9c48311bc75878be738973f078050c218c88120bf0a94e1c05c3",
+      "bytes_equal": true,
+      "sha256_equal": true
+    },
+    {
+      "path": "temp/exports/evidence_matrix.csv",
+      "observed_prior_bytes": 3105496,
+      "observed_prior_sha256": "3fd998319b46dae22e492e7dca51e0ab52d404e3dae339f212507bc997b62759",
+      "current_bytes": 3105496,
+      "current_sha256": "3fd998319b46dae22e492e7dca51e0ab52d404e3dae339f212507bc997b62759",
+      "bytes_equal": true,
+      "sha256_equal": true
+    },
+    {
+      "path": "temp/exports/research_entities.json",
+      "observed_prior_bytes": 54031446,
+      "observed_prior_sha256": "66a5d672ad1feab0da7e9b840b72e60eb46b350056f2c1c8fd599c128e75f696",
+      "current_bytes": 54031446,
+      "current_sha256": "66a5d672ad1feab0da7e9b840b72e60eb46b350056f2c1c8fd599c128e75f696",
+      "bytes_equal": true,
+      "sha256_equal": true
+    },
+    {
+      "path": "temp/exports/research_implications.csv",
+      "observed_prior_bytes": 1923020,
+      "observed_prior_sha256": "bd87495714ef2231b102ddac6d2ebb1388e1d2d006db4f3f5f7ffe93b7885c6f",
+      "current_bytes": 1923020,
+      "current_sha256": "bd87495714ef2231b102ddac6d2ebb1388e1d2d006db4f3f5f7ffe93b7885c6f",
+      "bytes_equal": true,
+      "sha256_equal": true
+    },
+    {
+      "path": "temp/exports/research_paths.json",
+      "observed_prior_bytes": 102401,
+      "observed_prior_sha256": "314fa62d083b08e256c5645038a6469febb5989565a865efe79d467cc8c7c3b5",
+      "current_bytes": 102401,
+      "current_sha256": "314fa62d083b08e256c5645038a6469febb5989565a865efe79d467cc8c7c3b5",
+      "bytes_equal": true,
+      "sha256_equal": true
+    }
+  ]
+}

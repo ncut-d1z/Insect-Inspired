@@ -1,0 +1,59 @@
+{
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0006",
+  "method": "Independently regenerate BibTeX, five research views and ten-table HTML from the same frozen logical datasets; compare SHA-256 byte identity.",
+  "artifact_count": 7,
+  "checks": [
+    {
+      "artifact": "ref.bib",
+      "canonical_sha256": "a38e15682314723e48f550fc92f394ec22fa5b86f313fca19fc1096b188ea424",
+      "independent_export_sha256": "a38e15682314723e48f550fc92f394ec22fa5b86f313fca19fc1096b188ea424",
+      "byte_equal": true,
+      "bytes": 2571501
+    },
+    {
+      "artifact": "ref.html",
+      "canonical_sha256": "597f9876f2729a56c1e8c2488ff60bc96c0aea1ddfc64a70268d7899efc9bd14",
+      "independent_export_sha256": "597f9876f2729a56c1e8c2488ff60bc96c0aea1ddfc64a70268d7899efc9bd14",
+      "byte_equal": true,
+      "bytes": 47640531
+    },
+    {
+      "artifact": "temp/exports/citation_graph.json",
+      "canonical_sha256": "db58404d0c7b9c48311bc75878be738973f078050c218c88120bf0a94e1c05c3",
+      "independent_export_sha256": "db58404d0c7b9c48311bc75878be738973f078050c218c88120bf0a94e1c05c3",
+      "byte_equal": true,
+      "bytes": 53625819
+    },
+    {
+      "artifact": "temp/exports/evidence_matrix.csv",
+      "canonical_sha256": "3fd998319b46dae22e492e7dca51e0ab52d404e3dae339f212507bc997b62759",
+      "independent_export_sha256": "3fd998319b46dae22e492e7dca51e0ab52d404e3dae339f212507bc997b62759",
+      "byte_equal": true,
+      "bytes": 3105496
+    },
+    {
+      "artifact": "temp/exports/research_entities.json",
+      "canonical_sha256": "66a5d672ad1feab0da7e9b840b72e60eb46b350056f2c1c8fd599c128e75f696",
+      "independent_export_sha256": "66a5d672ad1feab0da7e9b840b72e60eb46b350056f2c1c8fd599c128e75f696",
+      "byte_equal": true,
+      "bytes": 54031446
+    },
+    {
+      "artifact": "temp/exports/research_implications.csv",
+      "canonical_sha256": "bd87495714ef2231b102ddac6d2ebb1388e1d2d006db4f3f5f7ffe93b7885c6f",
+      "independent_export_sha256": "bd87495714ef2231b102ddac6d2ebb1388e1d2d006db4f3f5f7ffe93b7885c6f",
+      "byte_equal": true,
+      "bytes": 1923020
+    },
+    {
+      "artifact": "temp/exports/research_paths.json",
+      "canonical_sha256": "314fa62d083b08e256c5645038a6469febb5989565a865efe79d467cc8c7c3b5",
+      "independent_export_sha256": "314fa62d083b08e256c5645038a6469febb5989565a865efe79d467cc8c7c3b5",
+      "byte_equal": true,
+      "bytes": 102401
+    }
+  ],
+  "changed_inputs": [],
+  "status": "passed"
+}

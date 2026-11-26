@@ -1,25 +1,17 @@
-# 当前执行进度：CP-0005
+# 当前执行进度：CP-0006
 
-更新时间：2026-11-26T14:54:33.747157Z。
+更新时间：2026-11-27 07:14:59 UTC+8 (Asia/Singapore)。**SCOPE-0001 / RUN-0004 / CP-0006：valid 数据检查点。** 父检查点 CP-0005；CP3 invalid 历史保留。完整数据审计 0 错误、16 项已报告警告；七产物字节一致，十项 UI 通过。
 
-**SCOPE-0001 / RUN-0003 / CP-0005：有效数据检查点。** 完整审计 0 错误、16 项既有辅助 Schema 警告；七产物确定性与十项 UI 全部通过。父检查点为 CP-0004，CP-0003 invalid 历史保留。最终 GitHub 同步以提交后的独立回读凭据为准。P3–P6 部分推进，研究闭包未成立，P7 最终研究验收尚未启动，P8 未触发。
+P3–P6 继续部分推进，研究闭包未成立，P7 未启动，P8 未触发。
 
-| 阶段 | 本批推进 | 仍开放 |
-| --- | --- | --- |
-| P3 | 5个既有身份补全；7个参考解析和同数来源支持边；Work总量5,085 | 124,405个未解析出现项；完整正文/补充书目及递归 |
-| P4 | 项目施引列表42/42；跨来源详情33/42 | EPMC详情仍28/42；9个身份、来源覆盖和引用语境 |
-| P5 | 作者列表分页57/57、总量对账53/57；四项任务证据澄清 | 四个来源计数差；新增署名尚待跨Work消歧；历史机构/项目 |
-| P6 | 69条主张：60合格、9不足、23含反证；新增Longden L03单主张 | 原L07不足不变；fully_resolved=0；其他条件及主张仍开放 |
+- 规范 Work 5,085；活动 Assessment 70：合格 61、不足 9、反证 23；新增 Jung L03 单主张，全部既有科学记录保持不变。
+- 本批 PMID 身份 9/9；项目跨来源 42/42，仍待 0。EPMC core 单列 28/42。
+- 新 Work 限定署名 15；种子作者分页 57/57、计数对账 53/57。
+- 参考解析 13，新来源支持边 13；引用语境完成量 20，不与书目边混计。
+- K=5085，T_union=35，U=5050；全文审阅 Work 37，本批新增 Work/文件 0/0。
+- 未结任务 130,237（相对 CP5 +35）；关闭 unknown 工单 32，逾期升级 0，开放 unknown 64,723。
+- 外部科研调用 22、缓存复用 1、手工 23；均据真实账本，缓存不计 HTTP。
 
-主题Work并集34、U00=5051。既有科学全文审阅Work 37，本轮新增全文Work/文件0/0；缓存复核不重复计数。引用边31,811，已核科学语境仍20。
+本检查点写入时，最终 canonical 提交、推送及独立远端回读尚未发生；后置证明固定保存在 [verification.json](https://github.com/ncut-d1z/Insect-Inspired/blob/sync/cp6-checkpoint-import/temp/sync/CP-0006/verification.json)。这是快照创建时的历史说明，不能据此推断之后同步失败；冻结检查点不因后置同步回执改写。最终远端验证通过前停止下一研究批。
 
-开放任务130,202（相对CP4 +48）；本轮25个字段工单关闭不等于开放任务净减25。开放unknown工单64,707、逾期0。本轮外部科研调用16/2000，缓存复用1次另计，人工13/200，付费0。
-
-原始回执/人工决定已先行同步；本检查点写入时，最终推送和精确回读尚未发生，验证前不开始下一研究批。后置同步证明保存在固定同步workflow日志及独立传输分支的verification receipt，此历史时点说明不代表之后同步失败；冻结内容不因后置凭据改写。有效数据检查点不代表研究闭包或所有阶段完成。
-
-- [CP5阶段报告与全部计数](reports/P3-P6-CP0005.md)
-- [CP5有效检查点](snapshots/checkpoints/CP-0005.json)
-- [父检查点CP4](snapshots/checkpoints/CP-0004.json)
-- [本轮集成及原始回执关联](reports/RUN-0003-integration.json)
-
-验收完成时间（UTC）：2026-11-26T15:06:43.160073Z。数据审计、确定性及 UI 原文证据见 [验收凭据](validation/cp5-qa/qa-final-receipt.json)；既有记录保留对账见 [增量保留检查](validation/cp5-delta-preservation.json)。后置同步凭据：[verification.json](https://github.com/ncut-d1z/Insect-Inspired/blob/sync/cp5-checkpoint-import/temp/sync/CP-0005/verification.json)。
+详见 [本轮阶段报告](reports/P3-P6-CP0006.md)、[CP6](snapshots/checkpoints/CP-0006.json)、[父 CP5](snapshots/checkpoints/CP-0005.json)及[集成证据](reports/RUN-0004-integration.json)。有效数据检查点也不等于研究闭包。
