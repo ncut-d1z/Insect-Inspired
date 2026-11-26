@@ -1,0 +1,134 @@
+{
+  "report_id": "RUN-0003-identity-review",
+  "run_id": "RUN-0003",
+  "scope_id": "SCOPE-0001",
+  "intended_checkpoint_id": "CP-0005",
+  "status": "reviewed",
+  "reviewed_at_utc": "2026-11-26T14:39:28Z",
+  "reviewer": "ChatGPT research team; root checked original retained citations and latest task events",
+  "work_count": 5,
+  "metadata_identity_policy": "Enrich the existing Work IDs and first-assigned keys. No duplicate Work creation, Work merge or name-only Person merge.",
+  "records": [
+    {
+      "pmid": "28347859",
+      "work_id": "W-R525f36f1c11284ce",
+      "query_id": "Q-RUN03-WEB-0002",
+      "doi": "10.1016/j.asd.2017.03.005",
+      "author_count": 4,
+      "fields": {
+        "venue": "Arthropod Struct Dev",
+        "volume": "46",
+        "number": "4",
+        "pages": "552-563",
+        "publication_date": "2017-04-12"
+      },
+      "date_basis": "Electronic publication date explicitly displayed; root verified the source citation header."
+    },
+    {
+      "pmid": "27346905",
+      "work_id": "W-Re46890f5a27ec270",
+      "query_id": "Q-RUN03-WEB-0004",
+      "doi": "10.1016/j.jenvp.2016.05.011",
+      "author_count": 5,
+      "fields": {
+        "venue": "J Environ Psychol",
+        "volume": "47",
+        "pages": "155-165",
+        "publication_date": "2016-09",
+        "PMCID": "PMC4918639"
+      },
+      "date_basis": "Issue month only; no day or earlier online date asserted."
+    },
+    {
+      "pmid": "26866692",
+      "work_id": "W-Rb7fb4e1b3303e196",
+      "query_id": "Q-RUN03-WEB-0011",
+      "doi": "10.1371/journal.pcbi.1004683",
+      "author_count": 5,
+      "fields": {
+        "venue": "PLoS Comput Biol",
+        "volume": "12",
+        "number": "2",
+        "eid": "e1004683",
+        "publication_date": "2016-02-11",
+        "PMCID": "PMC4750948"
+      },
+      "date_basis": "Explicit publication date in citation header."
+    },
+    {
+      "pmid": "26781051",
+      "work_id": "W-R24127d96a1e10330",
+      "query_id": "Q-RUN03-WEB-0012",
+      "doi": "10.1002/jeab.195",
+      "author_count": 4,
+      "fields": {
+        "venue": "J Exp Anal Behav",
+        "volume": "105",
+        "number": "1",
+        "pages": "41-55",
+        "publication_date": "2016-01"
+      },
+      "date_basis": "Issue month only; no day or earlier online date asserted."
+    },
+    {
+      "pmid": "25841648",
+      "work_id": "W-R4ee6870ac8ca1a67",
+      "query_id": "Q-RUN03-WEB-0015",
+      "doi": "10.1007/s00359-015-1004-9",
+      "author_count": 2,
+      "fields": {
+        "venue": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+        "volume": "201",
+        "number": "6",
+        "pages": "513-515",
+        "publication_date": "2015-04-05"
+      },
+      "date_basis": "Explicit Epub date; June 2015 is the later issue month."
+    }
+  ],
+  "exact_doi_or_pubmed_duplicate_works_found": 0,
+  "author_name_occurrences": 20,
+  "person_policy": "Create Work-scoped provisional authorship identities and retain disambiguation tasks. No ORCID is copied from a same-name Person. Publisher, language and unreported article-number/issue fields remain unknown.",
+  "field_unknown_tasks_resolved_by_this_review": 25,
+  "reference_target": {
+    "work_id": "W-Rb7fb4e1b3303e196",
+    "work_key": "TempWRb7fb4e1b3303e196",
+    "doi": "10.1371/journal.pcbi.1004683",
+    "identity_query_id": "Q-RUN03-WEB-0011"
+  },
+  "reference_resolution_ids": [
+    "R-CR-56c2114c5bb5f63a",
+    "R-CR-6793bac6c2fcb72c",
+    "R-CR-3945df2169377bee",
+    "R-CR-1f050672c5cd15bd",
+    "R-CR-152c8905f0db25c4",
+    "R-CR-8d38a87ac2259f57",
+    "R-CR-1eb95e311ab92d4b"
+  ],
+  "reference_review": "All seven have the same single exact DOI candidate and no resolved target. Six also contain agreeing bibliographic text; R-CR-1eb95e311ab92d4b supplies only DOI, so no missing title/author/year cross-check is claimed. Seven distinct citing_key/target_key pairs are absent and can be added. Existing citing Work references and fulltext coverage remain open.",
+  "citation_relation_policy": "Relation evidence comes from each retained Crossref deposited reference; PubMed supports target identity only. New edges remain source_supported with citation_roles=[unknown] and no scientific context.",
+  "existing_epmc_edges_preserved": [
+    "CE-e818d813b9cb0b73",
+    "CE-5639ca4ff4204c1a",
+    "CE-9fb3ccacb812839b",
+    "CE-e2279f7c4dbbaadc",
+    "CE-f7b3a1e4668c1dca"
+  ],
+  "task_review_correction": "Latest event_sequence, rather than first rows, is authoritative. P-0014/P-0017/P-0048 already have terminal pagination cursors and both queries; only stale discrepancy wording needs correction. P-0056 lacks its profile query link. No author count discrepancy is resolved.",
+  "source_coverage": {
+    "epmc_citation_list": "42/42",
+    "epmc_core_metadata": "28/42",
+    "cross_source_citer_identity_after_integration": "33/42",
+    "remaining_identity_tasks": 9,
+    "author_lists_paginated": "57/57",
+    "author_list_totals_reconciled": "53/57"
+  },
+  "scientific_admission_changes": 0,
+  "scope_changed": false,
+  "canonical_ingestion_pending": true,
+  "manual_review_activities": {
+    "work_bibliographic_identity": 5,
+    "citing_work_single_reference_review": 7,
+    "total": 12
+  }
+}
