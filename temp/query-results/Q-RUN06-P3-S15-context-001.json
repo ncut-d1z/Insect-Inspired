@@ -1,0 +1,80 @@
+{
+  "query_id": "Q-RUN06-P3-S15-context-001",
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0008",
+  "task_id": "T-RUN06-P3-S15-context",
+  "entity_id": "W-S15",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+  "raw_parameters": {
+    "operation": "open",
+    "purpose": "P3 citation-context review of existing S15→S19 and S15→S17 edges; resolve selected deposited references against official bibliography"
+  },
+  "query_kind": "official_fulltext_context_observation",
+  "queried_at_utc": "2026-11-27T06:41:11Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "rerun_reason": "Existing successful entries cover registry metadata or privately supplied PDF import, not this publisher HTML context retrieval; no prior successful same-URL/context query in full logical query log.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "PLOS article explicitly declares Creative Commons Attribution; retain bibliographic facts, exact section/anchor locators and original Chinese paraphrases only. No contact details or full HTML copied.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Live publisher page observed at query time; publication date 2015-08-26 precedes scope cutoff. No historical index snapshot asserted.",
+  "status": "success",
+  "transport": "web.open",
+  "source_reference_id": "turn834562751view0",
+  "source_line_count": 712,
+  "resource_identity": {
+    "doi": "10.1371/journal.pone.0128413",
+    "title": "Insect-Inspired Self-Motion Estimation with Dense Flow Fields—An Adaptive Matched Filter Approach",
+    "authors": [
+      "Simon Strübbe",
+      "Wolfgang Stürzl",
+      "Martin Egelhaaf"
+    ],
+    "publication_date": "2015-08-26",
+    "license_locator": "Publisher HTML copyright paragraph, displayed line 134"
+  },
+  "count_basis": "Exactly one requested official article resource; counts do not enumerate its bibliography or all citation contexts.",
+  "visible_total": 1,
+  "returned_count": 1,
+  "count_before_dedup": 1,
+  "count_after_dedup": 1,
+  "new_work_count": 0,
+  "new_work_ids": [],
+  "result_identifiers": [
+    "10.1371/journal.pone.0128413"
+  ],
+  "page_complete": false,
+  "cursor_in": null,
+  "cursor_out": null,
+  "review_scope": {
+    "sections_observed": [
+      "1 Introduction",
+      "2.1 The matched filter approach",
+      "2.3 Alternative derivation and properties of the coupling matrix in the MFA",
+      "2.4 The relationship between the MFA and the KvD algorithm"
+    ],
+    "bibliography_yet_to_review": true,
+    "whole_work_scientific_review_complete": false
+  },
+  "observations": [
+    {
+      "citing_key": "Strubbe2015",
+      "target_reference_label": "8",
+      "intended_existing_target_key": "Franz2000",
+      "locator": "Introduction paragraphs containing refs 8–12, displayed lines 149–158; §2.1 first paragraph, line169",
+      "summary_zh": "以Franz–Krapp匹配滤波为方法前提，并针对固定距离先验发展自适应方法；属于继承与方法改进，未证明昆虫实现同一计算。"
+    },
+    {
+      "citing_key": "Strubbe2015",
+      "target_reference_label": "11",
+      "intended_existing_target_key": "Franz2004",
+      "locator": "Introduction line152; §2.1 lines169–174; §2.3 lines182–192",
+      "summary_zh": "引用耦合矩阵用于消除各运动分量串扰；后文重写权重并在限定条件下连接KvD推导。"
+    }
+  ],
+  "integrity_note": "The web connector does not expose original HTTP response bytes; no body SHA256, HTTP status code, or whole-file completeness is invented."
+}
