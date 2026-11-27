@@ -1,0 +1,63 @@
+{
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0009",
+  "checked_at_utc": "2026-11-27T08:47:26.200667Z",
+  "method": "Regenerate BibTeX, five research views and ten-table HTML in a fresh external directory; compare every output byte through SHA-256.",
+  "candidate_sha256": "65f9938191ce63810240dc93b2a3006cac1da130817760c90f9aae840a3170ed",
+  "candidate_unchanged": true,
+  "canonical_input_digest_sha256": "7c64a2fb20246c3f831ae1f8a993ce730d540ff43757e340aafabe8eee09abef",
+  "artifact_count": 7,
+  "checks": [
+    {
+      "artifact": "ref.bib",
+      "canonical_sha256": "45860b44006f813de032e3a33acc32391152fcc40d00e2fee5873b5d332bcb4d",
+      "independent_export_sha256": "45860b44006f813de032e3a33acc32391152fcc40d00e2fee5873b5d332bcb4d",
+      "byte_equal": true,
+      "bytes": 2579922
+    },
+    {
+      "artifact": "ref.html",
+      "canonical_sha256": "28a404cc6edfd89157c7e6602d3acd3ee100d81c1b509f714356d5fb98f115b7",
+      "independent_export_sha256": "28a404cc6edfd89157c7e6602d3acd3ee100d81c1b509f714356d5fb98f115b7",
+      "byte_equal": true,
+      "bytes": 47802236
+    },
+    {
+      "artifact": "temp/exports/citation_graph.json",
+      "canonical_sha256": "4307b1591d1894a198e164b735782adc0de8d02f6fa148ab708de97818448cd5",
+      "independent_export_sha256": "4307b1591d1894a198e164b735782adc0de8d02f6fa148ab708de97818448cd5",
+      "byte_equal": true,
+      "bytes": 53871420
+    },
+    {
+      "artifact": "temp/exports/evidence_matrix.csv",
+      "canonical_sha256": "365376e8ebcd94cd07557ca75265556f4bff031dc32a60dbaaae31dec89c7b45",
+      "independent_export_sha256": "365376e8ebcd94cd07557ca75265556f4bff031dc32a60dbaaae31dec89c7b45",
+      "byte_equal": true,
+      "bytes": 3201622
+    },
+    {
+      "artifact": "temp/exports/research_entities.json",
+      "canonical_sha256": "ed969acafbdb514592a9a07ad207bd0e72fd6366fe3362d35e635ac57d1c3021",
+      "independent_export_sha256": "ed969acafbdb514592a9a07ad207bd0e72fd6366fe3362d35e635ac57d1c3021",
+      "byte_equal": true,
+      "bytes": 54716694
+    },
+    {
+      "artifact": "temp/exports/research_implications.csv",
+      "canonical_sha256": "0dda0c2982dd040483826282e908654069a02eae192e4897ce5f20c3d3c2ada4",
+      "independent_export_sha256": "0dda0c2982dd040483826282e908654069a02eae192e4897ce5f20c3d3c2ada4",
+      "byte_equal": true,
+      "bytes": 1977337
+    },
+    {
+      "artifact": "temp/exports/research_paths.json",
+      "canonical_sha256": "53bfe678736e3d43c5bd939359b125e3b271291614fb8c367cc6046ed5a45a5c",
+      "independent_export_sha256": "53bfe678736e3d43c5bd939359b125e3b271291614fb8c367cc6046ed5a45a5c",
+      "byte_equal": true,
+      "bytes": 106129
+    }
+  ],
+  "changed_inputs": [],
+  "status": "passed"
+}

@@ -17,7 +17,7 @@
     "manual_review_items": 200,
     "paid_spend": 0
   },
-  "status": "running_recovery_maintenance",
+  "status": "checkpointed_open",
   "branch": "research/p3-p6-cp9",
   "external_requests_used": 0,
   "manual_review_items_used": 0,
@@ -51,5 +51,15 @@
   },
   "next_batch": "Apply and verify actual 24-hour review-state escalation while preserving CP8 originals; publish valid CP9 fully before continuing scientific P3-P6 tasks.",
   "maintenance_is_scientific_review": false,
-  "sync_state": "Initial run record pending remote readback."
+  "sync_state": "Final canonical publication/readback are later events recorded in a separate receipt.",
+  "end_checkpoint_id": "CP-0009",
+  "checkpoint_status": "valid",
+  "checkpoint_validation_state": "passed",
+  "checkpoint_completed_at_utc": "2026-11-27T08:50:44.506114Z",
+  "checkpoint_wall_clock_hours": 0.3693,
+  "budget_exhausted": false,
+  "pause_reason": "Overdue unknown maintenance is checkpointed; unresolved tasks remain open. Complete independent remote synchronization before continuing P3-P6 evidence work.",
+  "post_commit_verification_url": "https://github.com/ncut-d1z/Insect-Inspired/blob/sync/cp9-checkpoint-import/temp/sync/CP-0009/verification.json",
+  "last_completed_batch": "RUN7 performed only bound overdue-status maintenance; no new scientific claim, source query, or manual scientific review.",
+  "qa_completed_at_utc": "2026-11-27T08:50:44.506114Z"
 }
