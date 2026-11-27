@@ -20,6 +20,12 @@
       "archive_path": "temp/history/CP-0008/merged-work-audit.jsonl",
       "bytes": 927703,
       "sha256": "45c8a88ad5bb024e0a576e27d5f9a8bf2a0bc75831b79dbf9415567d5128213f"
+    },
+    {
+      "source_path": "temp/queries.jsonl",
+      "archive_path": "temp/history/CP-0008/queries.jsonl",
+      "bytes": 2733758,
+      "sha256": "c9e6038e1053747d11c89bcc97042a92bb0631109d688edfa0af0bc26173cc20"
     }
   ],
   "current_field_transition": {
@@ -69,5 +75,7 @@
   "observed_overdue_open_tasks": 48989,
   "observed_next_deadline_at_utc": "2026-11-27T08:28:39Z",
   "observation_is_not_execution_count": true,
-  "scientific_work_after_maintenance": "Publish and independently verify CP9 completely, then continue the existing P3-P6 evidence tasks; maintenance alone does not complete the user research request."
+  "scientific_work_after_maintenance": "Publish and independently verify CP9 completely, then continue the existing P3-P6 evidence tasks; maintenance alone does not complete the user research request.",
+  "updated_at_utc": "2026-11-27T08:32:27.380009Z",
+  "query_ledger_protection": "Only explicitly listed overdue FieldState.status changes; query_id, actual request timestamps, normalized parameters, source result counts and original query-results receipts remain unchanged."
 }
