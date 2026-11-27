@@ -1,0 +1,53 @@
+{
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "start_checkpoint_id": "CP-0007",
+  "start_commit_sha": "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f",
+  "started_at_utc": "2026-11-27T06:40:21.328131Z",
+  "authorization": "2026-11-27 用户要求检查CP6/CP7完整性，已有本地数据完整无误上传后，继续反复迭代P3/P4/P5/P6；每批即时提交推送；明确允许公开二进制数据包，包内提供PowerShell恢复/合并/清理步骤。",
+  "authorized_stages": [
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "budget": {
+    "wall_clock_hours": 6,
+    "external_requests": 2000,
+    "manual_review_items": 200,
+    "paid_spend": 0
+  },
+  "status": "running",
+  "branch": "research/p3-p6-cp8",
+  "external_requests_used": 0,
+  "manual_review_items_used": 0,
+  "cache_reuse_events": 0,
+  "paid_spend": 0,
+  "closure": false,
+  "research_cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "sync_policy": "Persist every bounded source/review batch on GitHub and verify readback before the next batch. Full checkpoints may be delivered as user-authorized binary packages with independent remote-download restore and all-file verification; research-branch import is separately reported.",
+  "start_sync_gate": {
+    "status": "passed",
+    "mode": "complete_remote_binary_package_with_independent_restore",
+    "checked_at_utc": "2026-11-27T06:36:17.589122Z",
+    "proof_commit": "41cf5fabac70f81cfb4125b5bbc9d9107b5fafd6",
+    "proof_url": "https://github.com/ncut-d1z/Insect-Inspired/blob/sync/cp7-checkpoint-import/temp/sync/CP-0007/verification.json",
+    "canonical_commit_sha": "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f",
+    "tree_sha": "c5d5f03ce399961429288e1ffb7ce3565e278fbf",
+    "verified_files": 1317,
+    "verified_file_bytes": 1045568594,
+    "artifact_sha256_checked": 1316,
+    "sha256_mismatches": 0,
+    "remote_package_complete_and_restore_verified": true,
+    "remote_canonical_branch_updated": false,
+    "worktree_clean": true
+  },
+  "transport": {
+    "api_available": true,
+    "ordinary_git_push_authenticated": false,
+    "automatic_import_workflow_installed": false,
+    "main_updated": false,
+    "remote_branches_deleted": false
+  },
+  "next_batch": "P3/P4 recursive citation and P5/P6 source-grounded evidence review; keep all previous unknown clocks."
+}
