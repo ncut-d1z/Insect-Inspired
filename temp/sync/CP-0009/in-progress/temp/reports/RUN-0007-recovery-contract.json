@@ -1,0 +1,73 @@
+{
+  "contract_id": "RUN-0007-UNKNOWN-24H-RECOVERY",
+  "run_id": "RUN-0007",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0009",
+  "created_at_utc": "2026-11-27T08:31:37.760665Z",
+  "basis": "README.md section 3.1.1 requires actual field-state escalation on recovery and checkpoint validation without resetting clocks.",
+  "baseline_commit": "2e749d4994bd3b8c66fcde59950779adc5d66085",
+  "baseline_checkpoint_id": "CP-0008",
+  "baseline_checkpoint_sha256": "85e5312505b14862df28c4193b74aeaf4767bb3b56942786f3948b172edcedb0",
+  "frozen_originals": [
+    {
+      "source_path": "temp/assessments.jsonl",
+      "archive_path": "temp/history/CP-0008/assessments.jsonl",
+      "bytes": 3719058,
+      "sha256": "e92f21afe162bc6bf5d207e7294ab9e71ee72649773541afbacfe74977789a80"
+    },
+    {
+      "source_path": "temp/merged-work-audit.jsonl",
+      "archive_path": "temp/history/CP-0008/merged-work-audit.jsonl",
+      "bytes": 927703,
+      "sha256": "45c8a88ad5bb024e0a576e27d5f9a8bf2a0bc75831b79dbf9415567d5128213f"
+    }
+  ],
+  "current_field_transition": {
+    "from": "unknown",
+    "to": "unknown_review_required",
+    "eligibility": "A structured Condition or FieldState with an original unknown_since_utc and review_task_id, whose latest matching open task is genuinely due at the actual execution time.",
+    "changed_property_only": "status",
+    "exactly_preserved": [
+      "all other field-state keys and values",
+      "original clocks and identifiers",
+      "scientific values, evidence locators, failure reasons and conclusions",
+      "Assessment conditions and their deterministic projections"
+    ]
+  },
+  "task_transition": {
+    "append_only": true,
+    "event_sequence_increment": 1,
+    "task_id_preserved": true,
+    "task_state_preserved": true,
+    "original_clock_deadline_created_at_preserved": true,
+    "attempt_count_preserved": true,
+    "failure_reason_cursor_query_ids_preserved": true,
+    "overdue": true,
+    "priority": "at least high; preserve any existing higher priority",
+    "updated_at_utc": "actual execution time",
+    "checkpoint_id": "CP-0009",
+    "idempotent": true
+  },
+  "audit_requirements": [
+    "Strictly bind each changed dataset row and JSON pointer to baseline or previous committed-state hashes and exact pre/post state.",
+    "Preserve all old task events as an exact logical byte prefix.",
+    "Frozen history copies must equal the exact CP8 Git blobs; retain CP1-CP8 checkpoint and scope bytes.",
+    "Current logical files contain the new raw status; no effective-state overlay or exception to the existing unknown gate.",
+    "Only listed and genuinely overdue administrative state changes are allowed; recompute at write and final checkpoint validation.",
+    "No new Work, scientific claim, source query, completed task or manual scientific review is inferred from automatic aging.",
+    "Run unchanged schema, scientific, quantitative, scale, deadline and provenance checks; failed checks block valid checkpoint."
+  ],
+  "ordinary_unknown_enums_unchanged": [
+    "citation_roles",
+    "project_relation",
+    "publication_status",
+    "version_type",
+    "organization_level",
+    "other ordinary enums without a structured review clock"
+  ],
+  "observed_queue_at_utc": "2026-11-27T08:24:16.256416Z",
+  "observed_overdue_open_tasks": 48989,
+  "observed_next_deadline_at_utc": "2026-11-27T08:28:39Z",
+  "observation_is_not_execution_count": true,
+  "scientific_work_after_maintenance": "Publish and independently verify CP9 completely, then continue the existing P3-P6 evidence tasks; maintenance alone does not complete the user research request."
+}
