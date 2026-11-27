@@ -1,63 +1,116 @@
-# CP-0006 二进制分块增量包：初始导入说明与 PowerShell 恢复
+# CP-0006 二进制分块包：主机 PowerShell 获取、恢复、合并与清理
 
-文档时点：2026-11-27 07:17:48 UTC+8。**本次恢复的完整数据审计、七产物确定性和十项 UI 均已通过；撰写这份初始说明时，远端导入及独立完整回读尚未完成。** 上传分块或启动 Actions 不能代替最终同步验收。
+验收日期：2026-11-27（UTC+8）。
+
+本指南锁定 `research/p3-p6-cp6` 的恢复提交 `a1303b6b6c38692b4f57da5cfb342289c6dc17e5`。验收范围为 `5356` 项检查、`1256` 个文件、`881966656` 字节、`1255` 项制品哈希，以及当前分片清单的 `7` 个逻辑数据集、`120` 个分片。实际结果以第 4 节固定证明提交中的 `verification.json` 和独立回读报告为准；代码会核对它们的哈希、目标提交和通过状态，失败即停止。
 
 本次交付是重新构建的 CP6。运行环境切换导致上一版仅保存在本地的提交 `74a6a9b38fc02564d2782e30038eeda237bb7c9e` 及其 bundle 丢失，该提交未完成远端全量验收。已提交远端的规范数据、审阅记录和代码仍可恢复；本次据此重建，并重新通过完整数据审计、七项导出确定性和十项 UI 检查。当前恢复提交是 `a1303b6b6c38692b4f57da5cfb342289c6dc17e5`，所有校验均以本次交付的 commit、tree 和哈希为准，不能把旧提交视为已找回。
 
+本轮恢复准备时，远端 `main` 为 CP4：`bb7726c2ef334df0d7069165156b1cbc2c4e2fd8`。实际合并不依赖它始终停在 CP4：本地和远端 `main` 可以是 CP4、CP5、其他 CP6 祖先或精确 CP6；必须现场验证祖先关系，发生分歧就停止。以下合并、推送和条件删除由用户在自己的主机执行，助手没有执行。
+
 传输采用 GitHub API 上传按顺序编号的原始二进制块。API 请求用 base64 表示字节，仓库中的 `recovery.bundle.part-0001` 等文件仍存放原始二进制内容；下载后直接按 manifest 顺序进行二进制拼接，不再做 base64 解码。GitHub Actions 验证每块和整包的字节数、SHA256、bundle 前提及目标提交，再将该提交普通快进写入 `research/p3-p6-cp6`。本轮助手没有合并、推送或删除 `main`；下文涉及 main 与分支清理的命令由用户在自己的主机执行。
 
-远端证明齐备后，本目录的 `README.md` 将更新为带实际 Actions、验证提交和完整证明清单的最终主机操作指南；本文件原字节保留为 `README.import-input.md`。`manifest.json` 的 `readme_sha256` 指向**这份初始说明**，不是后续指南。若两者并存，恢复时用初始说明校验该字段，操作优先遵循最终指南。本说明不记录 manifest 自身 SHA，避免循环哈希。
+主机恢复优先直接 fetch 指定研究分支；第 4 节继续核验完整远端证明与每个工作树文件。增量分块包提供备用恢复路径，不需要重复运行 Actions。本指南不要求新增令牌、权限、付费功能或 GitHub CLI。
 
-## 1. 交付内容与实际进度
+### 本次验证报告的来源
 
-本轮 RUN-0004 恢复 **9 个既有 PMID 身份**；新增 **15 个限定于具体 Work 的署名身份**，没有按姓名合并全局 Person；解析 **13 个已保存参考出现项**，新增 **13 条 source_supported 引用边**，没有据此关闭正文引用语境。另新增 Jung2011 的一个独立 **L03 Fig. 6b 脉冲响应衰减适应主张**。原有 69 条 Assessment 原始行、9 条不足结论、23 条反证及旧检查点保持不变。
+第二次执行环境不可用后，原工作目录中的本地校验清单、Linux 恢复报告和发布前检查报告无法继续读取。这些临时报告当时没有提交到远端，因此本次不将它们标为已恢复，也不把原文件哈希列为当前可下载证据。固定输入提交 `1b46308cab46fe7611c6af465cb338c65549275b` 中的 51 个二进制块、原始 README、传输 manifest 和导入 workflow 已完整保存。
 
-当前共 5,085 个 Work、20,564 个署名身份、158,544 个参考出现项、31,824 条引用边、70 条活动 Assessment（61 合格、9 不足）、912 条查询和287项人工活动。主题 Work 并集35，U00为5,050；未结任务130,237。P3–P6仍为 **partial**，研究闭包为 **false**，不是文献检索或科学问题全部完成。
+导入运行 [45911635168](https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45911635168) 已将本指南指定的 CP6 提交发布到研究分支，并完成一次完整远端回读。之后的[独立交付验证运行 45919410467](https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45919410467)也已成功；5,356 项检查全部通过，10 份证明文件已提交并完成独立远端逐字回读。两次运行的作用分别记录。
 
-包恢复的是完整规范仓库：BibTeX、十表 HTML、五个研究视图、Work/Version/署名/机构/项目、参考与引文、Assessment、来源回执、查询和任务历史、分片清单、进度、检查点、脚本及 QA 证据。**不含原始论文 PDF、论文页图或整篇论文正文。** `temp/` 和 `temp/partitions/` 是规范数据，不能当下载缓存删除。
+本次发布的 `local-integrity-cp6.json` 是在新的 GitHub Actions 环境中，从同一份已固定哈希的分块 bundle 及从真实 GitHub 获取的 prerequisite 恢复出的工作树重新生成的完整校验基准。保留文件名是为了与主机命令兼容；它不是原环境中临时清单的原字节恢复。新基准的生成位置、时间、文件清单及哈希保存在本地清单中，输入来源保存在 `package-input-verification.json`、`manual-restore-verification.json`、`runtime-delivery-context.json` 和总回执中。
 
-Jung 的准入限于作者报告的固定范式：非飞行适应前/后0.171/0.113 s，系留飞行前/后0.289/0.165 s；Fig. 6b总样本为5只蝇，均值±SEM，不能把四组累加成20只。精确P、SEM幅度、个体配对矩阵及完整拟合细节未列出；响应估计映射为模型高通参数不等于直接测得生物高通器件，也不证明平台速度幅值恢复。
+独立远端验证在另一个新目录中，通过真实 GitHub HTTPS 获取研究分支，没有借用 bundle 重建目录的对象。`remote-verification-cp6.json` 保存这次完整检查；总回执的 `evidence_files` 仅列出实际生成、保存并回读的证明文件。新的 `manual-restore-verification.json` 是本次 GitHub Actions 中 Python/Git 恢复的报告，不能将其解释为旧报告或 PowerShell 实测。
 
-本地验收为0错误、16项原有辅助 schema 警告；七产物全部字节一致，十项UI通过。规范树共 **1256文件、881966656字节**，CP6含 **1255项artifact hashes**，其自身哈希另行固定：
+原容器当前不可访问，不能重新扫描它的磁盘或本地分支集合。已核对最后可访问时固定的 CP6 commit/tree 与 GitHub 上完整快照一致；`recovered-worktree-verification.json` 的干净工作树、全部文件与本地分支覆盖检查，明确只针对新恢复的工作树。研究数据与研究提交未因生成这些交付报告而改变。
 
-| 项目 | 固定值 |
-| --- | --- |
-| CP6 commit | `a1303b6b6c38692b4f57da5cfb342289c6dc17e5` |
-| CP6 tree | `32a732212b9151c2ee1ee75a91081ffcbca60d9b` |
-| 唯一直接 Git parent / bundle prerequisite | `fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0` |
-| 有效检查点父项 | `CP-0005`，稳定锚点 `82f759ce71e7b532f03cd4ba54a1fcc77c4f4006` |
-| CP6 JSON 字节 | `51240014` |
-| CP6 JSON SHA256 | `43c11e7465404e956274fdaadef74f7bd0d27177111de5200f127f36c8c7d47d` |
-| recovery.bundle 字节 | `26519358` |
-| recovery.bundle SHA256 | `cc53dbbe5ddc1045214c38a0aafe088e9c869836219e3c65707adab2c397a142` |
-| 实际存储 | `bundle_storage=ordered_binary_parts`；`parts` 按 `index` 从 1 连续排列 |
+## 1. 固定输入、数据内容与两种 README
 
-## 2. PowerShell 5.1 / 7：建立独立恢复目录
+有效数据检查点父项是 **CP-0005**，稳定 Git 锚点为 `82f759ce71e7b532f03cd4ba54a1fcc77c4f4006`。CP6 的唯一直接 Git parent 则是 **`fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0`**：研究分支最后一次 API 写入且精确回读成功的 commit。两者含义不同，增量 bundle 的唯一 prerequisite 必须是该直接 Git parent。
 
-以下命令面向**用户自己的主机**，按顺序在同一 PowerShell 会话执行，要求 Git 可用。流程只创建新的恢复目录，不覆盖已有克隆，不自动 stash/reset，也不修改全局 Git 配置。需要 GitHub 写权限的合并、推送和删除由用户执行。当前准备环境没有 PowerShell 运行时；这些命令经过静态审阅，**未声称 PowerShell 实测通过**。
+`manifest.json` 的 `readme_sha256` 校验**导入时的原始 README**：固定输入提交 `1b46308cab46fe7611c6af465cb338c65549275b` 中 `temp/sync/CP-0006/README.md` 的字节；下载时另存为 `README.import-input.md`。本文件是之后更新的操作指南，其哈希不能与 `manifest.readme_sha256` 比较。本操作指南的 SHA256 由同目录的 `delivery-receipt.json` 独立记录；校验本指南使用该交付回执，校验原始导入 README 使用 manifest 中的对应哈希。
+
+| 项目 | 冻结值 |
+|---|---|
+| 仓库 | `https://github.com/ncut-d1z/Insect-Inspired.git` |
+| CP6 commit / tree | `a1303b6b6c38692b4f57da5cfb342289c6dc17e5` / `32a732212b9151c2ee1ee75a91081ffcbca60d9b` |
+| 唯一 Git parent / bundle prerequisite | `fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0` |
+| 有效 checkpoint 父项 / 稳定锚点 | `CP-0005` / `82f759ce71e7b532f03cd4ba54a1fcc77c4f4006` |
+| bundle 字节数 / SHA256 | `26519358` / `cc53dbbe5ddc1045214c38a0aafe088e9c869836219e3c65707adab2c397a142` |
+| manifest SHA256 | `c3e4cbe60d80a7a6cfb451c600693677fc5d7e3ded547aafaf890e1f6ce5c77f` |
+| 原始导入 README SHA256 | `33e87bee12602b8a02775a0010bd566d702e2852d65054ec5547a42e80dd2473` |
+| CP6 checkpoint SHA256 | `43c11e7465404e956274fdaadef74f7bd0d27177111de5200f127f36c8c7d47d` |
+| 冻结导入输入提交 | `1b46308cab46fe7611c6af465cb338c65549275b` |
+| 后置验收证明提交 | `1304a9fdabd87bf3d54f7c3fd2c8150e1fb2ffb6` |
+| 验收总回执 verification.json SHA256 | `c9bdba22431d3e86bc88f0e3156031cd423b6235608045bc8ea9b5d576be37e3` |
+| 明确归档的证明文件数 | `10` |
+| 规范 Work / Assessment 总数 | `5085` / `70` |
+
+恢复内容包括规范 Work、Version、Person、机构、项目及关系数据，查询日志、任务、回执、证据、检查点、分片清单和七项导出：`ref.bib`、`ref.html`、`evidence_matrix.csv`、`research_entities.json`、`citation_graph.json`、`research_paths.json`、`research_implications.csv`。本轮记录的推进包括 9 个既有 Work 的身份补全、15 个按具体署名记录限定身份的 Person、13 条参考文献解析，以及 1 条 Jung2011 独立 L03 Assessment；最终总数见上表及冻结证明清单。原有科学记录与不足结论保留，不把该 L03 条目计作 L07 解决。本包不加入原始 PDF、受限全文或认证文件。
+
+CP6 恢复的是完整规范工作树，`recovery.bundle` 只含 `fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0` 之后的增量 Git 对象。因此不能直接 `git clone recovery.bundle`；必须先从真实 GitHub 获取该 prerequisite。CP6 同步验收与 checkpoint 有效性不代表 P3–P6 研究闭合：四阶段仍为 `partial`，`closure=false`。
+
+导入和验收记录：[Actions 45911635168](https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45911635168)。验收依据包括 [verification.json](verification.json)、[远端完整回读](remote-verification-cp6.json) 及下方冻结的完整证明清单。实际恢复验证状态与命令环境由这些证明记载；以下 PowerShell 代码按 Windows PowerShell 5.1 / PowerShell 7 兼容流程进行静态审阅。当前环境没有 PowerShell 运行时，未声称进行 PowerShell 实测。
+
+## 2. 先执行一次：固定参数与失败即停
+
+在主机打开 PowerShell。已安装 Git，并使用自己已有的 GitHub HTTPS 或 SSH 认证即可；本指南不要求 GitHub CLI。依次在**同一个 PowerShell 会话**运行本节、路径 A 或 B、保存证明、合并和清理各节。出现错误即停止，先检查原因，不跳过校验。
 
 ```powershell
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
-[Console]::OutputEncoding = [Text.UTF8Encoding]::new($false)
-$OutputEncoding = [Console]::OutputEncoding
+$null = Get-Command git -ErrorAction Stop
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
 $Cp6Url = 'https://github.com/ncut-d1z/Insect-Inspired.git'
 $Cp6Commit = 'a1303b6b6c38692b4f57da5cfb342289c6dc17e5'
 $Cp6Tree = '32a732212b9151c2ee1ee75a91081ffcbca60d9b'
 $Cp6Base = 'fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0'
-$Cp5Anchor = '82f759ce71e7b532f03cd4ba54a1fcc77c4f4006'
-$Cp6SelfHash = '43c11e7465404e956274fdaadef74f7bd0d27177111de5200f127f36c8c7d47d'
+$Cp5CheckpointAnchor = '82f759ce71e7b532f03cd4ba54a1fcc77c4f4006'
+$Cp6InputCommit = '1b46308cab46fe7611c6af465cb338c65549275b'
+$Cp6ProofCommit = '1304a9fdabd87bf3d54f7c3fd2c8150e1fb2ffb6'
+$Cp6ResearchRef = 'refs/heads/research/p3-p6-cp6'
+$Cp6SyncRef = 'refs/heads/sync/cp6-checkpoint-import'
+$Cp6Checkpoint = 'temp/snapshots/checkpoints/CP-0006.json'
+$Cp6CheckpointHash = '43c11e7465404e956274fdaadef74f7bd0d27177111de5200f127f36c8c7d47d'
 $Cp6BundleHash = 'cc53dbbe5ddc1045214c38a0aafe088e9c869836219e3c65707adab2c397a142'
-$Cp6BundleBytes = [long]'26519358'
+$Cp6ManifestHash = 'c3e4cbe60d80a7a6cfb451c600693677fc5d7e3ded547aafaf890e1f6ce5c77f'
+$Cp6InputReadmeHash = '33e87bee12602b8a02775a0010bd566d702e2852d65054ec5547a42e80dd2473'
+$Cp6VerificationHash = 'c9bdba22431d3e86bc88f0e3156031cd423b6235608045bc8ea9b5d576be37e3'
+$Cp6ProofNames = @('verification.json|import-actions-job.log|import-actions-jobs.json|import-actions-run.json|local-integrity-cp6.json|manual-restore-verification.json|package-input-verification.json|recovered-worktree-verification.json|remote-verification-cp6.json|runtime-delivery-context.json' -split '\|')
+foreach ($cp6Digest in @($Cp6Commit, $Cp6Tree, $Cp6Base, $Cp5CheckpointAnchor, $Cp6InputCommit, $Cp6ProofCommit)) {
+    if ($cp6Digest -cnotmatch '^[0-9a-f]{40}$') { throw 'Invalid documented Git SHA; stop.' }
+}
+foreach ($cp6Digest in @($Cp6CheckpointHash, $Cp6BundleHash, $Cp6ManifestHash, $Cp6InputReadmeHash, $Cp6VerificationHash)) {
+    if ($cp6Digest -cnotmatch '^[0-9a-f]{64}$') { throw 'Invalid documented SHA256; stop.' }
+}
 $Cp6FileCount = [long]'1256'
 $Cp6FileBytes = [long]'881966656'
 $Cp6ArtifactCount = [long]'1255'
-$Cp6CheckpointBytes = [long]'51240014'
-$Cp6SyncRef = 'refs/heads/sync/cp6-checkpoint-import'
-$Cp6ResearchRef = 'refs/heads/research/p3-p6-cp6'
-$Cp6CheckpointRel = 'temp/snapshots/checkpoints/CP-0006.json'
-$Cp6Prefix = 'temp/sync/CP-0006/'
+$Cp6PartitionDatasetCount = [long]'7'
+$Cp6BundleBytes = [long]'26519358'
+$Cp6ProofFileCount = [int]'10'
+if ($Cp6FileCount -le 0 -or $Cp6FileBytes -le 0 -or $Cp6BundleBytes -le 0 -or
+    $Cp6ArtifactCount -ne ($Cp6FileCount - 1) -or $Cp6PartitionDatasetCount -le 0) {
+    throw 'Invalid frozen inventory counts.'
+}
+if ($Cp6ProofNames.Count -ne $Cp6ProofFileCount -or
+    @($Cp6ProofNames | Sort-Object -Unique).Count -ne $Cp6ProofFileCount) {
+    throw 'Frozen proof list count or uniqueness mismatch.'
+}
+foreach ($cp6Name in $Cp6ProofNames) {
+    if ($cp6Name -cnotmatch '^[A-Za-z0-9][A-Za-z0-9._-]*$' -or $cp6Name.Contains('__')) {
+        throw 'Invalid or unsafe documented proof filename.'
+    }
+}
+foreach ($cp6RequiredName in @('verification.json', 'local-integrity-cp6.json', 'remote-verification-cp6.json')) {
+    if ($Cp6ProofNames -cnotcontains $cp6RequiredName) { throw ('Missing required proof: ' + $cp6RequiredName) }
+}
+$Cp6AuditSaved = $false
+$Cp6HostRoot = Join-Path ([Environment]::GetFolderPath('UserProfile')) ('insect-cp6-host-' + [Guid]::NewGuid().ToString('N'))
+$null = New-Item -ItemType Directory -Path $Cp6HostRoot
+$Cp6PackageDir = Join-Path $Cp6HostRoot 'package'
+$Cp6AuditDir = Join-Path $Cp6HostRoot 'audit'
 
 # Validate the ordered plan before any per-part download or binary assembly.
 function Get-Cp6BundlePartPlan {
@@ -124,274 +177,367 @@ function Join-Cp6BundleParts {
     Write-Host ('All {0} original binary parts and the assembled bundle passed byte/hash checks.' -f $cp6Parts.Count)
 }
 
-function Invoke-Cp6Git {
-    param([Parameter(Mandatory=$true)][string[]]$GitArgs)
-    $cp6SavedPreference = $ErrorActionPreference
+# Capture every external git exit code, including commands used in assignments.
+function Invoke-GitChecked {
+    $cp6NativeArgs = @($args)
+    $cp6OldPreference = $ErrorActionPreference
+    $cp6Exit = -1
     try {
         $ErrorActionPreference = 'Continue'
-        & git @GitArgs
+        & git @cp6NativeArgs
         $cp6Exit = $LASTEXITCODE
-    } finally { $ErrorActionPreference = $cp6SavedPreference }
-    if ($cp6Exit -ne 0) { throw ('Git failed, exit=' + $cp6Exit) }
+    } finally { $ErrorActionPreference = $cp6OldPreference }
+    if ($cp6Exit -ne 0) { throw ('git failed; exit code {0}. Stop here.' -f $cp6Exit) }
 }
-function Get-Cp6GitLine {
-    param([Parameter(Mandatory=$true)][string[]]$GitArgs)
-    $cp6Rows = @(Invoke-Cp6Git -GitArgs $GitArgs)
-    if ($cp6Rows.Count -ne 1) { throw 'Expected exactly one Git output line.' }
-    return ([string]$cp6Rows[0]).Trim()
+function Get-GitLine {
+    $cp6Lines = @(Invoke-GitChecked @args)
+    if ($cp6Lines.Count -ne 1) { throw 'Expected exactly one git output line.' }
+    return ([string]$cp6Lines[0]).Trim()
 }
 function Assert-Cp6Equal {
     param($Actual, $Expected, [string]$Label)
-    if ([string]$Actual -cne [string]$Expected) { throw ('Mismatch: ' + $Label) }
-}
-function Get-Cp6Hash {
-    param([Parameter(Mandatory=$true)][string]$Path)
-    return (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash.ToLowerInvariant()
+    if ($Actual -ne $Expected) { throw ('Mismatch: ' + $Label) }
 }
 function Assert-Cp6Clean {
-    if (@(Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'status','--porcelain=v1','--untracked-files=all')).Count -ne 0) {
-        throw 'Working tree/index is not clean. Stop; do not reset or delete user files.'
+    if (@(Invoke-GitChecked -C $Cp6Repo status --porcelain=v1 --untracked-files=all).Count -ne 0) {
+        throw 'Working tree or index is not clean. Preserve your work before continuing.'
     }
 }
 function Get-Cp6RemoteRef {
-    param([Parameter(Mandatory=$true)][string]$Ref)
-    $cp6Rows = @(Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'ls-remote','--heads','origin',$Ref))
+    param([string]$Ref)
+    $cp6Rows = @(Invoke-GitChecked -C $Cp6Repo ls-remote --heads origin $Ref)
     if ($cp6Rows.Count -eq 0) { return $null }
-    if ($cp6Rows.Count -ne 1) { throw 'Ambiguous remote ref.' }
-    $cp6Parts = ([string]$cp6Rows[0]) -split "`t"
-    if ($cp6Parts.Count -ne 2 -or $cp6Parts[0] -notmatch '^[0-9a-f]{40}$' -or $cp6Parts[1] -cne $Ref) {
+    if ($cp6Rows.Count -ne 1) { throw 'Unexpected remote ref count.' }
+    $cp6Parts = ([string]$cp6Rows[0]) -split '\s+'
+    if ($cp6Parts.Count -ne 2 -or $cp6Parts[0] -notmatch '^[0-9a-f]{40}$' -or $cp6Parts[1] -ne $Ref) {
         throw 'Unexpected remote ref response.'
     }
     return $cp6Parts[0]
 }
 function Assert-Cp6Origin {
-    Assert-Cp6Equal (Get-Cp6GitLine -GitArgs @('-C',$Cp6Repo,'remote','get-url','origin')) $Cp6Url 'origin fetch URL'
-    $cp6PushUrls = @(Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'remote','get-url','--push','--all','origin'))
-    if ($cp6PushUrls.Count -ne 1) { throw 'Expected one push URL.' }
-    Assert-Cp6Equal $cp6PushUrls[0] $Cp6Url 'origin push URL'
-}
-
-$Cp6Root = Join-Path (Get-Location).Path ('CP6-restore-' + [guid]::NewGuid().ToString('N'))
-if (Test-Path -LiteralPath $Cp6Root) { throw 'Recovery directory already exists.' }
-$null = New-Item -ItemType Directory -Path $Cp6Root
-$Cp6Repo = Join-Path $Cp6Root 'Insect-Inspired'
-$Cp6InputRepo = Join-Path $Cp6Root 'input.git'
-$Cp6PackageDir = Join-Path $Cp6Root 'package'
-$Cp6AuditDir = Join-Path $Cp6Root 'audit-keep'
-$null = New-Item -ItemType Directory -Path $Cp6PackageDir
-$null = New-Item -ItemType Directory -Path $Cp6AuditDir
-$Cp6Zip = Join-Path $Cp6AuditDir 'import-input.zip'
-$Cp6Proof = Join-Path $Cp6AuditDir 'host-verification.json'
-Invoke-Cp6Git -GitArgs @('--version')
-Write-Host ('Recovery root: ' + $Cp6Root)
-```
-
-## 3. 从真实 GitHub 分支取全部二进制块、按清单拼接并验证
-
-`git archive --output` 直接写 ZIP 二进制；不要改成 PowerShell `>` 或 `Out-File` 保存 bundle/ZIP。归档范围包含 manifest、原始 README 和所有 `recovery.bundle.part-0001` 等原二进制块。每条 `parts` 记录含 `index`、`path`、`bytes`、`sha256`；块数和块大小由实际冻结清单决定，不固定为 256 KiB 或 1 MiB。先按原顺序逐块验证，再由 `[IO.File]` 文件流拼接并验证整包 SHA256；不要按操作系统目录枚举顺序拼接。若失败留下部分输出，保留排查并换新目录，不能跳过校验覆盖。这里取到的真实运输分支 tip 会记录在本地证明中。若远端尚未发布该分支，fetch 将停止；不要绕过为另一个来源。
-
-```powershell
-Invoke-Cp6Git -GitArgs @('init','--bare',$Cp6InputRepo)
-Invoke-Cp6Git -GitArgs @(('--git-dir=' + $Cp6InputRepo),'fetch','--no-tags','--depth=1',$Cp6Url,$Cp6SyncRef)
-$Cp6InputTip = Get-Cp6GitLine -GitArgs @(('--git-dir=' + $Cp6InputRepo),'rev-parse','FETCH_HEAD')
-if ($Cp6InputTip -notmatch '^[0-9a-f]{40}$') { throw 'Invalid input commit.' }
-Invoke-Cp6Git -GitArgs @(('--git-dir=' + $Cp6InputRepo),'archive','--format=zip',('--output=' + $Cp6Zip),$Cp6InputTip,'--','temp/sync/CP-0006')
-Expand-Archive -LiteralPath $Cp6Zip -DestinationPath $Cp6PackageDir
-$Cp6Payload = Join-Path $Cp6PackageDir 'temp/sync/CP-0006'
-$Cp6Bundle = Join-Path $Cp6Payload 'recovery.bundle'
-$Cp6ManifestPath = Join-Path $Cp6Payload 'manifest.json'
-$Cp6OriginalReadme = Join-Path $Cp6Payload 'README.import-input.md'
-if (-not (Test-Path -LiteralPath $Cp6OriginalReadme -PathType Leaf)) {
-    $Cp6OriginalReadme = Join-Path $Cp6Payload 'README.md'
-}
-$Cp6Manifest = Get-Content -LiteralPath $Cp6ManifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
-Assert-Cp6Equal $Cp6Manifest.repository 'ncut-d1z/Insect-Inspired' 'manifest repository'
-Assert-Cp6Equal $Cp6Manifest.checkpoint_id 'CP-0006' 'manifest checkpoint'
-Assert-Cp6Equal $Cp6Manifest.scope_id 'SCOPE-0001' 'manifest scope'
-Assert-Cp6Equal $Cp6Manifest.source_sync_ref $Cp6SyncRef 'manifest input ref'
-Assert-Cp6Equal $Cp6Manifest.target_ref $Cp6ResearchRef 'manifest research ref'
-Assert-Cp6Equal $Cp6Manifest.expected_commit $Cp6Commit 'manifest commit'
-Assert-Cp6Equal $Cp6Manifest.expected_tree $Cp6Tree 'manifest tree'
-Assert-Cp6Equal $Cp6Manifest.expected_parent_commit $Cp6Base 'manifest direct parent'
-Assert-Cp6Equal $Cp6Manifest.expected_baseline_commit $Cp6Base 'manifest prerequisite'
-Assert-Cp6Equal $Cp6Manifest.parent_checkpoint_id 'CP-0005' 'manifest checkpoint parent'
-Assert-Cp6Equal $Cp6Manifest.bundle_kind 'incremental' 'manifest bundle kind'
-Assert-Cp6Equal $Cp6Manifest.bundle_name 'recovery.bundle' 'manifest bundle name'
-Assert-Cp6Equal $Cp6Manifest.bundle_bytes $Cp6BundleBytes 'manifest bundle bytes'
-Assert-Cp6Equal $Cp6Manifest.bundle_sha256 $Cp6BundleHash 'manifest bundle hash'
-if (@($Cp6Manifest.bundle_prerequisites).Count -ne 1) { throw 'Unexpected prerequisite count.' }
-Assert-Cp6Equal $Cp6Manifest.bundle_prerequisites[0] $Cp6Base 'manifest prerequisite'
-Assert-Cp6Equal $Cp6Manifest.checkpoint_sha256 $Cp6SelfHash 'manifest checkpoint hash'
-Assert-Cp6Equal $Cp6Manifest.canonical_file_count $Cp6FileCount 'manifest file count'
-Assert-Cp6Equal $Cp6Manifest.artifact_hash_count $Cp6ArtifactCount 'manifest artifact count'
-Assert-Cp6Equal (Get-Cp6Hash -Path $Cp6OriginalReadme) $Cp6Manifest.readme_sha256 'original import README hash'
-Join-Cp6BundleParts -RootDir $Cp6Payload -Manifest $Cp6Manifest -OutputPath $Cp6Bundle -ExpectedSize $Cp6BundleBytes -ExpectedHash $Cp6BundleHash
-Copy-Item -LiteralPath $Cp6OriginalReadme -Destination (Join-Path $Cp6AuditDir 'README.import-input.md')
-Copy-Item -LiteralPath $Cp6ManifestPath -Destination (Join-Path $Cp6AuditDir 'manifest.json')
-```
-
-## 4. 先取得 prerequisite，再恢复完整 CP6
-
-这是增量 bundle，不能直接 `git clone recovery.bundle`。下面先从 GitHub 获取唯一 prerequisite 的完整历史，再验包和获取目标提交。新的研究克隆固定 LF，避免 Windows 换行转换改变已哈希数据。
-
-```powershell
-Invoke-Cp6Git -GitArgs @('init',$Cp6Repo)
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'config','core.autocrlf','false')
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'config','core.eol','lf')
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'remote','add','origin',$Cp6Url)
-Assert-Cp6Origin
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'fetch','--no-tags','origin',$Cp6Base)
-Assert-Cp6Equal (Get-Cp6GitLine -GitArgs @('-C',$Cp6Repo,'rev-parse','FETCH_HEAD')) $Cp6Base 'fetched prerequisite'
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'merge-base','--is-ancestor',$Cp5Anchor,$Cp6Base)
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'bundle','verify',$Cp6Bundle)
-Assert-Cp6Equal (Get-Cp6GitLine -GitArgs @('-C',$Cp6Repo,'bundle','list-heads',$Cp6Bundle)) ($Cp6Commit + ' ' + $Cp6ResearchRef) 'only bundle head'
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'fetch','--no-tags',$Cp6Bundle,($Cp6ResearchRef + ':refs/heads/restored-cp6'))
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'checkout','restored-cp6')
-Assert-Cp6Equal (Get-Cp6GitLine -GitArgs @('-C',$Cp6Repo,'rev-parse','HEAD')) $Cp6Commit 'restored HEAD'
-Assert-Cp6Equal (Get-Cp6GitLine -GitArgs @('-C',$Cp6Repo,'show','-s','--format=%T',$Cp6Commit)) $Cp6Tree 'restored tree'
-Assert-Cp6Equal (Get-Cp6GitLine -GitArgs @('-C',$Cp6Repo,'show','-s','--format=%P',$Cp6Commit)) $Cp6Base 'single direct parent'
-Assert-Cp6Equal (Get-Cp6GitLine -GitArgs @('-C',$Cp6Repo,'rev-parse','--is-shallow-repository')) 'false' 'complete history'
-if (Test-Path -LiteralPath (Join-Path $Cp6Repo '.git/objects/info/alternates')) { throw 'Unexpected alternate object store.' }
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'fsck','--full','--strict',$Cp6Commit)
-Assert-Cp6Clean
-```
-
-## 5. 核验 CP6 自身和全部 1255 项制品，保存原包与证明
-
-下面核对磁盘上的真实文件字节，不只检查 Git 状态。失败时停止，保留目录排查；不要批量改换行或跳过哈希检查。
-
-```powershell
-$Cp6CheckpointPath = Join-Path $Cp6Repo $Cp6CheckpointRel
-Assert-Cp6Equal (Get-Item -LiteralPath $Cp6CheckpointPath).Length $Cp6CheckpointBytes 'checkpoint bytes'
-Assert-Cp6Equal (Get-Cp6Hash -Path $Cp6CheckpointPath) $Cp6SelfHash 'checkpoint SHA256'
-$Cp6Checkpoint = Get-Content -LiteralPath $Cp6CheckpointPath -Raw -Encoding UTF8 | ConvertFrom-Json
-Assert-Cp6Equal $Cp6Checkpoint.checkpoint_id 'CP-0006' 'checkpoint ID'
-Assert-Cp6Equal $Cp6Checkpoint.parent_checkpoint_id 'CP-0005' 'checkpoint parent'
-Assert-Cp6Equal $Cp6Checkpoint.status 'valid' 'checkpoint status'
-$Cp6Artifacts = @($Cp6Checkpoint.artifact_hashes.PSObject.Properties)
-if ($Cp6Artifacts.Count -ne $Cp6ArtifactCount -or $Cp6ArtifactCount -ne ($Cp6FileCount - 1)) { throw 'Frozen artifact hash count mismatch.' }
-$Cp6Checked = @()
-foreach ($cp6Entry in $Cp6Artifacts) {
-    $cp6Name = [string]$cp6Entry.Name
-    if ([IO.Path]::IsPathRooted($cp6Name) -or $cp6Name -match '(^|/)\.\.(/|$)' -or
-        $cp6Name -match '(^|/)\.git(/|$)' -or $cp6Name -ceq $Cp6CheckpointRel) {
-        throw ('Unsafe/self-referential artifact path: ' + $cp6Name)
+    $cp6Origin = Get-GitLine -C $Cp6Repo remote get-url origin
+    $cp6AllowedUrl = '^(https://github\.com/|git@github\.com:|ssh://git@github\.com/)ncut-d1z/Insect-Inspired(\.git)?/?$'
+    if ($cp6Origin -notmatch $cp6AllowedUrl) {
+        throw 'origin is not the expected GitHub repository.'
     }
-    $cp6Path = Join-Path $Cp6Repo $cp6Name
-    if (-not (Test-Path -LiteralPath $cp6Path -PathType Leaf)) { throw ('Missing artifact: ' + $cp6Name) }
-    $cp6Hash = Get-Cp6Hash -Path $cp6Path
-    Assert-Cp6Equal $cp6Hash ([string]$cp6Entry.Value) ('artifact ' + $cp6Name)
-    $Cp6Checked += [pscustomobject]@{ path=$cp6Name; bytes=(Get-Item -LiteralPath $cp6Path).Length; sha256=$cp6Hash }
+    $cp6PushUrls = @(Invoke-GitChecked -C $Cp6Repo remote get-url --push --all origin)
+    if ($cp6PushUrls.Count -ne 1 -or $cp6PushUrls[0] -notmatch $cp6AllowedUrl) {
+        throw 'origin must have exactly one push URL for the expected GitHub repository.'
+    }
 }
-$cp6ExpectedPaths = @($Cp6Artifacts | ForEach-Object { [string]$_.Name }) + @($Cp6CheckpointRel)
-$cp6Tracked = @(Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'-c','core.quotePath=false','ls-tree','-r','--name-only',$Cp6Commit))
-if ($cp6Tracked.Count -ne $Cp6FileCount -or @(Compare-Object ($cp6ExpectedPaths | Sort-Object) ($cp6Tracked | Sort-Object)).Count -ne 0) {
-    throw 'Checkpoint hash set does not cover the complete Git tree.'
+function Assert-Cp6Hash {
+    param([string]$Path, [string]$Hash)
+    Assert-Cp6Equal ((Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash.ToLowerInvariant()) $Hash $Path
 }
-$cp6RepoPrefix = [IO.Path]::GetFullPath($Cp6Repo).TrimEnd([IO.Path]::DirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar
-$cp6GitPrefix = [IO.Path]::GetFullPath((Join-Path $Cp6Repo '.git')).TrimEnd([IO.Path]::DirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar
-$cp6ActualFiles = @(Get-ChildItem -LiteralPath $Cp6Repo -Recurse -File -Force |
-    Where-Object { -not $_.FullName.StartsWith($cp6GitPrefix,[StringComparison]::OrdinalIgnoreCase) })
-$cp6ActualPaths = @($cp6ActualFiles | ForEach-Object { $_.FullName.Substring($cp6RepoPrefix.Length).Replace('\','/') })
-if ($cp6ActualPaths.Count -ne $Cp6FileCount -or @(Compare-Object ($cp6ExpectedPaths | Sort-Object) ($cp6ActualPaths | Sort-Object)).Count -ne 0) {
-    throw 'Unexpected or missing working-tree file.'
+function Assert-Cp6Snapshot {
+    Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse HEAD) $Cp6Commit 'HEAD'
+    Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse 'HEAD^{tree}') $Cp6Tree 'tree'
+    Assert-Cp6Equal (Get-GitLine -C $Cp6Repo show -s --format=%P HEAD) $Cp6Base 'unique parent'
+    Invoke-GitChecked -C $Cp6Repo merge-base --is-ancestor $Cp5CheckpointAnchor $Cp6Base
+    Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse --is-shallow-repository) 'false' 'full history required'
+    Invoke-GitChecked -C $Cp6Repo fsck --full --strict $Cp6Commit
+    Assert-Cp6Clean
+    # git itself writes ZIP bytes; this avoids PowerShell redirection and CRLF conversion.
+    $cp6CheckDir = Join-Path $Cp6HostRoot ('checkpoint-' + [Guid]::NewGuid().ToString('N'))
+    $cp6CheckZip = $cp6CheckDir + '.zip'
+    Invoke-GitChecked -C $Cp6Repo archive --format=zip ('--output=' + $cp6CheckZip) $Cp6Commit -- $Cp6Checkpoint
+    Expand-Archive -LiteralPath $cp6CheckZip -DestinationPath $cp6CheckDir
+    $cp6CheckpointFile = Join-Path $cp6CheckDir $Cp6Checkpoint
+    Assert-Cp6Hash $cp6CheckpointFile $Cp6CheckpointHash
+    $cp6CheckpointData = Get-Content -LiteralPath $cp6CheckpointFile -Raw -Encoding UTF8 | ConvertFrom-Json
+    Assert-Cp6Equal $cp6CheckpointData.checkpoint_id 'CP-0006' 'checkpoint identity'
+    Assert-Cp6Equal $cp6CheckpointData.status 'valid' 'checkpoint status'
+    Assert-Cp6Equal $cp6CheckpointData.parent_checkpoint_id 'CP-0005' 'valid checkpoint parent'
+    Assert-Cp6Equal $cp6CheckpointData.scope_id 'SCOPE-0001' 'checkpoint scope'
+    Write-Host ('CP6 commit/tree/parent/checkpoint/fsck/clean checks passed: ' + $Cp6Repo)
 }
-Assert-Cp6Equal (($cp6ActualFiles | Measure-Object -Property Length -Sum).Sum) $Cp6FileBytes 'complete file bytes'
-Assert-Cp6Clean
-$Cp6ProofData = [ordered]@{
-    status='passed'; checked_at_utc=[DateTime]::UtcNow.ToString('o'); kind='host-local-recovery'
-    source_repository=$Cp6Url; source_sync_commit=$Cp6InputTip; commit=$Cp6Commit; tree=$Cp6Tree; direct_parent=$Cp6Base
-    checkpoint_sha256=$Cp6SelfHash; artifact_hashes_verified=$Cp6ArtifactCount; files=$Cp6FileCount; file_bytes=$Cp6FileBytes
-    original_package_zip_sha256=(Get-Cp6Hash -Path $Cp6Zip); bundle_sha256=$Cp6BundleHash
-    manifest_sha256=(Get-Cp6Hash -Path $Cp6ManifestPath); original_readme_sha256=(Get-Cp6Hash -Path $Cp6OriginalReadme)
-    verified_artifacts=$Cp6Checked; remote_main_verified=$false
-}
-[IO.File]::WriteAllText($Cp6Proof, ($Cp6ProofData | ConvertTo-Json -Depth 12), [Text.UTF8Encoding]::new($false))
-$Cp6SavedZipHash = Get-Cp6Hash -Path $Cp6Zip
-$Cp6SavedProofHash = Get-Cp6Hash -Path $Cp6Proof
-Write-Host ('All {0} canonical files verified. Keep original parts/package and proof at: {1}' -f $Cp6FileCount, $Cp6AuditDir)
+Write-Host ('Host package and evidence directory: ' + $Cp6HostRoot)
 ```
 
-这份主机证明说明实际执行的本地恢复结果，不冒充本项目之后的独立 GitHub 全量回读证明。若已发布最终指南与 `verification.json`，另按最终指南保存其冻结的完整证明清单；不要只保存一个成功状态字符串。
+## 3A. 推荐：直接 fetch 指定研究分支
 
-## 6. 用户在主机 fast-forward main 并普通推送
-
-仅当上述核验全部成功后执行。本地/远端 main 都必须是 CP6 的祖先或 CP6 本身；出现 CP6 未包含的提交时停止，保留现有工作。推送权限和分支保护继续生效，不使用强制更新。
+在已有 `Insect-Inspired` clone 内打开 PowerShell，然后运行本节。若没有 clone，把第一行改成 `$Cp6UseExistingClone = $false`，代码会在新建的独立目录 clone。已有工作树、暂存区或未跟踪文件不干净时会停止；代码不自动 stash、reset 或覆盖原有分支。
 
 ```powershell
-Assert-Cp6Clean
+$Cp6UseExistingClone = $true
+if ($Cp6UseExistingClone) {
+    $Cp6Repo = Get-GitLine rev-parse --show-toplevel
+} else {
+    $Cp6Repo = Join-Path $Cp6HostRoot 'repository'
+    Invoke-GitChecked clone --no-tags --config core.autocrlf=false --config core.eol=lf $Cp6Url $Cp6Repo
+}
 Assert-Cp6Origin
-Assert-Cp6Equal (Get-Cp6Hash -Path $Cp6Zip) $Cp6SavedZipHash 'saved original package'
-Assert-Cp6Equal (Get-Cp6Hash -Path $Cp6Proof) $Cp6SavedProofHash 'saved local verification'
-$Cp6MainBefore = Get-Cp6RemoteRef -Ref 'refs/heads/main'
-if ($null -eq $Cp6MainBefore) { throw 'Remote main missing; stop.' }
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'fetch','--no-tags','origin','refs/heads/main')
-Assert-Cp6Equal (Get-Cp6GitLine -GitArgs @('-C',$Cp6Repo,'rev-parse','FETCH_HEAD')) $Cp6MainBefore 'fetched main'
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'merge-base','--is-ancestor',$Cp6MainBefore,$Cp6Commit)
-$cp6LocalMain = @(Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'for-each-ref','--format=%(refname)','refs/heads/main'))
+Assert-Cp6Clean
+Assert-Cp6Equal (Get-Cp6RemoteRef $Cp6ResearchRef) $Cp6Commit 'remote research tip'
+Invoke-GitChecked -C $Cp6Repo fetch --no-tags origin $Cp6ResearchRef
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse FETCH_HEAD) $Cp6Commit 'fetched research tip'
+$Cp6ReviewBranch = 'review-cp6-' + [Guid]::NewGuid().ToString('N')
+Invoke-GitChecked -C $Cp6Repo checkout -b $Cp6ReviewBranch $Cp6Commit
+Assert-Cp6Snapshot
+```
+
+这里 checkout 后得到完整 CP6 数据，后续直接执行第 4 节。一般无需执行路径 B。
+
+## 3B. 备选：下载固定二进制块并拼接增量 bundle，恢复到全新目录
+
+本节可以代替 3A。输入按固定提交下载；当前操作指南即使后来更新，也不会改变原始输入校验。`Invoke-WebRequest -OutFile` 直接保存 manifest 指定的每个原二进制块。清单使用 `bundle_storage=ordered_binary_parts`，`parts` 记录按连续 `index` 列出 `path`、`bytes`、`sha256`；块数和块大小动态读取。下方通过 `[IO.File]` 流按清单顺序拼接，每块及完整 bundle 都核对字节数与 SHA256；不要使用 `git show ... > recovery.bundle`、`Out-File` 或 `Set-Content` 转存二进制。
+
+```powershell
+if (Test-Path -LiteralPath $Cp6PackageDir) { throw 'Package destination already exists. Start a fresh session/directory.' }
+$null = New-Item -ItemType Directory -Path $Cp6PackageDir
+$cp6InputBase = 'https://raw.githubusercontent.com/ncut-d1z/Insect-Inspired/' + $Cp6InputCommit + '/temp/sync/CP-0006/'
+Invoke-WebRequest -UseBasicParsing -Uri ($cp6InputBase + 'manifest.json') -OutFile (Join-Path $Cp6PackageDir 'manifest.json')
+Invoke-WebRequest -UseBasicParsing -Uri ($cp6InputBase + 'README.md') -OutFile (Join-Path $Cp6PackageDir 'README.import-input.md')
+$Cp6Bundle = Join-Path $Cp6PackageDir 'recovery.bundle'
+Assert-Cp6Hash (Join-Path $Cp6PackageDir 'manifest.json') $Cp6ManifestHash
+Assert-Cp6Hash (Join-Path $Cp6PackageDir 'README.import-input.md') $Cp6InputReadmeHash
+$cp6Manifest = Get-Content -LiteralPath (Join-Path $Cp6PackageDir 'manifest.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+Assert-Cp6Equal $cp6Manifest.expected_commit $Cp6Commit 'manifest commit'
+Assert-Cp6Equal $cp6Manifest.expected_tree $Cp6Tree 'manifest tree'
+Assert-Cp6Equal $cp6Manifest.expected_baseline_commit $Cp6Base 'manifest prerequisite'
+Assert-Cp6Equal $cp6Manifest.expected_parent_commit $Cp6Base 'manifest parent'
+Assert-Cp6Equal $cp6Manifest.repository 'ncut-d1z/Insect-Inspired' 'manifest repository'
+Assert-Cp6Equal $cp6Manifest.checkpoint_id 'CP-0006' 'manifest checkpoint'
+Assert-Cp6Equal $cp6Manifest.parent_checkpoint_id 'CP-0005' 'manifest checkpoint parent'
+Assert-Cp6Equal $cp6Manifest.scope_id 'SCOPE-0001' 'manifest scope'
+Assert-Cp6Equal $cp6Manifest.source_sync_ref $Cp6SyncRef 'manifest transport ref'
+Assert-Cp6Equal $cp6Manifest.target_ref $Cp6ResearchRef 'manifest target'
+Assert-Cp6Equal $cp6Manifest.bundle_kind 'incremental' 'manifest bundle kind'
+Assert-Cp6Equal $cp6Manifest.bundle_bytes $Cp6BundleBytes 'manifest bundle bytes'
+Assert-Cp6Equal $cp6Manifest.bundle_sha256 $Cp6BundleHash 'manifest bundle hash'
+Assert-Cp6Equal $cp6Manifest.checkpoint_path $Cp6Checkpoint 'manifest checkpoint path'
+Assert-Cp6Equal $cp6Manifest.checkpoint_sha256 $Cp6CheckpointHash 'manifest checkpoint hash'
+Assert-Cp6Equal $cp6Manifest.canonical_file_count $Cp6FileCount 'manifest file count'
+Assert-Cp6Equal $cp6Manifest.artifact_hash_count $Cp6ArtifactCount 'manifest artifact count'
+Assert-Cp6Equal $cp6Manifest.partition_dataset_count $Cp6PartitionDatasetCount 'manifest dataset count'
+Assert-Cp6Equal (@($cp6Manifest.bundle_prerequisites) -join ',') $Cp6Base 'sole bundle prerequisite'
+Assert-Cp6Hash (Join-Path $Cp6PackageDir 'README.import-input.md') $cp6Manifest.readme_sha256
+$cp6DownloadParts = @(Get-Cp6BundlePartPlan -Manifest $cp6Manifest -ExpectedSize $Cp6BundleBytes -ExpectedHash $Cp6BundleHash)
+foreach ($cp6Part in $cp6DownloadParts) {
+    $cp6PartName = [string]$cp6Part.path
+    Invoke-WebRequest -UseBasicParsing -Uri ($cp6InputBase + $cp6PartName) -OutFile (Join-Path $Cp6PackageDir $cp6PartName)
+}
+Join-Cp6BundleParts -RootDir $Cp6PackageDir -Manifest $cp6Manifest -OutputPath $Cp6Bundle -ExpectedSize $Cp6BundleBytes -ExpectedHash $Cp6BundleHash
+
+$Cp6Repo = Join-Path $Cp6HostRoot 'restored-repository'
+if (Test-Path -LiteralPath $Cp6Repo) { throw 'Recovery directory already exists; do not overwrite it.' }
+Invoke-GitChecked clone --no-checkout --no-tags --config core.autocrlf=false --config core.eol=lf $Cp6Url $Cp6Repo
+Assert-Cp6Origin
+# Fetch the real GitHub prerequisite before inspecting/importing the incremental bundle.
+Invoke-GitChecked -C $Cp6Repo fetch --no-tags origin $Cp6Base
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse FETCH_HEAD) $Cp6Base 'actual remote baseline'
+Invoke-GitChecked -C $Cp6Repo bundle verify $Cp6Bundle
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo bundle list-heads $Cp6Bundle) ($Cp6Commit + ' ' + $Cp6ResearchRef) 'bundle head'
+Invoke-GitChecked -C $Cp6Repo fetch --no-tags $Cp6Bundle ($Cp6ResearchRef + ':refs/heads/restored-cp6')
+Invoke-GitChecked -C $Cp6Repo checkout restored-cp6
+Assert-Cp6Snapshot
+```
+
+这是新目录和新本地分支，不写远端。恢复检查成功后，第 4–7 节可以直接沿用此 `$Cp6Repo`。
+
+## 4. 删除临时分支前，先保存固定验收证明
+
+验收证明固定在 `1304a9fdabd87bf3d54f7c3fd2c8150e1fb2ffb6`。第 2 节的 `$Cp6ProofNames` 明确列出本次需要归档的 `10` 个文件，覆盖 `verification.json` 及其全部 `evidence_files`，包括本地完整性清单和独立远端回读报告。它们是导入之后归档的文件，不属于原始 CP6 研究提交。
+
+下面先从真实 GitHub fetch 固定证明提交，再用 Git 原生 `archive --output` 归档这份明确清单；先校验总回执 SHA256，再核对其列出的每份证明的字节数与 SHA256。同步分支实际 tip 也会记录，供后续精确条件删除使用。
+
+```powershell
+Assert-Cp6Origin
+Assert-Cp6Clean
+if (Test-Path -LiteralPath $Cp6AuditDir) { throw 'Audit destination already exists; keep it and use a fresh session.' }
+$Cp6SavedSyncTip = Get-Cp6RemoteRef $Cp6SyncRef
+if ($null -eq $Cp6SavedSyncTip) { throw 'Transport branch is absent; inspect existing archives before proceeding.' }
+Invoke-GitChecked -C $Cp6Repo fetch --no-tags origin $Cp6SyncRef
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse FETCH_HEAD) $Cp6SavedSyncTip 'fetched transport tip'
+Invoke-GitChecked -C $Cp6Repo fetch --no-tags origin $Cp6ProofCommit
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse FETCH_HEAD) $Cp6ProofCommit 'fetched proof commit'
+Invoke-GitChecked -C $Cp6Repo merge-base --is-ancestor $Cp6ProofCommit $Cp6SavedSyncTip
+$Cp6ProofPaths = @($Cp6ProofNames | ForEach-Object { 'temp/sync/CP-0006/' + $_ })
+$Cp6ProofZip = Join-Path $Cp6HostRoot 'cp6-verification-documents.zip'
+Invoke-GitChecked -C $Cp6Repo archive --format=zip ('--output=' + $Cp6ProofZip) $Cp6ProofCommit -- @Cp6ProofPaths
+Expand-Archive -LiteralPath $Cp6ProofZip -DestinationPath $Cp6AuditDir
+$Cp6ProofDir = Join-Path $Cp6AuditDir 'temp/sync/CP-0006'
+Assert-Cp6Hash (Join-Path $Cp6ProofDir 'verification.json') $Cp6VerificationHash
+$cp6Proof = Get-Content -LiteralPath (Join-Path $Cp6ProofDir 'verification.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+Assert-Cp6Equal $cp6Proof.status 'passed' 'verification status'
+Assert-Cp6Equal $cp6Proof.canonical_commit $Cp6Commit 'verified CP6 commit'
+Assert-Cp6Equal $cp6Proof.canonical_tree $Cp6Tree 'verified CP6 tree'
+Assert-Cp6Equal $cp6Proof.git_parent $Cp6Base 'verified direct Git parent'
+Assert-Cp6Equal $cp6Proof.parent_checkpoint_id 'CP-0005' 'verified checkpoint parent'
+$cp6EvidenceNames = @($cp6Proof.evidence_files | ForEach-Object { $_.path })
+Assert-Cp6Equal (($cp6EvidenceNames | Sort-Object) -join "`n") (($Cp6ProofNames | Where-Object { $_ -ne 'verification.json' } | Sort-Object) -join "`n") 'complete frozen evidence list'
+foreach ($cp6Name in $Cp6ProofNames) {
+    $cp6File = Join-Path $Cp6ProofDir $cp6Name
+    if (-not (Test-Path -LiteralPath $cp6File -PathType Leaf)) { throw ('Missing proof: ' + $cp6Name) }
+    if ($cp6Name -ne 'verification.json') {
+        $cp6Entry = @($cp6Proof.evidence_files | Where-Object { $_.path -eq $cp6Name })
+        Assert-Cp6Equal $cp6Entry.Count 1 ('proof hash entry: ' + $cp6Name)
+        Assert-Cp6Equal (Get-Item -LiteralPath $cp6File).Length $cp6Entry[0].bytes ('proof size: ' + $cp6Name)
+        Assert-Cp6Hash $cp6File $cp6Entry[0].sha256
+    }
+}
+# Check the actual checkout bytes as well as the Git objects (important on Windows).
+$cp6Inventory = Get-Content -LiteralPath (Join-Path $Cp6ProofDir 'local-integrity-cp6.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+Assert-Cp6Equal $cp6Inventory.status 'passed' 'trusted inventory status'
+Assert-Cp6Equal $cp6Inventory.head_commit $Cp6Commit 'trusted inventory commit'
+Assert-Cp6Equal $cp6Inventory.head_tree $Cp6Tree 'trusted inventory tree'
+Assert-Cp6Equal $cp6Inventory.expected_git_parent $Cp6Base 'trusted inventory direct parent'
+Assert-Cp6Equal $cp6Inventory.head_snapshot.file_entries $Cp6FileCount 'trusted tree file count'
+Assert-Cp6Equal $cp6Inventory.head_snapshot.file_bytes $Cp6FileBytes 'trusted tree file bytes'
+Assert-Cp6Equal (@($cp6Inventory.verified_files).Count) $Cp6FileCount 'trusted inventory file count'
+Assert-Cp6Equal (@($cp6Inventory.verified_files.path | Sort-Object -Unique).Count) $Cp6FileCount 'unique inventory paths'
+$cp6RemoteProof = Get-Content -LiteralPath (Join-Path $Cp6ProofDir 'remote-verification-cp6.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+Assert-Cp6Equal $cp6RemoteProof.status 'passed' 'independent remote verification status'
+Assert-Cp6Equal $cp6RemoteProof.head_commit $Cp6Commit 'independent remote commit'
+Assert-Cp6Equal $cp6RemoteProof.head_tree $Cp6Tree 'independent remote tree'
+Assert-Cp6Equal $cp6RemoteProof.expected_git_parent $Cp6Base 'independent remote direct parent'
+[long]$cp6ActualTotalBytes = 0
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse HEAD) $Cp6Commit 'checkout before byte verification'
+foreach ($cp6ExpectedFile in $cp6Inventory.verified_files) {
+    $cp6ActualFile = Join-Path $Cp6Repo $cp6ExpectedFile.path
+    if (-not (Test-Path -LiteralPath $cp6ActualFile -PathType Leaf)) {
+        throw ('Missing CP6 file: ' + $cp6ExpectedFile.path)
+    }
+    $cp6ActualLength = (Get-Item -LiteralPath $cp6ActualFile).Length
+    $cp6ActualTotalBytes += $cp6ActualLength
+    if ($cp6ActualLength -ne $cp6ExpectedFile.bytes -or
+        (Get-FileHash -LiteralPath $cp6ActualFile -Algorithm SHA256).Hash.ToLowerInvariant() -ne $cp6ExpectedFile.sha256) {
+        throw ('Checkout byte mismatch: ' + $cp6ExpectedFile.path + '. Stop. Preserve this clone; start a new session and use path A with $Cp6UseExistingClone = $false to get an LF checkout.')
+    }
+}
+Assert-Cp6Clean
+Assert-Cp6Equal $cp6ActualTotalBytes $Cp6FileBytes 'all checkout file bytes'
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse HEAD) $Cp6Commit 'checkout unchanged after byte verification'
+Write-Host ('All {0} actual checkout files, totaling {1} bytes, match the verified SHA256 inventory.' -f $Cp6FileCount, $Cp6FileBytes)
+$cp6ArchiveRecord = [ordered]@{
+    proof_commit = $Cp6ProofCommit; transport_tip = $Cp6SavedSyncTip; cp6_commit = $Cp6Commit
+    archive_sha256 = (Get-FileHash -LiteralPath $Cp6ProofZip -Algorithm SHA256).Hash.ToLowerInvariant()
+    files = @($Cp6ProofNames | ForEach-Object {
+        [ordered]@{ name = $_; sha256 = (Get-FileHash -LiteralPath (Join-Path $Cp6ProofDir $_) -Algorithm SHA256).Hash.ToLowerInvariant() }
+    })
+}
+[IO.File]::WriteAllText((Join-Path $Cp6AuditDir 'host-archive-record.json'), ($cp6ArchiveRecord | ConvertTo-Json -Depth 6), ([Text.UTF8Encoding]::new($false)))
+$Cp6AuditSaved = $true
+Write-Host ('Verified evidence archive: ' + $Cp6AuditDir)
+```
+
+本节会使用已校验的完整清单，逐项检查实际工作树的全部 `1256` 个文件及合计 `881966656` 字节；文件数、总大小和每项 SHA256 都必须一致。已有 Windows clone 的换行转换可能导致 Git 状态干净、对象正确但本地文件字节不同；遇到该情况时停止，保留原仓库，在新 PowerShell 会话中改用路径 A 的 `$Cp6UseExistingClone = $false`。不要通过自动 reset 或批量换行改写来覆盖原有文件。
+
+请保留 `$Cp6AuditDir` 和 `$Cp6ProofZip`。若只在主机归档而不执行下一节的可选证明提交，删除同步分支后，这些验收文件不会出现在 `main` 中；不要把失去分支引用的旧提交链接当作持久归档承诺。
+
+## 5. 用户在主机上 fast-forward 合并 main 并推送
+
+本节开始会修改用户的本地 `main`，并将 CP6 普通推送到 GitHub `main`。现场检查本地和远端 `main` 都是 CP6 的祖先或精确 CP6，因此允许 CP4、CP5 以及其他已包含在 CP6 历史中的提交；本地 main 即使领先远端，只要仍是 CP6 祖先也可正常 fast-forward。任一 main 含有 CP6 尚未包含的提交时停止，保留现有工作。合并只使用 `--ff-only`，推送不使用 force，仓库权限及分支保护继续生效。
+
+```powershell
+Assert-Cp6Origin
+Assert-Cp6Clean
+if (-not $Cp6AuditSaved) { throw 'Save the audit evidence before proceeding.' }
+$Cp6MainBefore = Get-Cp6RemoteRef 'refs/heads/main'
+if ($null -eq $Cp6MainBefore) { throw 'Remote main is absent. Stop and inspect.' }
+Assert-Cp6Equal (Get-Cp6RemoteRef $Cp6ResearchRef) $Cp6Commit 'remote research tip before merge'
+Invoke-GitChecked -C $Cp6Repo fetch --no-tags origin refs/heads/main
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse FETCH_HEAD) $Cp6MainBefore 'fetched main'
+Invoke-GitChecked -C $Cp6Repo merge-base --is-ancestor $Cp6MainBefore $Cp6Commit
+$cp6LocalMain = @(Invoke-GitChecked -C $Cp6Repo for-each-ref '--format=%(refname)' refs/heads/main)
 if ($cp6LocalMain.Count -eq 0) {
-    Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'checkout','-b','main',$Cp6MainBefore)
-} elseif ($cp6LocalMain.Count -eq 1 -and $cp6LocalMain[0] -ceq 'refs/heads/main') {
-    Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'merge-base','--is-ancestor','refs/heads/main',$Cp6Commit)
-    Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'checkout','main')
-} else { throw 'Unexpected local main state.' }
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'merge','--ff-only',$Cp6Commit)
-Assert-Cp6Equal (Get-Cp6GitLine -GitArgs @('-C',$Cp6Repo,'rev-parse','HEAD')) $Cp6Commit 'main HEAD'
-Assert-Cp6Equal (Get-Cp6GitLine -GitArgs @('-C',$Cp6Repo,'show','-s','--format=%T','HEAD')) $Cp6Tree 'main tree'
+    Invoke-GitChecked -C $Cp6Repo checkout -b main $Cp6MainBefore
+} elseif ($cp6LocalMain.Count -eq 1 -and $cp6LocalMain[0] -eq 'refs/heads/main') {
+    Invoke-GitChecked -C $Cp6Repo merge-base --is-ancestor refs/heads/main $Cp6Commit
+    Invoke-GitChecked -C $Cp6Repo checkout main
+} else { throw 'Unexpected local main ref state.' }
+Invoke-GitChecked -C $Cp6Repo merge --ff-only $Cp6Commit
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse HEAD) $Cp6Commit 'merged local main'
 Assert-Cp6Clean
-Assert-Cp6Equal (Get-Cp6RemoteRef -Ref 'refs/heads/main') $Cp6MainBefore 'main before ordinary push'
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'-c','push.followTags=false','push','origin','HEAD:refs/heads/main')
-Assert-Cp6Equal (Get-Cp6RemoteRef -Ref 'refs/heads/main') $Cp6Commit 'remote main after push'
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'fetch','--no-tags','origin','refs/heads/main')
-Assert-Cp6Equal (Get-Cp6GitLine -GitArgs @('-C',$Cp6Repo,'rev-parse','FETCH_HEAD')) $Cp6Commit 'read-back main'
-$Cp6ProofData.remote_main_verified = $true
-$Cp6ProofData['remote_main_commit'] = $Cp6Commit
-$Cp6ProofData['remote_main_checked_at_utc'] = [DateTime]::UtcNow.ToString('o')
-[IO.File]::WriteAllText($Cp6Proof, ($Cp6ProofData | ConvertTo-Json -Depth 12), [Text.UTF8Encoding]::new($false))
-$Cp6SavedProofHash = Get-Cp6Hash -Path $Cp6Proof
+Assert-Cp6Equal (Get-Cp6RemoteRef 'refs/heads/main') $Cp6MainBefore 'remote main immediately before push'
+Assert-Cp6Equal (Get-Cp6RemoteRef $Cp6ResearchRef) $Cp6Commit 'research immediately before push'
+Invoke-GitChecked -C $Cp6Repo -c push.followTags=false push origin 'HEAD:refs/heads/main'
+$Cp6ExpectedMain = $Cp6Commit
+Assert-Cp6Equal (Get-Cp6RemoteRef 'refs/heads/main') $Cp6ExpectedMain 'remote main after push'
 ```
 
-## 7. 可选：有原包、有证明且 main 包含 CP6 后，条件删除本轮两分支
+### 可选：把固定清单中的可读验收证明也提交到 main
 
-只删除本轮 `research/p3-p6-cp6` 与 `sync/cp6-checkpoint-import`。精确 SHA lease 仅用于**条件删除**，`--atomic` 要求两项一起成功或失败；没有 main 强制更新。若运输分支已经新增最终指南或证明，下面会因 tip 与已保存原包不同而停止：先按新的最终指南完整保存证明，再清理。不要删掉保护参数重试。
+希望证明在临时分支删除后仍可从主仓库找到时，运行下面这一块。只复制已完整校验且明确列出的证明文件到 `temp/validation/cp6-remote-sync/`；不复制 bundle、workflow 或 manifest，也不合并运输分支。跳过这一块时，主机归档仍保留，但 main 只含原 CP6 研究快照。
+
+该可选步骤会创建一个新的 Git 提交，要求用户主机已有您自己的 Git `user.name` 和 `user.email`。可先执行 `git -C $Cp6Repo var GIT_AUTHOR_IDENT` 查看实际提交身份；若检查失败，先停止此可选步骤。本指南不修改全局 Git 配置。前面的普通恢复与快进不创建新提交，不需要新的提交身份。
 
 ```powershell
 Assert-Cp6Clean
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo branch --show-current) 'main' 'current branch'
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse HEAD) $Cp6Commit 'main before audit-only addition'
+Assert-Cp6Equal (Get-Cp6RemoteRef 'refs/heads/main') $Cp6ExpectedMain 'remote main before audit-only addition'
+$cp6AuditRelativeDir = 'temp/validation/cp6-remote-sync'
+$cp6PublishDir = Join-Path $Cp6Repo $cp6AuditRelativeDir
+if (Test-Path -LiteralPath $cp6PublishDir) { throw 'Audit publication directory already exists. Do not overwrite it.' }
+$null = New-Item -ItemType Directory -Path $cp6PublishDir
+foreach ($cp6Name in $Cp6ProofNames) {
+    Copy-Item -LiteralPath (Join-Path $Cp6ProofDir $cp6Name) -Destination (Join-Path $cp6PublishDir $cp6Name)
+}
+$cp6PublishPaths = @($Cp6ProofNames | ForEach-Object { $cp6AuditRelativeDir + '/' + $_ })
+Invoke-GitChecked -C $Cp6Repo -c core.autocrlf=false add -- @cp6PublishPaths
+$cp6Staged = @(Invoke-GitChecked -C $Cp6Repo diff --cached --name-only)
+Assert-Cp6Equal (($cp6Staged | Sort-Object) -join "`n") (($cp6PublishPaths | Sort-Object) -join "`n") 'exact audit-only staged paths'
+Invoke-GitChecked -C $Cp6Repo commit -m 'Record CP6 remote synchronization verification'
+$cp6AuditCommit = Get-GitLine -C $Cp6Repo rev-parse HEAD
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo show -s --format=%P HEAD) $Cp6Commit 'audit-only direct parent'
+Assert-Cp6Equal (Get-Cp6RemoteRef 'refs/heads/main') $Cp6ExpectedMain 'remote main immediately before audit push'
+Invoke-GitChecked -C $Cp6Repo -c push.followTags=false push origin 'HEAD:refs/heads/main'
+$Cp6ExpectedMain = $cp6AuditCommit
+Assert-Cp6Equal (Get-Cp6RemoteRef 'refs/heads/main') $Cp6ExpectedMain 'remote audit-only main'
+Assert-Cp6Clean
+```
+
+## 6. 用户在主机上条件删除两条临时远端分支
+
+先确认远端 main 仍是刚推送并验收的提交，且 CP6 是其祖先，再删除两个明确命名的临时分支。精确 SHA lease **只用于这两条分支的条件删除**，并以 `--atomic` 保证两项同时成功或同时失败；任何分支在检查后被其他人更新，删除都会被拒绝。目标仅为本轮 `research/p3-p6-cp6` 与 `sync/cp6-checkpoint-import`，不会删除 `main`、`research/p3-p6-cp5`、`sync/cp5-checkpoint-import` 或其他历史分支。这里没有通配符、宽泛 `--force`、main 强制更新或删除。
+
+```powershell
 Assert-Cp6Origin
-Assert-Cp6Equal (Get-Cp6Hash -Path $Cp6Zip) $Cp6SavedZipHash 'retained package ZIP'
-Assert-Cp6Equal (Get-Cp6Hash -Path $Cp6Proof) $Cp6SavedProofHash 'retained verification'
-$cp6SavedProof = Get-Content -LiteralPath $Cp6Proof -Raw -Encoding UTF8 | ConvertFrom-Json
-if ($cp6SavedProof.status -cne 'passed' -or $cp6SavedProof.remote_main_verified -ne $true) { throw 'Main verification proof missing.' }
-Assert-Cp6Equal (Get-Cp6RemoteRef -Ref 'refs/heads/main') $Cp6Commit 'verified main before cleanup'
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'fetch','--no-tags','origin','refs/heads/main')
-Assert-Cp6Equal (Get-Cp6GitLine -GitArgs @('-C',$Cp6Repo,'rev-parse','FETCH_HEAD')) $Cp6Commit 'fetched verified main'
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'merge-base','--is-ancestor',$Cp6Commit,'FETCH_HEAD')
-Assert-Cp6Equal (Get-Cp6RemoteRef -Ref $Cp6ResearchRef) $Cp6Commit 'only exact CP6 research target'
-Assert-Cp6Equal (Get-Cp6RemoteRef -Ref $Cp6SyncRef) $Cp6InputTip 'transport tip equals archived input'
-Invoke-Cp6Git -GitArgs @('-C',$Cp6Repo,'-c','push.followTags=false','push','--atomic',
-    ('--force-with-lease=' + $Cp6ResearchRef + ':' + $Cp6Commit),
-    ('--force-with-lease=' + $Cp6SyncRef + ':' + $Cp6InputTip),
-    'origin',(':' + $Cp6ResearchRef),(':' + $Cp6SyncRef))
-if ($null -ne (Get-Cp6RemoteRef -Ref $Cp6ResearchRef) -or $null -ne (Get-Cp6RemoteRef -Ref $Cp6SyncRef)) { throw 'Named temporary ref still exists.' }
-Assert-Cp6Equal (Get-Cp6RemoteRef -Ref 'refs/heads/main') $Cp6Commit 'main retained after cleanup'
+Assert-Cp6Clean
+if (-not $Cp6AuditSaved -or -not (Test-Path -LiteralPath (Join-Path $Cp6AuditDir 'host-archive-record.json'))) {
+    throw 'Verified local audit archive is required before deleting transport refs.'
+}
+Assert-Cp6Equal (Get-Cp6RemoteRef 'refs/heads/main') $Cp6ExpectedMain 'main before deletion'
+Invoke-GitChecked -C $Cp6Repo fetch --no-tags origin refs/heads/main
+Assert-Cp6Equal (Get-GitLine -C $Cp6Repo rev-parse FETCH_HEAD) $Cp6ExpectedMain 'fetched main before deletion'
+Invoke-GitChecked -C $Cp6Repo merge-base --is-ancestor $Cp6Commit $Cp6ExpectedMain
+Assert-Cp6Equal $Cp6ResearchRef 'refs/heads/research/p3-p6-cp6' 'only CP6 research deletion target'
+Assert-Cp6Equal $Cp6SyncRef 'refs/heads/sync/cp6-checkpoint-import' 'only CP6 transport deletion target'
+Assert-Cp6Equal (Get-Cp6RemoteRef $Cp6ResearchRef) $Cp6Commit 'research deletion expected tip'
+Assert-Cp6Equal (Get-Cp6RemoteRef $Cp6SyncRef) $Cp6SavedSyncTip 'transport deletion expected tip'
+Invoke-GitChecked -C $Cp6Repo -c push.followTags=false push --atomic `
+    ('--force-with-lease=' + $Cp6ResearchRef + ':' + $Cp6Commit) `
+    ('--force-with-lease=' + $Cp6SyncRef + ':' + $Cp6SavedSyncTip) `
+    origin (':' + $Cp6ResearchRef) (':' + $Cp6SyncRef)
+Assert-Cp6Equal (Get-Cp6RemoteRef $Cp6ResearchRef) $null 'research branch removed'
+Assert-Cp6Equal (Get-Cp6RemoteRef $Cp6SyncRef) $null 'transport branch removed'
+Assert-Cp6Equal (Get-Cp6RemoteRef 'refs/heads/main') $Cp6ExpectedMain 'main retained after deletion'
+Write-Host 'The two named remote temporary branches are removed; verified main is retained.'
 ```
 
-## 8. 可选：只删除本会话的独立解包目录
+若 lease、atomic、权限或分支保护检查失败，就停止，不去掉保护参数重试，不强制推送。若远端分支已不存在，也先确认是否由你或其他操作者完成了清理。
 
-完整原始分块包 ZIP 和主机证明已保留在 `audit-keep`，可选择只删除新建的 `package` 子目录；也可保留它以便离线恢复。**不要删除研究仓库中的 temp、partitions、检查点或 QA。** 不删除恢复出的仓库、`audit-keep`、输入 Git 库或其他目录。`audit-keep` 的原始 ZIP 包含所有原二进制块和冻结 manifest；保留它即可再次按相同清单拼接，不能只保留一次成功状态。
+## 7. 可选：删除主机下载包，保留数据和证明
+
+仅路径 B 会创建本节要删除的 `package` 子目录。以下清理只删除本会话新建的独立 `package` 子目录（下载的原二进制块、拼接的 bundle、manifest、原始 README），不删除恢复出的仓库、验收证明、归档 ZIP 或任何远端内容。研究数据中的 `temp/` 和 `temp/partitions/` 属于 canonical，必须保留；不要把它们当下载缓存清理。若希望保留原二进制块和离线恢复材料，可完全跳过；删除 package 前，固定验收证明已按第 4 节单独归档。
 
 ```powershell
-Assert-Cp6Equal (Get-Cp6RemoteRef -Ref 'refs/heads/main') $Cp6Commit 'verified main before local cleanup'
-Assert-Cp6Equal (Get-Cp6Hash -Path $Cp6Zip) $Cp6SavedZipHash 'retained original ZIP'
-Assert-Cp6Equal (Get-Cp6Hash -Path $Cp6Proof) $Cp6SavedProofHash 'retained proof'
-$cp6ExpectedPackage = [IO.Path]::GetFullPath((Join-Path $Cp6Root 'package'))
-Assert-Cp6Equal ([IO.Path]::GetFullPath($Cp6PackageDir)) $cp6ExpectedPackage 'only this session package path'
+Assert-Cp6Equal (Get-Cp6RemoteRef 'refs/heads/main') $Cp6ExpectedMain 'verified main before local package cleanup'
+Invoke-GitChecked -C $Cp6Repo merge-base --is-ancestor $Cp6Commit $Cp6ExpectedMain
+if (-not $Cp6AuditSaved) { throw 'Keep the verification evidence before package cleanup.' }
 if (Test-Path -LiteralPath $Cp6PackageDir) {
-    if ((Get-Item -LiteralPath $Cp6PackageDir).Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'Refuse reparse-point cleanup.' }
+    Assert-Cp6Equal ([IO.Path]::GetFullPath($Cp6PackageDir)) ([IO.Path]::GetFullPath((Join-Path $Cp6HostRoot 'package'))) 'exact package cleanup path'
+    if ((Get-Item -LiteralPath $Cp6PackageDir).Attributes -band [IO.FileAttributes]::ReparsePoint) {
+        throw 'Package cleanup path is a reparse point; stop.'
+    }
     Remove-Item -LiteralPath $Cp6PackageDir -Recurse
 }
-Write-Host ('Keep canonical repository: ' + $Cp6Repo)
-Write-Host ('Keep original package and verification: ' + $Cp6AuditDir)
+Write-Host ('Keep the restored data at: ' + $Cp6Repo)
+Write-Host ('Keep verification evidence at: ' + $Cp6AuditDir)
+Write-Host ('Keep verification ZIP at: ' + $Cp6ProofZip)
 ```
 
-最终同步状态以之后发布的固定 Actions 日志和 `verification.json` 为准。本初始文档中的“尚未完成”只描述创建时点，不代表后续同步失败；后置证明不改写已冻结的 CP6 本身。
+## 说明来源
+
+Git 官方文档说明 [增量 bundle 的 prerequisite 与 verify](https://git-scm.com/docs/git-bundle)、[fast-forward-only 合并](https://git-scm.com/docs/git-merge) 和 [精确 lease / atomic push](https://git-scm.com/docs/git-push)。Microsoft 文档说明 [Get-FileHash](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-5.1) 与 [PowerShell 重定向](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-5.1)。本指南直接把下载及 Git archive 写到文件，不依赖 PowerShell 文本管道保存原始二进制。
