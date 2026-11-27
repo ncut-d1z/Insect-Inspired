@@ -375,7 +375,9 @@ def verify_legacy_artifacts(repo, watch=None):
     require_review(sha_bytes(raw) == 'b1551bc78888c4df70569e81f9b8e95583d01fb22e996112db68b26087e9a172',
                    'CP9 checkpoint self hash differs')
     expected = dict(json.loads(raw)['artifact_hashes']); expected[cp_path] = sha_bytes(raw)
-    manifest = json.loads(baseline_bytes(repo, 'temp/partitions/manifest.json'))
+    manifest_raw = baseline_bytes(repo, 'temp/partitions/manifest.json')
+    require_review(sha_bytes(manifest_raw) == BASE_MANIFEST_SHA256, 'CP9 partition manifest differs')
+    manifest = json.loads(manifest_raw)
     names = git_bytes(repo, 'ls-tree', '--name-only', BASE_COMMIT + ':temp').decode().splitlines()
     excluded = {'temp/' + name for name in names if name.endswith('.jsonl')}
     excluded.update('temp/' + safe_relative(part['path'])
@@ -392,8 +394,37 @@ def verify_legacy_artifacts(repo, watch=None):
             watch(path)
         require_review(original.sha(path) == expected_hash, 'Old artifact bytes changed: ' + name)
         count += 1; size += path.stat().st_size
+    # Task events are append-only. Object equality alone would allow silent
+    # reserialization of an old event, so retain CP9's exact logical byte prefix.
+    task_base = manifest['datasets']['tasks.jsonl']
+    original_bytes = sum(part['bytes'] for part in task_base['parts'])
+    current_manifest_path = Path(repo) / 'temp/partitions/manifest.json'
+    if watch:
+        watch(current_manifest_path)
+    current_manifest = json.loads(current_manifest_path.read_bytes())
+    task_parts = current_manifest['datasets'].get('tasks.jsonl', {'parts': [{'path': 'tasks.jsonl'}]})['parts']
+    remaining, task_digest = original_bytes, hashlib.sha256()
+    for part in task_parts:
+        if not remaining:
+            break
+        path = Path(repo) / 'temp' / safe_relative(part['path'])
+        require_review(path.is_file() and not path.is_symlink(), 'Task prefix part missing: ' + str(path))
+        if watch:
+            watch(path)
+        with path.open('rb') as source:
+            while remaining:
+                block = source.read(min(1024 * 1024, remaining))
+                if not block:
+                    break
+                task_digest.update(block)
+                remaining -= len(block)
+    require_review(remaining == 0 and task_digest.hexdigest() == task_base['logical_sha256'],
+                   'CP9 task events lost their exact original byte prefix')
     return {'status': 'passed', 'source_commit': BASE_COMMIT, 'checked_files': count,
-            'checked_bytes': size, 'old_receipts_evidence_scripts_and_qa_unchanged': True}
+            'checked_bytes': size, 'old_receipts_evidence_scripts_and_qa_unchanged': True,
+            'task_original_prefix': {'status': 'passed', 'bytes': original_bytes,
+                                     'sha256': task_base['logical_sha256'],
+                                     'records': task_base['logical_records']}}
 
 
 class AuditCP10(original.Audit):
