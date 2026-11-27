@@ -1,0 +1,1632 @@
+{
+  "schema_version": "1.1.1",
+  "candidate_id": "RUN-0006-seed-reference-candidate",
+  "candidate_type": "P3_existing_reference_identity_and_context_review",
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0008",
+  "status": "reviewed_candidate_pending_canonical_integration",
+  "created_at_utc": "2026-11-27T06:48:06.874372Z",
+  "baseline_checkpoint_id": "CP-0007",
+  "baseline_commit_sha": "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f",
+  "repository_head_at_creation": "ecad1d4ba03b9db1f467aa104002eb87ce6b2205",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "receipt_bindings": {
+    "Q-RUN06-P3-S15-context-001": {
+      "path": "temp/query-results/Q-RUN06-P3-S15-context-001.json",
+      "bytes": 3709,
+      "sha256": "942a40b643185fe1f36ecdb1e39b7abb3916fcb58e2ba846aceeec1c46cf0f78"
+    },
+    "Q-RUN06-P3-S15-bibliography-002": {
+      "path": "temp/query-results/Q-RUN06-P3-S15-bibliography-002.json",
+      "bytes": 5483,
+      "sha256": "e0518841ff8b465f9d805efec7965108064b13b9aada1784bc77fca293fff44e"
+    },
+    "Q-RUN06-CACHE-P3-003": {
+      "path": "temp/query-results/Q-RUN06-CACHE-P3-003.json",
+      "bytes": 3633,
+      "sha256": "d6f7e192f144e2cead7ae879545d86abcf19a3b34b7b6af5d8c34bccc9d6dbf4"
+    },
+    "Q-RUN06-CACHE-P3-004": {
+      "path": "temp/query-results/Q-RUN06-CACHE-P3-004.json",
+      "bytes": 2326,
+      "sha256": "77f5a1625d258a5babb993968f79e775aa577868315489875545af0cabf6dbdd"
+    }
+  },
+  "summary": {
+    "manual_review_activities": 6,
+    "newly_associated_occurrences": 3,
+    "retained_duplicate_identity_occurrences": 1,
+    "existing_edges_receiving_occurrence_support": 3,
+    "newly_context_reviewed_edges": 2,
+    "new_works": 0,
+    "new_versions": 0,
+    "new_citation_edges": 0,
+    "new_assessments": 0,
+    "external_requests": 2,
+    "cache_reuse_events": 2,
+    "existing_reference_identity_tasks_advanced": 1,
+    "new_bounded_context_tasks_completed": 1,
+    "new_identity_conflict_tasks": 1,
+    "task_events": 3,
+    "canonical_datasets_written": false
+  },
+  "changed_records": [
+    {
+      "dataset": "reference-occurrences",
+      "id": "R-CR-a48dadadf3388e97",
+      "before": {
+        "occurrence_id": "R-CR-a48dadadf3388e97",
+        "citing_work_id": "W-S15",
+        "version_id": "V-S15-01",
+        "reference_label": "ref12",
+        "section": "Crossref deposited references",
+        "page": null,
+        "raw_reference": "{\"article-title\":\"Motion Vision\",\"author\":\"HJ Dahmen\",\"first-page\":\"143\",\"key\":\"ref12\",\"year\":\"2001\"}",
+        "raw_fingerprint": "5f64c7a1b66e72d72f554dc4486bcadf9e87d195460b7f31fd0e6fe5acc13781",
+        "candidate_ids": [],
+        "cited_work_id": null,
+        "identity_confidence": "unresolved",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "crossref",
+          "identifier": "10.1371/journal.pone.0128413#ordinal=12;key=ref12",
+          "version": "Q-RUN01-00116",
+          "verification_status": "source_supported"
+        },
+        "failure_reason": "Target identity not yet resolved; deposited metadata may omit title, DOI or author.",
+        "field_states": {
+          "page": {
+            "status": "not_applicable",
+            "reason": "Registry reference has no PDF page coordinate; version and reference key locate it.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      "after": {
+        "occurrence_id": "R-CR-a48dadadf3388e97",
+        "citing_work_id": "W-S15",
+        "version_id": "V-S15-01",
+        "reference_label": "ref12",
+        "section": "Crossref deposited references",
+        "page": null,
+        "raw_reference": "{\"article-title\":\"Motion Vision\",\"author\":\"HJ Dahmen\",\"first-page\":\"143\",\"key\":\"ref12\",\"year\":\"2001\"}",
+        "raw_fingerprint": "5f64c7a1b66e72d72f554dc4486bcadf9e87d195460b7f31fd0e6fe5acc13781",
+        "candidate_ids": [
+          "W-D90e225cf7a5efc53"
+        ],
+        "cited_work_id": "W-D90e225cf7a5efc53",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "crossref",
+          "identifier": "10.1371/journal.pone.0128413#ordinal=12;key=ref12",
+          "version": "Q-RUN01-00116",
+          "verification_status": "source_supported",
+          "evidence_locator": [
+            {
+              "source_id": "publisher",
+              "version_id": "V-S15-01",
+              "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+              "identifier": "Q-RUN06-P3-S15-bibliography-002#ref12",
+              "section": "References",
+              "accessed_at": "2026-11-27T06:48:06.874372Z",
+              "evidence_note": "官方参考表的作者、年份、章节题名、书名和页码，与同一发表版本既有PDF引文及已确认DOI记录一致；Crossref原字段只列书名，原始字符串保持不变。"
+            }
+          ]
+        },
+        "failure_reason": null,
+        "field_states": {
+          "page": {
+            "status": "not_applicable",
+            "reason": "Registry reference has no PDF page coordinate; version and reference key locate it.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      "changed_field_names": [
+        "candidate_ids",
+        "cited_work_id",
+        "failure_reason",
+        "identity_confidence",
+        "source",
+        "verification_status"
+      ]
+    },
+    {
+      "dataset": "citation-edges",
+      "id": "CE-f728f43e118507b5",
+      "before": {
+        "edge_id": "CE-f728f43e118507b5",
+        "citing_key": "Strubbe2015",
+        "cited_key": "Dahmen2001",
+        "occurrence_ids": [
+          "REF-S15-12"
+        ],
+        "discovery_sources": [
+          {
+            "source_id": "SRC-PDF",
+            "identifier": "S15",
+            "version": "V-S15-01",
+            "accessed_at": "2026-11-26",
+            "verification_status": "verified",
+            "license": "Reference bibliographic facts only.",
+            "url": "https://doi.org/10.1371/journal.pone.0128413",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S15-01",
+                "upload_id": "U-S15-01",
+                "identifier": "S15",
+                "page": 33,
+                "section": "References",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 12 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ]
+          }
+        ],
+        "verification_status": "verified",
+        "citation_roles": [
+          "unknown"
+        ],
+        "context_locators": [],
+        "date": "2026-11-26"
+      },
+      "after": {
+        "edge_id": "CE-f728f43e118507b5",
+        "citing_key": "Strubbe2015",
+        "cited_key": "Dahmen2001",
+        "occurrence_ids": [
+          "REF-S15-12",
+          "R-CR-a48dadadf3388e97"
+        ],
+        "discovery_sources": [
+          {
+            "source_id": "SRC-PDF",
+            "identifier": "S15",
+            "version": "V-S15-01",
+            "accessed_at": "2026-11-26",
+            "verification_status": "verified",
+            "license": "Reference bibliographic facts only.",
+            "url": "https://doi.org/10.1371/journal.pone.0128413",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S15-01",
+                "upload_id": "U-S15-01",
+                "identifier": "S15",
+                "page": 33,
+                "section": "References",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 12 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ]
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+            "identifier": "doi:10.1371/journal.pone.0128413",
+            "version": "Q-RUN06-P3-S15-bibliography-002",
+            "accessed_at": "2026-11-27T06:48:06.874372Z",
+            "verification_status": "verified",
+            "license": "CC-BY publisher article; bibliographic facts and original Chinese summaries only.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "version_id": "V-S15-01",
+                "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+                "identifier": "Q-RUN06-P3-S15-bibliography-002#ref12",
+                "section": "References",
+                "accessed_at": "2026-11-27T06:48:06.874372Z",
+                "evidence_note": "官方参考表的作者、年份、章节题名、书名和页码，与同一发表版本既有PDF引文及已确认DOI记录一致；Crossref原字段只列书名，原始字符串保持不变。"
+              }
+            ]
+          }
+        ],
+        "verification_status": "verified",
+        "citation_roles": [
+          "unknown"
+        ],
+        "context_locators": [],
+        "date": "2026-11-27"
+      },
+      "changed_field_names": [
+        "date",
+        "discovery_sources",
+        "occurrence_ids"
+      ]
+    },
+    {
+      "dataset": "reference-occurrences",
+      "id": "R-CR-4758aa9e79112f4a",
+      "before": {
+        "occurrence_id": "R-CR-4758aa9e79112f4a",
+        "citing_work_id": "W-S15",
+        "version_id": "V-S15-01",
+        "reference_label": "ref13",
+        "section": "Crossref deposited references",
+        "page": null,
+        "raw_reference": "{\"article-title\":\"International Encyclopedia of Statistical Science\",\"author\":\"JS Chipman\",\"first-page\":\"577\",\"key\":\"ref13\",\"year\":\"2011\"}",
+        "raw_fingerprint": "413eeaf0fe6facb502f57ede7e639dd71f35d1e0fd92e0f1c70d87951a2c7c11",
+        "candidate_ids": [],
+        "cited_work_id": null,
+        "identity_confidence": "unresolved",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "crossref",
+          "identifier": "10.1371/journal.pone.0128413#ordinal=13;key=ref13",
+          "version": "Q-RUN01-00116",
+          "verification_status": "source_supported"
+        },
+        "failure_reason": "Target identity not yet resolved; deposited metadata may omit title, DOI or author.",
+        "field_states": {
+          "page": {
+            "status": "not_applicable",
+            "reason": "Registry reference has no PDF page coordinate; version and reference key locate it.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      "after": {
+        "occurrence_id": "R-CR-4758aa9e79112f4a",
+        "citing_work_id": "W-S15",
+        "version_id": "V-S15-01",
+        "reference_label": "ref13",
+        "section": "Crossref deposited references",
+        "page": null,
+        "raw_reference": "{\"article-title\":\"International Encyclopedia of Statistical Science\",\"author\":\"JS Chipman\",\"first-page\":\"577\",\"key\":\"ref13\",\"year\":\"2011\"}",
+        "raw_fingerprint": "413eeaf0fe6facb502f57ede7e639dd71f35d1e0fd92e0f1c70d87951a2c7c11",
+        "candidate_ids": [
+          "W-Dee8a80e9b1a461d3"
+        ],
+        "cited_work_id": "W-Dee8a80e9b1a461d3",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "crossref",
+          "identifier": "10.1371/journal.pone.0128413#ordinal=13;key=ref13",
+          "version": "Q-RUN01-00116",
+          "verification_status": "source_supported",
+          "evidence_locator": [
+            {
+              "source_id": "publisher",
+              "version_id": "V-S15-01",
+              "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+              "identifier": "Q-RUN06-P3-S15-bibliography-002#ref13",
+              "section": "References",
+              "accessed_at": "2026-11-27T06:48:06.874372Z",
+              "evidence_note": "官方参考表的作者、年份、章节题名、书名和页码，与同一发表版本既有PDF引文及已确认DOI记录一致；Crossref原字段只列书名，原始字符串保持不变。"
+            }
+          ]
+        },
+        "failure_reason": null,
+        "field_states": {
+          "page": {
+            "status": "not_applicable",
+            "reason": "Registry reference has no PDF page coordinate; version and reference key locate it.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      "changed_field_names": [
+        "candidate_ids",
+        "cited_work_id",
+        "failure_reason",
+        "identity_confidence",
+        "source",
+        "verification_status"
+      ]
+    },
+    {
+      "dataset": "citation-edges",
+      "id": "CE-9d60bf7651132953",
+      "before": {
+        "edge_id": "CE-9d60bf7651132953",
+        "citing_key": "Strubbe2015",
+        "cited_key": "Chipman2011",
+        "occurrence_ids": [
+          "REF-S15-13"
+        ],
+        "discovery_sources": [
+          {
+            "source_id": "SRC-PDF",
+            "identifier": "S15",
+            "version": "V-S15-01",
+            "accessed_at": "2026-11-26",
+            "verification_status": "verified",
+            "license": "Reference bibliographic facts only.",
+            "url": "https://doi.org/10.1371/journal.pone.0128413",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S15-01",
+                "upload_id": "U-S15-01",
+                "identifier": "S15",
+                "page": 33,
+                "section": "References",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 13 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              },
+              {
+                "source_id": "publisher",
+                "url": "https://doi.org/10.1007/978-3-642-04898-2_270",
+                "accessed_at": "2026-11-26",
+                "section": "Bibliographic identity / publication history",
+                "evidence_note": "Original cited author/year/container/pages agree with exact registered chapter; title omitted or multiple editions caused the earlier ambiguity."
+              }
+            ]
+          }
+        ],
+        "verification_status": "verified",
+        "citation_roles": [
+          "unknown"
+        ],
+        "context_locators": [],
+        "date": "2026-11-26"
+      },
+      "after": {
+        "edge_id": "CE-9d60bf7651132953",
+        "citing_key": "Strubbe2015",
+        "cited_key": "Chipman2011",
+        "occurrence_ids": [
+          "REF-S15-13",
+          "R-CR-4758aa9e79112f4a"
+        ],
+        "discovery_sources": [
+          {
+            "source_id": "SRC-PDF",
+            "identifier": "S15",
+            "version": "V-S15-01",
+            "accessed_at": "2026-11-26",
+            "verification_status": "verified",
+            "license": "Reference bibliographic facts only.",
+            "url": "https://doi.org/10.1371/journal.pone.0128413",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S15-01",
+                "upload_id": "U-S15-01",
+                "identifier": "S15",
+                "page": 33,
+                "section": "References",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 13 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              },
+              {
+                "source_id": "publisher",
+                "url": "https://doi.org/10.1007/978-3-642-04898-2_270",
+                "accessed_at": "2026-11-26",
+                "section": "Bibliographic identity / publication history",
+                "evidence_note": "Original cited author/year/container/pages agree with exact registered chapter; title omitted or multiple editions caused the earlier ambiguity."
+              }
+            ]
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+            "identifier": "doi:10.1371/journal.pone.0128413",
+            "version": "Q-RUN06-P3-S15-bibliography-002",
+            "accessed_at": "2026-11-27T06:48:06.874372Z",
+            "verification_status": "verified",
+            "license": "CC-BY publisher article; bibliographic facts and original Chinese summaries only.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "version_id": "V-S15-01",
+                "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+                "identifier": "Q-RUN06-P3-S15-bibliography-002#ref13",
+                "section": "References",
+                "accessed_at": "2026-11-27T06:48:06.874372Z",
+                "evidence_note": "官方参考表的作者、年份、章节题名、书名和页码，与同一发表版本既有PDF引文及已确认DOI记录一致；Crossref原字段只列书名，原始字符串保持不变。"
+              }
+            ]
+          }
+        ],
+        "verification_status": "verified",
+        "citation_roles": [
+          "unknown"
+        ],
+        "context_locators": [],
+        "date": "2026-11-27"
+      },
+      "changed_field_names": [
+        "date",
+        "discovery_sources",
+        "occurrence_ids"
+      ]
+    },
+    {
+      "dataset": "reference-occurrences",
+      "id": "R-CR-b6ae130959451af5",
+      "before": {
+        "occurrence_id": "R-CR-b6ae130959451af5",
+        "citing_work_id": "W-S15",
+        "version_id": "V-S15-01",
+        "reference_label": "ref33",
+        "section": "Crossref deposited references",
+        "page": null,
+        "raw_reference": "{\"article-title\":\"Biologically Motivated Computer Vision, volume 2525 of <italic>Lecture Notes in Computer Science</italic>\",\"author\":\"MO Franz\",\"first-page\":\"171\",\"key\":\"ref33\",\"year\":\"2002\"}",
+        "raw_fingerprint": "0cc8d3cffc048be4e67655b814d3e0e41885c2647e1c19d907035b1f23c67c5b",
+        "candidate_ids": [],
+        "cited_work_id": null,
+        "identity_confidence": "unresolved",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "crossref",
+          "identifier": "10.1371/journal.pone.0128413#ordinal=33;key=ref33",
+          "version": "Q-RUN01-00116",
+          "verification_status": "source_supported"
+        },
+        "failure_reason": "Target identity not yet resolved; deposited metadata may omit title, DOI or author.",
+        "field_states": {
+          "page": {
+            "status": "not_applicable",
+            "reason": "Registry reference has no PDF page coordinate; version and reference key locate it.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      "after": {
+        "occurrence_id": "R-CR-b6ae130959451af5",
+        "citing_work_id": "W-S15",
+        "version_id": "V-S15-01",
+        "reference_label": "ref33",
+        "section": "Crossref deposited references",
+        "page": null,
+        "raw_reference": "{\"article-title\":\"Biologically Motivated Computer Vision, volume 2525 of <italic>Lecture Notes in Computer Science</italic>\",\"author\":\"MO Franz\",\"first-page\":\"171\",\"key\":\"ref33\",\"year\":\"2002\"}",
+        "raw_fingerprint": "0cc8d3cffc048be4e67655b814d3e0e41885c2647e1c19d907035b1f23c67c5b",
+        "candidate_ids": [
+          "W-D4d677a1f32b417f0"
+        ],
+        "cited_work_id": "W-D4d677a1f32b417f0",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "crossref",
+          "identifier": "10.1371/journal.pone.0128413#ordinal=33;key=ref33",
+          "version": "Q-RUN01-00116",
+          "verification_status": "source_supported",
+          "evidence_locator": [
+            {
+              "source_id": "publisher",
+              "version_id": "V-S15-01",
+              "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+              "identifier": "Q-RUN06-P3-S15-bibliography-002#ref33",
+              "section": "References",
+              "accessed_at": "2026-11-27T06:48:06.874372Z",
+              "evidence_note": "官方参考表的作者、年份、章节题名、书名和页码，与同一发表版本既有PDF引文及已确认DOI记录一致；Crossref原字段只列书名，原始字符串保持不变。"
+            }
+          ]
+        },
+        "failure_reason": null,
+        "field_states": {
+          "page": {
+            "status": "not_applicable",
+            "reason": "Registry reference has no PDF page coordinate; version and reference key locate it.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      "changed_field_names": [
+        "candidate_ids",
+        "cited_work_id",
+        "failure_reason",
+        "identity_confidence",
+        "source",
+        "verification_status"
+      ]
+    },
+    {
+      "dataset": "citation-edges",
+      "id": "CE-02194e8335729311",
+      "before": {
+        "edge_id": "CE-02194e8335729311",
+        "citing_key": "Strubbe2015",
+        "cited_key": "Franz2002a",
+        "occurrence_ids": [
+          "REF-S15-33"
+        ],
+        "discovery_sources": [
+          {
+            "source_id": "SRC-PDF",
+            "identifier": "S15",
+            "version": "V-S15-01",
+            "accessed_at": "2026-11-26",
+            "verification_status": "verified",
+            "license": "Reference bibliographic facts only.",
+            "url": "https://doi.org/10.1371/journal.pone.0128413",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S15-01",
+                "upload_id": "U-S15-01",
+                "identifier": "S15",
+                "page": 34,
+                "section": "References",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 33 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ]
+          }
+        ],
+        "verification_status": "verified",
+        "citation_roles": [
+          "unknown"
+        ],
+        "context_locators": [],
+        "date": "2026-11-26"
+      },
+      "after": {
+        "edge_id": "CE-02194e8335729311",
+        "citing_key": "Strubbe2015",
+        "cited_key": "Franz2002a",
+        "occurrence_ids": [
+          "REF-S15-33",
+          "R-CR-b6ae130959451af5"
+        ],
+        "discovery_sources": [
+          {
+            "source_id": "SRC-PDF",
+            "identifier": "S15",
+            "version": "V-S15-01",
+            "accessed_at": "2026-11-26",
+            "verification_status": "verified",
+            "license": "Reference bibliographic facts only.",
+            "url": "https://doi.org/10.1371/journal.pone.0128413",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S15-01",
+                "upload_id": "U-S15-01",
+                "identifier": "S15",
+                "page": 34,
+                "section": "References",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 33 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ]
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+            "identifier": "doi:10.1371/journal.pone.0128413",
+            "version": "Q-RUN06-P3-S15-bibliography-002",
+            "accessed_at": "2026-11-27T06:48:06.874372Z",
+            "verification_status": "verified",
+            "license": "CC-BY publisher article; bibliographic facts and original Chinese summaries only.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "version_id": "V-S15-01",
+                "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+                "identifier": "Q-RUN06-P3-S15-bibliography-002#ref33",
+                "section": "References",
+                "accessed_at": "2026-11-27T06:48:06.874372Z",
+                "evidence_note": "官方参考表的作者、年份、章节题名、书名和页码，与同一发表版本既有PDF引文及已确认DOI记录一致；Crossref原字段只列书名，原始字符串保持不变。"
+              }
+            ]
+          }
+        ],
+        "verification_status": "verified",
+        "citation_roles": [
+          "unknown"
+        ],
+        "context_locators": [],
+        "date": "2026-11-27"
+      },
+      "changed_field_names": [
+        "date",
+        "discovery_sources",
+        "occurrence_ids"
+      ]
+    },
+    {
+      "dataset": "reference-occurrences",
+      "id": "R-CR-0ebc0b987b8c2f66",
+      "before": {
+        "occurrence_id": "R-CR-0ebc0b987b8c2f66",
+        "citing_work_id": "W-S15",
+        "version_id": "V-S15-01",
+        "reference_label": "ref36",
+        "section": "Crossref deposited references",
+        "page": null,
+        "raw_reference": "{\"article-title\":\"Spherical Harmonics, volume 17 of <italic>Lecture Notes in Mathematics</italic>\",\"author\":\"C Müller\",\"key\":\"ref36\",\"year\":\"1966\"}",
+        "raw_fingerprint": "58c2d7405c7f689c8d78bd3738dbd53bca12dfcc2b7304f5582f4a7c49de6950",
+        "candidate_ids": [],
+        "cited_work_id": null,
+        "identity_confidence": "unresolved",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "crossref",
+          "identifier": "10.1371/journal.pone.0128413#ordinal=36;key=ref36",
+          "version": "Q-RUN01-00116",
+          "verification_status": "source_supported"
+        },
+        "failure_reason": "Target identity not yet resolved; deposited metadata may omit title, DOI or author.",
+        "field_states": {
+          "page": {
+            "status": "not_applicable",
+            "reason": "Registry reference has no PDF page coordinate; version and reference key locate it.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      "after": {
+        "occurrence_id": "R-CR-0ebc0b987b8c2f66",
+        "citing_work_id": "W-S15",
+        "version_id": "V-S15-01",
+        "reference_label": "ref36",
+        "section": "Crossref deposited references",
+        "page": null,
+        "raw_reference": "{\"article-title\":\"Spherical Harmonics, volume 17 of <italic>Lecture Notes in Mathematics</italic>\",\"author\":\"C Müller\",\"key\":\"ref36\",\"year\":\"1966\"}",
+        "raw_fingerprint": "58c2d7405c7f689c8d78bd3738dbd53bca12dfcc2b7304f5582f4a7c49de6950",
+        "candidate_ids": [
+          "W-D6090de644ab7dc59",
+          "W-Re437f6ff5e83b63f"
+        ],
+        "cited_work_id": null,
+        "identity_confidence": "unresolved",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "crossref",
+          "identifier": "10.1371/journal.pone.0128413#ordinal=36;key=ref36",
+          "version": "Q-RUN01-00116",
+          "verification_status": "source_supported",
+          "evidence_locator": [
+            {
+              "source_id": "publisher",
+              "version_id": "V-S15-01",
+              "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+              "identifier": "Q-RUN06-P3-S15-bibliography-002#ref36",
+              "section": "References",
+              "accessed_at": "2026-11-27T06:48:06.874372Z",
+              "evidence_note": "官方参考表确认作者Müller、1966、Spherical Harmonics及Lecture Notes in Mathematics第17卷；库中同时存在已确认DOI记录Muller1966与无DOI同题名临时记录。保留原PDF映射，当前Crossref出现项不强行选端点，不执行Work级联合并。"
+            }
+          ]
+        },
+        "failure_reason": "官方参考表确认作者Müller、1966、Spherical Harmonics及Lecture Notes in Mathematics第17卷；库中同时存在已确认DOI记录Muller1966与无DOI同题名临时记录。保留原PDF映射，当前Crossref出现项不强行选端点，不执行Work级联合并。",
+        "field_states": {
+          "page": {
+            "status": "not_applicable",
+            "reason": "Registry reference has no PDF page coordinate; version and reference key locate it.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      "changed_field_names": [
+        "candidate_ids",
+        "failure_reason",
+        "source"
+      ]
+    },
+    {
+      "dataset": "citation-edges",
+      "id": "CE-c464536845aae068",
+      "before": {
+        "edge_id": "CE-c464536845aae068",
+        "citing_key": "Strubbe2015",
+        "cited_key": "Franz2000",
+        "occurrence_ids": [
+          "REF-S15-8",
+          "R-CR-1b22be564c8c44c3"
+        ],
+        "discovery_sources": [
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/ce6b07d4913830ff6557018bcea5e45f3c9c076d",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/ce6b07d4913830ff6557018bcea5e45f3c9c076d",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00068"
+              }
+            ]
+          },
+          {
+            "source_id": "europepmc",
+            "url": "https://europepmc.org/article/MED/26308839",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "europepmc",
+                "url": "https://europepmc.org/article/MED/26308839",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00094"
+              }
+            ]
+          },
+          {
+            "source_id": "SRC-PDF",
+            "identifier": "S15",
+            "version": "V-S15-01",
+            "accessed_at": "2026-11-26",
+            "verification_status": "verified",
+            "license": "Reference bibliographic facts only.",
+            "url": "https://doi.org/10.1371/journal.pone.0128413",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S15-01",
+                "upload_id": "U-S15-01",
+                "identifier": "S15",
+                "page": 33,
+                "section": "References",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 8 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ]
+          },
+          {
+            "source_id": "crossref",
+            "identifier": "10.1371/journal.pone.0128413#ordinal=8;key=ref8",
+            "version": "Q-RUN01-00116",
+            "verification_status": "source_supported"
+          }
+        ],
+        "verification_status": "verified",
+        "citation_roles": [
+          "unknown"
+        ],
+        "context_locators": [],
+        "date": "2026-11-26"
+      },
+      "after": {
+        "edge_id": "CE-c464536845aae068",
+        "citing_key": "Strubbe2015",
+        "cited_key": "Franz2000",
+        "occurrence_ids": [
+          "REF-S15-8",
+          "R-CR-1b22be564c8c44c3"
+        ],
+        "discovery_sources": [
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/ce6b07d4913830ff6557018bcea5e45f3c9c076d",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/ce6b07d4913830ff6557018bcea5e45f3c9c076d",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00068"
+              }
+            ]
+          },
+          {
+            "source_id": "europepmc",
+            "url": "https://europepmc.org/article/MED/26308839",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "europepmc",
+                "url": "https://europepmc.org/article/MED/26308839",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00094"
+              }
+            ]
+          },
+          {
+            "source_id": "SRC-PDF",
+            "identifier": "S15",
+            "version": "V-S15-01",
+            "accessed_at": "2026-11-26",
+            "verification_status": "verified",
+            "license": "Reference bibliographic facts only.",
+            "url": "https://doi.org/10.1371/journal.pone.0128413",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S15-01",
+                "upload_id": "U-S15-01",
+                "identifier": "S15",
+                "page": 33,
+                "section": "References",
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 8 transcribed and bibliography boundary reviewed; target identity evaluated separately."
+              }
+            ]
+          },
+          {
+            "source_id": "crossref",
+            "identifier": "10.1371/journal.pone.0128413#ordinal=8;key=ref8",
+            "version": "Q-RUN01-00116",
+            "verification_status": "source_supported"
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+            "identifier": "doi:10.1371/journal.pone.0128413",
+            "version": "Q-RUN06-P3-S15-bibliography-002",
+            "accessed_at": "2026-11-27T06:48:06.874372Z",
+            "verification_status": "verified",
+            "license": "CC-BY publisher article; bibliographic facts and original Chinese summaries only.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "version_id": "V-S15-01",
+                "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+                "identifier": "Q-RUN06-P3-S15-context-001;Q-RUN06-P3-S15-bibliography-002#ref8",
+                "section": "1 Introduction; 2.1 The matched filter approach",
+                "accessed_at": "2026-11-27T06:48:06.874372Z",
+                "evidence_note": "继承Franz–Krapp匹配滤波，并针对固定距离先验发展自适应方法。仅核验引用作用，不能据此认定生物实现或一般条件下性能已证。",
+                "paragraph": "Introduction refs8–12, displayed lines149–158; §2.1 first paragraph line169"
+              }
+            ]
+          }
+        ],
+        "verification_status": "verified",
+        "citation_roles": [
+          "inheritance",
+          "improvement"
+        ],
+        "context_locators": [
+          {
+            "source_id": "publisher",
+            "version_id": "V-S15-01",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+            "identifier": "Q-RUN06-P3-S15-context-001;Q-RUN06-P3-S15-bibliography-002#ref8",
+            "section": "1 Introduction; 2.1 The matched filter approach",
+            "accessed_at": "2026-11-27T06:48:06.874372Z",
+            "evidence_note": "继承Franz–Krapp匹配滤波，并针对固定距离先验发展自适应方法。仅核验引用作用，不能据此认定生物实现或一般条件下性能已证。",
+            "paragraph": "Introduction refs8–12, displayed lines149–158; §2.1 first paragraph line169"
+          }
+        ],
+        "date": "2026-11-27"
+      },
+      "changed_field_names": [
+        "citation_roles",
+        "context_locators",
+        "date",
+        "discovery_sources"
+      ]
+    },
+    {
+      "dataset": "citation-edges",
+      "id": "CE-f7167f5341ba026d",
+      "before": {
+        "citation_roles": [
+          "unknown"
+        ],
+        "cited_key": "Franz2004",
+        "citing_key": "Strubbe2015",
+        "context_locators": [],
+        "date": "2026-11-26",
+        "discovery_sources": [
+          {
+            "accessed_at": "2026-11-26",
+            "evidence_locator": [
+              {
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "identifier": "Q-RUN01-00063",
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/ce6b07d4913830ff6557018bcea5e45f3c9c076d"
+              }
+            ],
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/ce6b07d4913830ff6557018bcea5e45f3c9c076d",
+            "verification_status": "source_supported"
+          },
+          {
+            "accessed_at": "2026-11-26",
+            "evidence_locator": [
+              {
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 11 transcribed and bibliography boundary reviewed; target identity evaluated separately.",
+                "identifier": "S15",
+                "page": 33,
+                "section": "References",
+                "source_id": "SRC-PDF",
+                "upload_id": "U-S15-01",
+                "version_id": "V-S15-01"
+              }
+            ],
+            "identifier": "S15",
+            "license": "Reference bibliographic facts only.",
+            "source_id": "SRC-PDF",
+            "url": "https://doi.org/10.1371/journal.pone.0128413",
+            "verification_status": "verified",
+            "version": "V-S15-01"
+          },
+          {
+            "identifier": "10.1371/journal.pone.0128413#ordinal=11;key=ref11",
+            "source_id": "crossref",
+            "verification_status": "source_supported",
+            "version": "Q-RUN01-00116"
+          },
+          {
+            "accessed_at": "2026-11-27T02:28:32.353054Z",
+            "evidence_locator": [
+              {
+                "accessed_at": "2026-11-27T02:28:32.353054Z",
+                "evidence_note": "索引确认施引关系；未审阅正文上下文，引用角色仍未知。",
+                "identifier": "MED:26308839;receipt_sha256=774391a88f764031872178d67acf0a749be46f12cbbdf6278fbbc306b7bd20d2",
+                "section": "Returned citing-list row",
+                "source_id": "europepmc",
+                "url": "https://europepmc.org/article/MED/26308839"
+              }
+            ],
+            "identifier": "MED:26308839",
+            "source_id": "europepmc",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/MED/15476600/citations?format=json&page=1&pageSize=1000",
+            "verification_status": "source_supported",
+            "version": "Q-RUN05-P4-S17-citations-001"
+          }
+        ],
+        "edge_id": "CE-f7167f5341ba026d",
+        "occurrence_ids": [
+          "REF-S15-11",
+          "R-CR-a722402c0a9c8e0a"
+        ],
+        "verification_status": "verified"
+      },
+      "after": {
+        "citation_roles": [
+          "inheritance",
+          "improvement"
+        ],
+        "cited_key": "Franz2004",
+        "citing_key": "Strubbe2015",
+        "context_locators": [
+          {
+            "source_id": "publisher",
+            "version_id": "V-S15-01",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+            "identifier": "Q-RUN06-P3-S15-context-001;Q-RUN06-P3-S15-bibliography-002#ref11",
+            "section": "1 Introduction; 2.1; 2.3; 5.4 The weight matrix of the original MFA",
+            "accessed_at": "2026-11-27T06:48:06.874372Z",
+            "evidence_note": "继承Franz等的耦合矩阵并重写其权重表达，作为连接KvD推导的前提；范围限于文中条件，不把引文作用当成定量效果验收。",
+            "paragraph": "Introduction line152; §2.1 lines169–174; §2.3 lines182–192; Appendix5.4 line440"
+          }
+        ],
+        "date": "2026-11-27",
+        "discovery_sources": [
+          {
+            "accessed_at": "2026-11-26",
+            "evidence_locator": [
+              {
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "identifier": "Q-RUN01-00063",
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/ce6b07d4913830ff6557018bcea5e45f3c9c076d"
+              }
+            ],
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/ce6b07d4913830ff6557018bcea5e45f3c9c076d",
+            "verification_status": "source_supported"
+          },
+          {
+            "accessed_at": "2026-11-26",
+            "evidence_locator": [
+              {
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Printed reference 11 transcribed and bibliography boundary reviewed; target identity evaluated separately.",
+                "identifier": "S15",
+                "page": 33,
+                "section": "References",
+                "source_id": "SRC-PDF",
+                "upload_id": "U-S15-01",
+                "version_id": "V-S15-01"
+              }
+            ],
+            "identifier": "S15",
+            "license": "Reference bibliographic facts only.",
+            "source_id": "SRC-PDF",
+            "url": "https://doi.org/10.1371/journal.pone.0128413",
+            "verification_status": "verified",
+            "version": "V-S15-01"
+          },
+          {
+            "identifier": "10.1371/journal.pone.0128413#ordinal=11;key=ref11",
+            "source_id": "crossref",
+            "verification_status": "source_supported",
+            "version": "Q-RUN01-00116"
+          },
+          {
+            "accessed_at": "2026-11-27T02:28:32.353054Z",
+            "evidence_locator": [
+              {
+                "accessed_at": "2026-11-27T02:28:32.353054Z",
+                "evidence_note": "索引确认施引关系；未审阅正文上下文，引用角色仍未知。",
+                "identifier": "MED:26308839;receipt_sha256=774391a88f764031872178d67acf0a749be46f12cbbdf6278fbbc306b7bd20d2",
+                "section": "Returned citing-list row",
+                "source_id": "europepmc",
+                "url": "https://europepmc.org/article/MED/26308839"
+              }
+            ],
+            "identifier": "MED:26308839",
+            "source_id": "europepmc",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/MED/15476600/citations?format=json&page=1&pageSize=1000",
+            "verification_status": "source_supported",
+            "version": "Q-RUN05-P4-S17-citations-001"
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+            "identifier": "doi:10.1371/journal.pone.0128413",
+            "version": "Q-RUN06-P3-S15-bibliography-002",
+            "accessed_at": "2026-11-27T06:48:06.874372Z",
+            "verification_status": "verified",
+            "license": "CC-BY publisher article; bibliographic facts and original Chinese summaries only.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "version_id": "V-S15-01",
+                "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+                "identifier": "Q-RUN06-P3-S15-context-001;Q-RUN06-P3-S15-bibliography-002#ref11",
+                "section": "1 Introduction; 2.1; 2.3; 5.4 The weight matrix of the original MFA",
+                "accessed_at": "2026-11-27T06:48:06.874372Z",
+                "evidence_note": "继承Franz等的耦合矩阵并重写其权重表达，作为连接KvD推导的前提；范围限于文中条件，不把引文作用当成定量效果验收。",
+                "paragraph": "Introduction line152; §2.1 lines169–174; §2.3 lines182–192; Appendix5.4 line440"
+              }
+            ]
+          }
+        ],
+        "edge_id": "CE-f7167f5341ba026d",
+        "occurrence_ids": [
+          "REF-S15-11",
+          "R-CR-a722402c0a9c8e0a"
+        ],
+        "verification_status": "verified"
+      },
+      "changed_field_names": [
+        "citation_roles",
+        "context_locators",
+        "date",
+        "discovery_sources"
+      ]
+    }
+  ],
+  "additions": {
+    "manual-reviews": [
+      {
+        "review_id": "MR-RUN06-P3-S15-001",
+        "run_id": "RUN-0006",
+        "review_type": "bibliography_target_identity_review",
+        "entity_id": "W-S15",
+        "reviewer": "P3/P4 citation audit agent",
+        "recorded_at_utc": "2026-11-27T06:48:06.874372Z",
+        "artifact": "temp/reports/RUN-0006-seed-reference-candidate.json",
+        "decision": "associate_existing_confirmed_work",
+        "notes": "官方参考表的作者、年份、章节题名、书名和页码，与同一发表版本既有PDF引文及已确认DOI记录一致；Crossref原字段只列书名，原始字符串保持不变。",
+        "supporting_record_ids": [
+          "R-CR-a48dadadf3388e97",
+          "REF-S15-12",
+          "W-D90e225cf7a5efc53",
+          "CE-f728f43e118507b5"
+        ],
+        "query_ids": [
+          "Q-RUN06-P3-S15-bibliography-002",
+          "Q-RUN06-CACHE-P3-003"
+        ]
+      },
+      {
+        "review_id": "MR-RUN06-P3-S15-002",
+        "run_id": "RUN-0006",
+        "review_type": "bibliography_target_identity_review",
+        "entity_id": "W-S15",
+        "reviewer": "P3/P4 citation audit agent",
+        "recorded_at_utc": "2026-11-27T06:48:06.874372Z",
+        "artifact": "temp/reports/RUN-0006-seed-reference-candidate.json",
+        "decision": "associate_existing_confirmed_work",
+        "notes": "官方参考表的作者、年份、章节题名、书名和页码，与同一发表版本既有PDF引文及已确认DOI记录一致；Crossref原字段只列书名，原始字符串保持不变。",
+        "supporting_record_ids": [
+          "R-CR-4758aa9e79112f4a",
+          "REF-S15-13",
+          "W-Dee8a80e9b1a461d3",
+          "CE-9d60bf7651132953"
+        ],
+        "query_ids": [
+          "Q-RUN06-P3-S15-bibliography-002",
+          "Q-RUN06-CACHE-P3-004"
+        ]
+      },
+      {
+        "review_id": "MR-RUN06-P3-S15-003",
+        "run_id": "RUN-0006",
+        "review_type": "bibliography_target_identity_review",
+        "entity_id": "W-S15",
+        "reviewer": "P3/P4 citation audit agent",
+        "recorded_at_utc": "2026-11-27T06:48:06.874372Z",
+        "artifact": "temp/reports/RUN-0006-seed-reference-candidate.json",
+        "decision": "associate_existing_confirmed_work",
+        "notes": "官方参考表的作者、年份、章节题名、书名和页码，与同一发表版本既有PDF引文及已确认DOI记录一致；Crossref原字段只列书名，原始字符串保持不变。",
+        "supporting_record_ids": [
+          "R-CR-b6ae130959451af5",
+          "REF-S15-33",
+          "W-D4d677a1f32b417f0",
+          "CE-02194e8335729311"
+        ],
+        "query_ids": [
+          "Q-RUN06-P3-S15-bibliography-002",
+          "Q-RUN06-CACHE-P3-003"
+        ]
+      },
+      {
+        "review_id": "MR-RUN06-P3-S15-004",
+        "run_id": "RUN-0006",
+        "review_type": "bibliography_target_identity_review",
+        "entity_id": "W-S15",
+        "reviewer": "P3/P4 citation audit agent",
+        "recorded_at_utc": "2026-11-27T06:48:06.874372Z",
+        "artifact": "temp/reports/RUN-0006-seed-reference-candidate.json",
+        "decision": "retain_unresolved_duplicate_identity",
+        "notes": "官方参考表确认作者Müller、1966、Spherical Harmonics及Lecture Notes in Mathematics第17卷；库中同时存在已确认DOI记录Muller1966与无DOI同题名临时记录。保留原PDF映射，当前Crossref出现项不强行选端点，不执行Work级联合并。",
+        "supporting_record_ids": [
+          "R-CR-0ebc0b987b8c2f66",
+          "REF-S15-36",
+          "W-D6090de644ab7dc59",
+          "W-Re437f6ff5e83b63f"
+        ],
+        "query_ids": [
+          "Q-RUN06-P3-S15-bibliography-002"
+        ]
+      },
+      {
+        "review_id": "MR-RUN06-P3-S15-005",
+        "run_id": "RUN-0006",
+        "review_type": "body_citation_context_review",
+        "entity_id": "W-S15",
+        "reviewer": "P3/P4 citation audit agent",
+        "recorded_at_utc": "2026-11-27T06:48:06.874372Z",
+        "artifact": "temp/reports/RUN-0006-seed-reference-candidate.json",
+        "decision": "verified_localized_context",
+        "notes": "继承Franz–Krapp匹配滤波，并针对固定距离先验发展自适应方法。仅核验引用作用，不能据此认定生物实现或一般条件下性能已证。",
+        "supporting_record_ids": [
+          "CE-c464536845aae068",
+          "W-S19"
+        ],
+        "query_ids": [
+          "Q-RUN06-P3-S15-context-001",
+          "Q-RUN06-P3-S15-bibliography-002"
+        ]
+      },
+      {
+        "review_id": "MR-RUN06-P3-S15-006",
+        "run_id": "RUN-0006",
+        "review_type": "body_citation_context_review",
+        "entity_id": "W-S15",
+        "reviewer": "P3/P4 citation audit agent",
+        "recorded_at_utc": "2026-11-27T06:48:06.874372Z",
+        "artifact": "temp/reports/RUN-0006-seed-reference-candidate.json",
+        "decision": "verified_localized_context",
+        "notes": "继承Franz等的耦合矩阵并重写其权重表达，作为连接KvD推导的前提；范围限于文中条件，不把引文作用当成定量效果验收。",
+        "supporting_record_ids": [
+          "CE-f7167f5341ba026d",
+          "W-S17"
+        ],
+        "query_ids": [
+          "Q-RUN06-P3-S15-context-001",
+          "Q-RUN06-P3-S15-bibliography-002"
+        ]
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "T-ReferenceIdentity-W-S15",
+        "entity_type": "work",
+        "entity_id": "W-S15",
+        "task_type": "reference_identity",
+        "scope_id": "SCOPE-0001",
+        "source_id": "crossref",
+        "normalized_parameters": {
+          "run5_reviewed_occurrence_ids": [
+            "R-CR-e5abbce00cd17cbc",
+            "R-CR-1bce548386dc407c",
+            "R-CR-5472901126418298",
+            "R-CR-fa62fde6aa095276",
+            "R-CR-d6598837b980f0c3",
+            "R-CR-68be6d6ec81efb2c",
+            "R-CR-8c4764480bdad00d"
+          ],
+          "run5_associated_occurrence_ids": [
+            "R-CR-e5abbce00cd17cbc",
+            "R-CR-1bce548386dc407c",
+            "R-CR-5472901126418298",
+            "R-CR-d6598837b980f0c3",
+            "R-CR-68be6d6ec81efb2c",
+            "R-CR-8c4764480bdad00d"
+          ],
+          "remaining_unresolved_occurrence_ids": [
+            "R-CR-d2b1fca85825376d",
+            "R-CR-21f04b8ebf2b9490",
+            "R-CR-fa62fde6aa095276",
+            "R-CR-0ebc0b987b8c2f66"
+          ],
+          "associated_but_not_confirmed_occurrence_ids": [
+            "R-CR-e5abbce00cd17cbc"
+          ],
+          "review_report_paths": [
+            "temp/reports/RUN-0005-seed-reference-review-batch2.json"
+          ],
+          "attempt_count_scope": "bounded local cache-review batches; no external requests",
+          "target_work_unknown_tasks_closed": false,
+          "run6_associated_occurrence_ids": [
+            "R-CR-a48dadadf3388e97",
+            "R-CR-4758aa9e79112f4a",
+            "R-CR-b6ae130959451af5"
+          ],
+          "run6_duplicate_identity_conflict": [
+            "W-D6090de644ab7dc59",
+            "W-Re437f6ff5e83b63f"
+          ],
+          "run6_evidence_receipts": [
+            "Q-RUN06-P3-S15-context-001",
+            "Q-RUN06-P3-S15-bibliography-002",
+            "Q-RUN06-CACHE-P3-003",
+            "Q-RUN06-CACHE-P3-004"
+          ]
+        },
+        "task_state": "partial",
+        "cursor": 0,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN05-CACHE-P3-B2-05",
+          "Q-RUN05-CACHE-P3-B2-07",
+          "Q-RUN05-CACHE-P3-B2-02",
+          "Q-RUN05-CACHE-P3-B2-17",
+          "Q-RUN05-CACHE-P3-B2-03",
+          "Q-RUN05-CACHE-P3-B2-11",
+          "Q-RUN06-P3-S15-bibliography-002",
+          "Q-RUN06-CACHE-P3-003",
+          "Q-RUN06-CACHE-P3-004"
+        ],
+        "attempt_count": 2,
+        "error_code": null,
+        "failure_reason": "RUN-0006 associates 3 retained deposited chapter references using official bibliography plus previously confirmed exact targets. 4 previously queued occurrences remain unresolved; mapped-but-not-confirmed and all target Work metadata tasks remain open.",
+        "retry_at": null,
+        "review_condition": "Resolve remaining identities, including ref34 fixed-seed conflict and ref36 provisional duplicate, with an explicit cascade plan if a merge is supported. Existing raw references and unknown clocks are preserved.",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T06:48:06.874372Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 3,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "R-CR-d2b1fca85825376d",
+          "R-CR-e5abbce00cd17cbc",
+          "R-CR-a48dadadf3388e97",
+          "R-CR-4758aa9e79112f4a",
+          "R-CR-1bce548386dc407c",
+          "R-CR-21f04b8ebf2b9490",
+          "R-CR-5472901126418298",
+          "R-CR-b6ae130959451af5",
+          "R-CR-fa62fde6aa095276",
+          "R-CR-0ebc0b987b8c2f66",
+          "R-CR-d6598837b980f0c3",
+          "R-CR-68be6d6ec81efb2c",
+          "R-CR-8c4764480bdad00d"
+        ]
+      },
+      {
+        "task_id": "T-RUN06-P3-S15-context",
+        "entity_type": "work",
+        "entity_id": "W-S15",
+        "task_type": "citation_context",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "edge_ids": [
+            "CE-c464536845aae068",
+            "CE-f7167f5341ba026d"
+          ],
+          "bounded_context_count": 2,
+          "whole_work_context_coverage_complete": false
+        },
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P3-S15-context-001",
+          "Q-RUN06-P3-S15-bibliography-002"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Two explicitly bounded S15 citation contexts and their bibliography identities reviewed; all other S15 contexts and global citation coverage remain incomplete.",
+        "created_at_utc": "2026-11-27T06:48:06.874372Z",
+        "updated_at_utc": "2026-11-27T06:48:06.874372Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "CE-c464536845aae068",
+          "CE-f7167f5341ba026d"
+        ]
+      },
+      {
+        "task_id": "T-RUN06-RefReview-R-CR-0ebc0b987b8c2f66",
+        "entity_type": "work",
+        "entity_id": "W-S15",
+        "task_type": "reference_identity",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "occurrence_id": "R-CR-0ebc0b987b8c2f66",
+          "candidate_work_ids": [
+            "W-D6090de644ab7dc59",
+            "W-Re437f6ff5e83b63f"
+          ],
+          "canonical_target_unassigned": true,
+          "original_queue_task_id": "T-ReferenceIdentity-W-S15",
+          "review_report_path": "temp/reports/RUN-0006-seed-reference-candidate.json"
+        },
+        "task_state": "needs_disambiguation",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P3-S15-bibliography-002"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": "官方参考表确认作者Müller、1966、Spherical Harmonics及Lecture Notes in Mathematics第17卷；库中同时存在已确认DOI记录Muller1966与无DOI同题名临时记录。保留原PDF映射，当前Crossref出现项不强行选端点，不执行Work级联合并。",
+        "retry_at": null,
+        "review_condition": "官方参考表确认作者Müller、1966、Spherical Harmonics及Lecture Notes in Mathematics第17卷；库中同时存在已确认DOI记录Muller1966与无DOI同题名临时记录。保留原PDF映射，当前Crossref出现项不强行选端点，不执行Work级联合并。",
+        "created_at_utc": "2026-11-27T06:48:06.874372Z",
+        "updated_at_utc": "2026-11-27T06:48:06.874372Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "reference-occurrences.R-CR-0ebc0b987b8c2f66.cited_work_id",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-RUN06-RefReview-R-CR-0ebc0b987b8c2f66",
+        "priority": "high",
+        "overdue": false,
+        "supporting_record_ids": [
+          "R-CR-0ebc0b987b8c2f66",
+          "REF-S15-36",
+          "W-D6090de644ab7dc59",
+          "W-Re437f6ff5e83b63f"
+        ]
+      }
+    ],
+    "citation-context-audit": [
+      {
+        "context_id": "CTX-RUN06-P3-S15-8",
+        "citing_work_id": "W-S15",
+        "cited_work_id": "W-S19",
+        "citation_roles": [
+          "inheritance",
+          "improvement"
+        ],
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "version_id": "V-S15-01",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+            "identifier": "Q-RUN06-P3-S15-context-001;Q-RUN06-P3-S15-bibliography-002#ref8",
+            "section": "1 Introduction; 2.1 The matched filter approach",
+            "accessed_at": "2026-11-27T06:48:06.874372Z",
+            "evidence_note": "继承Franz–Krapp匹配滤波，并针对固定距离先验发展自适应方法。仅核验引用作用，不能据此认定生物实现或一般条件下性能已证。",
+            "paragraph": "Introduction refs8–12, displayed lines149–158; §2.1 first paragraph line169"
+          }
+        ],
+        "edge_id": "CE-c464536845aae068",
+        "verification_status": "verified",
+        "summary": "继承Franz–Krapp匹配滤波，并针对固定距离先验发展自适应方法。仅核验引用作用，不能据此认定生物实现或一般条件下性能已证。",
+        "run_id": "RUN-0006",
+        "query_ids": [
+          "Q-RUN06-P3-S15-context-001",
+          "Q-RUN06-P3-S15-bibliography-002"
+        ]
+      },
+      {
+        "context_id": "CTX-RUN06-P3-S15-11",
+        "citing_work_id": "W-S15",
+        "cited_work_id": "W-S17",
+        "citation_roles": [
+          "inheritance",
+          "improvement"
+        ],
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "version_id": "V-S15-01",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128413",
+            "identifier": "Q-RUN06-P3-S15-context-001;Q-RUN06-P3-S15-bibliography-002#ref11",
+            "section": "1 Introduction; 2.1; 2.3; 5.4 The weight matrix of the original MFA",
+            "accessed_at": "2026-11-27T06:48:06.874372Z",
+            "evidence_note": "继承Franz等的耦合矩阵并重写其权重表达，作为连接KvD推导的前提；范围限于文中条件，不把引文作用当成定量效果验收。",
+            "paragraph": "Introduction line152; §2.1 lines169–174; §2.3 lines182–192; Appendix5.4 line440"
+          }
+        ],
+        "edge_id": "CE-f7167f5341ba026d",
+        "verification_status": "verified",
+        "summary": "继承Franz等的耦合矩阵并重写其权重表达，作为连接KvD推导的前提；范围限于文中条件，不把引文作用当成定量效果验收。",
+        "run_id": "RUN-0006",
+        "query_ids": [
+          "Q-RUN06-P3-S15-context-001",
+          "Q-RUN06-P3-S15-bibliography-002"
+        ]
+      }
+    ]
+  },
+  "task_event_preconditions": [
+    {
+      "task_id": "T-ReferenceIdentity-W-S15",
+      "before": {
+        "task_id": "T-ReferenceIdentity-W-S15",
+        "entity_type": "work",
+        "entity_id": "W-S15",
+        "task_type": "reference_identity",
+        "scope_id": "SCOPE-0001",
+        "source_id": "crossref",
+        "normalized_parameters": {
+          "run5_reviewed_occurrence_ids": [
+            "R-CR-e5abbce00cd17cbc",
+            "R-CR-1bce548386dc407c",
+            "R-CR-5472901126418298",
+            "R-CR-fa62fde6aa095276",
+            "R-CR-d6598837b980f0c3",
+            "R-CR-68be6d6ec81efb2c",
+            "R-CR-8c4764480bdad00d"
+          ],
+          "run5_associated_occurrence_ids": [
+            "R-CR-e5abbce00cd17cbc",
+            "R-CR-1bce548386dc407c",
+            "R-CR-5472901126418298",
+            "R-CR-d6598837b980f0c3",
+            "R-CR-68be6d6ec81efb2c",
+            "R-CR-8c4764480bdad00d"
+          ],
+          "remaining_unresolved_occurrence_ids": [
+            "R-CR-d2b1fca85825376d",
+            "R-CR-a48dadadf3388e97",
+            "R-CR-4758aa9e79112f4a",
+            "R-CR-21f04b8ebf2b9490",
+            "R-CR-b6ae130959451af5",
+            "R-CR-fa62fde6aa095276",
+            "R-CR-0ebc0b987b8c2f66"
+          ],
+          "associated_but_not_confirmed_occurrence_ids": [
+            "R-CR-e5abbce00cd17cbc"
+          ],
+          "review_report_paths": [
+            "temp/reports/RUN-0005-seed-reference-review-batch2.json"
+          ],
+          "attempt_count_scope": "bounded local cache-review batches; no external requests",
+          "target_work_unknown_tasks_closed": false
+        },
+        "task_state": "partial",
+        "cursor": 0,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN05-CACHE-P3-B2-05",
+          "Q-RUN05-CACHE-P3-B2-07",
+          "Q-RUN05-CACHE-P3-B2-02",
+          "Q-RUN05-CACHE-P3-B2-17",
+          "Q-RUN05-CACHE-P3-B2-03",
+          "Q-RUN05-CACHE-P3-B2-11"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": "RUN-0005 reviewed 7 retained occurrences in this task and associated 6 with existing Works. This retained task list still contains 7 unresolved and 1 mapped-but-not-confirmed occurrences. Probable target identity/metadata remains open; original fulltext and body citation context are not established.",
+        "retry_at": null,
+        "review_condition": "Resolve the remaining occurrence/version/duplicate conflicts and independently confirm probable targets before closing reference identity. Keep all original supporting occurrence IDs and all separate Work author/DOI/metadata tasks and their unknown clocks.",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T02:56:29.861205Z",
+        "checkpoint_id": "CP-0007",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "R-CR-d2b1fca85825376d",
+          "R-CR-e5abbce00cd17cbc",
+          "R-CR-a48dadadf3388e97",
+          "R-CR-4758aa9e79112f4a",
+          "R-CR-1bce548386dc407c",
+          "R-CR-21f04b8ebf2b9490",
+          "R-CR-5472901126418298",
+          "R-CR-b6ae130959451af5",
+          "R-CR-fa62fde6aa095276",
+          "R-CR-0ebc0b987b8c2f66",
+          "R-CR-d6598837b980f0c3",
+          "R-CR-68be6d6ec81efb2c",
+          "R-CR-8c4764480bdad00d"
+        ]
+      }
+    }
+  ],
+  "source_identities": {
+    "doi:10.1371/journal.pone.0128413#ref8": "W-S19",
+    "doi:10.1371/journal.pone.0128413#ref11": "W-S17",
+    "doi:10.1371/journal.pone.0128413#ref12": "W-D90e225cf7a5efc53",
+    "doi:10.1371/journal.pone.0128413#ref13": "W-Dee8a80e9b1a461d3",
+    "doi:10.1371/journal.pone.0128413#ref33": "W-D4d677a1f32b417f0"
+  },
+  "query_new_work_ids": {
+    "Q-RUN06-P3-S15-context-001": [],
+    "Q-RUN06-P3-S15-bibliography-002": [],
+    "Q-RUN06-CACHE-P3-003": [],
+    "Q-RUN06-CACHE-P3-004": []
+  },
+  "unresolved_identity_records": [
+    {
+      "source_record_id": "doi:10.1371/journal.pone.0128413#ref36",
+      "chosen_work_id": null,
+      "candidate_work_ids": [
+        "W-D6090de644ab7dc59",
+        "W-Re437f6ff5e83b63f"
+      ],
+      "decision": "retain_unresolved_duplicate_identity",
+      "reason": "官方参考表确认作者Müller、1966、Spherical Harmonics及Lecture Notes in Mathematics第17卷；库中同时存在已确认DOI记录Muller1966与无DOI同题名临时记录。保留原PDF映射，当前Crossref出现项不强行选端点，不执行Work级联合并。"
+    }
+  ],
+  "count_contract": {
+    "bibliography_receipt": "Q-RUN06-P3-S15-bibliography-002",
+    "selected_source_records": 6,
+    "unique_reference_labels": 6,
+    "resolved_canonical_targets": 5,
+    "unresolved_canonical_targets": 1,
+    "new_work_count": 0,
+    "source_record_dedup_is_not_canonical_identity_resolution": true
+  },
+  "integration_constraints": [
+    "Do not infer a Work merge or change the fixed seed identity from title similarity.",
+    "Append task events; do not replace historical events or reset unknown clocks.",
+    "Integrate queries/source-observations from exact receipt bytes once; this candidate intentionally omits them.",
+    "Keep original raw_reference, raw_fingerprint, reference label, version and existing scientific Assessment records unchanged.",
+    "No whole Work fulltext/reference/context or source pagination completion is asserted."
+  ],
+  "validation": {
+    "typed_records_validated": 12,
+    "schema_errors": [],
+    "original_raw_reference_bytes_preserved": true,
+    "before_guard_complete_objects": true,
+    "canonical_jsonl_writes_performed": false,
+    "exports_written": false,
+    "scientific_assessments_modified": false
+  }
+}
