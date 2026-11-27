@@ -1,0 +1,96 @@
+{
+  "run_id": "RUN-0008",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0010",
+  "status": "source_batch_saved_pending_typed_review",
+  "external_requests_performed": 4,
+  "cache_reuse_events": 0,
+  "manual_review_activities": 0,
+  "query_id": "Q-RUN08-P5-official-lookups-002",
+  "operations": [
+    {
+      "operation": "open",
+      "url": "https://data.snf.ch/grants/grant/155907"
+    },
+    {
+      "operation": "system1_search_query",
+      "q": "site:data.snf.ch \"155907\""
+    },
+    {
+      "operation": "system1_search_query",
+      "q": "site:vr.se \"2014-04762\""
+    },
+    {
+      "operation": "system1_search_query",
+      "q": "site:swecris.se \"2014-4762\""
+    }
+  ],
+  "request_batch_started_at_utc": "2026-11-27 09:15:49 UTC",
+  "request_batch_finished_at_utc": "2026-11-27 09:15:51 UTC",
+  "exact_individual_dispatch_time_retained": false,
+  "returned_source_metadata": [
+    {
+      "title": "# APPENDIX 5 INSTRUCTIONS FOR SELF-EVALUATION",
+      "url": "https://www.vr.se/download/18.2412c5311624176023d254d8/1529480558495/Evaluation-of-the-Mona-System_VR_2014.pdf",
+      "source_ref": "turn610882535search5"
+    },
+    {
+      "title": "Rapporter - Vetenskapsrådet",
+      "url": "https://www.vr.se/analys/rapporter.html",
+      "source_ref": "turn610882535search0"
+    },
+    {
+      "title": "Evaluation of the MONA system - Swedish Research Council",
+      "url": "https://www.vr.se/english/analysis/reports/our-reports/2014-03-10-evaluation-of-the-mona-system.html",
+      "source_ref": "turn610882535search1"
+    },
+    {
+      "title": "Samlad beslutsstatistik - Vetenskapsrådet",
+      "url": "https://www.vr.se/analys/svensk-forskning-i-siffror/vetenskapsradets-forskningsfinansiering-i-siffror/samlad-beslutsstatistik.html",
+      "source_ref": "turn610882535search2"
+    },
+    {
+      "title": "Brev",
+      "url": "https://www.vr.se/download/18.61ae4c9917ce9a920481f82e/1638281186704/Elektroniska%20identiteter%20pa%CC%8A%20Vetenskapsra%CC%8Adet.pdf",
+      "source_ref": "turn610882535search6"
+    },
+    {
+      "title": "Overall decision statistics - Swedish Research Council",
+      "url": "https://www.vr.se/english/analysis/swedish-research-in-figures/overall-decision-statistics.html?sv.12.1419f63817f44a724d8f283.route=%2Fsettings&sv.target=12.1419f63817f44a724d8f283",
+      "source_ref": "turn610882535search3"
+    },
+    {
+      "title": "Vetenskapsrådets årsredovising 2020",
+      "url": "https://www.vr.se/download/18.6675b4ac1787151b21016/1617030867173/Vetenskapsr%25C3%25A5dets%2520%25C3%25A5rsredovisning%25202020.pdf",
+      "source_ref": "turn610882535search7"
+    },
+    {
+      "title": "Evaluation of the MONA system - Vetenskapsrådet",
+      "url": "https://www.vr.se/analys/rapporter/vara-rapporter/2014-03-10-evaluation-of-the-mona-system.html",
+      "source_ref": "turn610882535search4"
+    },
+    {
+      "title": "SNSF Data Portal",
+      "url": "https://data.snf.ch/grants/grant/155907",
+      "source_ref": "turn610882535view0"
+    }
+  ],
+  "per_query_source_counts_retained": false,
+  "outcome": {
+    "snf": {
+      "url": "https://data.snf.ch/grants/grant/155907",
+      "source_ref": "turn610882535view0",
+      "status": "client_rendering_required",
+      "project_data_obtained": false,
+      "note": "Retrieved content only states JavaScript is required; this is not project metadata and does not prove a missing grant."
+    },
+    "swedish_research_council": {
+      "status": "unresolved",
+      "matching_official_project_record_obtained": false,
+      "note": "Returned official-domain results concern unrelated reports/statistics. No title, dates, host or membership for 2014-4762 can be inferred."
+    }
+  },
+  "scientific_claims_created": 0,
+  "copyright_note": "Source metadata and original outcome notes only; no full webpage or report text."
+}
+
