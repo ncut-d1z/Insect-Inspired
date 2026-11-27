@@ -1,0 +1,1519 @@
+{
+  "query_id": "Q-RUN05-P4-citer-identities-001",
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "task_id": "T-RUN05-P4-citer-identities",
+  "entity_id": "SCOPE-0001",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28EXT_ID%3A25505148+OR+EXT_ID%3A23335890+OR+EXT_ID%3A16706704+OR+EXT_ID%3A42691997+OR+EXT_ID%3A42141625+OR+EXT_ID%3A37751469+OR+EXT_ID%3A34324832+OR+EXT_ID%3A32619485+OR+EXT_ID%3A20514339+OR+EXT_ID%3A17928564+OR+EXT_ID%3A20537540+OR+EXT_ID%3APPR902069+OR+EXT_ID%3APPR13346+OR+EXT_ID%3APPR1226505+OR+EXT_ID%3APPR1229699+OR+EXT_ID%3APPR1063015+OR+EXT_ID%3APPR987786+OR+EXT_ID%3APPR864763+OR+EXT_ID%3APPR843279+OR+EXT_ID%3APPR833982+OR+EXT_ID%3APPR760200+OR+EXT_ID%3APPR728815+OR+EXT_ID%3APPR593905+OR+EXT_ID%3APPR366886+OR+EXT_ID%3APPR313196+OR+EXT_ID%3APPR670481+OR+EXT_ID%3APPR46061+OR+EXT_ID%3APPR671295%29&resultType=core&format=json&pageSize=100",
+  "raw_parameters": {
+    "query": "(EXT_ID:25505148 OR EXT_ID:23335890 OR EXT_ID:16706704 OR EXT_ID:42691997 OR EXT_ID:42141625 OR EXT_ID:37751469 OR EXT_ID:34324832 OR EXT_ID:32619485 OR EXT_ID:20514339 OR EXT_ID:17928564 OR EXT_ID:20537540 OR EXT_ID:PPR902069 OR EXT_ID:PPR13346 OR EXT_ID:PPR1226505 OR EXT_ID:PPR1229699 OR EXT_ID:PPR1063015 OR EXT_ID:PPR987786 OR EXT_ID:PPR864763 OR EXT_ID:PPR843279 OR EXT_ID:PPR833982 OR EXT_ID:PPR760200 OR EXT_ID:PPR728815 OR EXT_ID:PPR593905 OR EXT_ID:PPR366886 OR EXT_ID:PPR313196 OR EXT_ID:PPR670481 OR EXT_ID:PPR46061 OR EXT_ID:PPR671295)",
+    "resultType": "core",
+    "format": "json",
+    "pageSize": 100
+  },
+  "query_kind": "identity",
+  "queried_at_utc": "2026-11-27T02:53:51.781716Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "rerun_reason": "Resolve official identifiers for 28 ambiguous or unmapped citation-list entities without merging title-only preprint and journal records.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Public bibliographic facts; abstract/full text and personal contact details omitted.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Live source observed now, not a historical snapshot. Publication cutoff is checked separately.",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "status": "success",
+  "body_bytes": 118631,
+  "body_sha256": "10f66f2b3e78a1f2389900c5cebda984a2811ea22ecc6633c5ec36f78ed44992",
+  "records": [
+    {
+      "id": "42691997",
+      "source": "MED",
+      "pmid": "42691997",
+      "doi": "10.1016/j.cell.2026.08.014",
+      "title": "The organization of visual pathways in the Drosophila brain.",
+      "authorString": "Hoeller J, Zhao A, Nern A, Rogers EM, Romani S, Reiser MB.",
+      "pubYear": "2026",
+      "pageInfo": "5552-5570.e10",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2026-09-01",
+      "authors": [
+        {
+          "fullName": "Hoeller J",
+          "lastName": "Hoeller",
+          "firstName": "Judith",
+          "initials": "J"
+        },
+        {
+          "fullName": "Zhao A",
+          "lastName": "Zhao",
+          "firstName": "Arthur",
+          "initials": "A"
+        },
+        {
+          "fullName": "Nern A",
+          "lastName": "Nern",
+          "firstName": "Aljoscha",
+          "initials": "A"
+        },
+        {
+          "fullName": "Rogers EM",
+          "lastName": "Rogers",
+          "firstName": "Edward M",
+          "initials": "EM"
+        },
+        {
+          "fullName": "Romani S",
+          "lastName": "Romani",
+          "firstName": "Sandro",
+          "initials": "S"
+        },
+        {
+          "fullName": "Reiser MB",
+          "lastName": "Reiser",
+          "firstName": "Michael B",
+          "initials": "MB"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Cell",
+        "title": "Cell",
+        "essn": "1097-4172",
+        "issn": "0092-8674"
+      },
+      "journal_issue": {
+        "issue": "18",
+        "volume": "189",
+        "dateOfPublication": "2026 Sep",
+        "yearOfPublication": 2026
+      }
+    },
+    {
+      "id": "42141625",
+      "source": "MED",
+      "pmid": "42141625",
+      "doi": "10.1103/31k4-nq97",
+      "title": "The FlEye camera: Sampling the joint distribution of natural scenes and motion.",
+      "authorString": "Edelson CJ, Smith P, Setayeshgar S, Bialek W, van Steveninck RRR.",
+      "pubYear": "2026",
+      "pageInfo": "044412",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2026-04-01",
+      "authors": [
+        {
+          "fullName": "Edelson CJ",
+          "lastName": "Edelson",
+          "firstName": "Charles J",
+          "initials": "CJ"
+        },
+        {
+          "fullName": "Smith P",
+          "lastName": "Smith",
+          "firstName": "Paul",
+          "initials": "P"
+        },
+        {
+          "fullName": "Setayeshgar S",
+          "lastName": "Setayeshgar",
+          "firstName": "Sima",
+          "initials": "S"
+        },
+        {
+          "fullName": "Bialek W",
+          "lastName": "Bialek",
+          "firstName": "William",
+          "initials": "W"
+        },
+        {
+          "fullName": "van Steveninck RRR",
+          "lastName": "van Steveninck",
+          "firstName": "Rob R de Ruyter",
+          "initials": "RRR"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Phys Rev E",
+        "title": "Physical review. E",
+        "essn": "2470-0053",
+        "issn": "2470-0045"
+      },
+      "journal_issue": {
+        "issue": "4-1",
+        "volume": "113",
+        "dateOfPublication": "2026 Apr",
+        "yearOfPublication": 2026
+      }
+    },
+    {
+      "id": "PPR1226505",
+      "source": "PPR",
+      "doi": "10.64898/2026.02.02.700492",
+      "title": "Connectome analysis reveals brainwide visual processing in  <i>Drosophila</i>",
+      "authorString": "Kim SY, Kim AJ.",
+      "pubYear": "2026",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2026-02-03",
+      "authors": [
+        {
+          "fullName": "Kim SY",
+          "lastName": "Kim",
+          "firstName": "Sung Yong",
+          "initials": "SY"
+        },
+        {
+          "fullName": "Kim AJ",
+          "lastName": "Kim",
+          "firstName": "Anmo",
+          "initials": "AJ"
+        }
+      ]
+    },
+    {
+      "id": "PPR1229699",
+      "source": "PPR",
+      "doi": "10.64898/2025.12.22.696097",
+      "title": "The organization of visual pathways in the  <i>Drosophila</i>  brain",
+      "authorString": "Hoeller J, Zhao A, Nern A, Rogers EM, Romani S, Reiser MB.",
+      "pubYear": "2025",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2025-12-25",
+      "authors": [
+        {
+          "fullName": "Hoeller J",
+          "lastName": "Hoeller",
+          "firstName": "Judith",
+          "initials": "J"
+        },
+        {
+          "fullName": "Zhao A",
+          "lastName": "Zhao",
+          "firstName": "Arthur",
+          "initials": "A"
+        },
+        {
+          "fullName": "Nern A",
+          "lastName": "Nern",
+          "firstName": "Aljoscha",
+          "initials": "A"
+        },
+        {
+          "fullName": "Rogers EM",
+          "lastName": "Rogers",
+          "firstName": "Edward",
+          "initials": "EM"
+        },
+        {
+          "fullName": "Romani S",
+          "lastName": "Romani",
+          "firstName": "Sandro",
+          "initials": "S"
+        },
+        {
+          "fullName": "Reiser MB",
+          "lastName": "Reiser",
+          "firstName": "Michael",
+          "initials": "MB"
+        }
+      ]
+    },
+    {
+      "id": "PPR1063015",
+      "source": "PPR",
+      "doi": "10.1101/2025.08.04.668437",
+      "title": "Polyadic synapses introduce unique wiring architectures in T5 cells of  <i>Drosophila</i>",
+      "authorString": "Samara E, Borst A.",
+      "pubYear": "2025",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2025-08-05",
+      "authors": [
+        {
+          "fullName": "Samara E",
+          "lastName": "Samara",
+          "firstName": "Eleni",
+          "initials": "E"
+        },
+        {
+          "fullName": "Borst A",
+          "lastName": "Borst",
+          "firstName": "Alexander",
+          "initials": "A"
+        }
+      ]
+    },
+    {
+      "id": "PPR987786",
+      "source": "PPR",
+      "doi": "10.1101/2025.03.06.641774",
+      "title": "Infrequent strong connections constrain connectomic predictions of neuronal function",
+      "authorString": "Currier TA, Clandinin TR.",
+      "pubYear": "2025",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2025-03-10",
+      "authors": [
+        {
+          "fullName": "Currier TA",
+          "lastName": "Currier",
+          "firstName": "Timothy",
+          "initials": "TA"
+        },
+        {
+          "fullName": "Clandinin TR",
+          "lastName": "Clandinin",
+          "firstName": "Thomas",
+          "initials": "TR"
+        }
+      ]
+    },
+    {
+      "id": "PPR902069",
+      "source": "PPR",
+      "doi": "10.1101/2024.08.24.609346",
+      "title": "Integration of parallel pathways for flight control in a hawkmoth reflects prevalence and relevance of natural visual cues",
+      "authorString": "Bigge R, Grittner R, Stöckl A.",
+      "pubYear": "2024",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2024-08-26",
+      "authors": [
+        {
+          "fullName": "Bigge R",
+          "lastName": "Bigge",
+          "firstName": "Ronja",
+          "initials": "R"
+        },
+        {
+          "fullName": "Grittner R",
+          "lastName": "Grittner",
+          "firstName": "Rebecca",
+          "initials": "R"
+        },
+        {
+          "fullName": "Stöckl A",
+          "lastName": "Stöckl",
+          "firstName": "Anna",
+          "initials": "A"
+        }
+      ]
+    },
+    {
+      "id": "PPR864763",
+      "source": "PPR",
+      "doi": "10.1101/2024.06.08.598068",
+      "title": "Broken time reversal symmetry in visual motion detection",
+      "authorString": "Wu N, Zhou B, Agrochao M, Clark DA.",
+      "pubYear": "2024",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2024-06-10",
+      "authors": [
+        {
+          "fullName": "Wu N",
+          "lastName": "Wu",
+          "firstName": "Nathan",
+          "initials": "N"
+        },
+        {
+          "fullName": "Zhou B",
+          "lastName": "Zhou",
+          "firstName": "Baohua",
+          "initials": "B"
+        },
+        {
+          "fullName": "Agrochao M",
+          "lastName": "Agrochao",
+          "firstName": "Margarida",
+          "initials": "M"
+        },
+        {
+          "fullName": "Clark DA",
+          "lastName": "Clark",
+          "firstName": "Damon",
+          "initials": "DA"
+        }
+      ]
+    },
+    {
+      "id": "PPR843279",
+      "source": "PPR",
+      "doi": "10.1101/2024.04.19.590352",
+      "title": "A recurrent neural circuit in  <i>Drosophila</i>  deblurs visual inputs",
+      "authorString": "Pang MM, Chen F, Xie M, Druckmann S, Clandinin TR, Yang HH.",
+      "pubYear": "2024",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2024-04-24",
+      "authors": [
+        {
+          "fullName": "Pang MM",
+          "lastName": "Pang",
+          "firstName": "Michelle",
+          "initials": "MM"
+        },
+        {
+          "fullName": "Chen F",
+          "lastName": "Chen",
+          "firstName": "Feng",
+          "initials": "F"
+        },
+        {
+          "fullName": "Xie M",
+          "lastName": "Xie",
+          "firstName": "Marjorie",
+          "initials": "M"
+        },
+        {
+          "fullName": "Druckmann S",
+          "lastName": "Druckmann",
+          "firstName": "Shaul",
+          "initials": "S"
+        },
+        {
+          "fullName": "Clandinin TR",
+          "lastName": "Clandinin",
+          "firstName": "Thomas",
+          "initials": "TR"
+        },
+        {
+          "fullName": "Yang HH",
+          "lastName": "Yang",
+          "firstName": "Helen",
+          "initials": "HH"
+        }
+      ]
+    },
+    {
+      "id": "PPR833982",
+      "source": "PPR",
+      "doi": "10.1101/2024.04.03.587837",
+      "title": "Interneuron diversity and normalization specificity in a visual system",
+      "authorString": "Seung HS.",
+      "pubYear": "2024",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2024-04-08",
+      "authors": [
+        {
+          "fullName": "Seung HS",
+          "lastName": "Seung",
+          "firstName": "Sebastian",
+          "initials": "HS"
+        }
+      ]
+    },
+    {
+      "id": "PPR760200",
+      "source": "PPR",
+      "doi": "10.1101/2023.11.15.567126",
+      "title": "Insights into vision from interpretation of a neuronal wiring diagram",
+      "authorString": "Seung HS.",
+      "pubYear": "2023",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2023-11-15",
+      "authors": [
+        {
+          "fullName": "Seung HS",
+          "lastName": "Seung",
+          "firstName": "Sebastian",
+          "initials": "HS"
+        }
+      ]
+    },
+    {
+      "id": "37751469",
+      "source": "MED",
+      "pmid": "37751469",
+      "pmcid": "PMC10522332",
+      "doi": "10.7554/elife.86076",
+      "title": "Long-timescale anti-directional rotation in &lt;i&gt;Drosophila&lt;/i&gt; optomotor behavior.",
+      "authorString": "Mano O, Choi M, Tanaka R, Creamer MS, Matos NCB, Shomar JW, Badwan BA, Clandinin TR, Clark DA.",
+      "pubYear": "2023",
+      "pageInfo": "e86076",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "research-article",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "isOpenAccess": "Y",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "firstPublicationDate": "2023-09-26",
+      "authors": [
+        {
+          "fullName": "Mano O",
+          "lastName": "Mano",
+          "firstName": "Omer",
+          "initials": "O"
+        },
+        {
+          "fullName": "Choi M",
+          "lastName": "Choi",
+          "firstName": "Minseung",
+          "initials": "M"
+        },
+        {
+          "fullName": "Tanaka R",
+          "lastName": "Tanaka",
+          "firstName": "Ryosuke",
+          "initials": "R"
+        },
+        {
+          "fullName": "Creamer MS",
+          "lastName": "Creamer",
+          "firstName": "Matthew S",
+          "initials": "MS"
+        },
+        {
+          "fullName": "Matos NCB",
+          "lastName": "Matos",
+          "firstName": "Natalia C B",
+          "initials": "NCB"
+        },
+        {
+          "fullName": "Shomar JW",
+          "lastName": "Shomar",
+          "firstName": "Joseph W",
+          "initials": "JW"
+        },
+        {
+          "fullName": "Badwan BA",
+          "lastName": "Badwan",
+          "firstName": "Bara A",
+          "initials": "BA"
+        },
+        {
+          "fullName": "Clandinin TR",
+          "lastName": "Clandinin",
+          "firstName": "Thomas R",
+          "initials": "TR"
+        },
+        {
+          "fullName": "Clark DA",
+          "lastName": "Clark",
+          "firstName": "Damon A",
+          "initials": "DA"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Elife",
+        "title": "eLife",
+        "essn": "2050-084X",
+        "issn": "2050-084X"
+      },
+      "journal_issue": {
+        "volume": "12",
+        "dateOfPublication": "2023 Sep",
+        "yearOfPublication": 2023
+      }
+    },
+    {
+      "id": "PPR728815",
+      "source": "PPR",
+      "doi": "10.1101/2023.09.20.558565",
+      "title": "Looming detection in complex dynamic visual scenes by interneuronal coordination of motion and feature pathways",
+      "authorString": "Gu B, Feng J, Song Z.",
+      "pubYear": "2023",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2023-09-22",
+      "authors": [
+        {
+          "fullName": "Gu B",
+          "lastName": "Gu",
+          "firstName": "Bo",
+          "initials": "B"
+        },
+        {
+          "fullName": "Feng J",
+          "lastName": "Feng",
+          "firstName": "Jianfeng",
+          "initials": "J"
+        },
+        {
+          "fullName": "Song Z",
+          "lastName": "Song",
+          "firstName": "Zhuoyi",
+          "initials": "Z"
+        }
+      ]
+    },
+    {
+      "id": "PPR671295",
+      "source": "PPR",
+      "doi": "10.1101/2023.06.04.543620",
+      "title": "A neuromorphic model of active vision shows how spatiotemporal encoding in lobula neurons can aid pattern recognition in bees",
+      "authorString": "MaBouDi H, Roper M, Guiraud M, Juusola M, Chittka L, Marshall JA.",
+      "pubYear": "2023",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2023-06-06",
+      "authors": [
+        {
+          "fullName": "MaBouDi H",
+          "lastName": "MaBouDi",
+          "firstName": "HaDi",
+          "initials": "H"
+        },
+        {
+          "fullName": "Roper M",
+          "lastName": "Roper",
+          "firstName": "Mark",
+          "initials": "M"
+        },
+        {
+          "fullName": "Guiraud M",
+          "lastName": "Guiraud",
+          "firstName": "Marie-Genevieve",
+          "initials": "M"
+        },
+        {
+          "fullName": "Juusola M",
+          "lastName": "Juusola",
+          "firstName": "Mikko",
+          "initials": "M"
+        },
+        {
+          "fullName": "Chittka L",
+          "lastName": "Chittka",
+          "firstName": "Lars",
+          "initials": "L"
+        },
+        {
+          "fullName": "Marshall JA",
+          "lastName": "Marshall",
+          "firstName": "James A.R.",
+          "initials": "JA"
+        }
+      ]
+    },
+    {
+      "id": "PPR670481",
+      "source": "PPR",
+      "doi": "10.1101/2023.05.31.543181",
+      "title": "Gap junctions arbitrate binocular course control in flies",
+      "authorString": "Pokusaeva VO, Satapathy R, Symonova O, Jösch M.",
+      "pubYear": "2023",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2023-06-05",
+      "authors": [
+        {
+          "fullName": "Pokusaeva VO",
+          "lastName": "Pokusaeva",
+          "firstName": "Victoria",
+          "initials": "VO"
+        },
+        {
+          "fullName": "Satapathy R",
+          "lastName": "Satapathy",
+          "firstName": "Roshan",
+          "initials": "R"
+        },
+        {
+          "fullName": "Symonova O",
+          "lastName": "Symonova",
+          "firstName": "Olga",
+          "initials": "O"
+        },
+        {
+          "fullName": "Jösch M",
+          "lastName": "Jösch",
+          "firstName": "Maximilian",
+          "initials": "M"
+        }
+      ]
+    },
+    {
+      "id": "PPR593905",
+      "source": "PPR",
+      "doi": "10.1101/2023.01.06.523055",
+      "title": "Long timescale anti-directional rotation in  <i>Drosophila</i>  optomotor behavior",
+      "authorString": "Mano O, Choi M, Tanaka R, Creamer MS, Matos NC, Shomar J, Badwan BA, Clandinin TR, Clark DA.",
+      "pubYear": "2023",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2023-01-07",
+      "authors": [
+        {
+          "fullName": "Mano O",
+          "lastName": "Mano",
+          "firstName": "Omer",
+          "initials": "O"
+        },
+        {
+          "fullName": "Choi M",
+          "lastName": "Choi",
+          "firstName": "Minseung",
+          "initials": "M"
+        },
+        {
+          "fullName": "Tanaka R",
+          "lastName": "Tanaka",
+          "firstName": "Ryosuke",
+          "initials": "R"
+        },
+        {
+          "fullName": "Creamer MS",
+          "lastName": "Creamer",
+          "firstName": "Matthew",
+          "initials": "MS"
+        },
+        {
+          "fullName": "Matos NC",
+          "lastName": "Matos",
+          "firstName": "Natalia C.B.",
+          "initials": "NC"
+        },
+        {
+          "fullName": "Shomar J",
+          "lastName": "Shomar",
+          "firstName": "Joseph",
+          "initials": "J"
+        },
+        {
+          "fullName": "Badwan BA",
+          "lastName": "Badwan",
+          "firstName": "Bara",
+          "initials": "BA"
+        },
+        {
+          "fullName": "Clandinin TR",
+          "lastName": "Clandinin",
+          "firstName": "Thomas",
+          "initials": "TR"
+        },
+        {
+          "fullName": "Clark DA",
+          "lastName": "Clark",
+          "firstName": "Damon",
+          "initials": "DA"
+        }
+      ]
+    },
+    {
+      "id": "34324832",
+      "source": "MED",
+      "pmid": "34324832",
+      "pmcid": "PMC8741219",
+      "doi": "10.1016/j.cub.2021.06.090",
+      "title": "Predicting individual neuron responses with anatomically constrained task optimization.",
+      "authorString": "Mano O, Creamer MS, Badwan BA, Clark DA.",
+      "pubYear": "2021",
+      "pageInfo": "4062-4075.e4",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "firstPublicationDate": "2021-07-28",
+      "authors": [
+        {
+          "fullName": "Mano O",
+          "lastName": "Mano",
+          "firstName": "Omer",
+          "initials": "O"
+        },
+        {
+          "fullName": "Creamer MS",
+          "lastName": "Creamer",
+          "firstName": "Matthew S",
+          "initials": "MS"
+        },
+        {
+          "fullName": "Badwan BA",
+          "lastName": "Badwan",
+          "firstName": "Bara A",
+          "initials": "BA"
+        },
+        {
+          "fullName": "Clark DA",
+          "lastName": "Clark",
+          "firstName": "Damon A",
+          "initials": "DA"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Curr Biol",
+        "title": "Current biology : CB",
+        "essn": "1879-0445",
+        "issn": "0960-9822"
+      },
+      "journal_issue": {
+        "issue": "18",
+        "volume": "31",
+        "dateOfPublication": "2021 Sep",
+        "yearOfPublication": 2021
+      }
+    },
+    {
+      "id": "PPR366886",
+      "source": "PPR",
+      "doi": "10.1101/2021.07.07.451307",
+      "title": "Shallow neural networks trained to detect collisions recover features of visual loom-selective neurons",
+      "authorString": "Zhou B, Li Z, Kim SSY, Lafferty J, Clark DA.",
+      "pubYear": "2021",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2021-07-08",
+      "authors": [
+        {
+          "fullName": "Zhou B",
+          "lastName": "Zhou",
+          "firstName": "Baohua",
+          "initials": "B"
+        },
+        {
+          "fullName": "Li Z",
+          "lastName": "Li",
+          "firstName": "Zifan",
+          "initials": "Z"
+        },
+        {
+          "fullName": "Kim SSY",
+          "lastName": "Kim",
+          "firstName": "Sunnie",
+          "initials": "SSY"
+        },
+        {
+          "fullName": "Lafferty J",
+          "lastName": "Lafferty",
+          "firstName": "John",
+          "initials": "J"
+        },
+        {
+          "fullName": "Clark DA",
+          "lastName": "Clark",
+          "firstName": "Damon",
+          "initials": "DA"
+        }
+      ]
+    },
+    {
+      "id": "PPR313196",
+      "source": "PPR",
+      "doi": "10.1101/2021.04.17.440267",
+      "title": "State and stimulus dependence reconcile motion computation and the  <i>Drosophila</i>  connectome",
+      "authorString": "Kohn JR, Portes JP, Christenson MP, Abbott L, Behnia R.",
+      "pubYear": "2021",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2021-04-17",
+      "authors": [
+        {
+          "fullName": "Kohn JR",
+          "lastName": "Kohn",
+          "firstName": "Jessica",
+          "initials": "JR"
+        },
+        {
+          "fullName": "Portes JP",
+          "lastName": "Portes",
+          "firstName": "Jacob",
+          "initials": "JP"
+        },
+        {
+          "fullName": "Christenson MP",
+          "lastName": "Christenson",
+          "firstName": "Matthias",
+          "initials": "MP"
+        },
+        {
+          "fullName": "Abbott L",
+          "lastName": "Abbott",
+          "firstName": "LF",
+          "initials": "L"
+        },
+        {
+          "fullName": "Behnia R",
+          "lastName": "Behnia",
+          "firstName": "Rudy",
+          "initials": "R"
+        }
+      ]
+    },
+    {
+      "id": "32619485",
+      "source": "MED",
+      "pmid": "32619485",
+      "pmcid": "PMC7443706",
+      "doi": "10.1016/j.cub.2020.06.042",
+      "title": "Complete Connectomic Reconstruction of Olfactory Projection Neurons in the Fly Brain.",
+      "authorString": "Bates AS, Schlegel P, Roberts RJV, Drummond N, Tamimi IFM, Turnbull R, Zhao X, Marin EC, Popovici PD, Dhawan S, Jamasb A, Javier A, Serratosa Capdevila L, Li F, Rubin GM, Waddell S, Bock DD, Costa M, Jefferis GSXE.",
+      "pubYear": "2020",
+      "pageInfo": "3183-3199.e6",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "Y",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "firstPublicationDate": "2020-07-02",
+      "authors": [
+        {
+          "fullName": "Bates AS",
+          "lastName": "Bates",
+          "firstName": "Alexander S",
+          "initials": "AS"
+        },
+        {
+          "fullName": "Schlegel P",
+          "lastName": "Schlegel",
+          "firstName": "Philipp",
+          "initials": "P"
+        },
+        {
+          "fullName": "Roberts RJV",
+          "lastName": "Roberts",
+          "firstName": "Ruairi J V",
+          "initials": "RJV"
+        },
+        {
+          "fullName": "Drummond N",
+          "lastName": "Drummond",
+          "firstName": "Nikolas",
+          "initials": "N"
+        },
+        {
+          "fullName": "Tamimi IFM",
+          "lastName": "Tamimi",
+          "firstName": "Imaan F M",
+          "initials": "IFM"
+        },
+        {
+          "fullName": "Turnbull R",
+          "lastName": "Turnbull",
+          "firstName": "Robert",
+          "initials": "R"
+        },
+        {
+          "fullName": "Zhao X",
+          "lastName": "Zhao",
+          "firstName": "Xincheng",
+          "initials": "X"
+        },
+        {
+          "fullName": "Marin EC",
+          "lastName": "Marin",
+          "firstName": "Elizabeth C",
+          "initials": "EC"
+        },
+        {
+          "fullName": "Popovici PD",
+          "lastName": "Popovici",
+          "firstName": "Patricia D",
+          "initials": "PD"
+        },
+        {
+          "fullName": "Dhawan S",
+          "lastName": "Dhawan",
+          "firstName": "Serene",
+          "initials": "S"
+        },
+        {
+          "fullName": "Jamasb A",
+          "lastName": "Jamasb",
+          "firstName": "Arian",
+          "initials": "A"
+        },
+        {
+          "fullName": "Javier A",
+          "lastName": "Javier",
+          "firstName": "Alexandre",
+          "initials": "A"
+        },
+        {
+          "fullName": "Serratosa Capdevila L",
+          "lastName": "Serratosa Capdevila",
+          "firstName": "Laia",
+          "initials": "L"
+        },
+        {
+          "fullName": "Li F",
+          "lastName": "Li",
+          "firstName": "Feng",
+          "initials": "F"
+        },
+        {
+          "fullName": "Rubin GM",
+          "lastName": "Rubin",
+          "firstName": "Gerald M",
+          "initials": "GM"
+        },
+        {
+          "fullName": "Waddell S",
+          "lastName": "Waddell",
+          "firstName": "Scott",
+          "initials": "S"
+        },
+        {
+          "fullName": "Bock DD",
+          "lastName": "Bock",
+          "firstName": "Davi D",
+          "initials": "DD"
+        },
+        {
+          "fullName": "Costa M",
+          "lastName": "Costa",
+          "firstName": "Marta",
+          "initials": "M"
+        },
+        {
+          "fullName": "Jefferis GSXE",
+          "lastName": "Jefferis",
+          "firstName": "Gregory S X E",
+          "initials": "GSXE"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Curr Biol",
+        "title": "Current biology : CB",
+        "essn": "1879-0445",
+        "issn": "0960-9822"
+      },
+      "journal_issue": {
+        "issue": "16",
+        "volume": "30",
+        "dateOfPublication": "2020 Aug",
+        "yearOfPublication": 2020
+      }
+    },
+    {
+      "id": "PPR46061",
+      "source": "PPR",
+      "doi": "10.1101/379651",
+      "title": "A unifying model to predict multiple object orienting behaviors in tethered flies",
+      "authorString": "Poehlmann A, Soselisa SJ, Fenk LM, Straw AD.",
+      "pubYear": "2018",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2018-07-28",
+      "authors": [
+        {
+          "fullName": "Poehlmann A",
+          "lastName": "Poehlmann",
+          "firstName": "Andreas",
+          "initials": "A"
+        },
+        {
+          "fullName": "Soselisa SJ",
+          "lastName": "Soselisa",
+          "firstName": "Sayan",
+          "initials": "SJ"
+        },
+        {
+          "fullName": "Fenk LM",
+          "lastName": "Fenk",
+          "firstName": "Lisa",
+          "initials": "LM"
+        },
+        {
+          "fullName": "Straw AD",
+          "lastName": "Straw",
+          "firstName": "Andrew",
+          "initials": "AD"
+        }
+      ]
+    },
+    {
+      "id": "PPR13346",
+      "source": "PPR",
+      "doi": "10.1101/315432",
+      "title": "Gap perception in bumblebees",
+      "authorString": "Ravi S, Bertrand O, Siesenop T, Manz L, Doussot C, Fisher A, Egelhaaf M.",
+      "pubYear": "2018",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2018-05-06",
+      "authors": [
+        {
+          "fullName": "Ravi S",
+          "lastName": "Ravi",
+          "firstName": "Sridhar",
+          "initials": "S"
+        },
+        {
+          "fullName": "Bertrand O",
+          "lastName": "Bertrand",
+          "firstName": "Olivier",
+          "initials": "O"
+        },
+        {
+          "fullName": "Siesenop T",
+          "lastName": "Siesenop",
+          "firstName": "Tim",
+          "initials": "T"
+        },
+        {
+          "fullName": "Manz L",
+          "lastName": "Manz",
+          "firstName": "Lea-Sophie",
+          "initials": "L"
+        },
+        {
+          "fullName": "Doussot C",
+          "lastName": "Doussot",
+          "firstName": "Charlotte",
+          "initials": "C"
+        },
+        {
+          "fullName": "Fisher A",
+          "lastName": "Fisher",
+          "firstName": "Alex",
+          "initials": "A"
+        },
+        {
+          "fullName": "Egelhaaf M",
+          "lastName": "Egelhaaf",
+          "firstName": "Martin",
+          "initials": "M"
+        }
+      ]
+    },
+    {
+      "id": "25505148",
+      "source": "MED",
+      "pmid": "25505148",
+      "pmcid": "PMC4295162",
+      "doi": "10.1242/bio.20149449",
+      "title": "Influence of environmental information in natural scenes and the effects of motion adaptation on a fly motion-sensitive neuron during simulated flight.",
+      "authorString": "Ullrich TW, Kern R, Egelhaaf M.",
+      "pubYear": "2014",
+      "pageInfo": "13-21",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "Y",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "firstPublicationDate": "2014-12-12",
+      "authors": [
+        {
+          "fullName": "Ullrich TW",
+          "lastName": "Ullrich",
+          "firstName": "Thomas W",
+          "initials": "TW"
+        },
+        {
+          "fullName": "Kern R",
+          "lastName": "Kern",
+          "firstName": "Roland",
+          "initials": "R"
+        },
+        {
+          "fullName": "Egelhaaf M",
+          "lastName": "Egelhaaf",
+          "firstName": "Martin",
+          "initials": "M"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Biol Open",
+        "title": "Biology open",
+        "essn": "2046-6390",
+        "issn": "2046-6390"
+      },
+      "journal_issue": {
+        "issue": "1",
+        "volume": "4",
+        "dateOfPublication": "2014 Dec",
+        "yearOfPublication": 2014
+      }
+    },
+    {
+      "id": "23335890",
+      "source": "MED",
+      "pmid": "23335890",
+      "pmcid": "PMC3542507",
+      "doi": "10.3389/fnbeh.2012.00092",
+      "title": "Texture dependence of motion sensing and free flight behavior in blowflies.",
+      "authorString": "Lindemann JP, Egelhaaf M.",
+      "pubYear": "2012",
+      "pageInfo": "92",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "Y",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "firstPublicationDate": "2013-01-11",
+      "authors": [
+        {
+          "fullName": "Lindemann JP",
+          "lastName": "Lindemann",
+          "firstName": "Jens P",
+          "initials": "JP"
+        },
+        {
+          "fullName": "Egelhaaf M",
+          "lastName": "Egelhaaf",
+          "firstName": "Martin",
+          "initials": "M"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Front Behav Neurosci",
+        "title": "Frontiers in behavioral neuroscience",
+        "essn": "1662-5153",
+        "issn": "1662-5153"
+      },
+      "journal_issue": {
+        "volume": "6",
+        "dateOfPublication": "2012 ",
+        "yearOfPublication": 2012
+      }
+    },
+    {
+      "id": "20537540",
+      "source": "MED",
+      "pmid": "20537540",
+      "doi": "10.1016/j.cub.2010.03.072",
+      "title": "Motion adaptation and the velocity coding of natural scenes.",
+      "authorString": "Barnett PD, Nordström K, O'Carroll DC.",
+      "pubYear": "2010",
+      "pageInfo": "994-999",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2010-05-27",
+      "authors": [
+        {
+          "fullName": "Barnett PD",
+          "lastName": "Barnett",
+          "firstName": "Paul D",
+          "initials": "PD"
+        },
+        {
+          "fullName": "Nordström K",
+          "lastName": "Nordström",
+          "firstName": "Karin",
+          "initials": "K"
+        },
+        {
+          "fullName": "O'Carroll DC",
+          "lastName": "O'Carroll",
+          "firstName": "David C",
+          "initials": "DC"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Curr Biol",
+        "title": "Current biology : CB",
+        "essn": "1879-0445",
+        "issn": "0960-9822"
+      },
+      "journal_issue": {
+        "issue": "11",
+        "volume": "20",
+        "dateOfPublication": "2010 Jun",
+        "yearOfPublication": 2010
+      }
+    },
+    {
+      "id": "20514339",
+      "source": "MED",
+      "pmid": "20514339",
+      "pmcid": "PMC2876873",
+      "doi": "10.3389/fnbeh.2010.00020",
+      "title": "Chasing behavior and optomotor following in free-flying male blowflies: flight performance and interactions of the underlying control systems.",
+      "authorString": "Trischler C, Kern R, Egelhaaf M.",
+      "pubYear": "2010",
+      "pageInfo": "20",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "Y",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "firstPublicationDate": "2010-05-14",
+      "authors": [
+        {
+          "fullName": "Trischler C",
+          "lastName": "Trischler",
+          "firstName": "Christine",
+          "initials": "C"
+        },
+        {
+          "fullName": "Kern R",
+          "lastName": "Kern",
+          "firstName": "Roland",
+          "initials": "R"
+        },
+        {
+          "fullName": "Egelhaaf M",
+          "lastName": "Egelhaaf",
+          "firstName": "Martin",
+          "initials": "M"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Front Behav Neurosci",
+        "title": "Frontiers in behavioral neuroscience",
+        "essn": "1662-5153",
+        "issn": "1662-5153"
+      },
+      "journal_issue": {
+        "volume": "4",
+        "dateOfPublication": "2010 ",
+        "yearOfPublication": 2010
+      }
+    },
+    {
+      "id": "17928564",
+      "source": "MED",
+      "pmid": "17928564",
+      "doi": "10.1152/jn.00440.2007",
+      "title": "Adaptation and information transmission in fly motion detection.",
+      "authorString": "Safran MN, Flanagin VL, Borst A, Sompolinsky H.",
+      "pubYear": "2007",
+      "pageInfo": "3309-3320",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2007-10-10",
+      "authors": [
+        {
+          "fullName": "Safran MN",
+          "lastName": "Safran",
+          "firstName": "Moshe N",
+          "initials": "MN"
+        },
+        {
+          "fullName": "Flanagin VL",
+          "lastName": "Flanagin",
+          "firstName": "Virginia L",
+          "initials": "VL"
+        },
+        {
+          "fullName": "Borst A",
+          "lastName": "Borst",
+          "firstName": "Alexander",
+          "initials": "A"
+        },
+        {
+          "fullName": "Sompolinsky H",
+          "lastName": "Sompolinsky",
+          "firstName": "Haim",
+          "initials": "H"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurophysiol",
+        "title": "Journal of neurophysiology",
+        "essn": "1522-1598",
+        "issn": "0022-3077"
+      },
+      "journal_issue": {
+        "issue": "6",
+        "volume": "98",
+        "dateOfPublication": "2007 Dec",
+        "yearOfPublication": 2007
+      }
+    },
+    {
+      "id": "16706704",
+      "source": "MED",
+      "pmid": "16706704",
+      "doi": "10.1089/pho.2006.24.222",
+      "title": "Bibliography. Laser literature watch.",
+      "pubYear": "2006",
+      "pageInfo": "222-248",
+      "pubTypeList": {
+        "pubType": [
+          "Bibliography",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2006-04-01",
+      "journal": {
+        "medlineAbbreviation": "Photomed Laser Surg",
+        "title": "Photomedicine and laser surgery",
+        "essn": "1557-8550",
+        "issn": "1549-5418"
+      },
+      "journal_issue": {
+        "issue": "2",
+        "volume": "24",
+        "dateOfPublication": "2006 Apr",
+        "yearOfPublication": 2006
+      }
+    }
+  ],
+  "returned_count": 28,
+  "visible_total": 28,
+  "cursor_in": "*",
+  "cursor_out": null,
+  "page_index": 1,
+  "page_complete": true,
+  "provider_response_keys": [
+    "hitCount",
+    "request",
+    "resultList",
+    "version"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "completed_at_utc": "2026-11-27T02:54:17.667596Z"
+}
