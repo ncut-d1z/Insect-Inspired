@@ -2,6 +2,12 @@
   "checkpoint_id": "CP-0010",
   "status": "upload_in_progress",
   "committed_parts": [
+    1,
+    2,
+    5,
+    6,
+    9,
+    10,
     13,
     14,
     15,
