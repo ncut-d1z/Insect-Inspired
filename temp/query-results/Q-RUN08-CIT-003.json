@@ -1,0 +1,98 @@
+{
+  "query_id": "Q-RUN08-CIT-003",
+  "run_id": "RUN-0008",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0010",
+  "task_id": "T-references-W-D0f5e53ca30b3a9ea",
+  "entity_id": "W-D0f5e53ca30b3a9ea",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+  "raw_parameters": {
+    "operation": "find",
+    "source_reference_id": "turn833133443view0",
+    "patterns": [
+      "Webb B, Wystrach A",
+      "Schwegmann A, Lindemann JP, Egelhaaf M (2014a)"
+    ],
+    "purpose": "Cross-check exact targets for the two selected original citation contexts, distinguishing Schwegmann2014a from the adjacent 2014b entry"
+  },
+  "query_kind": "selected_official_bibliography_identity_observation",
+  "queried_at_utc": "2026-11-27T09:19:37Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 2,
+  "cache_hit": false,
+  "rerun_reason": "No successful identical target bibliography request was found in the complete corpus. A prior RUN6 surrounding publisher response incidentally included the Webb entry, but its frozen receipt retained only Strubbe and Kern records and did not preserve this target as a reviewed bibliography observation.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Retain selected bibliographic facts and original review notes only; no full publisher page or body prose retained.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Two live connector find operations reported crawled today. The article and both cited targets predate cutoff; no historical snapshot claimed.",
+  "status": "success",
+  "transport": "web.find",
+  "source_reference_id": "turn352671189view0",
+  "source_reference_ids": [
+    "turn352671189view0",
+    "turn352671189view1"
+  ],
+  "source_line_count": 759,
+  "records": [
+    {
+      "source_record_id": "publisher:10.1007/s00359-022-01610-w#bibliography-line603",
+      "work_id": "W-Raab0f78cce8a781f",
+      "title": "Neural mechanisms of insect navigation",
+      "authors": [
+        "Webb B",
+        "Wystrach A"
+      ],
+      "year": 2016,
+      "journal": "Curr Opin Insect Sci",
+      "volume": "15",
+      "pages": "27–39",
+      "source_reference_id": "turn352671189view0",
+      "locator": "References, displayed line603",
+      "matched_canonical_occurrence_id": "R-CR-65cd034ca81a311a",
+      "identity_basis": "Full title, both authors, year, journal, volume and page range agree with the existing DOI-resolved canonical occurrence; the publisher entry itself does not display a DOI."
+    },
+    {
+      "source_record_id": "publisher:10.1007/s00359-022-01610-w#bibliography-line548",
+      "work_id": "W-S14",
+      "title": "Depth information in natural environments derived from optic flow by insect motion detection system: a model analysis",
+      "authors": [
+        "Schwegmann A",
+        "Lindemann JP",
+        "Egelhaaf M"
+      ],
+      "year": 2014,
+      "year_label": "2014a",
+      "journal": "Front Comput Neurosci",
+      "volume": "8",
+      "eid": "83",
+      "source_reference_id": "turn352671189view1",
+      "locator": "References, displayed line548",
+      "matched_canonical_occurrence_id": "R-CR-a9f051524c27ecba",
+      "identity_basis": "Full title, authors, 2014a label, journal, volume and article number agree with the existing DOI-resolved seed occurrence. Adjacent line550 is a different 2014b paper and is not merged with this target. No DOI is displayed in the selected publisher entry."
+    }
+  ],
+  "result_identifiers": [
+    "publisher:10.1007/s00359-022-01610-w#bibliography-line603",
+    "publisher:10.1007/s00359-022-01610-w#bibliography-line548"
+  ],
+  "visible_total": null,
+  "returned_count": 2,
+  "count_before_dedup": 2,
+  "count_after_dedup": 2,
+  "new_work_count": 0,
+  "new_work_ids": [],
+  "page_complete": false,
+  "cursor_in": "selected-publisher-bibliography-targets",
+  "cursor_out": "other-bibliography-and-supplement-coverage-pending",
+  "count_basis": "Exactly two selected bibliography targets returned and identity-checked, one per find operation; surrounding unparsed bibliography text is excluded. Both map to existing canonical Works. Complete publisher bibliography size remains unknown, so visible_total is null.",
+  "review_scope": {
+    "selected_target_count": 2,
+    "bibliography_targets_verified": true,
+    "complete_main_reference_list_verified": false,
+    "appendix_or_supplement_reference_lists_verified": false,
+    "whole_work_review_complete": false
+  },
+  "integrity_note": "Only connector-returned text and exact target lines were inspected. The returned excerpts have gaps; no complete-document hash, full bibliography reconciliation, PDF layout or visual figure verification is asserted."
+}
