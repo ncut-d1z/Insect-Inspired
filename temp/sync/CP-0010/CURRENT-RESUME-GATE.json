@@ -1,0 +1,38 @@
+{
+  "checkpoint_id": "CP-0010",
+  "canonical_commit": "5f2181b0e5a91bcafde2a3f19eb526668934a80e",
+  "checked_at_utc": "2026-11-27T09:46:43.996207Z",
+  "mode": "read_only_resume_gate_after_historical_freeze",
+  "canonical_files_changed": false,
+  "latest_tasks": 131576,
+  "open_unknown_tasks": 65053,
+  "due_open_unknown_tasks": 64363,
+  "unupgraded_due_tasks_since_freeze": 14842,
+  "unupgraded_deadline_cohorts": {
+    "2026-11-27T09:43:04.166846Z": 14842
+  },
+  "next_deadline_cohorts": [
+    [
+      "2026-11-27T10:11:29.453926Z",
+      259
+    ],
+    [
+      "2026-11-27T10:33:22.659472Z",
+      5
+    ],
+    [
+      "2026-11-27T14:43:22.454738Z",
+      51
+    ],
+    [
+      "2026-11-27T16:12:05.061456Z",
+      1
+    ],
+    [
+      "2026-11-27T16:13:39.125000Z",
+      1
+    ]
+  ],
+  "research_must_wait_for_complete_remote_restore": true,
+  "before_next_research_batch": "Recompute real UTC aging, append overdue escalation events and upgrade structured unknown states in a new checkpoint; preserve all original clocks and frozen CP10 bytes. Automatic aging is not scientific review."
+}
