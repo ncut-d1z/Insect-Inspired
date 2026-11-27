@@ -221,6 +221,8 @@ def replace_status_tokens(raw, pointers):
 
 
 def next_event(before, evaluated):
+    require(before.get('priority') in {'normal', 'high', 'critical'},
+            'Invalid task priority; do not silently repair an unrelated schema error')
     after = deepcopy(before)
     after.update(event_sequence=before['event_sequence'] + 1, checkpoint_id=CP,
                  updated_at_utc=evaluated, overdue=True,
