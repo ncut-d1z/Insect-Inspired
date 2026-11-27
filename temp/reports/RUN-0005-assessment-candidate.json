@@ -1,0 +1,1668 @@
+{
+  "schema_version": 1,
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "status": "reviewed_schema_valid_candidate_not_yet_integrated",
+  "created_at_utc": "2026-11-27T02:38:19.093465Z",
+  "review_binding": {
+    "path": "temp/reports/RUN-0005-evidence-review.json",
+    "sha256": "95499d8935422282404f3ceb32bbed7d881e9ccacfac229fd4366308c38d3947",
+    "published_commit": "95f0ee30432b7eb5af7a0195fba43d6ce3f7805d",
+    "cache_query_id": "Q-RUN05-P6-S03-cache",
+    "pdf_sha256": "4306763f1da56697f04123ad4ad5366d6ac68b6842044fbe9905ca46358f79c7",
+    "root_adjudication": "Root independently viewed S03-5.pngFig3A/B/C and accepted only the graph mean-trace peak difference≈0.16ΔF/F with0.12–0.19graph-reading range; n=13and author p<.05remain separate. Approval message received before candidate creation.",
+    "protected_existing_assessment_id": "A-S03-L09-01",
+    "existing_assessments_changed": 0
+  },
+  "assessment": {
+    "assessment_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
+    "work_id": "W-S03",
+    "work_key": "Wasserman2015",
+    "limitation_id": "L09",
+    "claim_id": "CLAIM-RUN05-Wasserman2015-Hx-odor-meantrace",
+    "claim_type": "biological_mechanism",
+    "relation_type": [
+      "independent_progress",
+      "indirect_mitigation"
+    ],
+    "handling_level": "new_evidence_or_hypothesis",
+    "evidence_level": "fulltext_result",
+    "evidence_kind": [
+      "imaging",
+      "controlled_experiment"
+    ],
+    "evidence_route": "biological_mechanism",
+    "conditions": {
+      "species": {
+        "status": "reported",
+        "reason": null,
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null,
+        "value": [
+          {
+            "scientific_name": "Drosophila melanogaster",
+            "taxon_id": null,
+            "cell_type": "Hx (Odd-skipped-Gal4; GCaMP6m)",
+            "cell_identifiers": [
+              "Hx"
+            ],
+            "field_states": {
+              "taxon_id": {
+                "status": "not_applicable",
+                "reason": "This source-identification claim uses the explicitly printed scientific name and cell/driver; it makes no database-taxonomy mapping.",
+                "evidence_locator": [
+                  {
+                    "source_id": "SRC-PDF",
+                    "version_id": "V-S03-01",
+                    "upload_id": "U-S03-01",
+                    "identifier": "S03",
+                    "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                    "page": "3,5–6",
+                    "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                    "figure": "3A-C",
+                    "accessed_at": "2026-11-27T02:38:19.093465Z",
+                    "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          }
+        ]
+      },
+      "motion_type": {
+        "status": "reported",
+        "reason": "Experimentally displayed back-to-front wide-field visual motion, not an estimated camera egomotion trajectory.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null,
+        "value": "other_specified"
+      },
+      "motion_dof": {
+        "status": "not_applicable",
+        "reason": "Only Hx calcium-response amplitude is compared; no self-motion component or degree of freedom is estimated.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null,
+        "value": null
+      },
+      "known_translation": {
+        "status": "not_applicable",
+        "reason": "No physical translation or unknown metric-translation estimation enters this plotted-response claim.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null,
+        "value": null
+      },
+      "speed_range": {
+        "status": "reported",
+        "reason": null,
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null,
+        "value": [
+          {
+            "quantity": "angular_velocity",
+            "min": 22,
+            "max": 22,
+            "unit": "deg/s",
+            "coordinate_frame": null,
+            "measurement_role": "assumed",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S03-01",
+                "upload_id": "U-S03-01",
+                "identifier": "S03",
+                "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                "page": "3,5–6",
+                "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                "figure": "3A-C",
+                "accessed_at": "2026-11-27T02:38:19.093465Z",
+                "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+              }
+            ],
+            "field_states": {
+              "coordinate_frame": {
+                "status": "not_applicable",
+                "reason": "Displayed scalar magnitude; direction and retinal orientation are separately specified in the protocol.",
+                "evidence_locator": [
+                  {
+                    "source_id": "SRC-PDF",
+                    "version_id": "V-S03-01",
+                    "upload_id": "U-S03-01",
+                    "identifier": "S03",
+                    "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                    "page": "3,5–6",
+                    "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                    "figure": "3A-C",
+                    "accessed_at": "2026-11-27T02:38:19.093465Z",
+                    "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            },
+            "definition": "Main-text visual/olfactory integration stimulus speed, not the27deg periodic-grating tuning experiment or the behavior simulator."
+          }
+        ]
+      },
+      "environment": {
+        "status": "reported",
+        "reason": null,
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null,
+        "value": "laboratory_controlled"
+      },
+      "environment_details": {
+        "status": "reported",
+        "reason": null,
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null,
+        "value": {
+          "dataset_ids": [
+            "D-RUN05-S03-Hx-odor"
+          ],
+          "scene_count": null,
+          "fov_deg": {
+            "quantity": "fov",
+            "min": 216,
+            "max": 216,
+            "unit": "deg",
+            "coordinate_frame": null,
+            "measurement_role": "measured",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S03-01",
+                "upload_id": "U-S03-01",
+                "identifier": "S03",
+                "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                "page": "3,5–6",
+                "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                "figure": "3A-C",
+                "accessed_at": "2026-11-27T02:38:19.093465Z",
+                "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+              }
+            ],
+            "field_states": {
+              "coordinate_frame": {
+                "status": "not_applicable",
+                "reason": "Displayed scalar magnitude; direction and retinal orientation are separately specified in the protocol.",
+                "evidence_locator": [
+                  {
+                    "source_id": "SRC-PDF",
+                    "version_id": "V-S03-01",
+                    "upload_id": "U-S03-01",
+                    "identifier": "S03",
+                    "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                    "page": "3,5–6",
+                    "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                    "figure": "3A-C",
+                    "accessed_at": "2026-11-27T02:38:19.093465Z",
+                    "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            },
+            "definition": "Horizontal azimuth of the calcium-imaging LED display; reported elevation120deg is described in the protocol, not combined into this scalar."
+          },
+          "distance_range": null,
+          "distance_distribution": null,
+          "scene_dynamics": "dynamic",
+          "distance_knowledge": null,
+          "field_states": {
+            "scene_count": {
+              "status": "not_applicable",
+              "reason": "Repeated2Ddisplay-pattern epochs, not a sample of counted3Dscenes; eight available textures are not eight independently analyzed scene replicates.",
+              "evidence_locator": [
+                {
+                  "source_id": "SRC-PDF",
+                  "version_id": "V-S03-01",
+                  "upload_id": "U-S03-01",
+                  "identifier": "S03",
+                  "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                  "page": "3,5–6",
+                  "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                  "figure": "3A-C",
+                  "accessed_at": "2026-11-27T02:38:19.093465Z",
+                  "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            },
+            "distance_range": {
+              "status": "not_applicable",
+              "reason": "The statement concerns observed fluorescence in displayed motion; no physical depth is estimated.",
+              "evidence_locator": [
+                {
+                  "source_id": "SRC-PDF",
+                  "version_id": "V-S03-01",
+                  "upload_id": "U-S03-01",
+                  "identifier": "S03",
+                  "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                  "page": "3,5–6",
+                  "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                  "figure": "3A-C",
+                  "accessed_at": "2026-11-27T02:38:19.093465Z",
+                  "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            },
+            "distance_distribution": {
+              "status": "not_applicable",
+              "reason": "No3Ddistance prior is used in this graph-response comparison.",
+              "evidence_locator": [
+                {
+                  "source_id": "SRC-PDF",
+                  "version_id": "V-S03-01",
+                  "upload_id": "U-S03-01",
+                  "identifier": "S03",
+                  "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                  "page": "3,5–6",
+                  "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                  "figure": "3A-C",
+                  "accessed_at": "2026-11-27T02:38:19.093465Z",
+                  "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            },
+            "distance_knowledge": {
+              "status": "not_applicable",
+              "reason": "No metric or relative scene depth enters the claimed observable.",
+              "evidence_locator": [
+                {
+                  "source_id": "SRC-PDF",
+                  "version_id": "V-S03-01",
+                  "upload_id": "U-S03-01",
+                  "identifier": "S03",
+                  "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                  "page": "3,5–6",
+                  "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                  "figure": "3A-C",
+                  "accessed_at": "2026-11-27T02:38:19.093465Z",
+                  "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            }
+          }
+        }
+      },
+      "texture_noise": {
+        "status": "reported",
+        "reason": null,
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null,
+        "value": {
+          "stimulus_type": "random_pattern",
+          "contrast": null,
+          "spatial_frequency": null,
+          "illumination": null,
+          "noise": null,
+          "outlier_fraction": null,
+          "occlusion_fraction": null,
+          "field_states": {
+            "contrast": {
+              "status": "unknown",
+              "reason": "The main integration protocol specifies random textures but no independently verified contrast value; the supplement is not reviewed. No contrast-generalization claim is made.",
+              "evidence_locator": [
+                {
+                  "source_id": "SRC-PDF",
+                  "version_id": "V-S03-01",
+                  "upload_id": "U-S03-01",
+                  "identifier": "S03",
+                  "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                  "page": "3,5–6",
+                  "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                  "figure": "3A-C",
+                  "accessed_at": "2026-11-27T02:38:19.093465Z",
+                  "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                }
+              ],
+              "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
+              "review_task_id": "T-Unknown-e7ffdec904922e9b"
+            },
+            "spatial_frequency": {
+              "status": "unknown",
+              "reason": "The random-texture spatial spectrum is not verified; do not copy the27deg periodic grating fromFig2. The supplement is unreviewed.",
+              "evidence_locator": [
+                {
+                  "source_id": "SRC-PDF",
+                  "version_id": "V-S03-01",
+                  "upload_id": "U-S03-01",
+                  "identifier": "S03",
+                  "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                  "page": "3,5–6",
+                  "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                  "figure": "3A-C",
+                  "accessed_at": "2026-11-27T02:38:19.093465Z",
+                  "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                }
+              ],
+              "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
+              "review_task_id": "T-Unknown-5ca4bc25e464681b"
+            },
+            "illumination": {
+              "status": "unknown",
+              "reason": "Absolute retinal illumination is not verified from the main methods; laser power is not retinal display illumination. Supplement verification remains open.",
+              "evidence_locator": [
+                {
+                  "source_id": "SRC-PDF",
+                  "version_id": "V-S03-01",
+                  "upload_id": "U-S03-01",
+                  "identifier": "S03",
+                  "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                  "page": "3,5–6",
+                  "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                  "figure": "3A-C",
+                  "accessed_at": "2026-11-27T02:38:19.093465Z",
+                  "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                }
+              ],
+              "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
+              "review_task_id": "T-Unknown-450d5e2f0de7c584"
+            },
+            "noise": {
+              "status": "unknown",
+              "reason": "No calibrated stimulus-noise/imaging-noise parameter is established for this comparison. Do not infer zero noise; the graph-reading interval is separate from biological/imaging noise.",
+              "evidence_locator": [
+                {
+                  "source_id": "SRC-PDF",
+                  "version_id": "V-S03-01",
+                  "upload_id": "U-S03-01",
+                  "identifier": "S03",
+                  "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                  "page": "3,5–6",
+                  "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                  "figure": "3A-C",
+                  "accessed_at": "2026-11-27T02:38:19.093465Z",
+                  "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                }
+              ],
+              "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
+              "review_task_id": "T-Unknown-b3b4b7cde4b100fd"
+            },
+            "outlier_fraction": {
+              "status": "not_applicable",
+              "reason": "Not a feature-matching or controlled outlier-fraction experiment; excluded preparations are an inclusion criterion, not a known outlier percentage.",
+              "evidence_locator": [
+                {
+                  "source_id": "SRC-PDF",
+                  "version_id": "V-S03-01",
+                  "upload_id": "U-S03-01",
+                  "identifier": "S03",
+                  "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                  "page": "3,5–6",
+                  "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                  "figure": "3A-C",
+                  "accessed_at": "2026-11-27T02:38:19.093465Z",
+                  "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            },
+            "occlusion_fraction": {
+              "status": "not_applicable",
+              "reason": "This claim does not compare or quantify imposed visual occlusions.",
+              "evidence_locator": [
+                {
+                  "source_id": "SRC-PDF",
+                  "version_id": "V-S03-01",
+                  "upload_id": "U-S03-01",
+                  "identifier": "S03",
+                  "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                  "page": "3,5–6",
+                  "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                  "figure": "3A-C",
+                  "accessed_at": "2026-11-27T02:38:19.093465Z",
+                  "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            }
+          }
+        }
+      },
+      "scale": {
+        "status": "not_applicable",
+        "reason": "Dimensionless calcium fluorescence response, with no spatial/translation scale reconstruction.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null,
+        "value": null
+      },
+      "scale_source_prior": {
+        "status": "not_applicable",
+        "reason": "No metric-motion or geometry prior is used in the plotted fluorescence comparison.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null,
+        "value": null
+      },
+      "scale_observability": {
+        "status": "not_applicable",
+        "reason": "No latent metric scale is estimated or claimed observable.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null,
+        "value": null
+      },
+      "method_and_validation": {
+        "status": "reported",
+        "reason": null,
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null,
+        "value": {
+          "assumptions": [
+            "Figure3A is the reported across-animal meanHxtrace (n=13percaption) with1SEMdisplay band.",
+            "Estimate is difference of per-epoch maxima of the plotted mean trace, not mean of individual peak differences.",
+            "Five repeated10-smotionepochs; bilateral food odor coincides with epoch2. The graph comparison alone does not eliminate every sequence-order or adaptation alternative.",
+            "Readout pertains to the prepared imaged adult female fruit-fly Hxneurons, not an actively flying behavioral cohort.",
+            "Unreviewed supplement quantities do not change the geometry of the already published Figure3A; they limit external validity and any mechanistic/parameter-generalization claim."
+          ],
+          "validation_types": [
+            "imaging",
+            "controlled_experiment"
+          ],
+          "dataset_ids": [
+            "D-RUN05-S03-Hx-odor"
+          ],
+          "sample_count": 13,
+          "trial_count": null,
+          "baseline_ids": [
+            "B-RUN05-S03-preodor-epoch1"
+          ],
+          "metric_ids": [
+            "M-RUN05-S03-Hx-meantrace-peak-difference"
+          ],
+          "failure_conditions": [
+            "The proposed metric is a bounded graph reading, not raw individual data or an original reported table.",
+            "Rank-sum p<0.05belongs to the authors peak-response comparisons; it is not an effect size or a newly computed test of the digitized mean-trace difference.",
+            "Water-vapor n=6null-significance result is not an equivalence test.",
+            "Hx-specific behavioral causality, octopamine mechanism, interspecies homology, optimal matching and motion recovery remain outside the claim."
+          ],
+          "field_states": {
+            "trial_count": {
+              "status": "unknown",
+              "reason": "Main methods require responses for at least two presentations of the full stimulus set, but this is an inclusion criterion, not an exact per-animal/per-condition repetition count. Supplemental methods remain unreviewed.",
+              "evidence_locator": [
+                {
+                  "source_id": "SRC-PDF",
+                  "version_id": "V-S03-01",
+                  "upload_id": "U-S03-01",
+                  "identifier": "S03",
+                  "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                  "page": "3,5–6",
+                  "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                  "figure": "3A-C",
+                  "accessed_at": "2026-11-27T02:38:19.093465Z",
+                  "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                }
+              ],
+              "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
+              "review_task_id": "T-Unknown-b5a564a3b79b916a"
+            }
+          }
+        }
+      }
+    },
+    "method": "在成年雌性果蝇Hx/Odd-skipped-Gal4、GCaMP6m的双光子钙成像中，比较5次10秒后向前广域视觉运动的第1阶段与配对双侧气味的第2阶段。当前量化为原Fig3A图示群体均值轨迹峰值差；先用PDF矢量坐标和50%ΔF/F标尺估读，再以独立栅格读数核对，root目视复核。",
+    "results": "作者Fig3A/B标注Hx n=13，并报告峰响应比较rank-sum p<0.05。另行图形分析得到：第2阶段群体均值轨迹峰值比第1阶段高约0.16ΔF/F，保守图形读数范围0.12–0.19。作者p阈值与当前估读指标分别保存；未计算新的检验。",
+    "baseline": "Within-preparation temporal reference: pre-odor motionepoch1versus paired-odor motionepoch2. This is not a separate control-group effect-size estimate or a before/after adaptation mechanism claim.",
+    "effect": "在本图所示果蝇Hx钙成像条件中，配对气味阶段的图示平均轨迹峰值更高。约0.16ΔF/F为约16个百分点，不是16%相对增益，也不是个体峰值的均值差。",
+    "dataset_records": [
+      {
+        "dataset_id": "D-RUN05-S03-Hx-odor",
+        "name": "Wasserman2015Fig3A published Hx calcium-response mean trace under repeated visual motion and paired odor",
+        "version": null,
+        "data_kind": "neural_recording",
+        "source_locator": {
+          "source_id": "SRC-PDF",
+          "version_id": "V-S03-01",
+          "upload_id": "U-S03-01",
+          "identifier": "S03",
+          "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+          "page": 5,
+          "section": "Figure 3A-B and caption (printed p.470)",
+          "figure": "3A-B",
+          "accessed_at": "2026-11-27T02:38:19.093465Z",
+          "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+        },
+        "sequence_ids": [
+          "Fig3A-epoch1-preodor",
+          "Fig3A-epoch2-pairedodor"
+        ],
+        "split_id": null,
+        "ground_truth_source": null,
+        "ground_truth_independence": "not_applicable",
+        "field_states": {
+          "version": {
+            "status": "not_applicable",
+            "reason": "The exact printed dataset representation is fixed by V-S03-01and itsPDFSHA256; no independent downloaded dataset release is used.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S03-01",
+                "upload_id": "U-S03-01",
+                "identifier": "S03",
+                "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                "page": 5,
+                "section": "Figure 3A-B and caption (printed p.470)",
+                "figure": "3A-B",
+                "accessed_at": "2026-11-27T02:38:19.093465Z",
+                "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "split_id": {
+            "status": "not_applicable",
+            "reason": "No training/test split or predictive-model comparison in this graph-response claim.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S03-01",
+                "upload_id": "U-S03-01",
+                "identifier": "S03",
+                "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                "page": 5,
+                "section": "Figure 3A-B and caption (printed p.470)",
+                "figure": "3A-B",
+                "accessed_at": "2026-11-27T02:38:19.093465Z",
+                "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "ground_truth_source": {
+            "status": "not_applicable",
+            "reason": "Direct calcium-imaging response comparison, not estimated motion versus an external ground truth.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S03-01",
+                "upload_id": "U-S03-01",
+                "identifier": "S03",
+                "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                "page": 5,
+                "section": "Figure 3A-B and caption (printed p.470)",
+                "figure": "3A-B",
+                "accessed_at": "2026-11-27T02:38:19.093465Z",
+                "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      }
+    ],
+    "baseline_records": [
+      {
+        "baseline_id": "B-RUN05-S03-preodor-epoch1",
+        "baseline_type": "other_defined",
+        "description": "Within-preparation temporal reference: pre-odor motionepoch1versus paired-odor motionepoch2. This is not a separate control-group effect-size estimate or a before/after adaptation mechanism claim.",
+        "dataset_id": "D-RUN05-S03-Hx-odor",
+        "condition_ids": [
+          "CL-RUN05-S03-preodor",
+          "CL-RUN05-S03-pairedodor"
+        ],
+        "metric_ids": [
+          "M-RUN05-S03-Hx-meantrace-peak-difference"
+        ],
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "field_states": {}
+      }
+    ],
+    "condition_levels": [
+      {
+        "condition_id": "CL-RUN05-S03-preodor",
+        "factor": "control_intervention",
+        "level_id": "preodor",
+        "quantity": null,
+        "description": "Motionepoch1beforeodor; samevisual-integration paradigm and preparedHxcohort.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "field_states": {
+          "quantity": {
+            "status": "not_applicable",
+            "reason": "Categorical experimental epoch/odor status; stimulus speed and duration are reported separately, with no numeric odor concentration asserted.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S03-01",
+                "upload_id": "U-S03-01",
+                "identifier": "S03",
+                "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                "page": 5,
+                "section": "Figure 3A-B and caption (printed p.470)",
+                "figure": "3A-B",
+                "accessed_at": "2026-11-27T02:38:19.093465Z",
+                "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+              },
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S03-01",
+                "upload_id": "U-S03-01",
+                "identifier": "S03",
+                "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                "page": "3,5–6",
+                "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                "figure": "3A-C",
+                "accessed_at": "2026-11-27T02:38:19.093465Z",
+                "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      {
+        "condition_id": "CL-RUN05-S03-pairedodor",
+        "factor": "control_intervention",
+        "level_id": "pairedodor",
+        "quantity": null,
+        "description": "Motionepoch2with10-sbilateralfood-odorpulse; responsecomparison limited to this experimental order.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "field_states": {
+          "quantity": {
+            "status": "not_applicable",
+            "reason": "Categorical experimental epoch/odor status; stimulus speed and duration are reported separately, with no numeric odor concentration asserted.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S03-01",
+                "upload_id": "U-S03-01",
+                "identifier": "S03",
+                "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                "page": 5,
+                "section": "Figure 3A-B and caption (printed p.470)",
+                "figure": "3A-B",
+                "accessed_at": "2026-11-27T02:38:19.093465Z",
+                "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+              },
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S03-01",
+                "upload_id": "U-S03-01",
+                "identifier": "S03",
+                "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                "page": "3,5–6",
+                "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                "figure": "3A-C",
+                "accessed_at": "2026-11-27T02:38:19.093465Z",
+                "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      }
+    ],
+    "metric_records": [
+      {
+        "metric_id": "M-RUN05-S03-Hx-meantrace-peak-difference",
+        "metric_name": "response_amplitude",
+        "definition": "Reviewer graph estimate: max of the plotted across-animal mean ΔF/F trace in paired-odor motion epoch 2 minus max of the plotted mean trace in pre-odor motion epoch 1, Fig3A. 0.16ΔF/F equals16 percentage points of ΔF/F; it is not a16% relative increase, mean of individual maxima, or original author-tabulated number. Root independently visually checked the original page rendering and accepted this narrow graph description before candidate creation.",
+        "value": 0.16,
+        "unit": "DeltaF/F",
+        "statistic": "other_defined",
+        "sample_count": 13,
+        "dataset_id": "D-RUN05-S03-Hx-odor",
+        "baseline_id": "B-RUN05-S03-preodor-epoch1",
+        "alignment": "not_applicable",
+        "alignment_source": "not_applicable",
+        "interval": null,
+        "uncertainty": {
+          "kind": "other_defined",
+          "lower": 0.12,
+          "upper": 0.19,
+          "unit": "DeltaF/F",
+          "description": "Conservative graph-reading interval only (12–19 percentage points), covering independent PDF-vector and raster extraction with±1pixel per peak and±1pixel scale calibration plus rounded stroke/geometry allowance. This is not SEM, SD, CI, biological variability, or a statistical interval. Published gray band is mean±1SEM; no SEM magnitude is reconstructed."
+        },
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          }
+        ],
+        "field_states": {
+          "interval": {
+            "status": "not_applicable",
+            "reason": "Not a trajectory/RPE interval; the definition fixes the two10-s epochs.",
+            "evidence_locator": [
+              {
+                "source_id": "SRC-PDF",
+                "version_id": "V-S03-01",
+                "upload_id": "U-S03-01",
+                "identifier": "S03",
+                "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                "page": 5,
+                "section": "Figure 3A-B and caption (printed p.470)",
+                "figure": "3A-B",
+                "accessed_at": "2026-11-27T02:38:19.093465Z",
+                "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      }
+    ],
+    "proof_record": null,
+    "evidence_admission_status": "eligible",
+    "rejection_codes": [],
+    "claims_absolute_scale": {
+      "status": "reported",
+      "reason": "The narrow response-amplitude claim contains no metric-translation or depth-scale recovery.",
+      "evidence_locator": [
+        {
+          "source_id": "SRC-PDF",
+          "version_id": "V-S03-01",
+          "upload_id": "U-S03-01",
+          "identifier": "S03",
+          "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+          "page": 5,
+          "section": "Figure 3A-B and caption (printed p.470)",
+          "figure": "3A-B",
+          "accessed_at": "2026-11-27T02:38:19.093465Z",
+          "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+        },
+        {
+          "source_id": "SRC-PDF",
+          "version_id": "V-S03-01",
+          "upload_id": "U-S03-01",
+          "identifier": "S03",
+          "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+          "page": "3,5–6",
+          "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+          "figure": "3A-C",
+          "accessed_at": "2026-11-27T02:38:19.093465Z",
+          "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+        }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null,
+      "value": false
+    },
+    "scale_prior_details": [],
+    "measurement_model": null,
+    "state_variables": [],
+    "gauge_freedoms": [],
+    "observability_assumptions": [],
+    "degeneracy_conditions": [],
+    "excitation_requirements": [],
+    "external_measurement_sources": [],
+    "observability_argument_locator": [],
+    "remaining_limitations": "本条只保存图示群体均值响应的限定比较，不验证最优匹配滤波、一般三维运动恢复、L07平台速率幅值、丽蝇Hx模型或跨物种同源性。图形区间只是读数范围，不是SEM、SD、CI或生物差异。原文未提供该图的原始数据表，未重建13个体/精确P/统计量；缺少精确重复次数及未读补充条件已建unknown工单，不能作对比度、空间频率、光照、噪声或气味浓度泛化。行为实验3–6日龄与飞行装置不套用于本钙成像组。HSE图3H为n=7、图3I为n=6的图注差异单列保留，不影响Hx所标n=13，也不跨细胞外推。顺序比较和水蒸气阴性结果不建立所有可能混杂因素的等价控制。Hx专一因果行为操作及章鱼胺机制不由此指标证明。",
+    "counter_evidence": false,
+    "counter_evidence_types": [],
+    "evidence_locator": [
+      {
+        "source_id": "SRC-PDF",
+        "version_id": "V-S03-01",
+        "upload_id": "U-S03-01",
+        "identifier": "S03",
+        "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+        "page": 5,
+        "section": "Figure 3A-B and caption (printed p.470)",
+        "figure": "3A-B",
+        "accessed_at": "2026-11-27T02:38:19.093465Z",
+        "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+      },
+      {
+        "source_id": "SRC-PDF",
+        "version_id": "V-S03-01",
+        "upload_id": "U-S03-01",
+        "identifier": "S03",
+        "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+        "page": "3,5–6",
+        "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+        "figure": "3A-C",
+        "accessed_at": "2026-11-27T02:38:19.093465Z",
+        "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+      }
+    ],
+    "provenance_upload_ids": [
+      "U-S03-01"
+    ],
+    "provenance_version_ids": [
+      "V-S03-01"
+    ],
+    "assessment_status": "active",
+    "superseded_by_assessment_id": null,
+    "cascade_event_id": null,
+    "discard_reason": null,
+    "fulltext_status": "available_verified",
+    "verification_status": "verified",
+    "citation_roles": [],
+    "project_relation": "not_applicable",
+    "statement_basis": "reviewer_inference",
+    "reviewer": "RUN-0005P6reviewer; root independent original-page visual adjudication",
+    "date": "2026-11-27",
+    "biological_implications": "果蝇Hx视觉响应的条件性描述需包含嗅觉上下文；本条补充特定细胞和条件下的量化响应证据，未建立跨物种最优匹配滤波理论的验证。",
+    "engineering_implications": "视觉响应变化可能混入感觉上下文调制，不能直接把所有变化解释为运动速率变化。工程系统是否需要、如何使用类似调制仍须独立实验，本条不提供工程性能证明。",
+    "field_states": {
+      "proof_record": {
+        "status": "not_applicable",
+        "reason": "No theoretical proof, latent-motion measurement model, merge, discard or cascade event is asserted by this active experimental-response claim.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "measurement_model": {
+        "status": "not_applicable",
+        "reason": "No theoretical proof, latent-motion measurement model, merge, discard or cascade event is asserted by this active experimental-response claim.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "superseded_by_assessment_id": {
+        "status": "not_applicable",
+        "reason": "No theoretical proof, latent-motion measurement model, merge, discard or cascade event is asserted by this active experimental-response claim.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "cascade_event_id": {
+        "status": "not_applicable",
+        "reason": "No theoretical proof, latent-motion measurement model, merge, discard or cascade event is asserted by this active experimental-response claim.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "discard_reason": {
+        "status": "not_applicable",
+        "reason": "No theoretical proof, latent-motion measurement model, merge, discard or cascade event is asserted by this active experimental-response claim.",
+        "evidence_locator": [
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": 5,
+            "section": "Figure 3A-B and caption (printed p.470)",
+            "figure": "3A-B",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+          },
+          {
+            "source_id": "SRC-PDF",
+            "version_id": "V-S03-01",
+            "upload_id": "U-S03-01",
+            "identifier": "S03",
+            "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+            "page": "3,5–6",
+            "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+            "figure": "3A-C",
+            "accessed_at": "2026-11-27T02:38:19.093465Z",
+            "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      }
+    },
+    "species": {
+      "status": "reported",
+      "reason": null,
+      "evidence_locator": [
+        {
+          "source_id": "SRC-PDF",
+          "version_id": "V-S03-01",
+          "upload_id": "U-S03-01",
+          "identifier": "S03",
+          "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+          "page": "3,5–6",
+          "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+          "figure": "3A-C",
+          "accessed_at": "2026-11-27T02:38:19.093465Z",
+          "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+        }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null,
+      "value": [
+        {
+          "scientific_name": "Drosophila melanogaster",
+          "taxon_id": null,
+          "cell_type": "Hx (Odd-skipped-Gal4; GCaMP6m)",
+          "cell_identifiers": [
+            "Hx"
+          ],
+          "field_states": {
+            "taxon_id": {
+              "status": "not_applicable",
+              "reason": "This source-identification claim uses the explicitly printed scientific name and cell/driver; it makes no database-taxonomy mapping.",
+              "evidence_locator": [
+                {
+                  "source_id": "SRC-PDF",
+                  "version_id": "V-S03-01",
+                  "upload_id": "U-S03-01",
+                  "identifier": "S03",
+                  "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+                  "page": "3,5–6",
+                  "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+                  "figure": "3A-C",
+                  "accessed_at": "2026-11-27T02:38:19.093465Z",
+                  "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            }
+          }
+        }
+      ]
+    },
+    "motion_type": {
+      "status": "reported",
+      "reason": "Experimentally displayed back-to-front wide-field visual motion, not an estimated camera egomotion trajectory.",
+      "evidence_locator": [
+        {
+          "source_id": "SRC-PDF",
+          "version_id": "V-S03-01",
+          "upload_id": "U-S03-01",
+          "identifier": "S03",
+          "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+          "page": "3,5–6",
+          "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+          "figure": "3A-C",
+          "accessed_at": "2026-11-27T02:38:19.093465Z",
+          "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+        }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null,
+      "value": "other_specified"
+    },
+    "environment": {
+      "status": "reported",
+      "reason": null,
+      "evidence_locator": [
+        {
+          "source_id": "SRC-PDF",
+          "version_id": "V-S03-01",
+          "upload_id": "U-S03-01",
+          "identifier": "S03",
+          "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+          "page": "3,5–6",
+          "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+          "figure": "3A-C",
+          "accessed_at": "2026-11-27T02:38:19.093465Z",
+          "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+        }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null,
+      "value": "laboratory_controlled"
+    },
+    "scale": {
+      "status": "not_applicable",
+      "reason": "Dimensionless calcium fluorescence response, with no spatial/translation scale reconstruction.",
+      "evidence_locator": [
+        {
+          "source_id": "SRC-PDF",
+          "version_id": "V-S03-01",
+          "upload_id": "U-S03-01",
+          "identifier": "S03",
+          "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+          "page": 5,
+          "section": "Figure 3A-B and caption (printed p.470)",
+          "figure": "3A-B",
+          "accessed_at": "2026-11-27T02:38:19.093465Z",
+          "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+        },
+        {
+          "source_id": "SRC-PDF",
+          "version_id": "V-S03-01",
+          "upload_id": "U-S03-01",
+          "identifier": "S03",
+          "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+          "page": "3,5–6",
+          "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+          "figure": "3A-C",
+          "accessed_at": "2026-11-27T02:38:19.093465Z",
+          "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+        }
+      ],
+      "unknown_since_utc": null,
+      "review_task_id": null,
+      "value": null
+    }
+  },
+  "unknown_tasks": [
+    {
+      "task_id": "T-Unknown-e7ffdec904922e9b",
+      "entity_type": "assessment",
+      "entity_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
+      "task_type": "field_review",
+      "scope_id": "SCOPE-0001",
+      "source_id": "SRC-PDF",
+      "normalized_parameters": {},
+      "task_state": "pending",
+      "cursor": null,
+      "dependency_ids": [],
+      "query_ids": [
+        "Q-RUN05-P6-S03-cache"
+      ],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "The main integration protocol specifies random textures but no independently verified contrast value; the supplement is not reviewed. No contrast-generalization claim is made.",
+      "retry_at": null,
+      "review_condition": "Acquire and inspect the associated Supplemental Experimental Procedures or original data/methods before broadening the condition-specific statement; retain the original unknown clock. The main integration protocol specifies random textures but no independently verified contrast value; the supplement is not reviewed. No contrast-generalization claim is made.",
+      "created_at_utc": "2026-11-27T02:38:19.093465Z",
+      "updated_at_utc": "2026-11-27T02:38:19.093465Z",
+      "checkpoint_id": "CP-0007",
+      "event_sequence": 1,
+      "assessment_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
+      "field_path": "conditions.texture_noise.value.contrast",
+      "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
+      "deadline_at_utc": "2026-11-28T02:38:19.093465Z",
+      "review_task_id": "T-Unknown-e7ffdec904922e9b",
+      "priority": "normal",
+      "overdue": false,
+      "supporting_record_ids": [
+        "V-S03-01",
+        "U-S03-01"
+      ]
+    },
+    {
+      "task_id": "T-Unknown-5ca4bc25e464681b",
+      "entity_type": "assessment",
+      "entity_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
+      "task_type": "field_review",
+      "scope_id": "SCOPE-0001",
+      "source_id": "SRC-PDF",
+      "normalized_parameters": {},
+      "task_state": "pending",
+      "cursor": null,
+      "dependency_ids": [],
+      "query_ids": [
+        "Q-RUN05-P6-S03-cache"
+      ],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "The random-texture spatial spectrum is not verified; do not copy the27deg periodic grating fromFig2. The supplement is unreviewed.",
+      "retry_at": null,
+      "review_condition": "Acquire and inspect the associated Supplemental Experimental Procedures or original data/methods before broadening the condition-specific statement; retain the original unknown clock. The random-texture spatial spectrum is not verified; do not copy the27deg periodic grating fromFig2. The supplement is unreviewed.",
+      "created_at_utc": "2026-11-27T02:38:19.093465Z",
+      "updated_at_utc": "2026-11-27T02:38:19.093465Z",
+      "checkpoint_id": "CP-0007",
+      "event_sequence": 1,
+      "assessment_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
+      "field_path": "conditions.texture_noise.value.spatial_frequency",
+      "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
+      "deadline_at_utc": "2026-11-28T02:38:19.093465Z",
+      "review_task_id": "T-Unknown-5ca4bc25e464681b",
+      "priority": "normal",
+      "overdue": false,
+      "supporting_record_ids": [
+        "V-S03-01",
+        "U-S03-01"
+      ]
+    },
+    {
+      "task_id": "T-Unknown-450d5e2f0de7c584",
+      "entity_type": "assessment",
+      "entity_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
+      "task_type": "field_review",
+      "scope_id": "SCOPE-0001",
+      "source_id": "SRC-PDF",
+      "normalized_parameters": {},
+      "task_state": "pending",
+      "cursor": null,
+      "dependency_ids": [],
+      "query_ids": [
+        "Q-RUN05-P6-S03-cache"
+      ],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "Absolute retinal illumination is not verified from the main methods; laser power is not retinal display illumination. Supplement verification remains open.",
+      "retry_at": null,
+      "review_condition": "Acquire and inspect the associated Supplemental Experimental Procedures or original data/methods before broadening the condition-specific statement; retain the original unknown clock. Absolute retinal illumination is not verified from the main methods; laser power is not retinal display illumination. Supplement verification remains open.",
+      "created_at_utc": "2026-11-27T02:38:19.093465Z",
+      "updated_at_utc": "2026-11-27T02:38:19.093465Z",
+      "checkpoint_id": "CP-0007",
+      "event_sequence": 1,
+      "assessment_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
+      "field_path": "conditions.texture_noise.value.illumination",
+      "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
+      "deadline_at_utc": "2026-11-28T02:38:19.093465Z",
+      "review_task_id": "T-Unknown-450d5e2f0de7c584",
+      "priority": "normal",
+      "overdue": false,
+      "supporting_record_ids": [
+        "V-S03-01",
+        "U-S03-01"
+      ]
+    },
+    {
+      "task_id": "T-Unknown-b3b4b7cde4b100fd",
+      "entity_type": "assessment",
+      "entity_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
+      "task_type": "field_review",
+      "scope_id": "SCOPE-0001",
+      "source_id": "SRC-PDF",
+      "normalized_parameters": {},
+      "task_state": "pending",
+      "cursor": null,
+      "dependency_ids": [],
+      "query_ids": [
+        "Q-RUN05-P6-S03-cache"
+      ],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "No calibrated stimulus-noise/imaging-noise parameter is established for this comparison. Do not infer zero noise; the graph-reading interval is separate from biological/imaging noise.",
+      "retry_at": null,
+      "review_condition": "Acquire and inspect the associated Supplemental Experimental Procedures or original data/methods before broadening the condition-specific statement; retain the original unknown clock. No calibrated stimulus-noise/imaging-noise parameter is established for this comparison. Do not infer zero noise; the graph-reading interval is separate from biological/imaging noise.",
+      "created_at_utc": "2026-11-27T02:38:19.093465Z",
+      "updated_at_utc": "2026-11-27T02:38:19.093465Z",
+      "checkpoint_id": "CP-0007",
+      "event_sequence": 1,
+      "assessment_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
+      "field_path": "conditions.texture_noise.value.noise",
+      "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
+      "deadline_at_utc": "2026-11-28T02:38:19.093465Z",
+      "review_task_id": "T-Unknown-b3b4b7cde4b100fd",
+      "priority": "normal",
+      "overdue": false,
+      "supporting_record_ids": [
+        "V-S03-01",
+        "U-S03-01"
+      ]
+    },
+    {
+      "task_id": "T-Unknown-b5a564a3b79b916a",
+      "entity_type": "assessment",
+      "entity_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
+      "task_type": "field_review",
+      "scope_id": "SCOPE-0001",
+      "source_id": "SRC-PDF",
+      "normalized_parameters": {},
+      "task_state": "pending",
+      "cursor": null,
+      "dependency_ids": [],
+      "query_ids": [
+        "Q-RUN05-P6-S03-cache"
+      ],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "Main methods require responses for at least two presentations of the full stimulus set, but this is an inclusion criterion, not an exact per-animal/per-condition repetition count. Supplemental methods remain unreviewed.",
+      "retry_at": null,
+      "review_condition": "Acquire and inspect the associated Supplemental Experimental Procedures or original data/methods before broadening the condition-specific statement; retain the original unknown clock. Main methods require responses for at least two presentations of the full stimulus set, but this is an inclusion criterion, not an exact per-animal/per-condition repetition count. Supplemental methods remain unreviewed.",
+      "created_at_utc": "2026-11-27T02:38:19.093465Z",
+      "updated_at_utc": "2026-11-27T02:38:19.093465Z",
+      "checkpoint_id": "CP-0007",
+      "event_sequence": 1,
+      "assessment_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
+      "field_path": "conditions.method_and_validation.value.trial_count",
+      "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
+      "deadline_at_utc": "2026-11-28T02:38:19.093465Z",
+      "review_task_id": "T-Unknown-b5a564a3b79b916a",
+      "priority": "normal",
+      "overdue": false,
+      "supporting_record_ids": [
+        "V-S03-01",
+        "U-S03-01"
+      ]
+    }
+  ],
+  "validation": {
+    "schema_path": "temp/schema.json",
+    "schema_sha256": "2e1a2803f15d9e3cc502ba555df08ac02d84874fd90879728a864156267cea97",
+    "assessment_schema_errors": [],
+    "task_schema_errors": [],
+    "unknown_links_and_original_clocks": "passed",
+    "finite_values_and_units": "passed",
+    "existing_evidence_gate_rejection_codes": [],
+    "existing_evidence_gate_status": "eligible",
+    "manual_L09_gate": "Explicit D.melanogasterHxcell, n=13reported, direct figure response quantity with baseline and uncertainty; no optimality or between-species claim.",
+    "missing_conditions_scope": "Five unknown fields are not needed to reproduce the graph-coordinate difference in this exact published figure. They block broader stimulus/parameter/generalization claims and retain24-hour review tasks. No unknown field is treated as zero or not_reported.",
+    "critical_unknown_fields": [],
+    "new_exception": false
+  },
+  "integration_requirements": [
+    "Append exactly one assessment object and five initialunknown taskevents after root review.",
+    "Use the candidate created_at_utc for first-persistence unknown clocks; never reset on integration/retry.",
+    "Preserve existing70Assessment objects and all prior shortfall/counterevidence records unchanged.",
+    "This reuses already admittedW-S03/V-S03-01/U-S03-01; do not incrementWork,Version,fileorfulltext-Workcounts.",
+    "Do not claim supplements read, Hxcausalbehavior tested, or pvalueasresponse magnitude.",
+    "Record one manualreviewevent; no extra externalqueryorcacheevent for candidate construction."
+  ]
+}

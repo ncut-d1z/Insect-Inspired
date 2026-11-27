@@ -1,0 +1,131 @@
+{
+  "query_id": "Q-RUN05-P5-web-identities-001",
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "task_id": "T-RUN02-L079-a5220a5422948222",
+  "entity_id": "P-Rc41ce50c7b36109a",
+  "source_id": "web_search",
+  "retrieval_method": "Search service; bibliographic facts extracted from official PubMed and publisher records returned by two exact-DOI searches. No claim of direct HTTP retrieval is made.",
+  "queries": [
+    "\"10.1016/j.cub.2026.01.045\"",
+    "\"10.1371/journal.pone.0339909\""
+  ],
+  "queried_at_utc": null,
+  "query_time_status": "unavailable_exact",
+  "external_requests_performed": 1,
+  "search_query_count": 2,
+  "cache_hit": false,
+  "status": "success",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Bibliographic facts and original short Chinese summary only; source abstracts, full texts and contact details omitted.",
+  "rerun_reason": "Europe PMC batch operation Q-RUN05-P5-Straw-identities-001 timed out. Cross-check the first two official-author publication entries using primary indexed records.",
+  "coverage_note": "Search results are not an exhaustive citation or publication list. Only exact primary bibliographic identities below are adjudicated; other search hits are discovery leads, not evidence of scientific conclusions.",
+  "records": [
+    {
+      "official_queue_index": 0,
+      "title": "Precise, individualized foraging flights in honeybees revealed by multicopter drone-based tracking",
+      "doi": "10.1016/j.cub.2026.01.045",
+      "pmid": "41702396",
+      "authors": [
+        "Rachael Stentiford",
+        "Michael J M Harrap",
+        "Victor V Titov",
+        "Stephan Lochner",
+        "Andrew D Straw"
+      ],
+      "year": 2026,
+      "first_publication_date": "2026-02-16",
+      "issue_publication_date": "2026-03-09",
+      "venue": "Current Biology",
+      "volume": "36",
+      "number": "5",
+      "pages": "1320-1328.e3",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/41702396/",
+        "https://www.sciencedirect.com/science/article/pii/S0960982226000849"
+      ],
+      "source_refs": [
+        "turn852847879search0",
+        "turn852847879search3"
+      ],
+      "date_within_cutoff": true,
+      "abstract_reviewed": false,
+      "fulltext_reviewed": false
+    },
+    {
+      "official_queue_index": 1,
+      "title": "An open-source closed-loop Virtual Reality system to investigate social interactions and collective behavior in fish",
+      "doi": "10.1371/journal.pone.0339909",
+      "pmid": "41563960",
+      "pmcid": "PMC12823003",
+      "authors": [
+        "Stéphane Sanchez",
+        "Ramón Escobedo",
+        "Renaud Bastien",
+        "Boris Lenseigne",
+        "Audrey Denis",
+        "Mathieu Moreau",
+        "Maud Combe",
+        "Andrew D Straw",
+        "Clément Sire",
+        "Guy Theraulaz"
+      ],
+      "year": 2026,
+      "first_publication_date": "2026-01-21",
+      "venue": "PLOS ONE",
+      "volume": "21",
+      "number": "1",
+      "eid": "e0339909",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/41563960/",
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0339909"
+      ],
+      "source_refs": [
+        "turn852847879search1",
+        "turn852847879search2"
+      ],
+      "date_within_cutoff": true,
+      "chinese_summary_from_abstract": "该研究构建用于鱼类集体行为实验的闭环虚拟现实系统，结合三维跟踪与实时视觉反馈，观察真实鱼对虚拟同伴的速度和空间位置调整。该记录由作者成果追踪发现，当前没有昆虫自运动局限性合格证据，保留在 U00。",
+      "fulltext_reviewed": false,
+      "correction_doi": "10.1371/journal.pone.0343509",
+      "correction_url": "https://pubmed.ncbi.nlm.nih.gov/41719227/"
+    },
+    {
+      "discovered_via": "Publisher correction link and PubMed ErratumFor for DOI 10.1371/journal.pone.0339909",
+      "title": "Correction: An open-source closed-loop Virtual Reality system to investigate social interactions and collective behavior in fish",
+      "doi": "10.1371/journal.pone.0343509",
+      "pmid": "41719227",
+      "pmcid": "PMC12923014",
+      "authors": [
+        "Stéphane Sanchez",
+        "Ramón Escobedo",
+        "Renaud Bastien",
+        "Boris Lenseigne",
+        "Audrey Denis",
+        "Mathieu Moreau",
+        "Maud Combe",
+        "Andrew D Straw",
+        "Clément Sire",
+        "Guy Theraulaz"
+      ],
+      "year": 2026,
+      "first_publication_date": "2026-02-20",
+      "venue": "PLOS ONE",
+      "volume": "21",
+      "number": "2",
+      "eid": "e0343509",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41719227/",
+      "source_refs": [
+        "turn852847879search7",
+        "turn852847879search2"
+      ],
+      "corrects_doi": "10.1371/journal.pone.0339909",
+      "date_within_cutoff": true,
+      "chinese_summary_from_abstract": "这是 DOI 10.1371/journal.pone.0339909 的正式更正。已确认其独立书目身份与被更正论文的关系；具体更正内容仍须核验。",
+      "fulltext_reviewed": false
+    }
+  ],
+  "recorded_at_utc": "2026-11-27T02:39:46.304357Z"
+}
