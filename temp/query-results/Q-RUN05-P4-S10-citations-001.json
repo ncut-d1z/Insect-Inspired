@@ -1,0 +1,682 @@
+{
+  "query_id": "Q-RUN05-P4-S10-citations-001",
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "task_id": "T-Citations-S10-epmc",
+  "entity_id": "W-S10",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/MED/15133514/citations?format=json&page=1&pageSize=1000",
+  "raw_parameters": {
+    "format": "json",
+    "page": 1,
+    "pageSize": 1000
+  },
+  "query_kind": "citations",
+  "queried_at_utc": "2026-11-27T02:44:27.337347Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "rerun_reason": "Exact DOI/PMID cross-check published; resume pending seed source at first citation page.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Public bibliographic facts; abstract/full text and personal contact details omitted.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Live source observed now, not a historical snapshot. Publication cutoff is checked separately.",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "status": "success",
+  "body_bytes": 26783,
+  "body_sha256": "5aa88a8aef6ebe05e99e6ac5f6e54f29eb0a9e47fcdf01e6791564ef3bc841a0",
+  "records": [
+    {
+      "source": "MED",
+      "id": "41811979",
+      "title": "Fly motion vision maximizes signal energy transfer between mechanical input and sensor output.",
+      "authorString": "Humbert JS, Krapp HG, Baeder JD, Badrya C, Dawson IL, Huang JV, Hyslop A, Jung YS, Leroy A, Lutkus C, Mortimer B, Nagesh I, Ruah C, Walker SM, Yang Y, Żbikowski RW, Taylor GK.",
+      "journalAbbreviation": "Sci Robot",
+      "pubYear": 2026,
+      "pageInfo": "eadx7524"
+    },
+    {
+      "source": "MED",
+      "id": "39396050",
+      "title": "Bilateral interactions of optic-flow sensitive neurons coordinate course control in flies.",
+      "authorString": "Pokusaeva VO, Satapathy R, Symonova O, Joesch M.",
+      "journalAbbreviation": "Nat Commun",
+      "pubYear": 2024,
+      "pageInfo": "8830"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR830858",
+      "title": "Fly motion vision is tuned to maximize signal energy transfer between mechanical input and sensor output",
+      "authorString": "Humbert JS, Krapp HG, Baeder JD, Badrya C, Dawson IL, Huang JV, Hyslop A, Jung YS, Leroy A, Lutkus C, Mortimer B, Nagesh I, Ruah C, Walker SM, Yang Y, Żbikowski RW, Taylor GK.",
+      "pubYear": 2024
+    },
+    {
+      "source": "PPR",
+      "id": "PPR670481",
+      "title": "Gap junctions arbitrate binocular course control in flies",
+      "authorString": "Pokusaeva VO, Satapathy R, Symonova O, Jösch M.",
+      "pubYear": 2023
+    },
+    {
+      "source": "MED",
+      "id": "35385694",
+      "title": "Anatomical distribution and functional roles of electrical synapses in Drosophila.",
+      "authorString": "Ammer G, Vieira RM, Fendl S, Borst A.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2022,
+      "pageInfo": "2022-2036.e4"
+    },
+    {
+      "source": "MED",
+      "id": "34014926",
+      "title": "Maximally efficient prediction in the early fly visual system may support evasive flight maneuvers.",
+      "authorString": "Wang S, Segev I, Borst A, Palmer S.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2021,
+      "pageInfo": "e1008965"
+    },
+    {
+      "source": "MED",
+      "id": "32619485",
+      "title": "Complete Connectomic Reconstruction of Olfactory Projection Neurons in the Fly Brain.",
+      "authorString": "Bates AS, Schlegel P, Roberts RJV, Drummond N, Tamimi IFM, Turnbull R, Zhao X, Marin EC, Popovici PD, Dhawan S, Jamasb A, Javier A, Serratosa Capdevila L, Li F, Rubin GM, Waddell S, Bock DD, Costa M, Jefferis GSXE.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2020,
+      "pageInfo": "3183-3199.e6"
+    },
+    {
+      "source": "MED",
+      "id": "30485333",
+      "title": "Full reconstruction of large lobula plate tangential cells in Drosophila from a 3D EM dataset.",
+      "authorString": "Boergens KM, Kapfer C, Helmstaedter M, Denk W, Borst A.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2018,
+      "pageInfo": "e0207828"
+    },
+    {
+      "source": "MED",
+      "id": "29636499",
+      "title": "Non-uniform weighting of local motion inputs underlies dendritic computation in the fly visual system.",
+      "authorString": "Dan O, Hopp E, Borst A, Segev I.",
+      "journalAbbreviation": "Sci Rep",
+      "pubYear": 2018,
+      "pageInfo": "5787"
+    },
+    {
+      "source": "MED",
+      "id": "29206224",
+      "title": "Efficient encoding of motion is mediated by gap junctions in the fly visual system.",
+      "authorString": "Wang S, Borst A, Zaslavsky N, Tishby N, Segev I.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2017,
+      "pageInfo": "e1005846"
+    },
+    {
+      "source": "MED",
+      "id": "27649466",
+      "title": "Functional contributions of electrical synapses in sensory and motor networks.",
+      "authorString": "Szczupak L.",
+      "journalAbbreviation": "Curr Opin Neurobiol",
+      "pubYear": 2016,
+      "pageInfo": "99-105"
+    },
+    {
+      "source": "MED",
+      "id": "27403647",
+      "title": "Electrophysiological Method for Recording Intracellular Voltage Responses of Drosophila Photoreceptors and Interneurons to Light Stimuli In Vivo.",
+      "authorString": "Juusola M, Dau A, Zheng L, Rien D.",
+      "journalAbbreviation": "J Vis Exp",
+      "pubYear": 2016
+    },
+    {
+      "source": "MED",
+      "id": "26673659",
+      "title": "Neural Mechanisms for Drosophila Contrast Vision.",
+      "authorString": "Bahl A, Serbe E, Meier M, Ammer G, Borst A.",
+      "journalAbbreviation": "Neuron",
+      "pubYear": 2015,
+      "pageInfo": "1240-1252"
+    },
+    {
+      "source": "MED",
+      "id": "25636734",
+      "title": "Complementary motion tuning in frontal nerve motor neurons of the blowfly.",
+      "authorString": "Kauer I, Borst A, Haag J.",
+      "journalAbbreviation": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+      "pubYear": 2015,
+      "pageInfo": "411-426"
+    },
+    {
+      "source": "MED",
+      "id": "25186763",
+      "title": "Near-optimal decoding of transient stimuli from coupled neuronal subpopulations.",
+      "authorString": "Trousdale J, Carroll SR, Gabbiani F, Josić K.",
+      "journalAbbreviation": "J Neurosci",
+      "pubYear": 2014,
+      "pageInfo": "12206-12222"
+    },
+    {
+      "source": "MED",
+      "id": "24647929",
+      "title": "Subcellular mapping of dendritic activity in optic flow processing neurons.",
+      "authorString": "Hopp E, Borst A, Haag J.",
+      "journalAbbreviation": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+      "pubYear": 2014,
+      "pageInfo": "359-370"
+    },
+    {
+      "source": "MED",
+      "id": "25032498",
+      "title": "Motion-detecting circuits in flies: coming into view.",
+      "authorString": "Silies M, Gohl DM, Clandinin TR.",
+      "journalAbbreviation": "Annu Rev Neurosci",
+      "pubYear": 2014,
+      "pageInfo": "307-327"
+    },
+    {
+      "source": "MED",
+      "id": "24034242",
+      "title": "Motion detection: neuronal circuit meets theory.",
+      "authorString": "Yonehara K, Roska B.",
+      "journalAbbreviation": "Cell",
+      "pubYear": 2013,
+      "pageInfo": "1188-1189"
+    },
+    {
+      "source": "MED",
+      "id": "23977069",
+      "title": "Preserving neural function under extreme scaling.",
+      "authorString": "Cuntz H, Forstner F, Schnell B, Ammer G, Raghu SV, Borst A.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2013,
+      "pageInfo": "e71540"
+    },
+    {
+      "source": "MED",
+      "id": "23761882",
+      "title": "From dendritic compartments to neuronal networks: a multilevel analysis of motion vision.",
+      "authorString": "Weir PT, Suver MP.",
+      "journalAbbreviation": "J Neurosci",
+      "pubYear": 2013,
+      "pageInfo": "9876-9878"
+    },
+    {
+      "source": "MED",
+      "id": "23426692",
+      "title": "Dendritic end inhibition in large-field visual neurons of the fly.",
+      "authorString": "Elyada YM, Haag J, Borst A.",
+      "journalAbbreviation": "J Neurosci",
+      "pubYear": 2013,
+      "pageInfo": "3659-3667"
+    },
+    {
+      "source": "MED",
+      "id": "22674287",
+      "title": "Integration of binocular optic flow in cervical neck motor neurons of the fly.",
+      "authorString": "Wertz A, Haag J, Borst A.",
+      "journalAbbreviation": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+      "pubYear": 2012,
+      "pageInfo": "655-668"
+    },
+    {
+      "source": "MED",
+      "id": "22327473",
+      "title": "Disentangling the functional consequences of the connectivity between optic-flow processing neurons.",
+      "authorString": "Weber F, Machens CK, Borst A.",
+      "journalAbbreviation": "Nat Neurosci",
+      "pubYear": 2012,
+      "pageInfo": "441-8, S1-2"
+    },
+    {
+      "source": "MED",
+      "id": "22350507",
+      "title": "Bio-inspired visual ego-rotation sensor for MAVs.",
+      "authorString": "Plett J, Bahl A, Buss M, Kühnlenz K, Borst A.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2012,
+      "pageInfo": "51-63"
+    },
+    {
+      "source": "MED",
+      "id": "22066014",
+      "title": "Relating neuronal to behavioral performance: variability of optomotor responses in the blowfly.",
+      "authorString": "Rosner R, Warzecha AK.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2011,
+      "pageInfo": "e26886"
+    },
+    {
+      "source": "MED",
+      "id": "21819463",
+      "title": "Synaptic transmission of graded membrane potential changes and spikes between identified visual interneurons.",
+      "authorString": "Rien D, Kern R, Kurtz R.",
+      "journalAbbreviation": "Eur J Neurosci",
+      "pubYear": 2011,
+      "pageInfo": "705-716"
+    },
+    {
+      "source": "MED",
+      "id": "21490266",
+      "title": "Neuronal processing of translational optic flow in the visual system of the shore crab Carcinus maenas.",
+      "authorString": "Horseman BG, Macauley MW, Barnes WJ.",
+      "journalAbbreviation": "J Exp Biol",
+      "pubYear": 2011,
+      "pageInfo": "1586-1598"
+    },
+    {
+      "source": "MED",
+      "id": "21305019",
+      "title": "Neural action fields for optic flow based navigation: a simulation study of the fly lobula plate network.",
+      "authorString": "Borst A, Weber F.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2011,
+      "pageInfo": "e16303"
+    },
+    {
+      "source": "MED",
+      "id": "21209935",
+      "title": "Intrinsic activity in the fly brain gates visual information during behavioral choices.",
+      "authorString": "Tang S, Juusola M.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2010,
+      "pageInfo": "e14455"
+    },
+    {
+      "source": "MED",
+      "id": "21055939",
+      "title": "Synchronized neural input shapes stimulus selectivity in a collision-detecting neuron.",
+      "authorString": "Jones PW, Gabbiani F.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2010,
+      "pageInfo": "2052-2057"
+    },
+    {
+      "source": "MED",
+      "id": "21045125",
+      "title": "Central gating of fly optomotor response.",
+      "authorString": "Haag J, Wertz A, Borst A.",
+      "journalAbbreviation": "Proc Natl Acad Sci U S A",
+      "pubYear": 2010,
+      "pageInfo": "20104-20109"
+    },
+    {
+      "source": "MED",
+      "id": "20526346",
+      "title": "Two-photon calcium imaging from head-fixed Drosophila during optomotor walking behavior.",
+      "authorString": "Seelig JD, Chiappe ME, Lott GK, Dutta A, Osborne JE, Reiser MB, Jayaraman V.",
+      "journalAbbreviation": "Nat Methods",
+      "pubYear": 2010,
+      "pageInfo": "535-540"
+    },
+    {
+      "source": "MED",
+      "id": "20219173",
+      "title": "Sensorimotor transformation: from visual responses to motor commands.",
+      "authorString": "Krapp HG.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2010,
+      "pageInfo": "R236-9"
+    },
+    {
+      "source": "MED",
+      "id": "20154683",
+      "title": "Active flight increases the gain of visual motion processing in Drosophila.",
+      "authorString": "Maimon G, Straw AD, Dickinson MH.",
+      "journalAbbreviation": "Nat Neurosci",
+      "pubYear": 2010,
+      "pageInfo": "393-399"
+    },
+    {
+      "source": "MED",
+      "id": "20089816",
+      "title": "Processing of horizontal optic flow in three visual interneurons of the Drosophila brain.",
+      "authorString": "Schnell B, Joesch M, Forstner F, Raghu SV, Otsuna H, Ito K, Borst A, Reiff DF.",
+      "journalAbbreviation": "J Neurophysiol",
+      "pubYear": 2010,
+      "pageInfo": "1646-1657"
+    },
+    {
+      "source": "MED",
+      "id": "20225934",
+      "title": "Fly motion vision.",
+      "authorString": "Borst A, Haag J, Reiff DF.",
+      "journalAbbreviation": "Annu Rev Neurosci",
+      "pubYear": 2010,
+      "pageInfo": "49-70"
+    },
+    {
+      "source": "MED",
+      "id": "19940195",
+      "title": "Robust coding of ego-motion in descending neurons of the fly.",
+      "authorString": "Wertz A, Gaub B, Plett J, Haag J, Borst A.",
+      "journalAbbreviation": "J Neurosci",
+      "pubYear": 2009,
+      "pageInfo": "14993-15000"
+    },
+    {
+      "source": "MED",
+      "id": "19830435",
+      "title": "Local and global motion preferences in descending neurons of the fly.",
+      "authorString": "Wertz A, Haag J, Borst A.",
+      "journalAbbreviation": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+      "pubYear": 2009,
+      "pageInfo": "1107-1120"
+    },
+    {
+      "source": "MED",
+      "id": "19778511",
+      "title": "Precise subcellular input retinotopy and its computational consequences in an identified visual interneuron.",
+      "authorString": "Peron SP, Jones PW, Gabbiani F.",
+      "journalAbbreviation": "Neuron",
+      "pubYear": 2009,
+      "pageInfo": "830-842"
+    },
+    {
+      "source": "MED",
+      "id": "19467210",
+      "title": "Sensory integration: neuronal adaptations for robust visual self-motion estimation.",
+      "authorString": "Krapp HG.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2009,
+      "pageInfo": "R413-6"
+    },
+    {
+      "source": "MED",
+      "id": "19329750",
+      "title": "Variability of blowfly head optomotor responses.",
+      "authorString": "Rosner R, Egelhaaf M, Grewe J, Warzecha AK.",
+      "journalAbbreviation": "J Exp Biol",
+      "pubYear": 2009,
+      "pageInfo": "1170-1184"
+    },
+    {
+      "source": "MED",
+      "id": "19264111",
+      "title": "Precise timing in fly motion vision is mediated by fast components of combined graded and spike signals.",
+      "authorString": "Beckers U, Egelhaaf M, Kurtz R.",
+      "journalAbbreviation": "Neuroscience",
+      "pubYear": 2009,
+      "pageInfo": "639-650"
+    },
+    {
+      "source": "MED",
+      "id": "19198603",
+      "title": "Different receptive fields in axons and dendrites underlie robust coding in motion-sensitive neurons.",
+      "authorString": "Elyada YM, Haag J, Borst A.",
+      "journalAbbreviation": "Nat Neurosci",
+      "pubYear": 2009,
+      "pageInfo": "327-332"
+    },
+    {
+      "source": "MED",
+      "id": "19306209",
+      "title": "Synaptic organization of lobula plate tangential cells in Drosophila: Dalpha7 cholinergic receptors.",
+      "authorString": "Raghu SV, Joesch M, Sigrist SJ, Borst A, Reiff DF.",
+      "journalAbbreviation": "J Neurogenet",
+      "pubYear": 2009,
+      "pageInfo": "200-209"
+    },
+    {
+      "source": "MED",
+      "id": "19138592",
+      "title": "Drosophila's view on insect vision.",
+      "authorString": "Borst A.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2009,
+      "pageInfo": "R36-47"
+    },
+    {
+      "source": "MED",
+      "id": "19112481",
+      "title": "The morphological identity of insect dendrites.",
+      "authorString": "Cuntz H, Forstner F, Haag J, Borst A.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2008,
+      "pageInfo": "e1000251"
+    },
+    {
+      "source": "MED",
+      "id": "19118177",
+      "title": "Electrical coupling of lobula plate tangential cells to a heterolateral motion-sensitive neuron in the fly.",
+      "authorString": "Haag J, Borst A.",
+      "journalAbbreviation": "J Neurosci",
+      "pubYear": 2008,
+      "pageInfo": "14435-14442"
+    },
+    {
+      "source": "MED",
+      "id": "18784299",
+      "title": "Adaptation of velocity encoding in synaptically coupled neurons in the fly visual system.",
+      "authorString": "Kalb J, Egelhaaf M, Kurtz R.",
+      "journalAbbreviation": "J Neurosci",
+      "pubYear": 2008,
+      "pageInfo": "9183-9193"
+    },
+    {
+      "source": "MED",
+      "id": "18667159",
+      "title": "Motion processing streams in Drosophila are behaviorally specialized.",
+      "authorString": "Katsov AY, Clandinin TR.",
+      "journalAbbreviation": "Neuron",
+      "pubYear": 2008,
+      "pageInfo": "322-335"
+    },
+    {
+      "source": "MED",
+      "id": "18556040",
+      "title": "Adaptation changes directional sensitivity in a visual motion-sensitive neuron of the fly.",
+      "authorString": "Kalb J, Egelhaaf M, Kurtz R.",
+      "journalAbbreviation": "Vision Res",
+      "pubYear": 2008,
+      "pageInfo": "1735-1742"
+    },
+    {
+      "source": "MED",
+      "id": "18354016",
+      "title": "Nonlinear integration of binocular optic flow by DNOVS2, a descending neuron of the fly.",
+      "authorString": "Wertz A, Borst A, Haag J.",
+      "journalAbbreviation": "J Neurosci",
+      "pubYear": 2008,
+      "pageInfo": "3131-3140"
+    },
+    {
+      "source": "MED",
+      "id": "18328703",
+      "title": "Response properties of motion-sensitive visual interneurons in the lobula plate of Drosophila melanogaster.",
+      "authorString": "Joesch M, Plett J, Borst A, Reiff DF.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2008,
+      "pageInfo": "368-374"
+    },
+    {
+      "source": "AGR",
+      "id": "IND44011217",
+      "title": "Sensory systems and flight stability: what do insects measure and why?",
+      "authorString": "Taylor GK, Krapp HG.",
+      "journalAbbreviation": "Advances in insect physiology.",
+      "pubYear": 2008,
+      "pageInfo": "231-316"
+    },
+    {
+      "source": "MED",
+      "id": "18982122",
+      "title": "Reciprocal inhibitory connections within a neural network for rotational optic-flow processing.",
+      "authorString": "Haag J, Borst A.",
+      "journalAbbreviation": "Front Neurosci",
+      "pubYear": 2007,
+      "pageInfo": "111-121"
+    },
+    {
+      "source": "MED",
+      "id": "17766297",
+      "title": "Fast-scale adaptive changes of directional tuning in fly tangential cells are explained by a static nonlinearity.",
+      "authorString": "Neri P.",
+      "journalAbbreviation": "J Exp Biol",
+      "pubYear": 2007,
+      "pageInfo": "3199-3208"
+    },
+    {
+      "source": "MED",
+      "id": "17551009",
+      "title": "Robust coding of flow-field parameters by axo-axonal gap junctions between fly visual interneurons.",
+      "authorString": "Cuntz H, Haag J, Forstner F, Segev I, Borst A.",
+      "journalAbbreviation": "Proc Natl Acad Sci U S A",
+      "pubYear": 2007,
+      "pageInfo": "10229-10233"
+    },
+    {
+      "source": "MED",
+      "id": "17394161",
+      "title": "Synaptic organization of lobula plate tangential cells in Drosophila: gamma-aminobutyric acid receptors and chemical release sites.",
+      "authorString": "Raghu SV, Joesch M, Borst A, Reiff DF.",
+      "journalAbbreviation": "J Comp Neurol",
+      "pubYear": 2007,
+      "pageInfo": "598-610"
+    },
+    {
+      "source": "MED",
+      "id": "17314295",
+      "title": "Integration of lobula plate output signals by DNOVS1, an identified premotor descending neuron.",
+      "authorString": "Haag J, Wertz A, Borst A.",
+      "journalAbbreviation": "J Neurosci",
+      "pubYear": 2007,
+      "pageInfo": "1992-2000"
+    },
+    {
+      "source": "MED",
+      "id": "17215505",
+      "title": "Synapses in the fly motion-vision pathway: evidence for a broad range of signal amplitudes and dynamics.",
+      "authorString": "Beckers U, Egelhaaf M, Kurtz R.",
+      "journalAbbreviation": "J Neurophysiol",
+      "pubYear": 2007,
+      "pageInfo": "2032-2041"
+    },
+    {
+      "source": "MED",
+      "id": "16964250",
+      "title": "Nonlinear, binocular interactions underlying flow field selectivity of a motion-sensitive neuron.",
+      "authorString": "Farrow K, Haag J, Borst A.",
+      "journalAbbreviation": "Nat Neurosci",
+      "pubYear": 2006,
+      "pageInfo": "1312-1320"
+    },
+    {
+      "source": "MED",
+      "id": "16802334",
+      "title": "Systematic analysis of the visual projection neurons of Drosophila melanogaster. I. Lobula-specific pathways.",
+      "authorString": "Otsuna H, Ito K.",
+      "journalAbbreviation": "J Comp Neurol",
+      "pubYear": 2006,
+      "pageInfo": "928-958"
+    },
+    {
+      "source": "MED",
+      "id": "16870735",
+      "title": "Robust integration of motion information in the fly visual system revealed by single cell photoablation.",
+      "authorString": "Kalb J, Egelhaaf M, Kurtz R.",
+      "journalAbbreviation": "J Neurosci",
+      "pubYear": 2006,
+      "pageInfo": "7898-7906"
+    },
+    {
+      "source": "MED",
+      "id": "16687623",
+      "title": "Encoding of naturalistic optic flow by a population of blowfly motion-sensitive neurons.",
+      "authorString": "Karmeier K, van Hateren JH, Kern R, Egelhaaf M.",
+      "journalAbbreviation": "J Neurophysiol",
+      "pubYear": 2006,
+      "pageInfo": "1602-1614"
+    },
+    {
+      "source": "MED",
+      "id": "16338996",
+      "title": "Spatial integration of optic flow signals in fly motion-sensitive neurons.",
+      "authorString": "Neri P.",
+      "journalAbbreviation": "J Neurophysiol",
+      "pubYear": 2006,
+      "pageInfo": "1608-1619"
+    },
+    {
+      "source": "MED",
+      "id": "16191636",
+      "title": "Global versus local adaptation in fly motion-sensitive neurons.",
+      "authorString": "Neri P, Laughlin SB.",
+      "journalAbbreviation": "Proc Biol Sci",
+      "pubYear": 2005,
+      "pageInfo": "2243-2249"
+    },
+    {
+      "source": "MED",
+      "id": "15901759",
+      "title": "Population coding of self-motion: applying bayesian analysis to a population of visual interneurons in the fly.",
+      "authorString": "Karmeier K, Krapp HG, Egelhaaf M.",
+      "journalAbbreviation": "J Neurophysiol",
+      "pubYear": 2005,
+      "pageInfo": "2182-2194"
+    },
+    {
+      "source": "MED",
+      "id": "15829650",
+      "title": "Sharing receptive fields with your neighbors: tuning the vertical system cells to wide field motion.",
+      "authorString": "Farrow K, Borst A, Haag J.",
+      "journalAbbreviation": "J Neurosci",
+      "pubYear": 2005,
+      "pageInfo": "3985-3993"
+    },
+    {
+      "source": "MED",
+      "id": "15736224",
+      "title": "Neural control mechanisms of the pheromone-triggered programmed behavior in male silkmoths revealed by double-labeling of descending interneurons and a motor neuron.",
+      "authorString": "Wada S, Kanzaki R.",
+      "journalAbbreviation": "J Comp Neurol",
+      "pubYear": 2005,
+      "pageInfo": "168-182"
+    },
+    {
+      "source": "MED",
+      "id": "15776269",
+      "title": "Dye-coupling visualizes networks of large-field motion-sensitive neurons in the fly.",
+      "authorString": "Haag J, Borst A.",
+      "journalAbbreviation": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+      "pubYear": 2005,
+      "pageInfo": "445-454"
+    },
+    {
+      "source": "MED",
+      "id": "15582376",
+      "title": "Closing the loop between neurobiology and flight behavior in Drosophila.",
+      "authorString": "Frye MA, Dickinson MH.",
+      "journalAbbreviation": "Curr Opin Neurobiol",
+      "pubYear": 2004,
+      "pageInfo": "729-736"
+    },
+    {
+      "source": "MED",
+      "id": "15162162",
+      "title": "Deconstructing a navigational neuron.",
+      "authorString": "Zeck GM, Masland RH.",
+      "journalAbbreviation": "Nat Neurosci",
+      "pubYear": 2004,
+      "pageInfo": "569-570"
+    }
+  ],
+  "returned_count": 71,
+  "visible_total": 71,
+  "cursor_in": "1",
+  "cursor_out": null,
+  "page_index": 1,
+  "page_complete": true,
+  "provider_response_keys": [
+    "citationList",
+    "hitCount",
+    "request",
+    "version"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "completed_at_utc": "2026-11-27T02:44:33.120916Z"
+}
