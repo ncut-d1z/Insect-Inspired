@@ -690,7 +690,7 @@ P1 还必须执行以下受控正/反例测试，不将虚构测试数据写入�
 
 ## 10. 路线图及门禁
 
-执行状态统一记录于 [进度追踪](temp/progress.md)；阶段验收见 [P1/P2 报告](temp/reports/P1-P2.md)。P3–P6 当前阶段报告见 [CP-0006 报告](temp/reports/P3-P6-CP0006.md)，[CP-0006](temp/snapshots/checkpoints/CP-0006.json) 为valid 数据检查点；有效父检查点为 [CP-0005](temp/snapshots/checkpoints/CP-0005.json)。CP-0003 保留为 invalid 历史。后置同步证明见阶段报告所链接的独立 verification receipt。本节定义阶段门禁，不另行维护执行状态。
+执行状态统一记录于 [进度追踪](temp/progress.md)；P3–P6 当前阶段报告见 [CP-0007 报告](temp/reports/P3-P6-CP0007.md)，[CP-0007](temp/snapshots/checkpoints/CP-0007.json) 为valid 数据检查点，有效父检查点为 [CP-0006](temp/snapshots/checkpoints/CP-0006.json)。CP-0003 保留为 invalid 历史。后置同步证明与研究闭包分别披露。本节定义门禁，不另行维护执行状态。
 
 | 阶段 | 输入 | 任务及验收产物 | 门禁 |
 | --- | --- | --- | --- |
