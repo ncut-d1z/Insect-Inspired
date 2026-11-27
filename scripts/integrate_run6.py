@@ -258,6 +258,49 @@ def main():
         receipt, binding = read_committed(repo, relative)
         bindings.append(binding)
         qid = receipt['query_id']
+        if 'query_record' in receipt:
+            require(qid not in baseline_query_ids and qid in indices['queries'],
+                    'Typed receipt needs an explicit newly reviewed query candidate: ' + qid)
+            q = data['queries'][indices['queries'][qid]]
+            require(q == receipt['query_record'],
+                    'Reviewed typed query differs from the exact receipt object: ' + qid)
+            require(q['query_id'] == qid and q['checkpoint_id'] == CP and q['scope_id'] == SCOPE
+                    and q['cache_path'] == relative
+                    and receipt['run_id'] == RUN and receipt['checkpoint_id'] == CP
+                    and receipt['scope_id'] == SCOPE,
+                    'Typed query identity, provenance, or scope differs: ' + qid)
+            external_calls = receipt['external_requests_performed']
+            require(type(external_calls) in (bool, int) and external_calls in (0, 1),
+                    'Typed receipt must record one invocation or cache reuse: ' + qid)
+            require(receipt['cache_hit'] == q['cache_hit']
+                    and (not q['cache_hit'] or external_calls == 0),
+                    'Typed cache/external request accounting differs: ' + qid)
+            require(all(wid not in baseline_work_ids and wid in indices['works'] for wid in q['new_work_ids']),
+                    'Typed new-Work attribution is not an actual addition: ' + qid)
+            require(q['new_work_count'] == len(q['new_work_ids']),
+                    'Typed new-Work count differs from its explicit identities: ' + qid)
+            if qid in new_by_query:
+                require(sorted(set(new_by_query[qid])) == sorted(set(q['new_work_ids'])),
+                        'Typed new-Work attribution conflicts with another candidate: ' + qid)
+            data['source-observations'].append(dict(
+                observation_id='OBS-' + qid, query_id=qid, task_id=q['task_id'], source_id=q['source_id'],
+                endpoint_or_url=q['endpoint_or_url'], queried_at_utc=q['queried_at_utc'],
+                query_time_status=q['query_time_status'], status=q['status'],
+                http_status=receipt.get('http_status'), response_kind=q['query_kind'],
+                returned_count=q['returned_count'], visible_total=q['visible_total'], page_complete=q['page_complete'],
+                count_scope=q['coverage_note'], receipt_path=relative, receipt_sha256=binding['sha256'],
+                verification_status=q['verification_status'], recorded_at_utc=q['recorded_at_utc'],
+                external_request_performed=bool(external_calls), cache_hit=q['cache_hit'],
+                source_search_query_count=receipt.get('search_query_count'),
+                source_count_basis=q['normalized_parameters'].get('count_scope'),
+                source_declared_counts={key: q[key] for key in
+                    ('visible_total', 'returned_count', 'count_before_dedup', 'count_after_dedup', 'new_work_count')},
+                source_result_identifiers=q['result_identifiers'],
+                query_record_preserved_exactly=True, query_record_canonical_sha256=digest(jbytes(q))))
+            # All nulls, exact/unavailable timestamps, field states and linked
+            # review tasks are supplied by the reviewed candidate and remain
+            # unchanged. The ordinary whole-row schema audit still runs below.
+            continue
         require(qid not in indices['queries'], 'Receipt query already added: ' + qid)
         rows_observed = 'records' in receipt
         rows = receipt.get('records', [])
