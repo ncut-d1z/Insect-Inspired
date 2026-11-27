@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "status": "reviewed_candidate_requires_root_adjudication",
+  "reviewer": "P6 evidence reviewer; computational graph reading plus visual source check",
+  "reviewed_at_utc": "2026-11-27T02:34:18.223689Z",
+  "input_snapshot": {
+    "baseline_checkpoint": "CP-0006",
+    "baseline_canonical_commit": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5",
+    "existing_assessments_scanned": 70,
+    "canonical_works_scanned": 5085,
+    "cache_receipt_path": "temp/query-results/Q-RUN05-P6-S03-cache.json",
+    "cache_receipt_sha256": "2769982c9e0b59ff0ed3c035d880fde9c686e92e59e6bcac8a8c46157fdc11a0",
+    "pdf_sha256": "4306763f1da56697f04123ad4ad5366d6ac68b6842044fbe9905ca46358f79c7",
+    "source_version": "V-S03-01",
+    "source_upload": "U-S03-01",
+    "external_requests_performed": 0,
+    "cache_reuse_events": 1
+  },
+  "admission": {
+    "work_id": "W-S03",
+    "work_key": "Wasserman2015",
+    "discovery_route": "seed",
+    "seed_id": "S03",
+    "new_work": false,
+    "new_version": false,
+    "new_file": false,
+    "new_fulltext_work": false,
+    "review_unit_count": 1,
+    "primary_source": "https://doi.org/10.1016/j.cub.2014.12.012",
+    "license": "CC BY4.0 printed on original PDFp2. Source file not committed; report contains facts, short paraphrases and analysis."
+  },
+  "novelty": {
+    "protected_existing_assessment": "A-S03-L09-01",
+    "existing_claim": "Hx receptive-field width≈50deg and temporal-frequency tuning peak≈1Hz (Fig2). Original assessment expressly excluded non-digitized odor effect from quantitative admission.",
+    "candidate_distinct_claim": "Within the reported Hx calcium-imaging preparation, paired bilateral food odor increases the plotted response to otherwise repeated back-to-front wide-field visual motion.",
+    "no_overwrite": true,
+    "not_a_L07_claim": true,
+    "not_a_motion_recovery_claim": true
+  },
+  "factual_observations": [
+    {
+      "locator": {
+        "source_id": "SRC-PDF",
+        "version_id": "V-S03-01",
+        "upload_id": "U-S03-01",
+        "identifier": "S03",
+        "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+        "page": 5,
+        "section": "Figure 3A-B and caption (printed p.470)",
+        "figure": "3A-B",
+        "accessed_at": "2026-11-27T02:34:18.223689Z",
+        "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+      },
+      "finding": "Figure3A/B report n=13 animals and rank-sum p<0.05 for peak response comparisons involving pre-odor epoch1 versus paired-odor epoch2. Exact p,U/Z/test statistic, tail specification and effect-size table are not in the figure caption/main results."
+    },
+    {
+      "locator": {
+        "source_id": "SRC-PDF",
+        "version_id": "V-S03-01",
+        "upload_id": "U-S03-01",
+        "identifier": "S03",
+        "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+        "page": "3,5–6",
+        "section": "Results: repeated visual/odor epochs; Animals; Calcium Imaging; Visual Stimuli for Sensory Integration Experiments; Odor Delivery",
+        "figure": "3A-C",
+        "accessed_at": "2026-11-27T02:34:18.223689Z",
+        "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+      },
+      "finding": "Five repeated10-s back-to-front wide-field motion epochs with rest periods; bilateral10-s odor pulse in epoch2. One of8random textures selected per trial, visual motion22deg/s. Imaging8–11Hz with216deg azimuth by120deg elevation display."
+    },
+    {
+      "locator": {
+        "source_id": "SRC-PDF",
+        "version_id": "V-S03-01",
+        "upload_id": "U-S03-01",
+        "identifier": "S03",
+        "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+        "page": 5,
+        "section": "Figure 3A-B and caption (printed p.470)",
+        "figure": "3C",
+        "accessed_at": "2026-11-27T02:34:18.223689Z",
+        "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+      },
+      "finding": "Water-vapor control uses n=6 animals; caption reports no statistically significant epoch1/2difference. This null significance result is not an equivalence test or proof of zero effect."
+    },
+    {
+      "locator": {
+        "source_id": "SRC-PDF",
+        "version_id": "V-S03-01",
+        "upload_id": "U-S03-01",
+        "identifier": "S03",
+        "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+        "page": 5,
+        "section": "Figure 3A-B and caption (printed p.470)",
+        "figure": "3H-I",
+        "accessed_at": "2026-11-27T02:34:18.223689Z",
+        "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+      },
+      "finding": "HSE caption gives n=7 in3H and n=6 in3I. This reported count discrepancy is retained and HSE is not pooled with or used to set Hx sample size."
+    },
+    {
+      "locator": {
+        "source_id": "SRC-PDF",
+        "version_id": "V-S03-01",
+        "upload_id": "U-S03-01",
+        "identifier": "S03",
+        "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+        "page": 5,
+        "section": "Results and Discussion; Animals",
+        "figure": "3A-C",
+        "accessed_at": "2026-11-27T02:34:18.223689Z",
+        "evidence_note": "Adult female D. melanogaster, Hx/Odd-Gal4, GCaMP6m; five 10-s back-to-front motion epochs, bilateral odor in epoch two; random texture at22deg/s; main text methods and caption reviewed."
+      },
+      "finding": "Authors did not blind experimenters. Hx-Gal4 inactivation is described as lethal and also labels visual/olfactory centers, so this experiment does not establish an isolated Hx-causal behavioral mechanism."
+    }
+  ],
+  "source_conditions": {
+    "species": "Drosophila melanogaster",
+    "sex_age": "Adult females for imaging;3–6days explicitly belongs to behavior and is not copied as imaging age.",
+    "cell": "Hx named on morphology/tuning similarity, Odd-skipped-Gal4 driver, primary dendritic-branch ROI",
+    "reporter": "GCaMP6m",
+    "motion": "back-to-front wide-field visual motion at22deg/s; p3contains a separate front-to-back sentence forFig2E, preserved as source wording inconsistency rather than propagated toFig3protocol",
+    "stimulus": "Randomly textured display,1of8patterns per trial;22deg/s for10s with10srest; bilateral odor in epoch2",
+    "behavioral_state": "Mounted imaging preparation, cold sedation for preparation; do not infer actively flying during imaging",
+    "imaging": "8–11Hz,300–500nm/pixel;20x/NA1.0water-immersion objective; laser10–20mW at focus",
+    "odor": "Food odor/vinegar,50ml/min added to constant200ml/min airflow, vacuum removal; miniPID confirms odor presence/absence. Concentration and source formulation are not established from the main-text methods alone.",
+    "sample": "HxFig3A/Bn=13; do not count epochs as independent animals or use HSE n. At least2presentations of full stimulus set was an inclusion criterion, not an exact per-condition trial count.",
+    "unverified_supplement": "Supplemental Experimental Procedures are referenced but were not available in the retained7-page seed copy and were not newly fetched in this batch. Detailed stimulus contrast/illumination and odor concentration require separate verification if a broader claim needs them."
+  },
+  "quantitative_reading": {
+    "admission_recommendation": "A narrow plot-level response-amplitude statement can use this explicitly defined reviewer graph estimate after root visual adjudication. If root finds the graph extraction insufficient, keep this review as insufficient_evidence; do not replace it by p-value-as-effect-size.",
+    "metric_record_candidate": {
+      "metric_id": "M-RUN05-S03-Hx-meantrace-peak-difference",
+      "metric_name": "response_amplitude",
+      "definition": "Reviewer graph estimate: max of the plotted across-animal mean ΔF/F trace in paired-odor motion epoch 2 minus max of the plotted mean trace in pre-odor motion epoch 1, Fig3A. 0.16ΔF/F equals16 percentage points of ΔF/F; it is not a16% relative increase, mean of individual maxima, or original author-tabulated number.",
+      "value": 0.16,
+      "unit": "DeltaF/F",
+      "statistic": "other_defined",
+      "sample_count": 13,
+      "dataset_id": "D-RUN05-S03-Hx-odor",
+      "baseline_id": "B-RUN05-S03-preodor-epoch1",
+      "alignment": "not_applicable",
+      "alignment_source": "not_applicable",
+      "interval": null,
+      "uncertainty": {
+        "kind": "other_defined",
+        "lower": 0.12,
+        "upper": 0.19,
+        "unit": "DeltaF/F",
+        "description": "Conservative graph-reading interval only (12–19 percentage points), covering independent PDF-vector and raster extraction with±1pixel per peak and±1pixel scale calibration plus rounded stroke/geometry allowance. This is not SEM, SD, CI, biological variability, or a statistical interval. Published gray band is mean±1SEM; no SEM magnitude is reconstructed."
+      },
+      "evidence_locator": [
+        {
+          "source_id": "SRC-PDF",
+          "version_id": "V-S03-01",
+          "upload_id": "U-S03-01",
+          "identifier": "S03",
+          "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+          "page": 5,
+          "section": "Figure 3A-B and caption (printed p.470)",
+          "figure": "3A-B",
+          "accessed_at": "2026-11-27T02:34:18.223689Z",
+          "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+        }
+      ],
+      "field_states": {
+        "interval": {
+          "status": "not_applicable",
+          "reason": "Not a trajectory/RPE interval; the definition fixes the two10-s epochs.",
+          "evidence_locator": [
+            {
+              "source_id": "SRC-PDF",
+              "version_id": "V-S03-01",
+              "upload_id": "U-S03-01",
+              "identifier": "S03",
+              "url": "https://doi.org/10.1016/j.cub.2014.12.012",
+              "page": 5,
+              "section": "Figure 3A-B and caption (printed p.470)",
+              "figure": "3A-B",
+              "accessed_at": "2026-11-27T02:34:18.223689Z",
+              "evidence_note": "Hx paired-odor response; n=13; author-reported rank-sum p<0.05. Numeric graph estimate concerns peak of plotted across-animal mean trace, not mean of individual peaks."
+            }
+          ],
+          "unknown_since_utc": null,
+          "review_task_id": null
+        }
+      }
+    },
+    "graph_panel": "Figure3A, PDFpage5, printedpage470",
+    "source_pdf_pages": 7,
+    "page_size_points": [
+      602.9860229492188,
+      782.9860229492188
+    ],
+    "vector_method": {
+      "library": "PyMuPDF 1.26.6",
+      "mean_trace_drawing_index": 14,
+      "mean_trace_fill_rgb": [
+        0.08863966166973114,
+        0.08818189054727554,
+        0.08223086595535278
+      ],
+      "scale_drawing_index": 15,
+      "scale_value_DeltaF_over_F": 0.5,
+      "scale_height_points": 17.739990234375,
+      "epoch1_x_window_points": [
+        115.5,
+        128.4
+      ],
+      "epoch2_x_window_points": [
+        140.1,
+        153.0
+      ],
+      "curve_sampling": "All line vertices and51uniform t samples for each cubicBezier in the filled black trace contour. Minimum y in each motion-epoch window is the upper edge of the plotted mean trace, a graph estimate with finite stroke thickness.",
+      "epoch1_min_y_points": 110.36886455395505,
+      "epoch2_min_y_points": 104.85397910906983,
+      "difference_points": 5.514885444885223,
+      "formula": "(y_peak_epoch1-y_peak_epoch2)/scale_height_points*0.5",
+      "difference_DeltaF_over_F": 0.15543654117122796
+    },
+    "independent_raster_check": {
+      "render_command": "pdftoppm -f4 -l5 -scale-to2200 -png source.pdf S03",
+      "image_size_pixels": [
+        1695,
+        2200
+      ],
+      "image_sha256": "fdc4078b9d56210c384c8b703ccd4334b029909b4b18118668e5396a7d0cf64d",
+      "source_image_local_path": "/workspace/scratch/19d83f2efeac/p6_review/S03-5.png",
+      "x_pixels_epoch1": [
+        325,
+        361
+      ],
+      "x_pixels_epoch2": [
+        394,
+        430
+      ],
+      "y_clip_points": [
+        102,
+        153
+      ],
+      "threshold": "R<100 AND G<100 AND B<100, within the fixed plot windows, excluding asterisk labels and gray SEM band",
+      "top_trace_y_pixels": [
+        310,
+        295
+      ],
+      "scale_height_pixels": 49.84505134411089,
+      "difference_pixels": 15,
+      "difference_DeltaF_over_F": 0.15046629099091322,
+      "bounded_pixel_formula": "(15±2)/(49.845±1)*0.5; worst-case bounds",
+      "bounds_DeltaF_over_F": [
+        0.12783938314879606,
+        0.17401967581358313
+      ],
+      "reported_conservative_interval_DeltaF_over_F": [
+        0.12,
+        0.19
+      ]
+    },
+    "rounding": "Proposed display≈0.16ΔF/F; graph-reading range0.12–0.19. Avoid more significant digits.",
+    "not_reconstructed": [
+      "individual animal raw values",
+      "mean of individual peaks",
+      "ratio gain",
+      "SEM numbers",
+      "exact P",
+      "rank-sum statistic",
+      "confidence interval",
+      "13individual pairs from overlapping markers"
+    ],
+    "statistical_result_separation": "Published rank-sum p<.05 concerns author peak-response comparisons, not a test newly run on the extracted group-mean-trace difference. No new significance test was performed."
+  },
+  "proposed_assessment_core": {
+    "assessment_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
+    "work_id": "W-S03",
+    "work_key": "Wasserman2015",
+    "limitation_id": "L09",
+    "claim_id": "CLAIM-RUN05-Wasserman2015-Hx-odor-meantrace",
+    "claim_type": "biological_mechanism",
+    "evidence_route": "biological_mechanism",
+    "relation_type": [
+      "independent_progress",
+      "indirect_mitigation"
+    ],
+    "evidence_level": "fulltext_result",
+    "evidence_kind": [
+      "imaging",
+      "controlled_experiment"
+    ],
+    "handling_level_if_graph_admitted": "new_evidence_or_hypothesis",
+    "evidence_admission_status_if_graph_admitted": "eligible",
+    "statement_basis": "reviewer_inference",
+    "counter_evidence": false,
+    "claims_absolute_scale": false,
+    "effect": "在明确果蝇Hx钙成像条件下，配对气味与视觉运动时，图示群体均值轨迹的峰值约增加0.16ΔF/F（图形读数范围0.12–0.19）；这是约16个百分点，非16%相对增益。作者另报告峰响应比较rank-sum p<0.05。",
+    "biological_implications": "对Hx视觉反应的评价需要包括嗅觉上下文；只支持所测果蝇细胞/刺激下的响应调制，不证明丽蝇Hx模型或跨物种同源性。",
+    "engineering_implications": "把同一视觉输入的响应变化全部解释为速度变化可能混入感觉上下文调制；工程传感器是否需要类似上下文增益控制仍须另行验证。",
+    "remaining_limitations": "没有验证最优匹配滤波、完整运动恢复或平台内幅值编码；没有隔离Hx的因果行为干预。主文不提供作者原始数值表或确切检验统计量，图形估计不是原始数据；未核验补充实验方法，因而不作对比度/纹理/光照/浓度泛化。",
+    "root_adjudication_required": true
+  },
+  "minimum_gate_review": {
+    "known_species_and_Hx_cell": true,
+    "direct_fulltext_response_comparison": true,
+    "sample_and_two_conditions": true,
+    "quantitative_metric": "Explicit graph-derived peak-of-mean difference; requires root acceptance",
+    "baseline": "Repeated identical experimental visual paradigm before odor, plus water-vapor control described separately",
+    "critical_scope": "Only the displayed condition-specific response difference",
+    "full_L09_resolved": false,
+    "L07_platform_magnitude_recovery_demonstrated": false,
+    "new_scientific_exception_requested": false
+  },
+  "reviewer_recommendation": "Preserve all70existing Assessments unchanged. Admit only the narrowly defined new graph-derived response claim if root independently verifies the plotted coordinates and uncertainty; otherwise register one insufficient-evidence claim with missing_quantitative_result/threshold_not_met and retain the original reported directional/statistical evidence as background. Do not convert lack of significance inHSE/T4T5to equality or cross-cell proof."
+}
