@@ -1,0 +1,72 @@
+{
+  "checkpoint_id": "CP-0007",
+  "started_at_utc": "2026-11-27T04:12:11.690Z",
+  "errors": [],
+  "checks": {
+    "ten_fixed_tables": true,
+    "search_and_theme": true,
+    "abstract_expand_collapse": true,
+    "evidence_expand_collapse": true,
+    "back_to_top": true,
+    "clear": true,
+    "counter_evidence_filter": true,
+    "year_sort": true,
+    "mobile_no_document_overflow": true,
+    "no_javascript_errors": true
+  },
+  "html_path": "/home/runner/work/_temp/cp7-ui.K91F5S/html-repository/ref.html",
+  "html_bytes": 47780202,
+  "html_sha256": "9a07565ca74d1d039426cb11cde5603259995f89c71565b4136d57469c0c6982",
+  "screenshots": [
+    "html-desktop.png",
+    "html-topic.png",
+    "html-mobile.png",
+    "html-mobile-controls.png"
+  ],
+  "load_seconds": 9.616,
+  "summary": {
+    "K": 5098,
+    "T": {
+      "L01": 9,
+      "L02": 5,
+      "L03": 11,
+      "L04": 9,
+      "L05": 5,
+      "L06": 12,
+      "L07": 1,
+      "L08": 4,
+      "L09": 2
+    },
+    "U": 5063,
+    "active_assessments": 71,
+    "checkpoint_id": "CP-0007",
+    "citation_edges": 31843,
+    "closure_claim": false,
+    "cutoff_at_utc": "2026-11-26T05:24:08Z",
+    "distinct_file_hashes": 47,
+    "eligible_assessments": 62,
+    "insufficient_assessments": 9,
+    "latest_tasks": 131523,
+    "query_range_utc": [
+      "2026-11-26T05:24:08Z",
+      "2026-11-27T02:53:51.781716Z"
+    ],
+    "scope_id": "SCOPE-0001",
+    "seed_records": 20,
+    "seed_works": 20,
+    "table_rows": 5121,
+    "task_events": 135457,
+    "topic_union": 35,
+    "unresolved_tasks": 130727,
+    "uploads": 24,
+    "versions": 5147
+  },
+  "mobile_dimensions": {
+    "width": 390,
+    "scrollWidth": 390
+  },
+  "completed_at_utc": "2026-11-27T04:12:50.297Z",
+  "passed": true,
+  "html_sha256_after": "9a07565ca74d1d039426cb11cde5603259995f89c71565b4136d57469c0c6982",
+  "input_changed": false
+}

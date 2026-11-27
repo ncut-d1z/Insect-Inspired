@@ -1,0 +1,68 @@
+{
+  "format_version": 1,
+  "status": "passed",
+  "checkpoint_id": "CP-0007",
+  "execution_environment": "github_actions_ubuntu_24_04",
+  "local_browser_execution_succeeded": false,
+  "repository": "ncut-d1z/Insect-Inspired",
+  "sync_ref": "refs/heads/sync/cp7-checkpoint-import",
+  "input_commit_sha": "65821da6822b61788c37db32a77fc0a3e7d8a3a5",
+  "actions_run_id": "45938500279",
+  "actions_run_attempt": "1",
+  "actions_run_url": "https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45938500279",
+  "job": "verify",
+  "runner_os": "Linux",
+  "html_sha256": "9a07565ca74d1d039426cb11cde5603259995f89c71565b4136d57469c0c6982",
+  "html_bytes": 47780202,
+  "test_script_path": "scripts/html-smoke.mjs",
+  "test_script_sha256": "9a927248fff3f66f521e75bbcde9a9b18c6cf73ef07294a358d0f7b7de11830a",
+  "playwright_version": "1.62.1",
+  "node_version": "v22.23.5",
+  "browser_version": "Google Chrome 157.0.8103.78",
+  "input_manifest_sha256": "250540fe577e7c38ac464c2dba26704096f51486c5ee0c4c16721e6db6a564aa",
+  "check_count": 10,
+  "test_started_at_utc": "2026-11-27T04:12:11.690Z",
+  "test_completed_at_utc": "2026-11-27T04:12:50.297Z",
+  "recorded_at_utc": "2026-11-27T04:12:50.539065Z",
+  "raw_test_output_modified": false,
+  "full_research_checkpoint_validation": false,
+  "evidence_files": [
+    {
+      "path": "ui-audit-final.json",
+      "bytes": 1851,
+      "sha256": "bd7e3f1662faf117ecc244bb6625c7f3f269ac37c40115680ed8dbfc92d87282"
+    },
+    {
+      "path": "html-browser-check.json",
+      "bytes": 1851,
+      "sha256": "bd7e3f1662faf117ecc244bb6625c7f3f269ac37c40115680ed8dbfc92d87282"
+    },
+    {
+      "path": "html-desktop.png",
+      "bytes": 100314,
+      "sha256": "84953c6e3a3f83a531738be117af6e416c8e4bbe384b30e0c6aa3ddbd2939d59"
+    },
+    {
+      "path": "html-topic.png",
+      "bytes": 110150,
+      "sha256": "2ecbb2adc3f8ed0ea2476e1b2c463a6885aec12c00aca676ae15da00b6209888"
+    },
+    {
+      "path": "html-mobile.png",
+      "bytes": 47282,
+      "sha256": "d150e825a3a6fb6bd3e4663ce76b6248b8eba52e2441b349fe36c7e5d032a9e5"
+    },
+    {
+      "path": "html-mobile-controls.png",
+      "bytes": 43217,
+      "sha256": "6801eaacd6c1c8329e808890bd0408de7441d6001ecc291c76562234a9b0dc4e"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 2971,
+      "sha256": "250540fe577e7c38ac464c2dba26704096f51486c5ee0c4c16721e6db6a564aa"
+    }
+  ],
+  "output_commit_parent_sha": "65821da6822b61788c37db32a77fc0a3e7d8a3a5",
+  "publication_note": "Output commit SHA is printed in Actions logs and summary; this receipt is part of that commit."
+}
