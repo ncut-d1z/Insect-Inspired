@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "record_type": "delivery_runtime_recovery_context",
+  "observed_at_utc": "2026-11-27 00:45:49 UTC",
+  "canonical_commit": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5",
+  "canonical_tree": "32a732212b9151c2ee1ee75a91081ffcbca60d9b",
+  "git_parent": "fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0",
+  "original_input_commit": "1b46308cab46fe7611c6af465cb338c65549275b",
+  "last_accessible_worktree_observation": "The canonical worktree was clean at the last pre-import check. All 1,256 files and their 881,966,656 bytes were frozen under this exact commit/tree before the second environment outage.",
+  "second_environment_state": "No usable execution environment available. No claim of a new disk scan of that inaccessible container is made.",
+  "preserved_remotely": {
+    "binary_parts": 51,
+    "bundle_bytes": 26519358,
+    "bundle_sha256": "cc53dbbe5ddc1045214c38a0aafe088e9c869836219e3c65707adab2c397a142",
+    "manifest_sha256": "c3e4cbe60d80a7a6cfb451c600693677fc5d7e3ded547aafaf890e1f6ce5c77f",
+    "readme_sha256": "33e87bee12602b8a02775a0010bd566d702e2852d65054ec5547a42e80dd2473"
+  },
+  "successful_import_run": {
+    "id": 45911635168,
+    "job_id": 140221141447,
+    "conclusion": "success",
+    "url": "https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45911635168"
+  },
+  "old_private_reports_not_assumed_recovered": [
+    {
+      "path": "local-integrity-cp6.json",
+      "bytes": 1491198,
+      "observed_sha256": "799f91c73a158fd8d8d42e3a4988085809bc5c7fb0e74522ac69f720f484a01f"
+    },
+    {
+      "path": "manual-restore-verification.json",
+      "bytes": 469756,
+      "observed_sha256": "80d430ef3c9565f7b4778519b22f182e98aea9a9183c3dc84caf00cf16d6e864"
+    },
+    {
+      "path": "publish-gate-review.json",
+      "bytes": 6793,
+      "observed_sha256": "2b0ccdb06cd9b41208f8f61ef448da7c8001a70eac025b7ac4ca8ae28f4e94ad"
+    }
+  ],
+  "next_validation_basis": "Reconstruct the exact pinned bundle in a fresh GitHub Actions workspace, obtain its prerequisite from the actual remote, build a fresh inventory, and independently clone GitHub for a second full comparison. New reports receive their actual timestamps and hashes; they do not impersonate the inaccessible private reports.",
+  "main_observed": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+  "main_write_authorized_for_this_workflow": false,
+  "scientific_research_added_during_recovery": false
+}

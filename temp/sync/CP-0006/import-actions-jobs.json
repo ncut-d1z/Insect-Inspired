@@ -1,0 +1,57 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 140221141447,
+      "run_id": 45911635168,
+      "workflow_name": "Import reviewed CP6 chunked increment",
+      "head_branch": "sync/cp6-checkpoint-import",
+      "run_url": "https://api.github.com/repos/ncut-d1z/Insect-Inspired/actions/runs/45911635168",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOV8TH8s8AAAAgpdTRxw",
+      "head_sha": "1b46308cab46fe7611c6af465cb338c65549275b",
+      "url": "https://api.github.com/repos/ncut-d1z/Insect-Inspired/actions/jobs/140221141447",
+      "html_url": "https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45911635168/job/140221141447",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-26T23:33:27Z",
+      "started_at": "2026-11-26T23:33:29Z",
+      "completed_at": "2026-11-26T23:35:07Z",
+      "name": "import",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-26T23:33:30Z",
+          "completed_at": "2026-11-26T23:33:30Z"
+        },
+        {
+          "name": "Verify fixed binary parts, import, and independently read back CP6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-26T23:33:30Z",
+          "completed_at": "2026-11-26T23:35:06Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-26T23:35:06Z",
+          "completed_at": "2026-11-26T23:35:06Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/ncut-d1z/Insect-Inspired/check-runs/140221141447",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000013047,
+      "runner_name": "GitHub Actions 1000013047",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

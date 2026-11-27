@@ -1,0 +1,332 @@
+﻿2026-11-26T23:33:30.3020250Z Current runner version: '2.338.2'
+2026-11-26T23:33:30.3045671Z ##[group]Runner Image Provisioner
+2026-11-26T23:33:30.3046602Z Hosted Compute Agent
+2026-11-26T23:33:30.3047465Z Version: 20261111.635
+2026-11-26T23:33:30.3048323Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+2026-11-26T23:33:30.3049130Z Build Date: 2026-11-11T01:49:01Z
+2026-11-26T23:33:30.3049888Z Worker ID: {c086f317-1f77-4489-94bd-9e46b449f104}
+2026-11-26T23:33:30.3050611Z Region: centralus
+2026-11-26T23:33:30.3051159Z Cloud: Azure
+2026-11-26T23:33:30.3051763Z ##[endgroup]
+2026-11-26T23:33:30.3053692Z ##[group]Operating System
+2026-11-26T23:33:30.3054532Z Ubuntu
+2026-11-26T23:33:30.3055101Z 24.04.5
+2026-11-26T23:33:30.3055634Z LTS
+2026-11-26T23:33:30.3056609Z ##[endgroup]
+2026-11-26T23:33:30.3057426Z ##[group]Runner Image
+2026-11-26T23:33:30.3058117Z Image: ubuntu-24.04
+2026-11-26T23:33:30.3058735Z Version: 20261122.23.1
+2026-11-26T23:33:30.3060036Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261122.23/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-26T23:33:30.3061628Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261122.23
+2026-11-26T23:33:30.3062647Z ##[endgroup]
+2026-11-26T23:33:30.3063787Z ##[group]GITHUB_TOKEN Permissions
+2026-11-26T23:33:30.3066049Z Contents: write
+2026-11-26T23:33:30.3066752Z Metadata: read
+2026-11-26T23:33:30.3067708Z ##[endgroup]
+2026-11-26T23:33:30.3069927Z Secret source: Actions
+2026-11-26T23:33:30.3070916Z Cache mode: write
+2026-11-26T23:33:30.3072067Z Prepare workflow directory
+2026-11-26T23:33:30.3530519Z Prepare all required actions
+2026-11-26T23:33:30.3619501Z Complete job name: import
+2026-11-26T23:33:30.4743741Z ##[group]Run set -euo pipefail
+2026-11-26T23:33:30.4745729Z [36;1mset -euo pipefail[0m
+2026-11-26T23:33:30.4746682Z [36;1mreadonly REMOTE='https://github.com/ncut-d1z/Insect-Inspired.git'[0m
+2026-11-26T23:33:30.4748013Z [36;1mreadonly TARGET='refs/heads/research/p3-p6-cp6'[0m
+2026-11-26T23:33:30.4748968Z [36;1mreadonly BASE='fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0'[0m
+2026-11-26T23:33:30.4750052Z [36;1mreadonly CP6='a1303b6b6c38692b4f57da5cfb342289c6dc17e5'[0m
+2026-11-26T23:33:30.4750993Z [36;1mreadonly TREE='32a732212b9151c2ee1ee75a91081ffcbca60d9b'[0m
+2026-11-26T23:33:30.4751997Z [36;1m[[ "$GITHUB_REPOSITORY" == 'ncut-d1z/Insect-Inspired' ]][0m
+2026-11-26T23:33:30.4752974Z [36;1m[[ "$GITHUB_REF" == 'refs/heads/sync/cp6-checkpoint-import' ]][0m
+2026-11-26T23:33:30.4753811Z [36;1m[[ "$GITHUB_EVENT_NAME" == 'push' ]][0m
+2026-11-26T23:33:30.4755210Z [36;1m[[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]][0m
+2026-11-26T23:33:30.4756804Z [36;1m[[ "$BASE" =~ ^[0-9a-f]{40}$ && "$CP6" =~ ^[0-9a-f]{40}$ && "$TREE" =~ ^[0-9a-f]{40}$ ]][0m
+2026-11-26T23:33:30.4758679Z [36;1m[[ "$CP6" != "$BASE" ]][0m
+2026-11-26T23:33:30.4759818Z [36;1mcommand -v git >/dev/null[0m
+2026-11-26T23:33:30.4761028Z [36;1mcommand -v python3 >/dev/null[0m
+2026-11-26T23:33:30.4761906Z [36;1m[0m
+2026-11-26T23:33:30.4762630Z [36;1m# The job token remains only in ephemeral process configuration.[0m
+2026-11-26T23:33:30.4763508Z [36;1mset +x[0m
+2026-11-26T23:33:30.4764296Z [36;1mauth_header="$(printf 'x-access-token:%s' "$IMPORT_TOKEN" | base64 -w 0)"[0m
+2026-11-26T23:33:30.4765347Z [36;1mprintf '::add-mask::%s\n' "$auth_header"[0m
+2026-11-26T23:33:30.4766098Z [36;1mexport GIT_CONFIG_COUNT=3[0m
+2026-11-26T23:33:30.4767008Z [36;1mexport GIT_CONFIG_KEY_0='http.https://github.com/.extraheader'[0m
+2026-11-26T23:33:30.4768397Z [36;1mexport GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $auth_header"[0m
+2026-11-26T23:33:30.4769315Z [36;1mexport GIT_CONFIG_KEY_1='core.hooksPath'[0m
+2026-11-26T23:33:30.4770209Z [36;1mexport GIT_CONFIG_VALUE_1='/dev/null'[0m
+2026-11-26T23:33:30.4770995Z [36;1mexport GIT_CONFIG_KEY_2='push.followTags'[0m
+2026-11-26T23:33:30.4771739Z [36;1mexport GIT_CONFIG_VALUE_2='false'[0m
+2026-11-26T23:33:30.4772503Z [36;1munset IMPORT_TOKEN auth_header[0m
+2026-11-26T23:33:30.4773157Z [36;1m[0m
+2026-11-26T23:33:30.4773945Z [36;1mimport_tmp="$(mktemp -d "$RUNNER_TEMP/cp6-sync.XXXXXX")"[0m
+2026-11-26T23:33:30.4775078Z [36;1minput_repo="$import_tmp/input.git"[0m
+2026-11-26T23:33:30.4775867Z [36;1mimport_repo="$import_tmp/import.git"[0m
+2026-11-26T23:33:30.4776670Z [36;1mverify_repo="$import_tmp/remote-verify.git"[0m
+2026-11-26T23:33:30.4777822Z [36;1mbundle_path="$import_tmp/recovery.bundle"[0m
+2026-11-26T23:33:30.4778623Z [36;1m[0m
+2026-11-26T23:33:30.4779502Z [36;1m# Fixed upload commit, manifest, README, and ordered binary parts; no checkout or project code.[0m
+2026-11-26T23:33:30.4780631Z [36;1mgit init --bare --quiet "$input_repo"[0m
+2026-11-26T23:33:30.4781635Z [36;1mgit --git-dir="$input_repo" fetch --quiet --no-tags --depth=1 "$REMOTE" "$GITHUB_SHA"[0m
+2026-11-26T23:33:30.4782804Z [36;1m[[ "$(git --git-dir="$input_repo" rev-parse FETCH_HEAD)" == "$GITHUB_SHA" ]][0m
+2026-11-26T23:33:30.4783879Z [36;1mpython3 - "$input_repo" "$GITHUB_SHA" "$bundle_path" <<'PYINPUT'[0m
+2026-11-26T23:33:30.4784790Z [36;1mimport hashlib, json, re, subprocess, sys[0m
+2026-11-26T23:33:30.4785574Z [36;1mrepo, commit, output = sys.argv[1:][0m
+2026-11-26T23:33:30.4786385Z [36;1mbase = 'fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0'[0m
+2026-11-26T23:33:30.4787500Z [36;1mcp6 = 'a1303b6b6c38692b4f57da5cfb342289c6dc17e5'[0m
+2026-11-26T23:33:30.4788496Z [36;1mtarget = 'refs/heads/research/p3-p6-cp6'[0m
+2026-11-26T23:33:30.4789235Z [36;1mdef blob(path):[0m
+2026-11-26T23:33:30.4790285Z [36;1m    return subprocess.check_output(['git', '--git-dir='+repo, 'cat-file', 'blob', commit+':temp/sync/CP-0006/'+path])[0m
+2026-11-26T23:33:30.4791390Z [36;1mdef unique_keys(items):[0m
+2026-11-26T23:33:30.4792253Z [36;1m    result = {}[0m
+2026-11-26T23:33:30.4792938Z [36;1m    for key, value in items:[0m
+2026-11-26T23:33:30.4793745Z [36;1m        assert key not in result, 'duplicate JSON key: '+str(key)[0m
+2026-11-26T23:33:30.4794647Z [36;1m        result[key] = value[0m
+2026-11-26T23:33:30.4795345Z [36;1m    return result[0m
+2026-11-26T23:33:30.4795992Z [36;1mmanifest_raw = blob('manifest.json')[0m
+2026-11-26T23:33:30.4798884Z [36;1massert hashlib.sha256(manifest_raw).hexdigest() == 'c3e4cbe60d80a7a6cfb451c600693677fc5d7e3ded547aafaf890e1f6ce5c77f', 'manifest SHA-256 mismatch'[0m
+2026-11-26T23:33:30.4802024Z [36;1mm = json.loads(manifest_raw, object_pairs_hook=unique_keys)[0m
+2026-11-26T23:33:30.4803550Z [36;1massert m['format_version'] == 1[0m
+2026-11-26T23:33:30.4804861Z [36;1massert m['repository'] == 'ncut-d1z/Insect-Inspired'[0m
+2026-11-26T23:33:30.4806732Z [36;1massert m['checkpoint_id'] == 'CP-0006' and m['scope_id'] == 'SCOPE-0001'[0m
+2026-11-26T23:33:30.4808969Z [36;1massert m['source_sync_ref'] == 'refs/heads/sync/cp6-checkpoint-import'[0m
+2026-11-26T23:33:30.4810558Z [36;1massert m['target_ref'] == target[0m
+2026-11-26T23:33:30.4812890Z [36;1massert m['expected_baseline_commit'] == m['expected_parent_commit'] == base[0m
+2026-11-26T23:33:30.4814257Z [36;1massert m['expected_commit'] == cp6 and m['expected_tree'] == '32a732212b9151c2ee1ee75a91081ffcbca60d9b'[0m
+2026-11-26T23:33:30.4904448Z [36;1massert m['bundle_name'] == 'recovery.bundle' and m['bundle_kind'] == 'incremental'[0m
+2026-11-26T23:33:30.4906244Z [36;1massert m['bundle_prerequisites'] == [base][0m
+2026-11-26T23:33:30.4907959Z [36;1massert type(m['bundle_bytes']) is int and m['bundle_bytes'] == int('26519358')[0m
+2026-11-26T23:33:30.4909803Z [36;1massert m['bundle_sha256'] == 'cc53dbbe5ddc1045214c38a0aafe088e9c869836219e3c65707adab2c397a142'[0m
+2026-11-26T23:33:30.4911242Z [36;1massert m['checkpoint_path'] == 'temp/snapshots/checkpoints/CP-0006.json'[0m
+2026-11-26T23:33:30.4912415Z [36;1massert m['checkpoint_sha256'] == '43c11e7465404e956274fdaadef74f7bd0d27177111de5200f127f36c8c7d47d'[0m
+2026-11-26T23:33:30.4913427Z [36;1massert m['parent_checkpoint_id'] == 'CP-0005'[0m
+2026-11-26T23:33:30.4914122Z [36;1massert m['canonical_file_count'] == int('1256')[0m
+2026-11-26T23:33:30.4914819Z [36;1massert m['artifact_hash_count'] == int('1255')[0m
+2026-11-26T23:33:30.4915801Z [36;1massert m['partition_dataset_count'] == int('7')[0m
+2026-11-26T23:33:30.4916854Z [36;1massert m['partition_manifest_sha256'] == '6b75621b4b7db90a36a3858e315df3ad46d77d262cf4f63041fccabb82fedab8'[0m
+2026-11-26T23:33:30.4918474Z [36;1massert m['readme_sha256'] == '33e87bee12602b8a02775a0010bd566d702e2852d65054ec5547a42e80dd2473'[0m
+2026-11-26T23:33:30.4919605Z [36;1massert hashlib.sha256(blob('README.md')).hexdigest() == m['readme_sha256'][0m
+2026-11-26T23:33:30.4920628Z [36;1m# The manifest pins the bytes of each original binary blob, not base64 text.[0m
+2026-11-26T23:33:30.4921523Z [36;1massert m['bundle_storage'] == 'ordered_binary_parts'[0m
+2026-11-26T23:33:30.4922193Z [36;1mparts = m['parts'][0m
+2026-11-26T23:33:30.4922920Z [36;1massert isinstance(parts, list) and parts, 'missing ordered binary parts'[0m
+2026-11-26T23:33:30.4923754Z [36;1mseen_paths, declared_bytes = set(), 0[0m
+2026-11-26T23:33:30.4924403Z [36;1mfor ordinal, part in enumerate(parts, 1):[0m
+2026-11-26T23:33:30.4925148Z [36;1m    assert isinstance(part, dict), 'invalid part record'[0m
+2026-11-26T23:33:30.4926203Z [36;1m    assert type(part['index']) is int and part['index'] == ordinal, 'parts must be consecutive and ordered from 1'[0m
+2026-11-26T23:33:30.4927392Z [36;1m    path = part['path'][0m
+2026-11-26T23:33:30.4928422Z [36;1m    assert isinstance(path, str) and re.fullmatch(r'recovery\.bundle\.part-[0-9]{4,}', path), 'unsafe part path'[0m
+2026-11-26T23:33:30.4929703Z [36;1m    assert path == 'recovery.bundle.part-'+format(ordinal, '04d'), 'part name/index mismatch'[0m
+2026-11-26T23:33:30.4930877Z [36;1m    assert path not in seen_paths, 'duplicate part path'[0m
+2026-11-26T23:33:30.4931582Z [36;1m    seen_paths.add(path)[0m
+2026-11-26T23:33:30.4932358Z [36;1m    assert type(part['bytes']) is int and part['bytes'] > 0, 'invalid part byte count'[0m
+2026-11-26T23:33:30.4933554Z [36;1m    assert isinstance(part['sha256'], str) and re.fullmatch('[0-9a-f]{64}', part['sha256']), 'invalid part SHA-256'[0m
+2026-11-26T23:33:30.4934528Z [36;1m    declared_bytes += part['bytes'][0m
+2026-11-26T23:33:30.4935324Z [36;1massert declared_bytes == m['bundle_bytes'], 'part byte sum mismatch'[0m
+2026-11-26T23:33:30.4936092Z [36;1mprefix = 'temp/sync/CP-0006/'[0m
+2026-11-26T23:33:30.4937361Z [36;1minput_paths = subprocess.check_output(['git', '--git-dir='+repo, 'ls-tree', '-r', '-z', '--name-only', commit, '--', prefix]).split(b'\0')[0m
+2026-11-26T23:33:30.4938446Z [36;1mactual_parts = set()[0m
+2026-11-26T23:33:30.4938969Z [36;1mfor raw_path in input_paths:[0m
+2026-11-26T23:33:30.4939516Z [36;1m    if not raw_path:[0m
+2026-11-26T23:33:30.4940014Z [36;1m        continue[0m
+2026-11-26T23:33:30.4940562Z [36;1m    full_path = raw_path.decode('utf-8')[0m
+2026-11-26T23:33:30.4941208Z [36;1m    assert full_path.startswith(prefix)[0m
+2026-11-26T23:33:30.4941866Z [36;1m    relative_path = full_path[len(prefix):][0m
+2026-11-26T23:33:30.4942605Z [36;1m    if relative_path.startswith('recovery.bundle.part-'):[0m
+2026-11-26T23:33:30.4943352Z [36;1m        actual_parts.add(relative_path)[0m
+2026-11-26T23:33:30.4944139Z [36;1massert actual_parts == seen_paths, 'missing or unlisted binary part'[0m
+2026-11-26T23:33:30.4944883Z [36;1mchunks = [][0m
+2026-11-26T23:33:30.4945351Z [36;1mfor part in parts:[0m
+2026-11-26T23:33:30.4945875Z [36;1m    chunk = blob(part['path'])[0m
+2026-11-26T23:33:30.4946667Z [36;1m    assert len(chunk) == part['bytes'], 'binary part length mismatch: '+part['path'][0m
+2026-11-26T23:33:30.4947970Z [36;1m    assert hashlib.sha256(chunk).hexdigest() == part['sha256'], 'binary part SHA-256 mismatch: '+part['path'][0m
+2026-11-26T23:33:30.4948925Z [36;1m    chunks.append(chunk)[0m
+2026-11-26T23:33:30.4949462Z [36;1mdata = b''.join(chunks)[0m
+2026-11-26T23:33:30.4949972Z [36;1mdel chunks[0m
+2026-11-26T23:33:30.4950573Z [36;1massert len(data) == m['bundle_bytes'], 'bundle length mismatch'[0m
+2026-11-26T23:33:30.4951570Z [36;1massert hashlib.sha256(data).hexdigest() == m['bundle_sha256'], 'bundle SHA-256 mismatch'[0m
+2026-11-26T23:33:30.4952796Z [36;1m# Require the one advertised target and the exact remote prerequisite.[0m
+2026-11-26T23:33:30.4953655Z [36;1msignature, _, remainder = data.partition(b'\n')[0m
+2026-11-26T23:33:30.4954558Z [36;1massert signature in (b'# v2 git bundle', b'# v3 git bundle'), 'unexpected bundle format'[0m
+2026-11-26T23:33:30.4955509Z [36;1mheader, separator, _ = remainder.partition(b'\n\n')[0m
+2026-11-26T23:33:30.4956294Z [36;1massert separator, 'missing bundle header terminator'[0m
+2026-11-26T23:33:30.4956983Z [36;1mprerequisites, heads = [], [][0m
+2026-11-26T23:33:30.4957889Z [36;1mfor line in header.decode('utf-8').splitlines():[0m
+2026-11-26T23:33:30.4958544Z [36;1m    if line.startswith('@'):[0m
+2026-11-26T23:33:30.4959269Z [36;1m        assert line == '@object-format=sha1', 'unexpected bundle capability'[0m
+2026-11-26T23:33:30.4960028Z [36;1m    elif line.startswith('-'):[0m
+2026-11-26T23:33:30.4960612Z [36;1m        sha = line[1:].split(' ', 1)[0][0m
+2026-11-26T23:33:30.4961260Z [36;1m        assert re.fullmatch('[0-9a-f]{40}', sha)[0m
+2026-11-26T23:33:30.4961897Z [36;1m        prerequisites.append(sha)[0m
+2026-11-26T23:33:30.4962450Z [36;1m    else:[0m
+2026-11-26T23:33:30.4962906Z [36;1m        heads.append(line)[0m
+2026-11-26T23:33:30.4963611Z [36;1massert prerequisites == [base], 'bundle prerequisite mismatch'[0m
+2026-11-26T23:33:30.4964516Z [36;1massert heads == [cp6+' '+target], 'unexpected or additional bundle head'[0m
+2026-11-26T23:33:30.4965267Z [36;1mwith open(output, 'xb') as f:[0m
+2026-11-26T23:33:30.4965954Z [36;1m    f.write(data)[0m
+2026-11-26T23:33:30.4966947Z [36;1mprint('Verified fixed manifest, README, every ordered binary part, assembled bundle bytes/hash, head, and prerequisite.')[0m
+2026-11-26T23:33:30.4968104Z [36;1mPYINPUT[0m
+2026-11-26T23:33:30.4968538Z [36;1m[0m
+2026-11-26T23:33:30.4969188Z [36;1m# The target must exist at exactly the known remote base or the idempotent CP6.[0m
+2026-11-26T23:33:30.4970044Z [36;1mgit init --bare --quiet "$import_repo"[0m
+2026-11-26T23:33:30.4970648Z [36;1mcheck_remote_target() {[0m
+2026-11-26T23:33:30.4971170Z [36;1m  local line sha ref[0m
+2026-11-26T23:33:30.4971946Z [36;1m  line="$(git --git-dir="$import_repo" ls-remote --heads "$REMOTE" "$TARGET")" || return 1[0m
+2026-11-26T23:33:30.4972789Z [36;1m  [[ -n "$line" ]] || return 1[0m
+2026-11-26T23:33:30.4973387Z [36;1m  read -r sha ref <<< "$line" || return 1[0m
+2026-11-26T23:33:30.4974038Z [36;1m  [[ "$line" == "$sha"$'\t'"$TARGET" ]] || return 1[0m
+2026-11-26T23:33:30.4974650Z [36;1m  case "$sha" in[0m
+2026-11-26T23:33:30.4975180Z [36;1m    "$BASE"|"$CP6") printf '%s' "$sha" ;;[0m
+2026-11-26T23:33:30.4975998Z [36;1m    *) printf '%s\n' 'Unexpected target state; no push permitted.' >&2; return 1 ;;[0m
+2026-11-26T23:33:30.4976773Z [36;1m  esac[0m
+2026-11-26T23:33:30.4977293Z [36;1m}[0m
+2026-11-26T23:33:30.4978032Z [36;1mremote_sha="$(check_remote_target)"[0m
+2026-11-26T23:33:30.4978622Z [36;1m[0m
+2026-11-26T23:33:30.4979292Z [36;1m# This is an increment: obtain its exact prerequisite from the real remote first.[0m
+2026-11-26T23:33:30.4980329Z [36;1m# No local bundle seed, alternate object store, depth limit, or partial filter.[0m
+2026-11-26T23:33:30.4981441Z [36;1mgit --git-dir="$import_repo" fetch --quiet --no-tags "$REMOTE" "$BASE:refs/heads/cp6-baseline"[0m
+2026-11-26T23:33:30.4982618Z [36;1m[[ "$(git --git-dir="$import_repo" rev-parse 'refs/heads/cp6-baseline^{commit}')" == "$BASE" ]][0m
+2026-11-26T23:33:30.4983719Z [36;1m[[ ! -s "$import_repo/shallow" && ! -s "$import_repo/objects/info/alternates" ]][0m
+2026-11-26T23:33:30.4984621Z [36;1mgit --git-dir="$import_repo" bundle verify "$bundle_path"[0m
+2026-11-26T23:33:30.4985583Z [36;1m[[ "$(git --git-dir="$import_repo" bundle list-heads "$bundle_path")" == "$CP6 $TARGET" ]][0m
+2026-11-26T23:33:30.4986764Z [36;1mgit --git-dir="$import_repo" fetch --quiet --no-tags "$bundle_path" "$TARGET:refs/heads/import-cp6"[0m
+2026-11-26T23:33:30.4988993Z [36;1m[[ "$(git --git-dir="$import_repo" rev-parse 'refs/heads/import-cp6^{commit}')" == "$CP6" ]][0m
+2026-11-26T23:33:30.4989933Z [36;1m[0m
+2026-11-26T23:33:30.4990357Z [36;1mcheck_history() {[0m
+2026-11-26T23:33:30.4990853Z [36;1m  local git_dir="$1"[0m
+2026-11-26T23:33:30.4991516Z [36;1m  [[ "$(git --git-dir="$git_dir" rev-parse "$CP6^{commit}")" == "$CP6" ]][0m
+2026-11-26T23:33:30.4992531Z [36;1m  [[ "$(git --git-dir="$git_dir" show -s --format=%T "$CP6")" == "$TREE" ]][0m
+2026-11-26T23:33:30.4993428Z [36;1m  [[ "$(git --git-dir="$git_dir" show -s --format=%P "$CP6")" == "$BASE" ]][0m
+2026-11-26T23:33:30.4994317Z [36;1m  git --git-dir="$git_dir" merge-base --is-ancestor "$BASE" "$CP6"[0m
+2026-11-26T23:33:30.4995193Z [36;1m  [[ ! -s "$git_dir/shallow" && ! -s "$git_dir/objects/info/alternates" ]][0m
+2026-11-26T23:33:30.4996077Z [36;1m  git --git-dir="$git_dir" fsck --full --strict --no-reflogs "$CP6"[0m
+2026-11-26T23:33:30.4996787Z [36;1m}[0m
+2026-11-26T23:33:30.4997484Z [36;1mverify_snapshot() {[0m
+2026-11-26T23:33:30.4998019Z [36;1m  local git_dir="$1"[0m
+2026-11-26T23:33:30.4998584Z [36;1m  python3 - "$git_dir" "$CP6" <<'PYACCEPT'[0m
+2026-11-26T23:33:30.4999230Z [36;1mimport hashlib, json, subprocess, sys[0m
+2026-11-26T23:33:30.4999829Z [36;1mrepo, commit = sys.argv[1:][0m
+2026-11-26T23:33:30.5000367Z [36;1mdef git(*args):[0m
+2026-11-26T23:33:30.5001069Z [36;1m    return subprocess.check_output(['git', '--git-dir='+repo, *args])[0m
+2026-11-26T23:33:30.5001807Z [36;1mentries = {}[0m
+2026-11-26T23:33:30.5002566Z [36;1mfor item in git('ls-tree', '-r', '-z', commit).split(b'\0'):[0m
+2026-11-26T23:33:30.5003255Z [36;1m    if not item:[0m
+2026-11-26T23:33:30.5003720Z [36;1m        continue[0m
+2026-11-26T23:33:30.5004240Z [36;1m    header, name = item.split(b'\t', 1)[0m
+2026-11-26T23:33:30.5004914Z [36;1m    mode, kind, oid = header.decode('ascii').split()[0m
+2026-11-26T23:33:30.5005762Z [36;1m    assert kind == 'blob' and mode in ('100644', '100755'), 'unexpected tree entry'[0m
+2026-11-26T23:33:30.5006559Z [36;1m    path = name.decode('utf-8')[0m
+2026-11-26T23:33:30.5007259Z [36;1m    assert path not in entries[0m
+2026-11-26T23:33:30.5007814Z [36;1m    entries[path] = oid[0m
+2026-11-26T23:33:30.5008496Z [36;1massert len(entries) == int('1256'), 'canonical file count mismatch'[0m
+2026-11-26T23:33:30.5009679Z [36;1mreader = subprocess.Popen(['git', '--git-dir='+repo, 'cat-file', '--batch'], stdin=subprocess.PIPE, stdout=subprocess.PIPE)[0m
+2026-11-26T23:33:30.5010684Z [36;1mdef read_blob(path):[0m
+2026-11-26T23:33:30.5011327Z [36;1m    reader.stdin.write((entries[path]+'\n').encode('ascii'))[0m
+2026-11-26T23:33:30.5012027Z [36;1m    reader.stdin.flush()[0m
+2026-11-26T23:33:30.5012725Z [36;1m    oid, kind, size = reader.stdout.readline().decode('ascii').split()[0m
+2026-11-26T23:33:30.5013526Z [36;1m    assert oid == entries[path] and kind == 'blob'[0m
+2026-11-26T23:33:30.5014200Z [36;1m    data = reader.stdout.read(int(size))[0m
+2026-11-26T23:33:30.5014947Z [36;1m    assert len(data) == int(size) and reader.stdout.read(1) == b'\n'[0m
+2026-11-26T23:33:30.5015655Z [36;1m    return data[0m
+2026-11-26T23:33:30.5016223Z [36;1mcp_path = 'temp/snapshots/checkpoints/CP-0006.json'[0m
+2026-11-26T23:33:30.5016876Z [36;1mcp_raw = read_blob(cp_path)[0m
+2026-11-26T23:33:30.5018113Z [36;1massert hashlib.sha256(cp_raw).hexdigest() == '43c11e7465404e956274fdaadef74f7bd0d27177111de5200f127f36c8c7d47d', 'CP6 self hash mismatch'[0m
+2026-11-26T23:33:30.5019262Z [36;1mcp = json.loads(cp_raw)[0m
+2026-11-26T23:33:30.5019983Z [36;1massert cp['checkpoint_id'] == 'CP-0006' and cp['scope_id'] == 'SCOPE-0001'[0m
+2026-11-26T23:33:30.5020930Z [36;1massert cp['status'] == 'valid' and cp['parent_checkpoint_id'] == 'CP-0005'[0m
+2026-11-26T23:33:30.5021693Z [36;1mhashes = cp['artifact_hashes'][0m
+2026-11-26T23:33:30.5022260Z [36;1massert len(hashes) == int('1255')[0m
+2026-11-26T23:33:30.5023211Z [36;1massert cp_path not in hashes and set(hashes) | {cp_path} == set(entries), 'checkpoint does not cover the full tree'[0m
+2026-11-26T23:33:30.5024345Z [36;1mfor path, expected in hashes.items():[0m
+2026-11-26T23:33:30.5025290Z [36;1m    assert hashlib.sha256(read_blob(path)).hexdigest() == expected, 'canonical SHA-256 mismatch: '+path[0m
+2026-11-26T23:33:30.5026294Z [36;1mpm_raw = read_blob('temp/partitions/manifest.json')[0m
+2026-11-26T23:33:30.5027470Z [36;1massert hashlib.sha256(pm_raw).hexdigest() == '6b75621b4b7db90a36a3858e315df3ad46d77d262cf4f63041fccabb82fedab8'[0m
+2026-11-26T23:33:30.5028469Z [36;1mpm = json.loads(pm_raw)[0m
+2026-11-26T23:33:30.5029027Z [36;1massert len(pm['datasets']) == int('7')[0m
+2026-11-26T23:33:30.5029678Z [36;1mfor name, dataset in pm['datasets'].items():[0m
+2026-11-26T23:33:30.5030334Z [36;1m    logical, records = hashlib.sha256(), 0[0m
+2026-11-26T23:33:30.5030927Z [36;1m    seen = set()[0m
+2026-11-26T23:33:30.5031433Z [36;1m    for part in dataset['parts']:[0m
+2026-11-26T23:33:30.5032166Z [36;1m        assert part['path'] not in seen, 'duplicate logical partition'[0m
+2026-11-26T23:33:30.5032924Z [36;1m        seen.add(part['path'])[0m
+2026-11-26T23:33:30.5033523Z [36;1m        data = read_blob('temp/'+part['path'])[0m
+2026-11-26T23:33:30.5034156Z [36;1m        assert len(data) == part['bytes'][0m
+2026-11-26T23:33:30.5034885Z [36;1m        assert hashlib.sha256(data).hexdigest() == part['sha256'][0m
+2026-11-26T23:33:30.5035617Z [36;1m        count = len(data.splitlines())[0m
+2026-11-26T23:33:30.5036234Z [36;1m        assert count == part['records'][0m
+2026-11-26T23:33:30.5036940Z [36;1m        records += count[0m
+2026-11-26T23:33:30.5037703Z [36;1m        logical.update(data)[0m
+2026-11-26T23:33:30.5038330Z [36;1m    assert records == dataset['logical_records'][0m
+2026-11-26T23:33:30.5039072Z [36;1m    assert logical.hexdigest() == dataset['logical_sha256'][0m
+2026-11-26T23:33:30.5039752Z [36;1mreader.stdin.close()[0m
+2026-11-26T23:33:30.5040250Z [36;1massert reader.wait() == 0[0m
+2026-11-26T23:33:30.5041143Z [36;1mprint('Verified every canonical file, CP6 self hash, and all complete partitioned logical datasets.')[0m
+2026-11-26T23:33:30.5042045Z [36;1mPYACCEPT[0m
+2026-11-26T23:33:30.5042461Z [36;1m}[0m
+2026-11-26T23:33:30.5042884Z [36;1mcheck_history "$import_repo"[0m
+2026-11-26T23:33:30.5043430Z [36;1mverify_snapshot "$import_repo"[0m
+2026-11-26T23:33:30.5043952Z [36;1m[0m
+2026-11-26T23:33:30.5044600Z [36;1m# Pin the remote value actually advertised during the ordinary non-force push.[0m
+2026-11-26T23:33:30.5045629Z [36;1m# This fixed job-authored hook is the only enabled hook; no project hook is run.[0m
+2026-11-26T23:33:30.5046453Z [36;1mguard_dir="$import_tmp/push-guard"[0m
+2026-11-26T23:33:30.5047012Z [36;1mmkdir "$guard_dir"[0m
+2026-11-26T23:33:30.5047876Z [36;1mexport CP6_IMPORT_COMMIT="$CP6" CP6_IMPORT_BASE="$BASE" CP6_IMPORT_TARGET="$TARGET"[0m
+2026-11-26T23:33:30.5048733Z [36;1mcat > "$guard_dir/pre-push" <<'PUSHCHECK'[0m
+2026-11-26T23:33:30.5049330Z [36;1m#!/usr/bin/env bash[0m
+2026-11-26T23:33:30.5049818Z [36;1mset -euo pipefail[0m
+2026-11-26T23:33:30.5050285Z [36;1mcount=0[0m
+2026-11-26T23:33:30.5050857Z [36;1mwhile read -r local_ref local_sha remote_ref remote_sha; do[0m
+2026-11-26T23:33:30.5051549Z [36;1m  count=$((count+1))[0m
+2026-11-26T23:33:30.5052042Z [36;1m  [[ "$count" == 1 ]][0m
+2026-11-26T23:33:30.5052783Z [36;1m  [[ "$local_sha" == "$CP6_IMPORT_COMMIT" && "$remote_ref" == "$CP6_IMPORT_TARGET" ]][0m
+2026-11-26T23:33:30.5053563Z [36;1m  case "$remote_sha" in[0m
+2026-11-26T23:33:30.5054164Z [36;1m    "$CP6_IMPORT_BASE"|"$CP6_IMPORT_COMMIT") ;;[0m
+2026-11-26T23:33:30.5055106Z [36;1m    *) printf '%s\n' 'Advertised target differs from the fixed baseline; push stopped.' >&2; exit 1 ;;[0m
+2026-11-26T23:33:30.5055972Z [36;1m  esac[0m
+2026-11-26T23:33:30.5056378Z [36;1mdone[0m
+2026-11-26T23:33:30.5057026Z [36;1m# Zero updates are harmless if Git found the exact target already up to date.[0m
+2026-11-26T23:33:30.5058065Z [36;1mPUSHCHECK[0m
+2026-11-26T23:33:30.5058532Z [36;1mchmod 700 "$guard_dir/pre-push"[0m
+2026-11-26T23:33:30.5059124Z [36;1mremote_sha="$(check_remote_target)"[0m
+2026-11-26T23:33:30.5059727Z [36;1mif [[ "$remote_sha" != "$CP6" ]]; then[0m
+2026-11-26T23:33:30.5060663Z [36;1m  git --git-dir="$import_repo" -c core.hooksPath="$guard_dir" push --porcelain "$REMOTE" "$CP6:$TARGET"[0m
+2026-11-26T23:33:30.5061548Z [36;1mfi[0m
+2026-11-26T23:33:30.5062276Z [36;1m[[ "$(git --git-dir="$import_repo" ls-remote --heads "$REMOTE" "$TARGET")" == "$CP6"$'\t'"$TARGET" ]][0m
+2026-11-26T23:33:30.5063117Z [36;1m[0m
+2026-11-26T23:33:30.5063791Z [36;1m# Fresh full readback from GitHub: no bundle, local objects, alternates, or checkout.[0m
+2026-11-26T23:33:30.5064647Z [36;1mgit init --bare --quiet "$verify_repo"[0m
+2026-11-26T23:33:30.5065553Z [36;1mgit --git-dir="$verify_repo" fetch --quiet --no-tags "$REMOTE" "$TARGET:refs/heads/cp6-readback"[0m
+2026-11-26T23:33:30.5066734Z [36;1m[[ "$(git --git-dir="$verify_repo" rev-parse 'refs/heads/cp6-readback^{commit}')" == "$CP6" ]][0m
+2026-11-26T23:33:30.5067751Z [36;1mcheck_history "$verify_repo"[0m
+2026-11-26T23:33:30.5068320Z [36;1mverify_snapshot "$verify_repo"[0m
+2026-11-26T23:33:30.5069275Z [36;1m[[ "$(git --git-dir="$verify_repo" ls-remote --heads "$REMOTE" "$TARGET")" == "$CP6"$'\t'"$TARGET" ]][0m
+2026-11-26T23:33:30.5070466Z [36;1mprintf '%s\n' '## CP6 increment verified' \[0m
+2026-11-26T23:33:30.5071102Z [36;1m  'Target: `research/p3-p6-cp6`' \[0m
+2026-11-26T23:33:30.5071848Z [36;1m  'Original CP6 commit: `a1303b6b6c38692b4f57da5cfb342289c6dc17e5`' \[0m
+2026-11-26T23:33:30.5072850Z [36;1m  'Direct parent: `fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0`' \[0m
+2026-11-26T23:33:30.5073910Z [36;1m  'Independent full remote readback passed: all files, CP6 self hash, and all logical partitions.' \[0m
+2026-11-26T23:33:30.5075349Z [36;1m  'The fixed research ref was the only possible write; no main/tag/force operation or project code execution.' >> "$GITHUB_STEP_SUMMARY"[0m
+2026-11-26T23:33:30.5756825Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-26T23:33:30.5758805Z env:
+2026-11-26T23:33:30.5759604Z   GIT_TERMINAL_PROMPT: 0
+2026-11-26T23:33:30.5760480Z   GIT_CONFIG_NOSYSTEM: 1
+2026-11-26T23:33:30.5761383Z   GIT_CONFIG_GLOBAL: /dev/null
+2026-11-26T23:33:30.5762346Z   GIT_NO_REPLACE_OBJECTS: 1
+2026-11-26T23:33:30.5763259Z   GIT_ALTERNATE_OBJECT_DIRECTORIES: 
+2026-11-26T23:33:30.5771863Z   IMPORT_TOKEN: ***
+2026-11-26T23:33:30.5772703Z ##[endgroup]
+2026-11-26T23:33:49.8806617Z Verified fixed manifest, README, every ordered binary part, assembled bundle bytes/hash, head, and prerequisite.
+2026-11-26T23:33:59.1428320Z /home/runner/work/_temp/cp6-sync.TUnv5S/recovery.bundle is okay
+2026-11-26T23:33:59.1429324Z The bundle contains this ref:
+2026-11-26T23:33:59.1430253Z a1303b6b6c38692b4f57da5cfb342289c6dc17e5 refs/heads/research/p3-p6-cp6
+2026-11-26T23:33:59.1431434Z The bundle requires this ref:
+2026-11-26T23:33:59.1432144Z fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0 
+2026-11-26T23:33:59.1432911Z The bundle uses this hash algorithm: sha1
+2026-11-26T23:34:21.8474284Z Verified every canonical file, CP6 self hash, and all complete partitioned logical datasets.
+2026-11-26T23:34:31.3690236Z remote: warning: See https://gh.io/lfs for more information.        
+2026-11-26T23:34:31.3691805Z remote: warning: File temp/exports/citation_graph.json is 51.14 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB        
+2026-11-26T23:34:31.3693401Z remote: warning: File temp/exports/research_entities.json is 51.53 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB        
+2026-11-26T23:34:31.3694470Z remote: warning: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.        
+2026-11-26T23:34:36.7252693Z To https://github.com/ncut-d1z/Insect-Inspired.git
+2026-11-26T23:34:36.7253873Z  	a1303b6b6c38692b4f57da5cfb342289c6dc17e5:refs/heads/research/p3-p6-cp6	fc43ccb..a1303b6
+2026-11-26T23:34:36.7256060Z Done
+2026-11-26T23:35:05.8777327Z Verified every canonical file, CP6 self hash, and all complete partitioned logical datasets.
+2026-11-26T23:35:06.2477725Z Cleaning up orphan processes
