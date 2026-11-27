@@ -1,0 +1,200 @@
+{
+  "query_id": "Q-RUN05-P5-web-identities-002",
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "task_id": "T-RUN02-L079-a5220a5422948222",
+  "entity_id": "P-Rc41ce50c7b36109a",
+  "source_id": "web_search",
+  "retrieval_method": "One Search service batch of three exact-DOI queries; accepted bibliographic and abstract facts only from returned official PubMed or publisher records. No direct HTTP retrieval, fulltext reading, complete citation inventory, or historical snapshot is asserted.",
+  "queries": [
+    {
+      "q": "\"10.1126/scirobotics.adm7689\"",
+      "domains": [
+        "pubmed.ncbi.nlm.nih.gov",
+        "science.org"
+      ]
+    },
+    {
+      "q": "\"10.3389/fncom.2024.1460006\"",
+      "domains": [
+        "pubmed.ncbi.nlm.nih.gov",
+        "frontiersin.org"
+      ]
+    },
+    {
+      "q": "\"10.1016/j.neuron.2024.06.019\"",
+      "domains": [
+        "pubmed.ncbi.nlm.nih.gov",
+        "sciencedirect.com",
+        "cell.com"
+      ]
+    }
+  ],
+  "queried_at_utc": "2026-11-27T02:45:24Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 1,
+  "search_query_count": 3,
+  "cache_hit": false,
+  "status": "success",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Bibliographic facts, public institutional affiliation facts without contact details, and original short Chinese summaries only; source abstracts, full texts, PDF files, and contacts are omitted. Source availability does not imply redistribution permission.",
+  "rerun_reason": "Complete official-author queue entries 2 to 4 after the prior Europe PMC exact-DOI batch timed out. Cache search of retained query-results and reports found only the CP4 official publication queue and the failed EPMC batch for these three DOIs, not a successful primary identity verification.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Sources observed after cutoff; publication dates are individually before cutoff. Search indexes are live and not historical snapshots.",
+  "coverage_note": "Bounded identity review of three official-author queue entries; no completeness claim for Straw lifetime outputs, forward/backward citations, or independent author identity. Outside-domain search hits were not used.",
+  "records": [
+    {
+      "official_queue_index": 2,
+      "title": "High-resolution outdoor videography of insects using Fast Lock-On tracking",
+      "doi": "10.1126/scirobotics.adm7689",
+      "pmid": "39413167",
+      "authors": [
+        "T Thang Vo-Doan",
+        "Victor V Titov",
+        "Michael J M Harrap",
+        "Stephan Lochner",
+        "Andrew D Straw"
+      ],
+      "year": 2024,
+      "first_publication_date": "2024-10-16",
+      "issue_publication_date": "2024-10-16",
+      "venue": "Science Robotics",
+      "volume": "9",
+      "number": "95",
+      "eid": "eadm7689",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/39413167/"
+      ],
+      "source_refs": [
+        "turn220988733search0"
+      ],
+      "date_within_cutoff": true,
+      "abstract_reviewed": true,
+      "fulltext_reviewed": false,
+      "chinese_summary_from_abstract": "论文介绍 Fast Lock-On（FLO）昆虫跟踪：利用附着于昆虫的逆反射标记和红外照明定位目标，再通过反馈控制调整高倍率光学系统以持续对准昆虫。摘要介绍分光高速摄像和四旋翼搭载系统跟踪飞行蜜蜂的应用；公里尺度跟踪属于作者展望，不能写成已实现结果。当前仅核对原摘要，没有评估昆虫自运动估计的定量性能。",
+      "affiliation_facts": [
+        {
+          "author_positions": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "raw_affiliation": "Institute of Biology I, Faculty of Biology, Albert-Ludwigs-Universität Freiburg, Freiburg, Germany."
+        },
+        {
+          "author_positions": [
+            5
+          ],
+          "raw_affiliation": "Bernstein Center Freiburg, Albert-Ludwigs-Universität Freiburg, Freiburg, Germany."
+        }
+      ]
+    },
+    {
+      "official_queue_index": 3,
+      "title": "Reinforcement learning as a robotics-inspired framework for insect navigation: from spatial representations to neural implementation",
+      "doi": "10.3389/fncom.2024.1460006",
+      "pmid": "39314666",
+      "pmcid": "PMC11416953",
+      "authors": [
+        "Stephan Lochner",
+        "Daniel Honerkamp",
+        "Abhinav Valada",
+        "Andrew D Straw"
+      ],
+      "year": 2024,
+      "first_publication_date": "2024-09-09",
+      "venue": "Frontiers in Computational Neuroscience",
+      "volume": "18",
+      "eid": "1460006",
+      "language": "eng",
+      "publication_type_label": "Hypothesis and Theory",
+      "urls": [
+        "https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2024.1460006/full",
+        "https://pubmed.ncbi.nlm.nih.gov/39314666/"
+      ],
+      "source_refs": [
+        "turn220988733search1",
+        "turn220988733search4"
+      ],
+      "date_within_cutoff": true,
+      "abstract_reviewed": true,
+      "fulltext_reviewed": false,
+      "chinese_summary_from_abstract": "本文以强化学习框架比较机器人与昆虫导航中的空间表征，讨论视觉输入、环境几何和内部表征的联系，并提出蘑菇体回路可能实现一类简单强化学习算法的假说。文章将不同导航任务成分的整合与分层强化学习联系起来。当前概括仅依据原摘要；没有把所提回路机制或导航效果列为已验证结论。",
+      "affiliation_facts": [
+        {
+          "author_positions": [
+            1,
+            4
+          ],
+          "raw_affiliation": "Institute of Biology I, University of Freiburg, Freiburg, Germany."
+        },
+        {
+          "author_positions": [
+            2,
+            3
+          ],
+          "raw_affiliation": "Department of Computer Science, University of Freiburg, Freiburg, Germany."
+        },
+        {
+          "author_positions": [
+            4
+          ],
+          "raw_affiliation": "Bernstein Center Freiburg, University of Freiburg, Freiburg, Germany."
+        }
+      ]
+    },
+    {
+      "official_queue_index": 4,
+      "title": "Internal world models in humans, animals, and AI",
+      "doi": "10.1016/j.neuron.2024.06.019",
+      "pmid": "39024919",
+      "authors": [
+        "Ilka Diester",
+        "Marlene Bartos",
+        "Joschka Bödecker",
+        "Adam Kortylewski",
+        "Christian Leibold",
+        "Johannes Letzkus",
+        "Mathew M Nour",
+        "Monika Schönauer",
+        "Andrew Straw",
+        "Abhinav Valada",
+        "Andreas Vlachos",
+        "Thomas Brox"
+      ],
+      "year": 2024,
+      "publication_date": "2024-07-17",
+      "venue": "Neuron",
+      "volume": "112",
+      "number": "14",
+      "pages": "2265-2268",
+      "publication_type_label": "Meeting Report",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/39024919/",
+        "https://www.sciencedirect.com/science/article/pii/S0896627324004549"
+      ],
+      "source_refs": [
+        "turn220988733search2",
+        "turn220988733search3"
+      ],
+      "date_within_cutoff": true,
+      "abstract_reviewed": true,
+      "fulltext_reviewed": false,
+      "chinese_summary_from_abstract": "这篇会议报告围绕生物大脑和人工系统如何适应不断变化的环境，概述不同神经科学与人工智能领域专家对内部世界模型的讨论，并主张通过跨学科研究理解相关机制。当前仅核对原摘要；没有从该报告推断昆虫自运动局限性已经得到解决。",
+      "rights_observation": "Publisher result labels Open archive and Under an Elsevier user license; this is not treated as a blanket redistribution license. No original summary or fulltext is retained.",
+      "affiliation_facts": [
+        {
+          "author_positions": [
+            9
+          ],
+          "raw_affiliation": "Faculty of Biology, University of Freiburg, Freiburg, Germany; Bernstein Center Freiburg, University of Freiburg, Freiburg, Germany."
+        }
+      ]
+    }
+  ],
+  "recorded_at_utc": "2026-11-27T02:46:11.027830Z"
+}

@@ -1,0 +1,487 @@
+{
+  "query_id": "Q-RUN05-P4-S11-citations-001",
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "task_id": "T-Citations-S11-epmc",
+  "entity_id": "W-S11",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/MED/16000634/citations?format=json&page=1&pageSize=1000",
+  "raw_parameters": {
+    "format": "json",
+    "page": 1,
+    "pageSize": 1000
+  },
+  "query_kind": "citations",
+  "queried_at_utc": "2026-11-27T02:45:02.896519Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "rerun_reason": "Exact DOI/PMID cross-check published; resume pending seed source at first citation page.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Public bibliographic facts; abstract/full text and personal contact details omitted.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Live source observed now, not a historical snapshot. Publication cutoff is checked separately.",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "status": "success",
+  "body_bytes": 17968,
+  "body_sha256": "47ab95c1e38e293c41b72bbbe2168b2cfda88c315451a25c6b808e46675becf2",
+  "records": [
+    {
+      "source": "MED",
+      "id": "42259258",
+      "title": "Neuroethology: Seeing to steer in flies.",
+      "authorString": "MaBouDi H.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2026,
+      "pageInfo": "R485-R488"
+    },
+    {
+      "source": "MED",
+      "id": "34531728",
+      "title": "Disentangling of Local and Wide-Field Motion Adaptation.",
+      "authorString": "Li J, Niemeier M, Kern R, Egelhaaf M.",
+      "journalAbbreviation": "Front Neural Circuits",
+      "pubYear": 2021,
+      "pageInfo": "713285"
+    },
+    {
+      "source": "MED",
+      "id": "34324832",
+      "title": "Predicting individual neuron responses with anatomically constrained task optimization.",
+      "authorString": "Mano O, Creamer MS, Badwan BA, Clark DA.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2021,
+      "pageInfo": "4062-4075.e4"
+    },
+    {
+      "source": "MED",
+      "id": "33338802",
+      "title": "Artificial fly visual joint perception neural network inspired by multiple-regional collision detection.",
+      "authorString": "Li L, Zhang Z, Lu J.",
+      "journalAbbreviation": "Neural Netw",
+      "pubYear": 2021,
+      "pageInfo": "13-28"
+    },
+    {
+      "source": "MED",
+      "id": "32772201",
+      "title": "Obstacle avoidance in bumblebees is robust to changes in light intensity.",
+      "authorString": "Baird E.",
+      "journalAbbreviation": "Anim Cogn",
+      "pubYear": 2020,
+      "pageInfo": "1081-1086"
+    },
+    {
+      "source": "MED",
+      "id": "32236111",
+      "title": "Resource-efficient bio-inspired visual processing on the hexapod walking robot HECTOR.",
+      "authorString": "Meyer HG, Klimeck D, Paskarbeit J, Rückert U, Egelhaaf M, Porrmann M, Schneider A.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2020,
+      "pageInfo": "e0230620"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR46061",
+      "title": "A unifying model to predict multiple object orienting behaviors in tethered flies",
+      "authorString": "Poehlmann A, Soselisa SJ, Fenk LM, Straw AD.",
+      "pubYear": 2018
+    },
+    {
+      "source": "MED",
+      "id": "29643402",
+      "title": "Spatial Encoding of Translational Optic Flow in Planar Scenes by Elementary Motion Detector Arrays.",
+      "authorString": "Lecoeur J, Baird E, Floreano D.",
+      "journalAbbreviation": "Sci Rep",
+      "pubYear": 2018,
+      "pageInfo": "5821"
+    },
+    {
+      "source": "MED",
+      "id": "29281631",
+      "title": "Local motion adaptation enhances the representation of spatial structure at EMD arrays.",
+      "authorString": "Li J, Lindemann JP, Egelhaaf M.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2017,
+      "pageInfo": "e1005919"
+    },
+    {
+      "source": "MED",
+      "id": "27818631",
+      "title": "Peripheral Processing Facilitates Optic Flow-Based Depth Perception.",
+      "authorString": "Li J, Lindemann JP, Egelhaaf M.",
+      "journalAbbreviation": "Front Comput Neurosci",
+      "pubYear": 2016,
+      "pageInfo": "111"
+    },
+    {
+      "source": "MED",
+      "id": "27780044",
+      "title": "Evolution of Biological Image Stabilization.",
+      "authorString": "Hardcastle BJ, Krapp HG.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2016,
+      "pageInfo": "R1010-R1021"
+    },
+    {
+      "source": "MED",
+      "id": "26583771",
+      "title": "A Bio-inspired Collision Avoidance Model Based on Spatial Information Derived from Motion Detectors Leads to Common Routes.",
+      "authorString": "Bertrand OJ, Lindemann JP, Egelhaaf M.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2015,
+      "pageInfo": "e1004339"
+    },
+    {
+      "source": "MED",
+      "id": "25454785",
+      "title": "Asymmetric processing of visual motion for simultaneous object and background responses.",
+      "authorString": "Fenk LM, Poehlmann A, Straw AD.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2014,
+      "pageInfo": "2913-2919"
+    },
+    {
+      "source": "MED",
+      "id": "25389392",
+      "title": "Motion as a source of environmental information: a fresh view on biological motion computation by insect brains.",
+      "authorString": "Egelhaaf M, Kern R, Lindemann JP.",
+      "journalAbbreviation": "Front Neural Circuits",
+      "pubYear": 2014,
+      "pageInfo": "127"
+    },
+    {
+      "source": "MED",
+      "id": "25136314",
+      "title": "Depth information in natural environments derived from optic flow by insect motion detection system: a model analysis.",
+      "authorString": "Schwegmann A, Lindemann JP, Egelhaaf M.",
+      "journalAbbreviation": "Front Comput Neurosci",
+      "pubYear": 2014,
+      "pageInfo": "83"
+    },
+    {
+      "source": "MED",
+      "id": "24639532",
+      "title": "Flying Drosophila stabilize their vision-based velocity controller by sensing wind with their antennae.",
+      "authorString": "Fuller SB, Straw AD, Peek MY, Murray RM, Dickinson MH.",
+      "journalAbbreviation": "Proc Natl Acad Sci U S A",
+      "pubYear": 2014,
+      "pageInfo": "E1182-91"
+    },
+    {
+      "source": "MED",
+      "id": "23335890",
+      "title": "Texture dependence of motion sensing and free flight behavior in blowflies.",
+      "authorString": "Lindemann JP, Egelhaaf M.",
+      "journalAbbreviation": "Front Behav Neurosci",
+      "pubYear": 2012,
+      "pageInfo": "92"
+    },
+    {
+      "source": "MED",
+      "id": "23269913",
+      "title": "Spatial vision in insects is facilitated by shaping the dynamics of visual input through behavioral action.",
+      "authorString": "Egelhaaf M, Boeddeker N, Kern R, Kurtz R, Lindemann JP.",
+      "journalAbbreviation": "Front Neural Circuits",
+      "pubYear": 2012,
+      "pageInfo": "108"
+    },
+    {
+      "source": "MED",
+      "id": "22744199",
+      "title": "Tracking improves performance of biological collision avoidance models.",
+      "authorString": "Pant V, Higgins CM.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2012,
+      "pageInfo": "307-322"
+    },
+    {
+      "source": "MED",
+      "id": "22461769",
+      "title": "Neuronal encoding of object and distance information: a model simulation study on naturalistic optic flow processing.",
+      "authorString": "Hennig P, Egelhaaf M.",
+      "journalAbbreviation": "Front Neural Circuits",
+      "pubYear": 2012,
+      "pageInfo": "14"
+    },
+    {
+      "source": "MED",
+      "id": "22423002",
+      "title": "Object representation and distance encoding in three-dimensional environments by a neural circuit in the visual system of the blowfly.",
+      "authorString": "Liang P, Heitwerth J, Kern R, Kurtz R, Egelhaaf M.",
+      "journalAbbreviation": "J Neurophysiol",
+      "pubYear": 2012,
+      "pageInfo": "3446-3457"
+    },
+    {
+      "source": "MED",
+      "id": "21760894",
+      "title": "Pattern-dependent response modulations in motion-sensitive visual interneurons--a model study.",
+      "authorString": "Meyer HG, Lindemann JP, Egelhaaf M.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2011,
+      "pageInfo": "e21488"
+    },
+    {
+      "source": "MED",
+      "id": "21689601",
+      "title": "Internal structure of the fly elementary motion detector.",
+      "authorString": "Eichner H, Joesch M, Schnell B, Reiff DF, Borst A.",
+      "journalAbbreviation": "Neuron",
+      "pubYear": 2011,
+      "pageInfo": "1155-1164"
+    },
+    {
+      "source": "MED",
+      "id": "21519385",
+      "title": "Binocular integration of visual information: a model study on naturalistic optic flow processing.",
+      "authorString": "Hennig P, Kern R, Egelhaaf M.",
+      "journalAbbreviation": "Front Neural Circuits",
+      "pubYear": 2011,
+      "pageInfo": "4"
+    },
+    {
+      "source": "MED",
+      "id": "22163800",
+      "title": "Contrast-independent biologically inspired motion detection.",
+      "authorString": "Babies B, Lindemann JP, Egelhaaf M, Möller R.",
+      "journalAbbreviation": "Sensors (Basel)",
+      "pubYear": 2011,
+      "pageInfo": "3303-3326"
+    },
+    {
+      "source": "MED",
+      "id": "21305019",
+      "title": "Neural action fields for optic flow based navigation: a simulation study of the fly lobula plate network.",
+      "authorString": "Borst A, Weber F.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2011,
+      "pageInfo": "e16303"
+    },
+    {
+      "source": "MED",
+      "id": "20727759",
+      "title": "Visual control of altitude in flying Drosophila.",
+      "authorString": "Straw AD, Lee S, Dickinson MH.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2010,
+      "pageInfo": "1550-1556"
+    },
+    {
+      "source": "MED",
+      "id": "20694561",
+      "title": "Control theoretic interpretation of directional motion preferences in optic flow processing interneurons.",
+      "authorString": "Hyslop A, Krapp HG, Humbert JS.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2010,
+      "pageInfo": "353-364"
+    },
+    {
+      "source": "MED",
+      "id": "20689158",
+      "title": "Mimicking honeybee eyes with a 280 degrees field of view catadioptric imaging system.",
+      "authorString": "Stürzl W, Boeddeker N, Dittmar L, Egelhaaf M.",
+      "journalAbbreviation": "Bioinspir Biomim",
+      "pubYear": 2010,
+      "pageInfo": "036002"
+    },
+    {
+      "source": "MED",
+      "id": "20797539",
+      "title": "Spatiotemporal response properties of optic-flow processing neurons.",
+      "authorString": "Weber F, Machens CK, Borst A.",
+      "journalAbbreviation": "Neuron",
+      "pubYear": 2010,
+      "pageInfo": "629-642"
+    },
+    {
+      "source": "MED",
+      "id": "20581276",
+      "title": "A syntax of hoverfly flight prototypes.",
+      "authorString": "Geurten BR, Kern R, Braun E, Egelhaaf M.",
+      "journalAbbreviation": "J Exp Biol",
+      "pubYear": 2010,
+      "pageInfo": "2461-2475"
+    },
+    {
+      "source": "MED",
+      "id": "20472776",
+      "title": "A model of visual-olfactory integration for odour localisation in free-flying fruit flies.",
+      "authorString": "Stewart FJ, Baker DA, Webb B.",
+      "journalAbbreviation": "J Exp Biol",
+      "pubYear": 2010,
+      "pageInfo": "1886-1900"
+    },
+    {
+      "source": "MED",
+      "id": "20514339",
+      "title": "Chasing behavior and optomotor following in free-flying male blowflies: flight performance and interactions of the underlying control systems.",
+      "authorString": "Trischler C, Kern R, Egelhaaf M.",
+      "journalAbbreviation": "Front Behav Neurosci",
+      "pubYear": 2010,
+      "pageInfo": "20"
+    },
+    {
+      "source": "MED",
+      "id": "20348349",
+      "title": "Dynamics of optomotor responses in Drosophila to perturbations in optic flow.",
+      "authorString": "Theobald JC, Ringach DL, Frye MA.",
+      "journalAbbreviation": "J Exp Biol",
+      "pubYear": 2010,
+      "pageInfo": "1366-1375"
+    },
+    {
+      "source": "MED",
+      "id": "20219173",
+      "title": "Sensorimotor transformation: from visual responses to motor commands.",
+      "authorString": "Krapp HG.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2010,
+      "pageInfo": "R236-9"
+    },
+    {
+      "source": "MED",
+      "id": "19893631",
+      "title": "Robust models for optic flow coding in natural scenes inspired by insect biology.",
+      "authorString": "Brinkworth RS, O'Carroll DC.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2009,
+      "pageInfo": "e1000555"
+    },
+    {
+      "source": "MED",
+      "id": "19329746",
+      "title": "Visual control of flight speed in Drosophila melanogaster.",
+      "authorString": "Fry SN, Rohrseitz N, Straw AD, Dickinson MH.",
+      "journalAbbreviation": "J Exp Biol",
+      "pubYear": 2009,
+      "pageInfo": "1120-1130"
+    },
+    {
+      "source": "MED",
+      "id": "19258686",
+      "title": "Bio-inspired motion detection in an FPGA-based smart camera module.",
+      "authorString": "Köhler T, Röchter F, Lindemann JP, Möller R.",
+      "journalAbbreviation": "Bioinspir Biomim",
+      "pubYear": 2009,
+      "pageInfo": "015008"
+    },
+    {
+      "source": "MED",
+      "id": "19004993",
+      "title": "Random stimulation of spider mechanosensory neurons reveals long-lasting excitation by GABA and muscimol.",
+      "authorString": "Pfeiffer K, Panek I, Höger U, French AS, Torkkeli PH.",
+      "journalAbbreviation": "J Neurophysiol",
+      "pubYear": 2009,
+      "pageInfo": "54-66"
+    },
+    {
+      "source": "MED",
+      "id": "18430633",
+      "title": "Fly vision: neural mechanisms of motion computation.",
+      "authorString": "Egelhaaf M.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2008,
+      "pageInfo": "R339-41"
+    },
+    {
+      "source": "MED",
+      "id": "18302925",
+      "title": "Active sensing: matching motor and sensory space.",
+      "authorString": "Schuster S.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2008,
+      "pageInfo": "R176-8"
+    },
+    {
+      "source": "MED",
+      "id": "18180948",
+      "title": "Saccadic flight strategy facilitates collision avoidance: closed-loop performance of a cyberfly.",
+      "authorString": "Lindemann JP, Weiss H, Möller R, Egelhaaf M.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2008,
+      "pageInfo": "213-227"
+    },
+    {
+      "source": "AGR",
+      "id": "IND44011217",
+      "title": "Sensory systems and flight stability: what do insects measure and why?",
+      "authorString": "Taylor GK, Krapp HG.",
+      "journalAbbreviation": "Advances in insect physiology.",
+      "pubYear": 2008,
+      "pageInfo": "231-316"
+    },
+    {
+      "source": "MED",
+      "id": "18308559",
+      "title": "Adaptive motor behavior in insects.",
+      "authorString": "Ritzmann RE, Büschges A.",
+      "journalAbbreviation": "Curr Opin Neurobiol",
+      "pubYear": 2007,
+      "pageInfo": "629-636"
+    },
+    {
+      "source": "MED",
+      "id": "17928564",
+      "title": "Adaptation and information transmission in fly motion detection.",
+      "authorString": "Safran MN, Flanagin VL, Borst A, Sompolinsky H.",
+      "journalAbbreviation": "J Neurophysiol",
+      "pubYear": 2007,
+      "pageInfo": "3309-3320"
+    },
+    {
+      "source": "MED",
+      "id": "17050849",
+      "title": "A \"bright zone\" in male hoverfly (Eristalis tenax) eyes and associated faster motion detection and increased contrast sensitivity.",
+      "authorString": "Straw AD, Warrant EJ, O'Carroll DC.",
+      "journalAbbreviation": "J Exp Biol",
+      "pubYear": 2006,
+      "pageInfo": "4339-4354"
+    },
+    {
+      "source": "MED",
+      "id": "16687623",
+      "title": "Encoding of naturalistic optic flow by a population of blowfly motion-sensitive neurons.",
+      "authorString": "Karmeier K, van Hateren JH, Kern R, Egelhaaf M.",
+      "journalAbbreviation": "J Neurophysiol",
+      "pubYear": 2006,
+      "pageInfo": "1602-1614"
+    },
+    {
+      "source": "MED",
+      "id": "16338996",
+      "title": "Spatial integration of optic flow signals in fly motion-sensitive neurons.",
+      "authorString": "Neri P.",
+      "journalAbbreviation": "J Neurophysiol",
+      "pubYear": 2006,
+      "pageInfo": "1608-1619"
+    },
+    {
+      "source": "MED",
+      "id": "16133502",
+      "title": "Responses of blowfly motion-sensitive neurons to reconstructed optic flow along outdoor flight paths.",
+      "authorString": "Boeddeker N, Lindemann JP, Egelhaaf M, Zeil J.",
+      "journalAbbreviation": "J Comp Physiol A Neuroethol Sens Neural Behav Physiol",
+      "pubYear": 2005,
+      "pageInfo": "1143-1155"
+    }
+  ],
+  "returned_count": 49,
+  "visible_total": 49,
+  "cursor_in": "1",
+  "cursor_out": null,
+  "page_index": 1,
+  "page_complete": true,
+  "provider_response_keys": [
+    "citationList",
+    "hitCount",
+    "request",
+    "version"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "completed_at_utc": "2026-11-27T02:45:25.484798Z"
+}
