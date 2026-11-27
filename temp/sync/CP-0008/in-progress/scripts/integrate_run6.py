@@ -270,8 +270,8 @@ def main():
                     and receipt['scope_id'] == SCOPE,
                     'Typed query identity, provenance, or scope differs: ' + qid)
             external_calls = receipt['external_requests_performed']
-            require(type(external_calls) in (bool, int) and external_calls in (0, 1),
-                    'Typed receipt must record one invocation or cache reuse: ' + qid)
+            require(type(external_calls) is int and external_calls >= 0,
+                    'Typed receipt requires an explicit nonnegative integer source-operation count: ' + qid)
             require(receipt['cache_hit'] == q['cache_hit']
                     and (not q['cache_hit'] or external_calls == 0),
                     'Typed cache/external request accounting differs: ' + qid)
@@ -290,7 +290,8 @@ def main():
                 returned_count=q['returned_count'], visible_total=q['visible_total'], page_complete=q['page_complete'],
                 count_scope=q['coverage_note'], receipt_path=relative, receipt_sha256=binding['sha256'],
                 verification_status=q['verification_status'], recorded_at_utc=q['recorded_at_utc'],
-                external_request_performed=bool(external_calls), cache_hit=q['cache_hit'],
+                external_request_performed=external_calls > 0, external_request_count=external_calls,
+                external_request_count_basis=audit.REQUEST_COUNT_BASIS, cache_hit=q['cache_hit'],
                 source_search_query_count=receipt.get('search_query_count'),
                 source_count_basis=q['normalized_parameters'].get('count_scope'),
                 source_declared_counts={key: q[key] for key in
@@ -365,8 +366,8 @@ def main():
         # A partially resolved list retains its true returned count and gets
         # a null canonical count plus the ordinary unknown-review task below.
         external_calls = receipt['external_requests_performed']
-        require(type(external_calls) in (bool, int) and external_calls in (0, 1),
-                'One query receipt must record exactly one invocation or a cache reuse: ' + qid)
+        require(type(external_calls) is int and external_calls >= 0,
+                'Receipt requires an explicit nonnegative integer source-operation count: ' + qid)
         require(not receipt.get('cache_hit') or external_calls == 0,
                 'Cache reuse cannot be counted as a new external request: ' + qid)
         if qid in reviewed_list_stats:
@@ -392,6 +393,8 @@ def main():
             normalized_parameters={**rawparams, 'run_id': RUN,
                 'count_scope': 'returned/count_before_dedup count the retained source records; count_after_dedup is unique canonical Works only when all returned identities resolve',
                 'source_count_basis': receipt.get('count_basis'),
+                'external_request_count': external_calls,
+                'external_request_count_basis': audit.REQUEST_COUNT_BASIS,
                 **{'source_declared_' + key: value for key, value in declared_counts.items()}},
             queried_at_utc=receipt.get('queried_at_utc'), cursor_in=receipt.get('cursor_in'),
             cursor_out=receipt.get('cursor_out'), page_index=receipt.get('page_index', 1),
@@ -418,12 +421,16 @@ def main():
             q['queried_date'] = q['recorded_at_utc'][:10]
         unknown_fields = [k for k in ('returned_count', 'count_before_dedup', 'count_after_dedup')
                           if q[k] is None]
-        if failed:
+        if q['visible_total'] is None and (failed or source != 'web_search'):
             unknown_fields.append('visible_total')
         if unknown_fields:
             review_id = 'T-RUN06-QUERY-REVIEW-' + qid
             since = receipt.get('queried_at_utc') or q['recorded_at_utc']
             reason = ('The source operation failed; the unobserved result is not zero.' if failed else
+                      'The complete source inventory total was not observed or reconciled; the selected retained targets do not determine that total.'
+                      if unknown_fields == ['visible_total'] else
+                      'The source result inventory was not retained completely; unavailable counts remain unknown rather than zero.'
+                      if not rows_observed and not cached_pdf else
                       'One or more returned identities cannot yet be mapped to a unique canonical Work; source counts remain separately visible.')
             q['field_states'] = {key: dict(status='unknown', reason=reason, evidence_locator=[],
                 unknown_since_utc=since, review_task_id=review_id) for key in unknown_fields}
@@ -435,7 +442,7 @@ def main():
                           ).isoformat().replace('+00:00', 'Z'),
                           review_task_id=review_id, error_code=q['error_code'])
             data['tasks'].append(review)
-        if q['visible_total'] is None and not failed:
+        if q['visible_total'] is None and not failed and source == 'web_search':
             q.setdefault('field_states', {})['visible_total'] = dict(
                 status='not_applicable',
                 reason='This successful bounded web search has no defined bibliographic inventory total. Retained reviewed records are counted separately; no search-result exhaustiveness is asserted.',
@@ -450,7 +457,8 @@ def main():
             returned_count=returned, visible_total=q['visible_total'], page_complete=q['page_complete'],
             count_scope=q['coverage_note'], receipt_path=relative, receipt_sha256=binding['sha256'],
             verification_status=q['verification_status'], recorded_at_utc=q['recorded_at_utc'],
-            external_request_performed=bool(external_calls),
+            external_request_performed=external_calls > 0, external_request_count=external_calls,
+            external_request_count_basis=audit.REQUEST_COUNT_BASIS,
             cache_hit=q['cache_hit'], source_search_query_count=receipt.get('search_query_count'),
             source_count_basis=receipt.get('count_basis'), source_declared_counts=declared_counts,
             source_result_identifiers=identifiers,
@@ -501,7 +509,7 @@ def main():
     require(Counter(x['query_id'] for x in observations) == Counter({qid: 1 for qid in new_qids}),
             'Each new query must have exactly one invocation/cache observation.')
     run = json.loads((repo / 'temp/runs/RUN-0006.json').read_text())
-    run.update(external_requests_used=sum(x['external_request_performed'] for x in observations),
+    run.update(external_requests_used=sum(audit.external_request_count(x) for x in observations),
                cache_reuse_events=sum(x['cache_hit'] for x in new_queries),
                manual_review_items_used=sum(x['review_id'] not in baseline_manual_ids for x in data['manual-reviews']),
                last_completed_batch='Explicit committed RUN6 review candidates integrated; exact activities, observations and retained failures are recorded in the input bindings and ledgers.',
@@ -515,6 +523,8 @@ def main():
         counts_after={name: len(rows) for name, rows in data.items()},
         changed_records=list(changes.values()), query_new_work_ids=new_by_query,
         new_query_rows=len(new_queries), external_requests=run['external_requests_used'],
+        external_request_count_basis=audit.REQUEST_COUNT_BASIS,
+        externally_executed_receipts=sum(x['external_request_performed'] for x in observations),
         cache_reuse_events=run['cache_reuse_events'], manual_review_activities=run['manual_review_items_used'],
         schema_checks=schema_checks, scientific_gate_inherited=False, research_closure=False,
         preservation_note='All old events and assessments retained. Reviewed mutable changes have complete before/after records. Full audit remains required.')

@@ -9,6 +9,7 @@ private PDFs are not claimed to have been read again. No new exception exists.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -48,6 +49,22 @@ EXPORTS = (
     'temp/exports/evidence_matrix.csv', 'temp/exports/research_entities.json',
     'temp/exports/research_implications.csv', 'temp/exports/research_paths.json',
 )
+REQUEST_COUNT_BASIS = (
+    'Count explicit source operations in each retained receipt, including every operation '
+    'in a multi-operation tool batch; cache reuse counts zero; Git synchronization is excluded.'
+)
+
+
+def external_request_count(observation):
+    count = observation.get('external_request_count')
+    flag = observation.get('external_request_performed')
+    if type(count) is not int or count < 0:
+        raise ValueError('RUN6 source observation requires an explicit nonnegative integer request count')
+    if type(flag) is not bool or flag != (count > 0):
+        raise ValueError('Source execution flag differs from the explicit request count')
+    if observation.get('cache_hit') is True and count != 0:
+        raise ValueError('Cache reuse cannot consume external requests')
+    return count
 
 
 def sha_bytes(raw):
@@ -266,6 +283,50 @@ class AuditCP8(original.Audit):
             (BASE_COMMIT + ':temp/assessments.jsonl', [row for row, _ in self._cp7_records.values()])
         ]
         super().load()
+
+    def task_queries(self):
+        super().task_queries()
+        queries = {qid: row for qid, row in self.indices.get('query', {}).items()
+                   if row.get('checkpoint_id') == CHECKPOINT}
+        observations = [row for row in self.datasets.get('source-observations.jsonl', [])
+                        if row.get('query_id') in queries]
+        self.require(Counter(row['query_id'] for row in observations) == Counter({qid: 1 for qid in queries}),
+                     'cp8_request_observation_cardinality', 'Each RUN6 query needs one exact source observation')
+        total = 0
+        for observation in observations:
+            qid = observation['query_id']
+            try:
+                count = external_request_count(observation)
+                q = queries[qid]
+                self.require(observation.get('cache_hit') == q.get('cache_hit')
+                             and (not q.get('cache_hit') or count == 0),
+                             'cp8_request_cache_count', 'Query/cache accounting differs', qid)
+                path = self.repo / safe_relative(observation['receipt_path'])
+                self.watch(path)
+                raw = path.read_bytes()
+                receipt = json.loads(raw)
+                self.require(sha_bytes(raw) == observation['receipt_sha256']
+                             and receipt['query_id'] == qid
+                             and type(receipt['external_requests_performed']) is int
+                             and receipt['external_requests_performed'] == count,
+                             'cp8_request_receipt_count', 'Source operation count differs from exact receipt', qid)
+                if 'external_request_count' in q.get('normalized_parameters', {}):
+                    self.require(q['normalized_parameters']['external_request_count'] == count,
+                                 'cp8_request_query_count', 'Normalized query count differs', qid)
+                self.require(observation.get('external_request_count_basis') == REQUEST_COUNT_BASIS,
+                             'cp8_request_count_basis', 'Explicit operation-count scope is missing', qid)
+                total += count
+            except Exception as error:
+                self.note('cp8_request_count_invalid', str(error), qid)
+        run = json.loads((self.repo / RUN_PATH).read_bytes())
+        self.require(run['external_requests_used'] == total <= run['budget']['external_requests'],
+                     'cp8_request_budget_reconciliation', 'RUN6 total/budget differs from source operation counts')
+        self.stats['run6_external_request_accounting'] = {
+            'query_rows': len(queries), 'source_operations': total,
+            'externally_executed_receipts': sum(row.get('external_request_performed') is True for row in observations),
+            'cache_receipts': sum(row.get('cache_hit') is True for row in observations),
+            'count_basis': REQUEST_COUNT_BASIS,
+        }
 
     def assessments(self):
         super().assessments()

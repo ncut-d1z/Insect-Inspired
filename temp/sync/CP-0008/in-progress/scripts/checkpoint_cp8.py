@@ -250,10 +250,11 @@ def collect(repo, now):
             'Each new query needs one explicit invocation/cache observation')
     require(all(isinstance(row.get('external_request_performed'), bool) for row in observations),
             'Invocation/cache observation lacks an explicit boolean')
-    external = sum(row['external_request_performed'] for row in observations)
+    external = sum(audit.external_request_count(row) for row in observations)
     cache = sum(row.get('cache_hit') is True for row in queries)
     cached_ids = {row['query_id'] for row in queries if row.get('cache_hit') is True}
-    require(all(not row['external_request_performed'] for row in observations if row['query_id'] in cached_ids),
+    require(all(not row['external_request_performed'] and row['external_request_count'] == 0
+                for row in observations if row['query_id'] in cached_ids),
             'Cache reuse was counted as external access')
     manual = [row for row in data['manual-reviews'] if row['review_id'] not in base['manual_ids']]
     require(all(row['run_id'] == RUN for row in manual), 'New manual review belongs to another run')
