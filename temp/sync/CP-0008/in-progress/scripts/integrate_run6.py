@@ -105,6 +105,7 @@ def identity_index(data):
             wid = row.get('work_id') or (row.get('target_id') if row.get('entity_type') == 'work' else None)
             if not wid:
                 continue
+            index[wid.lower()].add(wid)
             values = list(row.get('identifiers', {}).values())
             values += [row.get('doi'), row.get('raw_identifier'), row.get('normalized_identifier')]
             for value in values:
@@ -127,6 +128,8 @@ def source_record_ids(row):
 
 def resolve_record(row, index):
     candidates = set()
+    if row.get('work_id'):
+        candidates.update(index.get(str(row['work_id']).lower(), set()))
     if row.get('id'):
         value = str(row['id']).lower()
         source = str(row.get('source', 'MED')).lower()
@@ -244,7 +247,18 @@ def main():
         bindings.append(binding)
         qid = receipt['query_id']
         require(qid not in indices['queries'], 'Receipt query already added: ' + qid)
+        rows_observed = 'records' in receipt
         rows = receipt.get('records', [])
+        require(isinstance(rows, list) and all(isinstance(row, dict) for row in rows),
+                'Receipt records must be an explicit list of objects: ' + qid)
+        # A fulltext resource observation is not a bibliography/list response.
+        # Its explicit single-resource count and identity must not become zero
+        # merely because the receipt does not use the list-shaped records key.
+        if not rows_observed and isinstance(receipt.get('resource_identity'), dict):
+            if receipt.get('returned_count') == 1:
+                require(bool(receipt.get('count_basis')), 'Single-resource count lacks its source scope: ' + qid)
+                rows = [receipt['resource_identity']]
+                rows_observed = True
         cached_pdf = (receipt.get('cache_hit') is True
                       and receipt.get('query_kind') == 'local_fulltext_cache'
                       and isinstance(receipt.get('version_id'), str))
@@ -256,14 +270,50 @@ def main():
             {'searches': [x if isinstance(x, str) else json.dumps(x, ensure_ascii=False, sort_keys=True)
                           for x in receipt['queries']]} if 'queries' in receipt else
             {'endpoint': receipt['endpoint_or_url'], 'version_id': receipt.get('version_id')})
-        identifiers = ([receipt['version_id']] if cached_pdf else
-                       list(dict.fromkeys(x for x in map(source_record_ids, rows) if x)))
-        resolved = ([receipt['entity_id']] if cached_pdf else
-                    [reviewed_source_identities[source_record_ids(row)]
-                     if source_record_ids(row) in reviewed_source_identities
-                     else resolve_record(row, index) for row in rows])
-        returned = None if failed else (1 if cached_pdf else len(rows))
-        dedup_count = None if failed or any(x is None for x in resolved) else len(set(resolved))
+        identifiers = receipt.get('result_identifiers')
+        if identifiers is None:
+            identifiers = ([receipt['version_id']] if cached_pdf else
+                           list(dict.fromkeys(x for x in map(source_record_ids, rows) if x)))
+        require(isinstance(identifiers, list) and all(isinstance(x, str) and x for x in identifiers),
+                'Source result identifiers must remain an explicit string list: ' + qid)
+        resolved = []
+        if cached_pdf:
+            resolved = [receipt['entity_id']]
+        else:
+            for position, row in enumerate(rows):
+                keys = [source_record_ids(row)]
+                if len(identifiers) == len(rows):
+                    keys.insert(0, identifiers[position])
+                reviewed = {reviewed_source_identities[key] for key in keys
+                            if key in reviewed_source_identities}
+                require(len(reviewed) <= 1, 'Conflicting reviewed source identities: ' + qid)
+                wid = next(iter(reviewed)) if reviewed else resolve_record(row, index)
+                require(wid is None or wid in indices['works'], 'Source identity has no canonical Work: ' + qid)
+                resolved.append(wid)
+        declared_counts = {key: receipt[key] for key in
+                           ('visible_total', 'returned_count', 'count_before_dedup', 'count_after_dedup', 'new_work_count')
+                           if key in receipt}
+        for key, value in declared_counts.items():
+            require(value is None or type(value) is int and value >= 0,
+                    'Invalid declared source count: ' + qid + '/' + key)
+        returned = (None if failed else 1 if cached_pdf else
+                    receipt['returned_count'] if 'returned_count' in receipt else
+                    len(rows) if rows_observed else None)
+        before_dedup = None if failed else receipt.get('count_before_dedup', returned)
+        if rows_observed and returned is not None:
+            require(returned == len(rows), 'Declared retained-record count differs from the exact observed rows: ' + qid)
+        all_identities_resolved = (not failed and (rows_observed or cached_pdf)
+                                   and returned == len(resolved) and all(x is not None for x in resolved))
+        dedup_count = len(set(resolved)) if all_identities_resolved else None
+        # Source-record deduplication (for example six reference labels) is
+        # preserved separately from complete canonical Work disambiguation.
+        # A partially resolved list retains its true returned count and gets
+        # a null canonical count plus the ordinary unknown-review task below.
+        external_calls = receipt['external_requests_performed']
+        require(type(external_calls) in (bool, int) and external_calls in (0, 1),
+                'One query receipt must record exactly one invocation or a cache reuse: ' + qid)
+        require(not receipt.get('cache_hit') or external_calls == 0,
+                'Cache reuse cannot be counted as a new external request: ' + qid)
         if qid in reviewed_list_stats:
             stats = reviewed_list_stats[qid]
             require(stats['receipt_sha256'] == binding['sha256'] and stats['rows'] == returned,
@@ -273,6 +323,10 @@ def main():
         new_ids = sorted(set(new_by_query.get(qid, [])))
         require(all(x not in baseline_work_ids and x in indices['works'] for x in new_ids),
                 'Incorrect new-Work attribution: ' + qid)
+        if 'new_work_ids' in receipt:
+            require(sorted(set(receipt['new_work_ids'])) == new_ids, 'Declared new-Work identities differ: ' + qid)
+        if receipt.get('new_work_count') is not None:
+            require(receipt['new_work_count'] == len(new_ids), 'Declared new-Work count differs: ' + qid)
         q = dict(query_id=qid, task_id=tid, scope_id=SCOPE, checkpoint_id=CP,
             entity_id=receipt['entity_id'], source_id=source,
             endpoint_or_url=receipt.get('endpoint_or_url') or 'web-search://official-bibliographic-records',
@@ -281,12 +335,14 @@ def main():
                         if source == 'web_search' else 'forward_citation_list'),
             raw_parameters=rawparams,
             normalized_parameters={**rawparams, 'run_id': RUN,
-                'count_scope': 'retained bibliographic records; count_after_dedup is unique unambiguous canonical Works'},
+                'count_scope': 'returned/count_before_dedup count the retained source records; count_after_dedup is unique canonical Works only when all returned identities resolve',
+                'source_count_basis': receipt.get('count_basis'),
+                'source_declared_counts': declared_counts},
             queried_at_utc=receipt.get('queried_at_utc'), cursor_in=receipt.get('cursor_in'),
             cursor_out=receipt.get('cursor_out'), page_index=receipt.get('page_index', 1),
             page_complete=bool(receipt.get('page_complete', False)) and exact and not failed,
             visible_total=receipt.get('visible_total', 1 if cached_pdf else None),
-            returned_count=returned, count_before_dedup=returned, count_after_dedup=dedup_count,
+            returned_count=returned, count_before_dedup=before_dedup, count_after_dedup=dedup_count,
             new_work_ids=new_ids, new_work_count=len(new_ids), result_identifiers=identifiers,
             status=('error' if failed else 'partial' if not exact else
                     'cache_hit' if receipt.get('cache_hit') else 'success'),
@@ -296,6 +352,7 @@ def main():
             cache_hit=bool(receipt.get('cache_hit')), reused_query_id=receipt.get('reused_query_id'),
             rerun_reason=receipt.get('rerun_reason'), coverage_note=(
                 receipt.get('coverage_note', 'The retained source page is separate from Work identity, actual citation context, and fulltext coverage.')
+                + ' ' + receipt.get('count_basis', '')
                 + ' ' + receipt.get('index_drift_note', '')
                 + ' Failed or ambiguous counts remain null; source enumeration never proves research closure.'),
             license_note=receipt['license_note'], recorded_at_utc=receipt.get('recorded_at_utc') or
@@ -338,8 +395,12 @@ def main():
             returned_count=returned, visible_total=q['visible_total'], page_complete=q['page_complete'],
             count_scope=q['coverage_note'], receipt_path=relative, receipt_sha256=binding['sha256'],
             verification_status=q['verification_status'], recorded_at_utc=q['recorded_at_utc'],
-            external_request_performed=bool(receipt['external_requests_performed']),
-            cache_hit=q['cache_hit'], source_search_query_count=receipt.get('search_query_count')))
+            external_request_performed=bool(external_calls),
+            cache_hit=q['cache_hit'], source_search_query_count=receipt.get('search_query_count'),
+            source_count_basis=receipt.get('count_basis'), source_declared_counts=declared_counts,
+            source_result_identifiers=identifiers,
+            known_resolved_work_count=len({wid for wid in resolved if wid is not None}),
+            unresolved_record_count=sum(wid is None for wid in resolved) if rows_observed or cached_pdf else None))
     touched.update(('queries', 'source-observations', 'tasks'))
     latest = latest_tasks(data['tasks'])
     query_tasks = defaultdict(list)
