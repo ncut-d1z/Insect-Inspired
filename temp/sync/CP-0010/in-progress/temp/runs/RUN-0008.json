@@ -19,9 +19,9 @@
   },
   "status": "running",
   "branch": "research/p3-p6-cp10",
-  "external_requests_used": 0,
-  "manual_review_items_used": 0,
-  "cache_reuse_events": 0,
+  "external_requests_used": 16,
+  "manual_review_items_used": 6,
+  "cache_reuse_events": 1,
   "paid_spend": 0,
   "closure": false,
   "research_cutoff_at_utc": "2026-11-26T05:24:08Z",
@@ -55,5 +55,7 @@
     "recompute_at_each_canonical_write_and_checkpoint": true
   },
   "prior_maintenance_is_not_scientific_review": true,
-  "next_batch": "P3/P4 Egelhaaf and existing seed citation gaps; P5 official grant records; P6 Tanaka original species/condition evidence. Preserve unresolved or inaccessible evidence as open."
+  "next_batch": "Complete CP10 QA and full independent remote verification before further research.",
+  "last_completed_batch": "Explicit committed RUN8 review candidates integrated; exact activities, observations and retained failures are recorded in the input bindings and ledgers.",
+  "sync_state": "canonical_transaction_pending_publication"
 }
