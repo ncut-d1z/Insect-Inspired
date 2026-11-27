@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "verified_at_utc": "2026-11-27T00:55:42.720143Z",
+  "repository": "ncut-d1z/Insect-Inspired",
+  "checkpoint_id": "CP-0006",
+  "scope_id": "SCOPE-0001",
+  "canonical_commit": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5",
+  "canonical_tree": "32a732212b9151c2ee1ee75a91081ffcbca60d9b",
+  "git_parent": "fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0",
+  "parent_checkpoint_id": "CP-0005",
+  "checkpoint_sha256": "43c11e7465404e956274fdaadef74f7bd0d27177111de5200f127f36c8c7d47d",
+  "canonical_file_count": 1256,
+  "canonical_file_bytes": 881966656,
+  "artifact_hash_count": 1255,
+  "partition_dataset_count": 7,
+  "partition_part_count": 120,
+  "remote_check_count": 5356,
+  "remote_failures": [],
+  "remote_clone_arguments": [
+    "clone",
+    "--no-local",
+    "--no-checkout",
+    "--template=",
+    "--branch",
+    "research/p3-p6-cp6",
+    "--origin",
+    "origin",
+    "https://github.com/ncut-d1z/Insect-Inspired.git",
+    "/home/runner/work/_temp/cp6-sync.mB1kJT/independent-remote-clone"
+  ],
+  "local_objects_borrowed": false,
+  "trusted_inventory_sha256": "7c775ec0450eb5c3f1492a5eedb72e3bb1fc034ba2e8069763ac5e5f7f414e61",
+  "trusted_inventory_basis": "Fresh bundle-restored tree pinned by the pre-outage commit/tree, exact bundle and checkpoint hashes; not a recovery of the unavailable private manifest.",
+  "original_input_commit": "1b46308cab46fe7611c6af465cb338c65549275b",
+  "verification_workflow_input_commit": "526e5b973bf57466d3150c0331fe3343f2240add",
+  "verification_run_id": 45919410467,
+  "verification_run_url": "https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45919410467",
+  "import_run_id": 45911635168,
+  "import_run_url": "https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45911635168",
+  "bundle_bytes": 26519358,
+  "bundle_sha256": "cc53dbbe5ddc1045214c38a0aafe088e9c869836219e3c65707adab2c397a142",
+  "bundle_part_count": 51,
+  "main_observed": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+  "main_modified": false,
+  "original_container_currently_accessible": false,
+  "original_container_rescanned": false,
+  "last_accessible_canonical_worktree": "clean; exact CP6 commit and tree recorded before import",
+  "recovered_worktree_checked": true,
+  "recovered_worktree_missing_remote_branch_commits": [],
+  "powershell_executed": false,
+  "scientific_research_added_during_delivery": false,
+  "phase_status": {
+    "P3": "iterated_partial_checkpointed",
+    "P4": "iterated_partial_checkpointed",
+    "P5": "iterated_partial_checkpointed",
+    "P6": "iterated_partial_checkpointed"
+  },
+  "research_closure_established": false,
+  "run4_budget_exhausted": true,
+  "proof_publication_acceptance": "This receipt is finalized before its enclosing Git commit. Accept publication only after this run succeeds and its full remote proof readback passes.",
+  "evidence_files": [
+    {
+      "path": "import-actions-job.log",
+      "bytes": 28938,
+      "sha256": "771543de7e6e7d64fc553c4b133b66f064ca37ebaf512fc8d43085302e094e67"
+    },
+    {
+      "path": "import-actions-jobs.json",
+      "bytes": 1987,
+      "sha256": "3cfa5c0b1ce4ebd0c2357af6ef266caa698fc3bd11329b861210ede98915c605"
+    },
+    {
+      "path": "import-actions-run.json",
+      "bytes": 13839,
+      "sha256": "714d9ccc531eda10b1f967486347fa562e9f91580b78e267d8e5a27ca039d0e8"
+    },
+    {
+      "path": "local-integrity-cp6.json",
+      "bytes": 1491200,
+      "sha256": "7c775ec0450eb5c3f1492a5eedb72e3bb1fc034ba2e8069763ac5e5f7f414e61"
+    },
+    {
+      "path": "manual-restore-verification.json",
+      "bytes": 12141,
+      "sha256": "47ce9331a639e44c0326d181f7a75a3c2a5084d69ef325f5b6effd48ffb4a6e1"
+    },
+    {
+      "path": "package-input-verification.json",
+      "bytes": 9966,
+      "sha256": "371f4a225e5933bc087d281dfa28b0d604a9f4fd6b7f35cbd0d534a213f380e4"
+    },
+    {
+      "path": "recovered-worktree-verification.json",
+      "bytes": 1774,
+      "sha256": "7b2b49770ab4fb202a7539be230a57e55270cbc682a01480c36b0e1df5aed048"
+    },
+    {
+      "path": "remote-verification-cp6.json",
+      "bytes": 1489110,
+      "sha256": "950cac810d55613b5a344a94136ca39ab91e1b79563fa1939de533829a50790a"
+    },
+    {
+      "path": "runtime-delivery-context.json",
+      "bytes": 2403,
+      "sha256": "be35c0a1221748617056ce845ae8ee03b3536fbcb6184a87dd1d414351635d1e"
+    }
+  ]
+}

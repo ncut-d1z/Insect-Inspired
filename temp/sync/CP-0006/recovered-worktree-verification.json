@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checked_at_utc": "2026-11-27T00:55:32.100315Z",
+  "basis": "New independent bundle-restored GitHub Actions worktree. The earlier unavailable container disk was not re-scanned.",
+  "canonical_commit": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5",
+  "canonical_tree": "32a732212b9151c2ee1ee75a91081ffcbca60d9b",
+  "git_parent": "fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0",
+  "verified_file_count": 1256,
+  "verified_file_bytes": 881966656,
+  "untracked_or_ignored_files": [],
+  "worktree_clean": true,
+  "index_matches_head": true,
+  "worktree_bytes_match_inventory": true,
+  "remote_heads_before": {
+    "refs/heads/main": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+    "refs/heads/research/p3-p6-cp5": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+    "refs/heads/research/p3-p6-cp6": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5",
+    "refs/heads/sync/cp5-checkpoint-import": "b0e87ab4669e8c1c7832a2187314c90a41dca438",
+    "refs/heads/sync/cp6-checkpoint-import": "526e5b973bf57466d3150c0331fe3343f2240add"
+  },
+  "remote_heads_after": {
+    "refs/heads/main": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+    "refs/heads/research/p3-p6-cp5": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+    "refs/heads/research/p3-p6-cp6": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5",
+    "refs/heads/sync/cp5-checkpoint-import": "b0e87ab4669e8c1c7832a2187314c90a41dca438",
+    "refs/heads/sync/cp6-checkpoint-import": "526e5b973bf57466d3150c0331fe3343f2240add"
+  },
+  "local_heads": {
+    "refs/heads/cp6-prerequisite": "fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0",
+    "refs/heads/research/p3-p6-cp6": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5"
+  },
+  "local_branch_commits_missing_from_remote_heads": [],
+  "canonical_and_main_unchanged": true
+}
