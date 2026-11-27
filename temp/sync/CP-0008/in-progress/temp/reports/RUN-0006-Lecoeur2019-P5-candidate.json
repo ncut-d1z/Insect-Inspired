@@ -1,0 +1,4050 @@
+{
+  "review_id": "REV-RUN06-Lecoeur2019-P5",
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0008",
+  "reviewed_at_utc": "2026-11-27T07:08:49Z",
+  "reviewer": "RUN-0006 P5/P6 evidence reviewer",
+  "status": "reviewed_schema_valid_candidate_not_yet_integrated",
+  "source_bindings": [
+    {
+      "query_id": "Q-RUN06-P6-Lecoeur-cache-001",
+      "original_pdf_query_id": "Q-RUN01-00287",
+      "version_id": "V-W-D164a2202bdd6930e-01",
+      "pdf_sha256": "e35d53aa87c197f5ea66e7fd532a7b383e835ffb03b0edcf4c0de88beceb7955",
+      "evidence_review_path": "temp/reports/RUN-0006-Lecoeur2019-evidence-review.json",
+      "evidence_review_sha256": "32932a17aeee50ab416931bd464eefd220eeb5310d28cce711ce84394f4206a3",
+      "pages": [
+        1,
+        13
+      ],
+      "new_external_requests": 0
+    }
+  ],
+  "additions": {
+    "organizations": [
+      {
+        "org_id": "ORG-RUN06-Stockholm-FunctionalMorphology",
+        "canonical_name": "Division of Functional Morphology, Department of Zoology, Stockholm University",
+        "name_variants": [
+          "Division of Functional Morphology, Department of Zoology, Stockholm University, Stockholm, SE-10691, Sweden"
+        ],
+        "raw_affiliations": [
+          "Division of Functional Morphology, Department of Zoology, Stockholm University, Stockholm, SE-10691, Sweden"
+        ],
+        "ror": null,
+        "external_ids": {},
+        "organization_level": "other",
+        "parent_org_id": "ORG-R512ecbd863f32893",
+        "historical_relations": [],
+        "valid_from": null,
+        "valid_to": null,
+        "verification_status": "source_supported",
+        "sources": [
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "ror": {
+            "status": "unknown",
+            "reason": "未核对该下属单位是否有独立 ROR 标识；不能把大学的 ROR 当作其独立身份。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-003ebb9adde89218"
+          },
+          "valid_from": {
+            "status": "not_reported",
+            "reason": "论文发表时署名只给单位名称和层级，未报告该机构存在或名称有效区间的开始。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "valid_to": {
+            "status": "not_reported",
+            "reason": "论文发表时署名未报告该机构存在或名称有效区间的终点。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      }
+    ],
+    "projects": [
+      {
+        "project_id": "PRJ-SNSF-200021_155907",
+        "canonical_name": "Funding acknowledgment: Swiss National Science Foundation 200021_155907",
+        "grant_id": "200021_155907",
+        "org_ids": [],
+        "person_ids": [
+          "P-Rdc584738c14720f0"
+        ],
+        "start_date": null,
+        "end_date": null,
+        "objective": null,
+        "url": null,
+        "output_work_ids": [
+          "W-D164a2202bdd6930e"
+        ],
+        "project_relation": "funding_acknowledgment",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 13,
+            "section": "Acknowledgements",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "evidence_note": "原文 p13 致谢：Swiss National Science Foundation，grant 200021_155907，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+          }
+        ],
+        "verification_status": "source_supported",
+        "sources": [
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swiss National Science Foundation，grant 200021_155907，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "start_date": {
+            "status": "unknown",
+            "reason": "项目资助开始日期未从官方来源核验，原文致谢不提供。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swiss National Science Foundation，grant 200021_155907，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-a5209fd297931ded"
+          },
+          "end_date": {
+            "status": "unknown",
+            "reason": "项目资助结束日期未从官方来源核验，原文致谢不提供。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swiss National Science Foundation，grant 200021_155907，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-68594b9ac8f26107"
+          },
+          "objective": {
+            "status": "unknown",
+            "reason": "原文致谢没有项目正式目标；尚未核对官方登记。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swiss National Science Foundation，grant 200021_155907，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-dda29f93945a8ff7"
+          },
+          "url": {
+            "status": "unknown",
+            "reason": "尚未核对官方项目登记 URL；不把论文 URL 伪装成项目主页。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swiss National Science Foundation，grant 200021_155907，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-ef1a88a957a94ecd"
+          },
+          "org_ids": {
+            "status": "unknown",
+            "reason": "项目承办或参加机构未核验；不从受助作者的署名单位推断。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swiss National Science Foundation，grant 200021_155907，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-d78c9c6e0547c081"
+          },
+          "canonical_name": {
+            "status": "reported",
+            "reason": "该值是按资助机构和编号构造的致谢记录显示标签，并非核验过的官方项目名称。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swiss National Science Foundation，grant 200021_155907，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "person_ids": {
+            "status": "reported",
+            "reason": "只表示论文致谢明确点名的受资助作者；不表示已确认 PI、完整参与名单或正式项目职务。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swiss National Science Foundation，grant 200021_155907，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "output_work_ids": {
+            "status": "reported",
+            "reason": "只按 funding_acknowledgment 关联这篇论文；不是 official_confirmed 的官方成果清单。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swiss National Science Foundation，grant 200021_155907，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        },
+        "notes": "Acknowledgment-only record. The canonical_name is a descriptive identifier label, not an official project title. Recipients are named supported authors, not inferred PIs or complete participants. Publication-time affiliation is not project-host evidence. No official registry query has been performed in this batch."
+      },
+      {
+        "project_id": "PRJ-SSF-FFL09-0056",
+        "canonical_name": "Funding acknowledgment: Swedish Foundation for Strategic Research FFL09-0056",
+        "grant_id": "FFL09-0056",
+        "org_ids": [],
+        "person_ids": [
+          "P-Rdc584738c14720f0"
+        ],
+        "start_date": null,
+        "end_date": null,
+        "objective": null,
+        "url": null,
+        "output_work_ids": [
+          "W-D164a2202bdd6930e"
+        ],
+        "project_relation": "funding_acknowledgment",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 13,
+            "section": "Acknowledgements",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+          }
+        ],
+        "verification_status": "source_supported",
+        "sources": [
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "start_date": {
+            "status": "unknown",
+            "reason": "项目资助开始日期未从官方来源核验，原文致谢不提供。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-e21874f17a289594"
+          },
+          "end_date": {
+            "status": "unknown",
+            "reason": "项目资助结束日期未从官方来源核验，原文致谢不提供。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-3cd756ef5c868105"
+          },
+          "objective": {
+            "status": "unknown",
+            "reason": "原文致谢没有项目正式目标；尚未核对官方登记。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-3ad5b37029184f0e"
+          },
+          "url": {
+            "status": "unknown",
+            "reason": "尚未核对官方项目登记 URL；不把论文 URL 伪装成项目主页。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-00c6abe8b5a463c5"
+          },
+          "org_ids": {
+            "status": "unknown",
+            "reason": "项目承办或参加机构未核验；不从受助作者的署名单位推断。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-b4ef60a6796a2799"
+          },
+          "canonical_name": {
+            "status": "reported",
+            "reason": "该值是按资助机构和编号构造的致谢记录显示标签，并非核验过的官方项目名称。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "person_ids": {
+            "status": "reported",
+            "reason": "只表示论文致谢明确点名的受资助作者；不表示已确认 PI、完整参与名单或正式项目职务。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "output_work_ids": {
+            "status": "reported",
+            "reason": "只按 funding_acknowledgment 关联这篇论文；不是 official_confirmed 的官方成果清单。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        },
+        "notes": "Acknowledgment-only record. The canonical_name is a descriptive identifier label, not an official project title. Recipients are named supported authors, not inferred PIs or complete participants. Publication-time affiliation is not project-host evidence. No official registry query has been performed in this batch."
+      },
+      {
+        "project_id": "PRJ-SRC-2014-4762",
+        "canonical_name": "Funding acknowledgment: Swedish Research Council 2014-4762",
+        "grant_id": "2014-4762",
+        "org_ids": [],
+        "person_ids": [
+          "P-R4fd44dcfb79b41f1",
+          "P-R28fa72425ea5f963"
+        ],
+        "start_date": null,
+        "end_date": null,
+        "objective": null,
+        "url": null,
+        "output_work_ids": [
+          "W-D164a2202bdd6930e"
+        ],
+        "project_relation": "funding_acknowledgment",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 13,
+            "section": "Acknowledgements",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "evidence_note": "原文 p13 致谢：Swedish Research Council，grant 2014-4762，明确受助作者 Emily Baird, Marie Dacke。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+          }
+        ],
+        "verification_status": "source_supported",
+        "sources": [
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Research Council，grant 2014-4762，明确受助作者 Emily Baird, Marie Dacke。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "start_date": {
+            "status": "unknown",
+            "reason": "项目资助开始日期未从官方来源核验，原文致谢不提供。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Research Council，grant 2014-4762，明确受助作者 Emily Baird, Marie Dacke。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-06ce4d0b973a1cf4"
+          },
+          "end_date": {
+            "status": "unknown",
+            "reason": "项目资助结束日期未从官方来源核验，原文致谢不提供。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Research Council，grant 2014-4762，明确受助作者 Emily Baird, Marie Dacke。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-84489eaff0144316"
+          },
+          "objective": {
+            "status": "unknown",
+            "reason": "原文致谢没有项目正式目标；尚未核对官方登记。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Research Council，grant 2014-4762，明确受助作者 Emily Baird, Marie Dacke。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-512f0af2ec7fae3b"
+          },
+          "url": {
+            "status": "unknown",
+            "reason": "尚未核对官方项目登记 URL；不把论文 URL 伪装成项目主页。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Research Council，grant 2014-4762，明确受助作者 Emily Baird, Marie Dacke。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-a64491997a3a40ce"
+          },
+          "org_ids": {
+            "status": "unknown",
+            "reason": "项目承办或参加机构未核验；不从受助作者的署名单位推断。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Research Council，grant 2014-4762，明确受助作者 Emily Baird, Marie Dacke。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-b20dee5d2e93f1a0"
+          },
+          "canonical_name": {
+            "status": "reported",
+            "reason": "该值是按资助机构和编号构造的致谢记录显示标签，并非核验过的官方项目名称。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Research Council，grant 2014-4762，明确受助作者 Emily Baird, Marie Dacke。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "person_ids": {
+            "status": "reported",
+            "reason": "只表示论文致谢明确点名的受资助作者；不表示已确认 PI、完整参与名单或正式项目职务。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Research Council，grant 2014-4762，明确受助作者 Emily Baird, Marie Dacke。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "output_work_ids": {
+            "status": "reported",
+            "reason": "只按 funding_acknowledgment 关联这篇论文；不是 official_confirmed 的官方成果清单。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Research Council，grant 2014-4762，明确受助作者 Emily Baird, Marie Dacke。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        },
+        "notes": "Acknowledgment-only record. The canonical_name is a descriptive identifier label, not an official project title. Recipients are named supported authors, not inferred PIs or complete participants. Publication-time affiliation is not project-host evidence. No official registry query has been performed in this batch."
+      }
+    ],
+    "project-relations": [
+      {
+        "relation_id": "ER-RUN06-PRJ-SNSF-200021_155907-P-Rdc584738c14720f0-funding",
+        "relation_type": "funded_by",
+        "from_id": "P-Rdc584738c14720f0",
+        "to_id": "PRJ-SNSF-200021_155907",
+        "valid_from": "2019-05-22",
+        "valid_to": "2019-05-22",
+        "verification_status": "source_supported",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 13,
+            "section": "Acknowledgements",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "evidence_note": "原文 p13 致谢：Swiss National Science Foundation，grant 200021_155907，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。 Relation dates are the publication-time evidence point, not a funding duration."
+          }
+        ],
+        "work_id": "W-D164a2202bdd6930e"
+      },
+      {
+        "relation_id": "ER-RUN06-PRJ-SSF-FFL09-0056-P-Rdc584738c14720f0-funding",
+        "relation_type": "funded_by",
+        "from_id": "P-Rdc584738c14720f0",
+        "to_id": "PRJ-SSF-FFL09-0056",
+        "valid_from": "2019-05-22",
+        "valid_to": "2019-05-22",
+        "verification_status": "source_supported",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 13,
+            "section": "Acknowledgements",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。 Relation dates are the publication-time evidence point, not a funding duration."
+          }
+        ],
+        "work_id": "W-D164a2202bdd6930e"
+      },
+      {
+        "relation_id": "ER-RUN06-PRJ-SRC-2014-4762-P-R4fd44dcfb79b41f1-funding",
+        "relation_type": "funded_by",
+        "from_id": "P-R4fd44dcfb79b41f1",
+        "to_id": "PRJ-SRC-2014-4762",
+        "valid_from": "2019-05-22",
+        "valid_to": "2019-05-22",
+        "verification_status": "source_supported",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 13,
+            "section": "Acknowledgements",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "evidence_note": "原文 p13 致谢：Swedish Research Council，grant 2014-4762，明确受助作者 Emily Baird, Marie Dacke。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。 Relation dates are the publication-time evidence point, not a funding duration."
+          }
+        ],
+        "work_id": "W-D164a2202bdd6930e"
+      },
+      {
+        "relation_id": "ER-RUN06-PRJ-SRC-2014-4762-P-R28fa72425ea5f963-funding",
+        "relation_type": "funded_by",
+        "from_id": "P-R28fa72425ea5f963",
+        "to_id": "PRJ-SRC-2014-4762",
+        "valid_from": "2019-05-22",
+        "valid_to": "2019-05-22",
+        "verification_status": "source_supported",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 13,
+            "section": "Acknowledgements",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "evidence_note": "原文 p13 致谢：Swedish Research Council，grant 2014-4762，明确受助作者 Emily Baird, Marie Dacke。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。 Relation dates are the publication-time evidence point, not a funding duration."
+          }
+        ],
+        "work_id": "W-D164a2202bdd6930e"
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "T-Unknown-003ebb9adde89218",
+        "entity_type": "organization",
+        "entity_id": "ORG-RUN06-Stockholm-FunctionalMorphology",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "ror",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "未核对该下属单位是否有独立 ROR 标识；不能把大学的 ROR 当作其独立身份。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "ror",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-003ebb9adde89218",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-faa6e95a41eb4832",
+        "entity_type": "work",
+        "entity_id": "W-D164a2202bdd6930e",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {},
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "已核验原文 p1 该作者编号机构；仅发表时署名身份。原始 unknown_since/deadline 保留，未改写先前事件。",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": "authors.1.organization_ids",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-Unknown-faa6e95a41eb4832",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ]
+      },
+      {
+        "task_id": "T-Unknown-28ebd079b295dee3",
+        "entity_type": "work",
+        "entity_id": "W-D164a2202bdd6930e",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {},
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "已核验原文 p1 该作者编号机构；仅发表时署名身份。原始 unknown_since/deadline 保留，未改写先前事件。",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": "authors.2.organization_ids",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-Unknown-28ebd079b295dee3",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ]
+      },
+      {
+        "task_id": "T-Unknown-e15e943e9da7e481",
+        "entity_type": "work",
+        "entity_id": "W-D164a2202bdd6930e",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {},
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "已核验原文 p1 该作者编号机构；仅发表时署名身份。原始 unknown_since/deadline 保留，未改写先前事件。",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": "authors.3.organization_ids",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-Unknown-e15e943e9da7e481",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ]
+      },
+      {
+        "task_id": "T-Unknown-122712f9df0c2436",
+        "entity_type": "work",
+        "entity_id": "W-D164a2202bdd6930e",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {},
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "已核验原文 p1 该作者编号机构；仅发表时署名身份。原始 unknown_since/deadline 保留，未改写先前事件。",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": "authors.4.organization_ids",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-Unknown-122712f9df0c2436",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ]
+      },
+      {
+        "task_id": "T-Unknown-a5209fd297931ded",
+        "entity_type": "project",
+        "entity_id": "PRJ-SNSF-200021_155907",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "start_date",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "项目资助开始日期未从官方来源核验，原文致谢不提供。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "start_date",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-a5209fd297931ded",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-68594b9ac8f26107",
+        "entity_type": "project",
+        "entity_id": "PRJ-SNSF-200021_155907",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "end_date",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "项目资助结束日期未从官方来源核验，原文致谢不提供。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "end_date",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-68594b9ac8f26107",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-dda29f93945a8ff7",
+        "entity_type": "project",
+        "entity_id": "PRJ-SNSF-200021_155907",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "objective",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "原文致谢没有项目正式目标；尚未核对官方登记。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "objective",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-dda29f93945a8ff7",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-ef1a88a957a94ecd",
+        "entity_type": "project",
+        "entity_id": "PRJ-SNSF-200021_155907",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "url",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "尚未核对官方项目登记 URL；不把论文 URL 伪装成项目主页。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "url",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-ef1a88a957a94ecd",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-d78c9c6e0547c081",
+        "entity_type": "project",
+        "entity_id": "PRJ-SNSF-200021_155907",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "org_ids",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "项目承办或参加机构未核验；不从受助作者的署名单位推断。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "org_ids",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-d78c9c6e0547c081",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-e21874f17a289594",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "start_date",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "项目资助开始日期未从官方来源核验，原文致谢不提供。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "start_date",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-e21874f17a289594",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-3cd756ef5c868105",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "end_date",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "项目资助结束日期未从官方来源核验，原文致谢不提供。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "end_date",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-3cd756ef5c868105",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-3ad5b37029184f0e",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "objective",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "原文致谢没有项目正式目标；尚未核对官方登记。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "objective",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-3ad5b37029184f0e",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-00c6abe8b5a463c5",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "url",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "尚未核对官方项目登记 URL；不把论文 URL 伪装成项目主页。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "url",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-00c6abe8b5a463c5",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-b4ef60a6796a2799",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "org_ids",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "项目承办或参加机构未核验；不从受助作者的署名单位推断。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "org_ids",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-b4ef60a6796a2799",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-06ce4d0b973a1cf4",
+        "entity_type": "project",
+        "entity_id": "PRJ-SRC-2014-4762",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "start_date",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "项目资助开始日期未从官方来源核验，原文致谢不提供。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "start_date",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-06ce4d0b973a1cf4",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-84489eaff0144316",
+        "entity_type": "project",
+        "entity_id": "PRJ-SRC-2014-4762",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "end_date",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "项目资助结束日期未从官方来源核验，原文致谢不提供。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "end_date",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-84489eaff0144316",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-512f0af2ec7fae3b",
+        "entity_type": "project",
+        "entity_id": "PRJ-SRC-2014-4762",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "objective",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "原文致谢没有项目正式目标；尚未核对官方登记。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "objective",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-512f0af2ec7fae3b",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-a64491997a3a40ce",
+        "entity_type": "project",
+        "entity_id": "PRJ-SRC-2014-4762",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "url",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "尚未核对官方项目登记 URL；不把论文 URL 伪装成项目主页。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "url",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-a64491997a3a40ce",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-b20dee5d2e93f1a0",
+        "entity_type": "project",
+        "entity_id": "PRJ-SRC-2014-4762",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "org_ids",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "项目承办或参加机构未核验；不从受助作者的署名单位推断。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "org_ids",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-b20dee5d2e93f1a0",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      }
+    ],
+    "manual-reviews": [
+      {
+        "review_id": "MR-RUN06-Lecoeur2019-P5-typed-relations",
+        "run_id": "RUN-0006",
+        "review_type": "typed_author_affiliation_funding_review",
+        "entity_id": "W-D164a2202bdd6930e",
+        "reviewer": "RUN-0006 P5/P6 evidence reviewer",
+        "recorded_at_utc": "2026-11-27T07:08:49Z",
+        "artifact": "temp/reports/RUN-0006-Lecoeur2019-P5-candidate.json",
+        "notes": "将已读 p1 全部四作者和 p13 致谢映射到现有 Person/Organization；复用实体、确认五条发表时机构关联、三个 grant 与四条明确受助作者关系；校验完整 before/after、未知字段任务与原始时钟。这是新增类型/关系复核 1 单位，原文阅读已在 Assessment 候选的 byline/funding 两单位计数，不重复。"
+      }
+    ]
+  },
+  "changed_records": [
+    {
+      "dataset": "organizations",
+      "id": "ORG-R5287073948817fd1",
+      "before": {
+        "org_id": "ORG-R5287073948817fd1",
+        "canonical_name": "Laboratory of Intelligent Systems, École Polytechnique Fédérale de Lausanne, CH-1015 Lausanne, Switzerland;",
+        "name_variants": [
+          "Laboratory of Intelligent Systems, École Polytechnique Fédérale de Lausanne, CH-1015 Lausanne, Switzerland;"
+        ],
+        "raw_affiliations": [
+          "Laboratory of Intelligent Systems, École Polytechnique Fédérale de Lausanne, CH-1015 Lausanne, Switzerland;"
+        ],
+        "ror": null,
+        "external_ids": {},
+        "organization_level": "other",
+        "parent_org_id": null,
+        "historical_relations": [],
+        "valid_from": null,
+        "valid_to": null,
+        "verification_status": "source_supported",
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1073%2Fpnas.1219068110",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1073%2Fpnas.1219068110",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "ror": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1073%2Fpnas.1219068110",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-610839f1fddfe356"
+          },
+          "parent_org_id": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1073%2Fpnas.1219068110",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-6e2127a9007e2f90"
+          },
+          "valid_from": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1073%2Fpnas.1219068110",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-6fff9442c6a8e406"
+          },
+          "valid_to": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1073%2Fpnas.1219068110",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-be0c63f9c7556888"
+          }
+        }
+      },
+      "after": {
+        "org_id": "ORG-R5287073948817fd1",
+        "canonical_name": "Laboratory of Intelligent Systems, École Polytechnique Fédérale de Lausanne, CH-1015 Lausanne, Switzerland;",
+        "name_variants": [
+          "Laboratory of Intelligent Systems, École Polytechnique Fédérale de Lausanne, CH-1015 Lausanne, Switzerland;",
+          "Laboratory of Intelligent Systems, Institute of Microengineering, École Polytechnique Fédérale de Lausanne, Lausanne, CH-1015, Switzerland"
+        ],
+        "raw_affiliations": [
+          "Laboratory of Intelligent Systems, École Polytechnique Fédérale de Lausanne, CH-1015 Lausanne, Switzerland;",
+          "Laboratory of Intelligent Systems, Institute of Microengineering, École Polytechnique Fédérale de Lausanne, Lausanne, CH-1015, Switzerland"
+        ],
+        "ror": null,
+        "external_ids": {},
+        "organization_level": "laboratory",
+        "parent_org_id": null,
+        "historical_relations": [],
+        "valid_from": null,
+        "valid_to": null,
+        "verification_status": "source_supported",
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1073%2Fpnas.1219068110",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1073%2Fpnas.1219068110",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "ror": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1073%2Fpnas.1219068110",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-610839f1fddfe356"
+          },
+          "parent_org_id": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1073%2Fpnas.1219068110",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-6e2127a9007e2f90"
+          },
+          "valid_from": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1073%2Fpnas.1219068110",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-6fff9442c6a8e406"
+          },
+          "valid_to": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1073%2Fpnas.1219068110",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-be0c63f9c7556888"
+          }
+        }
+      },
+      "changed_field_names": [
+        "name_variants",
+        "organization_level",
+        "raw_affiliations",
+        "sources"
+      ]
+    },
+    {
+      "dataset": "organizations",
+      "id": "ORG-R26a18fb6444a633c",
+      "before": {
+        "org_id": "ORG-R26a18fb6444a633c",
+        "canonical_name": "Lund Vision Group, Department of Biology, Lund University, Lund SE-22362, Sweden",
+        "name_variants": [
+          "Lund Vision Group, Department of Biology, Lund University, Lund SE-22362, Sweden"
+        ],
+        "raw_affiliations": [
+          "Lund Vision Group, Department of Biology, Lund University, Lund SE-22362, Sweden"
+        ],
+        "ror": null,
+        "external_ids": {},
+        "organization_level": "other",
+        "parent_org_id": null,
+        "historical_relations": [],
+        "valid_from": null,
+        "valid_to": null,
+        "verification_status": "source_supported",
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1242%2Fjeb.107409",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1242%2Fjeb.107409",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00301"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "ror": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1242%2Fjeb.107409",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00301"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-363be4421c577dbf"
+          },
+          "parent_org_id": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1242%2Fjeb.107409",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00301"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-c3be5b4c2c3c80ea"
+          },
+          "valid_from": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1242%2Fjeb.107409",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00301"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-af48aa1f172b4f99"
+          },
+          "valid_to": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1242%2Fjeb.107409",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00301"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-a08695992482155d"
+          }
+        }
+      },
+      "after": {
+        "org_id": "ORG-R26a18fb6444a633c",
+        "canonical_name": "Lund Vision Group, Department of Biology, Lund University, Lund SE-22362, Sweden",
+        "name_variants": [
+          "Lund Vision Group, Department of Biology, Lund University, Lund SE-22362, Sweden",
+          "Lund Vision Group, Department of Biology, Lund University, Lund, SE-22362, Sweden"
+        ],
+        "raw_affiliations": [
+          "Lund Vision Group, Department of Biology, Lund University, Lund SE-22362, Sweden",
+          "Lund Vision Group, Department of Biology, Lund University, Lund, SE-22362, Sweden"
+        ],
+        "ror": null,
+        "external_ids": {},
+        "organization_level": "research_group",
+        "parent_org_id": null,
+        "historical_relations": [],
+        "valid_from": null,
+        "valid_to": null,
+        "verification_status": "source_supported",
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1242%2Fjeb.107409",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1242%2Fjeb.107409",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00301"
+              }
+            ]
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "ror": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1242%2Fjeb.107409",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00301"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-363be4421c577dbf"
+          },
+          "parent_org_id": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1242%2Fjeb.107409",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00301"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-c3be5b4c2c3c80ea"
+          },
+          "valid_from": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1242%2Fjeb.107409",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00301"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-af48aa1f172b4f99"
+          },
+          "valid_to": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1242%2Fjeb.107409",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00301"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-a08695992482155d"
+          }
+        }
+      },
+      "changed_field_names": [
+        "name_variants",
+        "organization_level",
+        "raw_affiliations",
+        "sources"
+      ]
+    },
+    {
+      "dataset": "organizations",
+      "id": "ORG-R512ecbd863f32893",
+      "before": {
+        "org_id": "ORG-R512ecbd863f32893",
+        "canonical_name": "Department of Zoology, Stockholm University, Stockholm, Sweden",
+        "name_variants": [
+          "Department of Zoology, Stockholm University, Stockholm, Sweden"
+        ],
+        "raw_affiliations": [
+          "Department of Zoology, Stockholm University, Stockholm, Sweden"
+        ],
+        "ror": null,
+        "external_ids": {},
+        "organization_level": "other",
+        "parent_org_id": null,
+        "historical_relations": [],
+        "valid_from": null,
+        "valid_to": null,
+        "verification_status": "source_supported",
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1098%2Frspb.2020.3051",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1098%2Frspb.2020.3051",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00437"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "ror": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1098%2Frspb.2020.3051",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00437"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-d598aa4e99498658"
+          },
+          "parent_org_id": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1098%2Frspb.2020.3051",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00437"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-0878ecd0c66091a9"
+          },
+          "valid_from": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1098%2Frspb.2020.3051",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00437"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-56c5e82400d39a6a"
+          },
+          "valid_to": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1098%2Frspb.2020.3051",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00437"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-e523d00dc3016041"
+          }
+        }
+      },
+      "after": {
+        "org_id": "ORG-R512ecbd863f32893",
+        "canonical_name": "Department of Zoology, Stockholm University, Stockholm, Sweden",
+        "name_variants": [
+          "Department of Zoology, Stockholm University, Stockholm, Sweden",
+          "Department of Zoology, Stockholm University, Stockholm, SE-10691, Sweden"
+        ],
+        "raw_affiliations": [
+          "Department of Zoology, Stockholm University, Stockholm, Sweden",
+          "Department of Zoology, Stockholm University, Stockholm, SE-10691, Sweden"
+        ],
+        "ror": null,
+        "external_ids": {},
+        "organization_level": "department",
+        "parent_org_id": null,
+        "historical_relations": [],
+        "valid_from": null,
+        "valid_to": null,
+        "verification_status": "source_supported",
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1098%2Frspb.2020.3051",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1098%2Frspb.2020.3051",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00437"
+              }
+            ]
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "ror": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1098%2Frspb.2020.3051",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00437"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-d598aa4e99498658"
+          },
+          "parent_org_id": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1098%2Frspb.2020.3051",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00437"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-0878ecd0c66091a9"
+          },
+          "valid_from": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1098%2Frspb.2020.3051",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00437"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-56c5e82400d39a6a"
+          },
+          "valid_to": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1098%2Frspb.2020.3051",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00437"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-e523d00dc3016041"
+          }
+        }
+      },
+      "changed_field_names": [
+        "name_variants",
+        "organization_level",
+        "raw_affiliations",
+        "sources"
+      ]
+    },
+    {
+      "dataset": "authors",
+      "id": "P-Rdc584738c14720f0",
+      "before": {
+        "person_id": "P-Rdc584738c14720f0",
+        "display_name": "Julien Lecoeur",
+        "name_variants": [
+          "Julien Lecoeur"
+        ],
+        "orcid": "0000-0002-6697-1980",
+        "external_ids": {},
+        "identity_confidence": "confirmed",
+        "verification_status": "source_supported",
+        "affiliation_history": [],
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-018-24162-z",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-018-24162-z",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          }
+        ],
+        "field_states": {}
+      },
+      "after": {
+        "person_id": "P-Rdc584738c14720f0",
+        "display_name": "Julien Lecoeur",
+        "name_variants": [
+          "Julien Lecoeur"
+        ],
+        "orcid": "0000-0002-6697-1980",
+        "external_ids": {},
+        "identity_confidence": "confirmed",
+        "verification_status": "source_supported",
+        "affiliation_history": [
+          {
+            "org_id": "ORG-R5287073948817fd1",
+            "role": "byline_affiliation_at_publication",
+            "valid_from": "2019-05-22",
+            "valid_to": "2019-05-22",
+            "work_id": "W-D164a2202bdd6930e",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ],
+            "field_states": {
+              "valid_from": {
+                "status": "reported",
+                "reason": "证据时间点为本论文发表日期；不是雇佣/任职起始日期。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              },
+              "valid_to": {
+                "status": "reported",
+                "reason": "与 valid_from 相同，仅表示发表时署名的证据时间点；不是离职日期。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          }
+        ],
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-018-24162-z",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-018-24162-z",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ]
+          }
+        ],
+        "field_states": {}
+      },
+      "changed_field_names": [
+        "affiliation_history",
+        "sources"
+      ]
+    },
+    {
+      "dataset": "authors",
+      "id": "P-R28fa72425ea5f963",
+      "before": {
+        "person_id": "P-R28fa72425ea5f963",
+        "display_name": "Marie Dacke",
+        "name_variants": [
+          "Marie Dacke"
+        ],
+        "orcid": null,
+        "external_ids": {},
+        "identity_confidence": "probable",
+        "verification_status": "source_supported",
+        "affiliation_history": [],
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "orcid": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-814f5b1b1368f4d9"
+          }
+        }
+      },
+      "after": {
+        "person_id": "P-R28fa72425ea5f963",
+        "display_name": "Marie Dacke",
+        "name_variants": [
+          "Marie Dacke"
+        ],
+        "orcid": null,
+        "external_ids": {},
+        "identity_confidence": "probable",
+        "verification_status": "source_supported",
+        "affiliation_history": [
+          {
+            "org_id": "ORG-R26a18fb6444a633c",
+            "role": "byline_affiliation_at_publication",
+            "valid_from": "2019-05-22",
+            "valid_to": "2019-05-22",
+            "work_id": "W-D164a2202bdd6930e",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ],
+            "field_states": {
+              "valid_from": {
+                "status": "reported",
+                "reason": "证据时间点为本论文发表日期；不是雇佣/任职起始日期。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              },
+              "valid_to": {
+                "status": "reported",
+                "reason": "与 valid_from 相同，仅表示发表时署名的证据时间点；不是离职日期。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          }
+        ],
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "orcid": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-814f5b1b1368f4d9"
+          }
+        }
+      },
+      "changed_field_names": [
+        "affiliation_history",
+        "sources"
+      ]
+    },
+    {
+      "dataset": "authors",
+      "id": "P-R0506acfdfb30ffdb",
+      "before": {
+        "person_id": "P-R0506acfdfb30ffdb",
+        "display_name": "Dario Floreano",
+        "name_variants": [
+          "Dario Floreano"
+        ],
+        "orcid": null,
+        "external_ids": {},
+        "identity_confidence": "probable",
+        "verification_status": "source_supported",
+        "affiliation_history": [],
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "orcid": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-5e24bd262235d980"
+          }
+        }
+      },
+      "after": {
+        "person_id": "P-R0506acfdfb30ffdb",
+        "display_name": "Dario Floreano",
+        "name_variants": [
+          "Dario Floreano"
+        ],
+        "orcid": null,
+        "external_ids": {},
+        "identity_confidence": "probable",
+        "verification_status": "source_supported",
+        "affiliation_history": [
+          {
+            "org_id": "ORG-R5287073948817fd1",
+            "role": "byline_affiliation_at_publication",
+            "valid_from": "2019-05-22",
+            "valid_to": "2019-05-22",
+            "work_id": "W-D164a2202bdd6930e",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ],
+            "field_states": {
+              "valid_from": {
+                "status": "reported",
+                "reason": "证据时间点为本论文发表日期；不是雇佣/任职起始日期。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              },
+              "valid_to": {
+                "status": "reported",
+                "reason": "与 valid_from 相同，仅表示发表时署名的证据时间点；不是离职日期。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          }
+        ],
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "orcid": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-5e24bd262235d980"
+          }
+        }
+      },
+      "changed_field_names": [
+        "affiliation_history",
+        "sources"
+      ]
+    },
+    {
+      "dataset": "authors",
+      "id": "P-R4fd44dcfb79b41f1",
+      "before": {
+        "person_id": "P-R4fd44dcfb79b41f1",
+        "display_name": "Emily Baird",
+        "name_variants": [
+          "Emily Baird"
+        ],
+        "orcid": null,
+        "external_ids": {},
+        "identity_confidence": "probable",
+        "verification_status": "source_supported",
+        "affiliation_history": [],
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "orcid": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-ff877ae139e4b3d9"
+          }
+        }
+      },
+      "after": {
+        "person_id": "P-R4fd44dcfb79b41f1",
+        "display_name": "Emily Baird",
+        "name_variants": [
+          "Emily Baird"
+        ],
+        "orcid": null,
+        "external_ids": {},
+        "identity_confidence": "probable",
+        "verification_status": "source_supported",
+        "affiliation_history": [
+          {
+            "org_id": "ORG-R26a18fb6444a633c",
+            "role": "byline_affiliation_at_publication",
+            "valid_from": "2019-05-22",
+            "valid_to": "2019-05-22",
+            "work_id": "W-D164a2202bdd6930e",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ],
+            "field_states": {
+              "valid_from": {
+                "status": "reported",
+                "reason": "证据时间点为本论文发表日期；不是雇佣/任职起始日期。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              },
+              "valid_to": {
+                "status": "reported",
+                "reason": "与 valid_from 相同，仅表示发表时署名的证据时间点；不是离职日期。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          },
+          {
+            "org_id": "ORG-RUN06-Stockholm-FunctionalMorphology",
+            "role": "byline_affiliation_at_publication",
+            "valid_from": "2019-05-22",
+            "valid_to": "2019-05-22",
+            "work_id": "W-D164a2202bdd6930e",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ],
+            "field_states": {
+              "valid_from": {
+                "status": "reported",
+                "reason": "证据时间点为本论文发表日期；不是雇佣/任职起始日期。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              },
+              "valid_to": {
+                "status": "reported",
+                "reason": "与 valid_from 相同，仅表示发表时署名的证据时间点；不是离职日期。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          }
+        ],
+        "sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "orcid": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-ff877ae139e4b3d9"
+          }
+        }
+      },
+      "changed_field_names": [
+        "affiliation_history",
+        "sources"
+      ]
+    },
+    {
+      "dataset": "works",
+      "id": "W-D164a2202bdd6930e",
+      "before": {
+        "work_id": "W-D164a2202bdd6930e",
+        "work_key": "Lecoeur2019",
+        "canonical_title": "The role of optic flow pooling in insect flight control in cluttered environments",
+        "title_variants": [
+          "The role of optic flow pooling in insect flight control in cluttered environments"
+        ],
+        "authors": [
+          {
+            "person_id": "P-Rdc584738c14720f0",
+            "display_name": "Julien Lecoeur",
+            "is_corporate": false,
+            "organization_ids": [],
+            "source": {
+              "source_id": "crossref",
+              "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+              "accessed_at": "2026-11-26",
+              "verification_status": "source_supported",
+              "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "crossref",
+                  "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                  "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                  "accessed_at": "2026-11-26",
+                  "identifier": "Q-RUN01-00273"
+                }
+              ]
+            },
+            "family_name": "Lecoeur",
+            "given_name": "Julien",
+            "field_states": {
+              "organization_ids": {
+                "status": "unknown",
+                "reason": "Byline affiliation has not been checked in the original publication.",
+                "evidence_locator": [
+                  {
+                    "source_id": "crossref",
+                    "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                    "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                    "accessed_at": "2026-11-26",
+                    "identifier": "Q-RUN01-00273"
+                  }
+                ],
+                "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+                "review_task_id": "T-Unknown-faa6e95a41eb4832"
+              }
+            }
+          },
+          {
+            "person_id": "P-R28fa72425ea5f963",
+            "display_name": "Marie Dacke",
+            "is_corporate": false,
+            "organization_ids": [],
+            "source": {
+              "source_id": "crossref",
+              "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+              "accessed_at": "2026-11-26",
+              "verification_status": "source_supported",
+              "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "crossref",
+                  "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                  "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                  "accessed_at": "2026-11-26",
+                  "identifier": "Q-RUN01-00273"
+                }
+              ]
+            },
+            "family_name": "Dacke",
+            "given_name": "Marie",
+            "field_states": {
+              "organization_ids": {
+                "status": "unknown",
+                "reason": "Byline affiliation has not been checked in the original publication.",
+                "evidence_locator": [
+                  {
+                    "source_id": "crossref",
+                    "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                    "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                    "accessed_at": "2026-11-26",
+                    "identifier": "Q-RUN01-00273"
+                  }
+                ],
+                "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+                "review_task_id": "T-Unknown-28ebd079b295dee3"
+              }
+            }
+          },
+          {
+            "person_id": "P-R0506acfdfb30ffdb",
+            "display_name": "Dario Floreano",
+            "is_corporate": false,
+            "organization_ids": [],
+            "source": {
+              "source_id": "crossref",
+              "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+              "accessed_at": "2026-11-26",
+              "verification_status": "source_supported",
+              "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "crossref",
+                  "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                  "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                  "accessed_at": "2026-11-26",
+                  "identifier": "Q-RUN01-00273"
+                }
+              ]
+            },
+            "family_name": "Floreano",
+            "given_name": "Dario",
+            "field_states": {
+              "organization_ids": {
+                "status": "unknown",
+                "reason": "Byline affiliation has not been checked in the original publication.",
+                "evidence_locator": [
+                  {
+                    "source_id": "crossref",
+                    "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                    "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                    "accessed_at": "2026-11-26",
+                    "identifier": "Q-RUN01-00273"
+                  }
+                ],
+                "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+                "review_task_id": "T-Unknown-e15e943e9da7e481"
+              }
+            }
+          },
+          {
+            "person_id": "P-R4fd44dcfb79b41f1",
+            "display_name": "Emily Baird",
+            "is_corporate": false,
+            "organization_ids": [],
+            "source": {
+              "source_id": "crossref",
+              "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+              "accessed_at": "2026-11-26",
+              "verification_status": "source_supported",
+              "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "crossref",
+                  "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                  "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                  "accessed_at": "2026-11-26",
+                  "identifier": "Q-RUN01-00273"
+                }
+              ]
+            },
+            "family_name": "Baird",
+            "given_name": "Emily",
+            "field_states": {
+              "organization_ids": {
+                "status": "unknown",
+                "reason": "Byline affiliation has not been checked in the original publication.",
+                "evidence_locator": [
+                  {
+                    "source_id": "crossref",
+                    "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                    "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                    "accessed_at": "2026-11-26",
+                    "identifier": "Q-RUN01-00273"
+                  }
+                ],
+                "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+                "review_task_id": "T-Unknown-122712f9df0c2436"
+              }
+            }
+          }
+        ],
+        "document_type": "journal_article",
+        "publication_status": "published",
+        "year": 2019,
+        "publication_date": "2019-05-22",
+        "venue": "Scientific Reports",
+        "volume": "9",
+        "number": "1",
+        "pages": null,
+        "eid": "7707",
+        "publisher": "Springer Science and Business Media LLC",
+        "identifiers": {
+          "DOI": "10.1038/s41598-019-44187-2",
+          "PubMedCentral": "6531491",
+          "MAG": "2945160351",
+          "CorpusId": "162180607",
+          "PubMed": "31118454",
+          "semantic_scholar": "581d2c50ea818a8e68a459cb51b6eca387ef71bb"
+        },
+        "doi": "10.1038/s41598-019-44187-2",
+        "url": "https://doi.org/10.1038/s41598-019-44187-2",
+        "language": "en",
+        "discovery_sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          },
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/581d2c50ea818a8e68a459cb51b6eca387ef71bb",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/581d2c50ea818a8e68a459cb51b6eca387ef71bb",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00068"
+              }
+            ]
+          },
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Registry identity cross-check of reference title/author/year; DOI is not accepted on ordinal alone.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          }
+        ],
+        "identity_confidence": "confirmed",
+        "verification_status": "source_supported",
+        "merge_history": [],
+        "fulltext_status": "available_verified",
+        "abstract_status": "chinese_summary_from_fulltext",
+        "abstract_source": {
+          "source_id": "publisher",
+          "url": "https://doi.org/10.1038/s41598-019-44187-2",
+          "identifier": "10.1038/s41598-019-44187-2",
+          "accessed_at": "2026-11-26T07:50:11Z",
+          "version": "vor",
+          "license": "CC BY 4.0",
+          "verification_status": "verified",
+          "evidence_locator": [
+            {
+              "source_id": "publisher",
+              "url": "https://doi.org/10.1038/s41598-019-44187-2",
+              "identifier": "10.1038/s41598-019-44187-2",
+              "version_id": "V-W-D164a2202bdd6930e-01",
+              "accessed_at": "2026-11-26T07:50:11Z",
+              "evidence_note": "中文概括；依据版本、结论边界和量化数字已逐项记录。"
+            }
+          ]
+        },
+        "abstract_items": [
+          {
+            "status": "chinese_summary_from_fulltext",
+            "text": "本文将熊蜂在六种障碍覆盖走廊中的337次飞行与几何光流控制模型比较，研究远背景是否会稀释近障碍信息。前方最大光流池化更能解释侧向位置和速度，而高度需要平均池化及速度耦合；混合模型的标准差归一化总预测误差比三轴均用最大前方池化低50%。结果支持按行为目标采用不同空间池化的假说，但尚未定位相应神经回路。竖直障碍走廊和近似直线运动的实验不能代表任意三维重建，单一最大池化也存在高度及开阔环境失败。",
+            "source": {
+              "source_id": "publisher",
+              "url": "https://doi.org/10.1038/s41598-019-44187-2",
+              "identifier": "10.1038/s41598-019-44187-2",
+              "accessed_at": "2026-11-26T07:50:11Z",
+              "version": "vor",
+              "license": "CC BY 4.0",
+              "verification_status": "verified",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "url": "https://doi.org/10.1038/s41598-019-44187-2",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "accessed_at": "2026-11-26T07:50:11Z",
+                  "evidence_note": "中文概括；依据版本、结论边界和量化数字已逐项记录。"
+                }
+              ]
+            },
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "license": "CC BY 4.0",
+            "summarizer": "P6-fulltext-review-agent-c-iteration2",
+            "date": "2026-11-26",
+            "source_language": "en",
+            "verification_status": "verified"
+          }
+        ],
+        "license": "https://creativecommons.org/licenses/by/4.0; https://creativecommons.org/licenses/by/4.0",
+        "u00_reasons": [],
+        "review_condition": "Retrieve lawful fulltext, verify complete references and citation context, disambiguate authors/affiliations, and assess L01-L09 before any coverage claim.",
+        "dimension_status": {
+          "metadata": "partial",
+          "fulltext": "partial",
+          "abstract": "verified_complete",
+          "references": "partial",
+          "citations": "pending",
+          "authors": "pending",
+          "affiliations_projects": "pending",
+          "assessment": "partial"
+        },
+        "seed_ids": [],
+        "notes": "Discovered from forward_citation; index metadata and original fulltext evidence are separate.  Reviewed publication/version package c/clutter2019; original-version limitations remain explicit.",
+        "field_states": {
+          "pages": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-3298643527cc6c04"
+          }
+        },
+        "discovery_depth": 1,
+        "discovery_path": [
+          {
+            "from_entity_id": "W-S19",
+            "to_entity_id": "W-D164a2202bdd6930e",
+            "discovery_route": "forward_citation",
+            "source_id": "crossref",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "verification_status": "verified",
+            "scope_id": "SCOPE-0001"
+          }
+        ]
+      },
+      "after": {
+        "work_id": "W-D164a2202bdd6930e",
+        "work_key": "Lecoeur2019",
+        "canonical_title": "The role of optic flow pooling in insect flight control in cluttered environments",
+        "title_variants": [
+          "The role of optic flow pooling in insect flight control in cluttered environments"
+        ],
+        "authors": [
+          {
+            "person_id": "P-Rdc584738c14720f0",
+            "display_name": "Julien Lecoeur",
+            "is_corporate": false,
+            "organization_ids": [
+              "ORG-R5287073948817fd1"
+            ],
+            "source": {
+              "source_id": "publisher",
+              "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+              "identifier": "10.1038/s41598-019-44187-2",
+              "accessed_at": "2026-11-27T07:08:49Z",
+              "version": "version_of_record",
+              "verification_status": "verified",
+              "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": 1,
+                  "section": "Author byline and numbered affiliations",
+                  "accessed_at": "2026-11-27T07:08:49Z",
+                  "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                }
+              ]
+            },
+            "family_name": "Lecoeur",
+            "given_name": "Julien",
+            "field_states": {
+              "organization_ids": {
+                "status": "reported",
+                "reason": "已按原文 p1 的完整作者名单与编号机构逐人对应；机构只适用于该论文发表时。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          },
+          {
+            "person_id": "P-R28fa72425ea5f963",
+            "display_name": "Marie Dacke",
+            "is_corporate": false,
+            "organization_ids": [
+              "ORG-R26a18fb6444a633c"
+            ],
+            "source": {
+              "source_id": "publisher",
+              "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+              "identifier": "10.1038/s41598-019-44187-2",
+              "accessed_at": "2026-11-27T07:08:49Z",
+              "version": "version_of_record",
+              "verification_status": "verified",
+              "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": 1,
+                  "section": "Author byline and numbered affiliations",
+                  "accessed_at": "2026-11-27T07:08:49Z",
+                  "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                }
+              ]
+            },
+            "family_name": "Dacke",
+            "given_name": "Marie",
+            "field_states": {
+              "organization_ids": {
+                "status": "reported",
+                "reason": "已按原文 p1 的完整作者名单与编号机构逐人对应；机构只适用于该论文发表时。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          },
+          {
+            "person_id": "P-R0506acfdfb30ffdb",
+            "display_name": "Dario Floreano",
+            "is_corporate": false,
+            "organization_ids": [
+              "ORG-R5287073948817fd1"
+            ],
+            "source": {
+              "source_id": "publisher",
+              "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+              "identifier": "10.1038/s41598-019-44187-2",
+              "accessed_at": "2026-11-27T07:08:49Z",
+              "version": "version_of_record",
+              "verification_status": "verified",
+              "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": 1,
+                  "section": "Author byline and numbered affiliations",
+                  "accessed_at": "2026-11-27T07:08:49Z",
+                  "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                }
+              ]
+            },
+            "family_name": "Floreano",
+            "given_name": "Dario",
+            "field_states": {
+              "organization_ids": {
+                "status": "reported",
+                "reason": "已按原文 p1 的完整作者名单与编号机构逐人对应；机构只适用于该论文发表时。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          },
+          {
+            "person_id": "P-R4fd44dcfb79b41f1",
+            "display_name": "Emily Baird",
+            "is_corporate": false,
+            "organization_ids": [
+              "ORG-R26a18fb6444a633c",
+              "ORG-RUN06-Stockholm-FunctionalMorphology"
+            ],
+            "source": {
+              "source_id": "publisher",
+              "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+              "identifier": "10.1038/s41598-019-44187-2",
+              "accessed_at": "2026-11-27T07:08:49Z",
+              "version": "version_of_record",
+              "verification_status": "verified",
+              "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": 1,
+                  "section": "Author byline and numbered affiliations",
+                  "accessed_at": "2026-11-27T07:08:49Z",
+                  "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                }
+              ]
+            },
+            "family_name": "Baird",
+            "given_name": "Emily",
+            "field_states": {
+              "organization_ids": {
+                "status": "reported",
+                "reason": "已按原文 p1 的完整作者名单与编号机构逐人对应；机构只适用于该论文发表时。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": 1,
+                    "section": "Author byline and numbered affiliations",
+                    "accessed_at": "2026-11-27T07:08:49Z",
+                    "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          }
+        ],
+        "document_type": "journal_article",
+        "publication_status": "published",
+        "year": 2019,
+        "publication_date": "2019-05-22",
+        "venue": "Scientific Reports",
+        "volume": "9",
+        "number": "1",
+        "pages": null,
+        "eid": "7707",
+        "publisher": "Springer Science and Business Media LLC",
+        "identifiers": {
+          "DOI": "10.1038/s41598-019-44187-2",
+          "PubMedCentral": "6531491",
+          "MAG": "2945160351",
+          "CorpusId": "162180607",
+          "PubMed": "31118454",
+          "semantic_scholar": "581d2c50ea818a8e68a459cb51b6eca387ef71bb"
+        },
+        "doi": "10.1038/s41598-019-44187-2",
+        "url": "https://doi.org/10.1038/s41598-019-44187-2",
+        "language": "en",
+        "discovery_sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          },
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/581d2c50ea818a8e68a459cb51b6eca387ef71bb",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/581d2c50ea818a8e68a459cb51b6eca387ef71bb",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00068"
+              }
+            ]
+          },
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Registry identity cross-check of reference title/author/year; DOI is not accepted on ordinal alone.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ]
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 1,
+                "section": "Author byline and numbered affiliations",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "完整四位作者：Julien Lecoeur¹、Marie Dacke²、Dario Floreano¹、Emily Baird²˒³。编号 1 LIS/Institute of Microengineering/EPFL；2 Lund Vision Group/Department of Biology/Lund University；3 Division of Functional Morphology/Department of Zoology/Stockholm University。这里只证实该 2019-05-22 论文的发表时署名，不证明当前雇佣或入职离职日期。"
+              }
+            ]
+          }
+        ],
+        "identity_confidence": "confirmed",
+        "verification_status": "source_supported",
+        "merge_history": [],
+        "fulltext_status": "available_verified",
+        "abstract_status": "chinese_summary_from_fulltext",
+        "abstract_source": {
+          "source_id": "publisher",
+          "url": "https://doi.org/10.1038/s41598-019-44187-2",
+          "identifier": "10.1038/s41598-019-44187-2",
+          "accessed_at": "2026-11-26T07:50:11Z",
+          "version": "vor",
+          "license": "CC BY 4.0",
+          "verification_status": "verified",
+          "evidence_locator": [
+            {
+              "source_id": "publisher",
+              "url": "https://doi.org/10.1038/s41598-019-44187-2",
+              "identifier": "10.1038/s41598-019-44187-2",
+              "version_id": "V-W-D164a2202bdd6930e-01",
+              "accessed_at": "2026-11-26T07:50:11Z",
+              "evidence_note": "中文概括；依据版本、结论边界和量化数字已逐项记录。"
+            }
+          ]
+        },
+        "abstract_items": [
+          {
+            "status": "chinese_summary_from_fulltext",
+            "text": "本文将熊蜂在六种障碍覆盖走廊中的337次飞行与几何光流控制模型比较，研究远背景是否会稀释近障碍信息。前方最大光流池化更能解释侧向位置和速度，而高度需要平均池化及速度耦合；混合模型的标准差归一化总预测误差比三轴均用最大前方池化低50%。结果支持按行为目标采用不同空间池化的假说，但尚未定位相应神经回路。竖直障碍走廊和近似直线运动的实验不能代表任意三维重建，单一最大池化也存在高度及开阔环境失败。",
+            "source": {
+              "source_id": "publisher",
+              "url": "https://doi.org/10.1038/s41598-019-44187-2",
+              "identifier": "10.1038/s41598-019-44187-2",
+              "accessed_at": "2026-11-26T07:50:11Z",
+              "version": "vor",
+              "license": "CC BY 4.0",
+              "verification_status": "verified",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "url": "https://doi.org/10.1038/s41598-019-44187-2",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "accessed_at": "2026-11-26T07:50:11Z",
+                  "evidence_note": "中文概括；依据版本、结论边界和量化数字已逐项记录。"
+                }
+              ]
+            },
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "license": "CC BY 4.0",
+            "summarizer": "P6-fulltext-review-agent-c-iteration2",
+            "date": "2026-11-26",
+            "source_language": "en",
+            "verification_status": "verified"
+          }
+        ],
+        "license": "https://creativecommons.org/licenses/by/4.0; https://creativecommons.org/licenses/by/4.0",
+        "u00_reasons": [],
+        "review_condition": "Retrieve lawful fulltext, verify complete references and citation context, disambiguate authors/affiliations, and assess L01-L09 before any coverage claim.",
+        "dimension_status": {
+          "metadata": "partial",
+          "fulltext": "partial",
+          "abstract": "verified_complete",
+          "references": "partial",
+          "citations": "pending",
+          "authors": "partial",
+          "affiliations_projects": "partial",
+          "assessment": "partial"
+        },
+        "seed_ids": [],
+        "notes": "Discovered from forward_citation; index metadata and original fulltext evidence are separate.  Reviewed publication/version package c/clutter2019; original-version limitations remain explicit. RUN-0006: all four byline authors and their numbered publication-time affiliations checked; acknowledgment grants retained at funding_acknowledgment level. Author identity history, other works, institutional hierarchy and official project registry expansion remain incomplete.",
+        "field_states": {
+          "pages": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-3298643527cc6c04"
+          }
+        },
+        "discovery_depth": 1,
+        "discovery_path": [
+          {
+            "from_entity_id": "W-S19",
+            "to_entity_id": "W-D164a2202bdd6930e",
+            "discovery_route": "forward_citation",
+            "source_id": "crossref",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1038%2Fs41598-019-44187-2",
+                "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00273"
+              }
+            ],
+            "verification_status": "verified",
+            "scope_id": "SCOPE-0001"
+          }
+        ]
+      },
+      "changed_field_names": [
+        "authors",
+        "dimension_status",
+        "discovery_sources",
+        "notes"
+      ]
+    }
+  ],
+  "task_event_preconditions": [
+    {
+      "task_id": "T-Unknown-faa6e95a41eb4832",
+      "before": {
+        "task_id": "T-Unknown-faa6e95a41eb4832",
+        "entity_type": "work",
+        "entity_id": "W-D164a2202bdd6930e",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": null,
+        "normalized_parameters": {},
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "Byline affiliation has not been checked in the original publication.",
+        "retry_at": null,
+        "review_condition": "Byline affiliation has not been checked in the original publication.",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-26T07:49:34.521898Z",
+        "checkpoint_id": "CP-0003",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "authors.1.organization_ids",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-Unknown-faa6e95a41eb4832",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": []
+      }
+    },
+    {
+      "task_id": "T-Unknown-28ebd079b295dee3",
+      "before": {
+        "task_id": "T-Unknown-28ebd079b295dee3",
+        "entity_type": "work",
+        "entity_id": "W-D164a2202bdd6930e",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": null,
+        "normalized_parameters": {},
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "Byline affiliation has not been checked in the original publication.",
+        "retry_at": null,
+        "review_condition": "Byline affiliation has not been checked in the original publication.",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-26T07:49:34.521898Z",
+        "checkpoint_id": "CP-0003",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "authors.2.organization_ids",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-Unknown-28ebd079b295dee3",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": []
+      }
+    },
+    {
+      "task_id": "T-Unknown-e15e943e9da7e481",
+      "before": {
+        "task_id": "T-Unknown-e15e943e9da7e481",
+        "entity_type": "work",
+        "entity_id": "W-D164a2202bdd6930e",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": null,
+        "normalized_parameters": {},
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "Byline affiliation has not been checked in the original publication.",
+        "retry_at": null,
+        "review_condition": "Byline affiliation has not been checked in the original publication.",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-26T07:49:34.521898Z",
+        "checkpoint_id": "CP-0003",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "authors.3.organization_ids",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-Unknown-e15e943e9da7e481",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": []
+      }
+    },
+    {
+      "task_id": "T-Unknown-122712f9df0c2436",
+      "before": {
+        "task_id": "T-Unknown-122712f9df0c2436",
+        "entity_type": "work",
+        "entity_id": "W-D164a2202bdd6930e",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": null,
+        "normalized_parameters": {},
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "Byline affiliation has not been checked in the original publication.",
+        "retry_at": null,
+        "review_condition": "Byline affiliation has not been checked in the original publication.",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-26T07:49:34.521898Z",
+        "checkpoint_id": "CP-0003",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "authors.4.organization_ids",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-Unknown-122712f9df0c2436",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": []
+      }
+    }
+  ],
+  "validation": {
+    "schema_errors": [],
+    "foreign_keys_checked": true,
+    "all_byline_authors_retained": true,
+    "author_count": 4,
+    "new_publication_time_affiliations": 5,
+    "new_organization_count": 1,
+    "reused_organization_count": 3,
+    "new_grant_records": 3,
+    "new_supported_author_funding_relations": 4,
+    "official_confirmed_project_relations": 0,
+    "completed_existing_affiliation_tasks": 4,
+    "new_unknown_field_tasks": 16,
+    "unknown_clocks_preserved": true,
+    "new_manual_review_units": 1,
+    "existing_assessments_changed": 0
+  },
+  "review_decisions": [
+    "保留完整四作者，不以共同作者关系推断 Dario Floreano 受哪一基金资助。",
+    "机构事实均限定发表时；Person affiliation_history 时间字段是论文日期的单点证据，不是任职区间。",
+    "三个资助记录的名称只是显示标签；正式项目名、官方机构/期限/目标仍未核验。",
+    "funded_by 边从致谢明确受助 Person 指向 grant；output_work_ids 必须与 funding_acknowledgment 同读，禁止升级为官方成果。",
+    "未检索这些作者所有作品、机构团队所有成果或基金官方成果分页；P5 不宣称闭包。",
+    "旧 unknown 事件保持原记录；四项已核验署名仅追加更高 event_sequence 结束事件。"
+  ],
+  "remaining_leads": [
+    {
+      "entity_id": "PRJ-SNSF-200021_155907",
+      "task": "official_project_identity_and_outputs",
+      "reason": "Need official project title, dates, objectives, host organizations, recipient roles and output inventory before any official_confirmed relation."
+    },
+    {
+      "entity_id": "PRJ-SSF-FFL09-0056",
+      "task": "official_project_identity_and_outputs",
+      "reason": "Need official project title, dates, objectives, host organizations, recipient roles and output inventory before any official_confirmed relation."
+    },
+    {
+      "entity_id": "PRJ-SRC-2014-4762",
+      "task": "official_project_identity_and_outputs",
+      "reason": "Need official project title, dates, objectives, host organizations, recipient roles and output inventory before any official_confirmed relation."
+    }
+  ]
+}
