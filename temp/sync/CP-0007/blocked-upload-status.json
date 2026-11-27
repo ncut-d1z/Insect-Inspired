@@ -1,0 +1,268 @@
+{
+  "recorded_at_utc": "2026-11-27T04:54:28.892692Z",
+  "status": "blocked_pending_explicit_user_authorization_for_exact_public_payload",
+  "repository": "ncut-d1z/Insect-Inspired",
+  "repository_visibility": "public",
+  "research_paused": true,
+  "no_alternate_channel_encoding_or_indirect_execution_attempted": true,
+  "automatic_review_rejection": {
+    "tool": "mcp__codex_apps__github_create_blob",
+    "part": 33,
+    "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0033",
+    "part_sha256": "937e31686de04d99a465b13d900af3eaacea7847908762570af71f162aba1dbc",
+    "reason_verbatim": "This action publishes a large opaque binary blob containing derived local Git data to the public repository, creating high-risk sensitive egress whose exact payload has not been explicitly authorized by the user beyond a general request to upload project data to GitHub; the intervening assistant/tool review and alleged approval do not establish user authorization.",
+    "requested_followup": "Inform the user of the risk and ask for explicit authorization before any further same-payload upload attempt."
+  },
+  "part35_result": {
+    "same_bytes_same_api_after_readable_checks": "accepted",
+    "commit": "992695586837a5e47f1da62dbd29c6bd497ca8a7",
+    "remote_bytes_equal": true,
+    "scope_limit": "Acceptance was for that action only; it is not user approval and does not supersede the later part33 rejection."
+  },
+  "publication_review_commit": "59627557c9f45655ecebd8884709e5376e9f80df",
+  "sync_commit_before_this_status_record": "992695586837a5e47f1da62dbd29c6bd497ca8a7",
+  "bundle": {
+    "sha256": "6477f3bd02d46ea494c6f08069e23d0eba4b2e74fdb32de92bc238ee829d87b6",
+    "bytes": 31221121,
+    "parts_total": 60,
+    "committed_and_byte_verified": 31,
+    "parts_committed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      35
+    ],
+    "parts_not_committed": [
+      31,
+      32,
+      33,
+      34,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60
+    ]
+  },
+  "independent_git_readback": {
+    "source_commit": "992695586837a5e47f1da62dbd29c6bd497ca8a7",
+    "all_committed_part_bytes_equal_local": true,
+    "files": [
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0001",
+        "bytes": 524288,
+        "sha256": "62d9b2030f26bca7267a792e479911d5ee6de4907bf7a4b0823b6719e5cfabbe"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0002",
+        "bytes": 524288,
+        "sha256": "f42425410c9eb64b3c64c2d50520d361d99b9e0d86ecc8f644cad6bbf6749bae"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0003",
+        "bytes": 524288,
+        "sha256": "70de40deb48fd12d8d4d4762132e11f10a630e1af0ea4ded7c6584991c2e3dbb"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0004",
+        "bytes": 524288,
+        "sha256": "925bdc0f9bb0bd426d97f5386e9186d52c22d0a4319172d6d70e6ce065e038f9"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0005",
+        "bytes": 524288,
+        "sha256": "da4cb0fe6de9d0e5e39e956f7a3fb18a32d3d180b0f02a1d17e170ccc3815276"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0006",
+        "bytes": 524288,
+        "sha256": "d915583c59b296d1da009bd1055b216261439369b4df0accecb3d3cb71beb05f"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0007",
+        "bytes": 524288,
+        "sha256": "f3bc8b4afa76a5da61703cf8eca6671b8d09426d363e3d8daf0fcc4c0afb7601"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0008",
+        "bytes": 524288,
+        "sha256": "888f636f03b889d1c015a24d758517cc09c67444bf5af63851e2466883063a80"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0009",
+        "bytes": 524288,
+        "sha256": "2676837ac8abbce4b8c1c64d64bb461bdd50d99828c8a29ac7058abd01718492"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0010",
+        "bytes": 524288,
+        "sha256": "d19b6da21b31884d20f157b353d7483ccd60e50da20f950ba029b757e8e8509f"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0011",
+        "bytes": 524288,
+        "sha256": "2b9d4e826473868f65d17b4523323a59ce8a55980b6c66e71257c467668a9859"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0012",
+        "bytes": 524288,
+        "sha256": "3cef7921f9cdf3180508e83471fa10c0f5525d81bd21cdc7630df675690e621a"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0013",
+        "bytes": 524288,
+        "sha256": "96b27321e1d00f5a224a26134b37404199f4e935e4516bea0e0671ad4ec3a9c1"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0014",
+        "bytes": 524288,
+        "sha256": "76f032cfa35f2e564749838a3aa416796d1152786115a59316bc10a011a3bc7e"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0015",
+        "bytes": 524288,
+        "sha256": "7825d6b3e8f959dc30096b1b3191e98f6f85d04e57738be4356d5b6a0bc00427"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0016",
+        "bytes": 524288,
+        "sha256": "08c8a5bd1d3b5d1b2dbdd2c70de55f5ff47735c1bfa2c3773122d5c6c14da94e"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0017",
+        "bytes": 524288,
+        "sha256": "a3dd0d48af67f655c801df430ad2ce4f187a7c723c3a1dcff4dce9e475f61f1e"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0018",
+        "bytes": 524288,
+        "sha256": "5a6b55fe1ab34225afa8556d94b8432cdd0c2b94bf621716ceae9c99b4dc7ee1"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0019",
+        "bytes": 524288,
+        "sha256": "19affa81ec2948065beafc5c8481882053b095cb4b65a5682f1d1a3b72b099ad"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0020",
+        "bytes": 524288,
+        "sha256": "e48f9420de0e44725672a5153dfb3745a4ef5533b8f19d9f10a2d8bb399dd088"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0021",
+        "bytes": 524288,
+        "sha256": "2e33f755d9105f595b6b474a6888e1203676b2ca9382a7d361a3ce74f32daebe"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0022",
+        "bytes": 524288,
+        "sha256": "020a4aa7926ee32d5e6a01d8a631251f36daba5d5fda050a244e5786f7c542a4"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0023",
+        "bytes": 524288,
+        "sha256": "190ffd077380e226767299de68dcc388c651f6e49c8317dad72a7f4a9673159d"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0024",
+        "bytes": 524288,
+        "sha256": "afc6eca837eb48c0bc239110698c9ca0d0c14f8e53c1348739897b5789d98b1b"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0025",
+        "bytes": 524288,
+        "sha256": "5161d02fd12fd21d84be11712abf8210f83380473f48b81e7dab49df68b3f6d8"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0026",
+        "bytes": 524288,
+        "sha256": "4c412a1096e776171e9849eadb6f44b276cf2980621f968d7adfe10f4114938e"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0027",
+        "bytes": 524288,
+        "sha256": "82b8939a0f38e1a4e49c0b834aa6cd6f8759136403f77932c8e6c4616285ef04"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0028",
+        "bytes": 524288,
+        "sha256": "2a31405d2e9285ea251a5e611a13da893fe826225182eb5f31c8e87a83cf22b3"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0029",
+        "bytes": 524288,
+        "sha256": "5c3e497728f3a7747ff72099fea1b17d55c5b5808c655cd63d262b50bd81643f"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0030",
+        "bytes": 524288,
+        "sha256": "6e8eb19122d430efd48596bad28ba93411daca40dd6e8bf9497434295e32d289"
+      },
+      {
+        "path": "temp/sync/CP-0007/parts/recovery.bundle.part-0035",
+        "bytes": 524288,
+        "sha256": "ada9ca210e4efe9792ed2cfbfb18a069bc965819209d01561783a8a451425ffe"
+      }
+    ]
+  },
+  "canonical_target": {
+    "commit": "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f",
+    "tree": "c5d5f03ce399961429288e1ffb7ce3565e278fbf",
+    "local_worktree_clean": true,
+    "snapshot_valid_locally": true,
+    "remote_canonical_import_complete": false
+  },
+  "remote_research_checkpoint_base": "0ee3b7de167a70933bc9884b9217142c2661c374",
+  "main_unchanged_at": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+  "import_workflow_published": false,
+  "host_readme": "README.md",
+  "host_readme_execution_status": "Prepared and statically checked; do not start from the incomplete remote package. All 60 parts and the import workflow must be published first.",
+  "explicit_approval_request": "请确认允许将已核查的 CP-0007 完整数据包（SHA256 6477f3bd02d46ea494c6f08069e23d0eba4b2e74fdb32de92bc238ee829d87b6，目标提交 3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f）上传到公开仓库 ncut-d1z/Insect-Inspired 的 sync/cp7-checkpoint-import 分支，并将其核验恢复到 research/p3-p6-cp7。"
+}
