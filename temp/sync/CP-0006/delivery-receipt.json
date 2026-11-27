@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checked_at_utc": "2026-11-27 00:59:29 UTC",
+  "repository": "ncut-d1z/Insect-Inspired",
+  "checkpoint_id": "CP-0006",
+  "scope_id": "SCOPE-0001",
+  "canonical_commit": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5",
+  "canonical_tree": "32a732212b9151c2ee1ee75a91081ffcbca60d9b",
+  "git_parent": "fc43ccb0582611292811bbe4d2b7fb3ea0c9bcc0",
+  "canonical_file_count": 1256,
+  "canonical_file_bytes": 881966656,
+  "artifact_hash_count": 1255,
+  "checkpoint_sha256": "43c11e7465404e956274fdaadef74f7bd0d27177111de5200f127f36c8c7d47d",
+  "partition_dataset_count": 7,
+  "partition_part_count": 120,
+  "original_bundle_input_commit": "1b46308cab46fe7611c6af465cb338c65549275b",
+  "bundle_part_count": 51,
+  "bundle_bytes": 26519358,
+  "bundle_sha256": "cc53dbbe5ddc1045214c38a0aafe088e9c869836219e3c65707adab2c397a142",
+  "import_run": {
+    "id": 45911635168,
+    "conclusion": "success",
+    "url": "https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45911635168"
+  },
+  "independent_verification_run": {
+    "id": 45919410467,
+    "conclusion": "success",
+    "url": "https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45919410467",
+    "checks": 5356,
+    "failures": 0,
+    "objects_borrowed_from_restoration": false
+  },
+  "proof_commit": "1304a9fdabd87bf3d54f7c3fd2c8150e1fb2ffb6",
+  "proof_file_count": 10,
+  "verification_sha256": "c9bdba22431d3e86bc88f0e3156031cd423b6235608045bc8ea9b5d576be37e3",
+  "trusted_inventory_sha256": "7c775ec0450eb5c3f1492a5eedb72e3bb1fc034ba2e8069763ac5e5f7f414e61",
+  "guide_commit": "7ccbe1de796870d58d2d1e69500352f1799356f7",
+  "guide_path": "temp/sync/CP-0006/README.md",
+  "guide_sha256": "4031512de066ed98cb1753d30058686b5370656986a61f6eba6cffe04c6f375c",
+  "guide_bytes": 42637,
+  "powershell_blocks": 8,
+  "guide_placeholders_remaining": 0,
+  "powershell_execution_claimed": false,
+  "linux_bundle_restoration_and_independent_https_readback_executed": true,
+  "published_delivery_files_verified": [
+    {
+      "path": "temp/sync/CP-0006/README.md",
+      "sha256": "4031512de066ed98cb1753d30058686b5370656986a61f6eba6cffe04c6f375c",
+      "bytes": 42637,
+      "readback_equal": true
+    },
+    {
+      "path": "temp/sync/CP-0006/verification-actions-run.json",
+      "sha256": "54be13480c9f5dd8fa2d17b44a255a73476e641751d931c49ac76793fb5a6676",
+      "bytes": 13841,
+      "readback_equal": true
+    },
+    {
+      "path": "temp/sync/CP-0006/verification-actions-jobs.json",
+      "sha256": "155f02e072049ccf23ac0b1ca28e93f488d5b58689fb4e509a18dd619978c6de",
+      "bytes": 1504,
+      "readback_equal": true
+    },
+    {
+      "path": "temp/sync/CP-0006/verification-actions-job.log",
+      "sha256": "d90c2033bac243d70459746a2984b0b3f1791c2ec7feec0b0c078c008be55c66",
+      "bytes": 45160,
+      "readback_equal": true
+    }
+  ],
+  "remote_heads_observed_before_this_receipt": [
+    {
+      "ref": "refs/heads/research/p3-p6-cp6",
+      "sha": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5"
+    },
+    {
+      "ref": "refs/heads/main",
+      "sha": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8"
+    },
+    {
+      "ref": "refs/heads/sync/cp6-checkpoint-import",
+      "sha": "7ccbe1de796870d58d2d1e69500352f1799356f7"
+    }
+  ],
+  "main_modified_by_assistant": false,
+  "remote_branches_deleted_by_assistant": [],
+  "original_container_available": false,
+  "original_container_end_of_turn_disk_scan_performed": false,
+  "original_worktree_scope_statement": "At the last accessible observation, the canonical repository was clean at the recorded CP6 commit/tree. GitHub now advertises exactly that commit and the full data snapshot has been independently read back. The unavailable original disk and its local branch set cannot be scanned again.",
+  "recovered_worktree_scope_statement": "The new bundle-restored worktree was completely checked against the pinned snapshot: clean index and worktree, no untracked/ignored files, all file bytes and modes matched, no local branch commits missing from actual remote head histories. These statements apply to that recovered worktree.",
+  "old_private_reports_recovered": false,
+  "research_progress": {
+    "phase_status": {
+      "P3": "iterated_partial_checkpointed",
+      "P4": "iterated_partial_checkpointed",
+      "P5": "iterated_partial_checkpointed",
+      "P6": "iterated_partial_checkpointed"
+    },
+    "closure_established": false,
+    "canonical_works": 5085,
+    "existing_works_enriched": 9,
+    "new_work_scoped_persons": 15,
+    "reference_occurrences_resolved_this_batch": 13,
+    "new_source_supported_edges": 13,
+    "unknown_field_tasks_closed_this_batch": 32,
+    "assessments": 70,
+    "eligible_claims": 61,
+    "insufficient_claims": 9,
+    "counter_evidence_claims": 23,
+    "fully_resolved_claims": 0,
+    "unresolved_reference_occurrences": 124392,
+    "unresolved_tasks": 130237,
+    "scientific_audit_errors": 0,
+    "existing_schema_warnings": 16,
+    "deterministic_exports_passed": 7,
+    "ui_checks_passed": 10,
+    "run4_wall_clock_budget_hours": 6,
+    "run4_budget_exhausted": true,
+    "new_scientific_work_during_delivery": false
+  },
+  "host_next_step": "Use the published PowerShell guide to fetch or restore, verify all proof and worktree files, fast-forward and push main, optionally preserve proof files on main, then conditionally delete only the two named CP6 branches. Preserve canonical temp/partitions.",
+  "self_hash_policy": "This receipt does not contain its own hash or enclosing commit. The final API readback checks its exact bytes and the actual remote refs after publication."
+}
