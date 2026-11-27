@@ -1,0 +1,558 @@
+{
+  "review_id": "REVIEW-RUN06-P5P6-QUERY-INTEGRATION-001",
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0008",
+  "status": "reviewed_candidate_not_canonical",
+  "reviewed_at_utc": "2026-11-27T06:49:55.345997Z",
+  "additions": {
+    "queries": [
+      {
+        "query_id": "Q-RUN06-P6-Baird-search-001",
+        "task_id": "T-RUN06-RECORDED-Q-RUN06-P6-Baird-search-001",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0008",
+        "entity_id": "W-D5371fd7ace4547d8",
+        "source_id": "institutional_repository",
+        "endpoint_or_url": "https://pubmed.ncbi.nlm.nih.gov/22983439/",
+        "api_version": null,
+        "query_kind": "fulltext_locator_search",
+        "raw_parameters": {
+          "query": "\"Visual flight control in naturalistic and artificial environments\" Baird full text"
+        },
+        "normalized_parameters": {
+          "query": "\"Visual flight control in naturalistic and artificial environments\" Baird full text",
+          "run_id": "RUN-0006",
+          "count_scope": "Returned search source refs when explicitly counted; otherwise unavailable. Cache counts refer to one resource and canonical target Work, not full source coverage."
+        },
+        "queried_at_utc": null,
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": null,
+        "returned_count": null,
+        "count_before_dedup": null,
+        "count_after_dedup": null,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [
+          "10.1007/s00359-012-0757-7"
+        ],
+        "status": "partial",
+        "verification_status": "source_supported",
+        "error_code": null,
+        "error_message": null,
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN06-P6-Baird-search-001.json",
+        "cache_hit": false,
+        "reused_query_id": null,
+        "rerun_reason": "New fulltext-location/access operation for a pending or distinct evidence-review dimension; no successful same-parameter query reused.",
+        "coverage_note": "No complete result inventory retained; fulltext was not obtained. Target Work already existed. Search results are discovery leads, not fulltext evidence.",
+        "license_note": "Bibliographic facts, original Chinese summaries, source hashes and locators only; no full text, original abstract or personal contact details redistributed.",
+        "recorded_at_utc": "2026-11-27T06:49:55.345997Z",
+        "query_time_status": "unavailable_exact",
+        "field_states": {
+          "returned_count": {
+            "status": "unknown",
+            "reason": "No complete result inventory retained; fulltext was not obtained. Target Work already existed. Search results are discovery leads, not fulltext evidence.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+            "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-001"
+          },
+          "count_before_dedup": {
+            "status": "unknown",
+            "reason": "No complete result inventory retained; fulltext was not obtained. Target Work already existed. Search results are discovery leads, not fulltext evidence.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+            "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-001"
+          },
+          "count_after_dedup": {
+            "status": "unknown",
+            "reason": "No complete result inventory retained; fulltext was not obtained. Target Work already existed. Search results are discovery leads, not fulltext evidence.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+            "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-001"
+          },
+          "visible_total": {
+            "status": "unknown",
+            "reason": "No complete result inventory retained; fulltext was not obtained. Target Work already existed. Search results are discovery leads, not fulltext evidence.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+            "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-001"
+          }
+        },
+        "queried_date": "2026-11-27"
+      },
+      {
+        "query_id": "Q-RUN06-P6-Baird-search-002",
+        "task_id": "T-RUN06-RECORDED-Q-RUN06-P6-Baird-search-002",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0008",
+        "entity_id": "W-D5371fd7ace4547d8",
+        "source_id": "institutional_repository",
+        "endpoint_or_url": "https://portal.research.lu.se/en/publications/visual-flight-control-in-naturalistic-and-artificial-environments/",
+        "api_version": null,
+        "query_kind": "fulltext_locator_search",
+        "raw_parameters": {
+          "query": "\"Visual flight control in naturalistic and artificial environments\" pdf",
+          "domains": [
+            "lu.se",
+            "springer.com",
+            "su.se"
+          ]
+        },
+        "normalized_parameters": {
+          "query": "\"Visual flight control in naturalistic and artificial environments\" pdf",
+          "domains": [
+            "lu.se",
+            "springer.com",
+            "su.se"
+          ],
+          "run_id": "RUN-0006",
+          "count_scope": "Returned search source refs when explicitly counted; otherwise unavailable. Cache counts refer to one resource and canonical target Work, not full source coverage."
+        },
+        "queried_at_utc": "2026-11-27T06:41:55Z",
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": null,
+        "returned_count": 7,
+        "count_before_dedup": null,
+        "count_after_dedup": null,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [
+          "10.1007/s00359-012-0757-7"
+        ],
+        "status": "partial",
+        "verification_status": "source_supported",
+        "error_code": null,
+        "error_message": null,
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN06-P6-Baird-search-002.json",
+        "cache_hit": false,
+        "reused_query_id": null,
+        "rerun_reason": "Primary-source fulltext-location follow-up; first search did not obtain fulltext.",
+        "coverage_note": "The returned text contains 7 distinct source refs. Work-level deduplication of all hits was not completed. Official target records show two authors and DOI, with no inspected fulltext link beyond DOI.",
+        "license_note": "Bibliographic facts, original Chinese summaries, source hashes and locators only; no full text, original abstract or personal contact details redistributed.",
+        "recorded_at_utc": "2026-11-27T06:49:55.345997Z",
+        "query_time_status": "exact",
+        "field_states": {
+          "count_before_dedup": {
+            "status": "unknown",
+            "reason": "The returned text contains 7 distinct source refs. Work-level deduplication of all hits was not completed. Official target records show two authors and DOI, with no inspected fulltext link beyond DOI.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+            "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-002"
+          },
+          "count_after_dedup": {
+            "status": "unknown",
+            "reason": "The returned text contains 7 distinct source refs. Work-level deduplication of all hits was not completed. Official target records show two authors and DOI, with no inspected fulltext link beyond DOI.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+            "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-002"
+          },
+          "visible_total": {
+            "status": "unknown",
+            "reason": "The returned text contains 7 distinct source refs. Work-level deduplication of all hits was not completed. Official target records show two authors and DOI, with no inspected fulltext link beyond DOI.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+            "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-002"
+          }
+        }
+      },
+      {
+        "query_id": "Q-RUN06-P6-Lecoeur-current-access-001",
+        "task_id": "T-RUN06-RECORDED-Q-RUN06-P6-Lecoeur-current-access-001",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0008",
+        "entity_id": "W-D164a2202bdd6930e",
+        "source_id": "publisher",
+        "endpoint_or_url": "https://www.nature.com/articles/s41598-019-44187-2",
+        "api_version": null,
+        "query_kind": "fulltext_access_attempt",
+        "raw_parameters": {
+          "url": "https://www.nature.com/articles/s41598-019-44187-2"
+        },
+        "normalized_parameters": {
+          "url": "https://www.nature.com/articles/s41598-019-44187-2",
+          "run_id": "RUN-0006",
+          "count_scope": "Returned search source refs when explicitly counted; otherwise unavailable. Cache counts refer to one resource and canonical target Work, not full source coverage."
+        },
+        "queried_at_utc": null,
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": null,
+        "returned_count": null,
+        "count_before_dedup": null,
+        "count_after_dedup": null,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [],
+        "status": "partial",
+        "verification_status": "source_supported",
+        "error_code": "tool_redirect_unavailable",
+        "error_message": "Web tool reported inaccessible Nature identity-provider redirect (500).",
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN06-P6-Lecoeur-current-access-001.json",
+        "cache_hit": false,
+        "reused_query_id": null,
+        "rerun_reason": "New fulltext-location/access operation for a pending or distinct evidence-review dimension; no successful same-parameter query reused.",
+        "coverage_note": "Source access returned tool error 500 because of an inaccessible idp.nature.com redirect. No access bypass. No result count can be inferred. Previously admitted local fulltext cache was subsequently reused.",
+        "license_note": "Bibliographic facts, original Chinese summaries, source hashes and locators only; no full text, original abstract or personal contact details redistributed.",
+        "recorded_at_utc": "2026-11-27T06:49:55.345997Z",
+        "query_time_status": "unavailable_exact",
+        "field_states": {
+          "returned_count": {
+            "status": "unknown",
+            "reason": "Source access returned tool error 500 because of an inaccessible idp.nature.com redirect. No access bypass. No result count can be inferred. Previously admitted local fulltext cache was subsequently reused.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+            "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Lecoeur-current-access-001"
+          },
+          "count_before_dedup": {
+            "status": "unknown",
+            "reason": "Source access returned tool error 500 because of an inaccessible idp.nature.com redirect. No access bypass. No result count can be inferred. Previously admitted local fulltext cache was subsequently reused.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+            "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Lecoeur-current-access-001"
+          },
+          "count_after_dedup": {
+            "status": "unknown",
+            "reason": "Source access returned tool error 500 because of an inaccessible idp.nature.com redirect. No access bypass. No result count can be inferred. Previously admitted local fulltext cache was subsequently reused.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+            "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Lecoeur-current-access-001"
+          },
+          "visible_total": {
+            "status": "unknown",
+            "reason": "Source access returned tool error 500 because of an inaccessible idp.nature.com redirect. No access bypass. No result count can be inferred. Previously admitted local fulltext cache was subsequently reused.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+            "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Lecoeur-current-access-001"
+          }
+        },
+        "queried_date": "2026-11-27"
+      },
+      {
+        "query_id": "Q-RUN06-P6-Lecoeur-cache-001",
+        "task_id": "T-RUN06-RECORDED-Q-RUN06-P6-Lecoeur-cache-001",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0008",
+        "entity_id": "W-D164a2202bdd6930e",
+        "source_id": "publisher",
+        "endpoint_or_url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+        "api_version": null,
+        "query_kind": "cache_reuse_fulltext_manual_review",
+        "raw_parameters": {
+          "version_id": "V-W-D164a2202bdd6930e-01",
+          "sha256": "e35d53aa87c197f5ea66e7fd532a7b383e835ffb03b0edcf4c0de88beceb7955"
+        },
+        "normalized_parameters": {
+          "version_id": "V-W-D164a2202bdd6930e-01",
+          "sha256": "e35d53aa87c197f5ea66e7fd532a7b383e835ffb03b0edcf4c0de88beceb7955",
+          "run_id": "RUN-0006",
+          "count_scope": "Returned search source refs when explicitly counted; otherwise unavailable. Cache counts refer to one resource and canonical target Work, not full source coverage."
+        },
+        "queried_at_utc": "2026-11-27T06:49:55.345997Z",
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": 1,
+        "returned_count": 1,
+        "count_before_dedup": 1,
+        "count_after_dedup": 1,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "status": "cache_hit",
+        "verification_status": "verified",
+        "error_code": null,
+        "error_message": null,
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN06-P6-Lecoeur-cache-001.json",
+        "cache_hit": true,
+        "reused_query_id": "Q-RUN01-00287",
+        "rerun_reason": null,
+        "coverage_note": "One exact previously admitted PDF cache resource, not a new acquisition or new Work. Reused for distinct L08 measured-flight-statistics claim and full byline/funding reading; no claim that all supplements were newly reread.",
+        "license_note": "Bibliographic facts, original Chinese summaries, source hashes and locators only; no full text, original abstract or personal contact details redistributed.",
+        "recorded_at_utc": "2026-11-27T06:49:55.345997Z",
+        "query_time_status": "exact",
+        "field_states": {}
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "T-RUN06-RECORDED-Q-RUN06-P6-Baird-search-001",
+        "entity_type": "work",
+        "entity_id": "W-D5371fd7ace4547d8",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "institutional_repository",
+        "normalized_parameters": {
+          "run_id": "RUN-0006"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Baird-search-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Preserve source receipt; further fulltext/identity coverage requires explicit verified evidence.",
+        "created_at_utc": "2026-11-27T06:49:55.345997Z",
+        "updated_at_utc": "2026-11-27T06:49:55.345997Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Baird-search-001"
+        ]
+      },
+      {
+        "task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-001",
+        "entity_type": "scope",
+        "entity_id": "SCOPE-0001",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "institutional_repository",
+        "normalized_parameters": {
+          "run_id": "RUN-0006"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Baird-search-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": "No complete result inventory retained; fulltext was not obtained. Target Work already existed. Search results are discovery leads, not fulltext evidence.",
+        "retry_at": null,
+        "review_condition": "Retain the original operation evidence and recover a full source inventory if available; do not replace unknown counts by zero.",
+        "created_at_utc": "2026-11-27T06:49:55.345997Z",
+        "updated_at_utc": "2026-11-27T06:49:55.345997Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "queries.Q-RUN06-P6-Baird-search-001.returned_count,count_before_dedup,count_after_dedup,visible_total",
+        "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+        "deadline_at_utc": "2026-11-28T06:44:24.408150Z",
+        "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-001",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Baird-search-001"
+        ]
+      },
+      {
+        "task_id": "T-RUN06-RECORDED-Q-RUN06-P6-Baird-search-002",
+        "entity_type": "work",
+        "entity_id": "W-D5371fd7ace4547d8",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "institutional_repository",
+        "normalized_parameters": {
+          "run_id": "RUN-0006"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Baird-search-002"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Preserve source receipt; further fulltext/identity coverage requires explicit verified evidence.",
+        "created_at_utc": "2026-11-27T06:49:55.345997Z",
+        "updated_at_utc": "2026-11-27T06:49:55.345997Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Baird-search-002"
+        ]
+      },
+      {
+        "task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-002",
+        "entity_type": "scope",
+        "entity_id": "SCOPE-0001",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "institutional_repository",
+        "normalized_parameters": {
+          "run_id": "RUN-0006"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Baird-search-002"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": "The returned text contains 7 distinct source refs. Work-level deduplication of all hits was not completed. Official target records show two authors and DOI, with no inspected fulltext link beyond DOI.",
+        "retry_at": null,
+        "review_condition": "Retain the original operation evidence and recover a full source inventory if available; do not replace unknown counts by zero.",
+        "created_at_utc": "2026-11-27T06:49:55.345997Z",
+        "updated_at_utc": "2026-11-27T06:49:55.345997Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "queries.Q-RUN06-P6-Baird-search-002.count_before_dedup,count_after_dedup,visible_total",
+        "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+        "deadline_at_utc": "2026-11-28T06:44:24.408150Z",
+        "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-002",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Baird-search-002"
+        ]
+      },
+      {
+        "task_id": "T-RUN06-RECORDED-Q-RUN06-P6-Lecoeur-current-access-001",
+        "entity_type": "work",
+        "entity_id": "W-D164a2202bdd6930e",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-current-access-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Preserve source receipt; further fulltext/identity coverage requires explicit verified evidence.",
+        "created_at_utc": "2026-11-27T06:49:55.345997Z",
+        "updated_at_utc": "2026-11-27T06:49:55.345997Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-current-access-001"
+        ]
+      },
+      {
+        "task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Lecoeur-current-access-001",
+        "entity_type": "scope",
+        "entity_id": "SCOPE-0001",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-current-access-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": "Source access returned tool error 500 because of an inaccessible idp.nature.com redirect. No access bypass. No result count can be inferred. Previously admitted local fulltext cache was subsequently reused.",
+        "retry_at": null,
+        "review_condition": "Retain the original operation evidence and recover a full source inventory if available; do not replace unknown counts by zero.",
+        "created_at_utc": "2026-11-27T06:49:55.345997Z",
+        "updated_at_utc": "2026-11-27T06:49:55.345997Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "queries.Q-RUN06-P6-Lecoeur-current-access-001.returned_count,count_before_dedup,count_after_dedup,visible_total",
+        "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+        "deadline_at_utc": "2026-11-28T06:44:24.408150Z",
+        "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Lecoeur-current-access-001",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-current-access-001"
+        ]
+      },
+      {
+        "task_id": "T-RUN06-RECORDED-Q-RUN06-P6-Lecoeur-cache-001",
+        "entity_type": "work",
+        "entity_id": "W-D164a2202bdd6930e",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Preserve source receipt; further fulltext/identity coverage requires explicit verified evidence.",
+        "created_at_utc": "2026-11-27T06:49:55.345997Z",
+        "updated_at_utc": "2026-11-27T06:49:55.345997Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ]
+      }
+    ]
+  },
+  "changed_records": [],
+  "validation": {
+    "schema_errors": [],
+    "external_requests": 3,
+    "cache_reuses": 1,
+    "new_works": 0
+  },
+  "notes": "No source inventory is invented. Search-002 has 7 returned source refs; Work-level counts remain unknown. Three unknown count reviews retain first evidence-record clock. No canonical dataset changed."
+}

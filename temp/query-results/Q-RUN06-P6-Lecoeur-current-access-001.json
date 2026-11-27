@@ -1,0 +1,88 @@
+{
+  "query_id": "Q-RUN06-P6-Lecoeur-current-access-001",
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0008",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "query_record": {
+    "query_id": "Q-RUN06-P6-Lecoeur-current-access-001",
+    "task_id": "T-RUN06-RECORDED-Q-RUN06-P6-Lecoeur-current-access-001",
+    "scope_id": "SCOPE-0001",
+    "checkpoint_id": "CP-0008",
+    "entity_id": "W-D164a2202bdd6930e",
+    "source_id": "publisher",
+    "endpoint_or_url": "https://www.nature.com/articles/s41598-019-44187-2",
+    "api_version": null,
+    "query_kind": "fulltext_access_attempt",
+    "raw_parameters": {
+      "url": "https://www.nature.com/articles/s41598-019-44187-2"
+    },
+    "normalized_parameters": {
+      "url": "https://www.nature.com/articles/s41598-019-44187-2",
+      "run_id": "RUN-0006",
+      "count_scope": "Returned search source refs when explicitly counted; otherwise unavailable. Cache counts refer to one resource and canonical target Work, not full source coverage."
+    },
+    "queried_at_utc": null,
+    "cursor_in": null,
+    "cursor_out": null,
+    "page_index": 1,
+    "page_complete": false,
+    "visible_total": null,
+    "returned_count": null,
+    "count_before_dedup": null,
+    "count_after_dedup": null,
+    "new_work_ids": [],
+    "new_work_count": 0,
+    "result_identifiers": [],
+    "status": "partial",
+    "verification_status": "source_supported",
+    "error_code": "tool_redirect_unavailable",
+    "error_message": "Web tool reported inaccessible Nature identity-provider redirect (500).",
+    "retry_count": 0,
+    "retry_at": null,
+    "cache_path": "temp/query-results/Q-RUN06-P6-Lecoeur-current-access-001.json",
+    "cache_hit": false,
+    "reused_query_id": null,
+    "rerun_reason": "New fulltext-location/access operation for a pending or distinct evidence-review dimension; no successful same-parameter query reused.",
+    "coverage_note": "Source access returned tool error 500 because of an inaccessible idp.nature.com redirect. No access bypass. No result count can be inferred. Previously admitted local fulltext cache was subsequently reused.",
+    "license_note": "Bibliographic facts, original Chinese summaries, source hashes and locators only; no full text, original abstract or personal contact details redistributed.",
+    "recorded_at_utc": "2026-11-27T06:49:55.345997Z",
+    "query_time_status": "unavailable_exact",
+    "field_states": {
+      "returned_count": {
+        "status": "unknown",
+        "reason": "Source access returned tool error 500 because of an inaccessible idp.nature.com redirect. No access bypass. No result count can be inferred. Previously admitted local fulltext cache was subsequently reused.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+        "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Lecoeur-current-access-001"
+      },
+      "count_before_dedup": {
+        "status": "unknown",
+        "reason": "Source access returned tool error 500 because of an inaccessible idp.nature.com redirect. No access bypass. No result count can be inferred. Previously admitted local fulltext cache was subsequently reused.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+        "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Lecoeur-current-access-001"
+      },
+      "count_after_dedup": {
+        "status": "unknown",
+        "reason": "Source access returned tool error 500 because of an inaccessible idp.nature.com redirect. No access bypass. No result count can be inferred. Previously admitted local fulltext cache was subsequently reused.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+        "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Lecoeur-current-access-001"
+      },
+      "visible_total": {
+        "status": "unknown",
+        "reason": "Source access returned tool error 500 because of an inaccessible idp.nature.com redirect. No access bypass. No result count can be inferred. Previously admitted local fulltext cache was subsequently reused.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+        "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Lecoeur-current-access-001"
+      }
+    },
+    "queried_date": "2026-11-27"
+  },
+  "evidence_review": "temp/reports/RUN-0006-Lecoeur2019-evidence-review.json",
+  "sanitized": true,
+  "payload_retained": false,
+  "note": "Typed canonical query_record is nested; counter and unknown-task candidates are in RUN-0006-P5P6-query-candidates.json."
+}
