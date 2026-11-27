@@ -3,7 +3,7 @@
   "checkpoint_id": "CP-0010",
   "scope_id": "SCOPE-0001",
   "baseline_commit": "96ce04b268f648978581e87d3be551981f12917d",
-  "verified_at_utc": "2026-11-27T09:31:43.124637Z",
+  "verified_at_utc": "2026-11-27T09:39:18.569160Z",
   "checks": [
     {
       "dataset": "aliases",

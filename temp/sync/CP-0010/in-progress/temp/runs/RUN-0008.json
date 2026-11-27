@@ -17,7 +17,7 @@
     "manual_review_items": 200,
     "paid_spend": 0
   },
-  "status": "running",
+  "status": "checkpointed_open",
   "branch": "research/p3-p6-cp10",
   "external_requests_used": 16,
   "manual_review_items_used": 6,
@@ -56,6 +56,15 @@
   },
   "prior_maintenance_is_not_scientific_review": true,
   "next_batch": "Complete CP10 QA and full independent remote verification before further research.",
-  "last_completed_batch": "Explicit committed RUN8 review candidates integrated; exact activities, observations and retained failures are recorded in the input bindings and ledgers.",
-  "sync_state": "canonical_transaction_pending_publication"
+  "last_completed_batch": "See the reconciled RUN8 integration report and exact source/manual-review ledgers.",
+  "sync_state": "Final canonical publication/readback are later events recorded in a separate receipt.",
+  "end_checkpoint_id": "CP-0010",
+  "checkpoint_status": "valid",
+  "checkpoint_validation_state": "passed",
+  "checkpoint_completed_at_utc": "2026-11-27T09:39:18.569160Z",
+  "checkpoint_wall_clock_hours": 0.4906,
+  "budget_exhausted": false,
+  "pause_reason": "Bounded research batches consolidated; independent complete remote synchronization must pass before another batch. Research closure remains open.",
+  "post_commit_verification_url": "https://github.com/ncut-d1z/Insect-Inspired/blob/sync/cp10-checkpoint-import/temp/sync/CP-0010/verification.json",
+  "qa_completed_at_utc": "2026-11-27T09:39:18.569160Z"
 }
