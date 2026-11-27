@@ -1,0 +1,486 @@
+{
+  "query_id": "Q-RUN05-P4-S13-citations-001",
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "task_id": "T-Citations-S13-epmc",
+  "entity_id": "W-S13",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/MED/19893631/citations?format=json&page=1&pageSize=1000",
+  "raw_parameters": {
+    "format": "json",
+    "page": 1,
+    "pageSize": 1000
+  },
+  "query_kind": "citations",
+  "queried_at_utc": "2026-11-27T02:48:05.513378Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "rerun_reason": "Exact DOI/PMID cross-check published; resume pending seed source at first citation page.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Public bibliographic facts; abstract/full text and personal contact details omitted.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Live source observed now, not a historical snapshot. Publication cutoff is checked separately.",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "status": "success",
+  "body_bytes": 18974,
+  "body_sha256": "dfe21ed1d59362e6bebac3d392d7b4767cf1d37bdff1a91a56fa33853e7ac29a",
+  "records": [
+    {
+      "source": "MED",
+      "id": "40589182",
+      "title": "A neuromorphic model of active vision shows how spatiotemporal encoding in lobula neurons can aid pattern recognition in bees.",
+      "authorString": "MaBouDi H, Roper M, Guiraud MG, Juusola M, Chittka L, Marshall JAR.",
+      "journalAbbreviation": "Elife",
+      "pubYear": 2025,
+      "pageInfo": "e89929"
+    },
+    {
+      "source": "MED",
+      "id": "39851767",
+      "title": "A Bio-Inspired Visual Neural Model for Robustly and Steadily Detecting Motion Directions of Translating Objects Against Variable Contrast in the Figure-Ground and Noise Interference.",
+      "authorString": "Zhang S, Li K, Luo Z, Xu M, Zheng S.",
+      "journalAbbreviation": "Biomimetics (Basel)",
+      "pubYear": 2025,
+      "pageInfo": "51"
+    },
+    {
+      "source": "MED",
+      "id": "39437271",
+      "title": "Intelligent Bionic Polarization Orientation Method Using Biological Neuron Model for Harsh Conditions.",
+      "authorString": "Shen C, Wu Y, Qian G, Wu X, Cao H, Wang C, Tang J, Liu J.",
+      "journalAbbreviation": "IEEE Trans Pattern Anal Mach Intell",
+      "pubYear": 2025,
+      "pageInfo": "789-806"
+    },
+    {
+      "source": "MED",
+      "id": "39517943",
+      "title": "Evaluation of Automated Object-Detection Algorithms for Koala Detection in Infrared Aerial Imagery.",
+      "authorString": "Al-Shimaysawee LAH, Finn A, Weber D, Schebella MF, Brinkworth RSA.",
+      "journalAbbreviation": "Sensors (Basel)",
+      "pubYear": 2024,
+      "pageInfo": "7048"
+    },
+    {
+      "source": "MED",
+      "id": "39590222",
+      "title": "A Computationally Efficient Neuronal Model for Collision Detection with Contrast Polarity-Specific Feed-Forward Inhibition.",
+      "authorString": "Gao G, Liu R, Wang M, Fu Q.",
+      "journalAbbreviation": "Biomimetics (Basel)",
+      "pubYear": 2024,
+      "pageInfo": "650"
+    },
+    {
+      "source": "MED",
+      "id": "37294743",
+      "title": "Contrast normalization affects response time-course of visual interneurons.",
+      "authorString": "Pirogova N, Borst A.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2023,
+      "pageInfo": "e0285686"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR671295",
+      "title": "A neuromorphic model of active vision shows how spatiotemporal encoding in lobula neurons can aid pattern recognition in bees",
+      "authorString": "MaBouDi H, Roper M, Guiraud M, Juusola M, Chittka L, Marshall JA.",
+      "pubYear": 2023
+    },
+    {
+      "source": "MED",
+      "id": "37083880",
+      "title": "Bioinspired figure-ground discrimination via visual motion smoothing.",
+      "authorString": "Wu Z, Guo A.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2023,
+      "pageInfo": "e1011077"
+    },
+    {
+      "source": "MED",
+      "id": "36305942",
+      "title": "Exploration of motion inhibition for the suppression of false positives in biologically inspired small target detection algorithms from a moving platform.",
+      "authorString": "Melville-Smith A, Finn A, Uzair M, Brinkworth RSA.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2022,
+      "pageInfo": "661-685"
+    },
+    {
+      "source": "MED",
+      "id": "36303043",
+      "title": "Contrast independent biologically inspired translational optic flow estimation.",
+      "authorString": "Skelton PSM, Finn A, Brinkworth RSA.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2022,
+      "pageInfo": "635-660"
+    },
+    {
+      "source": "MED",
+      "id": "35450210",
+      "title": "Dragonfly Neurons Selectively Attend to Targets Within Natural Scenes.",
+      "authorString": "Evans BJE, O'Carroll DC, Fabian JM, Wiederman SD.",
+      "journalAbbreviation": "Front Cell Neurosci",
+      "pubYear": 2022,
+      "pageInfo": "857071"
+    },
+    {
+      "source": "MED",
+      "id": "35232118",
+      "title": "Acoustic detection of unmanned aerial vehicles using biologically inspired vision processing.",
+      "authorString": "Fang J, Finn A, Wyber R, Brinkworth RSA.",
+      "journalAbbreviation": "J Acoust Soc Am",
+      "pubYear": 2022,
+      "pageInfo": "968"
+    },
+    {
+      "source": "MED",
+      "id": "34555824",
+      "title": "Nonlinear, neuronal adaptation in insect vision models improves target discrimination within repetitively moving backgrounds.",
+      "authorString": "James JV, Cazzolato BS, Grainger S, Wiederman SD.",
+      "journalAbbreviation": "Bioinspir Biomim",
+      "pubYear": 2021
+    },
+    {
+      "source": "MED",
+      "id": "33807741",
+      "title": "Detecting Small Size and Minimal Thermal Signature Targets in Infrared Imagery Using Biologically Inspired Vision.",
+      "authorString": "Uzair M, Brinkworth RSA, Finn A.",
+      "journalAbbreviation": "Sensors (Basel)",
+      "pubYear": 2021,
+      "pageInfo": "1812"
+    },
+    {
+      "source": "MED",
+      "id": "33315561",
+      "title": "Bio-Inspired Video Enhancement for Small Moving Target Detection.",
+      "authorString": "Uzair M, Brinkworth RS, Finn A.",
+      "journalAbbreviation": "IEEE Trans Image Process",
+      "pubYear": 2021,
+      "pageInfo": "1232-1244"
+    },
+    {
+      "source": "MED",
+      "id": "32623517",
+      "title": "Modelling Drosophila motion vision pathways for decoding the direction of translating objects against cluttered moving backgrounds.",
+      "authorString": "Fu Q, Yue S.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2020,
+      "pageInfo": "443-460"
+    },
+    {
+      "source": "MED",
+      "id": "32502966",
+      "title": "Seeing Natural Images through the Eye of a Fly with Remote Focusing Two-Photon Microscopy.",
+      "authorString": "Schuetzenberger A, Borst A.",
+      "journalAbbreviation": "iScience",
+      "pubYear": 2020,
+      "pageInfo": "101170"
+    },
+    {
+      "source": "MED",
+      "id": "32097483",
+      "title": "Opto-locomotor reflexes of mice to reverse-phi stimuli.",
+      "authorString": "Kirkels LAMH, Zhang W, Duijnhouwer J, van Wezel RJA.",
+      "journalAbbreviation": "J Vis",
+      "pubYear": 2020,
+      "pageInfo": "7"
+    },
+    {
+      "source": "MED",
+      "id": "32040161",
+      "title": "A minimal synaptic model for direction selective neurons in Drosophila.",
+      "authorString": "Zavatone-Veth JA, Badwan BA, Clark DA.",
+      "journalAbbreviation": "J Vis",
+      "pubYear": 2020,
+      "pageInfo": "2"
+    },
+    {
+      "source": "MED",
+      "id": "31928873",
+      "title": "Dynamic Signal Compression for Robust Motion Vision in Flies.",
+      "authorString": "Drews MS, Leonhardt A, Pirogova N, Richter FG, Schuetzenberger A, Braun L, Serbe E, Borst A.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2020,
+      "pageInfo": "209-221.e8"
+    },
+    {
+      "source": "MED",
+      "id": "31928874",
+      "title": "Heterogeneous Temporal Contrast Adaptation in Drosophila Direction-Selective Circuits.",
+      "authorString": "Matulis CA, Chen J, Gonzalez-Suarez AD, Behnia R, Clark DA.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2020,
+      "pageInfo": "222-236.e6"
+    },
+    {
+      "source": "MED",
+      "id": "31917816",
+      "title": "Learning from animals: How to Navigate Complex Terrains.",
+      "authorString": "Zhu H, Liu H, Ataei A, Munk Y, Daniel T, Paschalidis IC.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2020,
+      "pageInfo": "e1007452"
+    },
+    {
+      "source": "MED",
+      "id": "31481434",
+      "title": "Differential Tuning to Visual Motion Allows Robust Encoding of Optic Flow in the Dragonfly.",
+      "authorString": "Evans BJE, O'Carroll DC, Fabian JM, Wiederman SD.",
+      "journalAbbreviation": "J Neurosci",
+      "pubYear": 2019,
+      "pageInfo": "8051-8063"
+    },
+    {
+      "source": "MED",
+      "id": "30781489",
+      "title": "A Hardware-Friendly Optical Flow-Based Time-to-Collision Estimation Algorithm.",
+      "authorString": "Shi C, Dong Z, Pundlik S, Luo G.",
+      "journalAbbreviation": "Sensors (Basel)",
+      "pubYear": 2019,
+      "pageInfo": "E807"
+    },
+    {
+      "source": "MED",
+      "id": "30553486",
+      "title": "Insect-inspired neuromorphic computing.",
+      "authorString": "Dalgaty T, Vianello E, De Salvo B, Casas J.",
+      "journalAbbreviation": "Curr Opin Insect Sci",
+      "pubYear": 2018,
+      "pageInfo": "59-66"
+    },
+    {
+      "source": "MED",
+      "id": "29643402",
+      "title": "Spatial Encoding of Translational Optic Flow in Planar Scenes by Elementary Motion Detector Arrays.",
+      "authorString": "Lecoeur J, Baird E, Floreano D.",
+      "journalAbbreviation": "Sci Rep",
+      "pubYear": 2018,
+      "pageInfo": "5821"
+    },
+    {
+      "source": "MED",
+      "id": "28704206",
+      "title": "An autonomous robot inspired by insect neurophysiology pursues moving features in natural environments.",
+      "authorString": "Bagheri ZM, Cazzolato BS, Grainger S, O'Carroll DC, Wiederman SD.",
+      "journalAbbreviation": "J Neural Eng",
+      "pubYear": 2017,
+      "pageInfo": "046030"
+    },
+    {
+      "source": "MED",
+      "id": "27710784",
+      "title": "Direct Measurement of Correlation Responses in Drosophila Elementary Motion Detectors Reveals Fast Timescale Tuning.",
+      "authorString": "Salazar-Gatzimas E, Chen J, Creamer MS, Mano O, Mandel HB, Matulis CA, Pottackal J, Clark DA.",
+      "journalAbbreviation": "Neuron",
+      "pubYear": 2016,
+      "pageInfo": "227-239"
+    },
+    {
+      "source": "MED",
+      "id": "26583771",
+      "title": "A Bio-inspired Collision Avoidance Model Based on Spatial Information Derived from Motion Detectors Leads to Common Routes.",
+      "authorString": "Bertrand OJ, Lindemann JP, Egelhaaf M.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2015,
+      "pageInfo": "e1004339"
+    },
+    {
+      "source": "MED",
+      "id": "26499494",
+      "title": "Nonlinear circuits for naturalistic visual motion estimation.",
+      "authorString": "Fitzgerald JE, Clark DA.",
+      "journalAbbreviation": "Elife",
+      "pubYear": 2015,
+      "pageInfo": "e09123"
+    },
+    {
+      "source": "MED",
+      "id": "26439748",
+      "title": "A higher order visual neuron tuned to the spatial amplitude spectra of natural scenes.",
+      "authorString": "Dyakova O, Lee YJ, Longden KD, Kiselev VG, Nordström K.",
+      "journalAbbreviation": "Nat Commun",
+      "pubYear": 2015,
+      "pageInfo": "8522"
+    },
+    {
+      "source": "MED",
+      "id": "26063815",
+      "title": "Properties of neuronal facilitation that improve target tracking in natural pursuit simulations.",
+      "authorString": "Bagheri ZM, Wiederman SD, Cazzolato BS, Grainger S, O'Carroll DC.",
+      "journalAbbreviation": "J R Soc Interface",
+      "pubYear": 2015,
+      "pageInfo": "20150083"
+    },
+    {
+      "source": "MED",
+      "id": "25505148",
+      "title": "Influence of environmental information in natural scenes and the effects of motion adaptation on a fly motion-sensitive neuron during simulated flight.",
+      "authorString": "Ullrich TW, Kern R, Egelhaaf M.",
+      "journalAbbreviation": "Biol Open",
+      "pubYear": 2014,
+      "pageInfo": "13-21"
+    },
+    {
+      "source": "MED",
+      "id": "25389392",
+      "title": "Motion as a source of environmental information: a fresh view on biological motion computation by insect brains.",
+      "authorString": "Egelhaaf M, Kern R, Lindemann JP.",
+      "journalAbbreviation": "Front Neural Circuits",
+      "pubYear": 2014,
+      "pageInfo": "127"
+    },
+    {
+      "source": "MED",
+      "id": "25340761",
+      "title": "Temporal statistics of natural image sequences generated by movements with insect flight characteristics.",
+      "authorString": "Schwegmann A, Lindemann JP, Egelhaaf M.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2014,
+      "pageInfo": "e110386"
+    },
+    {
+      "source": "MED",
+      "id": "25136314",
+      "title": "Depth information in natural environments derived from optic flow by insect motion detection system: a model analysis.",
+      "authorString": "Schwegmann A, Lindemann JP, Egelhaaf M.",
+      "journalAbbreviation": "Front Comput Neurosci",
+      "pubYear": 2014,
+      "pageInfo": "83"
+    },
+    {
+      "source": "MED",
+      "id": "24526725",
+      "title": "Octopaminergic modulation of the visual flight speed regulator of Drosophila.",
+      "authorString": "van Breugel F, Suver MP, Dickinson MH.",
+      "journalAbbreviation": "J Exp Biol",
+      "pubYear": 2014,
+      "pageInfo": "1737-1744"
+    },
+    {
+      "source": "MED",
+      "id": "23335890",
+      "title": "Texture dependence of motion sensing and free flight behavior in blowflies.",
+      "authorString": "Lindemann JP, Egelhaaf M.",
+      "journalAbbreviation": "Front Behav Neurosci",
+      "pubYear": 2012,
+      "pageInfo": "92"
+    },
+    {
+      "source": "MED",
+      "id": "23269913",
+      "title": "Spatial vision in insects is facilitated by shaping the dynamics of visual input through behavioral action.",
+      "authorString": "Egelhaaf M, Boeddeker N, Kern R, Kurtz R, Lindemann JP.",
+      "journalAbbreviation": "Front Neural Circuits",
+      "pubYear": 2012,
+      "pageInfo": "108"
+    },
+    {
+      "source": "MED",
+      "id": "22864467",
+      "title": "Insect-inspired high-speed motion vision system for robot control.",
+      "authorString": "Wu H, Zou K, Zhang T, Borst A, Kühnlenz K.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2012,
+      "pageInfo": "453-463"
+    },
+    {
+      "source": "MED",
+      "id": "22461769",
+      "title": "Neuronal encoding of object and distance information: a model simulation study on naturalistic optic flow processing.",
+      "authorString": "Hennig P, Egelhaaf M.",
+      "journalAbbreviation": "Front Neural Circuits",
+      "pubYear": 2012,
+      "pageInfo": "14"
+    },
+    {
+      "source": "MED",
+      "id": "21760894",
+      "title": "Pattern-dependent response modulations in motion-sensitive visual interneurons--a model study.",
+      "authorString": "Meyer HG, Lindemann JP, Egelhaaf M.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2011,
+      "pageInfo": "e21488"
+    },
+    {
+      "source": "MED",
+      "id": "21589861",
+      "title": "Honeybees' speed depends on dorsal as well as lateral, ventral and frontal optic flows.",
+      "authorString": "Portelli G, Ruffier F, Roubieu FL, Franceschini N.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2011,
+      "pageInfo": "e19486"
+    },
+    {
+      "source": "MED",
+      "id": "21519385",
+      "title": "Binocular integration of visual information: a model study on naturalistic optic flow processing.",
+      "authorString": "Hennig P, Kern R, Egelhaaf M.",
+      "journalAbbreviation": "Front Neural Circuits",
+      "pubYear": 2011,
+      "pageInfo": "4"
+    },
+    {
+      "source": "MED",
+      "id": "22163800",
+      "title": "Contrast-independent biologically inspired motion detection.",
+      "authorString": "Babies B, Lindemann JP, Egelhaaf M, Möller R.",
+      "journalAbbreviation": "Sensors (Basel)",
+      "pubYear": 2011,
+      "pageInfo": "3303-3326"
+    },
+    {
+      "source": "MED",
+      "id": "20727759",
+      "title": "Visual control of altitude in flying Drosophila.",
+      "authorString": "Straw AD, Lee S, Dickinson MH.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2010,
+      "pageInfo": "1550-1556"
+    },
+    {
+      "source": "MED",
+      "id": "20689158",
+      "title": "Mimicking honeybee eyes with a 280 degrees field of view catadioptric imaging system.",
+      "authorString": "Stürzl W, Boeddeker N, Dittmar L, Egelhaaf M.",
+      "journalAbbreviation": "Bioinspir Biomim",
+      "pubYear": 2010,
+      "pageInfo": "036002"
+    },
+    {
+      "source": "MED",
+      "id": "20591869",
+      "title": "Motion perception and visual signal design in Anolis lizards.",
+      "authorString": "Fleishman LJ, Pallus AC.",
+      "journalAbbreviation": "Proc Biol Sci",
+      "pubYear": 2010,
+      "pageInfo": "3547-3554"
+    },
+    {
+      "source": "MED",
+      "id": "20537540",
+      "title": "Motion adaptation and the velocity coding of natural scenes.",
+      "authorString": "Barnett PD, Nordström K, O'Carroll DC.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2010,
+      "pageInfo": "994-999"
+    }
+  ],
+  "returned_count": 49,
+  "visible_total": 49,
+  "cursor_in": "1",
+  "cursor_out": null,
+  "page_index": 1,
+  "page_complete": true,
+  "provider_response_keys": [
+    "citationList",
+    "hitCount",
+    "request",
+    "version"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "completed_at_utc": "2026-11-27T02:48:29.720670Z"
+}
