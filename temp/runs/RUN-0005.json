@@ -19,9 +19,9 @@
   },
   "status": "running",
   "branch": "research/p3-p6-cp7",
-  "external_requests_used": 0,
-  "manual_review_items_used": 0,
-  "cache_reuse_events": 0,
+  "external_requests_used": 14,
+  "manual_review_items_used": 51,
+  "cache_reuse_events": 23,
   "paid_spend": 0,
   "closure": false,
   "research_cutoff_at_utc": "2026-11-26T05:24:08Z",
@@ -52,5 +52,7 @@
     "main_updated": false,
     "remote_branches_deleted": false
   },
-  "next_batch": "Inspect existing breadth-first reference queues, resolve exact stable-identifier targets using retained official evidence, then process forward citations, author/project evidence and distinct limitation claims; preserve all incomplete queues."
+  "next_batch": "Complete CP7 QA and full independent remote verification before further research.",
+  "last_completed_batch": "P3 two reference iterations; P4 nine citation lists and exact identities; P5 five official-author outputs plus correction; P6 distinct Hx odor response",
+  "sync_state": "canonical_transaction_pending_publication"
 }
