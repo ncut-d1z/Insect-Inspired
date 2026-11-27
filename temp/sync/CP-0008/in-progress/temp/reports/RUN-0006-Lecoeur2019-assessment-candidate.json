@@ -1,0 +1,1916 @@
+{
+  "schema_version": 1,
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0008",
+  "status": "reviewed_schema_valid_candidate_not_yet_integrated",
+  "created_at_utc": "2026-11-27T07:01:46Z",
+  "review_binding": {
+    "path": "temp/reports/RUN-0006-Lecoeur2019-evidence-review.json",
+    "sha256": "32932a17aeee50ab416931bd464eefd220eeb5310d28cce711ce84394f4206a3",
+    "published_commit": "02438b08a01d76f62dd85b2e4ed12d6e0b3b0596",
+    "cache_query_id": "Q-RUN06-P6-Lecoeur-cache-001",
+    "original_pdf_query_id": "Q-RUN01-00287",
+    "pdf_sha256": "e35d53aa87c197f5ea66e7fd532a7b383e835ffb03b0edcf4c0de88beceb7955",
+    "protected_existing_assessment_id": "AS-clutter2019-L01-obstacle-selective-pooling",
+    "existing_assessments_changed": 0,
+    "root_scope_adjudication": "仅 new_evidence_or_hypothesis；受控走廊六布局的逐飞行条件统计，不扩展到自然环境总体、独立动物样本或视觉尺度。"
+  },
+  "assessment": {
+    "assessment_id": "AS-RUN06-Lecoeur2019-L08-flight-speed-statistics",
+    "work_id": "W-D164a2202bdd6930e",
+    "work_key": "Lecoeur2019",
+    "limitation_id": "L08",
+    "claim_id": "CLAIM-RUN06-Lecoeur-corridor-conditioned-flight-statistics",
+    "claim_type": "other_specified",
+    "relation_type": [
+      "direct_study",
+      "foundational_support"
+    ],
+    "handling_level": "new_evidence_or_hypothesis",
+    "evidence_level": "fulltext_result",
+    "evidence_kind": [
+      "behavioral_experiment",
+      "dataset_measurement"
+    ],
+    "evidence_route": "biological_mechanism",
+    "conditions": {
+      "species": {
+        "status": "reported",
+        "value": [
+          {
+            "scientific_name": "Bombus terrestris",
+            "taxon_id": null,
+            "cell_type": null,
+            "cell_identifiers": [],
+            "field_states": {
+              "taxon_id": {
+                "status": "not_reported",
+                "reason": "已读物种方法段未给分类数据库标识。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": "8–9",
+                    "section": "Materials and Methods: Experimental setting; Flight analysis",
+                    "accessed_at": "2026-11-27T07:01:46Z",
+                    "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              },
+              "cell_type": {
+                "status": "not_applicable",
+                "reason": "行为实验不对应特定细胞类型。",
+                "evidence_locator": [
+                  {
+                    "source_id": "publisher",
+                    "identifier": "10.1038/s41598-019-44187-2",
+                    "version_id": "V-W-D164a2202bdd6930e-01",
+                    "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                    "page": "8–9",
+                    "section": "Materials and Methods: Experimental setting; Flight analysis",
+                    "accessed_at": "2026-11-27T07:01:46Z",
+                    "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          }
+        ],
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "reason": null,
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "motion_type": {
+        "status": "reported",
+        "value": "other_specified",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "reason": "自由飞行大体沿走廊纵向，伴有侧向运动；本文统计未证明头部旋转为零，不能编码为纯平移。",
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "motion_dof": {
+        "status": "not_applicable",
+        "value": null,
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "reason": "本主张不是运动自由度恢复；只归档外部重建轨迹的前向飞行速度统计，不赋予已估计旋转/平移自由度。",
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "known_translation": {
+        "status": "reported",
+        "value": "externally_known",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "reason": "实验者通过外部相机重建平移；不表示蜜蜂已知尺度或自运动。",
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "speed_range": {
+        "status": "reported",
+        "value": [
+          {
+            "quantity": "linear_velocity",
+            "min": 0.836,
+            "max": 1.337,
+            "unit": "m/s",
+            "coordinate_frame": "实验走廊纵向飞行速度",
+            "measurement_role": "measured",
+            "definition": "六种布局条件均值的范围；不是全部个体或瞬时速度的范围。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "表 1 的六种布局中，每次飞行先求均值，再跨 N 次飞行求 μ 与 σ；n 是各条件蜂个体数。单位 m/s。不是独立个体总体或瞬时速度范围。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ]
+          },
+          {
+            "quantity": "sample_interval",
+            "min": 0.005,
+            "max": 0.005,
+            "unit": "s",
+            "coordinate_frame": "实验相机采样时间",
+            "measurement_role": "measured",
+            "definition": "由文中 200 fps 换算 1/200 s；不是生物响应时延。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": "8–9",
+                "section": "Materials and Methods: Experimental setting; Flight analysis",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+              }
+            ]
+          }
+        ],
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "表 1 的六种布局中，每次飞行先求均值，再跨 N 次飞行求 μ 与 σ；n 是各条件蜂个体数。单位 m/s。不是独立个体总体或瞬时速度范围。",
+            "table": "1",
+            "figure": "2d"
+          }
+        ],
+        "reason": "六条件均值范围和相机采样周期分别标注，不混同瞬时速度分布。",
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "environment": {
+        "status": "reported",
+        "value": "laboratory_controlled",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "reason": null,
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "environment_details": {
+        "status": "reported",
+        "value": {
+          "dataset_ids": [
+            "D-RUN06-Lecoeur2019-Table1"
+          ],
+          "scene_count": 6,
+          "fov_deg": null,
+          "distance_range": null,
+          "distance_distribution": "fixed",
+          "scene_dynamics": "static",
+          "distance_knowledge": "known_metric",
+          "field_states": {
+            "fov_deg": {
+              "status": "not_applicable",
+              "reason": "本主张是外部相机逐飞行统计，没有统一固定视网膜采样孔径。",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": "8–9",
+                  "section": "Materials and Methods: Experimental setting; Flight analysis",
+                  "accessed_at": "2026-11-27T07:01:46Z",
+                  "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            },
+            "distance_range": {
+              "status": "not_applicable",
+              "reason": "六种走廊障碍布局不是统一眼到景物径向距离区间；不把走廊尺寸当距离分布。",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": "8–9",
+                  "section": "Materials and Methods: Experimental setting; Flight analysis",
+                  "accessed_at": "2026-11-27T07:01:46Z",
+                  "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            }
+          }
+        },
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "reason": "scene_count=6 指同一受控走廊的六种布置；known_metric 仅指实验者知道几何，fixed 指几何在各条件内固定。",
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "texture_noise": {
+        "status": "reported",
+        "value": {
+          "stimulus_type": "synthetic_pattern",
+          "contrast": null,
+          "spatial_frequency": null,
+          "illumination": null,
+          "noise": null,
+          "outlier_fraction": null,
+          "occlusion_fraction": null,
+          "field_states": {
+            "contrast": {
+              "status": "not_reported",
+              "reason": "已读刺激材料段给红白纹理但未给可独立录入的数值对比度。",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": "8–9",
+                  "section": "Materials and Methods: Experimental setting; Flight analysis",
+                  "accessed_at": "2026-11-27T07:01:46Z",
+                  "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            },
+            "spatial_frequency": {
+              "status": "not_applicable",
+              "reason": "dead-leaves 为宽频、自然样统计纹理；单一空间频率不适用。",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": "8–9",
+                  "section": "Materials and Methods: Experimental setting; Flight analysis",
+                  "accessed_at": "2026-11-27T07:01:46Z",
+                  "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            },
+            "illumination": {
+              "status": "unknown",
+              "reason": "本批未独立确证照度定量元数据。",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": "8–9",
+                  "section": "Materials and Methods: Experimental setting; Flight analysis",
+                  "accessed_at": "2026-11-27T07:01:46Z",
+                  "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+                }
+              ],
+              "unknown_since_utc": "2026-11-27T07:01:46Z",
+              "review_task_id": "T-Unknown-4e928afdf6d1570d"
+            },
+            "noise": {
+              "status": "unknown",
+              "reason": "本批未独立确证外部轨迹重建的噪声定量元数据。",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": "8–9",
+                  "section": "Materials and Methods: Experimental setting; Flight analysis",
+                  "accessed_at": "2026-11-27T07:01:46Z",
+                  "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+                }
+              ],
+              "unknown_since_utc": "2026-11-27T07:01:46Z",
+              "review_task_id": "T-Unknown-1f6b8dbac4d2678a"
+            },
+            "outlier_fraction": {
+              "status": "unknown",
+              "reason": "本批未取得原始飞行及剔除清单，不能填离群排除比例。",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": "8–9",
+                  "section": "Materials and Methods: Experimental setting; Flight analysis",
+                  "accessed_at": "2026-11-27T07:01:46Z",
+                  "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+                }
+              ],
+              "unknown_since_utc": "2026-11-27T07:01:46Z",
+              "review_task_id": "T-Unknown-af0c31804e40084a"
+            },
+            "occlusion_fraction": {
+              "status": "unknown",
+              "reason": "本批未取得原始相机轨迹，不能填遮挡比例。",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": "8–9",
+                  "section": "Materials and Methods: Experimental setting; Flight analysis",
+                  "accessed_at": "2026-11-27T07:01:46Z",
+                  "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+                }
+              ],
+              "unknown_since_utc": "2026-11-27T07:01:46Z",
+              "review_task_id": "T-Unknown-a4645f3136a04792"
+            }
+          }
+        },
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "reason": null,
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "scale": {
+        "status": "not_applicable",
+        "value": null,
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "1–2;8–9;12",
+            "section": "Introduction; Materials and Methods; Data Availability",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "光流本身有速度/距离比例歧义。此条只保存外部相机测得的逐飞行速度统计；原始数据按需向作者获取，未取得或重算。"
+          }
+        ],
+        "reason": "m/s 来自实验者外部标定测量；不属于昆虫或视觉算法的尺度恢复主张。",
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "scale_source_prior": {
+        "status": "not_applicable",
+        "value": null,
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "1–2;8–9;12",
+            "section": "Introduction; Materials and Methods; Data Availability",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "光流本身有速度/距离比例歧义。此条只保存外部相机测得的逐飞行速度统计；原始数据按需向作者获取，未取得或重算。"
+          }
+        ],
+        "reason": "没有评估视觉尺度估计器，不能把外部实验测量当作动物内部尺度先验。",
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "scale_observability": {
+        "status": "not_applicable",
+        "value": null,
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "1–2;8–9;12",
+            "section": "Introduction; Materials and Methods; Data Availability",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "光流本身有速度/距离比例歧义。此条只保存外部相机测得的逐飞行速度统计；原始数据按需向作者获取，未取得或重算。"
+          }
+        ],
+        "reason": "未主张视觉绝对尺度可观测，也未作可观测性证明。",
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "method_and_validation": {
+        "status": "reported",
+        "value": {
+          "assumptions": [
+            "同一走廊的六种障碍布局；没有六个自然环境的抽样。",
+            "N 是飞行次数，同一蜜蜂可贡献多次飞行；不把 N 当独立生物样本数。",
+            "保留每条件 n；没有跨条件个体标识映射，不能相加得独特个体总数。"
+          ],
+          "validation_types": [
+            "behavioral_experiment",
+            "dataset_measurement"
+          ],
+          "dataset_ids": [
+            "D-RUN06-Lecoeur2019-Table1"
+          ],
+          "sample_count": null,
+          "trial_count": 337,
+          "baseline_ids": [
+            "B-RUN06-Lecoeur-empty-corridor"
+          ],
+          "metric_ids": [
+            "M-RUN06-Lecoeur-speed-1",
+            "M-RUN06-Lecoeur-speed-2",
+            "M-RUN06-Lecoeur-speed-3",
+            "M-RUN06-Lecoeur-speed-4",
+            "M-RUN06-Lecoeur-speed-5",
+            "M-RUN06-Lecoeur-speed-6"
+          ],
+          "failure_conditions": [
+            "没有取得原始轨迹，未重做混合效应或个体层级推断。",
+            "不能推广到自由自然场景、水平障碍、旋转/平移联合分布或视觉尺度恢复。"
+          ],
+          "field_states": {
+            "sample_count": {
+              "status": "not_reported",
+              "reason": "表 1 逐条件给 n，未给六条件合并去重后的独特蜂个体数；trial_count=337 是已报告 N 的算术合计。",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": 4,
+                  "section": "Results: obstacle density; Table 1 caption",
+                  "accessed_at": "2026-11-27T07:01:46Z",
+                  "evidence_note": "表 1 的六种布局中，每次飞行先求均值，再跨 N 次飞行求 μ 与 σ；n 是各条件蜂个体数。单位 m/s。不是独立个体总体或瞬时速度范围。",
+                  "table": "1",
+                  "figure": "2d"
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            }
+          }
+        },
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "表 1 的六种布局中，每次飞行先求均值，再跨 N 次飞行求 μ 与 σ；n 是各条件蜂个体数。单位 m/s。不是独立个体总体或瞬时速度范围。",
+            "table": "1",
+            "figure": "2d"
+          }
+        ],
+        "reason": null,
+        "unknown_since_utc": null,
+        "review_task_id": null
+      }
+    },
+    "species": {
+      "status": "reported",
+      "value": [
+        {
+          "scientific_name": "Bombus terrestris",
+          "taxon_id": null,
+          "cell_type": null,
+          "cell_identifiers": [],
+          "field_states": {
+            "taxon_id": {
+              "status": "not_reported",
+              "reason": "已读物种方法段未给分类数据库标识。",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": "8–9",
+                  "section": "Materials and Methods: Experimental setting; Flight analysis",
+                  "accessed_at": "2026-11-27T07:01:46Z",
+                  "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            },
+            "cell_type": {
+              "status": "not_applicable",
+              "reason": "行为实验不对应特定细胞类型。",
+              "evidence_locator": [
+                {
+                  "source_id": "publisher",
+                  "identifier": "10.1038/s41598-019-44187-2",
+                  "version_id": "V-W-D164a2202bdd6930e-01",
+                  "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                  "page": "8–9",
+                  "section": "Materials and Methods: Experimental setting; Flight analysis",
+                  "accessed_at": "2026-11-27T07:01:46Z",
+                  "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+                }
+              ],
+              "unknown_since_utc": null,
+              "review_task_id": null
+            }
+          }
+        }
+      ],
+      "evidence_locator": [
+        {
+          "source_id": "publisher",
+          "identifier": "10.1038/s41598-019-44187-2",
+          "version_id": "V-W-D164a2202bdd6930e-01",
+          "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+          "page": "8–9",
+          "section": "Materials and Methods: Experimental setting; Flight analysis",
+          "accessed_at": "2026-11-27T07:01:46Z",
+          "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+        }
+      ],
+      "reason": null,
+      "unknown_since_utc": null,
+      "review_task_id": null
+    },
+    "motion_type": {
+      "status": "reported",
+      "value": "other_specified",
+      "evidence_locator": [
+        {
+          "source_id": "publisher",
+          "identifier": "10.1038/s41598-019-44187-2",
+          "version_id": "V-W-D164a2202bdd6930e-01",
+          "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+          "page": "8–9",
+          "section": "Materials and Methods: Experimental setting; Flight analysis",
+          "accessed_at": "2026-11-27T07:01:46Z",
+          "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+        }
+      ],
+      "reason": "自由飞行大体沿走廊纵向，伴有侧向运动；本文统计未证明头部旋转为零，不能编码为纯平移。",
+      "unknown_since_utc": null,
+      "review_task_id": null
+    },
+    "environment": {
+      "status": "reported",
+      "value": "laboratory_controlled",
+      "evidence_locator": [
+        {
+          "source_id": "publisher",
+          "identifier": "10.1038/s41598-019-44187-2",
+          "version_id": "V-W-D164a2202bdd6930e-01",
+          "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+          "page": "8–9",
+          "section": "Materials and Methods: Experimental setting; Flight analysis",
+          "accessed_at": "2026-11-27T07:01:46Z",
+          "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+        }
+      ],
+      "reason": null,
+      "unknown_since_utc": null,
+      "review_task_id": null
+    },
+    "scale": {
+      "status": "not_applicable",
+      "value": null,
+      "evidence_locator": [
+        {
+          "source_id": "publisher",
+          "identifier": "10.1038/s41598-019-44187-2",
+          "version_id": "V-W-D164a2202bdd6930e-01",
+          "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+          "page": "1–2;8–9;12",
+          "section": "Introduction; Materials and Methods; Data Availability",
+          "accessed_at": "2026-11-27T07:01:46Z",
+          "evidence_note": "光流本身有速度/距离比例歧义。此条只保存外部相机测得的逐飞行速度统计；原始数据按需向作者获取，未取得或重算。"
+        }
+      ],
+      "reason": "m/s 来自实验者外部标定测量；不属于昆虫或视觉算法的尺度恢复主张。",
+      "unknown_since_utc": null,
+      "review_task_id": null
+    },
+    "method": "在一个受控走廊内改变左右静态竖直障碍覆盖率，用两台 200 fps 相机重建 Bombus terrestris 三维轨迹。Table 1 先对每次飞行取平均速度，再跨该条件 N 次飞行求 μ 和 σ；原始数据未下载，当前是全文表格的结构化归档。",
+    "results": "六布局 C0|0、C0|16、C0|33、C0|100、C16|16、C33|33 的逐飞行均值之均值分别为 1.337、1.164、1.212、1.091、1.013、0.836 m/s；跨飞行 SD 分别为 0.235、0.171、0.189、0.147、0.249、0.181 m/s。各组 N/n 为 46/26、87/35、73/31、50/16、49/25、32/19；共 337 次飞行，独特蜂总数不明。",
+    "baseline": "C0|0 空走廊是实验条件参照；没有主张各组动物完全独立、随机分派或此数据是算法基准评测。",
+    "effect": "为 L08 提供同一走廊内依赖障碍布局的飞行速度条件统计。它不直接解决自然环境距离统计或自由飞行旋转/平移联合分布不足，也不重申既有 L01 光流池化模型误差主张。",
+    "dataset_records": [
+      {
+        "dataset_id": "D-RUN06-Lecoeur2019-Table1",
+        "name": "同一走廊六种布局的已发表逐飞行速度汇总",
+        "version": "2019 version-of-record Table 1",
+        "data_kind": "recorded_flight",
+        "source_locator": {
+          "source_id": "publisher",
+          "identifier": "10.1038/s41598-019-44187-2",
+          "version_id": "V-W-D164a2202bdd6930e-01",
+          "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+          "page": 4,
+          "section": "Results: obstacle density; Table 1 caption",
+          "accessed_at": "2026-11-27T07:01:46Z",
+          "evidence_note": "表 1 的六种布局中，每次飞行先求均值，再跨 N 次飞行求 μ 与 σ；n 是各条件蜂个体数。单位 m/s。不是独立个体总体或瞬时速度范围。",
+          "table": "1",
+          "figure": "2d"
+        },
+        "sequence_ids": [
+          "C0|0",
+          "C0|16",
+          "C0|33",
+          "C0|100",
+          "C16|16",
+          "C33|33"
+        ],
+        "split_id": null,
+        "ground_truth_source": {
+          "source_id": "publisher",
+          "identifier": "10.1038/s41598-019-44187-2",
+          "version_id": "V-W-D164a2202bdd6930e-01",
+          "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+          "page": "8–9",
+          "section": "Materials and Methods: Experimental setting; Flight analysis",
+          "accessed_at": "2026-11-27T07:01:46Z",
+          "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+        },
+        "ground_truth_independence": "independent",
+        "field_states": {
+          "split_id": {
+            "status": "not_applicable",
+            "reason": "未采用训练/测试数据切分；sequence_ids 是论文条件标签，不表示已取得原始轨迹文件。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "表 1 的六种布局中，每次飞行先求均值，再跨 N 次飞行求 μ 与 σ；n 是各条件蜂个体数。单位 m/s。不是独立个体总体或瞬时速度范围。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      }
+    ],
+    "baseline_records": [
+      {
+        "baseline_id": "B-RUN06-Lecoeur-empty-corridor",
+        "baseline_type": "control_group",
+        "description": "C0|0 空走廊参照条件；control_group 只表示无障碍实验条件，不表示独立动物随机对照组。",
+        "dataset_id": "D-RUN06-Lecoeur2019-Table1",
+        "condition_ids": [
+          "CL-RUN06-Lecoeur-layout-1"
+        ],
+        "metric_ids": [
+          "M-RUN06-Lecoeur-speed-1"
+        ],
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "表 1 的六种布局中，每次飞行先求均值，再跨 N 次飞行求 μ 与 σ；n 是各条件蜂个体数。单位 m/s。不是独立个体总体或瞬时速度范围。",
+            "table": "1",
+            "figure": "2d"
+          }
+        ],
+        "field_states": {}
+      }
+    ],
+    "condition_levels": [
+      {
+        "condition_id": "CL-RUN06-Lecoeur-layout-1",
+        "factor": "environment",
+        "level_id": "C0|0",
+        "quantity": null,
+        "description": "同一走廊左右障碍覆盖布局 C0|0，N=46 次飞行，n=26 蜂；两侧的标签共同定义几何。",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Table 1 C0|0: μ=1.337 m/s, σ=0.235 m/s, N=46 flights, n=26 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+            "table": "1",
+            "figure": "2d"
+          },
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "field_states": {
+          "quantity": {
+            "status": "not_applicable",
+            "reason": "此项是左右布局的类别组合，而非单个可混用的连续数量。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Table 1 C0|0: μ=1.337 m/s, σ=0.235 m/s, N=46 flights, n=26 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      {
+        "condition_id": "CL-RUN06-Lecoeur-layout-2",
+        "factor": "environment",
+        "level_id": "C0|16",
+        "quantity": null,
+        "description": "同一走廊左右障碍覆盖布局 C0|16，N=87 次飞行，n=35 蜂；两侧的标签共同定义几何。",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Table 1 C0|16: μ=1.164 m/s, σ=0.171 m/s, N=87 flights, n=35 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+            "table": "1",
+            "figure": "2d"
+          },
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "field_states": {
+          "quantity": {
+            "status": "not_applicable",
+            "reason": "此项是左右布局的类别组合，而非单个可混用的连续数量。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Table 1 C0|16: μ=1.164 m/s, σ=0.171 m/s, N=87 flights, n=35 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      {
+        "condition_id": "CL-RUN06-Lecoeur-layout-3",
+        "factor": "environment",
+        "level_id": "C0|33",
+        "quantity": null,
+        "description": "同一走廊左右障碍覆盖布局 C0|33，N=73 次飞行，n=31 蜂；两侧的标签共同定义几何。",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Table 1 C0|33: μ=1.212 m/s, σ=0.189 m/s, N=73 flights, n=31 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+            "table": "1",
+            "figure": "2d"
+          },
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "field_states": {
+          "quantity": {
+            "status": "not_applicable",
+            "reason": "此项是左右布局的类别组合，而非单个可混用的连续数量。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Table 1 C0|33: μ=1.212 m/s, σ=0.189 m/s, N=73 flights, n=31 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      {
+        "condition_id": "CL-RUN06-Lecoeur-layout-4",
+        "factor": "environment",
+        "level_id": "C0|100",
+        "quantity": null,
+        "description": "同一走廊左右障碍覆盖布局 C0|100，N=50 次飞行，n=16 蜂；两侧的标签共同定义几何。",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Table 1 C0|100: μ=1.091 m/s, σ=0.147 m/s, N=50 flights, n=16 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+            "table": "1",
+            "figure": "2d"
+          },
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "field_states": {
+          "quantity": {
+            "status": "not_applicable",
+            "reason": "此项是左右布局的类别组合，而非单个可混用的连续数量。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Table 1 C0|100: μ=1.091 m/s, σ=0.147 m/s, N=50 flights, n=16 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      {
+        "condition_id": "CL-RUN06-Lecoeur-layout-5",
+        "factor": "environment",
+        "level_id": "C16|16",
+        "quantity": null,
+        "description": "同一走廊左右障碍覆盖布局 C16|16，N=49 次飞行，n=25 蜂；两侧的标签共同定义几何。",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Table 1 C16|16: μ=1.013 m/s, σ=0.249 m/s, N=49 flights, n=25 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+            "table": "1",
+            "figure": "2d"
+          },
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "field_states": {
+          "quantity": {
+            "status": "not_applicable",
+            "reason": "此项是左右布局的类别组合，而非单个可混用的连续数量。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Table 1 C16|16: μ=1.013 m/s, σ=0.249 m/s, N=49 flights, n=25 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      {
+        "condition_id": "CL-RUN06-Lecoeur-layout-6",
+        "factor": "environment",
+        "level_id": "C33|33",
+        "quantity": null,
+        "description": "同一走廊左右障碍覆盖布局 C33|33，N=32 次飞行，n=19 蜂；两侧的标签共同定义几何。",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Table 1 C33|33: μ=0.836 m/s, σ=0.181 m/s, N=32 flights, n=19 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+            "table": "1",
+            "figure": "2d"
+          },
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ],
+        "field_states": {
+          "quantity": {
+            "status": "not_applicable",
+            "reason": "此项是左右布局的类别组合，而非单个可混用的连续数量。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Table 1 C33|33: μ=0.836 m/s, σ=0.181 m/s, N=32 flights, n=19 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      }
+    ],
+    "metric_records": [
+      {
+        "metric_id": "M-RUN06-Lecoeur-speed-1",
+        "metric_name": "other_defined",
+        "definition": "C0|0 条件：先计算每次飞行的平均前向速度，再跨 N=46 次飞行求均值；n=26 个蜂。sample_count 表示飞行次数。",
+        "value": 1.337,
+        "unit": "m/s",
+        "statistic": "mean",
+        "sample_count": 46,
+        "dataset_id": "D-RUN06-Lecoeur2019-Table1",
+        "baseline_id": "B-RUN06-Lecoeur-empty-corridor",
+        "alignment": "not_applicable",
+        "alignment_source": "not_applicable",
+        "interval": null,
+        "uncertainty": {
+          "kind": "std",
+          "value": 0.235,
+          "unit": "m/s",
+          "description": "跨逐飞行平均速度的 SD；不是 SEM、置信区间、仪器噪声或独立动物层级方差。"
+        },
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Table 1 C0|0: μ=1.337 m/s, σ=0.235 m/s, N=46 flights, n=26 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+            "table": "1",
+            "figure": "2d"
+          }
+        ],
+        "field_states": {
+          "interval": {
+            "status": "not_applicable",
+            "reason": "表格速度均值不是依赖固定评估时间间隔的 RPE 指标。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Table 1 C0|0: μ=1.337 m/s, σ=0.235 m/s, N=46 flights, n=26 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      {
+        "metric_id": "M-RUN06-Lecoeur-speed-2",
+        "metric_name": "other_defined",
+        "definition": "C0|16 条件：先计算每次飞行的平均前向速度，再跨 N=87 次飞行求均值；n=35 个蜂。sample_count 表示飞行次数。",
+        "value": 1.164,
+        "unit": "m/s",
+        "statistic": "mean",
+        "sample_count": 87,
+        "dataset_id": "D-RUN06-Lecoeur2019-Table1",
+        "baseline_id": "B-RUN06-Lecoeur-empty-corridor",
+        "alignment": "not_applicable",
+        "alignment_source": "not_applicable",
+        "interval": null,
+        "uncertainty": {
+          "kind": "std",
+          "value": 0.171,
+          "unit": "m/s",
+          "description": "跨逐飞行平均速度的 SD；不是 SEM、置信区间、仪器噪声或独立动物层级方差。"
+        },
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Table 1 C0|16: μ=1.164 m/s, σ=0.171 m/s, N=87 flights, n=35 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+            "table": "1",
+            "figure": "2d"
+          }
+        ],
+        "field_states": {
+          "interval": {
+            "status": "not_applicable",
+            "reason": "表格速度均值不是依赖固定评估时间间隔的 RPE 指标。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Table 1 C0|16: μ=1.164 m/s, σ=0.171 m/s, N=87 flights, n=35 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      {
+        "metric_id": "M-RUN06-Lecoeur-speed-3",
+        "metric_name": "other_defined",
+        "definition": "C0|33 条件：先计算每次飞行的平均前向速度，再跨 N=73 次飞行求均值；n=31 个蜂。sample_count 表示飞行次数。",
+        "value": 1.212,
+        "unit": "m/s",
+        "statistic": "mean",
+        "sample_count": 73,
+        "dataset_id": "D-RUN06-Lecoeur2019-Table1",
+        "baseline_id": "B-RUN06-Lecoeur-empty-corridor",
+        "alignment": "not_applicable",
+        "alignment_source": "not_applicable",
+        "interval": null,
+        "uncertainty": {
+          "kind": "std",
+          "value": 0.189,
+          "unit": "m/s",
+          "description": "跨逐飞行平均速度的 SD；不是 SEM、置信区间、仪器噪声或独立动物层级方差。"
+        },
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Table 1 C0|33: μ=1.212 m/s, σ=0.189 m/s, N=73 flights, n=31 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+            "table": "1",
+            "figure": "2d"
+          }
+        ],
+        "field_states": {
+          "interval": {
+            "status": "not_applicable",
+            "reason": "表格速度均值不是依赖固定评估时间间隔的 RPE 指标。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Table 1 C0|33: μ=1.212 m/s, σ=0.189 m/s, N=73 flights, n=31 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      {
+        "metric_id": "M-RUN06-Lecoeur-speed-4",
+        "metric_name": "other_defined",
+        "definition": "C0|100 条件：先计算每次飞行的平均前向速度，再跨 N=50 次飞行求均值；n=16 个蜂。sample_count 表示飞行次数。",
+        "value": 1.091,
+        "unit": "m/s",
+        "statistic": "mean",
+        "sample_count": 50,
+        "dataset_id": "D-RUN06-Lecoeur2019-Table1",
+        "baseline_id": "B-RUN06-Lecoeur-empty-corridor",
+        "alignment": "not_applicable",
+        "alignment_source": "not_applicable",
+        "interval": null,
+        "uncertainty": {
+          "kind": "std",
+          "value": 0.147,
+          "unit": "m/s",
+          "description": "跨逐飞行平均速度的 SD；不是 SEM、置信区间、仪器噪声或独立动物层级方差。"
+        },
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Table 1 C0|100: μ=1.091 m/s, σ=0.147 m/s, N=50 flights, n=16 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+            "table": "1",
+            "figure": "2d"
+          }
+        ],
+        "field_states": {
+          "interval": {
+            "status": "not_applicable",
+            "reason": "表格速度均值不是依赖固定评估时间间隔的 RPE 指标。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Table 1 C0|100: μ=1.091 m/s, σ=0.147 m/s, N=50 flights, n=16 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      {
+        "metric_id": "M-RUN06-Lecoeur-speed-5",
+        "metric_name": "other_defined",
+        "definition": "C16|16 条件：先计算每次飞行的平均前向速度，再跨 N=49 次飞行求均值；n=25 个蜂。sample_count 表示飞行次数。",
+        "value": 1.013,
+        "unit": "m/s",
+        "statistic": "mean",
+        "sample_count": 49,
+        "dataset_id": "D-RUN06-Lecoeur2019-Table1",
+        "baseline_id": "B-RUN06-Lecoeur-empty-corridor",
+        "alignment": "not_applicable",
+        "alignment_source": "not_applicable",
+        "interval": null,
+        "uncertainty": {
+          "kind": "std",
+          "value": 0.249,
+          "unit": "m/s",
+          "description": "跨逐飞行平均速度的 SD；不是 SEM、置信区间、仪器噪声或独立动物层级方差。"
+        },
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Table 1 C16|16: μ=1.013 m/s, σ=0.249 m/s, N=49 flights, n=25 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+            "table": "1",
+            "figure": "2d"
+          }
+        ],
+        "field_states": {
+          "interval": {
+            "status": "not_applicable",
+            "reason": "表格速度均值不是依赖固定评估时间间隔的 RPE 指标。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Table 1 C16|16: μ=1.013 m/s, σ=0.249 m/s, N=49 flights, n=25 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      {
+        "metric_id": "M-RUN06-Lecoeur-speed-6",
+        "metric_name": "other_defined",
+        "definition": "C33|33 条件：先计算每次飞行的平均前向速度，再跨 N=32 次飞行求均值；n=19 个蜂。sample_count 表示飞行次数。",
+        "value": 0.836,
+        "unit": "m/s",
+        "statistic": "mean",
+        "sample_count": 32,
+        "dataset_id": "D-RUN06-Lecoeur2019-Table1",
+        "baseline_id": "B-RUN06-Lecoeur-empty-corridor",
+        "alignment": "not_applicable",
+        "alignment_source": "not_applicable",
+        "interval": null,
+        "uncertainty": {
+          "kind": "std",
+          "value": 0.181,
+          "unit": "m/s",
+          "description": "跨逐飞行平均速度的 SD；不是 SEM、置信区间、仪器噪声或独立动物层级方差。"
+        },
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Table 1 C33|33: μ=0.836 m/s, σ=0.181 m/s, N=32 flights, n=19 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+            "table": "1",
+            "figure": "2d"
+          }
+        ],
+        "field_states": {
+          "interval": {
+            "status": "not_applicable",
+            "reason": "表格速度均值不是依赖固定评估时间间隔的 RPE 指标。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 4,
+                "section": "Results: obstacle density; Table 1 caption",
+                "accessed_at": "2026-11-27T07:01:46Z",
+                "evidence_note": "Table 1 C33|33: μ=0.836 m/s, σ=0.181 m/s, N=32 flights, n=19 bees；按表注先每次飞行平均，再跨飞行求 μ、σ。",
+                "table": "1",
+                "figure": "2d"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      }
+    ],
+    "proof_record": null,
+    "evidence_admission_status": "eligible",
+    "rejection_codes": [],
+    "claims_absolute_scale": {
+      "status": "reported",
+      "value": false,
+      "evidence_locator": [
+        {
+          "source_id": "publisher",
+          "identifier": "10.1038/s41598-019-44187-2",
+          "version_id": "V-W-D164a2202bdd6930e-01",
+          "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+          "page": "1–2;8–9;12",
+          "section": "Introduction; Materials and Methods; Data Availability",
+          "accessed_at": "2026-11-27T07:01:46Z",
+          "evidence_note": "光流本身有速度/距离比例歧义。此条只保存外部相机测得的逐飞行速度统计；原始数据按需向作者获取，未取得或重算。"
+        }
+      ],
+      "reason": "定量速度是外部测量，未主张动物或算法恢复绝对尺度。",
+      "unknown_since_utc": null,
+      "review_task_id": null
+    },
+    "scale_prior_details": [],
+    "measurement_model": null,
+    "state_variables": [],
+    "gauge_freedoms": [],
+    "observability_assumptions": [],
+    "degeneracy_conditions": [],
+    "excitation_requirements": [],
+    "external_measurement_sources": [
+      {
+        "description": "两台 200 fps 外部高速相机重建三维轨迹；此为实验者的度量观测来源。",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "8–9",
+            "section": "Materials and Methods: Experimental setting; Flight analysis",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+          }
+        ]
+      }
+    ],
+    "observability_argument_locator": [],
+    "remaining_limitations": "只涵盖同一带纹理走廊的六种静态竖直障碍布局。N 是飞行次数而非独立个体数，SD 是飞行均值间离散程度，不是 SEM、置信区间或测量噪声。没有跨条件去重个体表、原始轨迹再分析、自然环境分布、旋转/平移联合分布、神经因果结论或视觉绝对尺度证明。照度、重建噪声、离群与遮挡比例保留待查。",
+    "counter_evidence": false,
+    "counter_evidence_types": [],
+    "evidence_locator": [
+      {
+        "source_id": "publisher",
+        "identifier": "10.1038/s41598-019-44187-2",
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+        "page": 4,
+        "section": "Results: obstacle density; Table 1 caption",
+        "accessed_at": "2026-11-27T07:01:46Z",
+        "evidence_note": "表 1 的六种布局中，每次飞行先求均值，再跨 N 次飞行求 μ 与 σ；n 是各条件蜂个体数。单位 m/s。不是独立个体总体或瞬时速度范围。",
+        "table": "1",
+        "figure": "2d"
+      },
+      {
+        "source_id": "publisher",
+        "identifier": "10.1038/s41598-019-44187-2",
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+        "page": "8–9",
+        "section": "Materials and Methods: Experimental setting; Flight analysis",
+        "accessed_at": "2026-11-27T07:01:46Z",
+        "evidence_note": "Bombus terrestris 在同一 3 m × 0.6 m × 0.6 m 走廊六种布局中自由飞行，静态竖直障碍与红白 dead-leaves 纹理；两台 200 fps 高速相机重建三维轨迹。"
+      },
+      {
+        "source_id": "publisher",
+        "identifier": "10.1038/s41598-019-44187-2",
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+        "page": "1–2;8–9;12",
+        "section": "Introduction; Materials and Methods; Data Availability",
+        "accessed_at": "2026-11-27T07:01:46Z",
+        "evidence_note": "光流本身有速度/距离比例歧义。此条只保存外部相机测得的逐飞行速度统计；原始数据按需向作者获取，未取得或重算。"
+      }
+    ],
+    "provenance_upload_ids": [],
+    "provenance_version_ids": [
+      "V-W-D164a2202bdd6930e-01"
+    ],
+    "assessment_status": "active",
+    "superseded_by_assessment_id": null,
+    "cascade_event_id": null,
+    "discard_reason": null,
+    "fulltext_status": "available_verified",
+    "verification_status": "verified",
+    "citation_roles": [
+      "unknown"
+    ],
+    "project_relation": "funding_acknowledgment",
+    "statement_basis": "author_explicit",
+    "reviewer": "RUN-0006 P5/P6 evidence reviewer; independent Table 1 check by root assistant",
+    "date": "2026-11-27T07:01:46Z",
+    "biological_implications": "飞行速度的已观测统计应连同布局与飞行/个体层级一起保存；单个总体速度分布不能替代实验条件说明。该条不证明任何神经机制。",
+    "engineering_implications": "可将六组均值和 SD 作为该受控走廊条件下行为比较的参考，不能用作自然场景通用先验，也不能把仪器已知尺度赋予纯视觉系统。",
+    "field_states": {
+      "superseded_by_assessment_id": {
+        "status": "not_applicable",
+        "reason": "新增独立 L08 主张，没有合并、废弃或替代既有 Assessment。",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "表 1 的六种布局中，每次飞行先求均值，再跨 N 次飞行求 μ 与 σ；n 是各条件蜂个体数。单位 m/s。不是独立个体总体或瞬时速度范围。",
+            "table": "1",
+            "figure": "2d"
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "cascade_event_id": {
+        "status": "not_applicable",
+        "reason": "新增独立 L08 主张，没有合并、废弃或替代既有 Assessment。",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "表 1 的六种布局中，每次飞行先求均值，再跨 N 次飞行求 μ 与 σ；n 是各条件蜂个体数。单位 m/s。不是独立个体总体或瞬时速度范围。",
+            "table": "1",
+            "figure": "2d"
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "discard_reason": {
+        "status": "not_applicable",
+        "reason": "新增独立 L08 主张，没有合并、废弃或替代既有 Assessment。",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 4,
+            "section": "Results: obstacle density; Table 1 caption",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "表 1 的六种布局中，每次飞行先求均值，再跨 N 次飞行求 μ 与 σ；n 是各条件蜂个体数。单位 m/s。不是独立个体总体或瞬时速度范围。",
+            "table": "1",
+            "figure": "2d"
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "measurement_model": {
+        "status": "not_applicable",
+        "reason": "这是一项限定条件的行为描述统计，不是估计器测量模型或数学证明。",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "1–2;8–9;12",
+            "section": "Introduction; Materials and Methods; Data Availability",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "光流本身有速度/距离比例歧义。此条只保存外部相机测得的逐飞行速度统计；原始数据按需向作者获取，未取得或重算。"
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "proof_record": {
+        "status": "not_applicable",
+        "reason": "这是一项限定条件的行为描述统计，不是估计器测量模型或数学证明。",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": "1–2;8–9;12",
+            "section": "Introduction; Materials and Methods; Data Availability",
+            "accessed_at": "2026-11-27T07:01:46Z",
+            "evidence_note": "光流本身有速度/距离比例歧义。此条只保存外部相机测得的逐飞行速度统计；原始数据按需向作者获取，未取得或重算。"
+          }
+        ],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      }
+    }
+  },
+  "unknown_tasks": [
+    {
+      "task_id": "T-Unknown-4e928afdf6d1570d",
+      "entity_type": "assessment",
+      "entity_id": "AS-RUN06-Lecoeur2019-L08-flight-speed-statistics",
+      "task_type": "field_review",
+      "scope_id": "SCOPE-0001",
+      "source_id": "publisher",
+      "normalized_parameters": {
+        "run_id": "RUN-0006",
+        "field_path": "conditions.texture_noise.value.field_states.illumination"
+      },
+      "task_state": "pending",
+      "cursor": null,
+      "dependency_ids": [],
+      "query_ids": [
+        "Q-RUN06-P6-Lecoeur-cache-001"
+      ],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "本批未独立确证照度定量元数据。",
+      "retry_at": null,
+      "review_condition": "核对原始实验或重建元数据后再填值；当前 Table 1 描述性统计不依赖猜测。",
+      "created_at_utc": "2026-11-27T07:01:46Z",
+      "updated_at_utc": "2026-11-27T07:01:46Z",
+      "checkpoint_id": "CP-0008",
+      "event_sequence": 1,
+      "assessment_id": "AS-RUN06-Lecoeur2019-L08-flight-speed-statistics",
+      "field_path": "conditions.texture_noise.value.field_states.illumination",
+      "unknown_since_utc": "2026-11-27T07:01:46Z",
+      "deadline_at_utc": "2026-11-28T07:01:46Z",
+      "review_task_id": "T-Unknown-4e928afdf6d1570d",
+      "priority": "normal",
+      "overdue": false,
+      "version_id": "V-W-D164a2202bdd6930e-01",
+      "supporting_record_ids": [
+        "Q-RUN06-P6-Lecoeur-cache-001",
+        "V-W-D164a2202bdd6930e-01"
+      ],
+      "field_states": {}
+    },
+    {
+      "task_id": "T-Unknown-1f6b8dbac4d2678a",
+      "entity_type": "assessment",
+      "entity_id": "AS-RUN06-Lecoeur2019-L08-flight-speed-statistics",
+      "task_type": "field_review",
+      "scope_id": "SCOPE-0001",
+      "source_id": "publisher",
+      "normalized_parameters": {
+        "run_id": "RUN-0006",
+        "field_path": "conditions.texture_noise.value.field_states.noise"
+      },
+      "task_state": "pending",
+      "cursor": null,
+      "dependency_ids": [],
+      "query_ids": [
+        "Q-RUN06-P6-Lecoeur-cache-001"
+      ],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "本批未独立确证外部轨迹重建的噪声定量元数据。",
+      "retry_at": null,
+      "review_condition": "核对原始实验或重建元数据后再填值；当前 Table 1 描述性统计不依赖猜测。",
+      "created_at_utc": "2026-11-27T07:01:46Z",
+      "updated_at_utc": "2026-11-27T07:01:46Z",
+      "checkpoint_id": "CP-0008",
+      "event_sequence": 1,
+      "assessment_id": "AS-RUN06-Lecoeur2019-L08-flight-speed-statistics",
+      "field_path": "conditions.texture_noise.value.field_states.noise",
+      "unknown_since_utc": "2026-11-27T07:01:46Z",
+      "deadline_at_utc": "2026-11-28T07:01:46Z",
+      "review_task_id": "T-Unknown-1f6b8dbac4d2678a",
+      "priority": "normal",
+      "overdue": false,
+      "version_id": "V-W-D164a2202bdd6930e-01",
+      "supporting_record_ids": [
+        "Q-RUN06-P6-Lecoeur-cache-001",
+        "V-W-D164a2202bdd6930e-01"
+      ],
+      "field_states": {}
+    },
+    {
+      "task_id": "T-Unknown-af0c31804e40084a",
+      "entity_type": "assessment",
+      "entity_id": "AS-RUN06-Lecoeur2019-L08-flight-speed-statistics",
+      "task_type": "field_review",
+      "scope_id": "SCOPE-0001",
+      "source_id": "publisher",
+      "normalized_parameters": {
+        "run_id": "RUN-0006",
+        "field_path": "conditions.texture_noise.value.field_states.outlier_fraction"
+      },
+      "task_state": "pending",
+      "cursor": null,
+      "dependency_ids": [],
+      "query_ids": [
+        "Q-RUN06-P6-Lecoeur-cache-001"
+      ],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "本批未取得原始飞行及剔除清单，不能填离群排除比例。",
+      "retry_at": null,
+      "review_condition": "核对原始实验或重建元数据后再填值；当前 Table 1 描述性统计不依赖猜测。",
+      "created_at_utc": "2026-11-27T07:01:46Z",
+      "updated_at_utc": "2026-11-27T07:01:46Z",
+      "checkpoint_id": "CP-0008",
+      "event_sequence": 1,
+      "assessment_id": "AS-RUN06-Lecoeur2019-L08-flight-speed-statistics",
+      "field_path": "conditions.texture_noise.value.field_states.outlier_fraction",
+      "unknown_since_utc": "2026-11-27T07:01:46Z",
+      "deadline_at_utc": "2026-11-28T07:01:46Z",
+      "review_task_id": "T-Unknown-af0c31804e40084a",
+      "priority": "normal",
+      "overdue": false,
+      "version_id": "V-W-D164a2202bdd6930e-01",
+      "supporting_record_ids": [
+        "Q-RUN06-P6-Lecoeur-cache-001",
+        "V-W-D164a2202bdd6930e-01"
+      ],
+      "field_states": {}
+    },
+    {
+      "task_id": "T-Unknown-a4645f3136a04792",
+      "entity_type": "assessment",
+      "entity_id": "AS-RUN06-Lecoeur2019-L08-flight-speed-statistics",
+      "task_type": "field_review",
+      "scope_id": "SCOPE-0001",
+      "source_id": "publisher",
+      "normalized_parameters": {
+        "run_id": "RUN-0006",
+        "field_path": "conditions.texture_noise.value.field_states.occlusion_fraction"
+      },
+      "task_state": "pending",
+      "cursor": null,
+      "dependency_ids": [],
+      "query_ids": [
+        "Q-RUN06-P6-Lecoeur-cache-001"
+      ],
+      "attempt_count": 0,
+      "error_code": null,
+      "failure_reason": "本批未取得原始相机轨迹，不能填遮挡比例。",
+      "retry_at": null,
+      "review_condition": "核对原始实验或重建元数据后再填值；当前 Table 1 描述性统计不依赖猜测。",
+      "created_at_utc": "2026-11-27T07:01:46Z",
+      "updated_at_utc": "2026-11-27T07:01:46Z",
+      "checkpoint_id": "CP-0008",
+      "event_sequence": 1,
+      "assessment_id": "AS-RUN06-Lecoeur2019-L08-flight-speed-statistics",
+      "field_path": "conditions.texture_noise.value.field_states.occlusion_fraction",
+      "unknown_since_utc": "2026-11-27T07:01:46Z",
+      "deadline_at_utc": "2026-11-28T07:01:46Z",
+      "review_task_id": "T-Unknown-a4645f3136a04792",
+      "priority": "normal",
+      "overdue": false,
+      "version_id": "V-W-D164a2202bdd6930e-01",
+      "supporting_record_ids": [
+        "Q-RUN06-P6-Lecoeur-cache-001",
+        "V-W-D164a2202bdd6930e-01"
+      ],
+      "field_states": {}
+    }
+  ],
+  "manual_reviews": [
+    {
+      "review_id": "MR-RUN06-Lecoeur2019-preflight",
+      "run_id": "RUN-0006",
+      "review_type": "cache_and_duplicate_review",
+      "entity_id": "W-D164a2202bdd6930e",
+      "reviewer": "RUN-0006 P5/P6 evidence reviewer",
+      "recorded_at_utc": "2026-11-27T07:01:46Z",
+      "artifact": "temp/reports/RUN-0006-Lecoeur2019-assessment-candidate.json",
+      "notes": "完整逻辑分片 Work/Assessment/query/task 检查；已有 L01 主张保持不变。"
+    },
+    {
+      "review_id": "MR-RUN06-Lecoeur2019-source-route",
+      "run_id": "RUN-0006",
+      "review_type": "source_route_review",
+      "entity_id": "W-D164a2202bdd6930e",
+      "reviewer": "RUN-0006 P5/P6 evidence reviewer",
+      "recorded_at_utc": "2026-11-27T07:01:46Z",
+      "artifact": "temp/reports/RUN-0006-Lecoeur2019-assessment-candidate.json",
+      "notes": "Baird 未获全文不作科学主张；Lecoeur 原出版社 PDF 精确 hash 匹配既有 Q-RUN01-00287。"
+    },
+    {
+      "review_id": "MR-RUN06-Lecoeur2019-table",
+      "run_id": "RUN-0006",
+      "review_type": "fulltext_table_review",
+      "entity_id": "W-D164a2202bdd6930e",
+      "reviewer": "RUN-0006 P5/P6 evidence reviewer",
+      "recorded_at_utc": "2026-11-27T07:01:46Z",
+      "artifact": "temp/reports/RUN-0006-Lecoeur2019-assessment-candidate.json",
+      "notes": "仅 Table 1 p4 六组速度均值、SD、N、n 与表注统计单位逐项核对。"
+    },
+    {
+      "review_id": "MR-RUN06-Lecoeur2019-methods",
+      "run_id": "RUN-0006",
+      "review_type": "fulltext_methods_review",
+      "entity_id": "W-D164a2202bdd6930e",
+      "reviewer": "RUN-0006 P5/P6 evidence reviewer",
+      "recorded_at_utc": "2026-11-27T07:01:46Z",
+      "artifact": "temp/reports/RUN-0006-Lecoeur2019-assessment-candidate.json",
+      "notes": "p8–9 的走廊、物种、纹理、记录方式及 p12 原始数据可用性。"
+    },
+    {
+      "review_id": "MR-RUN06-Lecoeur2019-byline",
+      "run_id": "RUN-0006",
+      "review_type": "authorship_review",
+      "entity_id": "W-D164a2202bdd6930e",
+      "reviewer": "RUN-0006 P5/P6 evidence reviewer",
+      "recorded_at_utc": "2026-11-27T07:01:46Z",
+      "artifact": "temp/reports/RUN-0006-Lecoeur2019-assessment-candidate.json",
+      "notes": "p1 全部四位作者及发表时机构。"
+    },
+    {
+      "review_id": "MR-RUN06-Lecoeur2019-funding",
+      "run_id": "RUN-0006",
+      "review_type": "funding_review",
+      "entity_id": "W-D164a2202bdd6930e",
+      "reviewer": "RUN-0006 P5/P6 evidence reviewer",
+      "recorded_at_utc": "2026-11-27T07:01:46Z",
+      "artifact": "temp/reports/RUN-0006-Lecoeur2019-assessment-candidate.json",
+      "notes": "p13 致谢三个资助编号及获资助作者；仅 funding_acknowledgment。"
+    },
+    {
+      "review_id": "MR-RUN06-Lecoeur2019-assessment",
+      "run_id": "RUN-0006",
+      "review_type": "typed_assessment_review",
+      "entity_id": "AS-RUN06-Lecoeur2019-L08-flight-speed-statistics",
+      "reviewer": "RUN-0006 P5/P6 evidence reviewer",
+      "recorded_at_utc": "2026-11-27T07:01:46Z",
+      "artifact": "temp/reports/RUN-0006-Lecoeur2019-assessment-candidate.json",
+      "notes": "限于条件飞行统计，全文定位、样本单位、unknown 任务、尺度门禁及 schema 完整核验。"
+    },
+    {
+      "review_id": "MR-RUN06-Lecoeur2019-table-independent-root",
+      "run_id": "RUN-0006",
+      "review_type": "independent_fulltext_table_review",
+      "entity_id": "W-D164a2202bdd6930e",
+      "reviewer": "root assistant",
+      "recorded_at_utc": "2026-11-27T06:56:10Z",
+      "artifact": "temp/reports/RUN-0006-Lecoeur2019-assessment-candidate.json",
+      "notes": "独立查看原文 p4 Table 1 PNG；六组均值/SD/N/n 逐项一致，表注明确每次飞行先平均再跨 N 次求 μ/σ；本条不代表根代理阅读其他页。"
+    }
+  ],
+  "validation": {
+    "schema_errors": [],
+    "evidence_gate_rejection_codes": [],
+    "existing_assessment_bytes_unchanged": true,
+    "prior_assessments_file_sha256": "b7fb800842184df7daf1ca2af1ce8fd4ebab36023bc0793ab1478a0d04b50d3b",
+    "metric_count": 6,
+    "condition_count": 6,
+    "flight_count": 337,
+    "unique_bee_count": null,
+    "independent_review_units": 1,
+    "manual_review_units_total": 8
+  },
+  "integration_requirements": [
+    "只追加该 Assessment；保留已有 71 条 Assessment 字节。",
+    "unknowns 保留 24 小时起始时钟；不将 SD 写成 SEM。",
+    "P5 全部作者与资助候选另行提交；与既有查询回执去重。"
+  ]
+}
