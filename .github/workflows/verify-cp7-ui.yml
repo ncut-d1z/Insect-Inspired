@@ -47,6 +47,17 @@ jobs:
           command -v npm >/dev/null
           chrome_bin="$(command -v google-chrome)"
           [[ -x "$chrome_bin" ]]
+          font_logs="$(mktemp -d "$RUNNER_TEMP/cp7-cjk-fonts.XXXXXX")"
+          sudo apt-get update -qq 2>&1 | tee "$font_logs/apt-update.log"
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk 2>&1 | tee "$font_logs/apt-install.log"
+          fc-match ':lang=zh-cn' | tee "$font_logs/fc-match-zh-cn.txt"
+          dpkg-query --show fonts-noto-cjk > "$font_logs/package-version.txt"
+          python3 - "$font_logs" <<'PYFONT'
+          import pathlib, sys
+          selected=(pathlib.Path(sys.argv[1])/'fc-match-zh-cn.txt').read_text().strip()
+          assert 'Noto' in selected and 'CJK' in selected, 'Expected Noto CJK for zh-cn'
+          print('CI CJK font confirmed:', selected)
+          PYFONT
           set +x
           auth_header="$(printf 'x-access-token:%s' "$IMPORT_TOKEN" | base64 -w 0)"
           printf '::add-mask::%s\n' "$auth_header"
@@ -142,9 +153,10 @@ jobs:
           node --version > "$work/node-version.txt"
           "$chrome_bin" --version > "$work/chrome-version.txt"
           node "$runtime_dir/scripts/html-smoke.mjs" --html "$html_repo/ref.html" --out-dir "$result_dir" --checkpoint CP-0007 --executable-path "$chrome_bin"
-          python3 - "$input_git" "$GITHUB_SHA" "$work" <<'PYRESULT'
+          python3 - "$input_git" "$GITHUB_SHA" "$work" "$font_logs" <<'PYRESULT'
           import datetime, hashlib, json, os, pathlib, shutil, subprocess, sys
-          repo, commit, root = sys.argv[1:]
+          repo, commit, root, font_logs = sys.argv[1:]
+          font_logs=pathlib.Path(font_logs)
           root=pathlib.Path(root);results=root/'ui-results'
           def h(data):return hashlib.sha256(data).hexdigest()
           names=['ui-audit-final.json','html-browser-check.json','html-desktop.png','html-topic.png','html-mobile.png','html-mobile-controls.png']
@@ -164,7 +176,7 @@ jobs:
               assert (results/name).read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
           manifest=(root/'input-manifest.json').read_bytes()
           assert h(manifest)=='250540fe577e7c38ac464c2dba26704096f51486c5ee0c4c16721e6db6a564aa'
-          target='temp/sync/CP-0007/ui-evidence/'
+          target='temp/sync/CP-0007/ui-evidence-cjk/'
           old=subprocess.check_output(['git','--git-dir='+repo,'ls-tree','-r','--name-only',commit,'--',target])
           assert not old.strip(), 'Existing evidence must be preserved; inspect before publishing another run'
           evidence=root/'evidence'
@@ -173,6 +185,10 @@ jobs:
           (evidence/'manifest.json').write_bytes(manifest)
           files=[{'path':name,'bytes':len((evidence/name).read_bytes()),'sha256':h((evidence/name).read_bytes())} for name in names+['manifest.json']]
           receipt={'format_version':1,'status':'passed','checkpoint_id':'CP-0007','execution_environment':'github_actions_ubuntu_24_04','local_browser_execution_succeeded':False,'repository':'ncut-d1z/Insect-Inspired','sync_ref':'refs/heads/sync/cp7-checkpoint-import','input_commit_sha':commit,'actions_run_id':os.environ['GITHUB_RUN_ID'],'actions_run_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'actions_run_url':'https://github.com/ncut-d1z/Insect-Inspired/actions/runs/'+os.environ['GITHUB_RUN_ID'],'job':os.environ['GITHUB_JOB'],'runner_os':os.environ['RUNNER_OS'],'html_sha256':'9a07565ca74d1d039426cb11cde5603259995f89c71565b4136d57469c0c6982','html_bytes':47780202,'test_script_path':'scripts/html-smoke.mjs','test_script_sha256':'9a927248fff3f66f521e75bbcde9a9b18c6cf73ef07294a358d0f7b7de11830a','playwright_version':'1.62.1','node_version':(root/'node-version.txt').read_text().strip(),'browser_version':(root/'chrome-version.txt').read_text().strip(),'input_manifest_sha256':'250540fe577e7c38ac464c2dba26704096f51486c5ee0c4c16721e6db6a564aa','check_count':10,'test_started_at_utc':report['started_at_utc'],'test_completed_at_utc':report['completed_at_utc'],'recorded_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat().replace('+00:00','Z'),'raw_test_output_modified':False,'full_research_checkpoint_validation':False,'evidence_files':files,'output_commit_parent_sha':commit,'publication_note':'Output commit SHA is printed in Actions logs and summary; this receipt is part of that commit.'}
+          font_commands=[(['sudo','apt-get','update','-qq'],'apt-update.log'),(['sudo','apt-get','install','-y','--no-install-recommends','fonts-noto-cjk'],'apt-install.log'),(['fc-match',':lang=zh-cn'],'fc-match-zh-cn.txt')]
+          receipt['font_environment']={'environment':'github_actions_ubuntu_24_04','package':'fonts-noto-cjk','installed_package':(font_logs/'package-version.txt').read_text().strip(),'selected_zh_cn_font':(font_logs/'fc-match-zh-cn.txt').read_text().strip(),'noto_cjk_verified':True,'commands':[{'argv':argv,'exit_code':0,'output_sha256':h((font_logs/name).read_bytes()),'output':(font_logs/name).read_text(errors='replace')} for argv,name in font_commands]}
+          receipt['evidence_directory']='temp/sync/CP-0007/ui-evidence-cjk/'
+          receipt['prior_evidence_preserved']='temp/sync/CP-0007/ui-evidence/'
           (evidence/'actions-receipt.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
           expected_paths=[target+name for name in names+['manifest.json','actions-receipt.json']]
           env=os.environ.copy()
@@ -184,7 +200,7 @@ jobs:
               oid=git('hash-object','-w','--stdin',data=(evidence/name).read_bytes()).decode().strip()
               git('update-index','--add','--cacheinfo','100644',oid,path)
           tree=git('write-tree').decode().strip()
-          new_commit=git('commit-tree',tree,'-p',commit,'-m','Record CP7 UI checks executed in GitHub Actions').decode().strip()
+          new_commit=git('commit-tree',tree,'-p',commit,'-m','Record CP7 UI checks with Noto CJK in GitHub Actions').decode().strip()
           assert git('show','-s','--format=%P',new_commit).decode().strip()==commit
           actual=git('diff-tree','--no-commit-id','--name-only','-r',commit,new_commit).decode().splitlines()
           assert set(actual)==set(expected_paths) and len(actual)==8
@@ -214,7 +230,7 @@ jobs:
           chmod 700 "$guard/pre-push"
           git --git-dir="$input_git" -c core.hooksPath="$guard" push --porcelain "$REMOTE" "$result_commit:$SYNC_REF"
           [[ "$(git --git-dir="$input_git" ls-remote --heads "$REMOTE" "$SYNC_REF")" == "$result_commit"$'\t'"$SYNC_REF" ]]
-          printf '%s\n' '## CP7 UI checks passed in GitHub Actions' \
+          printf '%s\n' '## CP7 UI checks passed with Noto CJK in GitHub Actions' \
             "Input commit: $GITHUB_SHA" "Evidence commit: $result_commit" \
             'HTML SHA256: 9a07565ca74d1d039426cb11cde5603259995f89c71565b4136d57469c0c6982' 'Test script SHA256: 9a927248fff3f66f521e75bbcde9a9b18c6cf73ef07294a358d0f7b7de11830a' \
             'All 10 original checks passed; raw JSON and four PNG files retained.' \
