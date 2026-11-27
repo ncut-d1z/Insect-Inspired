@@ -1,0 +1,59 @@
+{
+  "run_id": "RUN-0008",
+  "scope_id": "SCOPE-0001",
+  "start_checkpoint_id": "CP-0009",
+  "start_commit_sha": "96ce04b268f648978581e87d3be551981f12917d",
+  "started_at_utc": "2026-11-27T09:09:52.508111Z",
+  "authorization": "用户要求继续CP7、CP8未结任务，迭代P3-P6；新数据即时提交推送；完整同步门禁已通过；允许公开二进制数据包及PowerShell主机恢复。",
+  "authorized_stages": [
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "budget": {
+    "wall_clock_hours": 6,
+    "external_requests": 2000,
+    "manual_review_items": 200,
+    "paid_spend": 0
+  },
+  "status": "running",
+  "branch": "research/p3-p6-cp10",
+  "external_requests_used": 0,
+  "manual_review_items_used": 0,
+  "cache_reuse_events": 0,
+  "paid_spend": 0,
+  "closure": false,
+  "research_cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "sync_policy": "Persist every bounded evidence/source batch on GitHub and verify exact readback before the next batch; no further research while existing data remains unsynchronized. Full checkpoints require independent remote-only restore of the complete package chain.",
+  "start_sync_gate": {
+    "status": "passed",
+    "mode": "complete_remote_binary_package_with_independent_restore",
+    "checked_at_utc": "2026-11-27T09:07:55.648593Z",
+    "proof_commit": "400e35c5d1a4c55ac2305543f1400dda249ad11d",
+    "verified_transport_commit": "eb0e5d9eef82ac6025e873b8e920e93672dce92e",
+    "proof_url": "https://github.com/ncut-d1z/Insect-Inspired/blob/sync/cp9-checkpoint-import/temp/sync/CP-0009/verification.json",
+    "proof_sha256": "f82adb2151871e9c9eff696a1dbe3cc424ef70e9a9229a0bf18b761195bc0b7a",
+    "canonical_commit_sha": "96ce04b268f648978581e87d3be551981f12917d",
+    "tree_sha": "4e61e76e128b51c55c75bc0db1853376f549407e",
+    "verified_files": 1414,
+    "verified_file_bytes": 1346716802,
+    "artifact_sha256_checked": 1413,
+    "sha256_mismatches": 0,
+    "all_three_package_parts_checked": 149,
+    "remote_package_complete_and_restore_verified": true,
+    "remote_canonical_branch_updated": false,
+    "worktree_clean": true,
+    "proof_exact_remote_readback": true
+  },
+  "review_deadline_recovery": {
+    "checked_at_utc": "2026-11-27T09:05:56.951143Z",
+    "due_open_unknown_tasks": 49521,
+    "unupgraded_overdue_tasks": 0,
+    "original_clocks_preserved": true,
+    "next_known_deadline_at_utc": "2026-11-27T09:43:04.166846Z",
+    "recompute_at_each_canonical_write_and_checkpoint": true
+  },
+  "prior_maintenance_is_not_scientific_review": true,
+  "next_batch": "P3/P4 Egelhaaf and existing seed citation gaps; P5 official grant records; P6 Tanaka original species/condition evidence. Preserve unresolved or inaccessible evidence as open."
+}
