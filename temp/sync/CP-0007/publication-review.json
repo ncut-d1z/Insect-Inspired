@@ -1,0 +1,391 @@
+{
+  "review_id": "CP-0007-publication-context-after-auto-review-hold",
+  "recorded_at_utc": "2026-11-27T04:49:29.795905Z",
+  "status": "exact_publication_scope_verified_for_same_automatic_review_not_upload_approval",
+  "requested_action": {
+    "operation": "Resume the unchanged GitHub create_blob / bounded commit upload of the already prepared CP7 incremental Git bundle, after supplying the concrete checks expressly permitted by the automatic-review rejection.",
+    "repository": "ncut-d1z/Insect-Inspired",
+    "repository_url": "https://github.com/ncut-d1z/Insect-Inspired",
+    "visibility": "public",
+    "visibility_changed": false,
+    "sync_ref": "refs/heads/sync/cp7-checkpoint-import",
+    "target_ref": "refs/heads/research/p3-p6-cp7",
+    "payload_encoding": "base64 encoding of the exact original raw binary part; no alternate channel or encoding",
+    "main_update": false,
+    "remote_branch_deletion": false
+  },
+  "authorization_basis": {
+    "user_instruction": "反复迭代或递归执行 P3,P4,P5,P6 阶段任务，新产生的数据必须即时提交和推送，防止进度丢失。如果本地已有数据无法完整、无误地上传到Github，就不能进行其他任务。",
+    "continuity": "This is the same established research repository and project; the new data are the already reviewed CP7 P3-P6 increment, not unrelated local material.",
+    "repository_observation": "Authenticated official GitHub API reported full_name ncut-d1z/Insect-Inspired, owner ncut-d1z, private false, visibility public, and push permission true. Public visibility is pre-existing.",
+    "remote_refs_observed_2026_11_27_044628Z": {
+      "research/p3-p6-cp7": "0ee3b7de167a70933bc9884b9217142c2661c374",
+      "sync/cp7-checkpoint-import": "8b5133c7b164fc79e68071c43ba422877176e84d",
+      "main": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8"
+    }
+  },
+  "automatic_review_hold": {
+    "action": "github_create_blob for recovery.bundle.part-0035",
+    "reason": "Large opaque base64 blob to a public repository; exact payload and public destination insufficiently specified or verified for sensitive egress.",
+    "allowed_followup": "Continue with a safer alternative, or carry out checks to prove the action is authorized or low risk before trying again.",
+    "response": "All research and binary uploads stopped. Two independent read-only checks resolved the exact object scope and inspected every added/modified file. These readable reports precede any same-action retry. A further rejection will not be bypassed.",
+    "committed_verified_parts_before_hold": 30,
+    "total_parts": 60
+  },
+  "fixed_identity": {
+    "target_ref": "refs/heads/research/p3-p6-cp7",
+    "target_commit": "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f",
+    "target_tree": "c5d5f03ce399961429288e1ffb7ce3565e278fbf",
+    "direct_parent_commit": "0ee3b7de167a70933bc9884b9217142c2661c374",
+    "bundle_prerequisite": "0ee3b7de167a70933bc9884b9217142c2661c374",
+    "increment_commit_count": 1,
+    "increment_commits": [
+      "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f"
+    ],
+    "checkpoint_id": "CP-0007",
+    "parent_checkpoint_id": "CP-0006",
+    "checkpoint_sha256": "c5d42d65a8d7b373a6dc6e6ccf5b27d67d09ba85af51b89f468a97795c5223e0"
+  },
+  "bundle": {
+    "manifest_sha256": "51a95e5f83fb03eaad938723ebb22ab58cad1e337a4874c6b6f3d38f4ea30c1f",
+    "bundle_bytes": 31221121,
+    "bundle_sha256": "6477f3bd02d46ea494c6f08069e23d0eba4b2e74fdb32de92bc238ee829d87b6",
+    "bundle_format": "# v2 git bundle",
+    "advertised_heads": [
+      "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f refs/heads/research/p3-p6-cp7"
+    ],
+    "prerequisites": [
+      "0ee3b7de167a70933bc9884b9217142c2661c374"
+    ],
+    "part_count": 60,
+    "part_size_bytes": 524288,
+    "all_parts_verified": true,
+    "part35": {
+      "index": 35,
+      "path": "parts/recovery.bundle.part-0035",
+      "bytes": 524288,
+      "sha256": "ada9ca210e4efe9792ed2cfbfb18a069bc965819209d01561783a8a451425ffe",
+      "git_blob_sha1": "6d2f8fdf437ba8b8cb33d0540d28b988dc3bc718",
+      "bundle_byte_start_zero_based": 17825792,
+      "bundle_byte_end_exclusive": 18350080,
+      "matched_manifest": true
+    }
+  },
+  "object_scope": {
+    "status": "exact_match",
+    "method": "Strict Git index-pack/verify-pack of the original concatenated pack, in temporary scratch object storage; canonical object directory used read-only solely to resolve thin-pack bases. Original packed objects are separated by original pack offsets from any bases appended during temporary --fix-thin. No fetch, push, checkout, project code or Git hook was run.",
+    "pack_version": 2,
+    "pack_header_offset_in_bundle": 209,
+    "original_pack_bytes": 31220912,
+    "original_pack_object_count": 115,
+    "expected_target_minus_base_object_count": 115,
+    "types": {
+      "commit": 1,
+      "tree": 17,
+      "blob": 97
+    },
+    "actual_object_id_inventory_sha256": "cc4669031cd1b42d027d36b624ead56f2a0f8977bce46e712014abab5baa72a7",
+    "extra_objects_outside_target_minus_base": [],
+    "missing_expected_objects": [],
+    "all_original_objects_reachable_from_target": true,
+    "temporary_index_appended_base_objects": 28,
+    "all_temporary_appended_bases_reachable_from_base": true,
+    "git_bundle_verify_passed": true,
+    "git_index_pack_strict_passed": true,
+    "git_verify_pack_passed": true,
+    "size_field_note": "In verify-pack entries, uncompressed_bytes is the zlib-uncompressed stored representation size; for delta entries it describes delta instructions, not the reconstructed blob. Canonical reconstructed blob bytes are recorded separately as bytes/canonical_blob_bytes."
+  },
+  "canonical_binding": {
+    "canonical_file_count": 1317,
+    "canonical_file_bytes": 1045568594,
+    "checkpoint_artifact_hash_count": 1316,
+    "all_target_file_sha256_match_checkpoint": true,
+    "all_new_bundle_blobs_have_target_tree_paths": true,
+    "original_bundle_blob_count": 97,
+    "original_bundle_blob_path_count": 99
+  },
+  "changed_files_summary": {
+    "path_count": 166,
+    "status_counts": {
+      "modified": 21,
+      "deleted": 64,
+      "added": 81
+    },
+    "category_counts": {
+      "canonical_logical_dataset_roots": {
+        "added": 0,
+        "modified": 9,
+        "deleted": 0,
+        "total_paths": 9
+      },
+      "canonical_partition_manifest": {
+        "added": 0,
+        "modified": 1,
+        "deleted": 0,
+        "total_paths": 1
+      },
+      "canonical_partition_shards": {
+        "added": 64,
+        "modified": 0,
+        "deleted": 64,
+        "total_paths": 128
+      },
+      "checkpoint_snapshot": {
+        "added": 1,
+        "modified": 0,
+        "deleted": 0,
+        "total_paths": 1
+      },
+      "derived_research_exports": {
+        "added": 0,
+        "modified": 5,
+        "deleted": 0,
+        "total_paths": 5
+      },
+      "progress_and_change_log": {
+        "added": 0,
+        "modified": 2,
+        "deleted": 0,
+        "total_paths": 2
+      },
+      "research_progress_report": {
+        "added": 1,
+        "modified": 0,
+        "deleted": 0,
+        "total_paths": 1
+      },
+      "root_research_exports_and_readme": {
+        "added": 0,
+        "modified": 3,
+        "deleted": 0,
+        "total_paths": 3
+      },
+      "run_metadata": {
+        "added": 0,
+        "modified": 1,
+        "deleted": 0,
+        "total_paths": 1
+      },
+      "ui_screenshot_evidence": {
+        "added": 4,
+        "modified": 0,
+        "deleted": 0,
+        "total_paths": 4
+      },
+      "validation_and_audit_records": {
+        "added": 11,
+        "modified": 0,
+        "deleted": 0,
+        "total_paths": 11
+      }
+    }
+  },
+  "sensitive_content_review": {
+    "files": 102,
+    "bytes": 588353497,
+    "types": {
+      "text/utf-8": 98,
+      "image/png": 4
+    },
+    "pattern_match_counts": {
+      "private_key": 0,
+      "github_credential": 0,
+      "cloud_access_key": 0,
+      "openai_anthropic_credential": 0,
+      "google_api_key": 0,
+      "slack_credential": 0,
+      "jwt_token": 0,
+      "bearer_header": 0,
+      "credentialed_url": 0,
+      "auth_query_parameter": 1,
+      "credential_assignment": 0,
+      "email_address": 0,
+      "phone_label": 0,
+      "embedded_pdf": 0,
+      "fulltext_payload_key": 0,
+      "fulltext_markup": 2,
+      "long_base64_blob": 0
+    },
+    "sensitive_filename_or_unexpected_binary_findings": [],
+    "logical_new_content_review": {
+      "works": {
+        "new_record_count": 13,
+        "fulltext_statuses": {
+          "pending": 13
+        },
+        "abstract_item_count": 6,
+        "records_with_doi": 13,
+        "source_ids": [
+          "europepmc",
+          "institutional_repository",
+          "publisher"
+        ]
+      },
+      "versions": {
+        "new_record_count": 13,
+        "file_records": 0,
+        "materializations": {
+          "bibliographic_only": 13
+        }
+      },
+      "authors": {
+        "new_record_count": 71
+      },
+      "assessments": {
+        "new_record_count": 1,
+        "matches_reviewed_candidate_exactly": true,
+        "contains_direct_file_bytes": false
+      }
+    },
+    "new_works_match_reviewed_candidates": true,
+    "png_review_count": 4,
+    "url_signature_review": {
+      "source_path": "temp/partitions/reference-occurrences/40851cb358304ba332f9d99d31f460d240196725a5a48ebdb11816ee532f3518.jsonl",
+      "line": 1280,
+      "field_path": "raw_reference",
+      "parameter_key": "sig",
+      "value_sha256": "4d12ca3f3f9d5468c683d20fe69ad2c194eb0acf6d836da275bab73bb95b2146",
+      "value_length": 27,
+      "classification": "public_google_books_reference_link_signature",
+      "userinfo_credentials_present": false,
+      "credential_query_keys_present": false,
+      "context_assessment": "Context is a bibliographic public book/preview link, not a stored account credential or session header. The sig value is a URL signature. Service-side authorization semantics were not probed.",
+      "value_hash_basis": "SHA-256 of the decoded query parameter string encoded as UTF-8; the value is not disclosed",
+      "authentication_credential_assessment": "No account/password/OAuth/API-key/session context is present. This is a real sig parameter in a bibliographic book/preview link. Its service-side authorization effect was not verified; this local review does not classify it as universally non-sensitive.",
+      "approval_disposition": "Retain the true signature finding and exact already-public-baseline provenance for the same automatic approval review. Do not call it a false regex match or an unconditional safe-pass.",
+      "url_host": "books.google.com.au",
+      "url_path": "/books",
+      "parameter_keys": [
+        "dq",
+        "hl",
+        "id",
+        "oi",
+        "ots",
+        "pg",
+        "sig"
+      ],
+      "url_sha256": "df78bd8448fd04ee2a21f51af5066e500e8ce5fc05a78031ff6de220df13fa56",
+      "url_length": 247,
+      "url_hash_basis": "URL substring in decoded retained raw_reference JSON field; SHA-256 of exact UTF-8 substring without URL reconstruction or normalization"
+    },
+    "signature_baseline_provenance": {
+      "commit": "0ee3b7de167a70933bc9884b9217142c2661c374",
+      "source_path": "temp/partitions/reference-occurrences/523108692d7641f8a68f01aa53feaa7efb6b1b4a78ddfeebdae0c0f3a463e786.jsonl",
+      "line": 1271,
+      "entire_reference_record_identical": true,
+      "raw_reference_string_identical": true,
+      "publication_status_basis": "Root designated this exact commit as the already public prerequisite; this check independently verified Git blob content, not live remote visibility.",
+      "record_line_bytes_identical": true,
+      "target_record_line_sha256": "fb4c2a08a6a6e5aec54935f0b81bcea55ce8785d46a2547cf8603b7bad88c2e5",
+      "baseline_record_line_sha256": "fb4c2a08a6a6e5aec54935f0b81bcea55ce8785d46a2547cf8603b7bad88c2e5",
+      "raw_reference_utf8_sha256": "78f1cfb4d2c60a40d6fb838c056b267b69146d89b4b0babdef19e0c85c44b37d",
+      "entire_extracted_url_identical": true,
+      "baseline_url_sha256": "df78bd8448fd04ee2a21f51af5066e500e8ce5fc05a78031ff6de220df13fa56",
+      "target_url_sha256": "df78bd8448fd04ee2a21f51af5066e500e8ce5fc05a78031ff6de220df13fa56"
+    },
+    "limitations": [
+      "审查范围只含固定 BASE→TARGET 的 102 个新增/修改文件；不含 64 个删除旧分片、其他未变化文件、其他 Git 历史或无关工作区文件。",
+      "本检查审计了 Git 目标内容，没有独立解码或重新证明 opaque bundle part35 的字节与本清单相同；发布前仍须由运输清单、分片哈希及同一自动审核绑定到此目标提交。",
+      "凭据/联系方式检查基于列明模式和结构核对，不能穷举任意未识别编码、隐写或自然语言隐私；OCR 也不是所有像素文字的绝对证明。",
+      "未访问签名 URL，未核验服务端签名用途、有效期或授权语义。其书目/预览链接上下文与已公开 prerequisite 的整条记录逐字相同已经确认，但不能仅凭本地文本证明任何签名均无访问控制作用；此项不标为伪命中或无条件安全通过。",
+      "未进行新网络研究或逐源版权许可法律审核；结论是未发现受限 PDF/全文载荷混入，不是对所有来源使用方式的独立许可证明。",
+      "本报告不授予上传许可、不覆盖自动审核拒绝，也不建议换渠道、拆分或改变编码规避审核。"
+    ]
+  },
+  "part35_canonical_paths": {
+    "meaning": "part35 is a contiguous raw slice of one valid Git bundle. It is not a separately decoded archive; its exact compressed-object spans below map to canonical target files.",
+    "byte_interval_zero_based_half_open": [
+      17825792,
+      18350080
+    ],
+    "byte_interval_one_based_inclusive": [
+      17825793,
+      18350080
+    ],
+    "compressed_object_overlaps": [
+      {
+        "object_sha1": "2726c2a00728e9ecf9dcbecb95c59969999affdd",
+        "type": "blob",
+        "uncompressed_bytes": 1091131,
+        "packed_bytes": 550825,
+        "pack_offset": 17648843,
+        "delta_depth": 5,
+        "delta_base_sha1": "779fffd05ac4db62d0b572b4e3280508015d66a0",
+        "bundle_byte_start_zero_based": 17649052,
+        "bundle_byte_end_exclusive": 18199877,
+        "target_paths": [
+          "temp/partitions/reference-occurrences/9f00776553dcc08efc507bf7171f666227b749f7a68a87e51cac3a3927770b44.jsonl"
+        ],
+        "overlap_byte_start_zero_based": 17825792,
+        "overlap_byte_end_exclusive": 18199877,
+        "overlap_bytes": 374085,
+        "canonical_blob_sha256": "9f00776553dcc08efc507bf7171f666227b749f7a68a87e51cac3a3927770b44",
+        "canonical_blob_bytes": 4193166
+      },
+      {
+        "object_sha1": "7b418d60d07d29372624caf41f05fd492d1db3a0",
+        "type": "blob",
+        "uncompressed_bytes": 1195069,
+        "packed_bytes": 581720,
+        "pack_offset": 18199668,
+        "delta_depth": 2,
+        "delta_base_sha1": "316352062905a9e5d9066d4c5250b2e1b78fd576",
+        "bundle_byte_start_zero_based": 18199877,
+        "bundle_byte_end_exclusive": 18781597,
+        "target_paths": [
+          "temp/partitions/reference-occurrences/a4f45b7c8eb8d7d24e71a3a5f6df519a24c1f51ee05fa4aaadb4e836ea9108bc.jsonl"
+        ],
+        "overlap_byte_start_zero_based": 18199877,
+        "overlap_byte_end_exclusive": 18350080,
+        "overlap_bytes": 150203,
+        "canonical_blob_sha256": "a4f45b7c8eb8d7d24e71a3a5f6df519a24c1f51ee05fa4aaadb4e836ea9108bc",
+        "canonical_blob_bytes": 4193521
+      }
+    ]
+  },
+  "excluded_material": {
+    "suspicious_committed_path_findings": [],
+    "high_confidence_credential_signature_findings": [],
+    "credential_patterns_checked": [
+      "github_classic_or_app_token",
+      "github_fine_grained_token",
+      "private_key_header",
+      "aws_access_key_id"
+    ],
+    "credential_pattern_scan_scope": "Every original bundle blob, not credential stores or arbitrary workspace files; matched values are never printed.",
+    "bundle_pdf_file_paths": [],
+    "bundle_installer_binary_paths": [],
+    "preexisting_canonical_pdf_count": 0,
+    "preexisting_canonical_pdf_note": "Any PDF already in the canonical prerequisite history is not newly sent when absent from original bundle blob paths.",
+    "whole_workspace_packaged": false,
+    "git_config_or_credential_store_packaged": false,
+    "downloaded_chrome_runtime_packaged": false,
+    "limits": "Exact Git closure and full checkpoint hashes prove the payload equals the specified canonical increment. Pattern scanning is supplementary and cannot prove the absence of every conceivable undocumented sensitive string; no network permission or upload authorization is granted by this report."
+  },
+  "readable_supporting_reports": [
+    {
+      "path": "bundle-payload-review.json",
+      "bytes": 167397,
+      "sha256": "ac8fe016b8fc82741e3144a45d5b9eaefe2d4ae5a0d0b1cdca5124a9139fa04d"
+    },
+    {
+      "path": "content-payload-review.json",
+      "bytes": 53403,
+      "sha256": "2992965b6966412e58959fa83b1c50f52b3acb31dac0c8dbd8ce464fd5a00e32"
+    }
+  ],
+  "host_recovery_review": {
+    "status": "independent_static_review_passed",
+    "readme": "README.md",
+    "covers": [
+      "PowerShell fetch and archive",
+      "60 exact part hashes, ordered streaming reconstruction and bundle SHA256",
+      "sole prerequisite, head, parent and tree",
+      "1316 artifact hashes and checkpoint self-hash",
+      "user-host fast-forward main merge and normal push",
+      "optional exact-lease temporary branch removal after verifying remote main contains CP7"
+    ],
+    "workflow_remote_write": "Only normal fast-forward push of fixed CP7 to research/p3-p6-cp7; no main write, force push or branch deletion."
+  },
+  "decision_boundary": "No new private or unrelated content was found. The only true signature finding is a Google Books bibliographic link inherited byte-for-byte from the already public prerequisite, retained with explicit service-semantics uncertainty. This context and exact payload are submitted to the same automatic approval review. These checks do not override a rejection or authorize a workaround."
+}
