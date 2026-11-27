@@ -28,8 +28,8 @@ PART_SIZE = 512 * 1024
 CP7 = {
     'checkpoint_id': 'CP-0007', 'parent_checkpoint_id': 'CP-0006',
     'package_path': 'temp/sync/CP-0007',
-    'manifest_sha256': '3c38d37b51a90171ad5e92226911629a9404a86e777c226641ba603463d02957',
-    'readme_sha256': '6855334512f1a97c7491516def341ffdd344cedf249f6ffe064b075f49424261',
+    'manifest_sha256': 'a16a7cc1cb908e7c187300cfb18d83e83ae7fcd0cc0cdd6c1b7a55e3bcc131cd',
+    'readme_sha256': 'd98418bdd0383dd0cbea1b7663b71ee8ab8f911789e44295c94bdd58636d72bf',
     'expected_baseline_commit': '0ee3b7de167a70933bc9884b9217142c2661c374',
     'expected_parent_commit': '0ee3b7de167a70933bc9884b9217142c2661c374',
     'expected_commit': BASE, 'expected_tree': BASE_TREE,
@@ -231,7 +231,7 @@ $Cp8Package7 = Join-Path $Cp8Package 'temp/sync/CP-0007'
 $Cp8Package8 = Join-Path $Cp8Package 'temp/sync/CP-0008'
 $Cp8ManifestPath7 = Join-Path $Cp8Package7 'manifest.json'
 $Cp8ManifestPath8 = Join-Path $Cp8Package8 'manifest.json'
-Assert-Cp8Hash $Cp8ManifestPath7 '3c38d37b51a90171ad5e92226911629a9404a86e777c226641ba603463d02957'
+Assert-Cp8Hash $Cp8ManifestPath7 'a16a7cc1cb908e7c187300cfb18d83e83ae7fcd0cc0cdd6c1b7a55e3bcc131cd'
 $Cp8Manifest7 = Get-Content -LiteralPath $Cp8ManifestPath7 -Raw -Encoding UTF8 | ConvertFrom-Json
 $Cp8Manifest8 = Get-Content -LiteralPath $Cp8ManifestPath8 -Raw -Encoding UTF8 | ConvertFrom-Json
 foreach ($cp8Manifest in @($Cp8Manifest7, $Cp8Manifest8)) {
@@ -251,7 +251,7 @@ Assert-Cp8Equal $Cp8Manifest7.expected_tree 'c5d5f03ce399961429288e1ffb7ce3565e2
 Assert-Cp8Equal $Cp8Manifest7.source_sync_ref 'refs/heads/sync/cp7-checkpoint-import' 'inherited CP7 source ref'
 Assert-Cp8Equal $Cp8Manifest7.target_ref 'refs/heads/research/p3-p6-cp7' 'CP7 bundle ref'
 Assert-Cp8Equal (@($Cp8Manifest7.bundle_prerequisites) -join ',') $Cp8RemoteBase 'sole CP7 prerequisite'
-Assert-Cp8Hash (Join-Path $Cp8Package7 'README.md') '6855334512f1a97c7491516def341ffdd344cedf249f6ffe064b075f49424261'
+Assert-Cp8Hash (Join-Path $Cp8Package7 'README.md') 'd98418bdd0383dd0cbea1b7663b71ee8ab8f911789e44295c94bdd58636d72bf'
 Assert-Cp8Equal $Cp8Manifest8.checkpoint_id 'CP-0008' 'CP8 identity'
 Assert-Cp8Equal $Cp8Manifest8.parent_checkpoint_id 'CP-0007' 'CP8 parent checkpoint'
 Assert-Cp8Equal $Cp8Manifest8.source_sync_ref $Cp8SyncRef 'CP8 sync ref'
