@@ -1,0 +1,210 @@
+{
+  "query_id": "Q-RUN05-P4-S17-citations-001",
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "task_id": "T-Citations-S17-epmc",
+  "entity_id": "W-S17",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/MED/15476600/citations?format=json&page=1&pageSize=1000",
+  "queried_at_utc": "2026-11-27T02:28:32.353054Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "rerun_reason": "Resume previously failed page1 at retained task cursor; original timeout Q-RUN01-00085 preserved.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Public bibliographic metadata only; abstract and full text omitted.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Live index observed now; no historical index snapshot or absence of later index changes is asserted.",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "status": "success",
+  "body_bytes": 7896,
+  "body_sha256": "26fa0d390e173683a5b1d5417d6dcada51a88a9f0ef09759e315be54e250191f",
+  "provider_response_keys": [
+    "citationList",
+    "hitCount",
+    "request",
+    "version"
+  ],
+  "records": [
+    {
+      "source": "MED",
+      "id": "41811979",
+      "title": "Fly motion vision maximizes signal energy transfer between mechanical input and sensor output.",
+      "authorString": "Humbert JS, Krapp HG, Baeder JD, Badrya C, Dawson IL, Huang JV, Hyslop A, Jung YS, Leroy A, Lutkus C, Mortimer B, Nagesh I, Ruah C, Walker SM, Yang Y, Żbikowski RW, Taylor GK.",
+      "journalAbbreviation": "Sci Robot",
+      "pubYear": 2026
+    },
+    {
+      "source": "PPR",
+      "id": "PPR830858",
+      "title": "Fly motion vision is tuned to maximize signal energy transfer between mechanical input and sensor output",
+      "authorString": "Humbert JS, Krapp HG, Baeder JD, Badrya C, Dawson IL, Huang JV, Hyslop A, Jung YS, Leroy A, Lutkus C, Mortimer B, Nagesh I, Ruah C, Walker SM, Yang Y, Żbikowski RW, Taylor GK.",
+      "pubYear": 2024
+    },
+    {
+      "source": "MED",
+      "id": "36286373",
+      "title": "Sparse Optical Flow Implementation Using a Neural Network for Low-Resolution Thermal Aerial Imaging.",
+      "authorString": "Nguyen TXB, Chahl J.",
+      "journalAbbreviation": "J Imaging",
+      "pubYear": 2022
+    },
+    {
+      "source": "MED",
+      "id": "26308839",
+      "title": "Insect-Inspired Self-Motion Estimation with Dense Flow Fields--An Adaptive Matched Filter Approach.",
+      "authorString": "Strübbe S, Stürzl W, Egelhaaf M.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2015
+    },
+    {
+      "source": "MED",
+      "id": "25389392",
+      "title": "Motion as a source of environmental information: a fresh view on biological motion computation by insect brains.",
+      "authorString": "Egelhaaf M, Kern R, Lindemann JP.",
+      "journalAbbreviation": "Front Neural Circuits",
+      "pubYear": 2014
+    },
+    {
+      "source": "MED",
+      "id": "25136314",
+      "title": "Depth information in natural environments derived from optic flow by insect motion detection system: a model analysis.",
+      "authorString": "Schwegmann A, Lindemann JP, Egelhaaf M.",
+      "journalAbbreviation": "Front Comput Neurosci",
+      "pubYear": 2014
+    },
+    {
+      "source": "MED",
+      "id": "24852145",
+      "title": "A μ analysis-based, controller-synthesis framework for robust bioinspired visual navigation in less-structured environments.",
+      "authorString": "Keshavan J, Gremillion G, Escobar-Alvarez H, Humbert JS.",
+      "journalAbbreviation": "Bioinspir Biomim",
+      "pubYear": 2014
+    },
+    {
+      "source": "MED",
+      "id": "23055967",
+      "title": "An insect-inspired bionic sensor for tactile localization and material classification with state-dependent modulation.",
+      "authorString": "Patanè L, Hellbach S, Krause AF, Arena P, Dürr V.",
+      "journalAbbreviation": "Front Neurorobot",
+      "pubYear": 2012
+    },
+    {
+      "source": "MED",
+      "id": "22739920",
+      "title": "Biomimetic compound eye with a high numerical aperture and anti-reflective nanostructures on curved surfaces.",
+      "authorString": "Wang T, Yu W, Li C, Zhang H, Xu Z, Lu Z, Sun Q.",
+      "journalAbbreviation": "Opt Lett",
+      "pubYear": 2012
+    },
+    {
+      "source": "MED",
+      "id": "21728014",
+      "title": "Egomotion estimation with optic flow and air velocity sensors.",
+      "authorString": "Rutkowski AJ, Miller MM, Quinn RD, Willis MA.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2011
+    },
+    {
+      "source": "MED",
+      "id": "21525309",
+      "title": "Odometry and insect navigation.",
+      "authorString": "Wolf H.",
+      "journalAbbreviation": "J Exp Biol",
+      "pubYear": 2011
+    },
+    {
+      "source": "MED",
+      "id": "21305019",
+      "title": "Neural action fields for optic flow based navigation: a simulation study of the fly lobula plate network.",
+      "authorString": "Borst A, Weber F.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2011
+    },
+    {
+      "source": "MED",
+      "id": "20694561",
+      "title": "Control theoretic interpretation of directional motion preferences in optic flow processing interneurons.",
+      "authorString": "Hyslop A, Krapp HG, Humbert JS.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2010
+    },
+    {
+      "source": "MED",
+      "id": "19699212",
+      "title": "Collective motion in animal groups from a neurobiological perspective: the adaptive benefits of dynamic sensory loads and selective attention.",
+      "authorString": "Lemasson BH, Anderson JJ, Goodwin RA.",
+      "journalAbbreviation": "J Theor Biol",
+      "pubYear": 2009
+    },
+    {
+      "source": "MED",
+      "id": "18365242",
+      "title": "Motion parallax contribution to perception of self-motion and depth.",
+      "authorString": "Hanes DA, Keller J, McCollum G.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2008
+    },
+    {
+      "source": "MED",
+      "id": "18180948",
+      "title": "Saccadic flight strategy facilitates collision avoidance: closed-loop performance of a cyberfly.",
+      "authorString": "Lindemann JP, Weiss H, Möller R, Egelhaaf M.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2008
+    },
+    {
+      "source": "MED",
+      "id": "17551009",
+      "title": "Robust coding of flow-field parameters by axo-axonal gap junctions between fly visual interneurons.",
+      "authorString": "Cuntz H, Haag J, Forstner F, Segev I, Borst A.",
+      "journalAbbreviation": "Proc Natl Acad Sci U S A",
+      "pubYear": 2007
+    },
+    {
+      "source": "MED",
+      "id": "17050849",
+      "title": "A \"bright zone\" in male hoverfly (Eristalis tenax) eyes and associated faster motion detection and increased contrast sensitivity.",
+      "authorString": "Straw AD, Warrant EJ, O'Carroll DC.",
+      "journalAbbreviation": "J Exp Biol",
+      "pubYear": 2006
+    },
+    {
+      "source": "MED",
+      "id": "17021827",
+      "title": "Local visual homing by matched-filter descent in image distances.",
+      "authorString": "Möller R, Vardy A.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2006
+    },
+    {
+      "source": "MED",
+      "id": "16611590",
+      "title": "Movement-induced motion signal distributions in outdoor scenes.",
+      "authorString": "Zanker JM, Zeil J.",
+      "journalAbbreviation": "Network",
+      "pubYear": 2005
+    }
+  ],
+  "returned_count": 20,
+  "visible_total": 20,
+  "cursor_in": "1",
+  "cursor_out": null,
+  "page_complete": true,
+  "response_metadata": {
+    "version": "6.9",
+    "hitCount": 20,
+    "request": {
+      "id": "15476600",
+      "source": "MED",
+      "offSet": 0,
+      "pageSize": 1000
+    }
+  },
+  "error_code": null,
+  "error_message": null,
+  "completed_at_utc": "2026-11-27T02:28:56.334482Z"
+}

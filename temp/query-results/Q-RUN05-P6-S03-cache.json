@@ -1,0 +1,33 @@
+{
+  "query_id": "Q-RUN05-P6-S03-cache",
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "entity_id": "W-S03",
+  "source_id": "SRC-PDF",
+  "query_kind": "cache_reuse_fulltext_manual_review",
+  "queried_at_utc": "2026-11-27T02:28:16.521623Z",
+  "status": "success",
+  "verification_status": "verified",
+  "endpoint_or_url": "https://doi.org/10.1016/j.cub.2014.12.012",
+  "external_requests_performed": 0,
+  "cache_hit": true,
+  "reused_query_id": "Q-PDF-S03",
+  "version_id": "V-S03-01",
+  "upload_id": "U-S03-01",
+  "pdf_sha256": "4306763f1da56697f04123ad4ad5366d6ac68b6842044fbe9905ca46358f79c7",
+  "pdf_bytes": 1083684,
+  "pdf_pages": 7,
+  "text_sha256": "10b61b6dc048140e165f3c8f55131e806cb1c4678f56e1498b8cc63f4456163f",
+  "retained_payload": false,
+  "sanitized": true,
+  "metadata": {
+    "work_key": "Wasserman2015",
+    "doi": "10.1016/j.cub.2014.12.012",
+    "title": "Olfactory Neuromodulation of Motion Vision Circuitry in Drosophila",
+    "year": 2015
+  },
+  "license_note": "User-supplied authorized research copy, exact V-S03-01 hash; article explicitly CC BY 4.0. No PDF, full text or original abstract copied to Git.",
+  "coverage_note": "Reusing exact previously admitted seed full text for a distinct Hx sensory modulation claim; this cache event does not count as a new Work/fulltext acquisition or establish all supplements reviewed.",
+  "prior_assessment_overlap": "Existing A-S03-L09-01 admitted Hx receptive-field/tuning values, explicitly did not quantify odor modulation. Distinct odor effect must be checked before any new assessment."
+}
