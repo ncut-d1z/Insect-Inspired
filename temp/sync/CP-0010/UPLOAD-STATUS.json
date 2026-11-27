@@ -1,0 +1,13 @@
+{
+  "checkpoint_id": "CP-0010",
+  "status": "upload_in_progress",
+  "committed_parts": [
+    13,
+    14,
+    15,
+    16
+  ],
+  "part_count": 17,
+  "canonical_commit": "5f2181b0e5a91bcafde2a3f19eb526668934a80e",
+  "full_remote_restore_verified": false
+}
