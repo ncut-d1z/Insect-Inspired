@@ -1,0 +1,99 @@
+{
+  "query_id": "Q-RUN06-P4-Egelhaaf2023-bibliography-008",
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0008",
+  "task_id": "T-RUN06-P4-Egelhaaf2023-context",
+  "entity_id": "W-D0f5e53ca30b3a9ea",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+  "raw_parameters": {
+    "operation": "find",
+    "source_reference_id": "turn833133443view0",
+    "patterns": [
+      "Strübbe S",
+      "Kern R, Boeddeker N"
+    ],
+    "purpose": "Check the two context-reviewed target identities in previously unreturned publisher bibliography windows"
+  },
+  "query_kind": "selected_official_bibliography_identity_observation",
+  "queried_at_utc": "2026-11-27T07:00:01Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 2,
+  "cache_hit": false,
+  "rerun_reason": "Continuation to bibliography targets not contained in first publisher window; no prior successful publisher-reference-window query for these exact targets.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Retained bibliographic facts and original review notes only; no full page, body prose, contact details or restricted content retained.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Two live connector find operations report crawled today. Target bibliography predates cutoff; no historical page snapshot claimed.",
+  "status": "success",
+  "transport": "web.find",
+  "source_reference_id": "turn252945929view0",
+  "source_reference_ids": [
+    "turn252945929view0",
+    "turn252945929view1"
+  ],
+  "source_line_count": 759,
+  "records": [
+    {
+      "source_record_id": "publisher:10.1007/s00359-022-01610-w#bibliography-line580",
+      "work_id": "W-S15",
+      "title": "Insect-inspired self-motion estimation with dense flow fields—an adaptive matched filter approach",
+      "authors": [
+        "Strübbe S",
+        "Stürzl W",
+        "Egelhaaf M"
+      ],
+      "year": 2015,
+      "journal": "PLoS ONE",
+      "volume": "10",
+      "eid": "e0128413",
+      "source_reference_id": "turn252945929view0",
+      "locator": "References, displayed line580",
+      "matched_canonical_occurrence_id": "R-CR-b8f1491dd9c0953a",
+      "identity_basis": "Full title, all listed authors, year, journal, volume and article number agree with the existing DOI-resolved canonical occurrence; the publisher snippet does not itself display a DOI."
+    },
+    {
+      "source_record_id": "publisher:10.1007/s00359-022-01610-w#bibliography-line454",
+      "work_id": "W-S04",
+      "title": "Blowfly flight characteristics are shaped by environmental features and controlled by optic flow information",
+      "authors": [
+        "Kern R",
+        "Boeddeker N",
+        "Dittmar L",
+        "Egelhaaf M"
+      ],
+      "year": 2012,
+      "journal": "J Exp Biol",
+      "volume": "215",
+      "pages": "2501–2514",
+      "source_reference_id": "turn252945929view1",
+      "locator": "References, displayed line454",
+      "matched_canonical_occurrence_id": "R-CR-dbf8599b1465c691",
+      "identity_basis": "Full title, all listed authors, year, journal, volume and pages agree with the existing DOI-resolved canonical occurrence; the publisher snippet does not itself display a DOI."
+    }
+  ],
+  "result_identifiers": [
+    "publisher:10.1007/s00359-022-01610-w#bibliography-line580",
+    "publisher:10.1007/s00359-022-01610-w#bibliography-line454"
+  ],
+  "visible_total": null,
+  "returned_count": 2,
+  "count_before_dedup": 2,
+  "count_after_dedup": 2,
+  "new_work_count": 0,
+  "new_work_ids": [],
+  "page_complete": false,
+  "cursor_in": "selected-publisher-bibliography-targets",
+  "cursor_out": "other-bibliography-and-supplement-coverage-pending",
+  "count_basis": "Two explicitly requested bibliography targets returned and identity-checked, one per find operation; these counts exclude surrounding unparsed bibliography context. The complete publisher reference total was not enumerated or reconciled, so visible_total remains null. Both selected targets map to two existing canonical Works.",
+  "review_scope": {
+    "selected_target_count": 2,
+    "bibliography_targets_verified": true,
+    "complete_main_reference_list_verified": false,
+    "appendix_or_supplement_reference_lists_verified": false,
+    "whole_work_review_complete": false
+  },
+  "integrity_note": "Only returned text windows observed; no complete-document byte hash, full reference-list reconciliation, original PDF layout, or figure verification asserted."
+}
