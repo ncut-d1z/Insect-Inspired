@@ -1,0 +1,93 @@
+{
+  "query_id": "Q-RUN05-P4-S12-citations-001",
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "task_id": "T-Citations-S12-epmc",
+  "entity_id": "W-S12",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/MED/25186763/citations?format=json&page=1&pageSize=1000",
+  "raw_parameters": {
+    "format": "json",
+    "page": 1,
+    "pageSize": 1000
+  },
+  "query_kind": "citations",
+  "queried_at_utc": "2026-11-27T02:46:57.364380Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "rerun_reason": "Exact DOI/PMID cross-check published; resume pending seed source at first citation page.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Public bibliographic facts; abstract/full text and personal contact details omitted.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Live source observed now, not a historical snapshot. Publication cutoff is checked separately.",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "status": "success",
+  "body_bytes": 2146,
+  "body_sha256": "56a74708a599457922d8201e19543dfa02711b61027f0f1211704e9370b79418",
+  "records": [
+    {
+      "source": "MED",
+      "id": "40258062",
+      "title": "Temporal resolution of spike coding in feedforward networks with signal convergence and divergence.",
+      "authorString": "Mobille Z, Sikandar UB, Sponberg S, Choi H.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2025,
+      "pageInfo": "e1012971"
+    },
+    {
+      "source": "MED",
+      "id": "34014926",
+      "title": "Maximally efficient prediction in the early fly visual system may support evasive flight maneuvers.",
+      "authorString": "Wang S, Segev I, Borst A, Palmer S.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2021,
+      "pageInfo": "e1008965"
+    },
+    {
+      "source": "MED",
+      "id": "29636499",
+      "title": "Non-uniform weighting of local motion inputs underlies dendritic computation in the fly visual system.",
+      "authorString": "Dan O, Hopp E, Borst A, Segev I.",
+      "journalAbbreviation": "Sci Rep",
+      "pubYear": 2018,
+      "pageInfo": "5787"
+    },
+    {
+      "source": "MED",
+      "id": "29206224",
+      "title": "Efficient encoding of motion is mediated by gap junctions in the fly visual system.",
+      "authorString": "Wang S, Borst A, Zaslavsky N, Tishby N, Segev I.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2017,
+      "pageInfo": "e1005846"
+    },
+    {
+      "source": "MED",
+      "id": "25926445",
+      "title": "A network of visual motion-sensitive neurons for computing object position in an arthropod.",
+      "authorString": "Medan V, Berón De Astrada M, Scarano F, Tomsic D.",
+      "journalAbbreviation": "J Neurosci",
+      "pubYear": 2015,
+      "pageInfo": "6654-6666"
+    }
+  ],
+  "returned_count": 5,
+  "visible_total": 5,
+  "cursor_in": "1",
+  "cursor_out": null,
+  "page_index": 1,
+  "page_complete": true,
+  "provider_response_keys": [
+    "citationList",
+    "hitCount",
+    "request",
+    "version"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "completed_at_utc": "2026-11-27T02:47:23.795283Z"
+}
