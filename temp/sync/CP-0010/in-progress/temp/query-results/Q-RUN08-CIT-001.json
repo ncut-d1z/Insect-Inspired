@@ -1,0 +1,81 @@
+{
+  "query_id": "Q-RUN08-CIT-001",
+  "run_id": "RUN-0008",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0010",
+  "task_id": "T-RUN04-CitationContext-CE-4298d0c6889a1e50",
+  "entity_id": "W-D0f5e53ca30b3a9ea",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+  "raw_parameters": {
+    "operation": "find",
+    "source_reference_id": "turn833133443view0",
+    "pattern": "Webb and Wystrach",
+    "purpose": "Read previously unreviewed original citation context for an existing verified target"
+  },
+  "query_kind": "official_fulltext_context_observation",
+  "queried_at_utc": "2026-11-27T09:12:10Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "rerun_reason": "Complete partitioned queries/tasks/cache preflight found no successful equivalent Webb/Wystrach body-context request. RUN6 publisher open read lines0–187; the earlier bibliography find did not establish this body context.",
+  "preflight_related_query_ids": [
+    "Q-RUN06-P4-Egelhaaf2023-publisher-007",
+    "Q-RUN06-P4-Egelhaaf2023-bibliography-008",
+    "Q-RUN04-SEARCH-0003"
+  ],
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "The publisher article is marked Open access; CC-BY4.0 was observed in the lawful institutional-repository receipt Q-RUN06-P4-Egelhaaf2023-context-005. Retain bibliographic facts, original Chinese paraphrase and precise locators only.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Live publisher resource via web connector, reported crawled today; article publication predates cutoff. No historical snapshot is asserted.",
+  "status": "success",
+  "transport": "web.find",
+  "source_reference_id": "turn812744427view0",
+  "source_line_count": 759,
+  "resource_identity": {
+    "doi": "10.1007/s00359-022-01610-w",
+    "title": "Optic flow based spatial vision in insects",
+    "authors": [
+      "Martin Egelhaaf"
+    ],
+    "publication_date": "2023-01-07",
+    "journal": "Journal of Comparative Physiology A",
+    "volume": "209",
+    "pages": "541–561",
+    "access": "open_access"
+  },
+  "count_basis": "One requested article resource; the returned selected window lines282–475 is not an enumerated citation list and does not establish complete fulltext, bibliography, or supplementary coverage.",
+  "visible_total": 1,
+  "returned_count": 1,
+  "count_before_dedup": 1,
+  "count_after_dedup": 1,
+  "new_work_count": 0,
+  "new_work_ids": [],
+  "result_identifiers": [
+    "10.1007/s00359-022-01610-w"
+  ],
+  "page_complete": false,
+  "cursor_in": "publisher-find:Webb and Wystrach",
+  "cursor_out": "Selected match window ended at publisher line475; whole-source coverage remains incomplete.",
+  "observations": [
+    {
+      "edge_id": "CE-4298d0c6889a1e50",
+      "cited_work_id": "W-Raab0f78cce8a781f",
+      "cited_key": "TempWRaab0f78cce8a781f",
+      "section": "Translational OF processing for path integration",
+      "locator": "Publisher displayed lines306–317; explicit Webb and Wystrach2016 citation at lines311–312",
+      "summary_zh": "综述在路径积分一节，把Webb与Wystrach2016与其他综述共同列为中央复合体解剖、神经活动及环状计算模型的背景来源。该段随后讨论方向与距离信息如何结合，不能把这条综述引用当作独立复现或新性能改进证据。",
+      "provisional_citation_roles": [
+        "background"
+      ]
+    }
+  ],
+  "review_scope": {
+    "selected_body_context_read": true,
+    "bibliographic_target_crosscheck_pending": true,
+    "whole_work_fulltext_or_supplement_review_complete": false,
+    "source_list_requery": false
+  },
+  "integrity_note": "Observed connector-returned text and line locators only. No original HTTP payload or whole-document hash is available, and figures/equations were not visually audited."
+}
