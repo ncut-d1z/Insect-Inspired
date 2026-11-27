@@ -1491,7 +1491,7 @@
       "checkpoint_id": "CP-0007",
       "event_sequence": 1,
       "assessment_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
-      "field_path": "conditions.texture_noise.value.contrast",
+      "field_path": "conditions.texture_noise.value.field_states.contrast",
       "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
       "deadline_at_utc": "2026-11-28T02:38:19.093465Z",
       "review_task_id": "T-Unknown-e7ffdec904922e9b",
@@ -1526,7 +1526,7 @@
       "checkpoint_id": "CP-0007",
       "event_sequence": 1,
       "assessment_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
-      "field_path": "conditions.texture_noise.value.spatial_frequency",
+      "field_path": "conditions.texture_noise.value.field_states.spatial_frequency",
       "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
       "deadline_at_utc": "2026-11-28T02:38:19.093465Z",
       "review_task_id": "T-Unknown-5ca4bc25e464681b",
@@ -1561,7 +1561,7 @@
       "checkpoint_id": "CP-0007",
       "event_sequence": 1,
       "assessment_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
-      "field_path": "conditions.texture_noise.value.illumination",
+      "field_path": "conditions.texture_noise.value.field_states.illumination",
       "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
       "deadline_at_utc": "2026-11-28T02:38:19.093465Z",
       "review_task_id": "T-Unknown-450d5e2f0de7c584",
@@ -1596,7 +1596,7 @@
       "checkpoint_id": "CP-0007",
       "event_sequence": 1,
       "assessment_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
-      "field_path": "conditions.texture_noise.value.noise",
+      "field_path": "conditions.texture_noise.value.field_states.noise",
       "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
       "deadline_at_utc": "2026-11-28T02:38:19.093465Z",
       "review_task_id": "T-Unknown-b3b4b7cde4b100fd",
@@ -1631,7 +1631,7 @@
       "checkpoint_id": "CP-0007",
       "event_sequence": 1,
       "assessment_id": "AS-RUN05-Wasserman2015-L09-Hx-odor-response",
-      "field_path": "conditions.method_and_validation.value.trial_count",
+      "field_path": "conditions.method_and_validation.value.field_states.trial_count",
       "unknown_since_utc": "2026-11-27T02:38:19.093465Z",
       "deadline_at_utc": "2026-11-28T02:38:19.093465Z",
       "review_task_id": "T-Unknown-b5a564a3b79b916a",
@@ -1655,7 +1655,39 @@
     "manual_L09_gate": "Explicit D.melanogasterHxcell, n=13reported, direct figure response quantity with baseline and uncertainty; no optimality or between-species claim.",
     "missing_conditions_scope": "Five unknown fields are not needed to reproduce the graph-coordinate difference in this exact published figure. They block broader stimulus/parameter/generalization claims and retain24-hour review tasks. No unknown field is treated as zero or not_reported.",
     "critical_unknown_fields": [],
-    "new_exception": false
+    "new_exception": false,
+    "full_repository_audit_correction": {
+      "recorded_at_utc": "2026-11-27T03:56:19.215659Z",
+      "audit_sha256": "e01e7be0ea7a2e62b9a419f8bc598b4e1eab0cb86d7b737d4e1e0a166886490f",
+      "reason": "Exact field_state task locations corrected after the full audit; Assessment content, task IDs and original unknown clocks are unchanged.",
+      "changes": [
+        {
+          "task_id": "T-Unknown-e7ffdec904922e9b",
+          "before": "conditions.texture_noise.value.contrast",
+          "after": "conditions.texture_noise.value.field_states.contrast"
+        },
+        {
+          "task_id": "T-Unknown-5ca4bc25e464681b",
+          "before": "conditions.texture_noise.value.spatial_frequency",
+          "after": "conditions.texture_noise.value.field_states.spatial_frequency"
+        },
+        {
+          "task_id": "T-Unknown-450d5e2f0de7c584",
+          "before": "conditions.texture_noise.value.illumination",
+          "after": "conditions.texture_noise.value.field_states.illumination"
+        },
+        {
+          "task_id": "T-Unknown-b3b4b7cde4b100fd",
+          "before": "conditions.texture_noise.value.noise",
+          "after": "conditions.texture_noise.value.field_states.noise"
+        },
+        {
+          "task_id": "T-Unknown-b5a564a3b79b916a",
+          "before": "conditions.method_and_validation.value.trial_count",
+          "after": "conditions.method_and_validation.value.field_states.trial_count"
+        }
+      ]
+    }
   },
   "integration_requirements": [
     "Append exactly one assessment object and five initialunknown taskevents after root review.",
