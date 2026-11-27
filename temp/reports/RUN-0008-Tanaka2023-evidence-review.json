@@ -1,0 +1,161 @@
+{
+  "review_id": "REV-RUN08-Tanaka2023-P6-001",
+  "run_id": "RUN-0008",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0010",
+  "baseline_checkpoint_id": "CP-0009",
+  "baseline_commit": "96ce04b268f648978581e87d3be551981f12917d",
+  "recorded_at_utc": "2026-11-27T09:20:55.896025Z",
+  "reviewer": "RUN-0008 P6 primary-source reviewer",
+  "status": "review_complete_gap_remains",
+  "source_binding": {
+    "work_id": "W-D949d6ef5b3f851e1",
+    "version_id": "V-4d23178e61cdb9e0",
+    "version_type": "preprint",
+    "version_date": "2023-07-11",
+    "preprint_doi": "10.1101/2023.01.04.522814",
+    "published_work_doi": "10.1016/j.cub.2023.10.011",
+    "source_url": "https://www.biorxiv.org/content/early/2023/07/11/2023.01.04.522814.source.xml",
+    "bytes": 272243,
+    "sha256": "7da60cefe4048e0922a04a3c302f98e98a9eee2dff1d33da22243d8bef214f44",
+    "license": "CC-BY-NC-4.0",
+    "reused_query_id": "Q-RUN01-00372",
+    "new_fulltext_version_acquired": false
+  },
+  "evidence_locators": [
+    {
+      "source_id": "publisher",
+      "version_id": "V-4d23178e61cdb9e0",
+      "identifier": "10.1101/2023.01.04.522814",
+      "url": "https://www.biorxiv.org/content/early/2023/07/11/2023.01.04.522814.source.xml",
+      "page": null,
+      "section": "Materials and Methods: Key Resource Table; Fly Strains and Husbandry",
+      "paragraph": "//*[@id='s8a'] | //*[@id='s8b']",
+      "figure": null,
+      "table": "Key Resource Table; Table S1",
+      "accessed_at": "2026-11-27T09:20:55.896025Z",
+      "evidence_note": "s8a的utbl1只嵌graphic引用522814v2_utbl1与522814v2_utbl1a；s8b报告培养、性别和实验时间并指向Table S1，未提供可直接据此确认的种级名称。"
+    },
+    {
+      "source_id": "publisher",
+      "version_id": "V-4d23178e61cdb9e0",
+      "identifier": "10.1101/2023.01.04.522814",
+      "url": "https://www.biorxiv.org/content/early/2023/07/11/2023.01.04.522814.source.xml",
+      "page": null,
+      "section": "Results: Drosophila suppress rotational optomotor responses",
+      "paragraph": "//*[@id='s2a']/p | //*[@id='fig1']/caption",
+      "figure": "1c–f",
+      "table": null,
+      "accessed_at": "2026-11-27T09:20:55.896025Z",
+      "evidence_note": "s2a与Fig1c–f明确受控yaw背景80deg/s，5deg棋盘，15deg窗口、平均20%覆盖；Fig1e–f为23只。此为已存在L04主张的条件核对，不是新独立主张。"
+    },
+    {
+      "source_id": "publisher",
+      "version_id": "V-4d23178e61cdb9e0",
+      "identifier": "10.1101/2023.01.04.522814",
+      "url": "https://www.biorxiv.org/content/early/2023/07/11/2023.01.04.522814.source.xml",
+      "page": null,
+      "section": "Results: Optomotor suppression is as fast as optomotor response itself",
+      "paragraph": "//*[@id='s2d']/p | //*[@id='fig1']/caption",
+      "figure": "1r–t",
+      "table": null,
+      "accessed_at": "2026-11-27T09:20:55.896025Z",
+      "evidence_note": "s2d与Fig1r–t：背景运动前0.5s图案预呈现；该图s–t为17只，约150ms后的显著差异。核对限该条件，不外推所有延迟或自然运动。"
+    },
+    {
+      "source_id": "publisher",
+      "version_id": "V-4d23178e61cdb9e0",
+      "identifier": "10.1101/2023.01.04.522814",
+      "url": "https://www.biorxiv.org/content/early/2023/07/11/2023.01.04.522814.source.xml",
+      "page": null,
+      "section": "Materials and Methods: Stimulus Presentation; Behavioral Assay and Data Analysis; Quantification",
+      "paragraph": "//*[@id='s8c'] | //*[@id='s8d'] | //*[@id='s8j']",
+      "figure": null,
+      "table": null,
+      "accessed_at": "2026-11-27T09:20:55.896025Z",
+      "evidence_note": "s8c/s8d/s8j支持180Hz显示、60Hz读取、270×106deg覆盖、非处女雌性、36C行为装置，以及以每只蝇为独立统计样本；这些条件不补足未读图片中的种级身份。"
+    }
+  ],
+  "species_decision": {
+    "status": "unknown_review_required",
+    "value": null,
+    "reason": "实验正文只确定Drosophila属，Key Resource Table与Table S1为尚未取得的外链图片；不能依据常用实验物种或无关参考文献默认melanogaster。",
+    "not_reported_is_not_justified": true,
+    "applies_to_assessment_ids": [
+      "A-P6-B204-L04-world_motion_rejection",
+      "A-P6-B204-L03-counterevidence_onset"
+    ]
+  },
+  "condition_review_scope": "仅核对缓存XML中明确阅读的Methods、s2a/s2d和Fig1图注与两个既有AS；没有读取S1实际图像，没有从摘要推出新科学结论。",
+  "assessment_snapshots": [
+    {
+      "assessment_id": "A-P6-B204-L04-world_motion_rejection",
+      "work_id": "W-D949d6ef5b3f851e1",
+      "version_ids": [
+        "V-4d23178e61cdb9e0"
+      ],
+      "species_status": "unknown_review_required",
+      "species_review_task_id": "T-Unknown-df9e5d557d5403c4",
+      "handling_level": "partially_addressed",
+      "evidence_admission_status": "eligible",
+      "canonical_object_sha256": "0e46202ee37060c175843df0a9209f1a26f40d460d052817b62aac4f412684b3",
+      "modified": false
+    },
+    {
+      "assessment_id": "A-P6-B204-L03-counterevidence_onset",
+      "work_id": "W-D949d6ef5b3f851e1",
+      "version_ids": [
+        "V-4d23178e61cdb9e0"
+      ],
+      "species_status": "unknown_review_required",
+      "species_review_task_id": "T-Unknown-e37ed08c6fe1dc1b",
+      "handling_level": "partially_addressed",
+      "evidence_admission_status": "eligible",
+      "canonical_object_sha256": "c0bcc2c0e34426dd6f7a97a612789cb99164d15959ae286fcd896780193bfa95",
+      "modified": false
+    }
+  ],
+  "access_outcomes": [
+    {
+      "query_id": "Q-RUN08-P6-Tanaka-biorxiv-html-002",
+      "url": "https://www.biorxiv.org/content/10.1101/2023.01.04.522814v2.full",
+      "response_kind": "web_tool_target_inaccessible",
+      "http_status": null
+    },
+    {
+      "query_id": "Q-RUN08-P6-Tanaka-biorxiv-table-003",
+      "url": "https://www.biorxiv.org/content/10.1101/2023.01.04.522814v2/T1",
+      "response_kind": "web_tool_target_inaccessible",
+      "http_status": null
+    },
+    {
+      "query_id": "Q-RUN08-P6-Tanaka-pmc-page-004",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10848174/",
+      "response_kind": "browser_check_challenge_only",
+      "http_status": null
+    },
+    {
+      "query_id": "Q-RUN08-P6-Tanaka-epmc-xml-005",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10848174/fullTextXML",
+      "response_kind": "http_500_empty_response",
+      "http_status": 500
+    }
+  ],
+  "exclusions": [
+    "旧B204-preprint-v2.pdf为错误响应，未当作PDF证据。",
+    "旧B204-pmc-final.pdf为错误响应，未当作正式版全文。",
+    "PMC浏览器验证页未绕过；EuropePMC为空500响应，未假定正式版本内容。",
+    "Zhou2026本批未阅读任何新全文，全部科学条件缺口保持。"
+  ],
+  "batch_accounting": {
+    "external_requests": 4,
+    "cache_reuse_events": 1,
+    "manual_review_items": 2,
+    "new_works": 0,
+    "new_assessments": 0,
+    "assessment_field_resolutions": 0,
+    "existing_species_tasks_closed": 0,
+    "existing_species_tasks_attempted": 2
+  },
+  "request_implementation_note": "首次尝试使用未安装requests模块在导入时失败，发生于任何网络请求之前；随后urllib仅执行1次EuropePMC GET。模块导入失败不虚计外部请求。"
+}

@@ -1,0 +1,959 @@
+{
+  "review_id": "CAND-RUN08-Tanaka2023-P6-001",
+  "run_id": "RUN-0008",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0010",
+  "baseline_checkpoint_id": "CP-0009",
+  "baseline_commit": "96ce04b268f648978581e87d3be551981f12917d",
+  "reviewed_at_utc": "2026-11-27T09:20:55.896025Z",
+  "reviewer": "RUN-0008 P6 primary-source reviewer",
+  "status": "reviewed_candidate_gap_preserved_not_canonical",
+  "evidence_review_path": "temp/reports/RUN-0008-Tanaka2023-evidence-review.json",
+  "source_bindings": [
+    {
+      "work_id": "W-D949d6ef5b3f851e1",
+      "version_id": "V-4d23178e61cdb9e0",
+      "version_type": "preprint",
+      "version_date": "2023-07-11",
+      "preprint_doi": "10.1101/2023.01.04.522814",
+      "published_work_doi": "10.1016/j.cub.2023.10.011",
+      "source_url": "https://www.biorxiv.org/content/early/2023/07/11/2023.01.04.522814.source.xml",
+      "bytes": 272243,
+      "sha256": "7da60cefe4048e0922a04a3c302f98e98a9eee2dff1d33da22243d8bef214f44",
+      "license": "CC-BY-NC-4.0",
+      "reused_query_id": "Q-RUN01-00372",
+      "new_fulltext_version_acquired": false
+    }
+  ],
+  "additions": {
+    "queries": [
+      {
+        "query_id": "Q-RUN08-P6-Tanaka-cache-001",
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P6-Tanaka-cache-001",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0010",
+        "entity_id": "W-D949d6ef5b3f851e1",
+        "source_id": "publisher",
+        "endpoint_or_url": "https://www.biorxiv.org/content/early/2023/07/11/2023.01.04.522814.source.xml",
+        "api_version": null,
+        "query_kind": "cache_reuse_fulltext_manual_review",
+        "raw_parameters": {
+          "url": "https://www.biorxiv.org/content/early/2023/07/11/2023.01.04.522814.source.xml",
+          "purpose": "P6 species/condition review for existing Tanaka2023 Assessments",
+          "version_id": "V-4d23178e61cdb9e0",
+          "sha256": "7da60cefe4048e0922a04a3c302f98e98a9eee2dff1d33da22243d8bef214f44"
+        },
+        "normalized_parameters": {
+          "url": "https://www.biorxiv.org/content/early/2023/07/11/2023.01.04.522814.source.xml",
+          "work_id": "W-D949d6ef5b3f851e1",
+          "run_id": "RUN-0008",
+          "scope_id": "SCOPE-0001",
+          "target_dimension": "conditions.species",
+          "count_scope": "Exact one-resource cache reuse when available; failed access does not yield a known source inventory.",
+          "version_id": "V-4d23178e61cdb9e0",
+          "sha256": "7da60cefe4048e0922a04a3c302f98e98a9eee2dff1d33da22243d8bef214f44"
+        },
+        "queried_at_utc": "2026-11-27T09:20:55.896025Z",
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": 1,
+        "returned_count": 1,
+        "count_before_dedup": 1,
+        "count_after_dedup": 1,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [
+          "V-4d23178e61cdb9e0"
+        ],
+        "status": "cache_hit",
+        "verification_status": "verified",
+        "error_code": null,
+        "error_message": null,
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN08-P6-Tanaka-cache-001.json",
+        "cache_hit": true,
+        "reused_query_id": "Q-RUN01-00372",
+        "rerun_reason": null,
+        "coverage_note": "One exact, previously admitted XML resource was rechecked for the outstanding species field and applicability to two existing Assessments. Counts refer to this single cached resource; not a source inventory.",
+        "license_note": "Only bibliographic identifiers, original Chinese review summaries, source hashes and locators are retained. No original article, abstract, table image, personal contact information or credentials are redistributed.",
+        "recorded_at_utc": "2026-11-27T09:20:55.896025Z",
+        "query_time_status": "exact",
+        "field_states": {}
+      },
+      {
+        "query_id": "Q-RUN08-P6-Tanaka-biorxiv-html-002",
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P6-Tanaka-biorxiv-html-002",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0010",
+        "entity_id": "W-D949d6ef5b3f851e1",
+        "source_id": "publisher",
+        "endpoint_or_url": "https://www.biorxiv.org/content/10.1101/2023.01.04.522814v2.full",
+        "api_version": null,
+        "query_kind": "fulltext_access_attempt",
+        "raw_parameters": {
+          "url": "https://www.biorxiv.org/content/10.1101/2023.01.04.522814v2.full",
+          "purpose": "P6 species/condition review for existing Tanaka2023 Assessments"
+        },
+        "normalized_parameters": {
+          "url": "https://www.biorxiv.org/content/10.1101/2023.01.04.522814v2.full",
+          "work_id": "W-D949d6ef5b3f851e1",
+          "run_id": "RUN-0008",
+          "scope_id": "SCOPE-0001",
+          "target_dimension": "conditions.species",
+          "count_scope": "Exact one-resource cache reuse when available; failed access does not yield a known source inventory."
+        },
+        "queried_at_utc": null,
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": null,
+        "returned_count": null,
+        "count_before_dedup": null,
+        "count_after_dedup": null,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [],
+        "status": "partial",
+        "verification_status": "source_supported",
+        "error_code": "web_tool_inaccessible",
+        "error_message": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed.",
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN08-P6-Tanaka-biorxiv-html-002.json",
+        "cache_hit": false,
+        "reused_query_id": null,
+        "rerun_reason": "Distinct legal source route for the unresolved species-table gap; no successful same-parameter fulltext or table cache existed. Prior PDF failures are not evidence.",
+        "coverage_note": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "license_note": "Only bibliographic identifiers, original Chinese review summaries, source hashes and locators are retained. No original article, abstract, table image, personal contact information or credentials are redistributed.",
+        "recorded_at_utc": "2026-11-27T09:20:55.896025Z",
+        "query_time_status": "unavailable_exact",
+        "field_states": {
+          "returned_count": {
+            "status": "unknown",
+            "reason": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-html-002"
+          },
+          "count_before_dedup": {
+            "status": "unknown",
+            "reason": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-html-002"
+          },
+          "count_after_dedup": {
+            "status": "unknown",
+            "reason": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-html-002"
+          },
+          "visible_total": {
+            "status": "unknown",
+            "reason": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-html-002"
+          }
+        },
+        "queried_date": "2026-11-27"
+      },
+      {
+        "query_id": "Q-RUN08-P6-Tanaka-biorxiv-table-003",
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P6-Tanaka-biorxiv-table-003",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0010",
+        "entity_id": "W-D949d6ef5b3f851e1",
+        "source_id": "publisher",
+        "endpoint_or_url": "https://www.biorxiv.org/content/10.1101/2023.01.04.522814v2/T1",
+        "api_version": null,
+        "query_kind": "primary_resource_table_access_attempt",
+        "raw_parameters": {
+          "url": "https://www.biorxiv.org/content/10.1101/2023.01.04.522814v2/T1",
+          "purpose": "P6 species/condition review for existing Tanaka2023 Assessments"
+        },
+        "normalized_parameters": {
+          "url": "https://www.biorxiv.org/content/10.1101/2023.01.04.522814v2/T1",
+          "work_id": "W-D949d6ef5b3f851e1",
+          "run_id": "RUN-0008",
+          "scope_id": "SCOPE-0001",
+          "target_dimension": "conditions.species",
+          "count_scope": "Exact one-resource cache reuse when available; failed access does not yield a known source inventory."
+        },
+        "queried_at_utc": null,
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": null,
+        "returned_count": null,
+        "count_before_dedup": null,
+        "count_after_dedup": null,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [],
+        "status": "partial",
+        "verification_status": "source_supported",
+        "error_code": "web_tool_inaccessible",
+        "error_message": "Web open returned Internal Error for the v2 table route; the resource-table images were not obtained. The route uses the observed XML T1 table slug; no target content was assumed.",
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN08-P6-Tanaka-biorxiv-table-003.json",
+        "cache_hit": false,
+        "reused_query_id": null,
+        "rerun_reason": "Distinct legal source route for the unresolved species-table gap; no successful same-parameter fulltext or table cache existed. Prior PDF failures are not evidence.",
+        "coverage_note": "Web open returned Internal Error for the v2 table route; the resource-table images were not obtained. The route uses the observed XML T1 table slug; no target content was assumed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "license_note": "Only bibliographic identifiers, original Chinese review summaries, source hashes and locators are retained. No original article, abstract, table image, personal contact information or credentials are redistributed.",
+        "recorded_at_utc": "2026-11-27T09:20:55.896025Z",
+        "query_time_status": "unavailable_exact",
+        "field_states": {
+          "returned_count": {
+            "status": "unknown",
+            "reason": "Web open returned Internal Error for the v2 table route; the resource-table images were not obtained. The route uses the observed XML T1 table slug; no target content was assumed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-table-003"
+          },
+          "count_before_dedup": {
+            "status": "unknown",
+            "reason": "Web open returned Internal Error for the v2 table route; the resource-table images were not obtained. The route uses the observed XML T1 table slug; no target content was assumed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-table-003"
+          },
+          "count_after_dedup": {
+            "status": "unknown",
+            "reason": "Web open returned Internal Error for the v2 table route; the resource-table images were not obtained. The route uses the observed XML T1 table slug; no target content was assumed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-table-003"
+          },
+          "visible_total": {
+            "status": "unknown",
+            "reason": "Web open returned Internal Error for the v2 table route; the resource-table images were not obtained. The route uses the observed XML T1 table slug; no target content was assumed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-table-003"
+          }
+        },
+        "queried_date": "2026-11-27"
+      },
+      {
+        "query_id": "Q-RUN08-P6-Tanaka-pmc-page-004",
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P6-Tanaka-pmc-page-004",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0010",
+        "entity_id": "W-D949d6ef5b3f851e1",
+        "source_id": "pmc",
+        "endpoint_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10848174/",
+        "api_version": null,
+        "query_kind": "lawful_fulltext_alternative_access_attempt",
+        "raw_parameters": {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10848174/",
+          "purpose": "P6 species/condition review for existing Tanaka2023 Assessments"
+        },
+        "normalized_parameters": {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10848174/",
+          "work_id": "W-D949d6ef5b3f851e1",
+          "run_id": "RUN-0008",
+          "scope_id": "SCOPE-0001",
+          "target_dimension": "conditions.species",
+          "count_scope": "Exact one-resource cache reuse when available; failed access does not yield a known source inventory."
+        },
+        "queried_at_utc": null,
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": null,
+        "returned_count": null,
+        "count_before_dedup": null,
+        "count_after_dedup": null,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [],
+        "status": "partial",
+        "verification_status": "source_supported",
+        "error_code": "captcha_challenge_no_article",
+        "error_message": "Only a browser-check/reCAPTCHA page was returned; no article body was obtained and no challenge was bypassed.",
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN08-P6-Tanaka-pmc-page-004.json",
+        "cache_hit": false,
+        "reused_query_id": null,
+        "rerun_reason": "Distinct legal source route for the unresolved species-table gap; no successful same-parameter fulltext or table cache existed. Prior PDF failures are not evidence.",
+        "coverage_note": "Only a browser-check/reCAPTCHA page was returned; no article body was obtained and no challenge was bypassed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "license_note": "Only bibliographic identifiers, original Chinese review summaries, source hashes and locators are retained. No original article, abstract, table image, personal contact information or credentials are redistributed.",
+        "recorded_at_utc": "2026-11-27T09:20:55.896025Z",
+        "query_time_status": "unavailable_exact",
+        "field_states": {
+          "returned_count": {
+            "status": "unknown",
+            "reason": "Only a browser-check/reCAPTCHA page was returned; no article body was obtained and no challenge was bypassed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-pmc-page-004"
+          },
+          "count_before_dedup": {
+            "status": "unknown",
+            "reason": "Only a browser-check/reCAPTCHA page was returned; no article body was obtained and no challenge was bypassed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-pmc-page-004"
+          },
+          "count_after_dedup": {
+            "status": "unknown",
+            "reason": "Only a browser-check/reCAPTCHA page was returned; no article body was obtained and no challenge was bypassed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-pmc-page-004"
+          },
+          "visible_total": {
+            "status": "unknown",
+            "reason": "Only a browser-check/reCAPTCHA page was returned; no article body was obtained and no challenge was bypassed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-pmc-page-004"
+          }
+        },
+        "queried_date": "2026-11-27"
+      },
+      {
+        "query_id": "Q-RUN08-P6-Tanaka-epmc-xml-005",
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P6-Tanaka-epmc-xml-005",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0010",
+        "entity_id": "W-D949d6ef5b3f851e1",
+        "source_id": "europepmc",
+        "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10848174/fullTextXML",
+        "api_version": null,
+        "query_kind": "http_get_primary_fulltext_xml",
+        "raw_parameters": {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10848174/fullTextXML",
+          "purpose": "P6 species/condition review for existing Tanaka2023 Assessments"
+        },
+        "normalized_parameters": {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10848174/fullTextXML",
+          "work_id": "W-D949d6ef5b3f851e1",
+          "run_id": "RUN-0008",
+          "scope_id": "SCOPE-0001",
+          "target_dimension": "conditions.species",
+          "count_scope": "Exact one-resource cache reuse when available; failed access does not yield a known source inventory."
+        },
+        "queried_at_utc": "2026-11-27T09:14:36.874558Z",
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": null,
+        "returned_count": null,
+        "count_before_dedup": null,
+        "count_after_dedup": null,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [],
+        "status": "error",
+        "verification_status": "unverified",
+        "error_code": "HTTP_500",
+        "error_message": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained.",
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN08-P6-Tanaka-epmc-xml-005.json",
+        "cache_hit": false,
+        "reused_query_id": null,
+        "rerun_reason": "Distinct legal source route for the unresolved species-table gap; no successful same-parameter fulltext or table cache existed. Prior PDF failures are not evidence.",
+        "coverage_note": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "license_note": "Only bibliographic identifiers, original Chinese review summaries, source hashes and locators are retained. No original article, abstract, table image, personal contact information or credentials are redistributed.",
+        "recorded_at_utc": "2026-11-27T09:20:55.896025Z",
+        "query_time_status": "exact",
+        "field_states": {
+          "returned_count": {
+            "status": "unknown",
+            "reason": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-epmc-xml-005"
+          },
+          "count_before_dedup": {
+            "status": "unknown",
+            "reason": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-epmc-xml-005"
+          },
+          "count_after_dedup": {
+            "status": "unknown",
+            "reason": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-epmc-xml-005"
+          },
+          "visible_total": {
+            "status": "unknown",
+            "reason": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-epmc-xml-005"
+          }
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P6-Tanaka-cache-001",
+        "entity_type": "work",
+        "entity_id": "W-D949d6ef5b3f851e1",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P6-Tanaka-cache-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Retain the exact operation receipt; further evidence or coverage requires lawful original-source verification.",
+        "created_at_utc": "2026-11-27T09:20:55.896025Z",
+        "updated_at_utc": "2026-11-27T09:20:55.896025Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P6-Tanaka-cache-001"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-html-002",
+        "entity_type": "scope",
+        "entity_id": "SCOPE-0001",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P6-Tanaka-biorxiv-html-002"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "retry_at": null,
+        "review_condition": "Recover an actual source response or source inventory if lawfully available; retain original access failure and never replace unavailable counts by zero.",
+        "created_at_utc": "2026-11-27T09:20:55.896025Z",
+        "updated_at_utc": "2026-11-27T09:20:55.896025Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "queries.Q-RUN08-P6-Tanaka-biorxiv-html-002.returned_count,count_before_dedup,count_after_dedup,visible_total",
+        "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+        "deadline_at_utc": "2026-11-28T09:20:55.896025Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-html-002",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P6-Tanaka-biorxiv-html-002"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P6-Tanaka-biorxiv-html-002",
+        "entity_type": "work",
+        "entity_id": "W-D949d6ef5b3f851e1",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P6-Tanaka-biorxiv-html-002"
+        ],
+        "attempt_count": 1,
+        "error_code": "web_tool_inaccessible",
+        "failure_reason": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed.",
+        "retry_at": null,
+        "review_condition": "Retain the exact operation receipt; further evidence or coverage requires lawful original-source verification.",
+        "created_at_utc": "2026-11-27T09:20:55.896025Z",
+        "updated_at_utc": "2026-11-27T09:20:55.896025Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P6-Tanaka-biorxiv-html-002"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-table-003",
+        "entity_type": "scope",
+        "entity_id": "SCOPE-0001",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P6-Tanaka-biorxiv-table-003"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "Web open returned Internal Error for the v2 table route; the resource-table images were not obtained. The route uses the observed XML T1 table slug; no target content was assumed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "retry_at": null,
+        "review_condition": "Recover an actual source response or source inventory if lawfully available; retain original access failure and never replace unavailable counts by zero.",
+        "created_at_utc": "2026-11-27T09:20:55.896025Z",
+        "updated_at_utc": "2026-11-27T09:20:55.896025Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "queries.Q-RUN08-P6-Tanaka-biorxiv-table-003.returned_count,count_before_dedup,count_after_dedup,visible_total",
+        "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+        "deadline_at_utc": "2026-11-28T09:20:55.896025Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-table-003",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P6-Tanaka-biorxiv-table-003"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P6-Tanaka-biorxiv-table-003",
+        "entity_type": "work",
+        "entity_id": "W-D949d6ef5b3f851e1",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P6-Tanaka-biorxiv-table-003"
+        ],
+        "attempt_count": 1,
+        "error_code": "web_tool_inaccessible",
+        "failure_reason": "Web open returned Internal Error for the v2 table route; the resource-table images were not obtained. The route uses the observed XML T1 table slug; no target content was assumed.",
+        "retry_at": null,
+        "review_condition": "Retain the exact operation receipt; further evidence or coverage requires lawful original-source verification.",
+        "created_at_utc": "2026-11-27T09:20:55.896025Z",
+        "updated_at_utc": "2026-11-27T09:20:55.896025Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P6-Tanaka-biorxiv-table-003"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-pmc-page-004",
+        "entity_type": "scope",
+        "entity_id": "SCOPE-0001",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "pmc",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P6-Tanaka-pmc-page-004"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "Only a browser-check/reCAPTCHA page was returned; no article body was obtained and no challenge was bypassed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "retry_at": null,
+        "review_condition": "Recover an actual source response or source inventory if lawfully available; retain original access failure and never replace unavailable counts by zero.",
+        "created_at_utc": "2026-11-27T09:20:55.896025Z",
+        "updated_at_utc": "2026-11-27T09:20:55.896025Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "queries.Q-RUN08-P6-Tanaka-pmc-page-004.returned_count,count_before_dedup,count_after_dedup,visible_total",
+        "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+        "deadline_at_utc": "2026-11-28T09:20:55.896025Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-pmc-page-004",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P6-Tanaka-pmc-page-004"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P6-Tanaka-pmc-page-004",
+        "entity_type": "work",
+        "entity_id": "W-D949d6ef5b3f851e1",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "pmc",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P6-Tanaka-pmc-page-004"
+        ],
+        "attempt_count": 1,
+        "error_code": "captcha_challenge_no_article",
+        "failure_reason": "Only a browser-check/reCAPTCHA page was returned; no article body was obtained and no challenge was bypassed.",
+        "retry_at": null,
+        "review_condition": "Retain the exact operation receipt; further evidence or coverage requires lawful original-source verification.",
+        "created_at_utc": "2026-11-27T09:20:55.896025Z",
+        "updated_at_utc": "2026-11-27T09:20:55.896025Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P6-Tanaka-pmc-page-004"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-epmc-xml-005",
+        "entity_type": "scope",
+        "entity_id": "SCOPE-0001",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "europepmc",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P6-Tanaka-epmc-xml-005"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "retry_at": null,
+        "review_condition": "Recover an actual source response or source inventory if lawfully available; retain original access failure and never replace unavailable counts by zero.",
+        "created_at_utc": "2026-11-27T09:20:55.896025Z",
+        "updated_at_utc": "2026-11-27T09:20:55.896025Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "queries.Q-RUN08-P6-Tanaka-epmc-xml-005.returned_count,count_before_dedup,count_after_dedup,visible_total",
+        "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+        "deadline_at_utc": "2026-11-28T09:20:55.896025Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-epmc-xml-005",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P6-Tanaka-epmc-xml-005"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P6-Tanaka-epmc-xml-005",
+        "entity_type": "work",
+        "entity_id": "W-D949d6ef5b3f851e1",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "europepmc",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P6-Tanaka-epmc-xml-005"
+        ],
+        "attempt_count": 1,
+        "error_code": "HTTP_500",
+        "failure_reason": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained.",
+        "retry_at": null,
+        "review_condition": "Retain the exact operation receipt; further evidence or coverage requires lawful original-source verification.",
+        "created_at_utc": "2026-11-27T09:20:55.896025Z",
+        "updated_at_utc": "2026-11-27T09:20:55.896025Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P6-Tanaka-epmc-xml-005"
+        ]
+      },
+      {
+        "task_id": "T-Unknown-df9e5d557d5403c4",
+        "entity_type": "assessment",
+        "entity_id": "A-P6-B204-L04-world_motion_rejection",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": null,
+        "normalized_parameters": {},
+        "task_state": "retryable_error",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P6-Tanaka-cache-001",
+          "Q-RUN08-P6-Tanaka-biorxiv-html-002",
+          "Q-RUN08-P6-Tanaka-biorxiv-table-003",
+          "Q-RUN08-P6-Tanaka-pmc-page-004",
+          "Q-RUN08-P6-Tanaka-epmc-xml-005"
+        ],
+        "attempt_count": 1,
+        "error_code": "species_resource_table_not_obtained",
+        "failure_reason": "RUN-0008复核原预印本Methods与两AS适用范围后，种级身份仍无法确认：Key Resource Table/Table S1仅有图片引用；4个合法访问操作未取得目标表或新全文（bioRxiv工具不可访问、PMC挑战页、EuropePMC HTTP500）。未将访问失败标为not_reported，未把属名提升为种名。",
+        "retry_at": null,
+        "review_condition": "合法取得并实际阅读该预印本v2的Key Resource Table/Table S1，或取得可核验的对应原始版本与实验映射证据，明确两AS实验所用物种后再判定。",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T09:20:55.896025Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 3,
+        "assessment_id": null,
+        "field_path": "conditions.species",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-Unknown-df9e5d557d5403c4",
+        "priority": "high",
+        "overdue": true,
+        "supporting_record_ids": [
+          "MR-RUN08-P6-Tanaka-species-001",
+          "MR-RUN08-P6-Tanaka-conditions-002"
+        ]
+      },
+      {
+        "task_id": "T-Unknown-e37ed08c6fe1dc1b",
+        "entity_type": "assessment",
+        "entity_id": "A-P6-B204-L03-counterevidence_onset",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": null,
+        "normalized_parameters": {},
+        "task_state": "retryable_error",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P6-Tanaka-cache-001",
+          "Q-RUN08-P6-Tanaka-biorxiv-html-002",
+          "Q-RUN08-P6-Tanaka-biorxiv-table-003",
+          "Q-RUN08-P6-Tanaka-pmc-page-004",
+          "Q-RUN08-P6-Tanaka-epmc-xml-005"
+        ],
+        "attempt_count": 1,
+        "error_code": "species_resource_table_not_obtained",
+        "failure_reason": "RUN-0008复核原预印本Methods与两AS适用范围后，种级身份仍无法确认：Key Resource Table/Table S1仅有图片引用；4个合法访问操作未取得目标表或新全文（bioRxiv工具不可访问、PMC挑战页、EuropePMC HTTP500）。未将访问失败标为not_reported，未把属名提升为种名。",
+        "retry_at": null,
+        "review_condition": "合法取得并实际阅读该预印本v2的Key Resource Table/Table S1，或取得可核验的对应原始版本与实验映射证据，明确两AS实验所用物种后再判定。",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T09:20:55.896025Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 3,
+        "assessment_id": null,
+        "field_path": "conditions.species",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-Unknown-e37ed08c6fe1dc1b",
+        "priority": "high",
+        "overdue": true,
+        "supporting_record_ids": [
+          "MR-RUN08-P6-Tanaka-species-001",
+          "MR-RUN08-P6-Tanaka-conditions-002"
+        ]
+      }
+    ],
+    "manual-reviews": [
+      {
+        "review_id": "MR-RUN08-P6-Tanaka-species-001",
+        "run_id": "RUN-0008",
+        "review_type": "fulltext_species_and_resource_table_review",
+        "entity_id": "W-D949d6ef5b3f851e1",
+        "reviewer": "RUN-0008 P6 primary-source reviewer",
+        "recorded_at_utc": "2026-11-27T09:20:55.896025Z",
+        "artifact": "temp/reports/RUN-0008-Tanaka2023-P6-candidate.json",
+        "notes": "真实复核同一合法预印本XML的Methods s8a/s8b、实验种属描述与Key Resource Table/Table S1结构，并映射两AS的同一species缺口。正文仅到Drosophila属；种级资源表是尚未取得的图片，不能据常识补melanogaster。本单一共用证据复核计1单位，不按两个AS翻倍。"
+      },
+      {
+        "review_id": "MR-RUN08-P6-Tanaka-conditions-002",
+        "run_id": "RUN-0008",
+        "review_type": "fulltext_claim_condition_applicability_review",
+        "entity_id": "W-D949d6ef5b3f851e1",
+        "reviewer": "RUN-0008 P6 primary-source reviewer",
+        "recorded_at_utc": "2026-11-27T09:20:55.896025Z",
+        "artifact": "temp/reports/RUN-0008-Tanaka2023-P6-candidate.json",
+        "notes": "真实复核s2a、s2d、Figure 1完整图注和s8c/s8d/s8j，对照现有L04幅值实验与L03起效时间实验：Fig1 e–f为23只、s–t为17只；预呈现0.5s后的约150ms差异属于特定刺激条件。未把两组当同一独立样本，未重新宣称读过S1图像，不改现有结果或处理等级。"
+      }
+    ]
+  },
+  "changed_records": [],
+  "task_event_preconditions": [
+    {
+      "task_id": "T-Unknown-df9e5d557d5403c4",
+      "before": {
+        "task_id": "T-Unknown-df9e5d557d5403c4",
+        "entity_type": "assessment",
+        "entity_id": "A-P6-B204-L04-world_motion_rejection",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": null,
+        "normalized_parameters": {},
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "可读正文仅明确 Drosophila 属、成年非处女雌性；种级身份待查原始 stock/基因型表，不能默认补为 melanogaster。",
+        "retry_at": null,
+        "review_condition": "可读正文仅明确 Drosophila 属、成年非处女雌性；种级身份待查原始 stock/基因型表，不能默认补为 melanogaster。",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T08:42:07.001288Z",
+        "checkpoint_id": "CP-0009",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": "conditions.species",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-Unknown-df9e5d557d5403c4",
+        "priority": "high",
+        "overdue": true,
+        "supporting_record_ids": []
+      }
+    },
+    {
+      "task_id": "T-Unknown-e37ed08c6fe1dc1b",
+      "before": {
+        "task_id": "T-Unknown-e37ed08c6fe1dc1b",
+        "entity_type": "assessment",
+        "entity_id": "A-P6-B204-L03-counterevidence_onset",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": null,
+        "normalized_parameters": {},
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "可读正文仅明确 Drosophila 属、成年非处女雌性；种级身份待查原始 stock/基因型表，不能默认补为 melanogaster。",
+        "retry_at": null,
+        "review_condition": "可读正文仅明确 Drosophila 属、成年非处女雌性；种级身份待查原始 stock/基因型表，不能默认补为 melanogaster。",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T08:42:07.001288Z",
+        "checkpoint_id": "CP-0009",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": "conditions.species",
+        "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+        "deadline_at_utc": "2026-11-27T07:49:34.521898Z",
+        "review_task_id": "T-Unknown-e37ed08c6fe1dc1b",
+        "priority": "high",
+        "overdue": true,
+        "supporting_record_ids": []
+      }
+    }
+  ],
+  "assessment_revision_reviews": [],
+  "assessment_preservation": {
+    "all_72_existing_assessments_unchanged": true,
+    "target_assessments": [
+      {
+        "assessment_id": "A-P6-B204-L04-world_motion_rejection",
+        "work_id": "W-D949d6ef5b3f851e1",
+        "version_ids": [
+          "V-4d23178e61cdb9e0"
+        ],
+        "species_status": "unknown_review_required",
+        "species_review_task_id": "T-Unknown-df9e5d557d5403c4",
+        "handling_level": "partially_addressed",
+        "evidence_admission_status": "eligible",
+        "canonical_object_sha256": "0e46202ee37060c175843df0a9209f1a26f40d460d052817b62aac4f412684b3",
+        "modified": false
+      },
+      {
+        "assessment_id": "A-P6-B204-L03-counterevidence_onset",
+        "work_id": "W-D949d6ef5b3f851e1",
+        "version_ids": [
+          "V-4d23178e61cdb9e0"
+        ],
+        "species_status": "unknown_review_required",
+        "species_review_task_id": "T-Unknown-e37ed08c6fe1dc1b",
+        "handling_level": "partially_addressed",
+        "evidence_admission_status": "eligible",
+        "canonical_object_sha256": "c0bcc2c0e34426dd6f7a97a612789cb99164d15959ae286fcd896780193bfa95",
+        "modified": false
+      }
+    ],
+    "archive_requirement": "No Assessment revision is proposed by this candidate; the original CP9 bytes must remain intact. Any later scientific revision requires an explicit before/after and archived CP9 source."
+  },
+  "batch_accounting": {
+    "external_requests": 4,
+    "cache_reuse_events": 1,
+    "manual_review_items": 2,
+    "new_works": 0,
+    "new_assessments": 0,
+    "assessment_field_resolutions": 0,
+    "existing_species_tasks_closed": 0,
+    "existing_species_tasks_attempted": 2
+  },
+  "validation": {
+    "typed_query_and_task_schema": "passed",
+    "receipt_queries_equal_candidate_queries": true,
+    "prior_species_clock_preserved": true,
+    "unresolved_species_not_closed": true,
+    "canonical_jsonl_not_modified": true,
+    "source_observations_supplied": false
+  },
+  "notes": [
+    "Source-observation rows must be generated exactly once by the integrator from receipts.",
+    "Queries with unavailable exact request timestamps use the existing schema unavailable_exact/partial/source_supported form while retaining the actual access errors. No source inventory count is guessed.",
+    "The four unknown inventory FieldStates per failed query share a declared metadata review task; actual new Work count is known zero.",
+    "No new scientific efficacy claim or condition value was created."
+  ]
+}
