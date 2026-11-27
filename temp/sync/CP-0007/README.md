@@ -4,11 +4,12 @@
 
 本目录采用用户已授权的二进制数据包交付方式。全部分块、固定 prerequisite 和检查点内容可以从 GitHub 独立取回，并在只读的本地恢复过程中逐文件及逐逻辑分片校验；具体结果见本目录 `verification.json`。这证明远端包完整且可恢复，不表示研究分支已更新。自动审批拒绝了安装带 `contents: write` 的 Actions 导入工作流，因此该工作流没有发布，也不是下列恢复步骤的前置条件。主机按下列 PowerShell 步骤导入、普通推送研究分支并合并 main，无需执行仓库里的 Python 代码。
 
-以下适用于 Windows PowerShell 5.1 或更新版本及 Git。先把 $Cp7Repo 改成你的现有仓库绝对路径，在同一个 PowerShell 会话依次运行。命令在仓库外建立独立恢复目录；不把运输分支合并到 main。Git 操作失败就停止，保留现场。
+以下适用于 PowerShell 7 或更新版本（pwsh）及 Git。检查点 JSON 超过 50 MB，请使用 PowerShell 7 读取。先把 $Cp7Repo 改成你的现有仓库绝对路径，在同一个 PowerShell 会话依次运行。命令在仓库外建立独立恢复目录；不把运输分支合并到 main。Git 操作失败就停止，保留现场。
 
 ## 1. 拉取两个分支并提取包
 
 ~~~powershell
+if ($PSVersionTable.PSVersion.Major -lt 7) { throw 'Run these commands in PowerShell 7 or newer (pwsh).' }
 $ErrorActionPreference = 'Stop'
 $Cp7Repo = 'C:\path\to\Insect-Inspired'
 $Cp7Url = 'https://github.com/ncut-d1z/Insect-Inspired.git'
