@@ -1,0 +1,191 @@
+{
+  "query_id": "Q-RUN08-P5-official-lookups-002",
+  "run_id": "RUN-0008",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0010",
+  "stage": "P5",
+  "external_requests_performed": 4,
+  "cache_hit": false,
+  "query_record": {
+    "query_id": "Q-RUN08-P5-official-lookups-002",
+    "task_id": "T-RUN08-RECORDED-Q-RUN08-P5-official-lookups-002",
+    "scope_id": "SCOPE-0001",
+    "checkpoint_id": "CP-0010",
+    "entity_id": "SCOPE-0001",
+    "source_id": "official_projects",
+    "endpoint_or_url": "https://data.snf.ch/grants/grant/155907",
+    "api_version": null,
+    "query_kind": "mixed_official_project_lookup_batch",
+    "raw_parameters": {
+      "operations_json": "[{\"operation\": \"open\", \"url\": \"https://data.snf.ch/grants/grant/155907\"}, {\"operation\": \"system1_search_query\", \"q\": \"site:data.snf.ch \\\"155907\\\"\"}, {\"operation\": \"system1_search_query\", \"q\": \"site:vr.se \\\"2014-04762\\\"\"}, {\"operation\": \"system1_search_query\", \"q\": \"site:swecris.se \\\"2014-4762\\\"\"}]"
+    },
+    "normalized_parameters": {
+      "run_id": "RUN-0008",
+      "target_entity_id": "SCOPE-0001",
+      "operation_count": 4,
+      "source_batch_path": "temp/reports/RUN-0008-P5-source-batch-02.json",
+      "parameters_json": "{\"operations_json\": \"[{\\\"operation\\\": \\\"open\\\", \\\"url\\\": \\\"https://data.snf.ch/grants/grant/155907\\\"}, {\\\"operation\\\": \\\"system1_search_query\\\", \\\"q\\\": \\\"site:data.snf.ch \\\\\\\"155907\\\\\\\"\\\"}, {\\\"operation\\\": \\\"system1_search_query\\\", \\\"q\\\": \\\"site:vr.se \\\\\\\"2014-04762\\\\\\\"\\\"}, {\\\"operation\\\": \\\"system1_search_query\\\", \\\"q\\\": \\\"site:swecris.se \\\\\\\"2014-4762\\\\\\\"\\\"}]\"}",
+      "count_scope": "Search source records or one named official Project resource; no canonical Work deduplication performed."
+    },
+    "queried_at_utc": null,
+    "cursor_in": null,
+    "cursor_out": null,
+    "page_index": 1,
+    "page_complete": false,
+    "visible_total": null,
+    "returned_count": null,
+    "count_before_dedup": null,
+    "count_after_dedup": null,
+    "new_work_ids": [],
+    "new_work_count": 0,
+    "result_identifiers": [],
+    "status": "partial",
+    "verification_status": "source_supported",
+    "error_code": "official_record_not_obtained",
+    "error_message": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+    "retry_count": 0,
+    "retry_at": null,
+    "cache_path": "temp/query-results/Q-RUN08-P5-official-lookups-002.json",
+    "cache_hit": false,
+    "reused_query_id": null,
+    "rerun_reason": "First bounded official registry verification for these remaining project fields; no successful matching official project-record cache was present.",
+    "coverage_note": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+    "license_note": "Only public identifiers, URLs, titles, factual metadata and original Chinese summaries; no original full webpage, abstract or personal contacts redistributed.",
+    "recorded_at_utc": "2026-11-27T09:26:24.158028Z",
+    "query_time_status": "unavailable_exact",
+    "field_states": {
+      "count_before_dedup": {
+        "status": "unknown",
+        "reason": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-official-lookups-002"
+      },
+      "count_after_dedup": {
+        "status": "unknown",
+        "reason": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-official-lookups-002"
+      },
+      "returned_count": {
+        "status": "unknown",
+        "reason": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-official-lookups-002"
+      },
+      "visible_total": {
+        "status": "unknown",
+        "reason": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-official-lookups-002"
+      }
+    },
+    "queried_date": "2026-11-27"
+  },
+  "sanitized": true,
+  "payload_retained": false,
+  "response_kind": "unresolved_mixed_batch",
+  "source_count_basis": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+  "source_batch_path": "temp/reports/RUN-0008-P5-source-batch-02.json",
+  "source_batch_sha256": "2f38fb4ffd695bcf4d04fdc29ba4700f427dc84b8beeafd3e52e459aba2dfa7f",
+  "operation_evidence": {
+    "run_id": "RUN-0008",
+    "scope_id": "SCOPE-0001",
+    "checkpoint_id": "CP-0010",
+    "status": "source_batch_saved_pending_typed_review",
+    "external_requests_performed": 4,
+    "cache_reuse_events": 0,
+    "manual_review_activities": 0,
+    "query_id": "Q-RUN08-P5-official-lookups-002",
+    "operations": [
+      {
+        "operation": "open",
+        "url": "https://data.snf.ch/grants/grant/155907"
+      },
+      {
+        "operation": "system1_search_query",
+        "q": "site:data.snf.ch \"155907\""
+      },
+      {
+        "operation": "system1_search_query",
+        "q": "site:vr.se \"2014-04762\""
+      },
+      {
+        "operation": "system1_search_query",
+        "q": "site:swecris.se \"2014-4762\""
+      }
+    ],
+    "request_batch_started_at_utc": "2026-11-27 09:15:49 UTC",
+    "request_batch_finished_at_utc": "2026-11-27 09:15:51 UTC",
+    "exact_individual_dispatch_time_retained": false,
+    "returned_source_metadata": [
+      {
+        "title": "# APPENDIX 5 INSTRUCTIONS FOR SELF-EVALUATION",
+        "url": "https://www.vr.se/download/18.2412c5311624176023d254d8/1529480558495/Evaluation-of-the-Mona-System_VR_2014.pdf",
+        "source_ref": "turn610882535search5"
+      },
+      {
+        "title": "Rapporter - Vetenskapsrådet",
+        "url": "https://www.vr.se/analys/rapporter.html",
+        "source_ref": "turn610882535search0"
+      },
+      {
+        "title": "Evaluation of the MONA system - Swedish Research Council",
+        "url": "https://www.vr.se/english/analysis/reports/our-reports/2014-03-10-evaluation-of-the-mona-system.html",
+        "source_ref": "turn610882535search1"
+      },
+      {
+        "title": "Samlad beslutsstatistik - Vetenskapsrådet",
+        "url": "https://www.vr.se/analys/svensk-forskning-i-siffror/vetenskapsradets-forskningsfinansiering-i-siffror/samlad-beslutsstatistik.html",
+        "source_ref": "turn610882535search2"
+      },
+      {
+        "title": "Brev",
+        "url": "https://www.vr.se/download/18.61ae4c9917ce9a920481f82e/1638281186704/Elektroniska%20identiteter%20pa%CC%8A%20Vetenskapsra%CC%8Adet.pdf",
+        "source_ref": "turn610882535search6"
+      },
+      {
+        "title": "Overall decision statistics - Swedish Research Council",
+        "url": "https://www.vr.se/english/analysis/swedish-research-in-figures/overall-decision-statistics.html?sv.12.1419f63817f44a724d8f283.route=%2Fsettings&sv.target=12.1419f63817f44a724d8f283",
+        "source_ref": "turn610882535search3"
+      },
+      {
+        "title": "Vetenskapsrådets årsredovising 2020",
+        "url": "https://www.vr.se/download/18.6675b4ac1787151b21016/1617030867173/Vetenskapsr%25C3%25A5dets%2520%25C3%25A5rsredovisning%25202020.pdf",
+        "source_ref": "turn610882535search7"
+      },
+      {
+        "title": "Evaluation of the MONA system - Vetenskapsrådet",
+        "url": "https://www.vr.se/analys/rapporter/vara-rapporter/2014-03-10-evaluation-of-the-mona-system.html",
+        "source_ref": "turn610882535search4"
+      },
+      {
+        "title": "SNSF Data Portal",
+        "url": "https://data.snf.ch/grants/grant/155907",
+        "source_ref": "turn610882535view0"
+      }
+    ],
+    "per_query_source_counts_retained": false,
+    "outcome": {
+      "snf": {
+        "url": "https://data.snf.ch/grants/grant/155907",
+        "source_ref": "turn610882535view0",
+        "status": "client_rendering_required",
+        "project_data_obtained": false,
+        "note": "Retrieved content only states JavaScript is required; this is not project metadata and does not prove a missing grant."
+      },
+      "swedish_research_council": {
+        "status": "unresolved",
+        "matching_official_project_record_obtained": false,
+        "note": "Returned official-domain results concern unrelated reports/statistics. No title, dates, host or membership for 2014-4762 can be inferred."
+      }
+    },
+    "scientific_claims_created": 0,
+    "copyright_note": "Source metadata and original outcome notes only; no full webpage or report text."
+  },
+  "additional_external_requests_during_typed_mapping": 0,
+  "note": "This typed receipt represents already-recorded root operations, not repeated source requests. The two source-batch report external counts must not be counted again."
+}

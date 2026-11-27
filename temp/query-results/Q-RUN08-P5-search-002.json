@@ -1,0 +1,137 @@
+{
+  "query_id": "Q-RUN08-P5-search-002",
+  "run_id": "RUN-0008",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0010",
+  "stage": "P5",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "query_record": {
+    "query_id": "Q-RUN08-P5-search-002",
+    "task_id": "T-RUN08-RECORDED-Q-RUN08-P5-search-002",
+    "scope_id": "SCOPE-0001",
+    "checkpoint_id": "CP-0010",
+    "entity_id": "PRJ-SSF-FFL09-0056",
+    "source_id": "web_search",
+    "endpoint_or_url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+    "api_version": null,
+    "query_kind": "official_project_record_locator_search",
+    "raw_parameters": {
+      "q": "\"FFL09-0056\"",
+      "domains": [
+        "strategiska.se"
+      ]
+    },
+    "normalized_parameters": {
+      "run_id": "RUN-0008",
+      "target_entity_id": "PRJ-SSF-FFL09-0056",
+      "operation_count": 1,
+      "source_batch_path": "temp/reports/RUN-0008-P5-source-batch-01.json",
+      "parameters_json": "{\"q\": \"\\\"FFL09-0056\\\"\", \"domains\": [\"strategiska.se\"]}",
+      "count_scope": "Search source records or one named official Project resource; no canonical Work deduplication performed."
+    },
+    "queried_at_utc": null,
+    "cursor_in": null,
+    "cursor_out": null,
+    "page_index": 1,
+    "page_complete": false,
+    "visible_total": null,
+    "returned_count": 4,
+    "count_before_dedup": null,
+    "count_after_dedup": null,
+    "new_work_ids": [],
+    "new_work_count": 0,
+    "result_identifiers": [
+      "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+      "https://strategiska.se/forskning/genomford-forskning/framtidens-forskningsledare-4/projekt/4000/",
+      "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/",
+      "https://strategiska.se/forskning/genomford-forskning/framtidens-forskningsledare-4/projekt/"
+    ],
+    "status": "partial",
+    "verification_status": "source_supported",
+    "error_code": null,
+    "error_message": null,
+    "retry_count": 0,
+    "retry_at": null,
+    "cache_path": "temp/query-results/Q-RUN08-P5-search-002.json",
+    "cache_hit": false,
+    "reused_query_id": null,
+    "rerun_reason": "First bounded official registry verification for these remaining project fields; no successful matching official project-record cache was present.",
+    "coverage_note": "Actual returned search source-record count is retained; domain filtering included irrelevant results. Visible source total is unknown, and these are not canonical Work or Project-deduplicated records.",
+    "license_note": "Only public identifiers, URLs, titles, factual metadata and original Chinese summaries; no original full webpage, abstract or personal contacts redistributed.",
+    "recorded_at_utc": "2026-11-27T09:26:24.158028Z",
+    "query_time_status": "unavailable_exact",
+    "field_states": {
+      "count_before_dedup": {
+        "status": "not_applicable",
+        "reason": "This operation concerns official Project source resources, not canonical Work acquisition/deduplication. No Work-deduplication count is asserted.",
+        "evidence_locator": [],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "count_after_dedup": {
+        "status": "not_applicable",
+        "reason": "This operation concerns official Project source resources, not canonical Work acquisition/deduplication. No Work-deduplication count is asserted.",
+        "evidence_locator": [],
+        "unknown_since_utc": null,
+        "review_task_id": null
+      },
+      "visible_total": {
+        "status": "unknown",
+        "reason": "Actual returned search source-record count is retained; domain filtering included irrelevant results. Visible source total is unknown, and these are not canonical Work or Project-deduplicated records.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-search-002"
+      }
+    },
+    "queried_date": "2026-11-27"
+  },
+  "sanitized": true,
+  "payload_retained": false,
+  "response_kind": "search_results_retained",
+  "source_count_basis": "Actual returned search source-record count is retained; domain filtering included irrelevant results. Visible source total is unknown, and these are not canonical Work or Project-deduplicated records.",
+  "source_batch_path": "temp/reports/RUN-0008-P5-source-batch-01.json",
+  "source_batch_sha256": "b8c69d4300f7dbc896292a2f8881475de4d764cfbb92c1746a0bdef4a3398015",
+  "operation_evidence": {
+    "query_id": "Q-RUN08-P5-search-002",
+    "operation": "system1_search_query",
+    "raw_parameters": {
+      "q": "\"FFL09-0056\"",
+      "domains": [
+        "strategiska.se"
+      ]
+    },
+    "batch_started_at_utc": "2026-11-27 09:12:28 UTC",
+    "batch_finished_at_utc": "2026-11-27 09:12:30 UTC",
+    "exact_individual_dispatch_time_retained": false,
+    "external_requests_performed": 1,
+    "returned_source_records": [
+      {
+        "title": "Tekla (placeholder)",
+        "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+        "source_ref": "turn734184147search0"
+      },
+      {
+        "title": "Biomimetik- synstyrd flygkontroll - Stiftelsen för strategisk forskning",
+        "url": "https://strategiska.se/forskning/genomford-forskning/framtidens-forskningsledare-4/projekt/4000/",
+        "source_ref": "turn734184147search1"
+      },
+      {
+        "title": "Tekla (placeholder)",
+        "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/",
+        "source_ref": "turn734184147search2"
+      },
+      {
+        "title": "Projekt inom Framtidens Forskningsledare 4 - Stiftelsen för strategisk forskning",
+        "url": "https://strategiska.se/forskning/genomford-forskning/framtidens-forskningsledare-4/projekt/",
+        "source_ref": "turn734184147search3"
+      }
+    ],
+    "returned_count": 4,
+    "visible_total": null,
+    "coverage_complete": false,
+    "note": "Retained source metadata only. Domain filtering did not prevent irrelevant results in searches 1 and 3; those results do not establish official registry facts or absence."
+  },
+  "additional_external_requests_during_typed_mapping": 0,
+  "note": "This typed receipt represents already-recorded root operations, not repeated source requests. The two source-batch report external counts must not be counted again."
+}

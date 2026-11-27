@@ -1,0 +1,1763 @@
+{
+  "review_id": "CAND-RUN08-P5-PROJECT-001",
+  "run_id": "RUN-0008",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0010",
+  "baseline_checkpoint_id": "CP-0009",
+  "baseline_commit": "96ce04b268f648978581e87d3be551981f12917d",
+  "reviewed_at_utc": "2026-11-27T09:26:24.158028Z",
+  "reviewer": "root primary-source reviewer; remote_integrity typed mapping reviewer",
+  "status": "reviewed_schema_valid_candidate_not_canonical",
+  "source_bindings": [
+    {
+      "path": "temp/reports/RUN-0008-P5-source-batch-01.json",
+      "sha256": "b8c69d4300f7dbc896292a2f8881475de4d764cfbb92c1746a0bdef4a3398015",
+      "external_requests_represented": 4
+    },
+    {
+      "path": "temp/reports/RUN-0008-P5-source-batch-02.json",
+      "sha256": "2f38fb4ffd695bcf4d04fdc29ba4700f427dc84b8beeafd3e52e459aba2dfa7f",
+      "external_requests_represented": 4
+    }
+  ],
+  "official_project_provenance": {
+    "query_id": "Q-RUN08-P5-SSF-open-001",
+    "source_ref": "turn140881688view0",
+    "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+    "evidence_lines": "7-23",
+    "page_lines_read_by_root": 31,
+    "raw_date_interval": "110101-161231",
+    "normalized_start_date": "2011-01-01",
+    "normalized_end_date": "2016-12-31",
+    "normalization_basis": "Root reviewed the displayed YYMMDD interval and explicitly confirmed these ISO dates.",
+    "pi_list_verified": false,
+    "publication_list_verified": false
+  },
+  "additions": {
+    "queries": [
+      {
+        "query_id": "Q-RUN08-P5-search-001",
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P5-search-001",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0010",
+        "entity_id": "PRJ-SNSF-200021_155907",
+        "source_id": "web_search",
+        "endpoint_or_url": "https://bishtref.com/articles/10.1109/lra.2021.3058073",
+        "api_version": null,
+        "query_kind": "official_project_record_locator_search",
+        "raw_parameters": {
+          "q": "\"155907\" \"Floreano\"",
+          "domains": [
+            "snf.ch"
+          ]
+        },
+        "normalized_parameters": {
+          "run_id": "RUN-0008",
+          "target_entity_id": "PRJ-SNSF-200021_155907",
+          "operation_count": 1,
+          "source_batch_path": "temp/reports/RUN-0008-P5-source-batch-01.json",
+          "parameters_json": "{\"q\": \"\\\"155907\\\" \\\"Floreano\\\"\", \"domains\": [\"snf.ch\"]}",
+          "count_scope": "Search source records or one named official Project resource; no canonical Work deduplication performed."
+        },
+        "queried_at_utc": null,
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": null,
+        "returned_count": 8,
+        "count_before_dedup": null,
+        "count_after_dedup": null,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [
+          "https://bishtref.com/articles/10.1109/lra.2021.3058073",
+          "https://infoscience.epfl.ch/bitstreams/6196d3f5-b918-4c7a-a279-b89bd864640e/download",
+          "https://concursos.secretariasecuestres.com/tournament-event/results/14247/",
+          "https://pferdesport-hoell.com/images/Auktionskatalog_Hoell_Stand02.09.2024k.pdf",
+          "https://results.equi-score.com/horses/2018/8748/nl",
+          "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=OJ%3AC_202503144",
+          "https://www.turnierdienst-brinkmann.de/fileadmin/user_upload/Turnierorte/Riesenbeck/2012/PFRiesenbeckKreis2012.pdf",
+          "https://it.geneanet.org/fonds/individus/?go=1&nom=UNFER&prenom=Floreano&size=50"
+        ],
+        "status": "partial",
+        "verification_status": "source_supported",
+        "error_code": null,
+        "error_message": null,
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN08-P5-search-001.json",
+        "cache_hit": false,
+        "reused_query_id": null,
+        "rerun_reason": "First bounded official registry verification for these remaining project fields; no successful matching official project-record cache was present.",
+        "coverage_note": "Actual returned search source-record count is retained; domain filtering included irrelevant results. Visible source total is unknown, and these are not canonical Work or Project-deduplicated records.",
+        "license_note": "Only public identifiers, URLs, titles, factual metadata and original Chinese summaries; no original full webpage, abstract or personal contacts redistributed.",
+        "recorded_at_utc": "2026-11-27T09:26:24.158028Z",
+        "query_time_status": "unavailable_exact",
+        "field_states": {
+          "count_before_dedup": {
+            "status": "not_applicable",
+            "reason": "This operation concerns official Project source resources, not canonical Work acquisition/deduplication. No Work-deduplication count is asserted.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "count_after_dedup": {
+            "status": "not_applicable",
+            "reason": "This operation concerns official Project source resources, not canonical Work acquisition/deduplication. No Work-deduplication count is asserted.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "visible_total": {
+            "status": "unknown",
+            "reason": "Actual returned search source-record count is retained; domain filtering included irrelevant results. Visible source total is unknown, and these are not canonical Work or Project-deduplicated records.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-search-001"
+          }
+        },
+        "queried_date": "2026-11-27"
+      },
+      {
+        "query_id": "Q-RUN08-P5-search-002",
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P5-search-002",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0010",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "source_id": "web_search",
+        "endpoint_or_url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+        "api_version": null,
+        "query_kind": "official_project_record_locator_search",
+        "raw_parameters": {
+          "q": "\"FFL09-0056\"",
+          "domains": [
+            "strategiska.se"
+          ]
+        },
+        "normalized_parameters": {
+          "run_id": "RUN-0008",
+          "target_entity_id": "PRJ-SSF-FFL09-0056",
+          "operation_count": 1,
+          "source_batch_path": "temp/reports/RUN-0008-P5-source-batch-01.json",
+          "parameters_json": "{\"q\": \"\\\"FFL09-0056\\\"\", \"domains\": [\"strategiska.se\"]}",
+          "count_scope": "Search source records or one named official Project resource; no canonical Work deduplication performed."
+        },
+        "queried_at_utc": null,
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": null,
+        "returned_count": 4,
+        "count_before_dedup": null,
+        "count_after_dedup": null,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [
+          "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+          "https://strategiska.se/forskning/genomford-forskning/framtidens-forskningsledare-4/projekt/4000/",
+          "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/",
+          "https://strategiska.se/forskning/genomford-forskning/framtidens-forskningsledare-4/projekt/"
+        ],
+        "status": "partial",
+        "verification_status": "source_supported",
+        "error_code": null,
+        "error_message": null,
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN08-P5-search-002.json",
+        "cache_hit": false,
+        "reused_query_id": null,
+        "rerun_reason": "First bounded official registry verification for these remaining project fields; no successful matching official project-record cache was present.",
+        "coverage_note": "Actual returned search source-record count is retained; domain filtering included irrelevant results. Visible source total is unknown, and these are not canonical Work or Project-deduplicated records.",
+        "license_note": "Only public identifiers, URLs, titles, factual metadata and original Chinese summaries; no original full webpage, abstract or personal contacts redistributed.",
+        "recorded_at_utc": "2026-11-27T09:26:24.158028Z",
+        "query_time_status": "unavailable_exact",
+        "field_states": {
+          "count_before_dedup": {
+            "status": "not_applicable",
+            "reason": "This operation concerns official Project source resources, not canonical Work acquisition/deduplication. No Work-deduplication count is asserted.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "count_after_dedup": {
+            "status": "not_applicable",
+            "reason": "This operation concerns official Project source resources, not canonical Work acquisition/deduplication. No Work-deduplication count is asserted.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "visible_total": {
+            "status": "unknown",
+            "reason": "Actual returned search source-record count is retained; domain filtering included irrelevant results. Visible source total is unknown, and these are not canonical Work or Project-deduplicated records.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-search-002"
+          }
+        },
+        "queried_date": "2026-11-27"
+      },
+      {
+        "query_id": "Q-RUN08-P5-search-003",
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P5-search-003",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0010",
+        "entity_id": "PRJ-SRC-2014-4762",
+        "source_id": "web_search",
+        "endpoint_or_url": "https://pubmed.ncbi.nlm.nih.gov/28879513/",
+        "api_version": null,
+        "query_kind": "official_project_record_locator_search",
+        "raw_parameters": {
+          "q": "\"2014-4762\" Baird Dacke",
+          "domains": [
+            "vr.se",
+            "swecris.se"
+          ]
+        },
+        "normalized_parameters": {
+          "run_id": "RUN-0008",
+          "target_entity_id": "PRJ-SRC-2014-4762",
+          "operation_count": 1,
+          "source_batch_path": "temp/reports/RUN-0008-P5-source-batch-01.json",
+          "parameters_json": "{\"q\": \"\\\"2014-4762\\\" Baird Dacke\", \"domains\": [\"vr.se\", \"swecris.se\"]}",
+          "count_scope": "Search source records or one named official Project resource; no canonical Work deduplication performed."
+        },
+        "queried_at_utc": null,
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": null,
+        "returned_count": 8,
+        "count_before_dedup": null,
+        "count_after_dedup": null,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [
+          "https://pubmed.ncbi.nlm.nih.gov/28879513/",
+          "https://zenodo.org/records/3998792",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC5696488/",
+          "https://link.springer.com/article/10.1007/s00359-017-1173-9",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC7700065/",
+          "https://datadryad.org/dataset/doi%3A10.5061/dryad.gtht76hhp",
+          "https://www.insectlabsu.com/publications/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC5427166/"
+        ],
+        "status": "partial",
+        "verification_status": "source_supported",
+        "error_code": null,
+        "error_message": null,
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN08-P5-search-003.json",
+        "cache_hit": false,
+        "reused_query_id": null,
+        "rerun_reason": "First bounded official registry verification for these remaining project fields; no successful matching official project-record cache was present.",
+        "coverage_note": "Actual returned search source-record count is retained; domain filtering included irrelevant results. Visible source total is unknown, and these are not canonical Work or Project-deduplicated records.",
+        "license_note": "Only public identifiers, URLs, titles, factual metadata and original Chinese summaries; no original full webpage, abstract or personal contacts redistributed.",
+        "recorded_at_utc": "2026-11-27T09:26:24.158028Z",
+        "query_time_status": "unavailable_exact",
+        "field_states": {
+          "count_before_dedup": {
+            "status": "not_applicable",
+            "reason": "This operation concerns official Project source resources, not canonical Work acquisition/deduplication. No Work-deduplication count is asserted.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "count_after_dedup": {
+            "status": "not_applicable",
+            "reason": "This operation concerns official Project source resources, not canonical Work acquisition/deduplication. No Work-deduplication count is asserted.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "visible_total": {
+            "status": "unknown",
+            "reason": "Actual returned search source-record count is retained; domain filtering included irrelevant results. Visible source total is unknown, and these are not canonical Work or Project-deduplicated records.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-search-003"
+          }
+        },
+        "queried_date": "2026-11-27"
+      },
+      {
+        "query_id": "Q-RUN08-P5-SSF-open-001",
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P5-SSF-open-001",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0010",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "source_id": "official_projects",
+        "endpoint_or_url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+        "api_version": null,
+        "query_kind": "official_project_metadata_read",
+        "raw_parameters": {
+          "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+          "grant_id": "FFL09-0056"
+        },
+        "normalized_parameters": {
+          "run_id": "RUN-0008",
+          "target_entity_id": "PRJ-SSF-FFL09-0056",
+          "operation_count": 1,
+          "source_batch_path": "temp/reports/RUN-0008-P5-source-batch-01.json",
+          "parameters_json": "{\"url\": \"https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/\", \"grant_id\": \"FFL09-0056\"}",
+          "count_scope": "Search source records or one named official Project resource; no canonical Work deduplication performed."
+        },
+        "queried_at_utc": "2026-11-27T09:12:35Z",
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": null,
+        "returned_count": 1,
+        "count_before_dedup": null,
+        "count_after_dedup": null,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [
+          "FFL09-0056"
+        ],
+        "status": "success",
+        "verification_status": "verified",
+        "error_code": null,
+        "error_message": null,
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN08-P5-SSF-open-001.json",
+        "cache_hit": false,
+        "reused_query_id": null,
+        "rerun_reason": "First bounded official registry verification for these remaining project fields; no successful matching official project-record cache was present.",
+        "coverage_note": "One named official Project resource was read. This is not a paginated registry inventory or a canonical Work list; no publication/PI list was verified.",
+        "license_note": "Only public identifiers, URLs, titles, factual metadata and original Chinese summaries; no original full webpage, abstract or personal contacts redistributed.",
+        "recorded_at_utc": "2026-11-27T09:26:24.158028Z",
+        "query_time_status": "exact",
+        "field_states": {
+          "count_before_dedup": {
+            "status": "not_applicable",
+            "reason": "This operation concerns official Project source resources, not canonical Work acquisition/deduplication. No Work-deduplication count is asserted.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "count_after_dedup": {
+            "status": "not_applicable",
+            "reason": "This operation concerns official Project source resources, not canonical Work acquisition/deduplication. No Work-deduplication count is asserted.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "visible_total": {
+            "status": "not_applicable",
+            "reason": "One named project page was read; it does not report a paginated database total.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      {
+        "query_id": "Q-RUN08-P5-official-lookups-002",
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P5-official-lookups-002",
+        "scope_id": "SCOPE-0001",
+        "checkpoint_id": "CP-0010",
+        "entity_id": "SCOPE-0001",
+        "source_id": "official_projects",
+        "endpoint_or_url": "https://data.snf.ch/grants/grant/155907",
+        "api_version": null,
+        "query_kind": "mixed_official_project_lookup_batch",
+        "raw_parameters": {
+          "operations_json": "[{\"operation\": \"open\", \"url\": \"https://data.snf.ch/grants/grant/155907\"}, {\"operation\": \"system1_search_query\", \"q\": \"site:data.snf.ch \\\"155907\\\"\"}, {\"operation\": \"system1_search_query\", \"q\": \"site:vr.se \\\"2014-04762\\\"\"}, {\"operation\": \"system1_search_query\", \"q\": \"site:swecris.se \\\"2014-4762\\\"\"}]"
+        },
+        "normalized_parameters": {
+          "run_id": "RUN-0008",
+          "target_entity_id": "SCOPE-0001",
+          "operation_count": 4,
+          "source_batch_path": "temp/reports/RUN-0008-P5-source-batch-02.json",
+          "parameters_json": "{\"operations_json\": \"[{\\\"operation\\\": \\\"open\\\", \\\"url\\\": \\\"https://data.snf.ch/grants/grant/155907\\\"}, {\\\"operation\\\": \\\"system1_search_query\\\", \\\"q\\\": \\\"site:data.snf.ch \\\\\\\"155907\\\\\\\"\\\"}, {\\\"operation\\\": \\\"system1_search_query\\\", \\\"q\\\": \\\"site:vr.se \\\\\\\"2014-04762\\\\\\\"\\\"}, {\\\"operation\\\": \\\"system1_search_query\\\", \\\"q\\\": \\\"site:swecris.se \\\\\\\"2014-4762\\\\\\\"\\\"}]\"}",
+          "count_scope": "Search source records or one named official Project resource; no canonical Work deduplication performed."
+        },
+        "queried_at_utc": null,
+        "cursor_in": null,
+        "cursor_out": null,
+        "page_index": 1,
+        "page_complete": false,
+        "visible_total": null,
+        "returned_count": null,
+        "count_before_dedup": null,
+        "count_after_dedup": null,
+        "new_work_ids": [],
+        "new_work_count": 0,
+        "result_identifiers": [],
+        "status": "partial",
+        "verification_status": "source_supported",
+        "error_code": "official_record_not_obtained",
+        "error_message": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+        "retry_count": 0,
+        "retry_at": null,
+        "cache_path": "temp/query-results/Q-RUN08-P5-official-lookups-002.json",
+        "cache_hit": false,
+        "reused_query_id": null,
+        "rerun_reason": "First bounded official registry verification for these remaining project fields; no successful matching official project-record cache was present.",
+        "coverage_note": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+        "license_note": "Only public identifiers, URLs, titles, factual metadata and original Chinese summaries; no original full webpage, abstract or personal contacts redistributed.",
+        "recorded_at_utc": "2026-11-27T09:26:24.158028Z",
+        "query_time_status": "unavailable_exact",
+        "field_states": {
+          "count_before_dedup": {
+            "status": "unknown",
+            "reason": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-official-lookups-002"
+          },
+          "count_after_dedup": {
+            "status": "unknown",
+            "reason": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-official-lookups-002"
+          },
+          "returned_count": {
+            "status": "unknown",
+            "reason": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-official-lookups-002"
+          },
+          "visible_total": {
+            "status": "unknown",
+            "reason": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+            "evidence_locator": [],
+            "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+            "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-official-lookups-002"
+          }
+        },
+        "queried_date": "2026-11-27"
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-search-001",
+        "entity_type": "scope",
+        "entity_id": "SCOPE-0001",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "web_search",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P5-search-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "Actual returned search source-record count is retained; domain filtering included irrelevant results. Visible source total is unknown, and these are not canonical Work or Project-deduplicated records.",
+        "retry_at": null,
+        "review_condition": "Retain actual operation metadata; recover missing inventory only if a real source response permits it. Never infer zero results or grant absence from unrelated hits or a JavaScript shell.",
+        "created_at_utc": "2026-11-27T09:26:24.158028Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "queries.Q-RUN08-P5-search-001.visible_total",
+        "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+        "deadline_at_utc": "2026-11-28T09:26:24.158028Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-search-001",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P5-search-001"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P5-search-001",
+        "entity_type": "project",
+        "entity_id": "PRJ-SNSF-200021_155907",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "web_search",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P5-search-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Retain the bounded source receipt and verify remaining facts from exact lawful primary records.",
+        "created_at_utc": "2026-11-27T09:26:24.158028Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P5-search-001"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-search-002",
+        "entity_type": "scope",
+        "entity_id": "SCOPE-0001",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "web_search",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P5-search-002"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "Actual returned search source-record count is retained; domain filtering included irrelevant results. Visible source total is unknown, and these are not canonical Work or Project-deduplicated records.",
+        "retry_at": null,
+        "review_condition": "Retain actual operation metadata; recover missing inventory only if a real source response permits it. Never infer zero results or grant absence from unrelated hits or a JavaScript shell.",
+        "created_at_utc": "2026-11-27T09:26:24.158028Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "queries.Q-RUN08-P5-search-002.visible_total",
+        "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+        "deadline_at_utc": "2026-11-28T09:26:24.158028Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-search-002",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P5-search-002"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P5-search-002",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "web_search",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P5-search-002"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Retain the bounded source receipt and verify remaining facts from exact lawful primary records.",
+        "created_at_utc": "2026-11-27T09:26:24.158028Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P5-search-002"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-search-003",
+        "entity_type": "scope",
+        "entity_id": "SCOPE-0001",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "web_search",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P5-search-003"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "Actual returned search source-record count is retained; domain filtering included irrelevant results. Visible source total is unknown, and these are not canonical Work or Project-deduplicated records.",
+        "retry_at": null,
+        "review_condition": "Retain actual operation metadata; recover missing inventory only if a real source response permits it. Never infer zero results or grant absence from unrelated hits or a JavaScript shell.",
+        "created_at_utc": "2026-11-27T09:26:24.158028Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "queries.Q-RUN08-P5-search-003.visible_total",
+        "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+        "deadline_at_utc": "2026-11-28T09:26:24.158028Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-search-003",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P5-search-003"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P5-search-003",
+        "entity_type": "project",
+        "entity_id": "PRJ-SRC-2014-4762",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "web_search",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P5-search-003"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Retain the bounded source receipt and verify remaining facts from exact lawful primary records.",
+        "created_at_utc": "2026-11-27T09:26:24.158028Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P5-search-003"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P5-SSF-open-001",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "official_projects",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P5-SSF-open-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Retain the bounded source receipt and verify remaining facts from exact lawful primary records.",
+        "created_at_utc": "2026-11-27T09:26:24.158028Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P5-SSF-open-001"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-official-lookups-002",
+        "entity_type": "scope",
+        "entity_id": "SCOPE-0001",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "official_projects",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P5-official-lookups-002"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+        "retry_at": null,
+        "review_condition": "Retain actual operation metadata; recover missing inventory only if a real source response permits it. Never infer zero results or grant absence from unrelated hits or a JavaScript shell.",
+        "created_at_utc": "2026-11-27T09:26:24.158028Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "queries.Q-RUN08-P5-official-lookups-002.returned_count,count_before_dedup,count_after_dedup,visible_total",
+        "unknown_since_utc": "2026-11-27T09:26:24.158028Z",
+        "deadline_at_utc": "2026-11-28T09:26:24.158028Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P5-official-lookups-002",
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P5-official-lookups-002"
+        ]
+      },
+      {
+        "task_id": "T-RUN08-RECORDED-Q-RUN08-P5-official-lookups-002",
+        "entity_type": "scope",
+        "entity_id": "SCOPE-0001",
+        "task_type": "recorded_source_operation",
+        "scope_id": "SCOPE-0001",
+        "source_id": "official_projects",
+        "normalized_parameters": {
+          "run_id": "RUN-0008"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN08-P5-official-lookups-002"
+        ],
+        "attempt_count": 1,
+        "error_code": "official_record_not_obtained",
+        "failure_reason": "One receipt groups exactly four actual operations (three searches and the SNSF page read). Per-operation counts cannot be reconstructed. SNSF supplied only a JavaScript shell; Swedish Research Council searches produced no inspected matching official grant record. Neither outcome proves the grants do not exist.",
+        "retry_at": null,
+        "review_condition": "Retain the bounded source receipt and verify remaining facts from exact lawful primary records.",
+        "created_at_utc": "2026-11-27T09:26:24.158028Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "Q-RUN08-P5-official-lookups-002"
+        ]
+      },
+      {
+        "task_id": "T-Unknown-e21874f17a289594",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "official_projects",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "start_date",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "Q-RUN08-P5-SSF-open-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": "start_date",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-e21874f17a289594",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01",
+          "Q-RUN08-P5-SSF-open-001",
+          "PRJ-SSF-FFL09-0056",
+          "MR-RUN08-P5-SSF-official-001",
+          "MR-RUN08-P5-typedmapping-002"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-3cd756ef5c868105",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "official_projects",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "end_date",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "Q-RUN08-P5-SSF-open-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": "end_date",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-3cd756ef5c868105",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01",
+          "Q-RUN08-P5-SSF-open-001",
+          "PRJ-SSF-FFL09-0056",
+          "MR-RUN08-P5-SSF-official-001",
+          "MR-RUN08-P5-typedmapping-002"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-3ad5b37029184f0e",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "official_projects",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "objective",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "Q-RUN08-P5-SSF-open-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": "objective",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-3ad5b37029184f0e",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01",
+          "Q-RUN08-P5-SSF-open-001",
+          "PRJ-SSF-FFL09-0056",
+          "MR-RUN08-P5-SSF-official-001",
+          "MR-RUN08-P5-typedmapping-002"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-00c6abe8b5a463c5",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "official_projects",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "url",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "Q-RUN08-P5-SSF-open-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": "url",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-00c6abe8b5a463c5",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01",
+          "Q-RUN08-P5-SSF-open-001",
+          "PRJ-SSF-FFL09-0056",
+          "MR-RUN08-P5-SSF-official-001",
+          "MR-RUN08-P5-typedmapping-002"
+        ],
+        "field_states": {}
+      },
+      {
+        "task_id": "T-Unknown-b4ef60a6796a2799",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "official_projects",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "org_ids",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "Q-RUN08-P5-SSF-open-001"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T09:26:24.158028Z",
+        "checkpoint_id": "CP-0010",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": "org_ids",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-b4ef60a6796a2799",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01",
+          "Q-RUN08-P5-SSF-open-001",
+          "PRJ-SSF-FFL09-0056",
+          "MR-RUN08-P5-SSF-official-001",
+          "MR-RUN08-P5-typedmapping-002"
+        ],
+        "field_states": {}
+      }
+    ],
+    "manual-reviews": [
+      {
+        "review_id": "MR-RUN08-P5-SSF-official-001",
+        "run_id": "RUN-0008",
+        "review_type": "official_project_metadata_review",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "reviewer": "root assistant",
+        "recorded_at_utc": "2026-11-27T09:26:24.158028Z",
+        "artifact": "temp/reports/RUN-0008-P5-project-candidate.json",
+        "notes": "Root实际读取并核对SSF官方31行项目页，依据lines7–23确认FFL09-0056、正式名、日期原串110101-161231、Lund University管理机构与项目目标。本条只计1个真实官方元数据复核，搜索失败不额外计人工。"
+      },
+      {
+        "review_id": "MR-RUN08-P5-typedmapping-002",
+        "run_id": "RUN-0008",
+        "review_type": "typed_project_entity_and_relation_mapping_review",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "reviewer": "RUN-0008 P5 typed mapping reviewer (remote_integrity)",
+        "recorded_at_utc": "2026-11-27T09:26:24.158028Z",
+        "artifact": "temp/reports/RUN-0008-P5-project-candidate.json",
+        "notes": "复核已保存的root取证回执，对齐既有Project/Organization及5原工单；保留raw日期并规范ISO日期，核对完整before/after、source计数语义、原clock、funding_acknowledgment/受助作者/发表时关系边界。没有重新访问网页，也不将官方metadata解释为官方成果确认。"
+      }
+    ]
+  },
+  "changed_records": [
+    {
+      "dataset": "projects",
+      "id": "PRJ-SSF-FFL09-0056",
+      "before": {
+        "project_id": "PRJ-SSF-FFL09-0056",
+        "canonical_name": "Funding acknowledgment: Swedish Foundation for Strategic Research FFL09-0056",
+        "grant_id": "FFL09-0056",
+        "org_ids": [],
+        "person_ids": [
+          "P-Rdc584738c14720f0"
+        ],
+        "start_date": null,
+        "end_date": null,
+        "objective": null,
+        "url": null,
+        "output_work_ids": [
+          "W-D164a2202bdd6930e"
+        ],
+        "project_relation": "funding_acknowledgment",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 13,
+            "section": "Acknowledgements",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+          }
+        ],
+        "verification_status": "source_supported",
+        "sources": [
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "start_date": {
+            "status": "unknown",
+            "reason": "项目资助开始日期未从官方来源核验，原文致谢不提供。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-e21874f17a289594"
+          },
+          "end_date": {
+            "status": "unknown",
+            "reason": "项目资助结束日期未从官方来源核验，原文致谢不提供。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-3cd756ef5c868105"
+          },
+          "objective": {
+            "status": "unknown",
+            "reason": "原文致谢没有项目正式目标；尚未核对官方登记。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-3ad5b37029184f0e"
+          },
+          "url": {
+            "status": "unknown",
+            "reason": "尚未核对官方项目登记 URL；不把论文 URL 伪装成项目主页。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-00c6abe8b5a463c5"
+          },
+          "org_ids": {
+            "status": "unknown",
+            "reason": "项目承办或参加机构未核验；不从受助作者的署名单位推断。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": "2026-11-27T07:08:49Z",
+            "review_task_id": "T-Unknown-b4ef60a6796a2799"
+          },
+          "canonical_name": {
+            "status": "reported",
+            "reason": "该值是按资助机构和编号构造的致谢记录显示标签，并非核验过的官方项目名称。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "person_ids": {
+            "status": "reported",
+            "reason": "只表示论文致谢明确点名的受资助作者；不表示已确认 PI、完整参与名单或正式项目职务。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "output_work_ids": {
+            "status": "reported",
+            "reason": "只按 funding_acknowledgment 关联这篇论文；不是 official_confirmed 的官方成果清单。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        },
+        "notes": "Acknowledgment-only record. The canonical_name is a descriptive identifier label, not an official project title. Recipients are named supported authors, not inferred PIs or complete participants. Publication-time affiliation is not project-host evidence. No official registry query has been performed in this batch."
+      },
+      "after": {
+        "project_id": "PRJ-SSF-FFL09-0056",
+        "canonical_name": "Flight control in dynamic environments",
+        "grant_id": "FFL09-0056",
+        "org_ids": [
+          "ORG-Ra4dbe77da866a1e5"
+        ],
+        "person_ids": [
+          "P-Rdc584738c14720f0"
+        ],
+        "start_date": "2011-01-01",
+        "end_date": "2016-12-31",
+        "objective": "以熊蜂和胡蜂的视觉避障行为为依据，建立运动控制模型，并探索在自主飞行器中使用这些模型的可行性。",
+        "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+        "output_work_ids": [
+          "W-D164a2202bdd6930e"
+        ],
+        "project_relation": "funding_acknowledgment",
+        "evidence_locator": [
+          {
+            "source_id": "publisher",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "version_id": "V-W-D164a2202bdd6930e-01",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "page": 13,
+            "section": "Acknowledgements",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+          },
+          {
+            "source_id": "official_projects",
+            "version_id": null,
+            "identifier": "FFL09-0056",
+            "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+            "page": null,
+            "section": "Official project metadata and objective",
+            "paragraph": "Official page lines 7-23 (root-reviewed 31-line page)",
+            "accessed_at": "2026-11-27T09:12:37Z",
+            "evidence_note": "SSF官方项目页明确正式名Flight control in dynamic environments、编号FFL09-0056、原始日期区间110101-161231（本批规范为2011-01-01至2016-12-31）、管理机构Lund University；目标是以熊蜂和胡蜂视觉避障建立运动控制模型并探索自主飞行器用途。只确认项目元数据，不确认论文是官方成果或作者是PI。"
+          }
+        ],
+        "verification_status": "source_supported",
+        "sources": [
+          {
+            "source_id": "publisher",
+            "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+            "identifier": "10.1038/s41598-019-44187-2",
+            "accessed_at": "2026-11-27T07:08:49Z",
+            "version": "version_of_record",
+            "verification_status": "verified",
+            "license": "Bibliographic and funding facts reviewed from the CC BY 4.0 version of record; no full article redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ]
+          },
+          {
+            "source_id": "official_projects",
+            "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+            "identifier": "FFL09-0056",
+            "accessed_at": "2026-11-27T09:12:37Z",
+            "version": "official_project_record_observed_2026-11-27",
+            "verification_status": "verified",
+            "license": "Factual project metadata and an original Chinese objective paraphrase only; no full webpage redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "official_projects",
+                "version_id": null,
+                "identifier": "FFL09-0056",
+                "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+                "page": null,
+                "section": "Official project metadata and objective",
+                "paragraph": "Official page lines 7-23 (root-reviewed 31-line page)",
+                "accessed_at": "2026-11-27T09:12:37Z",
+                "evidence_note": "SSF官方项目页明确正式名Flight control in dynamic environments、编号FFL09-0056、原始日期区间110101-161231（本批规范为2011-01-01至2016-12-31）、管理机构Lund University；目标是以熊蜂和胡蜂视觉避障建立运动控制模型并探索自主飞行器用途。只确认项目元数据，不确认论文是官方成果或作者是PI。"
+              }
+            ]
+          }
+        ],
+        "field_states": {
+          "start_date": {
+            "status": "reported",
+            "reason": "官方原始日期区间为110101-161231，按页面YYMMDD区间规范为2011-01-01至2016-12-31；原始字符串保留于evidence_locator与本候选。",
+            "evidence_locator": [
+              {
+                "source_id": "official_projects",
+                "version_id": null,
+                "identifier": "FFL09-0056",
+                "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+                "page": null,
+                "section": "Official project metadata and objective",
+                "paragraph": "Official page lines 7-23 (root-reviewed 31-line page)",
+                "accessed_at": "2026-11-27T09:12:37Z",
+                "evidence_note": "SSF官方项目页明确正式名Flight control in dynamic environments、编号FFL09-0056、原始日期区间110101-161231（本批规范为2011-01-01至2016-12-31）、管理机构Lund University；目标是以熊蜂和胡蜂视觉避障建立运动控制模型并探索自主飞行器用途。只确认项目元数据，不确认论文是官方成果或作者是PI。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "end_date": {
+            "status": "reported",
+            "reason": "官方原始日期区间为110101-161231，按页面YYMMDD区间规范为2011-01-01至2016-12-31；原始字符串保留于evidence_locator与本候选。",
+            "evidence_locator": [
+              {
+                "source_id": "official_projects",
+                "version_id": null,
+                "identifier": "FFL09-0056",
+                "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+                "page": null,
+                "section": "Official project metadata and objective",
+                "paragraph": "Official page lines 7-23 (root-reviewed 31-line page)",
+                "accessed_at": "2026-11-27T09:12:37Z",
+                "evidence_note": "SSF官方项目页明确正式名Flight control in dynamic environments、编号FFL09-0056、原始日期区间110101-161231（本批规范为2011-01-01至2016-12-31）、管理机构Lund University；目标是以熊蜂和胡蜂视觉避障建立运动控制模型并探索自主飞行器用途。只确认项目元数据，不确认论文是官方成果或作者是PI。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "objective": {
+            "status": "reported",
+            "reason": null,
+            "evidence_locator": [
+              {
+                "source_id": "official_projects",
+                "version_id": null,
+                "identifier": "FFL09-0056",
+                "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+                "page": null,
+                "section": "Official project metadata and objective",
+                "paragraph": "Official page lines 7-23 (root-reviewed 31-line page)",
+                "accessed_at": "2026-11-27T09:12:37Z",
+                "evidence_note": "SSF官方项目页明确正式名Flight control in dynamic environments、编号FFL09-0056、原始日期区间110101-161231（本批规范为2011-01-01至2016-12-31）、管理机构Lund University；目标是以熊蜂和胡蜂视觉避障建立运动控制模型并探索自主飞行器用途。只确认项目元数据，不确认论文是官方成果或作者是PI。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "url": {
+            "status": "reported",
+            "reason": null,
+            "evidence_locator": [
+              {
+                "source_id": "official_projects",
+                "version_id": null,
+                "identifier": "FFL09-0056",
+                "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+                "page": null,
+                "section": "Official project metadata and objective",
+                "paragraph": "Official page lines 7-23 (root-reviewed 31-line page)",
+                "accessed_at": "2026-11-27T09:12:37Z",
+                "evidence_note": "SSF官方项目页明确正式名Flight control in dynamic environments、编号FFL09-0056、原始日期区间110101-161231（本批规范为2011-01-01至2016-12-31）、管理机构Lund University；目标是以熊蜂和胡蜂视觉避障建立运动控制模型并探索自主飞行器用途。只确认项目元数据，不确认论文是官方成果或作者是PI。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "org_ids": {
+            "status": "reported",
+            "reason": "仅确认官方页面所列administrative organization为Lund University；不是从论文署名推断，也不宣称其他共同作者机构参与。",
+            "evidence_locator": [
+              {
+                "source_id": "official_projects",
+                "version_id": null,
+                "identifier": "FFL09-0056",
+                "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+                "page": null,
+                "section": "Official project metadata and objective",
+                "paragraph": "Official page lines 7-23 (root-reviewed 31-line page)",
+                "accessed_at": "2026-11-27T09:12:37Z",
+                "evidence_note": "SSF官方项目页明确正式名Flight control in dynamic environments、编号FFL09-0056、原始日期区间110101-161231（本批规范为2011-01-01至2016-12-31）、管理机构Lund University；目标是以熊蜂和胡蜂视觉避障建立运动控制模型并探索自主飞行器用途。只确认项目元数据，不确认论文是官方成果或作者是PI。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "canonical_name": {
+            "status": "reported",
+            "reason": null,
+            "evidence_locator": [
+              {
+                "source_id": "official_projects",
+                "version_id": null,
+                "identifier": "FFL09-0056",
+                "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+                "page": null,
+                "section": "Official project metadata and objective",
+                "paragraph": "Official page lines 7-23 (root-reviewed 31-line page)",
+                "accessed_at": "2026-11-27T09:12:37Z",
+                "evidence_note": "SSF官方项目页明确正式名Flight control in dynamic environments、编号FFL09-0056、原始日期区间110101-161231（本批规范为2011-01-01至2016-12-31）、管理机构Lund University；目标是以熊蜂和胡蜂视觉避障建立运动控制模型并探索自主飞行器用途。只确认项目元数据，不确认论文是官方成果或作者是PI。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "person_ids": {
+            "status": "reported",
+            "reason": "只表示论文致谢明确点名的受资助作者；不表示已确认 PI、完整参与名单或正式项目职务。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          },
+          "output_work_ids": {
+            "status": "reported",
+            "reason": "只按 funding_acknowledgment 关联这篇论文；不是 official_confirmed 的官方成果清单。",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "identifier": "10.1038/s41598-019-44187-2",
+                "version_id": "V-W-D164a2202bdd6930e-01",
+                "url": "https://www.nature.com/articles/s41598-019-44187-2.pdf",
+                "page": 13,
+                "section": "Acknowledgements",
+                "accessed_at": "2026-11-27T07:08:49Z",
+                "evidence_note": "原文 p13 致谢：Swedish Foundation for Strategic Research，grant FFL09-0056，明确受助作者 Julien Lecoeur。仅 funding_acknowledgment；这些姓名不是由本批确认的项目 PI/成员清单，其他共同作者或署名机构不自动归入该项目。"
+              }
+            ],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        },
+        "notes": "RUN-0008已从SSF官方项目页核对名称、编号、日期、管理机构与目标。原日期字符串110101-161231规范为2011-01-01至2016-12-31。org_ids仅表示官方管理机构Lund University。person_ids仍仅表示2019论文致谢所列受助作者，未确认PI或完整成员名单。output_work_ids与project_relation仍为funding_acknowledgment；没有核验官方成果清单，不升级official_confirmed，也不把资助日期等同作者任职或论文发表日期。"
+      },
+      "changed_field_names": [
+        "canonical_name",
+        "org_ids",
+        "start_date",
+        "end_date",
+        "objective",
+        "url",
+        "evidence_locator",
+        "sources",
+        "field_states",
+        "notes"
+      ],
+      "reason": "Official SSF grant-ID match resolves five previously unknown project metadata fields and replaces a descriptive acknowledgment label with the official project name. Person/Work relationships retain acknowledgment-only semantics.",
+      "field_change_reasons": {
+        "canonical_name": "Exact official title for grant FFL09-0056.",
+        "start_date": "Raw110101-161231 start normalized to2011-01-01.",
+        "end_date": "Raw110101-161231 end normalized to2016-12-31.",
+        "objective": "Original Chinese paraphrase of the official project objective; a research objective is not demonstrated scientific performance.",
+        "url": "Exact official project record inspected by root.",
+        "org_ids": "Official administrative organization Lund University resolves to existing ORG-Ra4dbe77da866a1e5; no affiliation-derived inference."
+      },
+      "supporting_query_ids": [
+        "Q-RUN08-P5-SSF-open-001"
+      ],
+      "supporting_review_ids": [
+        "MR-RUN08-P5-SSF-official-001",
+        "MR-RUN08-P5-typedmapping-002"
+      ]
+    }
+  ],
+  "task_event_preconditions": [
+    {
+      "task_id": "T-Unknown-e21874f17a289594",
+      "before": {
+        "task_id": "T-Unknown-e21874f17a289594",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "start_date",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "项目资助开始日期未从官方来源核验，原文致谢不提供。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "start_date",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-e21874f17a289594",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      }
+    },
+    {
+      "task_id": "T-Unknown-3cd756ef5c868105",
+      "before": {
+        "task_id": "T-Unknown-3cd756ef5c868105",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "end_date",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "项目资助结束日期未从官方来源核验，原文致谢不提供。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "end_date",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-3cd756ef5c868105",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      }
+    },
+    {
+      "task_id": "T-Unknown-3ad5b37029184f0e",
+      "before": {
+        "task_id": "T-Unknown-3ad5b37029184f0e",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "objective",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "原文致谢没有项目正式目标；尚未核对官方登记。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "objective",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-3ad5b37029184f0e",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      }
+    },
+    {
+      "task_id": "T-Unknown-00c6abe8b5a463c5",
+      "before": {
+        "task_id": "T-Unknown-00c6abe8b5a463c5",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "url",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "尚未核对官方项目登记 URL；不把论文 URL 伪装成项目主页。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "url",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-00c6abe8b5a463c5",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      }
+    },
+    {
+      "task_id": "T-Unknown-b4ef60a6796a2799",
+      "before": {
+        "task_id": "T-Unknown-b4ef60a6796a2799",
+        "entity_type": "project",
+        "entity_id": "PRJ-SSF-FFL09-0056",
+        "task_type": "field_review",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "run_id": "RUN-0006",
+          "field_path": "org_ids",
+          "follow_up": "Use official project/organization records; preserve funding acknowledgment unless independently confirmed."
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001"
+        ],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": "项目承办或参加机构未核验；不从受助作者的署名单位推断。",
+        "retry_at": null,
+        "review_condition": "原文只支持当前有限事实；取得官方记录后核验该字段，不从共同作者或同机构推断。",
+        "created_at_utc": "2026-11-27T07:08:49Z",
+        "updated_at_utc": "2026-11-27T07:08:49Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": "org_ids",
+        "unknown_since_utc": "2026-11-27T07:08:49Z",
+        "deadline_at_utc": "2026-11-28T07:08:49Z",
+        "review_task_id": "T-Unknown-b4ef60a6796a2799",
+        "priority": "normal",
+        "overdue": false,
+        "version_id": "V-W-D164a2202bdd6930e-01",
+        "supporting_record_ids": [
+          "Q-RUN06-P6-Lecoeur-cache-001",
+          "V-W-D164a2202bdd6930e-01"
+        ],
+        "field_states": {}
+      }
+    }
+  ],
+  "batch_accounting": {
+    "external_requests": 8,
+    "additional_requests_during_typed_mapping": 0,
+    "cache_reuse_events": 0,
+    "manual_review_items": 2,
+    "new_works": 0,
+    "new_assessments": 0,
+    "new_projects": 0,
+    "project_metadata_fields_resolved": 5,
+    "official_project_name_resolved": 1,
+    "original_project_tasks_closed": 5
+  },
+  "relation_boundaries": {
+    "project_work_relation_unchanged": "funding_acknowledgment",
+    "official_confirmed_output_claimed": false,
+    "person_ids_unchanged": true,
+    "pi_or_complete_membership_inferred": false,
+    "publication_time_affiliations_modified": false,
+    "snsf_and_src_projects_modified": false
+  },
+  "remaining_leads": [
+    {
+      "project_id": "PRJ-SNSF-200021_155907",
+      "status": "original_unknown_fields_preserved",
+      "reason": "Official SNSF page only rendered a JavaScript requirement; no official project data obtained, so no claim of grant absence."
+    },
+    {
+      "project_id": "PRJ-SRC-2014-4762",
+      "status": "original_unknown_fields_preserved",
+      "reason": "No matching official project record was acquired; unrelated reports/statistics do not support project title, dates, host, personnel or grant absence."
+    }
+  ],
+  "validation": {
+    "typed_project_query_task_schema": "passed",
+    "receipt_queries_equal_candidate_queries": true,
+    "old_task_clocks_preserved": true,
+    "five_completed_tasks_supported_by_official_query_and_two_real_reviews": true,
+    "canonical_jsonl_modified": false,
+    "source_observations_supplied": false
+  },
+  "notes": [
+    "Five typed query receipts represent eight previously performed root operations; count each receipt.external_requests_performed once, and do not separately count the source-batch reports.",
+    "Source-observations are generated exactly once by the integrator.",
+    "No new Work was created; zero new_work_count is an actual insertion count, not an invented source inventory.",
+    "Original before object and five complete latest task preconditions preserve all prior acknowledgment evidence and clocks."
+  ]
+}
