@@ -251,7 +251,8 @@ def main():
         tid = receipt.get('task_id') or 'T-RUN05-RECORDED-' + qid
         source = receipt['source_id']
         rawparams = receipt.get('raw_parameters') or (
-            {'searches': receipt['queries']} if 'queries' in receipt else
+            {'searches': [x if isinstance(x, str) else json.dumps(x, ensure_ascii=False, sort_keys=True)
+                          for x in receipt['queries']]} if 'queries' in receipt else
             {'endpoint': receipt['endpoint_or_url'], 'version_id': receipt.get('version_id')})
         identifiers = ([receipt['version_id']] if cached_pdf else
                        list(dict.fromkeys(x for x in map(source_record_ids, rows) if x)))
