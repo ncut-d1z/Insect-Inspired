@@ -31,7 +31,7 @@ CANDIDATES = [
 IDS = {
     **MUTABLE_IDS, 'assessments': 'assessment_id', 'queries': 'query_id',
     'manual-reviews': 'review_id', 'source-observations': 'observation_id',
-    'work-relations': 'relation_id', 'discovery-paths': 'path_id',
+    'work-relations': 'relation_id', 'discovery-paths': 'discovery_id',
 }
 
 
@@ -164,21 +164,34 @@ def main():
     indices = {name: {row[key]: i for i, row in enumerate(data[name])}
                for name, key in IDS.items() if name in data}
     changes, touched, bindings, inputs, new_by_query = {}, set(), [], [], {}
+    reviewed_source_identities, reviewed_list_stats, part_bindings = {}, {}, {}
     queue = list(CANDIDATES)
     while queue:
         name = queue.pop(0)
         require(name not in inputs and name.startswith('temp/reports/RUN-0005'),
                 'Duplicate or unexpected review part: ' + name)
         candidate, binding = read_committed(repo, name)
+        if name in part_bindings:
+            expected = part_bindings[name]
+            require(binding['sha256'] == expected['sha256'] and binding['bytes'] == expected['bytes']
+                    and len(candidate['changed_records']) == expected['changed_records'],
+                    'Candidate part bytes/hash/count mismatch: ' + name)
         inputs.append(name); bindings.append(binding)
         for part in candidate.get('candidate_parts', []):
             queue.append(part if isinstance(part, str) else part['path'])
+            if isinstance(part, dict):
+                part_bindings[part['path']] = part
         require(candidate.get('run_id') == RUN and candidate.get('checkpoint_id') == CP,
                 'Candidate run/checkpoint mismatch: ' + name)
         for qid, ids in candidate.get('query_new_work_ids', {}).items():
             require(qid not in new_by_query or new_by_query[qid] == ids,
                     'New-Work query attribution conflict: ' + qid)
             new_by_query[qid] = ids
+        for key, value in candidate.get('source_identities', {}).items():
+            require(key not in reviewed_source_identities or reviewed_source_identities[key] == value,
+                    'Reviewed source identity conflict: ' + key)
+            reviewed_source_identities[key] = value
+        reviewed_list_stats.update(candidate.get('list_stats', {}))
         for change in candidate.get('changed_records', []):
             dataset = change['dataset'].removesuffix('.jsonl')
             require(dataset in MUTABLE_IDS, 'Unapproved mutable dataset: ' + dataset)
@@ -242,9 +255,18 @@ def main():
             {'endpoint': receipt['endpoint_or_url'], 'version_id': receipt.get('version_id')})
         identifiers = ([receipt['version_id']] if cached_pdf else
                        list(dict.fromkeys(x for x in map(source_record_ids, rows) if x)))
-        resolved = ([receipt['entity_id']] if cached_pdf else [resolve_record(row, index) for row in rows])
+        resolved = ([receipt['entity_id']] if cached_pdf else
+                    [reviewed_source_identities[source_record_ids(row)]
+                     if source_record_ids(row) in reviewed_source_identities
+                     else resolve_record(row, index) for row in rows])
         returned = None if failed else (1 if cached_pdf else len(rows))
         dedup_count = None if failed or any(x is None for x in resolved) else len(set(resolved))
+        if qid in reviewed_list_stats:
+            stats = reviewed_list_stats[qid]
+            require(stats['receipt_sha256'] == binding['sha256'] and stats['rows'] == returned,
+                    'Reviewed citation receipt statistics differ: ' + qid)
+            require(set(x for x in resolved if x is not None) == set(stats['resolved_unique_work_ids']),
+                    'Reviewed citation Work identity mapping differs: ' + qid)
         new_ids = sorted(set(new_by_query.get(qid, [])))
         require(all(x not in baseline_work_ids and x in indices['works'] for x in new_ids),
                 'Incorrect new-Work attribution: ' + qid)
