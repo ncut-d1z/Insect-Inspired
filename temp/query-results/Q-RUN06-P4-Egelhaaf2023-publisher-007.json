@@ -1,0 +1,75 @@
+{
+  "query_id": "Q-RUN06-P4-Egelhaaf2023-publisher-007",
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0008",
+  "task_id": "T-RUN06-P4-Egelhaaf2023-context",
+  "entity_id": "W-D0f5e53ca30b3a9ea",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+  "raw_parameters": {
+    "operation": "open",
+    "purpose": "Inspect independent public publisher source after the repository continuation returned an access challenge"
+  },
+  "query_kind": "official_fulltext_context_observation",
+  "queried_at_utc": "2026-11-27T06:54:34Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "rerun_reason": "Independent official publisher source; no successful same-publisher-URL fulltext query located in corpus, and the PMC continuation was restricted.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Publisher marks article Open access in header; CC-BY4.0 was separately observed in Q-RUN06-P4-Egelhaaf2023-context-005. Retain only bibliographic facts, short original Chinese summaries and locators.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Live publisher page retrieved via web connector, reported crawled two weeks ago; publication predates cutoff; no historical snapshot asserted.",
+  "status": "success",
+  "transport": "web.open",
+  "source_reference_id": "turn833133443view0",
+  "source_line_count": 759,
+  "resource_identity": {
+    "doi": "10.1007/s00359-022-01610-w",
+    "title": "Optic flow based spatial vision in insects",
+    "authors": [
+      "Martin Egelhaaf"
+    ],
+    "publication_date": "2023-01-07",
+    "journal": "Journal of Comparative Physiology A",
+    "volume": "209",
+    "pages": "541–561",
+    "access": "open_access"
+  },
+  "count_basis": "One requested article resource; returned text window lines0–187 does not constitute complete fulltext, references, or citation-list coverage.",
+  "visible_total": 1,
+  "returned_count": 1,
+  "count_before_dedup": 1,
+  "count_after_dedup": 1,
+  "new_work_count": 0,
+  "new_work_ids": [],
+  "result_identifiers": [
+    "10.1007/s00359-022-01610-w"
+  ],
+  "page_complete": false,
+  "cursor_in": null,
+  "cursor_out": "publisher-line188",
+  "observations": [
+    {
+      "edge_id": "CE-99e646e0c0f3265a",
+      "cited_key": "Strubbe2015",
+      "locator": "Reduction of optic flow complexity by active vision strategies to facilitate spatial vision; publisher displayed lines79–80",
+      "summary_zh": "出版方正文同样将Strübbe2015列为有条件的计算提取背景，并以主动视觉对照计算负担；不据此判为否证。"
+    },
+    {
+      "edge_id": "CE-f678875dbb0451d5",
+      "cited_key": "Kern2012",
+      "locator": "Regulating flight speed depending on the spatial layout of the environment; Fig.3 and surrounding discussion",
+      "summary_zh": "出版方窗口包含对应的飞行速度与空间布局讨论；精确引文和图注采用已冻结的005回执定位。"
+    }
+  ],
+  "review_scope": {
+    "selected_body_contexts_read": true,
+    "bibliographic_target_crosscheck_pending": true,
+    "whole_work_fulltext_or_supplement_review_complete": false,
+    "source_list_requery": false
+  },
+  "integrity_note": "Only connector-returned text windows observed; no original HTTP bytes or complete-document hash available; figures/equations not visually audited."
+}
