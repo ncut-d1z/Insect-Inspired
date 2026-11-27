@@ -325,6 +325,11 @@ def main():
                           ).isoformat().replace('+00:00', 'Z'),
                           review_task_id=review_id, error_code=q['error_code'])
             data['tasks'].append(review)
+        if q['visible_total'] is None and not failed:
+            q.setdefault('field_states', {})['visible_total'] = dict(
+                status='not_applicable',
+                reason='This successful bounded web search has no defined bibliographic inventory total. Retained reviewed records are counted separately; no search-result exhaustiveness is asserted.',
+                evidence_locator=[], unknown_since_utc=None, review_task_id=None)
         data['queries'].append(q)
         indices['queries'][qid] = len(data['queries']) - 1
         data['source-observations'].append(dict(
