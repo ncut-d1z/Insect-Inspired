@@ -1,6 +1,6 @@
 {
   "checkpoint_id": "CP-0009",
-  "status": "upload_in_progress",
+  "status": "uploaded_pending_independent_restore",
   "committed_parts": [
     1,
     2,
@@ -29,7 +29,14 @@
     25,
     26,
     27,
-    28
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
   ],
   "part_count": 35,
   "canonical_commit": "96ce04b268f648978581e87d3be551981f12917d",
