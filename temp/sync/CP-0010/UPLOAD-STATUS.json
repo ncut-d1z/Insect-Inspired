@@ -1,6 +1,6 @@
 {
   "checkpoint_id": "CP-0010",
-  "status": "uploaded_pending_independent_restore",
+  "status": "remote_package_verified",
   "committed_parts": [
     1,
     2,
@@ -22,5 +22,17 @@
   ],
   "part_count": 17,
   "canonical_commit": "5f2181b0e5a91bcafde2a3f19eb526668934a80e",
-  "full_remote_restore_verified": false
+  "canonical_tree": "53463d7daa180a82199ab56281afe411f8e61e7b",
+  "verified_transport_commit": "d692c31d5fd48f4aed9928523a7af4768b952425",
+  "proof_published_commit": "10b65bbc07a9c63f8a4b6c86ce8f66c5045bcf4c",
+  "proof_path": "verification.json",
+  "proof_sha256": "b521365a013d3db2725b93424e3f251fd97ca59379c97c1c3fae76923c3b0e93",
+  "proof_completed_at_utc": "2026-11-27T09:49:41.858566Z",
+  "full_remote_restore_verified": true,
+  "independent_remote_only_restore": true,
+  "remote_canonical_branch_updated": false,
+  "main_merge_performed": false,
+  "remote_branch_deletion_performed": false,
+  "next_maintenance_required": true,
+  "research_closure_established": false
 }
