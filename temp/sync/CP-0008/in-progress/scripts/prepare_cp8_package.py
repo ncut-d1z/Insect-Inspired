@@ -182,12 +182,13 @@ README = r'''# CP8 增量数据恢复与主机合并
 
 `sync/cp8-checkpoint-import` 必须同时保留原样继承的 `temp/sync/CP-0007/` 完整包与本 CP8 包。以下命令先从真实 GitHub 获取 CP7 的 prerequisite `0ee3b7de167a70933bc9884b9217142c2661c374`，再依次恢复 CP7 和 CP8；不要求远端研究分支已经更新到 CP7/CP8。本目录不提供也不依赖任何 Actions workflow。运输分支只承载恢复材料，不能直接合并到 main。
 
-需要 Git 和 Windows PowerShell 5.1 或更新版本。修改 `$Cp8Repo` 为现有仓库绝对路径，在同一 PowerShell 会话依次运行。每次恢复创建仓库外的新目录；任何错误都会停止。工作树必须干净。
+需要 Git 和 PowerShell 7 或更新版本（`pwsh`），以解析完整的大型检查点 JSON。修改 `$Cp8Repo` 为现有仓库绝对路径，在同一 PowerShell 会话依次运行。每次恢复创建仓库外的新目录；任何错误都会停止。工作树必须干净。
 
 ## 1. 拉取运输分支并提取两个完整包
 
 ~~~powershell
 $ErrorActionPreference = 'Stop'
+if ($PSVersionTable.PSVersion.Major -lt 7) { throw 'Run these commands in PowerShell 7 or newer (pwsh).' }
 $Cp8Repo = 'C:\path\to\Insect-Inspired'
 $Cp8Url = 'https://github.com/ncut-d1z/Insect-Inspired.git'
 $Cp8SyncRef = 'refs/heads/sync/cp8-checkpoint-import'
