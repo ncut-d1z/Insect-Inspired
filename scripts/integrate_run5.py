@@ -161,8 +161,11 @@ def main():
         if row.get('unknown_since_utc') and not row.get('overdue'):
             require(datetime.fromisoformat(row['deadline_at_utc'].replace('Z', '+00:00'))
                     > datetime.now(timezone.utc), 'Original unknown needs escalation before integration: ' + row['task_id'])
+    # Two untouched legacy auxiliary ledgers use composite identities rather
+    # than the generic mutable-ID names. Do not invent keys for their rows.
     indices = {name: {row[key]: i for i, row in enumerate(data[name])}
-               for name, key in IDS.items() if name in data}
+               for name, key in IDS.items()
+               if name in data and all(key in row for row in data[name])}
     changes, touched, bindings, inputs, new_by_query = {}, set(), [], [], {}
     reviewed_source_identities, reviewed_list_stats, part_bindings = {}, {}, {}
     queue = list(CANDIDATES)
@@ -195,6 +198,7 @@ def main():
         for change in candidate.get('changed_records', []):
             dataset = change['dataset'].removesuffix('.jsonl')
             require(dataset in MUTABLE_IDS, 'Unapproved mutable dataset: ' + dataset)
+            require(dataset in indices, 'This legacy ledger needs an explicit identity plan: ' + dataset)
             key, identifier = MUTABLE_IDS[dataset], change['id']
             position = indices[dataset][identifier]
             current = data[dataset][position]
