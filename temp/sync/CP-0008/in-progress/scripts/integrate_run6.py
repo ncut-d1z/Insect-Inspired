@@ -193,6 +193,18 @@ def main():
                 part_bindings[part['path']] = part
         require(candidate.get('run_id') == RUN and candidate.get('checkpoint_id') == CP,
                 'Candidate run/checkpoint mismatch: ' + name)
+        for query_id, expected in candidate.get('receipt_bindings', {}).items():
+            relative = audit.safe_relative(expected['path'])
+            require(relative.startswith('temp/query-results/Q-RUN06'),
+                    'Unexpected RUN6 receipt-binding path: ' + relative)
+            receipt_value, actual_binding = read_committed(repo, relative)
+            require(receipt_value['query_id'] == query_id
+                    and actual_binding['bytes'] == expected['bytes']
+                    and actual_binding['sha256'] == expected['sha256'],
+                    'Reviewed source receipt no longer matches its bound exact bytes: ' + query_id)
+        for precondition in candidate.get('task_event_preconditions', []):
+            require(baseline_latest.get(precondition['task_id']) == precondition['before'],
+                    'Reviewed task-event baseline changed: ' + precondition['task_id'])
         for qid, ids in candidate.get('query_new_work_ids', {}).items():
             require(qid not in new_by_query or new_by_query[qid] == ids,
                     'New-Work query attribution conflict: ' + qid)
@@ -337,7 +349,7 @@ def main():
             normalized_parameters={**rawparams, 'run_id': RUN,
                 'count_scope': 'returned/count_before_dedup count the retained source records; count_after_dedup is unique canonical Works only when all returned identities resolve',
                 'source_count_basis': receipt.get('count_basis'),
-                'source_declared_counts': declared_counts},
+                **{'source_declared_' + key: value for key, value in declared_counts.items()}},
             queried_at_utc=receipt.get('queried_at_utc'), cursor_in=receipt.get('cursor_in'),
             cursor_out=receipt.get('cursor_out'), page_index=receipt.get('page_index', 1),
             page_complete=bool(receipt.get('page_complete', False)) and exact and not failed,

@@ -1,0 +1,92 @@
+{
+  "query_id": "Q-RUN06-P6-Baird-search-002",
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0008",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "query_record": {
+    "query_id": "Q-RUN06-P6-Baird-search-002",
+    "task_id": "T-RUN06-RECORDED-Q-RUN06-P6-Baird-search-002",
+    "scope_id": "SCOPE-0001",
+    "checkpoint_id": "CP-0008",
+    "entity_id": "W-D5371fd7ace4547d8",
+    "source_id": "institutional_repository",
+    "endpoint_or_url": "https://portal.research.lu.se/en/publications/visual-flight-control-in-naturalistic-and-artificial-environments/",
+    "api_version": null,
+    "query_kind": "fulltext_locator_search",
+    "raw_parameters": {
+      "query": "\"Visual flight control in naturalistic and artificial environments\" pdf",
+      "domains": [
+        "lu.se",
+        "springer.com",
+        "su.se"
+      ]
+    },
+    "normalized_parameters": {
+      "query": "\"Visual flight control in naturalistic and artificial environments\" pdf",
+      "domains": [
+        "lu.se",
+        "springer.com",
+        "su.se"
+      ],
+      "run_id": "RUN-0006",
+      "count_scope": "Returned search source refs when explicitly counted; otherwise unavailable. Cache counts refer to one resource and canonical target Work, not full source coverage."
+    },
+    "queried_at_utc": "2026-11-27T06:41:55Z",
+    "cursor_in": null,
+    "cursor_out": null,
+    "page_index": 1,
+    "page_complete": false,
+    "visible_total": null,
+    "returned_count": 7,
+    "count_before_dedup": null,
+    "count_after_dedup": null,
+    "new_work_ids": [],
+    "new_work_count": 0,
+    "result_identifiers": [
+      "10.1007/s00359-012-0757-7"
+    ],
+    "status": "partial",
+    "verification_status": "source_supported",
+    "error_code": null,
+    "error_message": null,
+    "retry_count": 0,
+    "retry_at": null,
+    "cache_path": "temp/query-results/Q-RUN06-P6-Baird-search-002.json",
+    "cache_hit": false,
+    "reused_query_id": null,
+    "rerun_reason": "Primary-source fulltext-location follow-up; first search did not obtain fulltext.",
+    "coverage_note": "The returned text contains 7 distinct source refs. Work-level deduplication of all hits was not completed. Official target records show two authors and DOI, with no inspected fulltext link beyond DOI.",
+    "license_note": "Bibliographic facts, original Chinese summaries, source hashes and locators only; no full text, original abstract or personal contact details redistributed.",
+    "recorded_at_utc": "2026-11-27T06:49:55.345997Z",
+    "query_time_status": "exact",
+    "field_states": {
+      "count_before_dedup": {
+        "status": "unknown",
+        "reason": "The returned text contains 7 distinct source refs. Work-level deduplication of all hits was not completed. Official target records show two authors and DOI, with no inspected fulltext link beyond DOI.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+        "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-002"
+      },
+      "count_after_dedup": {
+        "status": "unknown",
+        "reason": "The returned text contains 7 distinct source refs. Work-level deduplication of all hits was not completed. Official target records show two authors and DOI, with no inspected fulltext link beyond DOI.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+        "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-002"
+      },
+      "visible_total": {
+        "status": "unknown",
+        "reason": "The returned text contains 7 distinct source refs. Work-level deduplication of all hits was not completed. Official target records show two authors and DOI, with no inspected fulltext link beyond DOI.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T06:44:24.408150Z",
+        "review_task_id": "T-RUN06-QUERY-REVIEW-Q-RUN06-P6-Baird-search-002"
+      }
+    }
+  },
+  "evidence_review": "temp/reports/RUN-0006-Lecoeur2019-evidence-review.json",
+  "sanitized": true,
+  "payload_retained": false,
+  "note": "Typed canonical query_record is nested; counter and unknown-task candidates are in RUN-0006-P5P6-query-candidates.json."
+}
