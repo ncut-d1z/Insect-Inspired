@@ -1,0 +1,206 @@
+{
+  "format_version": 1,
+  "repository": "ncut-d1z/Insect-Inspired",
+  "checkpoint_id": "CP-0010",
+  "parent_checkpoint_id": "CP-0009",
+  "scope_id": "SCOPE-0001",
+  "source_sync_ref": "refs/heads/sync/cp10-checkpoint-import",
+  "target_ref": "refs/heads/research/p3-p6-cp10",
+  "expected_baseline_commit": "96ce04b268f648978581e87d3be551981f12917d",
+  "expected_commit": "5f2181b0e5a91bcafde2a3f19eb526668934a80e",
+  "expected_tree": "53463d7daa180a82199ab56281afe411f8e61e7b",
+  "expected_parent_commit": "7d036762b1212d5bc7660d5216d9ebe8cc2222d0",
+  "checkpoint_path": "temp/snapshots/checkpoints/CP-0010.json",
+  "bundle_kind": "incremental",
+  "bundle_name": "recovery.bundle",
+  "bundle_prerequisites": [
+    "96ce04b268f648978581e87d3be551981f12917d"
+  ],
+  "bundle_storage": "ordered_binary_parts",
+  "bundle_bytes": 8826145,
+  "bundle_sha256": "3b8ab225883f1925656dc1956518f284cb44590fceb1e658647eed59e0ebb14e",
+  "part_size_bytes": 524288,
+  "parts": [
+    {
+      "index": 1,
+      "path": "parts/recovery.bundle.part-0001",
+      "bytes": 524288,
+      "sha256": "7d17d49aa4dc29864a6908a3e43a8b95785bb329b95f0a0c18f8562ad0d1ae60"
+    },
+    {
+      "index": 2,
+      "path": "parts/recovery.bundle.part-0002",
+      "bytes": 524288,
+      "sha256": "6478f70e115122561153a9fba064ac69e6234d2701fa6103e598f34d80a5efae"
+    },
+    {
+      "index": 3,
+      "path": "parts/recovery.bundle.part-0003",
+      "bytes": 524288,
+      "sha256": "6e1648c7f068e8393ea44b7144fc1c4fdb7b23c89020878f7fb445401fb745d7"
+    },
+    {
+      "index": 4,
+      "path": "parts/recovery.bundle.part-0004",
+      "bytes": 524288,
+      "sha256": "34d293123feab0a8fbecdb04e3330af81cf3283991c7a745601bb8233a1fd0dd"
+    },
+    {
+      "index": 5,
+      "path": "parts/recovery.bundle.part-0005",
+      "bytes": 524288,
+      "sha256": "ef725c5c8e661254a92915d6e76d0f1b6549e050a7a6320258c57abd670920b7"
+    },
+    {
+      "index": 6,
+      "path": "parts/recovery.bundle.part-0006",
+      "bytes": 524288,
+      "sha256": "ccbd26a5df2158d458ff555573e4511b812f6ca68b65a879001b2ac1abba236b"
+    },
+    {
+      "index": 7,
+      "path": "parts/recovery.bundle.part-0007",
+      "bytes": 524288,
+      "sha256": "733f7c5eebebe3f98cde4216b20793d3ee634373d7ea566e4c584d984227017d"
+    },
+    {
+      "index": 8,
+      "path": "parts/recovery.bundle.part-0008",
+      "bytes": 524288,
+      "sha256": "2c6cf1c5a11c73b51453aa24f6b0991d72d437f60577af16388a8a39918d3573"
+    },
+    {
+      "index": 9,
+      "path": "parts/recovery.bundle.part-0009",
+      "bytes": 524288,
+      "sha256": "07bbf37f9dbc3753b4d95ea9404eec51c99f6b4a9a1d71f9c80ffb5b882da518"
+    },
+    {
+      "index": 10,
+      "path": "parts/recovery.bundle.part-0010",
+      "bytes": 524288,
+      "sha256": "cf9880886ec89b4b8437ad1b9678d63d9937bd8606366bc5a75c493e82c09afd"
+    },
+    {
+      "index": 11,
+      "path": "parts/recovery.bundle.part-0011",
+      "bytes": 524288,
+      "sha256": "f108ee0761d9b024ac4db9858456e562f616bc5c5f698691c3c2828a48493d49"
+    },
+    {
+      "index": 12,
+      "path": "parts/recovery.bundle.part-0012",
+      "bytes": 524288,
+      "sha256": "9d46b469c13a57da7f1b7d62f0272d4a6613192f2e4098bc56d7acc1af04db40"
+    },
+    {
+      "index": 13,
+      "path": "parts/recovery.bundle.part-0013",
+      "bytes": 524288,
+      "sha256": "b7f01f81776e78648e756711ffb1f90cfc9173125f04aff9e9e75e6ce5d18c50"
+    },
+    {
+      "index": 14,
+      "path": "parts/recovery.bundle.part-0014",
+      "bytes": 524288,
+      "sha256": "42364f77357fee65b97b775659835ba2cb2c3a3dd582f63f5dcaeef4e8cc3223"
+    },
+    {
+      "index": 15,
+      "path": "parts/recovery.bundle.part-0015",
+      "bytes": 524288,
+      "sha256": "ecb481a01d988db4ecf30c3325b2aa84db858ac18d3e6815a372257bd6863893"
+    },
+    {
+      "index": 16,
+      "path": "parts/recovery.bundle.part-0016",
+      "bytes": 524288,
+      "sha256": "9b02c96af70209dbd8be195c7f6a6ac86df13c143b6567cbb3050b0e202b7c01"
+    },
+    {
+      "index": 17,
+      "path": "parts/recovery.bundle.part-0017",
+      "bytes": 437537,
+      "sha256": "73df7ba7fdb5a97bb3338d7f93aed889e065d9e64eed784ba4ccb90ee0272920"
+    }
+  ],
+  "readme_sha256": "b937e7674c1be823138cf7b70aeced81d5ea52790a901f9a2598b6d7e9bc1778",
+  "checkpoint_sha256": "598539c6b9e70ee55d07ac1b48832652ab28f725cbb5f6bd7f32b85904d69589",
+  "canonical_file_count": 1460,
+  "canonical_file_bytes": 1455075411,
+  "artifact_hash_count": 1459,
+  "partition_dataset_count": 8,
+  "partition_manifest_sha256": "2c305f31810acd0e0ca2ef6702c3d27234fc2886f5ad1cc79a5e119a77c154d1",
+  "inherited_cp7_package": {
+    "checkpoint_id": "CP-0007",
+    "parent_checkpoint_id": "CP-0006",
+    "package_path": "temp/sync/CP-0007",
+    "manifest_sha256": "a16a7cc1cb908e7c187300cfb18d83e83ae7fcd0cc0cdd6c1b7a55e3bcc131cd",
+    "readme_sha256": "d98418bdd0383dd0cbea1b7663b71ee8ab8f911789e44295c94bdd58636d72bf",
+    "expected_baseline_commit": "0ee3b7de167a70933bc9884b9217142c2661c374",
+    "expected_parent_commit": "0ee3b7de167a70933bc9884b9217142c2661c374",
+    "expected_commit": "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f",
+    "expected_tree": "c5d5f03ce399961429288e1ffb7ce3565e278fbf",
+    "target_ref": "refs/heads/research/p3-p6-cp7",
+    "source_sync_ref": "refs/heads/sync/cp7-checkpoint-import",
+    "checkpoint_path": "temp/snapshots/checkpoints/CP-0007.json",
+    "checkpoint_sha256": "c5d42d65a8d7b373a6dc6e6ccf5b27d67d09ba85af51b89f468a97795c5223e0",
+    "bundle_sha256": "6477f3bd02d46ea494c6f08069e23d0eba4b2e74fdb32de92bc238ee829d87b6",
+    "bundle_bytes": 31221121,
+    "part_count": 60,
+    "canonical_file_count": 1317,
+    "canonical_file_bytes": 1045568594,
+    "artifact_hash_count": 1316,
+    "partition_dataset_count": 7,
+    "partition_manifest_sha256": "e3e537a4817e8d7f735685f54e3c674329e4241f9d23c73e789195251caac0a6"
+  },
+  "inherited_cp8_package": {
+    "checkpoint_id": "CP-0008",
+    "parent_checkpoint_id": "CP-0007",
+    "package_path": "temp/sync/CP-0008",
+    "manifest_sha256": "897f5dbf90c8cee21f67952e9a2fd65ac02b1c645415bd144be7577996e40974",
+    "readme_sha256": "282aa145d2722b7144f27161e88662c62bffeed366e351bf663d111afb2ae6ad",
+    "expected_baseline_commit": "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f",
+    "expected_parent_commit": "81cbe9940a1464be8483d859857d589883f388e5",
+    "expected_commit": "2e749d4994bd3b8c66fcde59950779adc5d66085",
+    "expected_tree": "6428de0a5ac1e7c288928462eb9c768d08dfff4c",
+    "target_ref": "refs/heads/research/p3-p6-cp8",
+    "source_sync_ref": "refs/heads/sync/cp8-checkpoint-import",
+    "checkpoint_path": "temp/snapshots/checkpoints/CP-0008.json",
+    "checkpoint_sha256": "85e5312505b14862df28c4193b74aeaf4767bb3b56942786f3948b172edcedb0",
+    "bundle_sha256": "2520e20dfead3375c33489033c08b65437d0caf47b4a446ab0475fd942ebdf50",
+    "bundle_bytes": 28210811,
+    "part_count": 54,
+    "canonical_file_count": 1361,
+    "canonical_file_bytes": 1150803660,
+    "artifact_hash_count": 1360,
+    "partition_dataset_count": 7,
+    "partition_manifest_sha256": "af1d5f3f7551119c3d68a56d522fe4ce03583acac673ca3351d5b9ab7de77c34"
+  },
+  "inherited_cp9_package": {
+    "checkpoint_id": "CP-0009",
+    "parent_checkpoint_id": "CP-0008",
+    "expected_baseline_commit": "2e749d4994bd3b8c66fcde59950779adc5d66085",
+    "expected_parent_commit": "5881ca89952d5b83850a9c6f1131a4cce81fe0c5",
+    "expected_commit": "96ce04b268f648978581e87d3be551981f12917d",
+    "expected_tree": "4e61e76e128b51c55c75bc0db1853376f549407e",
+    "target_ref": "refs/heads/research/p3-p6-cp9",
+    "source_sync_ref": "refs/heads/sync/cp9-checkpoint-import",
+    "checkpoint_path": "temp/snapshots/checkpoints/CP-0009.json",
+    "checkpoint_sha256": "b1551bc78888c4df70569e81f9b8e95583d01fb22e996112db68b26087e9a172",
+    "bundle_sha256": "343a4dc01117d6577005e9031201fa06605187463174b107b599db8da0e70411",
+    "bundle_bytes": 18103498,
+    "canonical_file_count": 1414,
+    "canonical_file_bytes": 1346716802,
+    "artifact_hash_count": 1413,
+    "partition_dataset_count": 8,
+    "partition_manifest_sha256": "892df8bbd8e5facf6586478d8f4b67761d337f1dc0b550b4c3fbbaf925299fe8",
+    "readme_sha256": "af2340f0c6a6a971d7b30dd97379750f22bdfe694c26a418f76ddec0d1357bae",
+    "package_path": "temp/sync/CP-0009",
+    "manifest_sha256": "697db1031529b2d8dcdc40ec18965f2d53c82c0cade9cbacd42188e97451d947",
+    "part_count": 35
+  },
+  "restore_requires_remote_research_heads": false,
+  "workflow_generated": false,
+  "remote_verification_performed": false
+}
