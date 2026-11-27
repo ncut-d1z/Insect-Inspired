@@ -19,9 +19,9 @@
   },
   "status": "running",
   "branch": "research/p3-p6-cp8",
-  "external_requests_used": 0,
-  "manual_review_items_used": 0,
-  "cache_reuse_events": 0,
+  "external_requests_used": 10,
+  "manual_review_items_used": 18,
+  "cache_reuse_events": 3,
   "paid_spend": 0,
   "closure": false,
   "research_cutoff_at_utc": "2026-11-26T05:24:08Z",
@@ -49,5 +49,7 @@
     "main_updated": false,
     "remote_branches_deleted": false
   },
-  "next_batch": "P3/P4 recursive citation and P5/P6 source-grounded evidence review; keep all previous unknown clocks."
+  "next_batch": "Complete CP8 QA and full independent remote verification before further research.",
+  "last_completed_batch": "Explicit committed RUN6 review candidates integrated; exact activities, observations and retained failures are recorded in the input bindings and ledgers.",
+  "sync_state": "canonical_transaction_pending_publication"
 }
