@@ -1,0 +1,340 @@
+{
+  "status": "passed",
+  "checkpoint_id": "CP-0008",
+  "scope_id": "SCOPE-0001",
+  "baseline_commit": "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f",
+  "verified_at_utc": "2026-11-27T07:28:22.578147Z",
+  "checks": [
+    {
+      "dataset": "aliases",
+      "old_records": 258,
+      "new_records": 258,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "assessments",
+      "old_records": 71,
+      "new_records": 72,
+      "modified_records": 0,
+      "appended_records": 1,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "author-publication-leads",
+      "old_records": 3811,
+      "new_records": 3811,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "authors",
+      "old_records": 20635,
+      "new_records": 20635,
+      "modified_records": 4,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "cascade-events",
+      "old_records": 0,
+      "new_records": 0,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "citation-context-audit",
+      "old_records": 26,
+      "new_records": 30,
+      "modified_records": 0,
+      "appended_records": 4,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "citation-edges",
+      "old_records": 31843,
+      "new_records": 31843,
+      "modified_records": 7,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "discovery-paths",
+      "old_records": 40595,
+      "new_records": 40595,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "fulltext-file-audit",
+      "old_records": 27,
+      "new_records": 27,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "identity-conflicts",
+      "old_records": 72,
+      "new_records": 72,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "institution-project-leads",
+      "old_records": 2,
+      "new_records": 2,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "manual-reviews",
+      "old_records": 338,
+      "new_records": 356,
+      "modified_records": 0,
+      "appended_records": 18,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "merged-work-audit",
+      "old_records": 42,
+      "new_records": 42,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "new-fulltext-reference-audit",
+      "old_records": 1193,
+      "new_records": 1193,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "official-person-review-facts",
+      "old_records": 8,
+      "new_records": 8,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "organizations",
+      "old_records": 1414,
+      "new_records": 1415,
+      "modified_records": 3,
+      "appended_records": 1,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "privacy-redactions",
+      "old_records": 3,
+      "new_records": 3,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "project-relations",
+      "old_records": 45,
+      "new_records": 49,
+      "modified_records": 0,
+      "appended_records": 4,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "projects",
+      "old_records": 4,
+      "new_records": 7,
+      "modified_records": 0,
+      "appended_records": 3,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "queries",
+      "old_records": 949,
+      "new_records": 961,
+      "modified_records": 0,
+      "appended_records": 12,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "reference-coverage",
+      "old_records": 2381,
+      "new_records": 2381,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "reference-occurrences",
+      "old_records": 158544,
+      "new_records": 158544,
+      "modified_records": 6,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "scope-exclusions",
+      "old_records": 1,
+      "new_records": 1,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "seed-manifest",
+      "old_records": 20,
+      "new_records": 20,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "source-list-coverage",
+      "old_records": 96,
+      "new_records": 96,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "source-observations",
+      "old_records": 950,
+      "new_records": 962,
+      "modified_records": 0,
+      "appended_records": 12,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "tasks",
+      "old_records": 135457,
+      "new_records": 135499,
+      "modified_records": 0,
+      "appended_records": 42,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "uploads",
+      "old_records": 24,
+      "new_records": 24,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "versions",
+      "old_records": 5147,
+      "new_records": 5147,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "work-merge-events",
+      "old_records": 42,
+      "new_records": 42,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "work-relations",
+      "old_records": 4,
+      "new_records": 4,
+      "modified_records": 0,
+      "appended_records": 0,
+      "old_records_preserved": true
+    },
+    {
+      "dataset": "works",
+      "old_records": 5098,
+      "new_records": 5098,
+      "modified_records": 2,
+      "appended_records": 0,
+      "old_records_preserved": true
+    }
+  ],
+  "existing_records_lost": 0,
+  "old_scientific_assessments_preserved": 71,
+  "raw_reference_text_and_fingerprints_preserved": true,
+  "frozen_files": [
+    {
+      "path": "temp/snapshots/checkpoints/CP-0001.json",
+      "bytes": 132109,
+      "sha256": "eeb15790d9c2006ac4fd1cd8c2d1ec26d43b56cc62fb3d084b15452d6214e4d1"
+    },
+    {
+      "path": "temp/snapshots/checkpoints/CP-0002.json",
+      "bytes": 132229,
+      "sha256": "eb2fa4f2c32b39e03ed844fab8c42149a2ca51f9927fe72b07de77484a6d7fd2"
+    },
+    {
+      "path": "temp/snapshots/checkpoints/CP-0003.json",
+      "bytes": 39823075,
+      "sha256": "d671e41d72412c4785a61513b47421235011f4fb3d9ec6bfe8f799da3ff08f10"
+    },
+    {
+      "path": "temp/snapshots/checkpoints/CP-0004.json",
+      "bytes": 51101569,
+      "sha256": "4ba1a26755f2e370b64a9bae336e3cd78961637e2e6dbcd9cbe8b80e064668fd"
+    },
+    {
+      "path": "temp/snapshots/checkpoints/CP-0005.json",
+      "bytes": 51156691,
+      "sha256": "ed0fa6a00066a82d1a9635cf6306b74a1982d3659911ded42c4087ddc443e270"
+    },
+    {
+      "path": "temp/snapshots/checkpoints/CP-0006.json",
+      "bytes": 51240014,
+      "sha256": "43c11e7465404e956274fdaadef74f7bd0d27177111de5200f127f36c8c7d47d"
+    },
+    {
+      "path": "temp/snapshots/checkpoints/CP-0007.json",
+      "bytes": 51513936,
+      "sha256": "c5d42d65a8d7b373a6dc6e6ccf5b27d67d09ba85af51b89f468a97795c5223e0"
+    },
+    {
+      "path": "temp/snapshots/scope.json",
+      "bytes": 2376299,
+      "sha256": "45150b8374103fa15e2d2e16626c86ad884126006d0ceab99eafab41589838e9"
+    },
+    {
+      "path": "temp/snapshots/scopes/SCOPE-0001.json",
+      "bytes": 2376299,
+      "sha256": "45150b8374103fa15e2d2e16626c86ad884126006d0ceab99eafab41589838e9"
+    },
+    {
+      "path": "temp/seed-manifest.jsonl",
+      "bytes": 12007,
+      "sha256": "f8da5ca1a64e494867937c1686b1db8e3b07ea01026a1acbd9ef7ffaf9e57b34"
+    },
+    {
+      "path": "temp/schema.json",
+      "bytes": 195238,
+      "sha256": "2e1a2803f15d9e3cc502ba555df08ac02d84874fd90879728a864156267cea97"
+    },
+    {
+      "path": "temp/validation/cp4-explicit-manual-reassessment-evidence.json",
+      "bytes": 6036,
+      "sha256": "2326bf4aa991fe1b990a93eeacbe1b6d3d3e833db59aa15f4b8c21f873806f88"
+    },
+    {
+      "path": "temp/validation/cp6-data-audit.json",
+      "bytes": 81520,
+      "sha256": "5aa5542b64144068510542d200a64282efb83802cd35d91262bcb447171843a9"
+    },
+    {
+      "path": "temp/validation/cp7-data-audit.json",
+      "bytes": 99094,
+      "sha256": "2cfd1694a9cbf4c3ff2a5c98bf0477f98d8d292dfcca3bc22970decdc4c71827"
+    }
+  ]
+}
