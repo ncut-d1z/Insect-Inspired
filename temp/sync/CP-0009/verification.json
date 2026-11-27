@@ -1,0 +1,519 @@
+{
+  "schema_version": "1.0",
+  "status": "passed",
+  "audit": "independent_remote_only_cp7_cp8_cp9_restore",
+  "repository": "ncut-d1z/Insect-Inspired",
+  "source_url": "https://github.com/ncut-d1z/Insect-Inspired.git",
+  "fixed_sync_commit": "eb0e5d9eef82ac6025e873b8e920e93672dce92e",
+  "started_at_utc": "2026-11-27T09:01:27.401515Z",
+  "completed_at_utc": "2026-11-27T09:07:55.648593Z",
+  "fresh_bare_repository": "/workspace/scratch/f3a87df48210/remote-package-restore-cp9-20261127.git",
+  "prerequisite_remote_fetch_verified_at_utc": "2026-11-27T09:01:48.239824Z",
+  "preliminary_transport_remote_fetch_completed_at_utc": "2026-11-27T09:02:04.699983Z",
+  "preliminary_transport_commit": "9ef262ac0f4265679d56f90c61b78b1cc77ab224",
+  "fixed_transport_remote_fetch_completed_at_utc": "2026-11-27T09:03:52.975499Z",
+  "all_bundle_restore_completed_at_utc": "2026-11-27T09:04:14.335356Z",
+  "real_remote_prerequisite": "0ee3b7de167a70933bc9884b9217142c2661c374",
+  "independence": {
+    "new_bare_initialized_for_this_audit": true,
+    "canonical_repository_objects_borrowed": false,
+    "previous_audit_objects_borrowed": false,
+    "local_transport_release_files_read_during_restore": false,
+    "alternates_absent": true,
+    "shallow_absent": true,
+    "promisor_absent": true,
+    "global_and_system_git_config_disabled": true,
+    "object_directory_environment_cleared": true,
+    "only_object_sources": [
+      "GitHub HTTPS fetch of real prerequisite",
+      "GitHub HTTPS fetch of preliminary and final fixed transport commits",
+      "Locally unbundled bytes read exclusively from the final fixed GitHub transport commit"
+    ],
+    "all_bundles_rebuilt_from_final_fixed_transport_commit": true
+  },
+  "checkpoints": {
+    "CP-0007": {
+      "source_sync_commit": "eb0e5d9eef82ac6025e873b8e920e93672dce92e",
+      "package_path": "temp/sync/CP-0007",
+      "manifest_sha256": "a16a7cc1cb908e7c187300cfb18d83e83ae7fcd0cc0cdd6c1b7a55e3bcc131cd",
+      "readme_sha256": "d98418bdd0383dd0cbea1b7663b71ee8ab8f911789e44295c94bdd58636d72bf",
+      "powershell_7_required": true,
+      "bundle_parts": 60,
+      "all_part_hashes_and_sizes_verified": true,
+      "bundle_bytes": 31221121,
+      "bundle_sha256": "6477f3bd02d46ea494c6f08069e23d0eba4b2e74fdb32de92bc238ee829d87b6",
+      "bundle_prerequisites": [
+        "0ee3b7de167a70933bc9884b9217142c2661c374"
+      ],
+      "bundle_heads": [
+        "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f refs/heads/research/p3-p6-cp7"
+      ],
+      "bundle_verify_exit_code": 0,
+      "bundle_verify_stdout": "The bundle contains this ref:\n3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f refs/heads/research/p3-p6-cp7\nThe bundle requires this ref:\n0ee3b7de167a70933bc9884b9217142c2661c374 \nThe bundle uses this hash algorithm: sha1\n",
+      "bundle_verify_stderr": "/workspace/scratch/f3a87df48210/remote-package-restore-cp9-20261127-CP-0007.bundle is okay\n",
+      "restored_commit": "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f",
+      "restored_tree": "c5d5f03ce399961429288e1ffb7ce3565e278fbf",
+      "direct_parent": "0ee3b7de167a70933bc9884b9217142c2661c374",
+      "baseline_is_ancestor": true,
+      "restored_local_ref": "refs/heads/restored-cp-0007",
+      "local_bundle_path": "/workspace/scratch/f3a87df48210/remote-package-restore-cp9-20261127-CP-0007.bundle",
+      "checkpoint_sha256": "c5d42d65a8d7b373a6dc6e6ccf5b27d67d09ba85af51b89f468a97795c5223e0",
+      "checkpoint_self_verified": true,
+      "checkpoint_parent": "CP-0006",
+      "checkpoint_status": "valid",
+      "checkpoint_validation_state": "passed",
+      "artifact_hashes_verified": 1316,
+      "canonical_files_verified": 1317,
+      "canonical_file_bytes_verified": 1045568594,
+      "artifact_paths_exactly_cover_tree_except_self": true,
+      "partition_manifest_sha256": "e3e537a4817e8d7f735685f54e3c674329e4241f9d23c73e789195251caac0a6",
+      "partition_dataset_count": 7,
+      "physical_partition_count": 120,
+      "datasets": {
+        "authors.jsonl": {
+          "parts": 9,
+          "records": 20635,
+          "bytes": 34259716,
+          "sha256": "d869a83196e518c2cd926eaa5a521f109689b32330e1b95529c25d4d903a48c6",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "citation-edges.jsonl": {
+          "parts": 4,
+          "records": 31843,
+          "bytes": 16116046,
+          "sha256": "95b8f8c5c8500f7e07973060606096ce5ab69f20871ce02b62245a462eb62161",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "discovery-paths.jsonl": {
+          "parts": 14,
+          "records": 40595,
+          "bytes": 56659998,
+          "sha256": "e2ff1b49c562adc343fbb15ee0b6b2e56ed5a7d2c29a19752673ed21245787fd",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "reference-occurrences.jsonl": {
+          "parts": 46,
+          "records": 158544,
+          "bytes": 189565432,
+          "sha256": "873cff343a305f672ed5119d90f954fad155dc13b4974cc3bbd91d781cd0a543",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "tasks.jsonl": {
+          "parts": 30,
+          "records": 135457,
+          "bytes": 123406263,
+          "sha256": "fba8cdc4233c1fd7e3e0815ff0e9959f4d39d8780e17ee88de90964e098aec01",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "versions.jsonl": {
+          "parts": 2,
+          "records": 5147,
+          "bytes": 5753732,
+          "sha256": "a369576f790b8a464446d03584f2b4cac7c42325a7144d5a66a5f26c2cc3a938",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "works.jsonl": {
+          "parts": 15,
+          "records": 5098,
+          "bytes": 61874235,
+          "sha256": "e9af6d073c582c1f1ba3f0cc1e985287b0d8f9d1d0b8a71c37429f268dbb50d7",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        }
+      },
+      "all_artifacts_and_partitions_passed": true
+    },
+    "CP-0008": {
+      "source_sync_commit": "eb0e5d9eef82ac6025e873b8e920e93672dce92e",
+      "package_path": "temp/sync/CP-0008",
+      "manifest_sha256": "897f5dbf90c8cee21f67952e9a2fd65ac02b1c645415bd144be7577996e40974",
+      "readme_sha256": "282aa145d2722b7144f27161e88662c62bffeed366e351bf663d111afb2ae6ad",
+      "powershell_7_required": true,
+      "bundle_parts": 54,
+      "all_part_hashes_and_sizes_verified": true,
+      "bundle_bytes": 28210811,
+      "bundle_sha256": "2520e20dfead3375c33489033c08b65437d0caf47b4a446ab0475fd942ebdf50",
+      "bundle_prerequisites": [
+        "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f"
+      ],
+      "bundle_heads": [
+        "2e749d4994bd3b8c66fcde59950779adc5d66085 refs/heads/research/p3-p6-cp8"
+      ],
+      "bundle_verify_exit_code": 0,
+      "bundle_verify_stdout": "The bundle contains this ref:\n2e749d4994bd3b8c66fcde59950779adc5d66085 refs/heads/research/p3-p6-cp8\nThe bundle requires this ref:\n3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f \nThe bundle uses this hash algorithm: sha1\n",
+      "bundle_verify_stderr": "/workspace/scratch/f3a87df48210/remote-package-restore-cp9-20261127-CP-0008.bundle is okay\n",
+      "restored_commit": "2e749d4994bd3b8c66fcde59950779adc5d66085",
+      "restored_tree": "6428de0a5ac1e7c288928462eb9c768d08dfff4c",
+      "direct_parent": "81cbe9940a1464be8483d859857d589883f388e5",
+      "baseline_is_ancestor": true,
+      "restored_local_ref": "refs/heads/restored-cp-0008",
+      "local_bundle_path": "/workspace/scratch/f3a87df48210/remote-package-restore-cp9-20261127-CP-0008.bundle",
+      "checkpoint_sha256": "85e5312505b14862df28c4193b74aeaf4767bb3b56942786f3948b172edcedb0",
+      "checkpoint_self_verified": true,
+      "checkpoint_parent": "CP-0007",
+      "checkpoint_status": "valid",
+      "checkpoint_validation_state": "passed",
+      "artifact_hashes_verified": 1360,
+      "canonical_files_verified": 1361,
+      "canonical_file_bytes_verified": 1150803660,
+      "artifact_paths_exactly_cover_tree_except_self": true,
+      "partition_manifest_sha256": "af1d5f3f7551119c3d68a56d522fe4ce03583acac673ca3351d5b9ab7de77c34",
+      "partition_dataset_count": 7,
+      "physical_partition_count": 120,
+      "datasets": {
+        "authors.jsonl": {
+          "parts": 9,
+          "records": 20635,
+          "bytes": 34277035,
+          "sha256": "67115cc1dda2a34427f47bb3496e4e1f27c9974cac56a4a95e6c664d65290edb",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "citation-edges.jsonl": {
+          "parts": 4,
+          "records": 31843,
+          "bytes": 16127854,
+          "sha256": "fec0cd8093f78f719e42e86033e9cf24ba2324b17e1d7b5505f567abf6ce5e45",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "discovery-paths.jsonl": {
+          "parts": 14,
+          "records": 40595,
+          "bytes": 56659998,
+          "sha256": "e2ff1b49c562adc343fbb15ee0b6b2e56ed5a7d2c29a19752673ed21245787fd",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "reference-occurrences.jsonl": {
+          "parts": 46,
+          "records": 158544,
+          "bytes": 189568560,
+          "sha256": "cd73b02701b180640b5a22644141c262c8aeab66662870a95187e2897afcb1a1",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "tasks.jsonl": {
+          "parts": 30,
+          "records": 135499,
+          "bytes": 123459020,
+          "sha256": "ae739897b4c89911bfeb15fc047fb2a9c861d54a9f68b58daf1f148a7e883831",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "versions.jsonl": {
+          "parts": 2,
+          "records": 5147,
+          "bytes": 5753732,
+          "sha256": "a369576f790b8a464446d03584f2b4cac7c42325a7144d5a66a5f26c2cc3a938",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "works.jsonl": {
+          "parts": 15,
+          "records": 5098,
+          "bytes": 61881519,
+          "sha256": "6d6990449c7ba81f8a15fc3848ec026059638ad9eead8954f91b13444fbd8ef3",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        }
+      },
+      "all_artifacts_and_partitions_passed": true
+    },
+    "CP-0009": {
+      "source_sync_commit": "eb0e5d9eef82ac6025e873b8e920e93672dce92e",
+      "package_path": "temp/sync/CP-0009",
+      "manifest_sha256": "697db1031529b2d8dcdc40ec18965f2d53c82c0cade9cbacd42188e97451d947",
+      "readme_sha256": "af2340f0c6a6a971d7b30dd97379750f22bdfe694c26a418f76ddec0d1357bae",
+      "powershell_7_required": true,
+      "bundle_parts": 35,
+      "all_part_hashes_and_sizes_verified": true,
+      "bundle_bytes": 18103498,
+      "bundle_sha256": "343a4dc01117d6577005e9031201fa06605187463174b107b599db8da0e70411",
+      "bundle_prerequisites": [
+        "2e749d4994bd3b8c66fcde59950779adc5d66085"
+      ],
+      "bundle_heads": [
+        "96ce04b268f648978581e87d3be551981f12917d refs/heads/research/p3-p6-cp9"
+      ],
+      "bundle_verify_exit_code": 0,
+      "bundle_verify_stdout": "The bundle contains this ref:\n96ce04b268f648978581e87d3be551981f12917d refs/heads/research/p3-p6-cp9\nThe bundle requires this ref:\n2e749d4994bd3b8c66fcde59950779adc5d66085 \nThe bundle uses this hash algorithm: sha1\n",
+      "bundle_verify_stderr": "/workspace/scratch/f3a87df48210/remote-package-restore-cp9-20261127-CP-0009.bundle is okay\n",
+      "restored_commit": "96ce04b268f648978581e87d3be551981f12917d",
+      "restored_tree": "4e61e76e128b51c55c75bc0db1853376f549407e",
+      "direct_parent": "5881ca89952d5b83850a9c6f1131a4cce81fe0c5",
+      "baseline_is_ancestor": true,
+      "restored_local_ref": "refs/heads/restored-cp-0009",
+      "local_bundle_path": "/workspace/scratch/f3a87df48210/remote-package-restore-cp9-20261127-CP-0009.bundle",
+      "checkpoint_sha256": "b1551bc78888c4df70569e81f9b8e95583d01fb22e996112db68b26087e9a172",
+      "checkpoint_self_verified": true,
+      "checkpoint_parent": "CP-0008",
+      "checkpoint_status": "valid",
+      "checkpoint_validation_state": "passed",
+      "artifact_hashes_verified": 1413,
+      "canonical_files_verified": 1414,
+      "canonical_file_bytes_verified": 1346716802,
+      "artifact_paths_exactly_cover_tree_except_self": true,
+      "partition_manifest_sha256": "892df8bbd8e5facf6586478d8f4b67761d337f1dc0b550b4c3fbbaf925299fe8",
+      "partition_dataset_count": 8,
+      "physical_partition_count": 133,
+      "datasets": {
+        "authors.jsonl": {
+          "parts": 9,
+          "records": 20635,
+          "bytes": 34506603,
+          "sha256": "56512613b84acc7802aca013370823041bd75ead79721906a5b66fd9dabe64a0",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "citation-edges.jsonl": {
+          "parts": 4,
+          "records": 31843,
+          "bytes": 16127854,
+          "sha256": "fec0cd8093f78f719e42e86033e9cf24ba2324b17e1d7b5505f567abf6ce5e45",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "discovery-paths.jsonl": {
+          "parts": 14,
+          "records": 40595,
+          "bytes": 56659998,
+          "sha256": "e2ff1b49c562adc343fbb15ee0b6b2e56ed5a7d2c29a19752673ed21245787fd",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "reference-occurrences.jsonl": {
+          "parts": 46,
+          "records": 158544,
+          "bytes": 189568560,
+          "sha256": "cd73b02701b180640b5a22644141c262c8aeab66662870a95187e2897afcb1a1",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "tasks.jsonl": {
+          "parts": 41,
+          "records": 185020,
+          "bytes": 169342996,
+          "sha256": "a84f8a7d9ef3e407fb09b3ce36d21133de56cbb68400d0f045080b4bb07eac5c",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "versions.jsonl": {
+          "parts": 2,
+          "records": 5147,
+          "bytes": 5754468,
+          "sha256": "674efa1353e41aaf8c253942b0ff1383e8470a754472b6e9a03549e060118e82",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "works.jsonl": {
+          "parts": 15,
+          "records": 5098,
+          "bytes": 62343279,
+          "sha256": "95ff9b6ce6719e667ef664700f2f5b4c3947ca01ed7d3a07aa6e28136a507c4f",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        },
+        "organizations.jsonl": {
+          "parts": 2,
+          "records": 1415,
+          "bytes": 4592943,
+          "sha256": "47cbdb519763f1de3d4d37e243cf53268f515866ac88a1566b729acb078b6645",
+          "all_part_hashes_bytes_line_counts_verified": true,
+          "logical_hash_and_record_count_verified": true
+        }
+      },
+      "all_artifacts_and_partitions_passed": true
+    }
+  },
+  "transport_totals": {
+    "packages": 3,
+    "parts": 149,
+    "bundle_bytes": 77535430,
+    "all_remote_parts_and_complete_bundle_hashes_verified": true,
+    "inherited_package_bindings_verified": true
+  },
+  "history": {
+    "cp7_is_ancestor_of_cp8": true,
+    "cp8_is_ancestor_of_cp9": true,
+    "cp7_to_cp8_commit_count": 18,
+    "cp8_to_cp9_commit_count": 13,
+    "cp6_checkpoint_self_identical_in_all_three_restored_snapshots": true,
+    "cp7_checkpoint_self_identical_in_cp8_and_cp9": true,
+    "cp8_checkpoint_self_identical_in_cp9": true,
+    "frozen_checkpoint_bytes_preserved_from_cp8": {
+      "CP-0001": {
+        "path": "temp/snapshots/checkpoints/CP-0001.json",
+        "sha256": "eeb15790d9c2006ac4fd1cd8c2d1ec26d43b56cc62fb3d084b15452d6214e4d1",
+        "bytes": 132109,
+        "identical_between_cp8_and_cp9": true
+      },
+      "CP-0002": {
+        "path": "temp/snapshots/checkpoints/CP-0002.json",
+        "sha256": "eb2fa4f2c32b39e03ed844fab8c42149a2ca51f9927fe72b07de77484a6d7fd2",
+        "bytes": 132229,
+        "identical_between_cp8_and_cp9": true
+      },
+      "CP-0003": {
+        "path": "temp/snapshots/checkpoints/CP-0003.json",
+        "sha256": "d671e41d72412c4785a61513b47421235011f4fb3d9ec6bfe8f799da3ff08f10",
+        "bytes": 39823075,
+        "identical_between_cp8_and_cp9": true
+      },
+      "CP-0004": {
+        "path": "temp/snapshots/checkpoints/CP-0004.json",
+        "sha256": "4ba1a26755f2e370b64a9bae336e3cd78961637e2e6dbcd9cbe8b80e064668fd",
+        "bytes": 51101569,
+        "identical_between_cp8_and_cp9": true
+      },
+      "CP-0005": {
+        "path": "temp/snapshots/checkpoints/CP-0005.json",
+        "sha256": "ed0fa6a00066a82d1a9635cf6306b74a1982d3659911ded42c4087ddc443e270",
+        "bytes": 51156691,
+        "identical_between_cp8_and_cp9": true
+      },
+      "CP-0006": {
+        "path": "temp/snapshots/checkpoints/CP-0006.json",
+        "sha256": "43c11e7465404e956274fdaadef74f7bd0d27177111de5200f127f36c8c7d47d",
+        "bytes": 51240014,
+        "identical_between_cp8_and_cp9": true
+      },
+      "CP-0007": {
+        "path": "temp/snapshots/checkpoints/CP-0007.json",
+        "sha256": "c5d42d65a8d7b373a6dc6e6ccf5b27d67d09ba85af51b89f468a97795c5223e0",
+        "bytes": 51513936,
+        "identical_between_cp8_and_cp9": true
+      },
+      "CP-0008": {
+        "path": "temp/snapshots/checkpoints/CP-0008.json",
+        "sha256": "85e5312505b14862df28c4193b74aeaf4767bb3b56942786f3948b172edcedb0",
+        "bytes": 51535820,
+        "identical_between_cp8_and_cp9": true
+      }
+    },
+    "cp8_original_archives": {
+      "assessments": {
+        "source_commit": "2e749d4994bd3b8c66fcde59950779adc5d66085",
+        "source_logical_dataset": "temp/assessments.jsonl",
+        "source_physical_parts": [
+          "assessments.jsonl"
+        ],
+        "archive_path": "temp/history/CP-0008/assessments.jsonl",
+        "bytes": 3719058,
+        "records": 72,
+        "sha256": "e92f21afe162bc6bf5d207e7294ab9e71ee72649773541afbacfe74977789a80",
+        "exact_original_bytes_preserved": true
+      },
+      "merged-work-audit": {
+        "source_commit": "2e749d4994bd3b8c66fcde59950779adc5d66085",
+        "source_logical_dataset": "temp/merged-work-audit.jsonl",
+        "source_physical_parts": [
+          "merged-work-audit.jsonl"
+        ],
+        "archive_path": "temp/history/CP-0008/merged-work-audit.jsonl",
+        "bytes": 927703,
+        "records": 42,
+        "sha256": "45c8a88ad5bb024e0a576e27d5f9a8bf2a0bc75831b79dbf9415567d5128213f",
+        "exact_original_bytes_preserved": true
+      },
+      "queries": {
+        "source_commit": "2e749d4994bd3b8c66fcde59950779adc5d66085",
+        "source_logical_dataset": "temp/queries.jsonl",
+        "source_physical_parts": [
+          "queries.jsonl"
+        ],
+        "archive_path": "temp/history/CP-0008/queries.jsonl",
+        "bytes": 2733758,
+        "records": 961,
+        "sha256": "c9e6038e1053747d11c89bcc97042a92bb0631109d688edfa0af0bc26173cc20",
+        "exact_original_bytes_preserved": true
+      }
+    },
+    "original_assessment_record_count": 72,
+    "cp8_scope_seed_schema_and_evidence_gate_files_unchanged": {
+      "scripts/gates.py": {
+        "sha256": "99f485e5244a6e62c326d18c989e355540726e7ddab9e5bfca5461c538e6b0d6",
+        "bytes": 19444
+      },
+      "scripts/audit_run.py": {
+        "sha256": "03b349c4814a07eb2994f70b2ce068e954379bd352651756e23adc6df79cd044",
+        "bytes": 68061
+      },
+      "temp/schema.json": {
+        "sha256": "2e1a2803f15d9e3cc502ba555df08ac02d84874fd90879728a864156267cea97",
+        "bytes": 195238
+      },
+      "temp/seed-manifest.jsonl": {
+        "sha256": "f8da5ca1a64e494867937c1686b1db8e3b07ea01026a1acbd9ef7ffaf9e57b34",
+        "bytes": 12007
+      },
+      "temp/snapshots/scope.json": {
+        "sha256": "45150b8374103fa15e2d2e16626c86ad884126006d0ceab99eafab41589838e9",
+        "bytes": 2376299
+      },
+      "temp/snapshots/scopes/SCOPE-0001.json": {
+        "sha256": "45150b8374103fa15e2d2e16626c86ad884126006d0ceab99eafab41589838e9",
+        "bytes": 2376299
+      }
+    }
+  },
+  "git_fsck": {
+    "command": "git fsck --full --strict --no-reflogs",
+    "scope": "all refs and objects in fresh remote-only bare repository",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "remote_refs_observed": {
+    "at_utc": "2026-11-27T09:07:55.648593Z",
+    "refs": {
+      "refs/heads/main": "bb7726c2ef334df0d7069165156b1cbc2c4e2fd8",
+      "refs/heads/research/p3-p6-cp6": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5",
+      "refs/heads/research/p3-p6-cp7": "0ee3b7de167a70933bc9884b9217142c2661c374",
+      "refs/heads/research/p3-p6-cp8": null,
+      "refs/heads/research/p3-p6-cp9": null,
+      "refs/heads/sync/cp7-checkpoint-import": "3f414eaf3208091fba2cd6db6fdad07e037bec52",
+      "refs/heads/sync/cp8-checkpoint-import": "73e20d4998f1b2af524bb3eea2f9e07e97aeb7a7",
+      "refs/heads/sync/cp9-checkpoint-import": "eb0e5d9eef82ac6025e873b8e920e93672dce92e"
+    }
+  },
+  "remote_package_complete_and_restore_verified": true,
+  "remote_canonical_branch_updated": false,
+  "canonical_target_ref_matches_checkpoint": {
+    "CP-0007": false,
+    "CP-0008": false,
+    "CP-0009": false
+  },
+  "remote_write_actions_in_this_restore_audit": [],
+  "main_merge_performed": false,
+  "remote_branch_deletion_performed": false,
+  "workflow_installed_or_executed": false,
+  "powershell_validation": {
+    "all_three_packaged_readmes_require_PowerShell_7": true,
+    "commands_reviewed_statically_only": true,
+    "executed_on_Windows": false,
+    "powershell_steps_executed": false,
+    "equivalent_Linux_restore_actually_executed": true,
+    "host_push_merge_and_cleanup_remain_user_actions": true
+  },
+  "command_basis": [
+    "Sanitize Git object/config environment; initialize a new empty bare repository without alternates or local object borrowing.",
+    "git fetch --no-tags https://github.com/ncut-d1z/Insect-Inspired.git 0ee3b7de167a70933bc9884b9217142c2661c374:refs/heads/remote-prerequisite",
+    "git fetch --no-tags https://github.com/ncut-d1z/Insect-Inspired.git 9ef262ac0f4265679d56f90c61b78b1cc77ab224:refs/heads/transport-preliminary",
+    "git fetch --no-tags https://github.com/ncut-d1z/Insect-Inspired.git eb0e5d9eef82ac6025e873b8e920e93672dce92e:refs/heads/transport-final",
+    "Read manifest, README and every ordered binary part with git show eb0e5d9eef82ac6025e873b8e920e93672dce92e:temp/sync/CP-000N/<path>; verify per-part byte count/SHA256 and complete concatenated bundle byte count/SHA256.",
+    "For CP7, CP8, CP9 in order: parse bundle headers, git bundle verify, git bundle list-heads, git bundle unbundle; update only local restored refs.",
+    "Verify expected commit/tree/direct parent and baseline ancestry with git show -s --format=%H\\ %T\\ %P and git merge-base --is-ancestor.",
+    "Enumerate the complete canonical tree with git ls-tree -r -l -z --full-tree; stream every blob with git cat-file --batch, checking raw SHA256 and size against checkpoint artifact hashes or the separately pinned checkpoint self hash.",
+    "For every logical partition dataset: verify each physical part SHA256/bytes/newline count, then stream parts in manifest order and verify full logical SHA256/record count.",
+    "Compare CP9 historical archives byte-for-byte with complete logical datasets read from restored CP8; verify all frozen CP1-CP8 checkpoint bytes and scope/seed/schema/gates/audit_run unchanged.",
+    "git fsck --full --strict --no-reflogs",
+    "git ls-remote --heads https://github.com/ncut-d1z/Insect-Inspired.git"
+  ]
+}
