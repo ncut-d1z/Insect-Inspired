@@ -1,0 +1,112 @@
+{
+  "format_version": 1,
+  "status": "passed",
+  "checkpoint_id": "CP-0007",
+  "execution_environment": "github_actions_ubuntu_24_04",
+  "local_browser_execution_succeeded": false,
+  "repository": "ncut-d1z/Insect-Inspired",
+  "sync_ref": "refs/heads/sync/cp7-checkpoint-import",
+  "input_commit_sha": "4106dedaebd42d12d27c8c6cfbedd8ac2521e186",
+  "actions_run_id": "45939079605",
+  "actions_run_attempt": "1",
+  "actions_run_url": "https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45939079605",
+  "job": "verify",
+  "runner_os": "Linux",
+  "html_sha256": "9a07565ca74d1d039426cb11cde5603259995f89c71565b4136d57469c0c6982",
+  "html_bytes": 47780202,
+  "test_script_path": "scripts/html-smoke.mjs",
+  "test_script_sha256": "9a927248fff3f66f521e75bbcde9a9b18c6cf73ef07294a358d0f7b7de11830a",
+  "playwright_version": "1.62.1",
+  "node_version": "v22.23.5",
+  "browser_version": "Google Chrome 158.0.8127.36",
+  "input_manifest_sha256": "250540fe577e7c38ac464c2dba26704096f51486c5ee0c4c16721e6db6a564aa",
+  "check_count": 10,
+  "test_started_at_utc": "2026-11-27T04:18:17.603Z",
+  "test_completed_at_utc": "2026-11-27T04:18:58.708Z",
+  "recorded_at_utc": "2026-11-27T04:18:58.953870Z",
+  "raw_test_output_modified": false,
+  "full_research_checkpoint_validation": false,
+  "evidence_files": [
+    {
+      "path": "ui-audit-final.json",
+      "bytes": 1851,
+      "sha256": "1fbb001d416b255844f3d462f0b6d0a2d89173fcfbcf7f431d33e26c1e34143f"
+    },
+    {
+      "path": "html-browser-check.json",
+      "bytes": 1851,
+      "sha256": "1fbb001d416b255844f3d462f0b6d0a2d89173fcfbcf7f431d33e26c1e34143f"
+    },
+    {
+      "path": "html-desktop.png",
+      "bytes": 272825,
+      "sha256": "53eab317a4736cb3fd7788cd46005fb62ea4891afe44d3a13bfcd264ee57d1fc"
+    },
+    {
+      "path": "html-topic.png",
+      "bytes": 266178,
+      "sha256": "35bdafd466978b03c51fb1c1c18c6f43e1c3f48e7e91b9ef5847d2d3b2fe3525"
+    },
+    {
+      "path": "html-mobile.png",
+      "bytes": 96908,
+      "sha256": "997d5c70ce11071db5f485e8d944c9bd96d7804c6ac8ca29163ff20531b15f6d"
+    },
+    {
+      "path": "html-mobile-controls.png",
+      "bytes": 97803,
+      "sha256": "38a25b1741fc9b68a79802d6aabe919b232be6600716f97c20bd3493fbdce609"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 2971,
+      "sha256": "250540fe577e7c38ac464c2dba26704096f51486c5ee0c4c16721e6db6a564aa"
+    }
+  ],
+  "output_commit_parent_sha": "4106dedaebd42d12d27c8c6cfbedd8ac2521e186",
+  "publication_note": "Output commit SHA is printed in Actions logs and summary; this receipt is part of that commit.",
+  "font_environment": {
+    "environment": "github_actions_ubuntu_24_04",
+    "package": "fonts-noto-cjk",
+    "installed_package": "fonts-noto-cjk\t1:20230817+repack1-3",
+    "selected_zh_cn_font": "NotoSansCJK-Regular.ttc: \"Noto Sans CJK SC\" \"Regular\"",
+    "noto_cjk_verified": true,
+    "commands": [
+      {
+        "argv": [
+          "sudo",
+          "apt-get",
+          "update",
+          "-qq"
+        ],
+        "exit_code": 0,
+        "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output": ""
+      },
+      {
+        "argv": [
+          "sudo",
+          "apt-get",
+          "install",
+          "-y",
+          "--no-install-recommends",
+          "fonts-noto-cjk"
+        ],
+        "exit_code": 0,
+        "output_sha256": "3bf2aec527bc557ef387d0587b7adf5b2bfa18b4374ba4c89f7f4e4891921e71",
+        "output": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nSuggested packages:\n  fonts-noto-cjk-extra\nThe following NEW packages will be installed:\n  fonts-noto-cjk\n0 upgraded, 1 newly installed, 0 to remove and 42 not upgraded.\nNeed to get 61.2 MB of archives.\nAfter this operation, 93.2 MB of additional disk space will be used.\nGet:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [152 B]\nGet:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu noble/main amd64 fonts-noto-cjk all 1:20230817+repack1-3 [61.2 MB]\nFetched 61.2 MB in 3s (24.0 MB/s)\nSelecting previously unselected package fonts-noto-cjk.\n(Reading database ... \n(Reading database ... 5%\n(Reading database ... 10%\n(Reading database ... 15%\n(Reading database ... 20%\n(Reading database ... 25%\n(Reading database ... 30%\n(Reading database ... 35%\n(Reading database ... 40%\n(Reading database ... 45%\n(Reading database ... 50%\n(Reading database ... 55%\n(Reading database ... 60%\n(Reading database ... 65%\n(Reading database ... 70%\n(Reading database ... 75%\n(Reading database ... 80%\n(Reading database ... 85%\n(Reading database ... 90%\n(Reading database ... 95%\n(Reading database ... 100%\n(Reading database ... 216824 files and directories currently installed.)\nPreparing to unpack .../fonts-noto-cjk_1%3a20230817+repack1-3_all.deb ...\nUnpacking fonts-noto-cjk (1:20230817+repack1-3) ...\nSetting up fonts-noto-cjk (1:20230817+repack1-3) ...\nProcessing triggers for fontconfig (2.15.0-1.1ubuntu2) ...\n\nRunning kernel seems to be up-to-date.\n\nNo services need to be restarted.\n\nNo containers need to be restarted.\n\nNo user sessions are running outdated binaries.\n\nNo VM guests are running outdated hypervisor (qemu) binaries on this host.\n"
+      },
+      {
+        "argv": [
+          "fc-match",
+          ":lang=zh-cn"
+        ],
+        "exit_code": 0,
+        "output_sha256": "88503a7ba86ca25b7e69eea4bf6753e4621ff932cfa5708f41b9bc3f6ba86644",
+        "output": "NotoSansCJK-Regular.ttc: \"Noto Sans CJK SC\" \"Regular\"\n"
+      }
+    ]
+  },
+  "evidence_directory": "temp/sync/CP-0007/ui-evidence-cjk/",
+  "prior_evidence_preserved": "temp/sync/CP-0007/ui-evidence/"
+}
