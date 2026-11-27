@@ -365,6 +365,44 @@ def migration_pointer_parent(record, pointer):
     return node
 
 
+def verify_legacy_artifacts(repo, base_manifest, watch=None):
+    """Keep CP8 receipts, evidence, old tools, runs and QA at their original hashes.
+
+    Only the complete logical data checked by verify_maintenance, its physical
+    partition manifest, regenerated exports and three execution-status documents
+    may differ. New CP9 files never replace a historical artifact.
+    """
+    checkpoint_path = 'temp/snapshots/checkpoints/CP-0008.json'
+    raw = baseline_bytes(repo, checkpoint_path)
+    parent = json.loads(raw)
+    maintenance_require(parent['checkpoint_id'] == PARENT and parent['status'] == 'valid'
+                        and sha_bytes(raw) == '85e5312505b14862df28c4193b74aeaf4767bb3b56942786f3948b172edcedb0',
+                        'Frozen CP8 artifact inventory differs')
+    expected = dict(parent['artifact_hashes'])
+    expected[checkpoint_path] = sha_bytes(raw)
+    logical = {'temp/' + name + '.jsonl' for name in logical_names_at(repo, BASE_COMMIT)}
+    logical.update('temp/' + safe_relative(part['path'])
+                   for dataset in base_manifest['datasets'].values() for part in dataset['parts'])
+    excluded = logical | set(EXPORTS) | {
+        'temp/partitions/manifest.json', 'README.md', 'temp/progress.md', 'temp/change-log.md',
+    }
+    checked = size = 0
+    for name, expected_hash in expected.items():
+        if name in excluded:
+            continue
+        path = Path(repo) / safe_relative(name)
+        maintenance_require(path.is_file() and not path.is_symlink(), 'Historical artifact missing or replaced: ' + name)
+        if watch:
+            watch(path)
+        maintenance_require(original.sha(path) == expected_hash, 'Historical artifact bytes changed: ' + name)
+        checked += 1
+        size += path.stat().st_size
+    return {'status': 'passed', 'source_commit': BASE_COMMIT, 'checked_files': checked,
+            'checked_bytes': size, 'excluded_paths': sorted(set(expected) & excluded),
+            'original_query_receipts_and_evidence_preserved': True,
+            'old_scripts_runs_and_qa_preserved': True}
+
+
 def verify_maintenance(repo, now, watch=None):
     """Independently prove complete CP8 -> current bytes through bounded batches.
 
@@ -412,6 +450,7 @@ def verify_maintenance(repo, now, watch=None):
             git_bytes(repo, 'merge-base', '--is-ancestor', batches[-1][0]['before_commit'], commit)
         batches.append((batch, evaluated))
     base_manifest = logical_manifest_at(repo, BASE_COMMIT)
+    legacy = verify_legacy_artifacts(repo, base_manifest, watch)
     names = logical_names_at(repo, BASE_COMMIT)
     base_stats = {name: logical_stats_at(repo, name, base_manifest, BASE_COMMIT) for name in sorted(names)}
     maintenance_require(report['counts_before'] == {name: item['records'] for name, item in base_stats.items()},
@@ -563,6 +602,7 @@ def verify_maintenance(repo, now, watch=None):
     return {'status': 'passed', 'maintenance_only': True, 'baseline_commit': BASE_COMMIT,
             'verified_at_utc': now.isoformat().replace('+00:00', 'Z'), 'batches': len(batches),
             **dict(totals), 'history_archives': archives, 'original_task_events_preserved': True,
+            'unchanged_cp8_artifacts': legacy,
             'original_clocks_preserved': True, 'scientific_values_and_evidence_unchanged': True,
             'counts_before': report['counts_before'], 'counts_after': counts_after,
             'logical_after': final_stats, 'new_scientific_claims': 0, 'new_queries': 0,
