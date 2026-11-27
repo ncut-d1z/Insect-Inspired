@@ -1,0 +1,1889 @@
+{
+  "schema_version": "1.1.1",
+  "candidate_id": "RUN-0006-citation-candidate",
+  "candidate_type": "P4_existing_citer_original_context_and_backward_reference_review",
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0008",
+  "status": "reviewed_candidate_pending_canonical_integration",
+  "created_at_utc": "2026-11-27T07:05:21.388003Z",
+  "baseline_checkpoint_id": "CP-0007",
+  "baseline_commit_sha": "3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f",
+  "repository_head_at_creation": "b1af432fece0f41f28a330f7a55b566e2b13cd77",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "receipt_bindings": {
+    "Q-RUN06-P4-Egelhaaf2023-context-005": {
+      "path": "temp/query-results/Q-RUN06-P4-Egelhaaf2023-context-005.json",
+      "bytes": 3793,
+      "sha256": "a3ca794cc4532b5afeff1f663ae1c447be6c14fd5bef4e54a58f7c5fabc79220"
+    },
+    "Q-RUN06-P4-Egelhaaf2023-reference-window-006": {
+      "path": "temp/query-results/Q-RUN06-P4-Egelhaaf2023-reference-window-006.json",
+      "bytes": 2228,
+      "sha256": "2c87fe5f62c975a1d1b06f6543749a5cafd52493c8a84e89960c6158235bc116"
+    },
+    "Q-RUN06-P4-Egelhaaf2023-publisher-007": {
+      "path": "temp/query-results/Q-RUN06-P4-Egelhaaf2023-publisher-007.json",
+      "bytes": 3444,
+      "sha256": "70d9200a0a3d12d1bfda97fc0573baf0ce17620c0ea836f180d1d0aacf66ffd2"
+    },
+    "Q-RUN06-P4-Egelhaaf2023-bibliography-008": {
+      "path": "temp/query-results/Q-RUN06-P4-Egelhaaf2023-bibliography-008.json",
+      "bytes": 4544,
+      "sha256": "95add55048a6ee0be33201fe98c50064e926470061559628f05bba238bd8e44a"
+    }
+  },
+  "summary": {
+    "manual_review_activities": 3,
+    "newly_context_reviewed_edges": 2,
+    "official_bibliography_occurrences_crosschecked": 2,
+    "new_chinese_summaries": 1,
+    "new_works": 0,
+    "new_versions": 0,
+    "new_citation_edges": 0,
+    "new_assessments": 0,
+    "external_requests": 5,
+    "external_web_tool_calls": 4,
+    "cache_reuse_events": 0,
+    "existing_tasks_advanced": 4,
+    "existing_abstract_tasks_completed": 1,
+    "new_bounded_context_tasks_completed": 1,
+    "task_events": 5,
+    "canonical_datasets_written": false
+  },
+  "additions": {
+    "manual-reviews": [
+      {
+        "review_id": "MR-RUN06-P4-Egelhaaf2023-001",
+        "run_id": "RUN-0006",
+        "review_type": "original_citation_context_and_target_review",
+        "entity_id": "W-D0f5e53ca30b3a9ea",
+        "reviewer": "P3/P4 citation audit agent",
+        "recorded_at_utc": "2026-11-27T07:05:21.388003Z",
+        "artifact": "temp/reports/RUN-0006-citation-candidate.json",
+        "decision": "verify_existing_citation_edge_context",
+        "notes": "综述把Strübbe2015列为限定条件下从复杂光流计算平移与空间信息的理论依据，并转向主动视觉策略来讨论降低计算负担。可确认背景及方法对照作用；这不是对该论文的复现实验、否证或独立性能验证。",
+        "supporting_record_ids": [
+          "R-CR-b8f1491dd9c0953a",
+          "CE-99e646e0c0f3265a",
+          "W-S15",
+          "CTX-RUN06-P4-Egelhaaf2023-Strubbe2015"
+        ],
+        "query_ids": [
+          "Q-RUN06-P4-Egelhaaf2023-context-005",
+          "Q-RUN06-P4-Egelhaaf2023-publisher-007",
+          "Q-RUN06-P4-Egelhaaf2023-bibliography-008"
+        ]
+      },
+      {
+        "review_id": "MR-RUN06-P4-Egelhaaf2023-002",
+        "run_id": "RUN-0006",
+        "review_type": "original_citation_context_and_target_review",
+        "entity_id": "W-D0f5e53ca30b3a9ea",
+        "reviewer": "P3/P4 citation audit agent",
+        "recorded_at_utc": "2026-11-27T07:05:21.388003Z",
+        "artifact": "temp/reports/RUN-0006-citation-candidate.json",
+        "decision": "verify_existing_citation_edge_context",
+        "notes": "综述引用Kern2012讨论环境布局与飞行速度调节，图3注明数据取自该前作。引用和图示属于对既有结果的归纳，不能计作Egelhaaf2023新增的独立实验验证。",
+        "supporting_record_ids": [
+          "R-CR-dbf8599b1465c691",
+          "CE-f678875dbb0451d5",
+          "W-S04",
+          "CTX-RUN06-P4-Egelhaaf2023-Kern2012"
+        ],
+        "query_ids": [
+          "Q-RUN06-P4-Egelhaaf2023-context-005",
+          "Q-RUN06-P4-Egelhaaf2023-publisher-007",
+          "Q-RUN06-P4-Egelhaaf2023-bibliography-008"
+        ]
+      },
+      {
+        "review_id": "MR-RUN06-P4-Egelhaaf2023-003",
+        "run_id": "RUN-0006",
+        "review_type": "original_abstract_chinese_summary_review",
+        "entity_id": "W-D0f5e53ca30b3a9ea",
+        "reviewer": "P3/P4 citation audit agent",
+        "recorded_at_utc": "2026-11-27T07:05:21.388003Z",
+        "artifact": "temp/reports/RUN-0006-citation-candidate.json",
+        "decision": "publish_chinese_summary_from_abstract",
+        "notes": "中文概括逐项核对原文摘要的光流空间信息、主动运动策略及速度尺度歧义；保留既有开放许可英文摘要。不将摘要概括或两条引用语境当作全文结果或Assessment证据。",
+        "supporting_record_ids": [
+          "W-D0f5e53ca30b3a9ea",
+          "V-W-D0f5e53ca30b3a9ea-01"
+        ],
+        "query_ids": [
+          "Q-RUN06-P4-Egelhaaf2023-context-005"
+        ]
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "T-fulltext-W-D0f5e53ca30b3a9ea",
+        "entity_type": "work",
+        "entity_id": "W-D0f5e53ca30b3a9ea",
+        "task_type": "fulltext",
+        "scope_id": "SCOPE-0001",
+        "source_id": "crossref",
+        "normalized_parameters": {
+          "phase": "enrichment",
+          "run6_read_coverage": "Complete abstract, selected original body contexts and two publisher bibliography targets only",
+          "run6_failed_query_ids": [
+            "Q-RUN06-P4-Egelhaaf2023-reference-window-006"
+          ],
+          "run6_blocked_source_cursors": [
+            "institutional_repository|Q-RUN06-P4-Egelhaaf2023-reference-window-006|requested-line410|restricted"
+          ],
+          "run6_alternate_source_successful": true,
+          "run6_attempt_count_scope": "One bounded original-source review batch; external request counts remain in exact query receipts."
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P4-Egelhaaf2023-context-005",
+          "Q-RUN06-P4-Egelhaaf2023-reference-window-006",
+          "Q-RUN06-P4-Egelhaaf2023-publisher-007",
+          "Q-RUN06-P4-Egelhaaf2023-bibliography-008"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": "Selected legal original text windows read, but whole Version completeness, figures/equations and supplementary materials are not verified; PMC continuation remains restricted.",
+        "retry_at": null,
+        "review_condition": "Continue lawful original-source coverage without bypassing access challenges; verify all text/figure/equation/supplement completeness before available_verified.",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T07:05:21.388003Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "W-D0f5e53ca30b3a9ea",
+          "V-W-D0f5e53ca30b3a9ea-01",
+          "CE-99e646e0c0f3265a",
+          "CE-f678875dbb0451d5"
+        ]
+      },
+      {
+        "task_id": "T-abstract-W-D0f5e53ca30b3a9ea",
+        "entity_type": "work",
+        "entity_id": "W-D0f5e53ca30b3a9ea",
+        "task_type": "abstract",
+        "scope_id": "SCOPE-0001",
+        "source_id": "crossref",
+        "normalized_parameters": {
+          "phase": "enrichment",
+          "run6_summary_status": "chinese_summary_from_abstract",
+          "run6_original_abstract_preserved": true,
+          "run6_entire_abstract_read": true,
+          "run6_attempt_count_scope": "One bounded original-source review batch; external request counts remain in exact query receipts."
+        },
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P4-Egelhaaf2023-context-005"
+        ],
+        "attempt_count": 2,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Completed only the abstract dimension for this Version: complete original abstract read, Chinese summary checked, original licensed item retained; re-review if the Version changes.",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T07:05:21.388003Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "W-D0f5e53ca30b3a9ea",
+          "V-W-D0f5e53ca30b3a9ea-01"
+        ]
+      },
+      {
+        "task_id": "T-references-W-D0f5e53ca30b3a9ea",
+        "entity_type": "work",
+        "entity_id": "W-D0f5e53ca30b3a9ea",
+        "task_type": "references",
+        "scope_id": "SCOPE-0001",
+        "source_id": "crossref",
+        "normalized_parameters": {
+          "run6_selected_publisher_occurrence_ids": [
+            "R-CR-b8f1491dd9c0953a",
+            "R-CR-dbf8599b1465c691"
+          ],
+          "run6_deposited_occurrence_count": 179,
+          "run6_unresolved_occurrence_count": 66,
+          "run6_complete_main_or_supplement_bibliography_verified": false,
+          "run6_attempt_count_scope": "One bounded original-source review batch; external request counts remain in exact query receipts."
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P4-Egelhaaf2023-bibliography-008"
+        ],
+        "attempt_count": 2,
+        "error_code": null,
+        "failure_reason": "Exactly two existing reference targets were cross-checked in the official bibliography. The retained deposited list has 179 occurrences, of which 66 remain unresolved; complete publisher and supplement coverage has not been established.",
+        "retry_at": null,
+        "review_condition": "Resume remaining original bibliography/appendix/supplement reconciliation and identity tasks; do not treat the two selected target checks as full reference-list completion.",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-27T07:05:21.388003Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 3,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "R-CR-b8f1491dd9c0953a",
+          "R-CR-dbf8599b1465c691"
+        ]
+      },
+      {
+        "task_id": "T-Citations-S15",
+        "entity_type": "work",
+        "entity_id": "W-S15",
+        "task_type": "citations",
+        "scope_id": "SCOPE-0001",
+        "source_id": null,
+        "normalized_parameters": {
+          "run6_reviewed_citing_work_ids": [
+            "W-D0f5e53ca30b3a9ea"
+          ],
+          "run6_context_verified_edge_ids": [
+            "CE-99e646e0c0f3265a"
+          ],
+          "run6_source_list_pagination_completed": false,
+          "run6_attempt_count_scope": "One bounded original-source review batch; external request counts remain in exact query receipts."
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P4-Egelhaaf2023-context-005",
+          "Q-RUN06-P4-Egelhaaf2023-publisher-007",
+          "Q-RUN06-P4-Egelhaaf2023-bibliography-008"
+        ],
+        "attempt_count": 2,
+        "error_code": null,
+        "failure_reason": "RUN-0006 verified one existing citer original context for Strubbe2015. Other citer contexts, cross-source reconciliation and source pagination remain open.",
+        "retry_at": null,
+        "review_condition": "Continue remaining original citer contexts and frozen-scope source coverage; this event does not requery or complete any citing-list pagination.",
+        "created_at_utc": "2026-11-26T05:50:15Z",
+        "updated_at_utc": "2026-11-27T07:05:21.388003Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 88,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "CE-99e646e0c0f3265a",
+          "R-CR-b8f1491dd9c0953a",
+          "W-D0f5e53ca30b3a9ea"
+        ]
+      },
+      {
+        "task_id": "T-RUN06-P4-Egelhaaf2023-context",
+        "entity_type": "work",
+        "entity_id": "W-D0f5e53ca30b3a9ea",
+        "task_type": "citation_context",
+        "scope_id": "SCOPE-0001",
+        "source_id": "publisher",
+        "normalized_parameters": {
+          "phase": "P4",
+          "review_edge_ids": [
+            "CE-99e646e0c0f3265a",
+            "CE-f678875dbb0451d5"
+          ],
+          "review_occurrence_ids": [
+            "R-CR-b8f1491dd9c0953a",
+            "R-CR-dbf8599b1465c691"
+          ],
+          "bounded_context_review_only": true,
+          "source_list_or_whole_work_completion": false,
+          "original_repository_failure_retained": "Q-RUN06-P4-Egelhaaf2023-reference-window-006"
+        },
+        "task_state": "verified_complete",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [
+          "Q-RUN06-P4-Egelhaaf2023-context-005",
+          "Q-RUN06-P4-Egelhaaf2023-reference-window-006",
+          "Q-RUN06-P4-Egelhaaf2023-publisher-007",
+          "Q-RUN06-P4-Egelhaaf2023-bibliography-008"
+        ],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Only these two explicit edge contexts and bibliography identities are complete; all separate whole-Work, source-list, reference coverage and scientific evidence tasks remain open.",
+        "created_at_utc": "2026-11-27T06:50:02Z",
+        "updated_at_utc": "2026-11-27T07:05:21.388003Z",
+        "checkpoint_id": "CP-0008",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": [
+          "CE-99e646e0c0f3265a",
+          "CE-f678875dbb0451d5",
+          "R-CR-b8f1491dd9c0953a",
+          "R-CR-dbf8599b1465c691"
+        ]
+      }
+    ],
+    "citation-context-audit": [
+      {
+        "context_id": "CTX-RUN06-P4-Egelhaaf2023-Strubbe2015",
+        "citing_work_id": "W-D0f5e53ca30b3a9ea",
+        "cited_work_id": "W-S15",
+        "citation_roles": [
+          "background",
+          "comparison"
+        ],
+        "evidence_locator": [
+          {
+            "source_id": "institutional_repository",
+            "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10354154/",
+            "identifier": "Q-RUN06-P4-Egelhaaf2023-context-005",
+            "section": "Reduction of optic flow complexity by active vision strategies to facilitate spatial vision",
+            "accessed_at": "2026-11-27T06:50:02Z",
+            "evidence_note": "综述把Strübbe2015列为限定条件下从复杂光流计算平移与空间信息的理论依据，并转向主动视觉策略来讨论降低计算负担。可确认背景及方法对照作用；这不是对该论文的复现实验、否证或独立性能验证。",
+            "paragraph": "First two paragraphs; PMC displayed lines86–87; publisher displayed lines79–80"
+          },
+          {
+            "source_id": "publisher",
+            "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+            "url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+            "identifier": "Q-RUN06-P4-Egelhaaf2023-publisher-007",
+            "section": "Reduction of optic flow complexity by active vision strategies to facilitate spatial vision",
+            "accessed_at": "2026-11-27T06:54:34Z",
+            "evidence_note": "综述把Strübbe2015列为限定条件下从复杂光流计算平移与空间信息的理论依据，并转向主动视觉策略来讨论降低计算负担。可确认背景及方法对照作用；这不是对该论文的复现实验、否证或独立性能验证。",
+            "paragraph": "Displayed lines79–80"
+          }
+        ],
+        "edge_id": "CE-99e646e0c0f3265a",
+        "verification_status": "verified",
+        "summary": "综述把Strübbe2015列为限定条件下从复杂光流计算平移与空间信息的理论依据，并转向主动视觉策略来讨论降低计算负担。可确认背景及方法对照作用；这不是对该论文的复现实验、否证或独立性能验证。",
+        "run_id": "RUN-0006",
+        "query_ids": [
+          "Q-RUN06-P4-Egelhaaf2023-context-005",
+          "Q-RUN06-P4-Egelhaaf2023-publisher-007",
+          "Q-RUN06-P4-Egelhaaf2023-bibliography-008"
+        ],
+        "reference_identity_evidence": [
+          {
+            "source_id": "publisher",
+            "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+            "url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+            "identifier": "Q-RUN06-P4-Egelhaaf2023-bibliography-008#bibliography-line580",
+            "section": "References",
+            "accessed_at": "2026-11-27T07:00:01Z",
+            "evidence_note": "出版方参考表完整题名、作者、年份、期刊、卷及页码/文章号与既有Strubbe2015端点一致；窗口未显示DOI，不声称从该窗口抽取DOI。",
+            "paragraph": "Displayed line580"
+          }
+        ]
+      },
+      {
+        "context_id": "CTX-RUN06-P4-Egelhaaf2023-Kern2012",
+        "citing_work_id": "W-D0f5e53ca30b3a9ea",
+        "cited_work_id": "W-S04",
+        "citation_roles": [
+          "background"
+        ],
+        "evidence_locator": [
+          {
+            "source_id": "institutional_repository",
+            "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10354154/",
+            "identifier": "Q-RUN06-P4-Egelhaaf2023-context-005",
+            "section": "Regulating flight speed depending on the spatial layout of the environment",
+            "accessed_at": "2026-11-27T06:50:02Z",
+            "evidence_note": "综述引用Kern2012讨论环境布局与飞行速度调节，图3注明数据取自该前作。引用和图示属于对既有结果的归纳，不能计作Egelhaaf2023新增的独立实验验证。",
+            "paragraph": "PMC displayed lines125–138; Figure3 caption",
+            "figure": "3"
+          }
+        ],
+        "edge_id": "CE-f678875dbb0451d5",
+        "verification_status": "verified",
+        "summary": "综述引用Kern2012讨论环境布局与飞行速度调节，图3注明数据取自该前作。引用和图示属于对既有结果的归纳，不能计作Egelhaaf2023新增的独立实验验证。",
+        "run_id": "RUN-0006",
+        "query_ids": [
+          "Q-RUN06-P4-Egelhaaf2023-context-005",
+          "Q-RUN06-P4-Egelhaaf2023-publisher-007",
+          "Q-RUN06-P4-Egelhaaf2023-bibliography-008"
+        ],
+        "reference_identity_evidence": [
+          {
+            "source_id": "publisher",
+            "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+            "url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+            "identifier": "Q-RUN06-P4-Egelhaaf2023-bibliography-008#bibliography-line454",
+            "section": "References",
+            "accessed_at": "2026-11-27T07:00:01Z",
+            "evidence_note": "出版方参考表完整题名、作者、年份、期刊、卷及页码/文章号与既有Kern2012端点一致；窗口未显示DOI，不声称从该窗口抽取DOI。",
+            "paragraph": "Displayed line454"
+          }
+        ]
+      }
+    ]
+  },
+  "changed_records": [
+    {
+      "dataset": "citation-edges",
+      "id": "CE-99e646e0c0f3265a",
+      "before": {
+        "edge_id": "CE-99e646e0c0f3265a",
+        "citing_key": "Egelhaaf2023",
+        "cited_key": "Strubbe2015",
+        "occurrence_ids": [
+          "R-CR-b8f1491dd9c0953a"
+        ],
+        "discovery_sources": [
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00059"
+              }
+            ]
+          },
+          {
+            "source_id": "europepmc",
+            "url": "https://europepmc.org/article/MED/36609568",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "europepmc",
+                "url": "https://europepmc.org/article/MED/36609568",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00082"
+              }
+            ]
+          },
+          {
+            "source_id": "crossref",
+            "identifier": "10.1007/s00359-022-01610-w#ordinal=148;key=1610_CR148",
+            "version": "Q-RUN01-00236",
+            "verification_status": "source_supported"
+          }
+        ],
+        "verification_status": "source_supported",
+        "citation_roles": [
+          "unknown"
+        ],
+        "context_locators": [],
+        "date": "2026-11-26"
+      },
+      "after": {
+        "edge_id": "CE-99e646e0c0f3265a",
+        "citing_key": "Egelhaaf2023",
+        "cited_key": "Strubbe2015",
+        "occurrence_ids": [
+          "R-CR-b8f1491dd9c0953a"
+        ],
+        "discovery_sources": [
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00059"
+              }
+            ]
+          },
+          {
+            "source_id": "europepmc",
+            "url": "https://europepmc.org/article/MED/36609568",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "europepmc",
+                "url": "https://europepmc.org/article/MED/36609568",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00082"
+              }
+            ]
+          },
+          {
+            "source_id": "crossref",
+            "identifier": "10.1007/s00359-022-01610-w#ordinal=148;key=1610_CR148",
+            "version": "Q-RUN01-00236",
+            "verification_status": "source_supported"
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+            "identifier": "Q-RUN06-P4-Egelhaaf2023-bibliography-008",
+            "accessed_at": "2026-11-27T07:00:01Z",
+            "version": "Q-RUN06-P4-Egelhaaf2023-bibliography-008",
+            "verification_status": "verified",
+            "license": "CC-BY-4.0 article; retained bibliographic facts, original short Chinese notes, and evidence locators.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+                "url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+                "identifier": "Q-RUN06-P4-Egelhaaf2023-bibliography-008#bibliography-line580",
+                "section": "References",
+                "accessed_at": "2026-11-27T07:00:01Z",
+                "evidence_note": "出版方参考表完整题名、作者、年份、期刊、卷及页码/文章号与既有Strubbe2015端点一致；窗口未显示DOI，不声称从该窗口抽取DOI。",
+                "paragraph": "Displayed line580"
+              }
+            ]
+          },
+          {
+            "source_id": "institutional_repository",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10354154/",
+            "identifier": "Q-RUN06-P4-Egelhaaf2023-context-005",
+            "accessed_at": "2026-11-27T06:50:02Z",
+            "version": "Q-RUN06-P4-Egelhaaf2023-context-005",
+            "verification_status": "verified",
+            "license": "CC-BY-4.0 article; retained bibliographic facts, original short Chinese notes, and evidence locators.",
+            "evidence_locator": [
+              {
+                "source_id": "institutional_repository",
+                "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10354154/",
+                "identifier": "Q-RUN06-P4-Egelhaaf2023-context-005",
+                "section": "Reduction of optic flow complexity by active vision strategies to facilitate spatial vision",
+                "accessed_at": "2026-11-27T06:50:02Z",
+                "evidence_note": "综述把Strübbe2015列为限定条件下从复杂光流计算平移与空间信息的理论依据，并转向主动视觉策略来讨论降低计算负担。可确认背景及方法对照作用；这不是对该论文的复现实验、否证或独立性能验证。",
+                "paragraph": "First two paragraphs; PMC displayed lines86–87; publisher displayed lines79–80"
+              }
+            ]
+          }
+        ],
+        "verification_status": "verified",
+        "citation_roles": [
+          "background",
+          "comparison"
+        ],
+        "context_locators": [
+          {
+            "source_id": "institutional_repository",
+            "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10354154/",
+            "identifier": "Q-RUN06-P4-Egelhaaf2023-context-005",
+            "section": "Reduction of optic flow complexity by active vision strategies to facilitate spatial vision",
+            "accessed_at": "2026-11-27T06:50:02Z",
+            "evidence_note": "综述把Strübbe2015列为限定条件下从复杂光流计算平移与空间信息的理论依据，并转向主动视觉策略来讨论降低计算负担。可确认背景及方法对照作用；这不是对该论文的复现实验、否证或独立性能验证。",
+            "paragraph": "First two paragraphs; PMC displayed lines86–87; publisher displayed lines79–80"
+          },
+          {
+            "source_id": "publisher",
+            "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+            "url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+            "identifier": "Q-RUN06-P4-Egelhaaf2023-publisher-007",
+            "section": "Reduction of optic flow complexity by active vision strategies to facilitate spatial vision",
+            "accessed_at": "2026-11-27T06:54:34Z",
+            "evidence_note": "综述把Strübbe2015列为限定条件下从复杂光流计算平移与空间信息的理论依据，并转向主动视觉策略来讨论降低计算负担。可确认背景及方法对照作用；这不是对该论文的复现实验、否证或独立性能验证。",
+            "paragraph": "Displayed lines79–80"
+          }
+        ],
+        "date": "2026-11-27"
+      },
+      "changed_field_names": [
+        "citation_roles",
+        "context_locators",
+        "date",
+        "discovery_sources",
+        "verification_status"
+      ]
+    },
+    {
+      "dataset": "reference-occurrences",
+      "id": "R-CR-b8f1491dd9c0953a",
+      "before": {
+        "occurrence_id": "R-CR-b8f1491dd9c0953a",
+        "citing_work_id": "W-D0f5e53ca30b3a9ea",
+        "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+        "reference_label": "1610_CR148",
+        "section": "Crossref deposited references",
+        "page": null,
+        "raw_reference": "{\"DOI\":\"10.1371/journal.pone.0128413\",\"author\":\"S Strübbe\",\"doi-asserted-by\":\"publisher\",\"first-page\":\"e0128413\",\"journal-title\":\"PLoS ONE\",\"key\":\"1610_CR148\",\"unstructured\":\"Strübbe S, Stürzl W, Egelhaaf M (2015) Insect-inspired self-motion estimation with dense flow fields—an adaptive matched filter approach. PLoS ONE 10:e0128413\",\"volume\":\"10\",\"year\":\"2015\"}",
+        "raw_fingerprint": "8760a0ccb6e8dc0d141050ac96a872cd5b32cdccd3845221df2c2e5943bb7b53",
+        "candidate_ids": [
+          "10.1371/journal.pone.0128413"
+        ],
+        "cited_work_id": "W-S15",
+        "identity_confidence": "confirmed",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "crossref",
+          "identifier": "10.1007/s00359-022-01610-w#ordinal=148;key=1610_CR148",
+          "version": "Q-RUN01-00236",
+          "verification_status": "source_supported"
+        },
+        "failure_reason": null,
+        "field_states": {
+          "page": {
+            "status": "not_applicable",
+            "reason": "Registry reference has no PDF page coordinate; version and reference key locate it.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      "after": {
+        "occurrence_id": "R-CR-b8f1491dd9c0953a",
+        "citing_work_id": "W-D0f5e53ca30b3a9ea",
+        "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+        "reference_label": "1610_CR148",
+        "section": "Crossref deposited references",
+        "page": null,
+        "raw_reference": "{\"DOI\":\"10.1371/journal.pone.0128413\",\"author\":\"S Strübbe\",\"doi-asserted-by\":\"publisher\",\"first-page\":\"e0128413\",\"journal-title\":\"PLoS ONE\",\"key\":\"1610_CR148\",\"unstructured\":\"Strübbe S, Stürzl W, Egelhaaf M (2015) Insect-inspired self-motion estimation with dense flow fields—an adaptive matched filter approach. PLoS ONE 10:e0128413\",\"volume\":\"10\",\"year\":\"2015\"}",
+        "raw_fingerprint": "8760a0ccb6e8dc0d141050ac96a872cd5b32cdccd3845221df2c2e5943bb7b53",
+        "candidate_ids": [
+          "10.1371/journal.pone.0128413"
+        ],
+        "cited_work_id": "W-S15",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "crossref",
+          "identifier": "10.1007/s00359-022-01610-w#ordinal=148;key=1610_CR148",
+          "version": "Q-RUN01-00236",
+          "verification_status": "source_supported",
+          "evidence_locator": [
+            {
+              "source_id": "publisher",
+              "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+              "url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+              "identifier": "Q-RUN06-P4-Egelhaaf2023-bibliography-008#bibliography-line580",
+              "section": "References",
+              "accessed_at": "2026-11-27T07:00:01Z",
+              "evidence_note": "出版方参考表完整题名、作者、年份、期刊、卷及页码/文章号与既有Strubbe2015端点一致；窗口未显示DOI，不声称从该窗口抽取DOI。",
+              "paragraph": "Displayed line580"
+            }
+          ]
+        },
+        "failure_reason": null,
+        "field_states": {
+          "page": {
+            "status": "not_applicable",
+            "reason": "Registry reference has no PDF page coordinate; version and reference key locate it.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      "changed_field_names": [
+        "source",
+        "verification_status"
+      ]
+    },
+    {
+      "dataset": "citation-edges",
+      "id": "CE-f678875dbb0451d5",
+      "before": {
+        "citation_roles": [
+          "unknown"
+        ],
+        "cited_key": "Kern2012",
+        "citing_key": "Egelhaaf2023",
+        "context_locators": [],
+        "date": "2026-11-26",
+        "discovery_sources": [
+          {
+            "accessed_at": "2026-11-26",
+            "evidence_locator": [
+              {
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "identifier": "Q-RUN01-00025",
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea"
+              }
+            ],
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "verification_status": "source_supported"
+          },
+          {
+            "identifier": "10.1007/s00359-022-01610-w#ordinal=72;key=1610_CR72",
+            "source_id": "crossref",
+            "verification_status": "source_supported",
+            "version": "Q-RUN01-00236"
+          },
+          {
+            "accessed_at": "2026-11-27T02:36:17.887500Z",
+            "evidence_locator": [
+              {
+                "accessed_at": "2026-11-27T02:36:17.887500Z",
+                "evidence_note": "索引确认施引关系；未审阅正文上下文，引用角色仍未知。",
+                "identifier": "MED:36609568;receipt_sha256=31dae4318efa4b883ffa736ae3009e4acd128a27bb6d8e66d4b0d069f71aa60e",
+                "section": "Returned citing-list row",
+                "source_id": "europepmc",
+                "url": "https://europepmc.org/article/MED/36609568"
+              }
+            ],
+            "identifier": "MED:36609568",
+            "source_id": "europepmc",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/MED/22723490/citations?format=json&page=1&pageSize=1000",
+            "verification_status": "source_supported",
+            "version": "Q-RUN05-P4-S04-citations-001"
+          }
+        ],
+        "edge_id": "CE-f678875dbb0451d5",
+        "occurrence_ids": [
+          "R-CR-dbf8599b1465c691"
+        ],
+        "verification_status": "source_supported"
+      },
+      "after": {
+        "citation_roles": [
+          "background"
+        ],
+        "cited_key": "Kern2012",
+        "citing_key": "Egelhaaf2023",
+        "context_locators": [
+          {
+            "source_id": "institutional_repository",
+            "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10354154/",
+            "identifier": "Q-RUN06-P4-Egelhaaf2023-context-005",
+            "section": "Regulating flight speed depending on the spatial layout of the environment",
+            "accessed_at": "2026-11-27T06:50:02Z",
+            "evidence_note": "综述引用Kern2012讨论环境布局与飞行速度调节，图3注明数据取自该前作。引用和图示属于对既有结果的归纳，不能计作Egelhaaf2023新增的独立实验验证。",
+            "paragraph": "PMC displayed lines125–138; Figure3 caption",
+            "figure": "3"
+          }
+        ],
+        "date": "2026-11-27",
+        "discovery_sources": [
+          {
+            "accessed_at": "2026-11-26",
+            "evidence_locator": [
+              {
+                "accessed_at": "2026-11-26",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "identifier": "Q-RUN01-00025",
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea"
+              }
+            ],
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "verification_status": "source_supported"
+          },
+          {
+            "identifier": "10.1007/s00359-022-01610-w#ordinal=72;key=1610_CR72",
+            "source_id": "crossref",
+            "verification_status": "source_supported",
+            "version": "Q-RUN01-00236"
+          },
+          {
+            "accessed_at": "2026-11-27T02:36:17.887500Z",
+            "evidence_locator": [
+              {
+                "accessed_at": "2026-11-27T02:36:17.887500Z",
+                "evidence_note": "索引确认施引关系；未审阅正文上下文，引用角色仍未知。",
+                "identifier": "MED:36609568;receipt_sha256=31dae4318efa4b883ffa736ae3009e4acd128a27bb6d8e66d4b0d069f71aa60e",
+                "section": "Returned citing-list row",
+                "source_id": "europepmc",
+                "url": "https://europepmc.org/article/MED/36609568"
+              }
+            ],
+            "identifier": "MED:36609568",
+            "source_id": "europepmc",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/MED/22723490/citations?format=json&page=1&pageSize=1000",
+            "verification_status": "source_supported",
+            "version": "Q-RUN05-P4-S04-citations-001"
+          },
+          {
+            "source_id": "publisher",
+            "url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+            "identifier": "Q-RUN06-P4-Egelhaaf2023-bibliography-008",
+            "accessed_at": "2026-11-27T07:00:01Z",
+            "version": "Q-RUN06-P4-Egelhaaf2023-bibliography-008",
+            "verification_status": "verified",
+            "license": "CC-BY-4.0 article; retained bibliographic facts, original short Chinese notes, and evidence locators.",
+            "evidence_locator": [
+              {
+                "source_id": "publisher",
+                "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+                "url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+                "identifier": "Q-RUN06-P4-Egelhaaf2023-bibliography-008#bibliography-line454",
+                "section": "References",
+                "accessed_at": "2026-11-27T07:00:01Z",
+                "evidence_note": "出版方参考表完整题名、作者、年份、期刊、卷及页码/文章号与既有Kern2012端点一致；窗口未显示DOI，不声称从该窗口抽取DOI。",
+                "paragraph": "Displayed line454"
+              }
+            ]
+          },
+          {
+            "source_id": "institutional_repository",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10354154/",
+            "identifier": "Q-RUN06-P4-Egelhaaf2023-context-005",
+            "accessed_at": "2026-11-27T06:50:02Z",
+            "version": "Q-RUN06-P4-Egelhaaf2023-context-005",
+            "verification_status": "verified",
+            "license": "CC-BY-4.0 article; retained bibliographic facts, original short Chinese notes, and evidence locators.",
+            "evidence_locator": [
+              {
+                "source_id": "institutional_repository",
+                "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10354154/",
+                "identifier": "Q-RUN06-P4-Egelhaaf2023-context-005",
+                "section": "Regulating flight speed depending on the spatial layout of the environment",
+                "accessed_at": "2026-11-27T06:50:02Z",
+                "evidence_note": "综述引用Kern2012讨论环境布局与飞行速度调节，图3注明数据取自该前作。引用和图示属于对既有结果的归纳，不能计作Egelhaaf2023新增的独立实验验证。",
+                "paragraph": "PMC displayed lines125–138; Figure3 caption",
+                "figure": "3"
+              }
+            ]
+          }
+        ],
+        "edge_id": "CE-f678875dbb0451d5",
+        "occurrence_ids": [
+          "R-CR-dbf8599b1465c691"
+        ],
+        "verification_status": "verified"
+      },
+      "changed_field_names": [
+        "citation_roles",
+        "context_locators",
+        "date",
+        "discovery_sources",
+        "verification_status"
+      ]
+    },
+    {
+      "dataset": "reference-occurrences",
+      "id": "R-CR-dbf8599b1465c691",
+      "before": {
+        "occurrence_id": "R-CR-dbf8599b1465c691",
+        "citing_work_id": "W-D0f5e53ca30b3a9ea",
+        "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+        "reference_label": "1610_CR72",
+        "section": "Crossref deposited references",
+        "page": null,
+        "raw_reference": "{\"DOI\":\"10.1242/jeb.061713\",\"author\":\"R Kern\",\"doi-asserted-by\":\"publisher\",\"first-page\":\"2501\",\"journal-title\":\"J Exp Biol\",\"key\":\"1610_CR72\",\"unstructured\":\"Kern R, Boeddeker N, Dittmar L, Egelhaaf M (2012) Blowfly flight characteristics are shaped by environmental features and controlled by optic flow information. J Exp Biol 215:2501–2514\",\"volume\":\"215\",\"year\":\"2012\"}",
+        "raw_fingerprint": "53cf93b18c3bc7d32ad63e6a46e357dc3f88ed838a87d5590b302086b6aa21b2",
+        "candidate_ids": [
+          "10.1242/jeb.061713"
+        ],
+        "cited_work_id": "W-S04",
+        "identity_confidence": "confirmed",
+        "verification_status": "source_supported",
+        "source": {
+          "source_id": "crossref",
+          "identifier": "10.1007/s00359-022-01610-w#ordinal=72;key=1610_CR72",
+          "version": "Q-RUN01-00236",
+          "verification_status": "source_supported"
+        },
+        "failure_reason": null,
+        "field_states": {
+          "page": {
+            "status": "not_applicable",
+            "reason": "Registry reference has no PDF page coordinate; version and reference key locate it.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      "after": {
+        "occurrence_id": "R-CR-dbf8599b1465c691",
+        "citing_work_id": "W-D0f5e53ca30b3a9ea",
+        "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+        "reference_label": "1610_CR72",
+        "section": "Crossref deposited references",
+        "page": null,
+        "raw_reference": "{\"DOI\":\"10.1242/jeb.061713\",\"author\":\"R Kern\",\"doi-asserted-by\":\"publisher\",\"first-page\":\"2501\",\"journal-title\":\"J Exp Biol\",\"key\":\"1610_CR72\",\"unstructured\":\"Kern R, Boeddeker N, Dittmar L, Egelhaaf M (2012) Blowfly flight characteristics are shaped by environmental features and controlled by optic flow information. J Exp Biol 215:2501–2514\",\"volume\":\"215\",\"year\":\"2012\"}",
+        "raw_fingerprint": "53cf93b18c3bc7d32ad63e6a46e357dc3f88ed838a87d5590b302086b6aa21b2",
+        "candidate_ids": [
+          "10.1242/jeb.061713"
+        ],
+        "cited_work_id": "W-S04",
+        "identity_confidence": "confirmed",
+        "verification_status": "verified",
+        "source": {
+          "source_id": "crossref",
+          "identifier": "10.1007/s00359-022-01610-w#ordinal=72;key=1610_CR72",
+          "version": "Q-RUN01-00236",
+          "verification_status": "source_supported",
+          "evidence_locator": [
+            {
+              "source_id": "publisher",
+              "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+              "url": "https://link.springer.com/article/10.1007/s00359-022-01610-w",
+              "identifier": "Q-RUN06-P4-Egelhaaf2023-bibliography-008#bibliography-line454",
+              "section": "References",
+              "accessed_at": "2026-11-27T07:00:01Z",
+              "evidence_note": "出版方参考表完整题名、作者、年份、期刊、卷及页码/文章号与既有Kern2012端点一致；窗口未显示DOI，不声称从该窗口抽取DOI。",
+              "paragraph": "Displayed line454"
+            }
+          ]
+        },
+        "failure_reason": null,
+        "field_states": {
+          "page": {
+            "status": "not_applicable",
+            "reason": "Registry reference has no PDF page coordinate; version and reference key locate it.",
+            "evidence_locator": [],
+            "unknown_since_utc": null,
+            "review_task_id": null
+          }
+        }
+      },
+      "changed_field_names": [
+        "source",
+        "verification_status"
+      ]
+    },
+    {
+      "dataset": "works",
+      "id": "W-D0f5e53ca30b3a9ea",
+      "before": {
+        "work_id": "W-D0f5e53ca30b3a9ea",
+        "work_key": "Egelhaaf2023",
+        "canonical_title": "Optic flow based spatial vision in insects",
+        "title_variants": [
+          "Optic flow based spatial vision in insects"
+        ],
+        "authors": [
+          {
+            "person_id": "P-R6b9d87bbf05f1c2d",
+            "display_name": "Martin Egelhaaf",
+            "is_corporate": false,
+            "organization_ids": [],
+            "source": {
+              "source_id": "crossref",
+              "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+              "accessed_at": "2026-11-26",
+              "verification_status": "source_supported",
+              "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "crossref",
+                  "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                  "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                  "accessed_at": "2026-11-26",
+                  "identifier": "Q-RUN01-00236"
+                }
+              ]
+            },
+            "family_name": "Egelhaaf",
+            "given_name": "Martin",
+            "field_states": {
+              "organization_ids": {
+                "status": "unknown",
+                "reason": "Byline affiliation has not been checked in the original publication.",
+                "evidence_locator": [
+                  {
+                    "source_id": "crossref",
+                    "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                    "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                    "accessed_at": "2026-11-26",
+                    "identifier": "Q-RUN01-00236"
+                  }
+                ],
+                "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+                "review_task_id": "T-Unknown-8200d49d8cdb19fc"
+              }
+            }
+          }
+        ],
+        "document_type": "journal_article",
+        "publication_status": "published",
+        "year": 2023,
+        "publication_date": "2023-01-07",
+        "venue": "Journal of Comparative Physiology A",
+        "volume": "209",
+        "number": "4",
+        "pages": "541-561",
+        "eid": null,
+        "publisher": "Springer Science and Business Media LLC",
+        "identifiers": {
+          "DOI": "10.1007/s00359-022-01610-w",
+          "PubMedCentral": "10354154",
+          "CorpusId": "255483703",
+          "PubMed": "36609568",
+          "semantic_scholar": "07a8a3244861b1f129fde36e1dbb10042ab651ea"
+        },
+        "doi": "10.1007/s00359-022-01610-w",
+        "url": "https://doi.org/10.1007/s00359-022-01610-w",
+        "language": "en",
+        "discovery_sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00236"
+              }
+            ]
+          },
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00236"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00025"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00038"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00056"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00059"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00019"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Publication returned by the provider author cluster linked to a seed byline. Per-Work authorship is source-supported and still requires disambiguation.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00239"
+              }
+            ]
+          },
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                "evidence_note": "Registry identity cross-check of reference title/author/year; DOI is not accepted on ordinal alone.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00236"
+              }
+            ]
+          }
+        ],
+        "identity_confidence": "confirmed",
+        "verification_status": "source_supported",
+        "merge_history": [],
+        "fulltext_status": "pending",
+        "abstract_status": "original_oa",
+        "abstract_source": {
+          "source_id": "crossref",
+          "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+          "accessed_at": "2026-11-26",
+          "verification_status": "source_supported",
+          "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+          "evidence_locator": [
+            {
+              "source_id": "crossref",
+              "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+              "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+              "accessed_at": "2026-11-26",
+              "identifier": "Q-RUN01-00236"
+            }
+          ]
+        },
+        "abstract_items": [
+          {
+            "status": "original_oa",
+            "text": "AbstractThe optic flow, i.e., the displacement of retinal images of objects in the environment induced by self-motion, is an important source of spatial information, especially for fast-flying insects. Spatial information over a wide range of distances, from the animal's immediate surroundings over several hundred metres to kilometres, is necessary for mediating behaviours, such as landing manoeuvres, collision avoidance in spatially complex environments, learning environmental object constellations and path integration in spatial navigation. To facilitate the processing of spatial information, the complexity of the optic flow is often reduced by active vision strategies. These result in translations and rotations being largely separated by a saccadic flight and gaze mode. Only the translational components of the optic flow contain spatial information. In the first step of optic flow processing, an array of local motion detectors provides a retinotopic spatial proximity map of the environment. This local motion information is then processed in parallel neural pathways in a task-specific manner and used to control the different components of spatial behaviour. A particular challenge here is that the distance information extracted from the optic flow does not represent the distances unambiguously, but these are scaled by the animal’s speed of locomotion. Possible ways of coping with this ambiguity are discussed.",
+            "source": {
+              "source_id": "crossref",
+              "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+              "accessed_at": "2026-11-26",
+              "verification_status": "source_supported",
+              "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "crossref",
+                  "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                  "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                  "accessed_at": "2026-11-26",
+                  "identifier": "Q-RUN01-00236"
+                }
+              ]
+            },
+            "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+            "license": "https://creativecommons.org/licenses/by/4.0; https://creativecommons.org/licenses/by/4.0",
+            "summarizer": null,
+            "date": "2026-11-26",
+            "source_language": "en",
+            "verification_status": "source_supported",
+            "field_states": {
+              "summarizer": {
+                "status": "not_applicable",
+                "reason": "Original author abstract, not a generated summary.",
+                "evidence_locator": [
+                  {
+                    "source_id": "crossref",
+                    "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                    "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                    "accessed_at": "2026-11-26",
+                    "identifier": "Q-RUN01-00236"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          }
+        ],
+        "license": "https://creativecommons.org/licenses/by/4.0; https://creativecommons.org/licenses/by/4.0",
+        "u00_reasons": [
+          "pending_assessment"
+        ],
+        "review_condition": "Retrieve lawful fulltext, verify complete references and citation context, disambiguate authors/affiliations, and assess L01-L09 before any coverage claim.",
+        "dimension_status": {
+          "metadata": "partial",
+          "fulltext": "pending",
+          "abstract": "partial",
+          "references": "partial",
+          "citations": "pending",
+          "authors": "pending",
+          "affiliations_projects": "pending",
+          "assessment": "pending"
+        },
+        "seed_ids": [],
+        "notes": "Discovered from forward_citation; index metadata and original fulltext evidence are separate. ",
+        "field_states": {
+          "eid": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00236"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-5418d2a4389cb46b"
+          }
+        },
+        "discovery_depth": 1,
+        "discovery_path": [
+          {
+            "from_entity_id": "W-S04",
+            "to_entity_id": "W-D0f5e53ca30b3a9ea",
+            "discovery_route": "forward_citation",
+            "source_id": "crossref",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00236"
+              }
+            ],
+            "verification_status": "verified",
+            "scope_id": "SCOPE-0001"
+          }
+        ]
+      },
+      "after": {
+        "work_id": "W-D0f5e53ca30b3a9ea",
+        "work_key": "Egelhaaf2023",
+        "canonical_title": "Optic flow based spatial vision in insects",
+        "title_variants": [
+          "Optic flow based spatial vision in insects"
+        ],
+        "authors": [
+          {
+            "person_id": "P-R6b9d87bbf05f1c2d",
+            "display_name": "Martin Egelhaaf",
+            "is_corporate": false,
+            "organization_ids": [],
+            "source": {
+              "source_id": "crossref",
+              "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+              "accessed_at": "2026-11-26",
+              "verification_status": "source_supported",
+              "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "crossref",
+                  "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                  "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                  "accessed_at": "2026-11-26",
+                  "identifier": "Q-RUN01-00236"
+                }
+              ]
+            },
+            "family_name": "Egelhaaf",
+            "given_name": "Martin",
+            "field_states": {
+              "organization_ids": {
+                "status": "unknown",
+                "reason": "Byline affiliation has not been checked in the original publication.",
+                "evidence_locator": [
+                  {
+                    "source_id": "crossref",
+                    "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                    "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                    "accessed_at": "2026-11-26",
+                    "identifier": "Q-RUN01-00236"
+                  }
+                ],
+                "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+                "review_task_id": "T-Unknown-8200d49d8cdb19fc"
+              }
+            }
+          }
+        ],
+        "document_type": "journal_article",
+        "publication_status": "published",
+        "year": 2023,
+        "publication_date": "2023-01-07",
+        "venue": "Journal of Comparative Physiology A",
+        "volume": "209",
+        "number": "4",
+        "pages": "541-561",
+        "eid": null,
+        "publisher": "Springer Science and Business Media LLC",
+        "identifiers": {
+          "DOI": "10.1007/s00359-022-01610-w",
+          "PubMedCentral": "10354154",
+          "CorpusId": "255483703",
+          "PubMed": "36609568",
+          "semantic_scholar": "07a8a3244861b1f129fde36e1dbb10042ab651ea"
+        },
+        "doi": "10.1007/s00359-022-01610-w",
+        "url": "https://doi.org/10.1007/s00359-022-01610-w",
+        "language": "en",
+        "discovery_sources": [
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00236"
+              }
+            ]
+          },
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00236"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00025"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00038"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00056"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00059"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Actual returned citing-list record; citation role and original context not yet checked.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00019"
+              }
+            ]
+          },
+          {
+            "source_id": "semantic_scholar",
+            "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "semantic_scholar",
+                "url": "https://www.semanticscholar.org/paper/07a8a3244861b1f129fde36e1dbb10042ab651ea",
+                "evidence_note": "Publication returned by the provider author cluster linked to a seed byline. Per-Work authorship is source-supported and still requires disambiguation.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00239"
+              }
+            ]
+          },
+          {
+            "source_id": "crossref",
+            "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+            "accessed_at": "2026-11-26",
+            "verification_status": "source_supported",
+            "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                "evidence_note": "Registry identity cross-check of reference title/author/year; DOI is not accepted on ordinal alone.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00236"
+              }
+            ]
+          }
+        ],
+        "identity_confidence": "confirmed",
+        "verification_status": "source_supported",
+        "merge_history": [],
+        "fulltext_status": "partial",
+        "abstract_status": "chinese_summary_from_abstract",
+        "abstract_source": {
+          "source_id": "institutional_repository",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10354154/",
+          "identifier": "Q-RUN06-P4-Egelhaaf2023-context-005",
+          "accessed_at": "2026-11-27T06:50:02Z",
+          "version": "Q-RUN06-P4-Egelhaaf2023-context-005",
+          "verification_status": "verified",
+          "license": "CC-BY-4.0 article; retained bibliographic facts, original short Chinese notes, and evidence locators.",
+          "evidence_locator": [
+            {
+              "source_id": "institutional_repository",
+              "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10354154/",
+              "identifier": "Q-RUN06-P4-Egelhaaf2023-context-005",
+              "section": "Abstract",
+              "accessed_at": "2026-11-27T06:50:02Z",
+              "evidence_note": "已阅读完整公开摘要并逐项核对中文概括；正文与图表未完整复核，不能将该摘要概括标为全文概括。",
+              "paragraph": "Displayed lines67–70; CC-BY4.0 at lines59–62"
+            }
+          ]
+        },
+        "abstract_items": [
+          {
+            "status": "original_oa",
+            "text": "AbstractThe optic flow, i.e., the displacement of retinal images of objects in the environment induced by self-motion, is an important source of spatial information, especially for fast-flying insects. Spatial information over a wide range of distances, from the animal's immediate surroundings over several hundred metres to kilometres, is necessary for mediating behaviours, such as landing manoeuvres, collision avoidance in spatially complex environments, learning environmental object constellations and path integration in spatial navigation. To facilitate the processing of spatial information, the complexity of the optic flow is often reduced by active vision strategies. These result in translations and rotations being largely separated by a saccadic flight and gaze mode. Only the translational components of the optic flow contain spatial information. In the first step of optic flow processing, an array of local motion detectors provides a retinotopic spatial proximity map of the environment. This local motion information is then processed in parallel neural pathways in a task-specific manner and used to control the different components of spatial behaviour. A particular challenge here is that the distance information extracted from the optic flow does not represent the distances unambiguously, but these are scaled by the animal’s speed of locomotion. Possible ways of coping with this ambiguity are discussed.",
+            "source": {
+              "source_id": "crossref",
+              "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+              "accessed_at": "2026-11-26",
+              "verification_status": "source_supported",
+              "license": "Bibliographic facts and source provenance; no restricted fulltext redistribution.",
+              "evidence_locator": [
+                {
+                  "source_id": "crossref",
+                  "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                  "evidence_note": "Exact registry bibliographic metadata; fulltext and citation context independently reviewed.",
+                  "accessed_at": "2026-11-26",
+                  "identifier": "Q-RUN01-00236"
+                }
+              ]
+            },
+            "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+            "license": "https://creativecommons.org/licenses/by/4.0; https://creativecommons.org/licenses/by/4.0",
+            "summarizer": null,
+            "date": "2026-11-26",
+            "source_language": "en",
+            "verification_status": "source_supported",
+            "field_states": {
+              "summarizer": {
+                "status": "not_applicable",
+                "reason": "Original author abstract, not a generated summary.",
+                "evidence_locator": [
+                  {
+                    "source_id": "crossref",
+                    "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                    "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                    "accessed_at": "2026-11-26",
+                    "identifier": "Q-RUN01-00236"
+                  }
+                ],
+                "unknown_since_utc": null,
+                "review_task_id": null
+              }
+            }
+          },
+          {
+            "status": "chinese_summary_from_abstract",
+            "text": "综述昆虫如何以光流支持降落、避障及导航，强调主动运动分离旋转与平移，以及平移光流中的距离与速度尺度耦合；本文讨论应对该歧义的途径。",
+            "source": {
+              "source_id": "institutional_repository",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10354154/",
+              "identifier": "Q-RUN06-P4-Egelhaaf2023-context-005",
+              "accessed_at": "2026-11-27T06:50:02Z",
+              "version": "Q-RUN06-P4-Egelhaaf2023-context-005",
+              "verification_status": "verified",
+              "license": "CC-BY-4.0 article; retained bibliographic facts, original short Chinese notes, and evidence locators.",
+              "evidence_locator": [
+                {
+                  "source_id": "institutional_repository",
+                  "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+                  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10354154/",
+                  "identifier": "Q-RUN06-P4-Egelhaaf2023-context-005",
+                  "section": "Abstract",
+                  "accessed_at": "2026-11-27T06:50:02Z",
+                  "evidence_note": "已阅读完整公开摘要并逐项核对中文概括；正文与图表未完整复核，不能将该摘要概括标为全文概括。",
+                  "paragraph": "Displayed lines67–70; CC-BY4.0 at lines59–62"
+                }
+              ]
+            },
+            "version_id": "V-W-D0f5e53ca30b3a9ea-01",
+            "license": "Original Chinese summary of the lawfully readable CC-BY-4.0 abstract; source attribution retained.",
+            "summarizer": "P3/P4 citation audit agent; checked against the original abstract",
+            "date": "2026-11-27",
+            "source_language": "en",
+            "verification_status": "verified"
+          }
+        ],
+        "license": "https://creativecommons.org/licenses/by/4.0; https://creativecommons.org/licenses/by/4.0",
+        "u00_reasons": [
+          "pending_assessment"
+        ],
+        "review_condition": "Retrieve lawful fulltext, verify complete references and citation context, disambiguate authors/affiliations, and assess L01-L09 before any coverage claim.",
+        "dimension_status": {
+          "metadata": "partial",
+          "fulltext": "partial",
+          "abstract": "verified_complete",
+          "references": "partial",
+          "citations": "pending",
+          "authors": "pending",
+          "affiliations_projects": "pending",
+          "assessment": "pending"
+        },
+        "seed_ids": [],
+        "notes": "Discovered from forward_citation; index metadata and original fulltext evidence are separate.  RUN-0006 read the complete abstract and selected original citation contexts for Strubbe2015/Kern2012, with two publisher bibliography targets cross-checked. Whole article, figures, equations, complete reference list, supplements and scientific Assessments remain incomplete; one PMC continuation was restricted and is preserved separately.",
+        "field_states": {
+          "eid": {
+            "status": "unknown",
+            "reason": "Not established by available metadata; original publication not fully inspected for this field.",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00236"
+              }
+            ],
+            "unknown_since_utc": "2026-11-26T07:49:34.521898Z",
+            "review_task_id": "T-Unknown-5418d2a4389cb46b"
+          }
+        },
+        "discovery_depth": 1,
+        "discovery_path": [
+          {
+            "from_entity_id": "W-S04",
+            "to_entity_id": "W-D0f5e53ca30b3a9ea",
+            "discovery_route": "forward_citation",
+            "source_id": "crossref",
+            "evidence_locator": [
+              {
+                "source_id": "crossref",
+                "url": "https://api.crossref.org/works/10.1007%2Fs00359-022-01610-w",
+                "evidence_note": "Exact DOI registry metadata cross-check; source observation retained.",
+                "accessed_at": "2026-11-26",
+                "identifier": "Q-RUN01-00236"
+              }
+            ],
+            "verification_status": "verified",
+            "scope_id": "SCOPE-0001"
+          }
+        ]
+      },
+      "changed_field_names": [
+        "abstract_items",
+        "abstract_source",
+        "abstract_status",
+        "dimension_status",
+        "fulltext_status",
+        "notes"
+      ]
+    }
+  ],
+  "task_event_preconditions": [
+    {
+      "task_id": "T-fulltext-W-D0f5e53ca30b3a9ea",
+      "before": {
+        "task_id": "T-fulltext-W-D0f5e53ca30b3a9ea",
+        "entity_type": "work",
+        "entity_id": "W-D0f5e53ca30b3a9ea",
+        "task_type": "fulltext",
+        "scope_id": "SCOPE-0001",
+        "source_id": "crossref",
+        "normalized_parameters": {
+          "phase": "enrichment"
+        },
+        "task_state": "pending",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [],
+        "attempt_count": 0,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Continue this dimension under SCOPE-0001; record source, paging and failure coverage.",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-26T07:49:34.521898Z",
+        "checkpoint_id": "CP-0003",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": []
+      }
+    },
+    {
+      "task_id": "T-abstract-W-D0f5e53ca30b3a9ea",
+      "before": {
+        "task_id": "T-abstract-W-D0f5e53ca30b3a9ea",
+        "entity_type": "work",
+        "entity_id": "W-D0f5e53ca30b3a9ea",
+        "task_type": "abstract",
+        "scope_id": "SCOPE-0001",
+        "source_id": "crossref",
+        "normalized_parameters": {
+          "phase": "enrichment"
+        },
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": null,
+        "retry_at": null,
+        "review_condition": "Continue this dimension under SCOPE-0001; record source, paging and failure coverage.",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-26T07:49:34.521898Z",
+        "checkpoint_id": "CP-0003",
+        "event_sequence": 1,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": []
+      }
+    },
+    {
+      "task_id": "T-references-W-D0f5e53ca30b3a9ea",
+      "before": {
+        "task_id": "T-references-W-D0f5e53ca30b3a9ea",
+        "entity_type": "work",
+        "entity_id": "W-D0f5e53ca30b3a9ea",
+        "task_type": "references",
+        "scope_id": "SCOPE-0001",
+        "source_id": "crossref",
+        "normalized_parameters": {},
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": "Deposited reference list imported; original fulltext/supplement coverage and unresolved target identities remain incomplete.",
+        "retry_at": null,
+        "review_condition": "Deposited reference list imported; original fulltext/supplement coverage and unresolved target identities remain incomplete.",
+        "created_at_utc": "2026-11-26T07:49:34.521898Z",
+        "updated_at_utc": "2026-11-26T07:49:34.521898Z",
+        "checkpoint_id": "CP-0003",
+        "event_sequence": 2,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": []
+      }
+    },
+    {
+      "task_id": "T-Citations-S15",
+      "before": {
+        "task_id": "T-Citations-S15",
+        "entity_type": "work",
+        "entity_id": "W-S15",
+        "task_type": "citations",
+        "scope_id": "SCOPE-0001",
+        "source_id": null,
+        "normalized_parameters": {},
+        "task_state": "partial",
+        "cursor": null,
+        "dependency_ids": [],
+        "query_ids": [],
+        "attempt_count": 1,
+        "error_code": null,
+        "failure_reason": "Individual source completion is recorded separately; cross-source coverage and citation contexts remain incomplete.",
+        "retry_at": null,
+        "review_condition": "Individual source completion is recorded separately; cross-source coverage and citation contexts remain incomplete.",
+        "created_at_utc": "2026-11-26T05:50:15Z",
+        "updated_at_utc": "2026-11-26T07:49:34.521898Z",
+        "checkpoint_id": "CP-0003",
+        "event_sequence": 87,
+        "assessment_id": null,
+        "field_path": null,
+        "unknown_since_utc": null,
+        "deadline_at_utc": null,
+        "review_task_id": null,
+        "priority": "normal",
+        "overdue": false,
+        "supporting_record_ids": []
+      }
+    }
+  ],
+  "source_identities": {
+    "publisher:10.1007/s00359-022-01610-w#bibliography-line580": "W-S15",
+    "publisher:10.1007/s00359-022-01610-w#bibliography-line454": "W-S04"
+  },
+  "query_new_work_ids": {
+    "Q-RUN06-P4-Egelhaaf2023-context-005": [],
+    "Q-RUN06-P4-Egelhaaf2023-reference-window-006": [],
+    "Q-RUN06-P4-Egelhaaf2023-publisher-007": [],
+    "Q-RUN06-P4-Egelhaaf2023-bibliography-008": []
+  },
+  "count_contract": {
+    "selected_official_bibliography_targets": 2,
+    "resolved_existing_canonical_targets": 2,
+    "new_work_count": 0,
+    "complete_main_bibliography_total": null,
+    "complete_main_bibliography_reconciled": false,
+    "retained_deposited_occurrences": 179,
+    "retained_unresolved_occurrences": 66,
+    "restricted_response_is_not_zero_article_coverage": true
+  },
+  "uncompleted_scope": {
+    "fulltext": "partial; only selected text windows; no complete PDF/layout/figure/equation/supplement verification",
+    "references": "partial; two target checks do not establish full-list or supplementary coverage",
+    "citations": "original context verified for two existing edges, but source lists and all other contexts remain incomplete",
+    "assessments": "No new Assessment or scientific improvement claim; review reuses prior evidence and does not independently replicate it",
+    "restricted_receipt_retained": "Q-RUN06-P4-Egelhaaf2023-reference-window-006"
+  },
+  "integration_constraints": [
+    "Append task events with unchanged original clocks and preserve all historical failures.",
+    "Integrate queries/source-observations once from exact frozen receipt bytes; they are intentionally omitted from this candidate.",
+    "Preserve original reference strings/fingerprints and the pre-existing open-license abstract verbatim.",
+    "Do not upgrade the whole Version fulltext status or source pagination to verified_complete.",
+    "No Work merge, new Work, new Version, new citation edge, scientific Assessment, or scope change is performed."
+  ],
+  "validation": {
+    "typed_records_validated": 10,
+    "schema_errors": [],
+    "before_guard_complete_objects": true,
+    "original_raw_reference_bytes_preserved": true,
+    "existing_abstract_items_preserved": true,
+    "canonical_jsonl_writes_performed": false,
+    "exports_written": false,
+    "scientific_assessments_modified": false
+  }
+}
