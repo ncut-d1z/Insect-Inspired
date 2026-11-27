@@ -1,0 +1,56 @@
+{
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "start_checkpoint_id": "CP-0006",
+  "start_commit_sha": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5",
+  "started_at_utc": "2026-11-27T02:26:07.001917Z",
+  "authorization": "2026-11-27 用户：检查进度，继续反复迭代 P3/P4/P5/P6；新数据即时提交和推送；已有数据未完整无误上传不得做其他任务；辅助Python脚本允许放根目录scripts。",
+  "authorized_stages": [
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "budget": {
+    "wall_clock_hours": 6,
+    "external_requests": 2000,
+    "manual_review_items": 200,
+    "paid_spend": 0
+  },
+  "status": "running",
+  "branch": "research/p3-p6-cp7",
+  "external_requests_used": 0,
+  "manual_review_items_used": 0,
+  "cache_reuse_events": 0,
+  "paid_spend": 0,
+  "closure": false,
+  "research_cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "sync_policy": "Commit and publish each bounded source/review batch via GitHub API, verify remote commit and exact changed blob bytes before starting another batch; publish the complete canonical checkpoint before further research.",
+  "start_sync_gate": {
+    "status": "passed",
+    "checked_at_utc": "2026-11-27T02:26:07.001917Z",
+    "remote_branch": "research/p3-p6-cp6",
+    "remote_commit_sha": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5",
+    "tree_sha": "32a732212b9151c2ee1ee75a91081ffcbca60d9b",
+    "fresh_https_clone": true,
+    "verified_files": 1256,
+    "verified_file_bytes": 881966656,
+    "artifact_sha256_checked": 1255,
+    "sha256_mismatches": 0,
+    "checkpoint_sha256": "43c11e7465404e956274fdaadef74f7bd0d27177111de5200f127f36c8c7d47d",
+    "worktree_clean": true,
+    "old_cp3_files_checked": 807,
+    "old_cp3_blobs_missing_from_remote_history": 0,
+    "upstream_independent_checks": 5356,
+    "upstream_verification_run": "https://github.com/ncut-d1z/Insect-Inspired/actions/runs/45919410467",
+    "upstream_run_conclusion": "success"
+  },
+  "transport": {
+    "api_available": true,
+    "ordinary_git_push_authenticated": false,
+    "ordinary_git_push_failure": "could not read Username for https://github.com",
+    "main_updated": false,
+    "remote_branches_deleted": false
+  },
+  "next_batch": "Inspect existing breadth-first reference queues, resolve exact stable-identifier targets using retained official evidence, then process forward citations, author/project evidence and distinct limitation claims; preserve all incomplete queues."
+}
