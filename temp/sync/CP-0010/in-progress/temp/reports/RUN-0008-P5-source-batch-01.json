@@ -1,0 +1,194 @@
+{
+  "run_id": "RUN-0008",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0010",
+  "status": "source_batch_saved_pending_typed_review",
+  "external_requests_performed": 4,
+  "cache_reuse_events": 0,
+  "manual_review_activities": 0,
+  "searches": [
+    {
+      "query_id": "Q-RUN08-P5-search-001",
+      "operation": "system1_search_query",
+      "raw_parameters": {
+        "q": "\"155907\" \"Floreano\"",
+        "domains": [
+          "snf.ch"
+        ]
+      },
+      "batch_started_at_utc": "2026-11-27 09:12:28 UTC",
+      "batch_finished_at_utc": "2026-11-27 09:12:30 UTC",
+      "exact_individual_dispatch_time_retained": false,
+      "external_requests_performed": 1,
+      "returned_source_records": [
+        {
+          "title": "VIODE: A Simulated Dataset to Address the Challenges of Visual-Inertial Odometry in Dynamic Environments",
+          "url": "https://bishtref.com/articles/10.1109/lra.2021.3058073",
+          "source_ref": "turn454193592search0"
+        },
+        {
+          "title": "IEEE ROBOTICS AND AUTOMATION LETTERS. PREPRINT VERSION. ACCEPTED FEBRUARY, 2021",
+          "url": "https://infoscience.epfl.ch/bitstreams/6196d3f5-b918-4c7a-a279-b89bd864640e/download",
+          "source_ref": "turn454193592search4"
+        },
+        {
+          "title": "Secretarías Ecuestres",
+          "url": "https://concursos.secretariasecuestres.com/tournament-event/results/14247/",
+          "source_ref": "turn454193592search1"
+        },
+        {
+          "title": "1. Hofauktion der Pferdezucht Höll",
+          "url": "https://pferdesport-hoell.com/images/Auktionskatalog_Hoell_Stand02.09.2024k.pdf",
+          "source_ref": "turn454193592search5"
+        },
+        {
+          "title": "Ober-Castrop",
+          "url": "https://results.equi-score.com/horses/2018/8748/nl",
+          "source_ref": "turn454193592search2"
+        },
+        {
+          "title": "Gemeinsamer Sortenkatalog für landwirtschaftliche Pflanzenarten Ergänzung A 2025/5",
+          "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=OJ%3AC_202503144",
+          "source_ref": "turn454193592search6"
+        },
+        {
+          "title": "Pferdeverzeichnis.doc",
+          "url": "https://www.turnierdienst-brinkmann.de/fileadmin/user_upload/Turnierorte/Riesenbeck/2012/PFRiesenbeckKreis2012.pdf",
+          "source_ref": "turn454193592search7"
+        },
+        {
+          "title": "Individuo : UNFER Floreano - Ricercare in tutti i dati - Geneanet",
+          "url": "https://it.geneanet.org/fonds/individus/?go=1&nom=UNFER&prenom=Floreano&size=50",
+          "source_ref": "turn454193592search3"
+        }
+      ],
+      "returned_count": 8,
+      "visible_total": null,
+      "coverage_complete": false,
+      "note": "Retained source metadata only. Domain filtering did not prevent irrelevant results in searches 1 and 3; those results do not establish official registry facts or absence."
+    },
+    {
+      "query_id": "Q-RUN08-P5-search-002",
+      "operation": "system1_search_query",
+      "raw_parameters": {
+        "q": "\"FFL09-0056\"",
+        "domains": [
+          "strategiska.se"
+        ]
+      },
+      "batch_started_at_utc": "2026-11-27 09:12:28 UTC",
+      "batch_finished_at_utc": "2026-11-27 09:12:30 UTC",
+      "exact_individual_dispatch_time_retained": false,
+      "external_requests_performed": 1,
+      "returned_source_records": [
+        {
+          "title": "Tekla (placeholder)",
+          "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+          "source_ref": "turn734184147search0"
+        },
+        {
+          "title": "Biomimetik- synstyrd flygkontroll - Stiftelsen för strategisk forskning",
+          "url": "https://strategiska.se/forskning/genomford-forskning/framtidens-forskningsledare-4/projekt/4000/",
+          "source_ref": "turn734184147search1"
+        },
+        {
+          "title": "Tekla (placeholder)",
+          "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/",
+          "source_ref": "turn734184147search2"
+        },
+        {
+          "title": "Projekt inom Framtidens Forskningsledare 4 - Stiftelsen för strategisk forskning",
+          "url": "https://strategiska.se/forskning/genomford-forskning/framtidens-forskningsledare-4/projekt/",
+          "source_ref": "turn734184147search3"
+        }
+      ],
+      "returned_count": 4,
+      "visible_total": null,
+      "coverage_complete": false,
+      "note": "Retained source metadata only. Domain filtering did not prevent irrelevant results in searches 1 and 3; those results do not establish official registry facts or absence."
+    },
+    {
+      "query_id": "Q-RUN08-P5-search-003",
+      "operation": "system1_search_query",
+      "raw_parameters": {
+        "q": "\"2014-4762\" Baird Dacke",
+        "domains": [
+          "vr.se",
+          "swecris.se"
+        ]
+      },
+      "batch_started_at_utc": "2026-11-27 09:12:28 UTC",
+      "batch_finished_at_utc": "2026-11-27 09:12:30 UTC",
+      "exact_individual_dispatch_time_retained": false,
+      "external_requests_performed": 1,
+      "returned_source_records": [
+        {
+          "title": "High contrast sensitivity for visually guided flight control in bumblebees.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28879513/",
+          "source_ref": "turn522041504search0"
+        },
+        {
+          "title": "Accelerated landings in stingless bees are triggered by visual threshold cues",
+          "url": "https://zenodo.org/records/3998792",
+          "source_ref": "turn522041504search1"
+        },
+        {
+          "title": "High contrast sensitivity for visually guided flight control in bumblebees",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5696488/",
+          "source_ref": "turn522041504search2"
+        },
+        {
+          "title": "How bumblebees use lateral and ventral optic flow cues for position control in environments of different proximity",
+          "url": "https://link.springer.com/article/10.1007/s00359-017-1173-9",
+          "source_ref": "turn522041504search3"
+        },
+        {
+          "title": "Obstacle avoidance in bumblebees is robust to changes in light intensity",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7700065/",
+          "source_ref": "turn522041504search4"
+        },
+        {
+          "title": "Dryad | Data: Accelerated landings in stingless bees are triggered by visual threshold cues",
+          "url": "https://datadryad.org/dataset/doi%3A10.5061/dryad.gtht76hhp",
+          "source_ref": "turn522041504search5"
+        },
+        {
+          "title": "Publications – Insect Lab SU",
+          "url": "https://www.insectlabsu.com/publications/",
+          "source_ref": "turn522041504search6"
+        },
+        {
+          "title": "How bumblebees use lateral and ventral optic flow cues for position control in environments of different proximity",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5427166/",
+          "source_ref": "turn522041504search7"
+        }
+      ],
+      "returned_count": 8,
+      "visible_total": null,
+      "coverage_complete": false,
+      "note": "Retained source metadata only. Domain filtering did not prevent irrelevant results in searches 1 and 3; those results do not establish official registry facts or absence."
+    }
+  ],
+  "official_page": {
+    "query_id": "Q-RUN08-P5-SSF-open-001",
+    "operation": "open",
+    "source_ref": "turn140881688view0",
+    "url": "https://strategiska.se/en/research/completed-research/framtidens-forskningsledare-4/project/4000/",
+    "request_started_at_utc": "2026-11-27 09:12:35 UTC",
+    "request_finished_at_utc": "2026-11-27 09:12:37 UTC",
+    "external_requests_performed": 1,
+    "returned_resources": 1,
+    "grant_id": "FFL09-0056",
+    "official_title": "Flight control in dynamic environments",
+    "raw_date_interval": "110101-161231",
+    "amount_sek": 9700000,
+    "administrative_organization": "Lund University",
+    "objective_paraphrase_zh": "以熊蜂和胡蜂的视觉避障行为为依据，建立运动控制模型，并探索在自主飞行器中使用这些模型的可行性。",
+    "evidence_lines": "7-23",
+    "publication_list_verified": false,
+    "pi_list_verified": false
+  },
+  "copyright_note": "Only source URLs, titles, identifiers, factual fields and an original short paraphrase are retained; no full webpage or article text.",
+  "next_step": "Build typed query receipts and a bounded manual review. Official project metadata alone does not convert the Project–Work funding acknowledgment into official_confirmed."
+}
+
