@@ -3,7 +3,7 @@
   "checkpoint_id": "CP-0009",
   "scope_id": "SCOPE-0001",
   "baseline_commit": "2e749d4994bd3b8c66fcde59950779adc5d66085",
-  "verified_at_utc": "2026-11-27T08:45:07.059048Z",
+  "verified_at_utc": "2026-11-27T08:50:44.506114Z",
   "checks": [
     {
       "dataset": "aliases",
@@ -349,7 +349,7 @@
     "status": "passed",
     "maintenance_only": true,
     "baseline_commit": "2e749d4994bd3b8c66fcde59950779adc5d66085",
-    "verified_at_utc": "2026-11-27T08:45:07.059048Z",
+    "verified_at_utc": "2026-11-27T08:50:44.506114Z",
     "batches": 1,
     "field_status_transitions": 49669,
     "changed_record_events": 20252,
