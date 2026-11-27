@@ -1,0 +1,561 @@
+{
+  "query_id": "Q-RUN05-P4-S08-citations-001",
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "task_id": "T-Citations-S08-epmc",
+  "entity_id": "W-S08",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/MED/31928873/citations?format=json&page=1&pageSize=1000",
+  "raw_parameters": {
+    "format": "json",
+    "page": 1,
+    "pageSize": 1000
+  },
+  "query_kind": "citations",
+  "queried_at_utc": "2026-11-27T02:34:48.620635Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "rerun_reason": "Exact DOI/PMID cross-check published; resume pending seed source at first citation page.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Public bibliographic facts; abstract/full text and personal contact details omitted.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Live source observed now, not a historical snapshot. Publication cutoff is checked separately.",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "status": "success",
+  "body_bytes": 21569,
+  "body_sha256": "dfe6e7bf1ec2d0bba5213cf4e6a873107a43bee8405b75e56257bcaf7a08e75b",
+  "records": [
+    {
+      "source": "MED",
+      "id": "43022429",
+      "title": "Connectome analysis reveals brain-wide visual processing in &lt;i&gt;Drosophila&lt;/i&gt;.",
+      "authorString": "Kim SY, Kim AJ.",
+      "journalAbbreviation": "iScience",
+      "pubYear": 2026,
+      "pageInfo": "118057"
+    },
+    {
+      "source": "MED",
+      "id": "42691997",
+      "title": "The organization of visual pathways in the Drosophila brain.",
+      "authorString": "Hoeller J, Zhao A, Nern A, Rogers EM, Romani S, Reiser MB.",
+      "journalAbbreviation": "Cell",
+      "pubYear": 2026,
+      "pageInfo": "5552-5570.e10"
+    },
+    {
+      "source": "MED",
+      "id": "42446985",
+      "title": "Fly navigational responses exploit plume-specific odor motion and gradient cues.",
+      "authorString": "Brudner S, Zhou B, Jayaram V, Madeira Santana G, Crimaldi JP, Clark DA, Emonet T.",
+      "journalAbbreviation": "Proc Natl Acad Sci U S A",
+      "pubYear": 2026,
+      "pageInfo": "e2608896123"
+    },
+    {
+      "source": "MED",
+      "id": "42187400",
+      "title": "Robust Detection of Small Moving Objects Against Real-World Complex Dynamic Natural Environments: Drosophila-Inspired Visual Neural Pathway Modeling.",
+      "authorString": "Zhang S, Li K, Luo Z.",
+      "journalAbbreviation": "Biomimetics (Basel)",
+      "pubYear": 2026,
+      "pageInfo": "333"
+    },
+    {
+      "source": "MED",
+      "id": "42141625",
+      "title": "The FlEye camera: Sampling the joint distribution of natural scenes and motion.",
+      "authorString": "Edelson CJ, Smith P, Setayeshgar S, Bialek W, van Steveninck RRR.",
+      "journalAbbreviation": "Phys Rev E",
+      "pubYear": 2026,
+      "pageInfo": "044412"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR1226505",
+      "title": "Connectome analysis reveals brainwide visual processing in  <i>Drosophila</i>",
+      "authorString": "Kim SY, Kim AJ.",
+      "pubYear": 2026
+    },
+    {
+      "source": "PPR",
+      "id": "PPR1229699",
+      "title": "The organization of visual pathways in the  <i>Drosophila</i>  brain",
+      "authorString": "Hoeller J, Zhao A, Nern A, Rogers EM, Romani S, Reiser MB.",
+      "pubYear": 2025
+    },
+    {
+      "source": "MED",
+      "id": "41290440",
+      "title": "How neural feedback enables flexible visual processing in Drosophila.",
+      "authorString": "Mickels CA, Turner MH.",
+      "journalAbbreviation": "Trends Neurosci",
+      "pubYear": 2026,
+      "pageInfo": "63-75"
+    },
+    {
+      "source": "MED",
+      "id": "41129556",
+      "title": "Polyadic synapses introduce unique wiring architectures in T5 cells of Drosophila.",
+      "authorString": "Samara E, Borst A.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2025,
+      "pageInfo": "e0334925"
+    },
+    {
+      "source": "MED",
+      "id": "41003956",
+      "title": "Differential temporal filtering in the fly optic lobe.",
+      "authorString": "Borst A.",
+      "journalAbbreviation": "J Comput Neurosci",
+      "pubYear": 2025,
+      "pageInfo": "507-520"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR1063015",
+      "title": "Polyadic synapses introduce unique wiring architectures in T5 cells of  <i>Drosophila</i>",
+      "authorString": "Samara E, Borst A.",
+      "pubYear": 2025
+    },
+    {
+      "source": "MED",
+      "id": "40460825",
+      "title": "Infrequent strong connections constrain connectomic predictions of neuronal function.",
+      "authorString": "Currier TA, Clandinin TR.",
+      "journalAbbreviation": "Cell",
+      "pubYear": 2025,
+      "pageInfo": "4366-4381.e14"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR987786",
+      "title": "Infrequent strong connections constrain connectomic predictions of neuronal function",
+      "authorString": "Currier TA, Clandinin TR.",
+      "pubYear": 2025
+    },
+    {
+      "source": "MED",
+      "id": "40048271",
+      "title": "Broken time-reversal symmetry in visual motion detection.",
+      "authorString": "Wu N, Zhou B, Agrochao M, Clark DA.",
+      "journalAbbreviation": "Proc Natl Acad Sci U S A",
+      "pubYear": 2025,
+      "pageInfo": "e2410768122"
+    },
+    {
+      "source": "MED",
+      "id": "39851767",
+      "title": "A Bio-Inspired Visual Neural Model for Robustly and Steadily Detecting Motion Directions of Translating Objects Against Variable Contrast in the Figure-Ground and Noise Interference.",
+      "authorString": "Zhang S, Li K, Luo Z, Xu M, Zheng S.",
+      "journalAbbreviation": "Biomimetics (Basel)",
+      "pubYear": 2025,
+      "pageInfo": "51"
+    },
+    {
+      "source": "MED",
+      "id": "39706173",
+      "title": "A recurrent neural circuit in Drosophila temporally sharpens visual inputs.",
+      "authorString": "Pang MM, Chen F, Xie M, Druckmann S, Clandinin TR, Yang HH.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2025,
+      "pageInfo": "333-346.e6"
+    },
+    {
+      "source": "MED",
+      "id": "39577424",
+      "title": "Adaptation to visual sparsity enhances responses to isolated stimuli.",
+      "authorString": "Gou T, Matulis CA, Clark DA.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2024,
+      "pageInfo": "5697-5713.e8"
+    },
+    {
+      "source": "MED",
+      "id": "39517943",
+      "title": "Evaluation of Automated Object-Detection Algorithms for Koala Detection in Infrared Aerial Imagery.",
+      "authorString": "Al-Shimaysawee LAH, Finn A, Weber D, Schebella MF, Brinkworth RSA.",
+      "journalAbbreviation": "Sensors (Basel)",
+      "pubYear": 2024,
+      "pageInfo": "7048"
+    },
+    {
+      "source": "MED",
+      "id": "39362859",
+      "title": "Neural pathways and computations that achieve stable contrast processing tuned to natural scenes.",
+      "authorString": "Gür B, Ramirez L, Cornean J, Thurn F, Molina-Obando S, Ramos-Traslosheros G, Silies M.",
+      "journalAbbreviation": "Nat Commun",
+      "pubYear": 2024,
+      "pageInfo": "8580"
+    },
+    {
+      "source": "MED",
+      "id": "39358525",
+      "title": "Neuronal parts list and wiring diagram for a visual system.",
+      "authorString": "Matsliah A, Yu SC, Kruk K, Bland D, Burke AT, Gager J, Hebditch J, Silverman B, Willie KP, Willie R, Sorek M, Sterling AR, Kind E, Garner D, Sancer G, Wernet MF, Kim SS, Murthy M, Seung HS, FlyWire Consortium.",
+      "journalAbbreviation": "Nature",
+      "pubYear": 2024,
+      "pageInfo": "166-180"
+    },
+    {
+      "source": "MED",
+      "id": "39358524",
+      "title": "Predicting visual function by interpreting a neuronal wiring diagram.",
+      "authorString": "Seung HS.",
+      "journalAbbreviation": "Nature",
+      "pubYear": 2024,
+      "pageInfo": "113-123"
+    },
+    {
+      "source": "MED",
+      "id": "39256041",
+      "title": "Localized and Long-Lasting Adaptation in Dragonfly Target-Detecting Neurons.",
+      "authorString": "Schwarz MB, O'Carroll DC, Evans BJE, Fabian JM, Wiederman SD.",
+      "journalAbbreviation": "eNeuro",
+      "pubYear": 2024,
+      "pageInfo": "ENEURO.0036-24.2024"
+    },
+    {
+      "source": "MED",
+      "id": "38663426",
+      "title": "Optimization in Visual Motion Estimation.",
+      "authorString": "Clark DA, Fitzgerald JE.",
+      "journalAbbreviation": "Annu Rev Vis Sci",
+      "pubYear": 2024,
+      "pageInfo": "23-46"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR864763",
+      "title": "Broken time reversal symmetry in visual motion detection",
+      "authorString": "Wu N, Zhou B, Agrochao M, Clark DA.",
+      "pubYear": 2024
+    },
+    {
+      "source": "PPR",
+      "id": "PPR843279",
+      "title": "A recurrent neural circuit in  <i>Drosophila</i>  deblurs visual inputs",
+      "authorString": "Pang MM, Chen F, Xie M, Druckmann S, Clandinin TR, Yang HH.",
+      "pubYear": 2024
+    },
+    {
+      "source": "MED",
+      "id": "38635686",
+      "title": "An open platform for visual stimulation of insects.",
+      "authorString": "Prech S, Groschner LN, Borst A.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2024,
+      "pageInfo": "e0301999"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR833982",
+      "title": "Interneuron diversity and normalization specificity in a visual system",
+      "authorString": "Seung HS.",
+      "pubYear": 2024
+    },
+    {
+      "source": "MED",
+      "id": "38280859",
+      "title": "Finding the gap: neuromorphic motion-vision in dense environments.",
+      "authorString": "Schoepe T, Janotte E, Milde MB, Bertrand OJN, Egelhaaf M, Chicca E.",
+      "journalAbbreviation": "Nat Commun",
+      "pubYear": 2024,
+      "pageInfo": "817"
+    },
+    {
+      "source": "MED",
+      "id": "38150349",
+      "title": "Bio-Inspired Small Target Motion Detection With Spatio-Temporal Feedback in Natural Scenes.",
+      "authorString": "Wang H, Zhong Z, Lei F, Peng J, Yue S.",
+      "journalAbbreviation": "IEEE Trans Image Process",
+      "pubYear": 2024,
+      "pageInfo": "451-465"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR760200",
+      "title": "Insights into vision from interpretation of a neuronal wiring diagram",
+      "authorString": "Seung HS.",
+      "pubYear": 2023
+    },
+    {
+      "source": "MED",
+      "id": "37918398",
+      "title": "Neural mechanisms to incorporate visual counterevidence in self-movement estimation.",
+      "authorString": "Tanaka R, Zhou B, Agrochao M, Badwan BA, Au B, Matos NCB, Clark DA.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2023,
+      "pageInfo": "4960-4979.e7"
+    },
+    {
+      "source": "MED",
+      "id": "37783895",
+      "title": "Multilevel visual motion opponency in Drosophila.",
+      "authorString": "Ammer G, Serbe-Kamp E, Mauss AS, Richter FG, Fendl S, Borst A.",
+      "journalAbbreviation": "Nat Neurosci",
+      "pubYear": 2023,
+      "pageInfo": "1894-1905"
+    },
+    {
+      "source": "MED",
+      "id": "37751469",
+      "title": "Long-timescale anti-directional rotation in &lt;i&gt;Drosophila&lt;/i&gt; optomotor behavior.",
+      "authorString": "Mano O, Choi M, Tanaka R, Creamer MS, Matos NCB, Shomar JW, Badwan BA, Clandinin TR, Clark DA.",
+      "journalAbbreviation": "Elife",
+      "pubYear": 2023,
+      "pageInfo": "e86076"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR728815",
+      "title": "Looming detection in complex dynamic visual scenes by interneuronal coordination of motion and feature pathways",
+      "authorString": "Gu B, Feng J, Song Z.",
+      "pubYear": 2023
+    },
+    {
+      "source": "MED",
+      "id": "37810236",
+      "title": "Direct comparison reveals algorithmic similarities in fly and mouse visual motion detection.",
+      "authorString": "Chen J, Gish CM, Fransen JW, Salazar-Gatzimas E, Clark DA, Borghuis BG.",
+      "journalAbbreviation": "iScience",
+      "pubYear": 2023,
+      "pageInfo": "107928"
+    },
+    {
+      "source": "MED",
+      "id": "37428604",
+      "title": "How Flies See Motion.",
+      "authorString": "Borst A, Groschner LN.",
+      "journalAbbreviation": "Annu Rev Neurosci",
+      "pubYear": 2023,
+      "pageInfo": "17-37"
+    },
+    {
+      "source": "MED",
+      "id": "37294743",
+      "title": "Contrast normalization affects response time-course of visual interneurons.",
+      "authorString": "Pirogova N, Borst A.",
+      "journalAbbreviation": "PLoS One",
+      "pubYear": 2023,
+      "pageInfo": "e0285686"
+    },
+    {
+      "source": "MED",
+      "id": "37285845",
+      "title": "Multifaceted luminance gain control beyond photoreceptors in Drosophila.",
+      "authorString": "Ketkar MD, Shao S, Gjorgjieva J, Silies M.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2023,
+      "pageInfo": "2632-2645.e6"
+    },
+    {
+      "source": "MED",
+      "id": "37263088",
+      "title": "Motion perception based on ON/OFF channels: A survey.",
+      "authorString": "Fu Q.",
+      "journalAbbreviation": "Neural Netw",
+      "pubYear": 2023,
+      "pageInfo": "1-18"
+    },
+    {
+      "source": "MED",
+      "id": "37236181",
+      "title": "Disynaptic inhibition shapes tuning of OFF-motion detectors in Drosophila.",
+      "authorString": "Braun A, Borst A, Meier M.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2023,
+      "pageInfo": "2260-2269.e4"
+    },
+    {
+      "source": "MED",
+      "id": "37128740",
+      "title": "Visual processing in the fly, from photoreceptors to behavior.",
+      "authorString": "Currier TA, Pang MM, Clandinin TR.",
+      "journalAbbreviation": "Genetics",
+      "pubYear": 2023,
+      "pageInfo": "iyad064"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR593905",
+      "title": "Long timescale anti-directional rotation in  <i>Drosophila</i>  optomotor behavior",
+      "authorString": "Mano O, Choi M, Tanaka R, Creamer MS, Matos NC, Shomar J, Badwan BA, Clandinin TR, Clark DA.",
+      "pubYear": 2023
+    },
+    {
+      "source": "PPR",
+      "id": "PPR593430",
+      "title": "Neural mechanisms to incorporate visual counterevidence in self motion estimation",
+      "authorString": "Tanaka R, Zhou B, Agrochao M, Badwan BA, Au B, Matos NCB, Clark DA.",
+      "pubYear": 2023
+    },
+    {
+      "source": "MED",
+      "id": "36303043",
+      "title": "Contrast independent biologically inspired translational optic flow estimation.",
+      "authorString": "Skelton PSM, Finn A, Brinkworth RSA.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2022,
+      "pageInfo": "635-660"
+    },
+    {
+      "source": "MED",
+      "id": "35868321",
+      "title": "Excitatory and inhibitory neural dynamics jointly tune motion detection.",
+      "authorString": "Gonzalez-Suarez AD, Zavatone-Veth JA, Chen J, Matulis CA, Badwan BA, Clark DA.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2022,
+      "pageInfo": "3659-3675.e8"
+    },
+    {
+      "source": "MED",
+      "id": "35023828",
+      "title": "Shallow neural networks trained to detect collisions recover features of visual loom-selective neurons.",
+      "authorString": "Zhou B, Li Z, Kim S, Lafferty J, Clark DA.",
+      "journalAbbreviation": "Elife",
+      "pubYear": 2022,
+      "pageInfo": "e72067"
+    },
+    {
+      "source": "MED",
+      "id": "34875241",
+      "title": "Motion vision: Pinning down motion computation in an ever-changing circuit.",
+      "authorString": "Nagel K.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2021,
+      "pageInfo": "R1523-R1525"
+    },
+    {
+      "source": "MED",
+      "id": "34555824",
+      "title": "Nonlinear, neuronal adaptation in insect vision models improves target discrimination within repetitively moving backgrounds.",
+      "authorString": "James JV, Cazzolato BS, Grainger S, Wiederman SD.",
+      "journalAbbreviation": "Bioinspir Biomim",
+      "pubYear": 2021
+    },
+    {
+      "source": "MED",
+      "id": "34670114",
+      "title": "Flexible filtering by neural inputs supports motion computation across states and stimuli.",
+      "authorString": "Kohn JR, Portes JP, Christenson MP, Abbott LF, Behnia R.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2021,
+      "pageInfo": "5249-5260.e5"
+    },
+    {
+      "source": "MED",
+      "id": "34324832",
+      "title": "Predicting individual neuron responses with anatomically constrained task optimization.",
+      "authorString": "Mano O, Creamer MS, Badwan BA, Clark DA.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2021,
+      "pageInfo": "4062-4075.e4"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR366886",
+      "title": "Shallow neural networks trained to detect collisions recover features of visual loom-selective neurons",
+      "authorString": "Zhou B, Li Z, Kim SSY, Lafferty J, Clark DA.",
+      "pubYear": 2021
+    },
+    {
+      "source": "MED",
+      "id": "34096504",
+      "title": "Spatially displaced excitation contributes to the encoding of interrupted motion by a retinal direction-selective circuit.",
+      "authorString": "Ding J, Chen A, Chung J, Acaron Ledesma H, Wu M, Berson DM, Palmer SE, Wei W.",
+      "journalAbbreviation": "Elife",
+      "pubYear": 2021,
+      "pageInfo": "e68181"
+    },
+    {
+      "source": "MED",
+      "id": "34033749",
+      "title": "Neural mechanism of spatio-chromatic opponency in the Drosophila amacrine neurons.",
+      "authorString": "Li Y, Chen PJ, Lin TY, Ting CY, Muthuirulan P, Pursley R, Ilić M, Pirih P, Drews MS, Menon KP, Zinn KG, Pohida T, Borst A, Lee CH.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2021,
+      "pageInfo": "3040-3052.e9"
+    },
+    {
+      "source": "MED",
+      "id": "34014926",
+      "title": "Maximally efficient prediction in the early fly visual system may support evasive flight maneuvers.",
+      "authorString": "Wang S, Segev I, Borst A, Palmer S.",
+      "journalAbbreviation": "PLoS Comput Biol",
+      "pubYear": 2021,
+      "pageInfo": "e1008965"
+    },
+    {
+      "source": "PPR",
+      "id": "PPR313196",
+      "title": "State and stimulus dependence reconcile motion computation and the  <i>Drosophila</i>  connectome",
+      "authorString": "Kohn JR, Portes JP, Christenson MP, Abbott L, Behnia R.",
+      "pubYear": 2021
+    },
+    {
+      "source": "MED",
+      "id": "33079061",
+      "title": "Conditional protein tagging methods reveal highly specific subcellular distribution of ion channels in motion-sensing neurons.",
+      "authorString": "Fendl S, Vieira RM, Borst A.",
+      "journalAbbreviation": "Elife",
+      "pubYear": 2020,
+      "pageInfo": "e62953"
+    },
+    {
+      "source": "MED",
+      "id": "32623517",
+      "title": "Modelling Drosophila motion vision pathways for decoding the direction of translating objects against cluttered moving backgrounds.",
+      "authorString": "Fu Q, Yue S.",
+      "journalAbbreviation": "Biol Cybern",
+      "pubYear": 2020,
+      "pageInfo": "443-460"
+    },
+    {
+      "source": "MED",
+      "id": "32502966",
+      "title": "Seeing Natural Images through the Eye of a Fly with Remote Focusing Two-Photon Microscopy.",
+      "authorString": "Schuetzenberger A, Borst A.",
+      "journalAbbreviation": "iScience",
+      "pubYear": 2020,
+      "pageInfo": "101170"
+    },
+    {
+      "source": "MED",
+      "id": "32040161",
+      "title": "A minimal synaptic model for direction selective neurons in Drosophila.",
+      "authorString": "Zavatone-Veth JA, Badwan BA, Clark DA.",
+      "journalAbbreviation": "J Vis",
+      "pubYear": 2020,
+      "pageInfo": "2"
+    },
+    {
+      "source": "MED",
+      "id": "31962077",
+      "title": "Drosophila Vision: An Eye for Change.",
+      "authorString": "Wienecke CF, Clandinin TR.",
+      "journalAbbreviation": "Curr Biol",
+      "pubYear": 2020,
+      "pageInfo": "R66-R68"
+    }
+  ],
+  "returned_count": 60,
+  "visible_total": 60,
+  "cursor_in": "1",
+  "cursor_out": null,
+  "page_index": 1,
+  "page_complete": true,
+  "provider_response_keys": [
+    "citationList",
+    "hitCount",
+    "request",
+    "version"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "completed_at_utc": "2026-11-27T02:34:54.598129Z"
+}
