@@ -1,8 +1,8 @@
 # CP7 增量数据恢复与主机合并
 
-此目录保存 60 个原始二进制块，默认每块 512 KiB；实际块大小以 manifest.json 为准。按清单顺序拼接可恢复 recovery.bundle。增量仅声明 research/p3-p6-cp7，必须先取得 prerequisite 0ee3b7de167a70933bc9884b9217142c2661c374。目标提交 3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f，树 c5d5f03ce399961429288e1ffb7ce3565e278fbf，直接 Git 父提交 0ee3b7de167a70933bc9884b9217142c2661c374；检查点父项为 CP-0006。分块、manifest、此说明和导入 workflow 位于独立 sync 分支，不进入研究快照。
+此目录保存 60 个原始二进制块，默认每块 512 KiB；实际块大小以 manifest.json 为准。按清单顺序拼接可恢复 recovery.bundle。增量仅声明 research/p3-p6-cp7，必须先取得 prerequisite 0ee3b7de167a70933bc9884b9217142c2661c374。目标提交 3a6d834ffa9606efa873ac8d60dd35f2c7cd2d0f，树 c5d5f03ce399961429288e1ffb7ce3565e278fbf，直接 Git 父提交 0ee3b7de167a70933bc9884b9217142c2661c374；检查点父项为 CP-0006。分块、manifest 和此说明位于独立 sync 分支，不进入研究快照。
 
-Actions 只接受固定仓库、固定 sync ref 和这些已冻结字节；普通 fast-forward 更新 research/p3-p6-cp7，随后从 GitHub 新建独立仓库回读全部 artifact SHA256 和分区逻辑哈希。成功摘要及验证阶段记录见对应 Actions run 的日志。主机恢复无需执行仓库里的 Python 代码。
+本目录采用用户已授权的二进制数据包交付方式。全部分块、固定 prerequisite 和检查点内容可以从 GitHub 独立取回，并在只读的本地恢复过程中逐文件及逐逻辑分片校验；具体结果见本目录 `verification.json`。这证明远端包完整且可恢复，不表示研究分支已更新。自动审批拒绝了安装带 `contents: write` 的 Actions 导入工作流，因此该工作流没有发布，也不是下列恢复步骤的前置条件。主机按下列 PowerShell 步骤导入、普通推送研究分支并合并 main，无需执行仓库里的 Python 代码。
 
 以下适用于 Windows PowerShell 5.1 或更新版本及 Git。先把 $Cp7Repo 改成你的现有仓库绝对路径，在同一个 PowerShell 会话依次运行。命令在仓库外建立独立恢复目录；不把运输分支合并到 main。Git 操作失败就停止，保留现场。
 
@@ -49,7 +49,7 @@ $Cp7HostRoot = Join-Path (Split-Path -Parent $Cp7Repo) ('cp7-recovery-' + [Guid]
 $null = New-Item -ItemType Directory -Path $Cp7HostRoot
 $Cp7Package = Join-Path $Cp7HostRoot 'package'
 $Cp7Archive = Join-Path $Cp7HostRoot 'cp7-transport.zip'
-Invoke-Cp7Git archive --format=zip ('--output=' + $Cp7Archive) $Cp7SyncTip -- temp/sync/CP-0007 .github/workflows/import-cp7.yml
+Invoke-Cp7Git archive --format=zip ('--output=' + $Cp7Archive) $Cp7SyncTip -- temp/sync/CP-0007
 Expand-Archive -LiteralPath $Cp7Archive -DestinationPath $Cp7Package
 $Cp7PackageData = Join-Path $Cp7Package 'temp/sync/CP-0007'
 $Cp7ManifestPath = Join-Path $Cp7PackageData 'manifest.json'
@@ -144,7 +144,7 @@ Invoke-Cp7Git -c push.followTags=false push origin ($Cp7Commit + ':' + $Cp7Resea
 Assert-Cp7Equal (Get-Cp7Remote $Cp7ResearchRef) $Cp7Commit 'remote research after normal push'
 ~~~
 
-此解包目录通过 git archive 保留原始字节，不受 Windows checkout 换行转换影响；Git 仓库内导入的提交与这些文件完全对应。保留两个 ZIP、host-verification.json 和 verified-canonical；Actions 的独立远端验证结果仍需在对应 run 确认。
+此解包目录通过 git archive 保留原始字节，不受 Windows checkout 换行转换影响；Git 仓库内导入的提交与这些文件完全对应。保留两个 ZIP、host-verification.json 和 verified-canonical。以上逐文件校验及研究分支普通推送均在当前主机完成；本目录 verification.json 另记录交付时从 GitHub 独立取包恢复的验证结果，两者的验证时间和研究分支状态分别陈述。
 
 ## 4. 由用户在主机快进合并 main 并普通推送
 
