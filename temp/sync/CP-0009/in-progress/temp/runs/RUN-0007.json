@@ -1,0 +1,55 @@
+{
+  "run_id": "RUN-0007",
+  "scope_id": "SCOPE-0001",
+  "start_checkpoint_id": "CP-0008",
+  "start_commit_sha": "2e749d4994bd3b8c66fcde59950779adc5d66085",
+  "started_at_utc": "2026-11-27T08:28:34.979919Z",
+  "authorization": "2026-11-27 用户继续CP7、CP8未结任务；延续先完整同步、按小批即时提交推送、公开二进制数据包和PowerShell恢复说明的授权。",
+  "authorized_stages": [
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "budget": {
+    "wall_clock_hours": 6,
+    "external_requests": 2000,
+    "manual_review_items": 200,
+    "paid_spend": 0
+  },
+  "status": "running_recovery_maintenance",
+  "branch": "research/p3-p6-cp9",
+  "external_requests_used": 0,
+  "manual_review_items_used": 0,
+  "cache_reuse_events": 0,
+  "paid_spend": 0,
+  "closure": false,
+  "research_cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "sync_policy": "Each bounded source/review batch is committed and pushed with exact remote readback. Canonical snapshots are transported as verified incremental bundles before further scientific work.",
+  "start_sync_gate": {
+    "status": "passed",
+    "checked_at_utc": "2026-11-27T08:22:22.181589Z",
+    "mode": "remote_package_and_current_local_snapshot_revalidated",
+    "proof_commit": "73e20d4998f1b2af524bb3eea2f9e07e97aeb7a7",
+    "proof_url": "https://github.com/ncut-d1z/Insect-Inspired/blob/73e20d4998f1b2af524bb3eea2f9e07e97aeb7a7/temp/sync/CP-0008/verification.json",
+    "proof_sha256": "cebac056483208a670fb9a94860a2c95bfec1c6341fe19d0250fbaace4cdccd4",
+    "canonical_commit_sha": "2e749d4994bd3b8c66fcde59950779adc5d66085",
+    "tree_sha": "6428de0a5ac1e7c288928462eb9c768d08dfff4c",
+    "verified_files": 1361,
+    "verified_file_bytes": 1150803660,
+    "all_114_transport_parts_rehashed": true,
+    "remote_package_complete_and_restore_verified": true,
+    "remote_canonical_branch_updated": false,
+    "worktree_clean": true
+  },
+  "transport": {
+    "api_available": true,
+    "ordinary_git_push_authenticated": false,
+    "automatic_import_workflow_installed": false,
+    "main_updated": false,
+    "remote_branches_deleted": false
+  },
+  "next_batch": "Apply and verify actual 24-hour review-state escalation while preserving CP8 originals; publish valid CP9 fully before continuing scientific P3-P6 tasks.",
+  "maintenance_is_scientific_review": false,
+  "sync_state": "Initial run record pending remote readback."
+}
