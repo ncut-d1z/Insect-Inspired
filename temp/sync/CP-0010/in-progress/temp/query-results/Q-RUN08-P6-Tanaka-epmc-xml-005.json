@@ -1,0 +1,103 @@
+{
+  "query_id": "Q-RUN08-P6-Tanaka-epmc-xml-005",
+  "run_id": "RUN-0008",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0010",
+  "stage": "P6",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "query_record": {
+    "query_id": "Q-RUN08-P6-Tanaka-epmc-xml-005",
+    "task_id": "T-RUN08-RECORDED-Q-RUN08-P6-Tanaka-epmc-xml-005",
+    "scope_id": "SCOPE-0001",
+    "checkpoint_id": "CP-0010",
+    "entity_id": "W-D949d6ef5b3f851e1",
+    "source_id": "europepmc",
+    "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10848174/fullTextXML",
+    "api_version": null,
+    "query_kind": "http_get_primary_fulltext_xml",
+    "raw_parameters": {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10848174/fullTextXML",
+      "purpose": "P6 species/condition review for existing Tanaka2023 Assessments"
+    },
+    "normalized_parameters": {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10848174/fullTextXML",
+      "work_id": "W-D949d6ef5b3f851e1",
+      "run_id": "RUN-0008",
+      "scope_id": "SCOPE-0001",
+      "target_dimension": "conditions.species",
+      "count_scope": "Exact one-resource cache reuse when available; failed access does not yield a known source inventory."
+    },
+    "queried_at_utc": "2026-11-27T09:14:36.874558Z",
+    "cursor_in": null,
+    "cursor_out": null,
+    "page_index": 1,
+    "page_complete": false,
+    "visible_total": null,
+    "returned_count": null,
+    "count_before_dedup": null,
+    "count_after_dedup": null,
+    "new_work_ids": [],
+    "new_work_count": 0,
+    "result_identifiers": [],
+    "status": "error",
+    "verification_status": "unverified",
+    "error_code": "HTTP_500",
+    "error_message": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained.",
+    "retry_count": 0,
+    "retry_at": null,
+    "cache_path": "temp/query-results/Q-RUN08-P6-Tanaka-epmc-xml-005.json",
+    "cache_hit": false,
+    "reused_query_id": null,
+    "rerun_reason": "Distinct legal source route for the unresolved species-table gap; no successful same-parameter fulltext or table cache existed. Prior PDF failures are not evidence.",
+    "coverage_note": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+    "license_note": "Only bibliographic identifiers, original Chinese review summaries, source hashes and locators are retained. No original article, abstract, table image, personal contact information or credentials are redistributed.",
+    "recorded_at_utc": "2026-11-27T09:20:55.896025Z",
+    "query_time_status": "exact",
+    "field_states": {
+      "returned_count": {
+        "status": "unknown",
+        "reason": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-epmc-xml-005"
+      },
+      "count_before_dedup": {
+        "status": "unknown",
+        "reason": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-epmc-xml-005"
+      },
+      "count_after_dedup": {
+        "status": "unknown",
+        "reason": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-epmc-xml-005"
+      },
+      "visible_total": {
+        "status": "unknown",
+        "reason": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-epmc-xml-005"
+      }
+    }
+  },
+  "evidence_review": "temp/reports/RUN-0008-Tanaka2023-evidence-review.json",
+  "sanitized": true,
+  "payload_retained": false,
+  "response_kind": "http_500_empty_response",
+  "http_status": 500,
+  "body_bytes": 0,
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_count_basis": "The public Europe PMC fullTextXML endpoint returned HTTP 500 with an empty body; no article XML or resource table was obtained. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+  "tool_returned_source_ref": null,
+  "exact_request_timestamp_available": true,
+  "note": "Typed query is exactly repeated in candidate.additions.queries. Failed-access outcomes do not verify scientific content or create a new Version.",
+  "request_completed_at_utc": "2026-11-27T09:15:06.943359Z",
+  "redirects_followed": 0,
+  "request_method": "GET",
+  "network_attempts": 1
+}

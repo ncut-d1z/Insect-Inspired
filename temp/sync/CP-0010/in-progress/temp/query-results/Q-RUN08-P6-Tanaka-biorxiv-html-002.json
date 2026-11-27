@@ -1,0 +1,100 @@
+{
+  "query_id": "Q-RUN08-P6-Tanaka-biorxiv-html-002",
+  "run_id": "RUN-0008",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0010",
+  "stage": "P6",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "query_record": {
+    "query_id": "Q-RUN08-P6-Tanaka-biorxiv-html-002",
+    "task_id": "T-RUN08-RECORDED-Q-RUN08-P6-Tanaka-biorxiv-html-002",
+    "scope_id": "SCOPE-0001",
+    "checkpoint_id": "CP-0010",
+    "entity_id": "W-D949d6ef5b3f851e1",
+    "source_id": "publisher",
+    "endpoint_or_url": "https://www.biorxiv.org/content/10.1101/2023.01.04.522814v2.full",
+    "api_version": null,
+    "query_kind": "fulltext_access_attempt",
+    "raw_parameters": {
+      "url": "https://www.biorxiv.org/content/10.1101/2023.01.04.522814v2.full",
+      "purpose": "P6 species/condition review for existing Tanaka2023 Assessments"
+    },
+    "normalized_parameters": {
+      "url": "https://www.biorxiv.org/content/10.1101/2023.01.04.522814v2.full",
+      "work_id": "W-D949d6ef5b3f851e1",
+      "run_id": "RUN-0008",
+      "scope_id": "SCOPE-0001",
+      "target_dimension": "conditions.species",
+      "count_scope": "Exact one-resource cache reuse when available; failed access does not yield a known source inventory."
+    },
+    "queried_at_utc": null,
+    "cursor_in": null,
+    "cursor_out": null,
+    "page_index": 1,
+    "page_complete": false,
+    "visible_total": null,
+    "returned_count": null,
+    "count_before_dedup": null,
+    "count_after_dedup": null,
+    "new_work_ids": [],
+    "new_work_count": 0,
+    "result_identifiers": [],
+    "status": "partial",
+    "verification_status": "source_supported",
+    "error_code": "web_tool_inaccessible",
+    "error_message": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed.",
+    "retry_count": 0,
+    "retry_at": null,
+    "cache_path": "temp/query-results/Q-RUN08-P6-Tanaka-biorxiv-html-002.json",
+    "cache_hit": false,
+    "reused_query_id": null,
+    "rerun_reason": "Distinct legal source route for the unresolved species-table gap; no successful same-parameter fulltext or table cache existed. Prior PDF failures are not evidence.",
+    "coverage_note": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+    "license_note": "Only bibliographic identifiers, original Chinese review summaries, source hashes and locators are retained. No original article, abstract, table image, personal contact information or credentials are redistributed.",
+    "recorded_at_utc": "2026-11-27T09:20:55.896025Z",
+    "query_time_status": "unavailable_exact",
+    "field_states": {
+      "returned_count": {
+        "status": "unknown",
+        "reason": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-html-002"
+      },
+      "count_before_dedup": {
+        "status": "unknown",
+        "reason": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-html-002"
+      },
+      "count_after_dedup": {
+        "status": "unknown",
+        "reason": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-html-002"
+      },
+      "visible_total": {
+        "status": "unknown",
+        "reason": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+        "evidence_locator": [],
+        "unknown_since_utc": "2026-11-27T09:20:55.896025Z",
+        "review_task_id": "T-RUN08-QUERY-REVIEW-Q-RUN08-P6-Tanaka-biorxiv-html-002"
+      }
+    },
+    "queried_date": "2026-11-27"
+  },
+  "evidence_review": "temp/reports/RUN-0008-Tanaka2023-evidence-review.json",
+  "sanitized": true,
+  "payload_retained": false,
+  "response_kind": "web_tool_target_inaccessible",
+  "http_status": null,
+  "body_bytes": null,
+  "body_sha256": null,
+  "source_count_basis": "Web open returned Internal Error and stated that the target URL is not accessible via this tool. No source HTTP status or body was exposed. No successful article/table inventory was obtained. Null counts mean unavailable, not zero records in the source. New Work count is the known actual number added by this batch: zero.",
+  "tool_returned_source_ref": "turn201216779view0",
+  "exact_request_timestamp_available": false,
+  "note": "Typed query is exactly repeated in candidate.additions.queries. Failed-access outcomes do not verify scientific content or create a new Version."
+}
