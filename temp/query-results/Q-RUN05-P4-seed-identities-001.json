@@ -1,0 +1,527 @@
+{
+  "query_id": "Q-RUN05-P4-seed-identities-001",
+  "run_id": "RUN-0005",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0007",
+  "task_id": "T-Citations-S04-epmc",
+  "entity_id": "W-S04",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28EXT_ID%3A22723490+OR+EXT_ID%3A15829650+OR+EXT_ID%3A31928873+OR+EXT_ID%3A34531728+OR+EXT_ID%3A15133514+OR+EXT_ID%3A16000634+OR+EXT_ID%3A25186763+OR+EXT_ID%3A19893631%29+AND+SRC%3AMED&resultType=core&format=json&pageSize=100",
+  "raw_parameters": {
+    "query": "(EXT_ID:22723490 OR EXT_ID:15829650 OR EXT_ID:31928873 OR EXT_ID:34531728 OR EXT_ID:15133514 OR EXT_ID:16000634 OR EXT_ID:25186763 OR EXT_ID:19893631) AND SRC:MED",
+    "resultType": "core",
+    "format": "json",
+    "pageSize": 100
+  },
+  "query_kind": "identity",
+  "queried_at_utc": "2026-11-27T02:31:12.876721Z",
+  "query_time_status": "exact",
+  "external_requests_performed": 1,
+  "cache_hit": false,
+  "rerun_reason": "Eight seed citation tasks retained identity_request_required; verified seed PubMed IDs support this one batched official exact-ID cross-check. No successful same-parameter cache exists.",
+  "sanitized": true,
+  "payload_retained": false,
+  "license_note": "Public bibliographic facts; abstract/full text and personal contact details omitted.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "index_drift_note": "Live source observed now, not a historical snapshot. Publication cutoff is checked separately.",
+  "http_status": 200,
+  "content_type": "application/json;charset=UTF-8",
+  "status": "success",
+  "body_bytes": 47200,
+  "body_sha256": "a876ccc2cadd354d1dcfbb77ee5e7bb039f19084b15af24b12c8d7144e308b15",
+  "records": [
+    {
+      "id": "34531728",
+      "source": "MED",
+      "pmid": "34531728",
+      "pmcid": "PMC8438216",
+      "doi": "10.3389/fncir.2021.713285",
+      "title": "Disentangling of Local and Wide-Field Motion Adaptation.",
+      "authorString": "Li J, Niemeier M, Kern R, Egelhaaf M.",
+      "pubYear": "2021",
+      "pageInfo": "713285",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "Y",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "firstPublicationDate": "2021-08-31",
+      "authors": [
+        {
+          "fullName": "Li J",
+          "lastName": "Li",
+          "firstName": "Jinglin",
+          "initials": "J"
+        },
+        {
+          "fullName": "Niemeier M",
+          "lastName": "Niemeier",
+          "firstName": "Miriam",
+          "initials": "M"
+        },
+        {
+          "fullName": "Kern R",
+          "lastName": "Kern",
+          "firstName": "Roland",
+          "initials": "R"
+        },
+        {
+          "fullName": "Egelhaaf M",
+          "lastName": "Egelhaaf",
+          "firstName": "Martin",
+          "initials": "M"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Front Neural Circuits",
+        "title": "Frontiers in neural circuits",
+        "essn": "1662-5110",
+        "issn": "1662-5110"
+      },
+      "journal_issue": {
+        "volume": "15",
+        "dateOfPublication": "2021 ",
+        "yearOfPublication": 2021
+      }
+    },
+    {
+      "id": "31928873",
+      "source": "MED",
+      "pmid": "31928873",
+      "doi": "10.1016/j.cub.2019.10.035",
+      "title": "Dynamic Signal Compression for Robust Motion Vision in Flies.",
+      "authorString": "Drews MS, Leonhardt A, Pirogova N, Richter FG, Schuetzenberger A, Braun L, Serbe E, Borst A.",
+      "pubYear": "2020",
+      "pageInfo": "209-221.e8",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2020-01-10",
+      "authors": [
+        {
+          "fullName": "Drews MS",
+          "lastName": "Drews",
+          "firstName": "Michael S",
+          "initials": "MS"
+        },
+        {
+          "fullName": "Leonhardt A",
+          "lastName": "Leonhardt",
+          "firstName": "Aljoscha",
+          "initials": "A"
+        },
+        {
+          "fullName": "Pirogova N",
+          "lastName": "Pirogova",
+          "firstName": "Nadezhda",
+          "initials": "N"
+        },
+        {
+          "fullName": "Richter FG",
+          "lastName": "Richter",
+          "firstName": "Florian G",
+          "initials": "FG"
+        },
+        {
+          "fullName": "Schuetzenberger A",
+          "lastName": "Schuetzenberger",
+          "firstName": "Anna",
+          "initials": "A"
+        },
+        {
+          "fullName": "Braun L",
+          "lastName": "Braun",
+          "firstName": "Lukas",
+          "initials": "L"
+        },
+        {
+          "fullName": "Serbe E",
+          "lastName": "Serbe",
+          "firstName": "Etienne",
+          "initials": "E"
+        },
+        {
+          "fullName": "Borst A",
+          "lastName": "Borst",
+          "firstName": "Alexander",
+          "initials": "A"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Curr Biol",
+        "title": "Current biology : CB",
+        "essn": "1879-0445",
+        "issn": "0960-9822"
+      },
+      "journal_issue": {
+        "issue": "2",
+        "volume": "30",
+        "dateOfPublication": "2020 Jan",
+        "yearOfPublication": 2020
+      }
+    },
+    {
+      "id": "25186763",
+      "source": "MED",
+      "pmid": "25186763",
+      "pmcid": "PMC4152614",
+      "doi": "10.1523/jneurosci.2671-13.2014",
+      "title": "Near-optimal decoding of transient stimuli from coupled neuronal subpopulations.",
+      "authorString": "Trousdale J, Carroll SR, Gabbiani F, Josić K.",
+      "pubYear": "2014",
+      "pageInfo": "12206-12222",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "research-article",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "firstPublicationDate": "2014-09-01",
+      "authors": [
+        {
+          "fullName": "Trousdale J",
+          "lastName": "Trousdale",
+          "firstName": "James",
+          "initials": "J"
+        },
+        {
+          "fullName": "Carroll SR",
+          "lastName": "Carroll",
+          "firstName": "Samuel R",
+          "initials": "SR"
+        },
+        {
+          "fullName": "Gabbiani F",
+          "lastName": "Gabbiani",
+          "firstName": "Fabrizio",
+          "initials": "F"
+        },
+        {
+          "fullName": "Josić K",
+          "lastName": "Josić",
+          "firstName": "Krešimir",
+          "initials": "K"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474"
+      },
+      "journal_issue": {
+        "issue": "36",
+        "volume": "34",
+        "dateOfPublication": "2014 Sep",
+        "yearOfPublication": 2014
+      }
+    },
+    {
+      "id": "22723490",
+      "source": "MED",
+      "pmid": "22723490",
+      "doi": "10.1242/jeb.061713",
+      "title": "Blowfly flight characteristics are shaped by environmental features and controlled by optic flow information.",
+      "authorString": "Kern R, Boeddeker N, Dittmar L, Egelhaaf M.",
+      "pubYear": "2012",
+      "pageInfo": "2501-2514",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2012-07-01",
+      "authors": [
+        {
+          "fullName": "Kern R",
+          "lastName": "Kern",
+          "firstName": "Roland",
+          "initials": "R"
+        },
+        {
+          "fullName": "Boeddeker N",
+          "lastName": "Boeddeker",
+          "firstName": "Norbert",
+          "initials": "N"
+        },
+        {
+          "fullName": "Dittmar L",
+          "lastName": "Dittmar",
+          "firstName": "Laura",
+          "initials": "L"
+        },
+        {
+          "fullName": "Egelhaaf M",
+          "lastName": "Egelhaaf",
+          "firstName": "Martin",
+          "initials": "M"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Exp Biol",
+        "title": "The Journal of experimental biology",
+        "essn": "1477-9145",
+        "issn": "0022-0949"
+      },
+      "journal_issue": {
+        "issue": "Pt 14",
+        "volume": "215",
+        "dateOfPublication": "2012 Jul",
+        "yearOfPublication": 2012
+      }
+    },
+    {
+      "id": "19893631",
+      "source": "MED",
+      "pmid": "19893631",
+      "pmcid": "PMC2766641",
+      "doi": "10.1371/journal.pcbi.1000555",
+      "title": "Robust models for optic flow coding in natural scenes inspired by insect biology.",
+      "authorString": "Brinkworth RS, O'Carroll DC.",
+      "pubYear": "2009",
+      "pageInfo": "e1000555",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "research-article",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "Y",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "firstPublicationDate": "2009-11-06",
+      "authors": [
+        {
+          "fullName": "Brinkworth RS",
+          "lastName": "Brinkworth",
+          "firstName": "Russell S A",
+          "initials": "RS"
+        },
+        {
+          "fullName": "O'Carroll DC",
+          "lastName": "O'Carroll",
+          "firstName": "David C",
+          "initials": "DC"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "PLoS Comput Biol",
+        "title": "PLoS computational biology",
+        "essn": "1553-7358",
+        "issn": "1553-734X"
+      },
+      "journal_issue": {
+        "issue": "11",
+        "volume": "5",
+        "dateOfPublication": "2009 Nov",
+        "yearOfPublication": 2009
+      }
+    },
+    {
+      "id": "16000634",
+      "source": "MED",
+      "pmid": "16000634",
+      "pmcid": "PMC6725274",
+      "doi": "10.1523/jneurosci.1132-05.2005",
+      "title": "On the computations analyzing natural optic flow: quantitative model analysis of the blowfly motion vision pathway.",
+      "authorString": "Lindemann JP, Kern R, van Hateren JH, Ritter H, Egelhaaf M.",
+      "pubYear": "2005",
+      "pageInfo": "6435-6448",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "firstPublicationDate": "2005-07-01",
+      "authors": [
+        {
+          "fullName": "Lindemann JP",
+          "lastName": "Lindemann",
+          "firstName": "J P",
+          "initials": "JP"
+        },
+        {
+          "fullName": "Kern R",
+          "lastName": "Kern",
+          "firstName": "R",
+          "initials": "R"
+        },
+        {
+          "fullName": "van Hateren JH",
+          "lastName": "van Hateren",
+          "firstName": "J H",
+          "initials": "JH"
+        },
+        {
+          "fullName": "Ritter H",
+          "lastName": "Ritter",
+          "firstName": "H",
+          "initials": "H"
+        },
+        {
+          "fullName": "Egelhaaf M",
+          "lastName": "Egelhaaf",
+          "firstName": "M",
+          "initials": "M"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474"
+      },
+      "journal_issue": {
+        "issue": "27",
+        "volume": "25",
+        "dateOfPublication": "2005 Jul",
+        "yearOfPublication": 2005
+      }
+    },
+    {
+      "id": "15829650",
+      "source": "MED",
+      "pmid": "15829650",
+      "pmcid": "PMC6724919",
+      "doi": "10.1523/jneurosci.0168-05.2005",
+      "title": "Sharing receptive fields with your neighbors: tuning the vertical system cells to wide field motion.",
+      "authorString": "Farrow K, Borst A, Haag J.",
+      "pubYear": "2005",
+      "pageInfo": "3985-3993",
+      "pubTypeList": {
+        "pubType": [
+          "Comparative Study",
+          "Research Support, Non-U.S. Gov't",
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "firstPublicationDate": "2005-04-01",
+      "authors": [
+        {
+          "fullName": "Farrow K",
+          "lastName": "Farrow",
+          "firstName": "Karl",
+          "initials": "K"
+        },
+        {
+          "fullName": "Borst A",
+          "lastName": "Borst",
+          "firstName": "Alexander",
+          "initials": "A"
+        },
+        {
+          "fullName": "Haag J",
+          "lastName": "Haag",
+          "firstName": "Juergen",
+          "initials": "J"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474"
+      },
+      "journal_issue": {
+        "issue": "15",
+        "volume": "25",
+        "dateOfPublication": "2005 Apr",
+        "yearOfPublication": 2005
+      }
+    },
+    {
+      "id": "15133514",
+      "source": "MED",
+      "pmid": "15133514",
+      "doi": "10.1038/nn1245",
+      "title": "Neural mechanism underlying complex receptive field properties of motion-sensitive interneurons.",
+      "authorString": "Haag J, Borst A.",
+      "pubYear": "2004",
+      "pageInfo": "628-634",
+      "pubTypeList": {
+        "pubType": [
+          "Comparative Study",
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "isOpenAccess": "N",
+      "inEPMC": "N",
+      "inPMC": "N",
+      "firstPublicationDate": "2004-05-09",
+      "authors": [
+        {
+          "fullName": "Haag J",
+          "lastName": "Haag",
+          "firstName": "Juergen",
+          "initials": "J"
+        },
+        {
+          "fullName": "Borst A",
+          "lastName": "Borst",
+          "firstName": "Alexander",
+          "initials": "A"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Nat Neurosci",
+        "title": "Nature neuroscience",
+        "essn": "1546-1726",
+        "issn": "1097-6256"
+      },
+      "journal_issue": {
+        "issue": "6",
+        "volume": "7",
+        "dateOfPublication": "2004 Jun",
+        "yearOfPublication": 2004
+      }
+    }
+  ],
+  "returned_count": 8,
+  "visible_total": 8,
+  "cursor_in": "*",
+  "cursor_out": null,
+  "page_index": 1,
+  "page_complete": true,
+  "provider_response_keys": [
+    "hitCount",
+    "request",
+    "resultList",
+    "version"
+  ],
+  "error_code": null,
+  "error_message": null,
+  "completed_at_utc": "2026-11-27T02:31:36.639239Z"
+}
