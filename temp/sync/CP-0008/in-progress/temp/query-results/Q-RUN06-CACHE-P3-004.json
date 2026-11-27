@@ -1,0 +1,60 @@
+{
+  "query_id": "Q-RUN06-CACHE-P3-004",
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0008",
+  "task_id": "T-ReferenceIdentity-W-S15",
+  "entity_id": "W-S15",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works?filter=doi%3A10.1007%2F978-3-642-04898-2_270%2Cdoi%3A10.1007%2Fb138024%2Cdoi%3A10.1080%2Fnet.12.3.351.369%2Cdoi%3A10.1088%2F0954-898x%2F12%2F3%2F307%2Cdoi%3A10.7554%2Felife.102230.1&rows=5",
+  "query_kind": "cached_canonical_identity_and_receipt_review",
+  "queried_at_utc": "2026-11-27T06:44:50.277607Z",
+  "query_time_status": "exact",
+  "cache_hit": true,
+  "reused_query_id": "Q-RUN02-ROOT-00006",
+  "external_requests_performed": 0,
+  "cache_receipt_path": "temp/query-results/Q-RUN02-ROOT-00006.json",
+  "cache_receipt_sha256": "f77b56de0c20bc175df7d70f93d624b367ab34a36780d6d9d07b46adf74f55b5",
+  "cache_receipt_bytes": 998,
+  "historical_query_time": "2026-11-26T09:46:16.128609Z",
+  "raw_parameters": {
+    "selected_work_ids": [
+      "W-Dee8a80e9b1a461d3"
+    ],
+    "original_query_id": "Q-RUN02-ROOT-00006",
+    "purpose": "Compare previously confirmed canonical target coordinates with newly observed publisher bibliography; no new authority verification or fulltext claim"
+  },
+  "status": "success",
+  "sanitized": true,
+  "payload_retained": false,
+  "records": [
+    {
+      "work_id": "W-Dee8a80e9b1a461d3",
+      "record_sha256": "5543dafd9707fbddaaecaa360c80c15299da7e5688f8f6e718fbd7690db40f57",
+      "work_key": "Chipman2011",
+      "title": "Gauss-Markov Theorem",
+      "authors": [
+        "John S. Chipman"
+      ],
+      "year": 2011,
+      "pages": "577-582",
+      "doi": "10.1007/978-3-642-04898-2_270",
+      "identity_confidence": "confirmed",
+      "canonical_source_query_id": "Q-RUN02-ROOT-00006"
+    }
+  ],
+  "result_identifiers": [
+    "W-Dee8a80e9b1a461d3"
+  ],
+  "visible_total": 1,
+  "returned_count": 1,
+  "count_before_dedup": 1,
+  "count_after_dedup": 1,
+  "new_work_count": 0,
+  "new_work_ids": [],
+  "page_complete": false,
+  "cursor_in": null,
+  "cursor_out": null,
+  "count_basis": "Selected canonical records only; no reassertion of original external query totals or complete source coverage.",
+  "license_note": "Public bibliographic facts and hashes only. Original fulltext and contact details omitted."
+}
