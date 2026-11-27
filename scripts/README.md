@@ -39,9 +39,27 @@ python -B scripts/audit_cp7.py --repo . --out ../cp7-qa/data-audit-final.json
 
 前两条命令会生成规范交付物；第三条只读仓库，只把审计报告写到 `--out`。审计要求已经存在 CP7 候选，不能将 `--help` 或脚本语法检查当成数据验收成功。
 
-候选生成器可导入 `audit_cp7.required_input_names(repo)`、`input_snapshot(repo, names)` 和 `input_digest(snapshot)`。将对应映射与真实冻结时间写入候选的 `validation_results.canonical_input_hashes`、`canonical_input_digest_sha256` 和 `input_frozen_at_utc`。审计绑定候选自身哈希，并在前后核对完整输入集合与字节；新出现或变化的输入使审计失败。必需输入包括完整逻辑数据／分片、RUN5 已保存的回执与 review、脚本和七项导出。
+候选生成器可导入 `audit_cp7.required_input_names(repo)`、`input_snapshot(repo, names)` 和 `input_digest(snapshot)`。将对应映射与真实冻结时间写入候选的 `validation_results.canonical_input_hashes`、`canonical_input_digest_sha256` 和 `input_frozen_at_utc`。审计绑定候选自身哈希，并在前后核对完整输入集合与字节；新出现或变化的输入使审计失败。必需输入包括完整逻辑数据／分片、RUN5 已保存的回执与 review、脚本和七项导出。RUN5 记录另以完整冻结记录、不可变字段投影和 SHA-256 绑定；授权、预算、起始时间／基线、截止时间及来源／缓存／人工计数不可变化，只有明列的最终化状态／时间／后置同步说明可以变化。审计期间 RUN5 文件仍必须逐字稳定。
 
 独立确定性验证应将同样的七项输出生成到另一个仓库外目录，逐字比较。临时报告不应写入 `scripts/`；通过后由主任务显式归档。HTML 的十项真实交互检查仍须另行执行；本迁移本身不声称 UI 验证已完成。
+
+## CP7 候选、QA 与最终化
+
+先按已发布复核回执完成规范数据集成并生成七项产物，再运行以下步骤。默认不加 `--apply` 的候选／最终化命令只做只读检查和输出计划，不写规范文件。
+
+```bash
+python -B scripts/checkpoint_cp7.py prepare --repo . --apply --plan-out ../cp7-qa/candidate-plan.json
+python -B scripts/audit_cp7.py --repo . --out ../cp7-qa/data-audit-final.json
+python -B scripts/check_determinism.py --repo . --out-dir ../cp7-qa/determinism --report ../cp7-qa/cp7-determinism.json
+node scripts/html-smoke.mjs --html ref.html --out-dir ../cp7-qa/ui --checkpoint CP-0007
+python -B scripts/checkpoint_cp7.py finalize --repo . --qa-dir ../cp7-qa --apply --plan-out ../cp7-qa/finalization-plan.json
+```
+
+`html-smoke.mjs` 使用已安装的 Playwright；若需指定已安装浏览器，可增加 `--executable-path`。它沿用既有十项检查，报告和四张截图仅写到新建的仓库外目录。语法检查和 `--help` 不是这十项检查的运行结果。
+
+`checkpoint_cp7.py` 从完整逻辑数据重算数量及最新任务游标，并逐条核验集成报告的完整 before/after；所有旧事件前缀、原参考文本和科学记录保留。新增 Assessment 必须与已经提交的 RUN5 review/candidate 文件内完整对象一致。`prepare` 只能生成 `invalid` 候选。`finalize` 只接受绑定该候选／同一输入的真实审计、确定性和 UI 成功凭据，并拒绝未审阅的新警告。
+
+最终化会归档实际 QA 报告、截图和实际被审计的 invalid 候选，使后续能够核验审计引用的候选哈希。最后的有效 CP7 对仓库当前全部跟踪／待跟踪文件形成精确哈希集合，只排除 CP7 自身与 `.git`；发现没有进入计划的忽略文件或符号链接就停止。最终化不提交、不推送、不生成远端同步成功结论；这些仍须由调用方完成并保存独立后置回执。
 
 ## 数据与时间规则
 

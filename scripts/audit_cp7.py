@@ -31,6 +31,13 @@ S19_PROOF_SHA256 = '2326bf4aa991fe1b990a93eeacbe1b6d3d3e833db59aa15f4b8c21f87380
 S19_RECORD_SHA256 = '75774b00032035fe24d28133f79fbbb4fb4cb7e44fa9a463c34523b53ab81cf6'
 CP_PATH = 'temp/snapshots/checkpoints/CP-0007.json'
 INTEGRATION_PATH = 'temp/reports/RUN-0005-integration.json'
+RUN_PATH = 'temp/runs/RUN-0005.json'
+RUN_FINALIZATION_FIELDS = frozenset({
+    'status', 'end_checkpoint_id', 'checkpoint_status', 'checkpoint_validation_state',
+    'checkpoint_candidate_created_at_utc', 'checkpoint_completed_at_utc',
+    'checkpoint_wall_clock_hours', 'budget_exhausted', 'pause_reason', 'sync_state',
+    'post_commit_verification_url', 'last_completed_batch', 'qa_completed_at_utc',
+})
 FROZEN_PATHS = tuple(f'temp/snapshots/checkpoints/CP-{i:04d}.json' for i in range(1, 7)) + (
     'temp/snapshots/scope.json', 'temp/snapshots/scopes/SCOPE-0001.json',
     'temp/seed-manifest.jsonl', 'temp/schema.json', S19_PROOF,
@@ -54,6 +61,17 @@ def canonical_digest(value):
 
 def input_digest(snapshot):
     return canonical_digest(snapshot)
+
+
+def run_accounting_projection(run):
+    """Freeze every run field except an explicit finalization-status whitelist."""
+    required = {'run_id', 'scope_id', 'start_checkpoint_id', 'start_commit_sha',
+                'started_at_utc', 'authorization', 'authorized_stages', 'budget',
+                'branch', 'external_requests_used', 'manual_review_items_used',
+                'cache_reuse_events', 'paid_spend', 'research_cutoff_at_utc'}
+    if not required.issubset(run):
+        raise ValueError('RUN5 is missing immutable authorization/accounting fields')
+    return {key: value for key, value in run.items() if key not in RUN_FINALIZATION_FIELDS}
 
 
 def safe_relative(value):
@@ -86,8 +104,7 @@ def required_input_names(repo):
     audit. The caller may freeze additional inputs; this set is the minimum.
     """
     repo = Path(repo).resolve()
-    names = {'temp/partitions/manifest.json', INTEGRATION_PATH,
-             'temp/runs/RUN-0005.json', *FROZEN_PATHS, *EXPORTS}
+    names = {'temp/partitions/manifest.json', INTEGRATION_PATH, *FROZEN_PATHS, *EXPORTS}
     manifest = json.loads((repo / 'temp/partitions/manifest.json').read_bytes())
     logical = {p.name for p in (repo / 'temp').glob('*.jsonl')}
     logical.update(manifest['datasets'])
@@ -207,6 +224,21 @@ class AuditCP7(original.Audit):
         candidate = json.loads(raw)
         validation = candidate['validation_results']
         expected = validation['canonical_input_hashes']
+        run_path = self.repo / RUN_PATH
+        self.watch(run_path)
+        run_raw = run_path.read_bytes()
+        run = json.loads(run_raw)
+        projection = run_accounting_projection(run)
+        self.require(projection == validation['run_accounting_projection']
+                     and canonical_digest(projection) == validation['run_accounting_projection_sha256'],
+                     'cp7_run_accounting_binding', 'Run authorization, baseline, budget, clock or accounting changed')
+        self.require(run_accounting_projection(validation['run_record_at_freeze']) == projection,
+                     'cp7_run_frozen_record_differs', 'Run changes exceed the finalization whitelist')
+        self.stats['run_accounting_binding'] = {
+            'expected_projection_sha256': canonical_digest(projection),
+            'before_run_sha256': sha_bytes(run_raw),
+            'mutable_finalization_fields': sorted(RUN_FINALIZATION_FIELDS),
+        }
         frozen = original.utc(validation['input_frozen_at_utc'])
         began = datetime.now(timezone.utc)
         self.require(candidate['checkpoint_id'] == CHECKPOINT and candidate['parent_checkpoint_id'] == PARENT,
@@ -289,6 +321,14 @@ class AuditCP7(original.Audit):
                                        'cp7_candidate_changed_during_audit', 'Candidate changed during the audit')
                 binding['passed'] = same and cp_same and (
                     binding['before_digest_sha256'] == binding['after_digest_sha256'] == binding['expected_digest_sha256'])
+                run_raw = (self.repo / RUN_PATH).read_bytes()
+                run_binding = self.stats['run_accounting_binding']
+                run_binding['after_run_sha256'] = sha_bytes(run_raw)
+                run_binding['after_projection_sha256'] = canonical_digest(run_accounting_projection(json.loads(run_raw)))
+                run_binding['passed'] = self.require(
+                    run_binding['before_run_sha256'] == run_binding['after_run_sha256']
+                    and run_binding['expected_projection_sha256'] == run_binding['after_projection_sha256'],
+                    'cp7_run_changed_during_audit', 'Run bytes/accounting changed during the read-only audit')
             except Exception as error:
                 binding['passed'] = False
                 self.note('cp7_input_binding_finish_error', str(error))
