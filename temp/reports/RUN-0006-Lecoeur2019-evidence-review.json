@@ -1,0 +1,198 @@
+{
+  "review_id": "REVIEW-RUN06-P5P6-Lecoeur2019-001",
+  "run_id": "RUN-0006",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0008",
+  "recorded_at_utc": "2026-11-27T06:44:24.408150Z",
+  "status": "evidence_review_complete_candidate_pending",
+  "reviewer": "P5/P6 evidence reviewer",
+  "work_id": "W-D164a2202bdd6930e",
+  "work_key": "Lecoeur2019",
+  "source_doi": "10.1038/s41598-019-44187-2",
+  "cache_checks": {
+    "canonical_works_read": 5098,
+    "existing_assessments_read": 71,
+    "existing_claims_for_this_work": [
+      "AS-clutter2019-L01-obstacle-selective-pooling"
+    ],
+    "duplicate_claim_found": false,
+    "new_claim_boundary": "L08 empirical environment-dependent forward-flight-speed distributions; not a repeat of the L01 obstacle-selective pooling comparison",
+    "reused_query_ids": [
+      "Q-RUN01-00401",
+      "Q-RUN01-00412"
+    ],
+    "canonical_files_modified": false
+  },
+  "primary_source": {
+    "url": "https://www.nature.com/articles/s41598-019-44187-2",
+    "version_id": "V-W-D164a2202bdd6930e-01",
+    "pdf_sha256": "e35d53aa87c197f5ea66e7fd532a7b383e835ffb03b0edcf4c0de88beceb7955",
+    "pdf_pages": 13,
+    "html_sha256": "9638079dff1d9f626570fc77c39320919e464e55dda11faa5a1c4e40ab8ea0f4",
+    "license": "CC BY 4.0; verified in PDF p13",
+    "acquisition": "Existing lawful cache; hashes match canonical Version file_records. No PDF/fulltext or personal contact information copied to Git."
+  },
+  "reading": {
+    "pages": [
+      1,
+      3,
+      4,
+      8,
+      9,
+      12,
+      13
+    ],
+    "focus": "Results on obstacle density, Table 1, methods, complete byline/affiliations, acknowledgements, and limits of the geometric/control model",
+    "visual_checks": [
+      "Table 1, PDF p4, original rendered page: all six condition rows, mean/SD, N flights and n bees checked."
+    ],
+    "table_1_flight_speed": [
+      {
+        "condition": "C0|0",
+        "mean_m_per_s": 1.337,
+        "sd_m_per_s": 0.235,
+        "N_flights": 46,
+        "n_bees": 26
+      },
+      {
+        "condition": "C0|16",
+        "mean_m_per_s": 1.164,
+        "sd_m_per_s": 0.171,
+        "N_flights": 87,
+        "n_bees": 35
+      },
+      {
+        "condition": "C0|33",
+        "mean_m_per_s": 1.212,
+        "sd_m_per_s": 0.189,
+        "N_flights": 73,
+        "n_bees": 31
+      },
+      {
+        "condition": "C0|100",
+        "mean_m_per_s": 1.091,
+        "sd_m_per_s": 0.147,
+        "N_flights": 50,
+        "n_bees": 16
+      },
+      {
+        "condition": "C16|16",
+        "mean_m_per_s": 1.013,
+        "sd_m_per_s": 0.249,
+        "N_flights": 49,
+        "n_bees": 25
+      },
+      {
+        "condition": "C33|33",
+        "mean_m_per_s": 0.836,
+        "sd_m_per_s": 0.181,
+        "N_flights": 32,
+        "n_bees": 19
+      }
+    ],
+    "statistical_unit": "Each flight is averaged first; published means and SD are across N flights, not across n unique bees. Repeated flights from the same bee are present; unique bees across conditions cannot be summed. Table 1 reports post-hoc Tukey HSD, not a mixed-effects reanalysis.",
+    "species": "Bombus terrestris",
+    "recording": "Two high-speed cameras at 200 fps; reconstructed 3D trajectories. This is externally measured metric motion, not metric scale recovered by an insect from monocular optic flow.",
+    "conditions": "3 m corridor, 0.6 m width and 0.6 m high walls; obstacle rows 0.1 m from centre, plates 0.03 x 0.004 x 0.6 m. Red/white dead-leaves texture; six obstacle arrangements including narrowed 0.4 m continuous-wall control.",
+    "new_chinese_summary": "在同一受控走廊的六种障碍布局下，熊蜂的逐次飞行平均前向速度呈不同分布。空走廊为1.337±0.235 m/s（46次飞行、26只蜂）；双侧障碍覆盖率16%和33%时分别为1.013±0.249和0.836±0.181 m/s（49/25、32/19）。这些实测数据可约束环境依赖的飞行速度先验，但不是对自然场景总体距离分布、旋转—平移联合分布或动物绝对尺度估计的验证。",
+    "p5_all_authors": [
+      "Julien Lecoeur",
+      "Marie Dacke",
+      "Dario Floreano",
+      "Emily Baird"
+    ],
+    "p5_affiliations": {
+      "Julien Lecoeur": [
+        "Laboratory of Intelligent Systems, Institute of Microengineering, École Polytechnique Fédérale de Lausanne"
+      ],
+      "Marie Dacke": [
+        "Lund Vision Group, Department of Biology, Lund University"
+      ],
+      "Dario Floreano": [
+        "Laboratory of Intelligent Systems, Institute of Microengineering, École Polytechnique Fédérale de Lausanne"
+      ],
+      "Emily Baird": [
+        "Lund Vision Group, Department of Biology, Lund University",
+        "Division of Functional Morphology, Department of Zoology, Stockholm University"
+      ]
+    },
+    "funding_acknowledgments": [
+      {
+        "funder": "Swiss National Science Foundation",
+        "grant_id": "200021_155907",
+        "supported_authors": [
+          "Julien Lecoeur"
+        ],
+        "locator": "PDF p13 Acknowledgements",
+        "project_relation": "funding_acknowledgment"
+      },
+      {
+        "funder": "The Swedish Foundation for Strategic Research",
+        "grant_id": "FFL09-0056",
+        "supported_authors": [
+          "Julien Lecoeur"
+        ],
+        "locator": "PDF p13 Acknowledgements",
+        "project_relation": "funding_acknowledgment"
+      },
+      {
+        "funder": "Swedish Research Council",
+        "grant_id": "2014-4762",
+        "supported_authors": [
+          "Emily Baird",
+          "Marie Dacke"
+        ],
+        "locator": "PDF p13 Acknowledgements",
+        "project_relation": "funding_acknowledgment"
+      }
+    ],
+    "funding_limits": "No official grant project page or award dates/title/PI independently verified. Funding acknowledgments must not be promoted to official_confirmed project outputs. No grant attribution to Dario Floreano is made.",
+    "reading_scope_note": "The complete cached 13-page PDF is available and its hash verified. This review directly inspected the indicated full pages and relevant extracted passages from pages 2,5,6,11; it does not assert that every page/section or every supplement was newly reread."
+  },
+  "external_request_ledger": [
+    {
+      "query_id": "Q-RUN06-P6-Baird-search-001",
+      "kind": "web_search",
+      "query": "\"Visual flight control in naturalistic and artificial environments\" Baird full text",
+      "recorded_at_utc": "2026-11-27T06:44:24.408150Z",
+      "query_time_status": "unavailable_exact",
+      "status": "partial",
+      "result": "Official bibliographic and abstract records located; no verified accessible fulltext. No scientific claim admitted for Baird2012."
+    },
+    {
+      "query_id": "Q-RUN06-P6-Baird-search-002",
+      "kind": "web_search",
+      "query": "\"Visual flight control in naturalistic and artificial environments\" pdf",
+      "domains_requested": [
+        "lu.se",
+        "springer.com",
+        "su.se"
+      ],
+      "queried_at_utc": "2026-11-27T06:41:55Z",
+      "query_time_status": "recorded_request_start",
+      "returned_result_refs": 7,
+      "status": "partial",
+      "primary_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/22983439/",
+        "https://portal.research.lu.se/en/publications/visual-flight-control-in-naturalistic-and-artificial-environments/"
+      ],
+      "result": "Both named authors and DOI confirmed; no fulltext link beyond DOI in official institutional record."
+    },
+    {
+      "query_id": "Q-RUN06-P6-Lecoeur-current-access-001",
+      "kind": "web_open",
+      "url": "https://www.nature.com/articles/s41598-019-44187-2",
+      "recorded_at_utc": "2026-11-27T06:44:24.408150Z",
+      "query_time_status": "unavailable_exact",
+      "status": "restricted",
+      "error_code": "tool_redirect_unavailable",
+      "result": "Web tool returned error 500 on an idp.nature.com redirect. No attempt to bypass authentication. Existing previously lawfully retrieved canonical cache reused."
+    }
+  ],
+  "budget": {
+    "external_requests_used": 3,
+    "manual_review_units_used": 6,
+    "unit_definition": "1 preflight/duplicate check; 1 source access review; 1 Table 1 visual transcription; 1 methods/limitations review; 1 complete byline/affiliation review; 1 funding-acknowledgment review"
+  },
+  "remaining": "Construct full typed L08 Assessment and P5 candidate; parent must sync this evidence review before next work batch."
+}
