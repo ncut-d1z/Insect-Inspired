@@ -170,7 +170,7 @@ class Batch:
             oid=(info.get("value") or "").rsplit("/",1)[-1] if isinstance(info,dict) and str(info.get("type") or "").upper()=="ORCID" else ""
             if not re.fullmatch(r"\d{4}-\d{4}-\d{4}-[\dX]{4}",oid):oid=""
             known=self.orcids[oid] if oid else set()
-            pid=next(iter(known)) if len(known)==1 else "P-R10-"+token(work,rank,display)
+            pid=next(iter(known)) if len(known)==1 else "P-"+getattr(self,"id_prefix","R10")+"-"+token(work,rank,display)
             if pid not in self.people:
                 fs={} if oid else {"orcid":self.unknown("person",pid,"orcid",src)}
                 row=dict(person_id=pid,display_name=display,name_variants=[display],orcid=oid or None,
@@ -227,7 +227,8 @@ class Batch:
 
     def enroll(self,record,mq,owner,relation,ids,discovery_query_id):
         primary=record.get("doi") or record.get("epmc") or record["openalex"]
-        wid="W-R10-"+token(primary)
+        tag=getattr(self,"id_prefix","R10")
+        wid="W-"+tag+"-"+token(primary)
         require(wid not in self.works and record["year"] and record["title"],"Unbound Work "+wid)
         locator=record.get("source_identifier") or primary
         src=source(mq,locator,"Bibliographic metadata","作者署名、题名、标识和出版信息。")
@@ -272,10 +273,10 @@ class Batch:
             v["version_type"]="unknown";v["field_states"]["version_type"]=self.unknown("version",vid,"version_type",src)
         if not v["version_date"]:v["field_states"]["version_date"]=self.unknown("version",vid,"version_date",src)
         self.add("versions",v)
-        self.add("aliases",dict(alias_id="AL-R10-"+token(wid,primary),entity_type="work",raw_identifier=primary,normalized_identifier=primary,
+        self.add("aliases",dict(alias_id="AL-"+tag+"-"+token(wid,primary),entity_type="work",raw_identifier=primary,normalized_identifier=primary,
                  target_id=wid,historical_key=None,reason="公开书目稳定标识。",source=src,verification_status="source_supported",date=self.now[:10]))
         parent_discovery=self.roots.get(pk)
-        self.add("discovery-paths",dict(discovery_id="D-R10-"+token(wid,pk),scope_id=SCOPE,work_id=wid,root_seed_id=parent_discovery,
+        self.add("discovery-paths",dict(discovery_id="D-"+tag+"-"+token(wid,pk),scope_id=SCOPE,work_id=wid,root_seed_id=parent_discovery,
                  depth=len(path),steps=path,source_supported_relation=True))
         self.roots[wid]=parent_discovery
         for dimname,state in dim.items():
@@ -283,8 +284,11 @@ class Batch:
         self.new_frontier.append(dict(work_id=wid,work_key=key,doi=w["doi"],epmc=ids_meta.get("europepmc"),
                                   task_id="T-references-"+wid,prior_cursor=None,prior_state="pending",prior_event=1,
                                   openalex=ids_meta.get("openalex"),depth=len(path),parent_work_id=pk))
-        credit=mq["query_id"] if mq["query_id"] not in self.known_queries else discovery_query_id
-        require(credit not in self.known_queries,"Discovery needs a current query for "+wid)
+        if getattr(self,"credit_discovery",False):
+            credit=discovery_query_id
+        else:
+            credit=mq["query_id"] if mq["query_id"] not in self.known_queries else discovery_query_id
+            require(credit not in self.known_queries,"Discovery needs a current query for "+wid)
         self.source_credit[credit].append(wid)
         return wid
 

@@ -96,7 +96,8 @@ def source_lists(queue, folder=OUT):
 
 def fields(raw, source):
     if source=="openalex":
-        return "","","","",""
+        printed,*_=fields({"unstructured":raw.get("raw_reference_string")},"crossref") if raw.get("raw_reference_string") else ("","","","","")
+        return doi(raw.get("raw_doi")) or printed,"","","",""
     if source=="crossref":
         d=doi(raw.get("DOI"))
         if not d and raw.get("unstructured"):

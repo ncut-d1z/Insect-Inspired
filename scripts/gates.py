@@ -1,5 +1,6 @@
 """One-project audit executable. Project-local inherited rules; no network crawling."""
 from pathlib import Path
+from functools import lru_cache
 from copy import deepcopy
 from datetime import datetime,timedelta,timezone
 from urllib.parse import unquote,urlsplit
@@ -16,8 +17,12 @@ def dt(s):return datetime.fromisoformat(s.replace('Z','+00:00'))
 def iso(d):return d.astimezone(timezone.utc).isoformat(timespec='seconds').replace('+00:00','Z')
 def canonical(x):return json.dumps(x,ensure_ascii=False,sort_keys=True,separators=(',',':'),allow_nan=False)
 def digest(x):return hashlib.sha256(canonical(x).encode()).hexdigest()
+@lru_cache(maxsize=None)
+def validator_for(kind):
+ return Draft202012Validator({'$schema':SCHEMA['$schema'],'$ref':'#/$defs/'+kind,'$defs':SCHEMA['$defs']},format_checker=FormatChecker())
+
 def schema_errors(kind,data):
- v=Draft202012Validator({'$schema':SCHEMA['$schema'],'$ref':'#/$defs/'+kind,'$defs':SCHEMA['$defs']},format_checker=FormatChecker())
+ v=validator_for(kind)
  return [f"{'.'.join(map(str,e.path))}: {e.message}" for e in sorted(v.iter_errors(data),key=lambda e:str(e.path))]
 def validate(kind,data):
  errors=schema_errors(kind,data)
