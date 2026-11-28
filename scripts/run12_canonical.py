@@ -1,6 +1,7 @@
 """Bind ordered RUN12 reference lists, look up previously unknown identifiers and commit canonical transactions."""
 import argparse
 from collections import Counter, defaultdict
+from itertools import zip_longest
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from time import monotonic
@@ -56,6 +57,8 @@ def rows(start,end):
             owner=owners[row["queue_position"]-start-1]
             if owner["work_id"]!=wid or not attempts[wid]:raise ValueError("Unbound or deferred parent")
             extra={"excluded_parent_identities":[{"query_id":s["query_id"]} for s in row["sources"] if s["parent_title_conflict"]]}
+            if row.get("literal"):
+                extra.update(openalex_literal_query=row["literal"]["query_id"],openalex_parent=row["literal"]["parent"])
             data.append((owner,row,extra,attempts[wid],list(source_pages(owner,row,titles[wid],extra))))
     if [x[0]["work_id"] for x in data]!=[o["work_id"] for o in owners]:raise ValueError("Gap in ordered input")
     return data,inputs,paths
@@ -99,6 +102,8 @@ def plan(start,end):
         owners={todo[provider][k]["work_id"]:todo[provider][k] for k in ids}
         batches.append(dict(provider=provider,ids=ids,owners=list(owners.values())))
         namespaces[provider]+=len(ids)
+    per_source=[[g for g in batches if g["provider"]==provider] for provider in sorted(namespaces)]
+    batches=[g for wave in zip_longest(*per_source) for g in wave if g is not None]
     write(p,dict(run_id=RUN,checkpoint_id=CP,starting_index=start,next_index=end,created_at_utc=stamp(),cached_or_canonical_identifier_count=len(previous),
              ids_to_lookup=dict(namespaces),input_receipts={x.relative_to(ROOT).as_posix():digest(x) for x in inputs},groups=batches))
     print("Identity plan",p.name,"cached",len(previous),"new identifiers",dict(namespaces),"groups",len(groups),flush=True)

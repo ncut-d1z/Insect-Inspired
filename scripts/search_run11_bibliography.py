@@ -175,7 +175,7 @@ def indexed(key, group, field, requester=request):
     return requester(key,"openalex",OA,params,owners_input(group),"Indexed reference identifiers for a missing or incomplete deposited bibliography.",project)
 
 
-def european(prefix, owner):
+def european(prefix, owner, requester=request):
     kind,ident=owner["epmc"].split(":",1);total=None;page=1
     if kind not in ("PPR","MED") or not ident.isalnum():raise ValueError("Bad Europe PMC ID")
     while True:
@@ -185,7 +185,7 @@ def european(prefix, owner):
                 raise ValueError("Europe PMC count drift")
             return dict(records=rows,visible_total=n,returned_count=len(rows),page_complete=(page-1)*1000+len(rows)==n,
                         cursor_in=str(page),cursor_out=None if (page-1)*1000+len(rows)==n else str(page+1))
-        q=request(prefix+"-EP-"+ident+"-P"+str(page),"europepmc",EPMC+kind+"/"+quote(ident)+"/references",
+        q=requester(prefix+"-EP-"+ident+"-P"+str(page),"europepmc",EPMC+kind+"/"+quote(ident)+"/references",
                   {"format":"json","page":page,"pageSize":1000},owners_input([owner]),"Complement missing parent bibliographies with an independent reference-list index.",project,page)
         yield q
         if q["status"]!="success" or q["page_complete"]: break

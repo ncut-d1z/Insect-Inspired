@@ -9,9 +9,10 @@ from time import monotonic
 from run10_reference_records import doi
 from run11_source_limits import private_directory
 from search_run11_bibliography import (
-    OUT, ROOT, SCOPE, TEMP, chunks, compatible_parent, deposited, digest, indexed,
+    OA, OUT, ROOT, SCOPE, TEMP, chunks, compatible_parent, deposited, digest, european, indexed, owners_input,
     read, request, stamp, write,
 )
+from run11_reference_inventory import literal_project, receipt
 from storage import iter_logical
 
 RUN = "RUN-0012"
@@ -81,6 +82,37 @@ def register(observations, titles, coverage, deferred_sources):
                 source_reconciled=available and match and count==declared,parent_title_conflict=bool(item) and not match))
 
 
+def recover_empty(owners, coverage, control, prefix, postponed):
+    literal={}
+    for owner in owners:
+        wid=owner["work_id"]
+        if any(s["rows"] for s in coverage[wid]):continue
+        if owner.get("epmc"):
+            wait=deferred("europepmc",control)
+            if wait:postponed[wid]["europepmc"]=wait
+            else:
+                for q in european(prefix+"-EMPTY",owner,query):
+                    n=len(q.get("records",[]));ok=q["status"]=="success"
+                    coverage[wid].append(dict(source_id="europepmc",query_id=q["query_id"],rows=n,source_declared=q.get("visible_total"),
+                             available=ok,source_reconciled=ok and q.get("page_complete",False),status=q["status"],parent_title_conflict=False))
+        if any(s["rows"] for s in coverage[wid]):continue
+        matched=set()
+        for s in coverage[wid]:
+            if s["source_id"]=="openalex" and s["available"] and not s["parent_title_conflict"]:
+                for row in receipt(s["query_id"])["records"]:
+                    if row.get("work_id")==wid:matched.add(row["source_identifier"])
+        if len(matched)!=1:continue
+        ident,=matched
+        wait=deferred("openalex",control)
+        if wait:
+            postponed[wid]["openalex_literal"]=wait
+            continue
+        q=query(prefix+"-LITERAL-"+ident,"openalex",OA+"/"+ident+"/references",{},owners_input([owner]),
+            "Inspect the reference-list representation of an identified parent whose deposited and matched-index views returned no positions.",literal_project)
+        literal[wid]=dict(query_id=q["query_id"],parent=ident,rows=len(q.get("records",[])),status=q["status"])
+    return literal
+
+
 def run(start, count):
     timer = monotonic()
     state=read(STATE)
@@ -119,7 +151,8 @@ def run(start, count):
         group=[o for o in needs if o.get(field)]
         if group:register(family(prefix+"-FALLBACK",group,"openalex",field,control),titles,coverage,deferred_sources)
         needs=[o for o in needs if not o.get(field)]
-    tables=[dict(queue_position=i,work_id=o["work_id"],work_key=o["work_key"],task_id=o["task_id"],
+    literal=recover_empty(owners,coverage,control,prefix,deferred_sources)
+    tables=[dict(queue_position=i,work_id=o["work_id"],work_key=o["work_key"],task_id=o["task_id"],literal=literal.get(o["work_id"]),
                  sources=coverage[o["work_id"]],deferred_sources=deferred_sources[o["work_id"]])
             for i,o in enumerate(owners,start+1)]
     if any(not r["sources"] and not r["deferred_sources"] for r in tables):raise ValueError("Missing source accounting")
@@ -127,7 +160,8 @@ def run(start, count):
     counts=Counter()
     for entry in tables:
         for source in entry["sources"]:counts[source["source_id"]]+=source["rows"]
-    summary=dict(starting_index=start,next_index=end,parent_count=len(owners),parents_with_rows=sum(any(s["rows"] for s in r["sources"]) for r in tables),
+        if entry.get("literal"):counts["openalex"]+=entry["literal"]["rows"]
+    summary=dict(starting_index=start,next_index=end,parent_count=len(owners),parents_with_rows=sum(bool(any(s["rows"] for s in r["sources"]) or (r.get("literal") or {}).get("rows")) for r in tables),
                  source_positions=dict(counts),sources_requested=len(receipts),elapsed_seconds=round(monotonic()-timer,3))
     write(report,dict(run_id=RUN,scope_id=SCOPE,target_checkpoint=CP,frontier_sha256=state["source_frontier_sha256"],
           first_key=owners[0]["work_key"],next_key=queue[end]["work_key"] if end<len(queue) else None,created_at_utc=stamp(),**summary,
