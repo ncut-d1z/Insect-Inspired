@@ -145,11 +145,11 @@ def plan(queue,titles,end_at=None):
     end_at=end_at or len(queue)
     if not 0<end_at<=len(queue) or (end_at%WIDTH and end_at!=len(queue)):
         raise ValueError("The plan must end at a verified cohort boundary")
-    p=PLAN/("groups.json" if end_at==len(queue) else f"first-{end_at:04}.json")
-    if p.is_file():
-        saved=read(p)
+    destination=PLAN/("groups.json" if end_at==len(queue) else f"first-{end_at:04}.json")
+    if destination.is_file():
+        saved=read(destination)
         assert saved["queue_end"]==end_at and all(digest(ROOT/k)==v for k,v in saved["source_hashes"].items())
-        print("Verified saved plan",p.name,len(saved["groups"]),flush=True)
+        print("Verified saved plan",destination.name,len(saved["groups"]),flush=True)
         return
     previous=set()
     for name in ("works","versions","aliases"):
@@ -195,7 +195,7 @@ def plan(queue,titles,end_at=None):
             if i>=len(packed.get(provider,[])):continue
             items=packed[provider][i];parents=list(dict.fromkeys(w for _,w in items))
             groups.append(dict(provider=provider,ids=[k for k,_ in items],owners=[dict(work_id=w,task_id=frontier[w]) for w in parents]))
-    write(p,dict(run_id="RUN-0011",queue_end=end_at,source_positions=dict(counts),unique_new_identifier_candidates={k:len(v) for k,v in todo.items()},
+    write(destination,dict(run_id="RUN-0011",queue_end=end_at,source_positions=dict(counts),unique_new_identifier_candidates={k:len(v) for k,v in todo.items()},
                  source_hashes=source_hashes,groups=groups,created_at_utc=stamp()))
     print("distinct unqueried identifiers",dict((k,len(v)) for k,v in todo.items()),"query groups",len(groups),"positions",dict(counts),flush=True)
 
