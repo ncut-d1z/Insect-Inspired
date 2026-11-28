@@ -101,7 +101,7 @@ def editions():
 
 
 def originals():
-    rows=[r for r in parents() if r["cohort"]=="CP11-original"];group=[doi(r["citing"]["doi"]) for r in rows]
+    rows=[r for r in parents() if r["cohort"]=="CP11-original"]
     for row in rows:
         ident=doi(row["citing"]["doi"])
         def project(data):
@@ -123,7 +123,55 @@ def originals():
                 "Look for the source's literal references, including original version-specific identifiers.",reference_list)
 
 
+def supplement():
+    rows=parents()
+    for ident in sorted({r["cited"]["doi"] for r in rows if r["cited"].get("doi") and r["cited"].get("year",0)>=2010}):
+        group=[r for r in rows if r["cited"]["doi"]==ident]
+        def publication(data):
+            records=[{k:r.get(k) for k in ("preprint_doi","published_doi","preprint_title","published_title","preprint_date","published_date","preprint_authors","server")} for r in data.get("collection",[])]
+            if any(doi(r["published_doi"])!=doi(ident) and doi(r["preprint_doi"])!=doi(ident) for r in records):raise ValueError("Unbound publisher crosswalk")
+            return dict(records=records,visible_total=len(records),returned_count=len(records),page_complete=True)
+        q=request("VER-PUB-"+token(ident),"publisher","https://api.biorxiv.org/pubs/biorxiv/"+quote(ident,safe="/"),{},[owner(r) for r in group],
+               "Check the publisher's explicit preprint-to-journal DOI crosswalk for the cited work.",publication)
+        for row in q.get("records",[]):
+            pre=doi(row["preprint_doi"])
+            if not pre:continue
+            old=[*OUT.glob("Q-RUN10-VBIO-*-A1.json"),*OUT.glob("Q-RUN11-VER-BIO-*-A*.json")]
+            if any(any(doi(x.get("doi"))==pre for x in read(p).get("records",[])) for p in old):continue
+            def revisions(data):
+                rec=[{k:r.get(k) for k in ("doi","date","version","title","authors","published","server")} for r in data.get("collection",[])]
+                if len({r["version"] for r in rec})!=len(rec) or any(doi(r["doi"])!=pre for r in rec):raise ValueError("Unbound preprint revisions")
+                return dict(records=rec,visible_total=len(rec),returned_count=len(rec),page_complete=True)
+            request("VER-BIO-X-"+token(pre),"publisher","https://api.biorxiv.org/details/biorxiv/"+pre,{},[owner(r) for r in group],
+                    "Inventory revisions for the newly established publisher crosswalk.",revisions)
+    for wid in ("W3015110848","W4404754717"):
+        def lookup(data):
+            r={k:data.get(k) for k in ("id","doi","display_name","publication_date","type","ids")}
+            return dict(records=[r],visible_total=1,returned_count=1,page_complete=True)
+        request("VER-TARGET-"+wid,"openalex",OA+"/"+wid,{"select":"id,doi,display_name,publication_date,type,ids"},
+                [owner(r) for r in rows[:4]],"Identify the target of the original printed versus index-matched references.",lookup)
+    already={doi(r["citing"]["doi"]) for r in rows[:4]}
+    grouped=defaultdict(list)
+    for row in rows[4:]:
+        ident=doi(row["citing"]["doi"])
+        if ident and ident not in already:grouped[ident].append(row)
+    for ident,group in sorted(grouped.items()):
+        def lookup(data):
+            r={k:data.get(k) for k in ("id","doi","display_name","publication_date","type","ids")}
+            return dict(records=[r],visible_total=1,returned_count=1,page_complete=True)
+        q=request("VER-PARENT-"+token(ident),"openalex",OA+"/https://doi.org/"+quote(ident,safe="/"),
+                {"select":"id,doi,display_name,publication_date,type,ids"},[owner(r) for r in group],"Identify the citing Work before reading its separate reference-list endpoint.",lookup)
+        if not q.get("records") or doi(q["records"][0]["doi"])!=ident:continue
+        wid=q["records"][0]["id"].rsplit("/",1)[-1]
+        def printed(data):
+            refs=data["references"]
+            if not isinstance(refs,list) or any(not isinstance(x,dict) for x in refs):raise ValueError("Invalid literal reference list")
+            return dict(records=refs,visible_total=len(refs),returned_count=len(refs),page_complete=True)
+        request("VER-PRINT-"+wid,"openalex",OA+"/"+wid+"/references",{},[owner(r) for r in group],
+                "Compare the actual reference string and raw DOI with the index match. Merged lists alone cannot establish an original edition.",printed)
+
+
 if __name__=="__main__":
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("mode",choices=["cards","editions","originals"])
-    {"cards":source_cards,"editions":editions,"originals":originals}[parser.parse_args().mode]()
+    parser.add_argument("mode",choices=["cards","editions","originals","supplement"])
+    {"cards":source_cards,"editions":editions,"originals":originals,"supplement":supplement}[parser.parse_args().mode]()
