@@ -66,7 +66,7 @@ def collect():
     require(union <= works and len(works) == totals["works"], "Topic Work reconciliation failed")
     query_rows = list(rows("queries"))
     qs = {q["query_id"]:q for q in query_rows if q["checkpoint_id"] == CP}
-    obs = [o for o in rows("source-observations") if o["query_id"] in qs]
+    obs = [o for o in rows("source-observations") if o.get("query_id") in qs]
     require(Counter(x["query_id"] for x in obs) == Counter({k:1 for k in qs}), "Observation cardinality")
     for o in obs:
         path = ROOT / o["receipt_path"]
