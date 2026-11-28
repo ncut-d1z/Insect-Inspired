@@ -104,8 +104,9 @@ def logical_names(repo, manifest):
 
 
 def parts_for(name, manifest):
-    entry = manifest['datasets'].get(name + '.jsonl')
-    return entry['parts'] if entry else [{'path': name + '.jsonl'}]
+    filename = name if name.endswith(('.jsonl', '.log')) else name + '.jsonl'
+    entry = manifest['datasets'].get(filename)
+    return entry['parts'] if entry else [{'path': filename}]
 
 
 def logical_lines(repo, name, manifest, bindings=None):
