@@ -46,7 +46,7 @@ def document_type(r):
              "book-part":"book_chapter","reference-entry":"book_chapter","dissertation":"thesis","report":"technical_report",
              "dataset":"dataset","software":"software"}
     if r.get("document_type") in mapping:return mapping[r["document_type"]]
-    if "Journal Article" in types or (r.get("epmc","").startswith("MED:") and r.get("venue")):return "journal_article"
+    if "Journal Article" in types or ((r.get("epmc") or "").startswith("MED:") and r.get("venue")):return "journal_article"
     return "other"
 
 
@@ -82,6 +82,8 @@ class Batch:
             if wid in self.works and row.get("root_seed_id") and row.get("steps")==self.works[wid].get("discovery_path"):
                 self.roots.setdefault(wid,row["root_seed_id"])
         self.known_queries={r["query_id"] for r in iter_logical("queries.jsonl",TEMP)}
+        self.cited_version_reviews={(r["work_id"],"W-D343f06a3bc764bf6"):r
+            for r in read(TEMP/"reports/RUN-0010-cited-versions.json")["items"]}
 
     def add(self,name,row):
         key=row[IDS[name]]
@@ -132,7 +134,7 @@ class Batch:
             display=clean(" ".join(filter(None,(first,last))) or a.get("collectiveName") or a.get("fullName"))
             if not display:continue
             info=a.get("authorId") or {}
-            oid=info.get("value","").rsplit("/",1)[-1] if isinstance(info,dict) and info.get("type","").upper()=="ORCID" else ""
+            oid=(info.get("value") or "").rsplit("/",1)[-1] if isinstance(info,dict) and str(info.get("type") or "").upper()=="ORCID" else ""
             if not re.fullmatch(r"\d{4}-\d{4}-\d{4}-[\dX]{4}",oid):oid=""
             known=self.orcids[oid] if oid else set()
             pid=next(iter(known)) if len(known)==1 else "P-R10-"+token(work,rank,display)
@@ -310,6 +312,17 @@ class Batch:
                         t["normalized_parameters"]={"occurrence_id":ref_id,"candidate_ids":choices}
                         continue
                     counts["resolved"]+=1
+                    cited=self.works[target]
+                    if (version.get("version_date") and cited.get("publication_date") and
+                        len(version["version_date"])==len(cited["publication_date"])==10 and cited["publication_date"]>version["version_date"]):
+                        checked=self.cited_version_reviews.get((wid,target))
+                        if not checked or not checked["original_citing_record_revision"]:
+                            tid=checked["task_id"] if checked else "T-R10-CITED-"+token(wid,target)
+                            old=self.latest.get(tid,{})
+                            t=self.task(tid,wid,"cited_version_review",old.get("review_condition") or
+                                  "被引 Work 所示日期晚于施引版本。只记 Work 级索引关系，待核实实际引用的版本。","needs_disambiguation",[qid],source_id=sid)
+                            t["supporting_record_ids"]=list(dict.fromkeys([*t["supporting_record_ids"],ref_id]))
+                            counts["later_dated_occurrences_for_review"]+=1
                     pair=(work["work_key"],self.works[target]["work_key"])
                     if pair in self.edges:
                         edge=self.edges[pair]
@@ -399,7 +412,8 @@ class Batch:
                  verification_status="source_supported",date=self.now[:10]))
 
     def queries(self,paths):
-        apis={"crossref":"Crossref REST v1","europepmc":"Europe PMC REST","publisher":"bioRxiv publisher metadata","openalex":"OpenAlex REST"}
+        apis={"crossref":"Crossref REST v1","europepmc":"Europe PMC REST","publisher":"bioRxiv publisher metadata","openalex":"OpenAlex REST",
+              "semantic_scholar":"Semantic Scholar Academic Graph v1"}
         for path in sorted(paths):
             q=read(path);qid=q["query_id"]
             if qid in self.known_queries:continue
@@ -439,6 +453,11 @@ class Batch:
                      external_request_count_basis=REQUEST_COUNT_BASIS,cache_hit=False))
             for owner in q["owners"]:
                 self.task_queries[owner["task_id"]].add(qid)
+            if sid=="semantic_scholar" and not ok:
+                t=self.task("T-R10-S2-"+token(o["work_id"]),o["work_id"],"reference_source_retry",
+                            "公开书目接口限流，本轮已保留全部重试；来源恢复后按原 PMID 重试。","retryable_error",[qid],source_id=sid)
+                t.update(cursor=o.get("epmc"),error_code=str(q["http_status"]))
+                t["attempt_count"]+=1
         for tid,qids in self.task_queries.items():
             t=self.adds["tasks"].get(tid)
             if t is None:
