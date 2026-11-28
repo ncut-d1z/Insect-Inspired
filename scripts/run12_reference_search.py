@@ -23,7 +23,7 @@ fetch = partial(request, run_id=RUN, checkpoint=CP)
 
 def query(key, provider, endpoint, params, owners, reason, project, *args, **kwargs):
     if provider == "crossref" and "-DEP-" in key:
-        params = {**params, "select":"DOI,title,reference,reference-count,published"}
+        key += "-REGISTRY"
         reason = "Retrieve publisher-deposited bibliographies for the saved CP13 frontier."
     return fetch(key, provider, endpoint, params, owners, reason, project, *args, **kwargs)
 
@@ -117,7 +117,7 @@ def run(start, count):
            and (o["doi"] or not o.get("openalex"))]
     for field in ("openalex","epmc","doi"):
         group=[o for o in needs if o.get(field)]
-        if group:register(fetch_family(group,"openalex",field),titles,coverage,deferred_sources)
+        if group:register(family(prefix+"-FALLBACK",group,"openalex",field,control),titles,coverage,deferred_sources)
         needs=[o for o in needs if not o.get(field)]
     tables=[dict(queue_position=i,work_id=o["work_id"],work_key=o["work_key"],task_id=o["task_id"],
                  sources=coverage[o["work_id"]],deferred_sources=deferred_sources[o["work_id"]])
