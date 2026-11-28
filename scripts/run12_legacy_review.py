@@ -72,7 +72,7 @@ def register(ledger):
             raise ValueError("Historical version task changed")
         rid="MR-R12-CP12XML-"+token(tid)
         event=ledger.task(tid,wid,old["task_type"],row["finding"],old["task_state"],[row["query_id"]],source_id="crossref")
-        event["normalized_parameters"]["cp12_xml_recheck"]={k:row[k] for k in ("category","query_id","source_positions","position","reference_key","exact_original_version")}
+        event["normalized_parameters"].update({"cp12_xml_"+k:row[k] for k in ("category","query_id","source_positions","position","reference_key","exact_original_version")})
         event["supporting_record_ids"].append(rid)
         ledger.add("manual-reviews",dict(review_id=rid,run_id=RUN,review_type="bibliographic_version_comparison",entity_id=wid,
                         reviewer="Codex 书目复核",recorded_at_utc=review["reviewed_at_utc"],artifact=REVIEW.relative_to(ROOT).as_posix(),notes=row["finding"]))
