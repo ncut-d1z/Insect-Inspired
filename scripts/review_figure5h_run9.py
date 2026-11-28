@@ -52,14 +52,14 @@ def figure_claim(review, locate, unknown):
     env=dict(dataset_ids=[data_id],scene_count=None,
              fov_deg=quantity("fov",216,216,"deg","horizontal LED azimuth; vertical elevation 72 deg",method),
              distance_range=None,distance_distribution=None,distance_knowledge=None,scene_dynamics="dynamic",field_states={})
-    env["field_states"]["scene_count"]=missing("conditions.environment_details.value.scene_count","源表没有提供各 ROI 的独立场景实例总数。",method)
+    env["field_states"]["scene_count"]=missing("conditions.environment_details.value.field_states.scene_count","源表没有提供各 ROI 的独立场景实例总数。",method)
     for key in ["distance_range","distance_distribution","distance_knowledge"]:
         env["field_states"][key]=na("刺激设计省略相对距离、透视与迫近线索。",method)
     cond["environment_details"]=condition(env,method)
     texture=dict(stimulus_type="synthetic_pattern",contrast=None,spatial_frequency=None,illumination=None,noise=None,
                  outlier_fraction=None,occlusion_fraction=None,field_states={})
     for key in ["contrast","illumination"]:
-        texture["field_states"][key]=missing("conditions.texture_noise.value."+key,"需核验该图刺激的数值标定。",method)
+        texture["field_states"][key]=missing("conditions.texture_noise.value.field_states."+key,"需核验该图刺激的数值标定。",method)
     for key in ["spatial_frequency","noise","outlier_fraction","occlusion_fraction"]:
         texture["field_states"][key]=na("该图用人工点阵比较平移权重；此项并非装置设置的单一光栅频率、注入噪声、离群点或遮挡变量。",method)
     cond["texture_noise"]=condition(texture,method)
