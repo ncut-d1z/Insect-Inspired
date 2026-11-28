@@ -684,7 +684,7 @@ P1 还必须执行以下受控正/反例测试，不将虚构测试数据写入�
 
 ## 10. 路线图及门禁
 
-执行状态统一记录于 [进度追踪](temp/progress.md)。[CP-0011 阶段报告](temp/reports/P3-P6-CP0011.md)列出本轮书目检索、覆盖及缺口。[CP-0011](temp/snapshots/checkpoints/CP-0011.json) 已通过数据检查点验收，有效父检查点为 [CP-0010](temp/snapshots/checkpoints/CP-0010.json)。CP-0003 保留为 invalid 历史。
+执行状态统一记录于 [进度追踪](temp/progress.md)。[CP-0012 阶段报告](temp/reports/P3-P6-CP0012.md)记录本轮研究、覆盖和缺口。[CP-0012](temp/snapshots/checkpoints/CP-0012.json) 已通过数据验收，父检查点为 [CP-0011](temp/snapshots/checkpoints/CP-0011.json)。CP-0003 保留为 invalid 历史。
 
 | 阶段 | 输入 | 任务及验收产物 | 门禁 |
 | --- | --- | --- | --- |

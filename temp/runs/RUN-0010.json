@@ -5,7 +5,7 @@
   "start_commit_sha": "435598bcf4bc66aa40fd5fc2bdb7cdeaf67b5d96",
   "checkpoint_commit": "cf6b1453d668477d2631a73cd40ab548deb89110",
   "target_checkpoint_id": "CP-0012",
-  "status": "running",
+  "status": "checkpointed_open",
   "branch": "main",
   "started_at_utc": "2026-11-28T08:26:41.832141Z",
   "authorization": "用户要求从 CP11 先复核 13 条版本疑义，再从已有游标递归检索新增 79 篇的参考文献。",
@@ -39,5 +39,12 @@
     "checkpoint_sha256": "bbdae2a70cca6306918f3a4c51ae0281b3cd637d840f3e2de8153825de847855"
   },
   "version_review": "temp/reports/RUN-0010-cited-versions.json",
-  "next_backward_frontier": "temp/reports/RUN-0010-frontier-after-recursive-24.json"
+  "next_backward_frontier": "temp/reports/RUN-0010-frontier-after-recursive-24.json",
+  "end_checkpoint_id": "CP-0012",
+  "checkpoint_status": "valid",
+  "checkpoint_validation_state": "passed",
+  "checkpoint_completed_at_utc": "2026-11-28T11:02:49.832828Z",
+  "checkpoint_wall_clock_hours": 2.6022224130555554,
+  "sync_state": "See independent post-push receipt",
+  "post_commit_verification_url": "temp/validation/cp12-post-push.json"
 }

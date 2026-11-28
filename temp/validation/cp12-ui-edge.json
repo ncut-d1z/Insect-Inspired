@@ -1,0 +1,90 @@
+{
+  "checkpoint_id": "CP-0012",
+  "started_at_utc": "2026-11-28T10:44:38.832Z",
+  "offline": true,
+  "method": "Three new browser processes and empty browser profiles per entry, disabled network, navigation through usable rows. Browser launch time recorded separately.",
+  "samples": {
+    "topics": [
+      {
+        "navigation_seconds": 0.815,
+        "navigation_observed_seconds": 1.222,
+        "launch_to_ready_seconds": 4.918
+      },
+      {
+        "navigation_seconds": 0.468,
+        "navigation_observed_seconds": 0.595,
+        "launch_to_ready_seconds": 1.894
+      },
+      {
+        "navigation_seconds": 0.97,
+        "navigation_observed_seconds": 1.399,
+        "launch_to_ready_seconds": 8.134
+      }
+    ],
+    "misc": [
+      {
+        "navigation_seconds": 0.729,
+        "navigation_observed_seconds": 1.1,
+        "launch_to_ready_seconds": 4.547
+      },
+      {
+        "navigation_seconds": 0.294,
+        "navigation_observed_seconds": 0.434,
+        "launch_to_ready_seconds": 2.778
+      },
+      {
+        "navigation_seconds": 0.343,
+        "navigation_observed_seconds": 0.485,
+        "launch_to_ready_seconds": 1.747
+      }
+    ]
+  },
+  "checks": {
+    "nine_and_one_tables": true,
+    "exact_columns": true,
+    "isolated_offline_resources": true,
+    "local_search_sort": true,
+    "pagination_and_legacy_anchor": true,
+    "missing_doi": true,
+    "clear_and_empty": true,
+    "mobile": true,
+    "stable_bytes": true
+  },
+  "errors": [],
+  "artifacts": {
+    "ref.html": {
+      "bytes": 11199,
+      "sha256": "e68df03475f25dde3ef57c8570d241abc61679469c01df30075ae447e67e92a0"
+    },
+    "misc.html": {
+      "bytes": 2626,
+      "sha256": "7fbc74188c5250672d9d5b0e9d697fbdca7f3ea56063f7a2d471c9362c24210b"
+    },
+    "ref-data/index.css": {
+      "bytes": 4174,
+      "sha256": "697815005cc6d2f19f9bf4a5e8ab0e7778cf198b10f2a418e7691742df9944cc"
+    },
+    "ref-data/index.js": {
+      "bytes": 6739,
+      "sha256": "36809472a20dccf93f38f805df5191cf797d57a43d1856cad7ed96182c8071d1"
+    },
+    "ref-data/topics.js": {
+      "bytes": 9150,
+      "sha256": "e2300af7697a614b894d256e8777a3f5e8209b9d1f16e469ff5c8e5f16e2654d"
+    },
+    "ref-data/misc.js": {
+      "bytes": 1806115,
+      "sha256": "1f99eda741dfc411f1cca11b15ea3a47e472dcba478349492ddc97b00959ee0a"
+    }
+  },
+  "browser": "158.0.4370.45",
+  "executable": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+  "median_seconds": {
+    "topics": 0.815,
+    "misc": 0.343
+  },
+  "total_bytes": 1840003,
+  "topic_load_bytes": 31262,
+  "passed": true,
+  "completed_at_utc": "2026-11-28T10:45:25.732Z"
+}

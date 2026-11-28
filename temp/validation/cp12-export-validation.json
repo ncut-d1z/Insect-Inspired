@@ -1,0 +1,69 @@
+{
+  "artifact_hashes": {
+    "ref.bib": "c839d3028c31ba370c781e5bc15c05c4d8ad4640fbdf86f7f6cba52a8fa0898c",
+    "ref.html": "e68df03475f25dde3ef57c8570d241abc61679469c01df30075ae447e67e92a0",
+    "temp/exports/citation_graph.json": "aea90f394071186ca0878926933c5c8da7f9ea14bc38de53f7eaf31cc446a39c",
+    "temp/exports/evidence_matrix.csv": "dba66110491611a8938e68fbfe982b784b20fe2d986a94a2912bc98aac121b2f",
+    "temp/exports/research_entities.json": "2a1f4017f4882160cd8b4c32e838244f1e6edc85f0e18e8707db8d3b73653b67",
+    "temp/exports/research_implications.csv": "fc8c4832e733bbba402feb14cde8e238e74854dec0030d0d33a038f0acbc2425",
+    "temp/exports/research_paths.json": "f0586159dc39718b07325e92c1dad05f78fbd0adec8c57b9072b41bbe95f4ab0",
+    "misc.html": "7fbc74188c5250672d9d5b0e9d697fbdca7f3ea56063f7a2d471c9362c24210b",
+    "ref-data/index.css": "697815005cc6d2f19f9bf4a5e8ab0e7778cf198b10f2a418e7691742df9944cc",
+    "ref-data/index.js": "36809472a20dccf93f38f805df5191cf797d57a43d1856cad7ed96182c8071d1",
+    "ref-data/topics.js": "e2300af7697a614b894d256e8777a3f5e8209b9d1f16e469ff5c8e5f16e2654d",
+    "ref-data/misc.js": "1f99eda741dfc411f1cca11b15ea3a47e472dcba478349492ddc97b00959ee0a"
+  },
+  "authorship_statuses": {
+    "source_supported": 31831
+  },
+  "canonical_schema_pointer_patch_needed": false,
+  "checkpoint_id": "CP-0012",
+  "counts": {
+    "active_assessments": 72,
+    "bibtex_entries": 7821,
+    "entity_relations": 35873,
+    "graph_edges": 37207,
+    "graph_nodes": 7821,
+    "independent_progress": 7,
+    "path_gaps": 0,
+    "paths": 72,
+    "unresolved_pointers": 125312
+  },
+  "input_record_counts": {
+    "assessments.jsonl": 73,
+    "authors.jsonl": 28642,
+    "citation-edges.jsonl": 37207,
+    "discovery-paths.jsonl": 43318,
+    "organizations.jsonl": 1415,
+    "project-relations.jsonl": 50,
+    "projects.jsonl": 8,
+    "reference-occurrences.jsonl": 169291,
+    "seed-manifest.jsonl": 20,
+    "works.jsonl": 7821
+  },
+  "output_dir": "D:\\Developments\\run10-qa-435598bcf4bc\\bibtex-corrected\\first",
+  "schema_errors": [],
+  "schema_patch_path": "D:\\Developments\\run10-qa-435598bcf4bc\\bibtex-corrected\\first\\graph-schema-patch.json",
+  "schema_version": "1.1.1",
+  "scope_id": "SCOPE-0001",
+  "bibliography": {
+    "checkpoint_id": "CP-0012",
+    "K": 7821,
+    "U": 7786,
+    "topic_union": 35,
+    "table_rows": 7845,
+    "T": {
+      "L01": 9,
+      "L02": 5,
+      "L03": 11,
+      "L04": 9,
+      "L05": 5,
+      "L06": 12,
+      "L07": 1,
+      "L08": 5,
+      "L09": 2
+    }
+  },
+  "canonical_utf8_newline": "LF",
+  "completed_at_utc": "2026-11-28T10:35:33.579813Z"
+}
