@@ -39,5 +39,5 @@
     "checkpoint_sha256": "bbdae2a70cca6306918f3a4c51ae0281b3cd637d840f3e2de8153825de847855"
   },
   "version_review": "temp/reports/RUN-0010-cited-versions.json",
-  "next_backward_frontier": "temp/reports/RUN-0010-frontier-after-initial-79.json"
+  "next_backward_frontier": "temp/reports/RUN-0010-frontier-after-catalog-corrections.json"
 }
