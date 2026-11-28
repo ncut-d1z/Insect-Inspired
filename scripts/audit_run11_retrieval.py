@@ -8,7 +8,7 @@ import json
 
 from index_run11_positions import INDEX
 from run11_canonical_cursor import committed_paths, query_key
-from run11_reference_inventory import OUT, PLAN, ROOT, STATE, SUPPLEMENT, TEMP, WIDTH, digest, read, stamp, write
+from run11_reference_inventory import OUT, PLAN, ROOT, STATE, SUPPLEMENT, TEMP, WIDTH, digest, preferred, read, stamp, write
 
 
 def plan_report(name,publish):
@@ -43,7 +43,8 @@ def plan_report(name,publish):
 def source_index():
     q=read(STATE);frontier=read(ROOT/q["frontier"])["worklist"];inputs={};parents=[];totals=Counter();channels=Counter();oa=Counter();gaps=[];excluded=[]
     for start in range(0,len(frontier),WIDTH):
-        end=min(start+WIDTH,len(frontier));key=f"{start+1:04}-{end:04}";path=INDEX/(key+".json");m=read(path)
+        end=min(start+WIDTH,len(frontier));key=f"{start+1:04}-{end:04}";path=preferred(INDEX,key);m=read(path)
+        assert ROOT/m["supplement_manifest"]==preferred(SUPPLEMENT,key),"A reviewed index must be materialized before the full-cohort audit"
         assert (m["start_index"],m["next_index"])==(start,end)
         part=ROOT/m["position_file"];assert digest(part)==m["position_file_sha256"]
         assert digest(ROOT/m["primary_manifest"])==m["primary_sha256"] and digest(ROOT/m["supplement_manifest"])==m["supplement_sha256"]

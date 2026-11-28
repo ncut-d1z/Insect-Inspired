@@ -8,7 +8,7 @@ from pathlib import Path
 
 from integrate_run10_references import Batch, nonapplicable
 from run10_reference_records import doi, fields, identifiers, norm, token
-from run11_reference_inventory import BATCHES, SUPPLEMENT, manifest, queue_inputs, raw_ids, receipt, source_pages
+from run11_reference_inventory import BATCHES, SUPPLEMENT, manifest, preferred, queue_inputs, raw_ids, receipt, source_pages
 from run9_metadata_transaction import apply_batch
 from search_run11_bibliography import CP, OUT, ROOT, RUN, SCOPE, TEMP, WIDTH, digest, read, stamp
 from storage import iter_logical
@@ -31,7 +31,7 @@ def index_rows(queue,titles,start,count):
     end=min(start+count,len(queue));data=[];inputs=set();qpaths=set()
     for base in range(start//WIDTH*WIDTH,end,WIDTH):
         finish=min(base+WIDTH,len(queue));path,m=manifest(base,finish)
-        sp=SUPPLEMENT/f"{base+1:04}-{finish:04}.json";extra=read(sp)
+        sp=preferred(SUPPLEMENT,f"{base+1:04}-{finish:04}");extra=read(sp)
         assert extra["base_sha256"]==digest(path)
         for p,h in extra["receipts"].items():assert digest(ROOT/p)==h
         inputs.update((path,sp))
@@ -193,7 +193,9 @@ class Canonical(Batch):
                         edges_added+=1
             indexed={sid:dict(queries=ids,returned_positions=positions[sid],distinct_resolved_work_count=len(known[sid]),unresolved_positions=unresolved[sid])
                      for sid,ids in by_source.items()}
-            cr=next((s for s in prior["sources"] if s["source_id"]=="crossref" and s["status"]=="success" and s["available"] and not any(c["query_id"]==s["query_id"] for c in extra["excluded_parent_identities"])),None)
+            cr=next((s for s in prior["sources"] if s["source_id"]=="crossref" and s["status"]=="success" and
+                     (s["available"] or s["query_id"] in extra.get("certified_parent_queries",())) and
+                     not any(c["query_id"]==s["query_id"] for c in extra["excluded_parent_identities"])),None)
             query=cr["query_id"] if cr else sorted(attempts)[0]
             self.add("reference-coverage",dict(work_id=wid,doi=work.get("doi"),query_id=query,
                  deposited_reference_count=cr["source_declared"] if cr else None,returned_reference_count=positions["crossref"] if cr else None,

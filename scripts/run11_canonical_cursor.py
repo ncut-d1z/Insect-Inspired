@@ -6,7 +6,7 @@ from pathlib import Path
 
 from index_run11_positions import INDEX
 from run10_reference_records import token
-from run11_reference_inventory import OUT, PLAN, ROOT, WIDTH, read
+from run11_reference_inventory import OUT, PLAN, ROOT, WIDTH, preferred, read
 
 TAG={"crossref":"CR","openalex":"OA","europepmc":"EP"}
 
@@ -28,7 +28,7 @@ def readiness(start,end):
     if any(p.name not in committed_plan for p in inputs):return False
     wanted=set()
     for base in range(start//WIDTH*WIDTH,end,WIDTH):
-        label=f"{base+1:04}-{min(base+WIDTH,2620):04}.jsonl"
+        label=preferred(INDEX,f"{base+1:04}-{min(base+WIDTH,2620):04}",".jsonl").name
         if label not in committed_index:return False
         with (INDEX/label).open(encoding="utf-8") as f:
             for line in f:

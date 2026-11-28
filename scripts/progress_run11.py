@@ -18,6 +18,14 @@ def bound(root,tracked):
     return [ROOT/f for f in sorted(tracked) if f.startswith(relative) and "/" not in f[len(relative):] and f.endswith(".json")]
 
 
+def latest_cohorts(root,tracked):
+    selections={}
+    for p in bound(root,tracked):
+        key=p.stem.removesuffix("-reconciled")
+        if key not in selections or p.stem.endswith("-reconciled"):selections[key]=p
+    return selections.values()
+
+
 def update():
     head=git("rev-parse","HEAD").decode().strip()
     tracked=set(git("ls-tree","-r","--name-only",head).decode().splitlines())
@@ -25,7 +33,7 @@ def update():
     batches=[read(p) for p in bound(BATCHES,tracked) if p.name!="0001-0064.json"]
     end=sum(r["parent_count"] for r in batches)
     assert [r["starting_index"] for r in batches]==list(range(0,end,64))
-    indexes=[read(p) for p in bound(INDEX,tracked)]
+    indexes=[read(p) for p in latest_cohorts(INDEX,tracked)]
     canon=[read(p) for p in bound(TEMP/"reports/RUN-0011-canonical",tracked)]
     qfiles=[p for p in bound(OUT,tracked) if p.name.startswith("Q-RUN11-")]
     raw=sum(read(p)["external_request_count"] for p in qfiles)
@@ -43,7 +51,7 @@ def update():
                version_tasks_reviewed=65 if manual else 0,printed_original_versions_identified=33 if manual else 0,
                reviewed_inherited_tasks_still_ambiguous=32 if manual else 0,new_scientific_admissions=0,
                published_requests=raw,manual_review_items=len(manual))
-    stats["parents_with_source_supplements"]=sum(len(read(p)["parents"]) for p in bound(SUPPLEMENT,tracked))
+    stats["parents_with_source_supplements"]=sum(len(read(p)["parents"]) for p in latest_cohorts(SUPPLEMENT,tracked))
     run.update(external_requests_used=raw,manual_review_items_used=len(manual),synchronization_watermark=stats)
     assert len(front)==2620 and raw<=run["budget"]["external_requests"] and run["paid_spend"]==0
     assert git("rev-parse","HEAD").decode().strip()==head

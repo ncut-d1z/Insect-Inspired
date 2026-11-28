@@ -5,7 +5,8 @@ import argparse
 
 from index_run11_positions import INDEX
 from integrate_run11_reviews import Ledger
-from run11_reference_inventory import BATCHES, OUT, ROOT, SUPPLEMENT, TEMP, WIDTH, digest, read, receipt, stamp
+from run11_reference_inventory import BATCHES, OUT, ROOT, SUPPLEMENT, TEMP, WIDTH, digest, preferred, read, receipt, stamp
+from integrate_run10_references import source
 from run9_metadata_transaction import apply_batch
 from search_run11_bibliography import CP, RUN, SCOPE, STATE
 
@@ -23,7 +24,7 @@ def coverage():
     prepared={r["work_id"] for p in (TEMP/"reports/RUN-0011-canonical").glob("*.json") for r in read(p)["coverage"]}
     totals=Counter();states=Counter()
     for start in range(0,len(worklist),WIDTH):
-        end=min(start+WIDTH,len(worklist));label=f"{start+1:04}-{end:04}";m=read(INDEX/(label+".json"))
+        end=min(start+WIDTH,len(worklist));label=f"{start+1:04}-{end:04}";m=read(preferred(INDEX,label))
         bp=ROOT/m["primary_manifest"];sp=ROOT/m["supplement_manifest"];base=read(bp);supp=read(sp);inputs.update((bp,sp))
         attempts=defaultdict(lambda:defaultdict(list))
         for file in base["input_receipts"]:
@@ -36,12 +37,12 @@ def coverage():
             invalid={c["query_id"] for c in x["excluded_parent_identities"]}
             for sid,qids in attempts[wid].items():
                 qids=list(dict.fromkeys(qids));obs=[z for z in r["sources"] if z["source_id"]==sid and z["query_id"] not in invalid]
-                good=[z for z in obs if z["available"] and z["status"]=="success"]
+                good=[z for z in obs if (z["available"] or z["query_id"] in x.get("certified_parent_queries",())) and z["status"]=="success"]
                 by_kind=p["positions_by_channel"];total=None;number=None;complete=False
                 if sid=="crossref":
                     number=by_kind.get("deposited",0) if good else None
                     if good:
-                        total=good[-1]["source_declared"];complete=good[-1]["source_reconciled"] and number==total
+                        total=good[-1]["source_declared"];complete=(good[-1]["source_reconciled"] or good[-1]["query_id"] in x.get("certified_parent_queries",())) and number==total
                 elif sid=="europepmc":
                     number=by_kind.get("indexed_bibliography",0) if good else None
                     if good:
@@ -69,7 +70,16 @@ def coverage():
             event["cursor"]={"next":"canonical_reference_identity" if has else "alternative_bibliographic_source","queue_position":p["queue_position"],
                              "index_file":m["position_file"],"positions":p["counts"].get("positions",0)}
             if w["dimension_status"]["references"]!=state:
-                revised=deepcopy(w);revised["dimension_status"]["references"]=state;reg.modify("works",w,revised)
+                revised=deepcopy(w);revised["dimension_status"]["references"]=state;reg.modify("works",w,revised);reg.works[wid]=revised
+    review_path=TEMP/"reports/RUN-0011-parent-identity-review.json";review=read(review_path);inputs.add(review_path)
+    for r in review["items"]:
+        wid=r["work_id"];w=reg.works[wid];updated=deepcopy(w)
+        q=receipt("Q-RUN11-PARENT-IDENTITY-CROSSREF-A1")
+        if r["registered_title"] not in updated["title_variants"]:updated["title_variants"].append(r["registered_title"])
+        updated["discovery_sources"].append(source(q,r["doi"],"Registered title, byline and pages","与 PMID 和 OpenAlex 记录交叉核对原题名或短题名。"))
+        reg.modify("works",w,updated);reg.works[wid]=updated
+        reg.manual("MR-R11-PARENT-"+wid,wid,review_path,review["reviewed_at_utc"],"abbreviated_or_translated_parent_identity",
+                   "已核对题名变体、两种稳定标识、署名及卷页；保留原始匹配疑义与恢复的来源列表。")
     reg.queries(paths)
     rep=dict(run_id=RUN,scope_id=SCOPE,checkpoint_id=CP,recorded_at_utc=stamp(),stage="source_coverage",parents=len(worklist),
              parent_task_states=dict(states),source_coverage_records=dict(totals),previously_materialized_parents=len(prepared),

@@ -10,8 +10,9 @@ from run11_reference_inventory import ROOT, TEMP, SUPPLEMENT, WIDTH, digest, man
 INDEX=TEMP/"reports/RUN-0011-reference-index"
 
 
-def build(start,queue,titles):
+def build(start,queue,titles,reconcile=False):
     group=queue[start:start+WIDTH];end=start+len(group);path,base=manifest(start,end);label=f"{start+1:04}-{end:04}"
+    if reconcile:label+="-reconciled"
     supplement=SUPPLEMENT/(label+".json");ext=read(supplement);assert digest(path)==ext["base_sha256"]
     for f,h in ext["receipts"].items():assert digest(ROOT/f)==h
     INDEX.mkdir(exist_ok=True)
@@ -58,5 +59,5 @@ def build(start,queue,titles):
 
 
 if __name__=="__main__":
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument("start",type=int);a=p.parse_args()
-    q,t=queue_inputs();build(a.start,q,t)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument("start",type=int);p.add_argument("--reconcile",action="store_true");a=p.parse_args()
+    q,t=queue_inputs();build(a.start,q,t,a.reconcile)

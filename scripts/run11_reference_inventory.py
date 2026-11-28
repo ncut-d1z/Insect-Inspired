@@ -15,6 +15,11 @@ SUPPLEMENT = TEMP / "reports/RUN-0011-reference-supplements"
 PLAN = TEMP / "reports/RUN-0011-identity-plan"
 
 
+def preferred(folder,label,extension=".json"):
+    corrected=folder/(label+"-reconciled"+extension)
+    return corrected if corrected.is_file() else folder/(label+extension)
+
+
 @lru_cache(maxsize=12)
 def receipt(qid):
     return read(OUT / (qid + ".json"))
@@ -41,7 +46,7 @@ def manifest(start,end):
     return path,obj
 
 
-def primary_lists(owner, row, titles):
+def primary_lists(owner, row, titles, certified=()):
     if owner["work_id"]!=row["work_id"]:raise ValueError("Parent order changed")
     for obs in row["sources"]:
         q=receipt(obs["query_id"]);provider=q["source_id"]
@@ -50,13 +55,13 @@ def primary_lists(owner, row, titles):
             records=[r for r in q["records"] if doi(r.get("DOI"))==doi(owner.get("doi"))]
             if len(records)>1:raise ValueError("Duplicate deposited parent")
             if not records:continue
-            paper=records[0];okay=any(compatible_parent(t,titles) for t in paper.get("title",[]))
+            paper=records[0];okay=q["query_id"] in certified or any(compatible_parent(t,titles) for t in paper.get("title",[]))
             yield q,"deposited",paper.get("reference",[]),paper.get("reference-count"),okay,paper["DOI"],"reference" in paper
         elif provider=="openalex":
             records=[r for r in q["records"] if r["work_id"]==owner["work_id"]]
             if len(records)>1:raise ValueError("Ambiguous OpenAlex parent")
             if not records:continue
-            paper=records[0];okay=compatible_parent(paper.get("parent_title"),titles)
+            paper=records[0];okay=q["query_id"] in certified or compatible_parent(paper.get("parent_title"),titles)
             yield q,"index_ids",[{"openalex":v} for v in paper["reference_ids"]],len(paper["reference_ids"]),okay,paper["source_identifier"],True
         else:
             assert provider=="europepmc" and q["owners"]==owners_input([owner])
@@ -123,7 +128,7 @@ def source_pages(owner,row,titles,extra=None):
             if ident:literal_ids.add(ident)
             refs.append({**item,"openalex":ident or None})
         yield literal_q,"literal_bibliography",refs,extra["openalex_parent"],list(range(1,len(refs)+1))
-    for q,kind,refs,decl,okay,parent,present in primary_lists(owner,row,titles):
+    for q,kind,refs,decl,okay,parent,present in primary_lists(owner,row,titles,(extra or {}).get("certified_parent_queries",())):
         if not okay or not present:continue
         start=(q.get("page_index",1)-1)*1000 if kind=="indexed_bibliography" else 0
         rows=[(pos,raw) for pos,raw in enumerate(refs,start+1) if kind!="index_ids" or raw["openalex"] not in literal_ids]
@@ -165,7 +170,7 @@ def plan(queue,titles,end_at=None):
     todo=defaultdict(dict);counts=Counter();source_hashes={};frontier={}
     for start in range(0,end_at,WIDTH):
         group=queue[start:start+WIDTH];end=start+len(group);path,batch=manifest(start,end)
-        sp=SUPPLEMENT/f"{start+1:04}-{end:04}.json";supp=read(sp);assert supp["base_sha256"]==digest(path)
+        sp=preferred(SUPPLEMENT,f"{start+1:04}-{end:04}");supp=read(sp);assert supp["base_sha256"]==digest(path)
         source_hashes[sp.relative_to(ROOT).as_posix()]=digest(sp)
         for owner,row,extra in zip(group,batch["worklist"],supp["parents"],strict=True):
             assert owner["work_id"]==extra["work_id"]
