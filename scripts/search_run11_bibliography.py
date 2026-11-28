@@ -65,7 +65,8 @@ def request(key, source, endpoint, parameters, owners, why, project, page=1):
         with source_slot(source,file,run) as provider_delay:
             entry = dict(query_id=file.stem,run_id=RUN,scope_id=SCOPE,target_checkpoint=CP,source_id=source,
                          requested_at_utc=stamp(),endpoint_or_url=url,parameters=parameters,page_index=page,owners=owners,
-                         reason=why,external_request_count=1,attempt=attempt,status="error",http_status=None,retryable=False)
+                         reason=why,external_request_count=1,attempt=attempt,status="error",http_status=None,retryable=False,
+                         execution_limits={"per_provider_concurrency":1,"timeout_seconds":25,"retry_backoff_seconds":[2,5,15]})
             delay = (2,5,15,15)[attempt-1]
             headers = {"Accept":"application/json","User-Agent":"Insect-Inspired-Bibliography/1.3"}
             try:
