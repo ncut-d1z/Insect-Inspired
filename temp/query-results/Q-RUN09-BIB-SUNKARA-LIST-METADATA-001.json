@@ -1,0 +1,3023 @@
+{
+  "query_id": "Q-RUN09-BIB-SUNKARA-LIST-METADATA-001",
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0011",
+  "entity_id": "W-R24649f4879cc831d",
+  "task_id": "T-references-W-R24649f4879cc831d",
+  "source_id": "europepmc",
+  "query_kind": "bibliographic_list-metadata",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28SRC%3AMED+AND+%28EXT_ID%3A%2210036263%22+OR+EXT_ID%3A%2210196591%22+OR+EXT_ID%3A%2210368396%22+OR+EXT_ID%3A%2210474889%22+OR+EXT_ID%3A%2210492828%22+OR+EXT_ID%3A%2210997037%22+OR+EXT_ID%3A%2211090678%22+OR+EXT_ID%3A%2211817754%22+OR+EXT_ID%3A%2212219819%22+OR+EXT_ID%3A%2212424299%22+OR+EXT_ID%3A%221461280%22+OR+EXT_ID%3A%2215145682%22+OR+EXT_ID%3A%2215207243%22+OR+EXT_ID%3A%2215432778%22+OR+EXT_ID%3A%2215582371%22+OR+EXT_ID%3A%2215716372%22+OR+EXT_ID%3A%221599203%22+OR+EXT_ID%3A%221623984%22+OR+EXT_ID%3A%2216399674%22+OR+EXT_ID%3A%2216773892%22+OR+EXT_ID%3A%2217234602%22+OR+EXT_ID%3A%2217804635%22+OR+EXT_ID%3A%2218558861%22+OR+EXT_ID%3A%2219068491%22+OR+EXT_ID%3A%2219727690%22+OR+EXT_ID%3A%2220375282%22+OR+EXT_ID%3A%2220510863%22+OR+EXT_ID%3A%2221849564%22+OR+EXT_ID%3A%222299447%22+OR+EXT_ID%3A%2224259579%22+OR+EXT_ID%3A%2224790176%22+OR+EXT_ID%3A%2225122709%22+OR+EXT_ID%3A%2225339732%22+OR+EXT_ID%3A%2225436667%22+OR+EXT_ID%3A%222974874%22+OR+EXT_ID%3A%223548572%22+OR+EXT_ID%3A%223607100%22+OR+EXT_ID%3A%223944614%22+OR+EXT_ID%3A%223973767%22+OR+EXT_ID%3A%226106198%22+OR+EXT_ID%3A%226740325%22+OR+EXT_ID%3A%227264778%22+OR+EXT_ID%3A%227617432%22+OR+EXT_ID%3A%227623145%22+OR+EXT_ID%3A%227935814%22+OR+EXT_ID%3A%227975352%22+OR+EXT_ID%3A%228385201%22+OR+EXT_ID%3A%228703215%22+OR+EXT_ID%3A%228746233%22+OR+EXT_ID%3A%229133403%22+OR+EXT_ID%3A%229208854%22+OR+EXT_ID%3A%229349815%22+OR+EXT_ID%3A%229425183%22+OR+EXT_ID%3A%229518026%22+OR+EXT_ID%3A%229744968%22%29%29&resultType=core&format=json&pageSize=1000",
+  "raw_parameters": {
+    "query": "(SRC:MED AND (EXT_ID:\"10036263\" OR EXT_ID:\"10196591\" OR EXT_ID:\"10368396\" OR EXT_ID:\"10474889\" OR EXT_ID:\"10492828\" OR EXT_ID:\"10997037\" OR EXT_ID:\"11090678\" OR EXT_ID:\"11817754\" OR EXT_ID:\"12219819\" OR EXT_ID:\"12424299\" OR EXT_ID:\"1461280\" OR EXT_ID:\"15145682\" OR EXT_ID:\"15207243\" OR EXT_ID:\"15432778\" OR EXT_ID:\"15582371\" OR EXT_ID:\"15716372\" OR EXT_ID:\"1599203\" OR EXT_ID:\"1623984\" OR EXT_ID:\"16399674\" OR EXT_ID:\"16773892\" OR EXT_ID:\"17234602\" OR EXT_ID:\"17804635\" OR EXT_ID:\"18558861\" OR EXT_ID:\"19068491\" OR EXT_ID:\"19727690\" OR EXT_ID:\"20375282\" OR EXT_ID:\"20510863\" OR EXT_ID:\"21849564\" OR EXT_ID:\"2299447\" OR EXT_ID:\"24259579\" OR EXT_ID:\"24790176\" OR EXT_ID:\"25122709\" OR EXT_ID:\"25339732\" OR EXT_ID:\"25436667\" OR EXT_ID:\"2974874\" OR EXT_ID:\"3548572\" OR EXT_ID:\"3607100\" OR EXT_ID:\"3944614\" OR EXT_ID:\"3973767\" OR EXT_ID:\"6106198\" OR EXT_ID:\"6740325\" OR EXT_ID:\"7264778\" OR EXT_ID:\"7617432\" OR EXT_ID:\"7623145\" OR EXT_ID:\"7935814\" OR EXT_ID:\"7975352\" OR EXT_ID:\"8385201\" OR EXT_ID:\"8703215\" OR EXT_ID:\"8746233\" OR EXT_ID:\"9133403\" OR EXT_ID:\"9208854\" OR EXT_ID:\"9349815\" OR EXT_ID:\"9425183\" OR EXT_ID:\"9518026\" OR EXT_ID:\"9744968\"))",
+    "resultType": "core",
+    "format": "json",
+    "pageSize": 1000
+  },
+  "queried_at_utc": "2026-11-28T04:16:07.230601Z",
+  "page_index": 1,
+  "external_request_count": 1,
+  "cache_hit": false,
+  "license_note": "Public bibliographic facts and author identifiers. Abstract text is represented only by availability and a digest.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "records": [
+    {
+      "id": "25436667",
+      "source": "MED",
+      "pmid": "25436667",
+      "pmcid": "PMC4281299",
+      "doi": "10.1038/nn.3889",
+      "title": "A novel role for visual perspective cues in the neural computation of depth.",
+      "authorString": "Kim HR, Angelaki DE, DeAngelis GC.",
+      "pageInfo": "129-137",
+      "pubYear": "2015",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2014-12-01",
+      "authors": [
+        {
+          "fullName": "Kim HR",
+          "firstName": "HyungGoo R",
+          "lastName": "Kim",
+          "initials": "HR",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-9106-4960"
+          },
+          "affiliations": [
+            "Department of Brain and Cognitive Sciences, Center for Visual Science, University of Rochester, Rochester, New York, USA"
+          ]
+        },
+        {
+          "fullName": "Angelaki DE",
+          "firstName": "Dora E",
+          "lastName": "Angelaki",
+          "initials": "DE",
+          "affiliations": [
+            "Department of Neuroscience, Baylor College of Medicine, Houston, Texas, USA"
+          ]
+        },
+        {
+          "fullName": "DeAngelis GC",
+          "firstName": "Gregory C",
+          "lastName": "DeAngelis",
+          "initials": "GC",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-1635-1273"
+          },
+          "affiliations": [
+            "Department of Brain and Cognitive Sciences, Center for Visual Science, University of Rochester, Rochester, New York, USA"
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Nat Neurosci",
+        "title": "Nature neuroscience",
+        "essn": "1546-1726",
+        "issn": "1097-6256"
+      },
+      "issue_details": {
+        "volume": "18",
+        "issue": "1",
+        "dateOfPublication": "2015 Jan"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "2fcf62934bf1f64edc834822ed81110b5c7f05bc761b4c18455e2bc6508fba69"
+    },
+    {
+      "id": "25339732",
+      "source": "MED",
+      "pmid": "25339732",
+      "pmcid": "PMC4205545",
+      "doi": "10.1523/jneurosci.2030-14.2014",
+      "title": "Gravity influences the visual representation of object tilt in parietal cortex.",
+      "authorString": "Rosenberg A, Angelaki DE.",
+      "pageInfo": "14170-14180",
+      "pubYear": "2014",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "research-article",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2014-10-01",
+      "authors": [
+        {
+          "fullName": "Rosenberg A",
+          "firstName": "Ari",
+          "lastName": "Rosenberg",
+          "initials": "A",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-8606-2987"
+          },
+          "affiliations": [
+            "Department of Neuroscience, Baylor College of Medicine, Houston, Texas 77030"
+          ]
+        },
+        {
+          "fullName": "Angelaki DE",
+          "firstName": "Dora E",
+          "lastName": "Angelaki",
+          "initials": "DE",
+          "affiliations": [
+            "Department of Neuroscience, Baylor College of Medicine, Houston, Texas 77030"
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474"
+      },
+      "issue_details": {
+        "volume": "34",
+        "issue": "43",
+        "dateOfPublication": "2014 Oct"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "b7f301ee5ddd1f346ee8e4425ed293084d486db30b14b011606bdd6b92302fed"
+    },
+    {
+      "id": "25122709",
+      "source": "MED",
+      "pmid": "25122709",
+      "doi": "10.1152/jn.00410.2014",
+      "title": "Visual selectivity for heading in the macaque ventral intraparietal area.",
+      "authorString": "Kaminiarz A, Schlack A, Hoffmann KP, Lappe M, Bremmer F.",
+      "pageInfo": "2470-2480",
+      "pubYear": "2014",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2014-08-13",
+      "authors": [
+        {
+          "fullName": "Kaminiarz A",
+          "firstName": "Andre",
+          "lastName": "Kaminiarz",
+          "initials": "A",
+          "affiliations": [
+            "AG Neurophysik, University of Marburg, Marburg, Germany"
+          ]
+        },
+        {
+          "fullName": "Schlack A",
+          "firstName": "Anja",
+          "lastName": "Schlack",
+          "initials": "A",
+          "affiliations": [
+            "Allgemeine Zoologie und Neurobiologie, University of Bochum, Bochum, Germany; and"
+          ]
+        },
+        {
+          "fullName": "Hoffmann KP",
+          "firstName": "Klaus-Peter",
+          "lastName": "Hoffmann",
+          "initials": "KP",
+          "affiliations": [
+            "AG Neurophysik, University of Marburg, Marburg, Germany; Allgemeine Zoologie und Neurobiologie, University of Bochum, Bochum, Germany; and"
+          ]
+        },
+        {
+          "fullName": "Lappe M",
+          "firstName": "Markus",
+          "lastName": "Lappe",
+          "initials": "M",
+          "affiliations": [
+            "Institut für Psychologie, University of Münster, Münster, Germany"
+          ]
+        },
+        {
+          "fullName": "Bremmer F",
+          "firstName": "Frank",
+          "lastName": "Bremmer",
+          "initials": "F",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-1597-7407"
+          },
+          "affiliations": [
+            "AG Neurophysik, University of Marburg, Marburg, Germany"
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurophysiol",
+        "title": "Journal of neurophysiology",
+        "essn": "1522-1598",
+        "issn": "0022-3077"
+      },
+      "issue_details": {
+        "volume": "112",
+        "issue": "10",
+        "dateOfPublication": "2014 Nov"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "b1e197432f2c3f80e6792d6ebb2995472f7118e4129e1fde2ad98759652ac72e"
+    },
+    {
+      "id": "24790176",
+      "source": "MED",
+      "pmid": "24790176",
+      "pmcid": "PMC4064410",
+      "doi": "10.1152/jn.00057.2014",
+      "title": "Eye-centered visual receptive fields in the ventral intraparietal area.",
+      "authorString": "Chen X, DeAngelis GC, Angelaki DE.",
+      "pageInfo": "353-361",
+      "pubYear": "2014",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2014-04-30",
+      "authors": [
+        {
+          "fullName": "Chen X",
+          "firstName": "Xiaodong",
+          "lastName": "Chen",
+          "initials": "X",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-9797-8384"
+          },
+          "affiliations": [
+            "Department of Neuroscience, Baylor College of Medicine, Houston, Texas; Department of Anatomy & Neurobiology, Washington University, St. Louis, Missouri; and"
+          ]
+        },
+        {
+          "fullName": "DeAngelis GC",
+          "firstName": "Gregory C",
+          "lastName": "DeAngelis",
+          "initials": "GC",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-1635-1273"
+          },
+          "affiliations": [
+            "Department of Brain and Cognitive Sciences, University of Rochester, Rochester, New York"
+          ]
+        },
+        {
+          "fullName": "Angelaki DE",
+          "firstName": "Dora E",
+          "lastName": "Angelaki",
+          "initials": "DE",
+          "affiliations": [
+            "Department of Neuroscience, Baylor College of Medicine, Houston, Texas; Department of Anatomy & Neurobiology, Washington University, St. Louis, Missouri; and"
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurophysiol",
+        "title": "Journal of neurophysiology",
+        "essn": "1522-1598",
+        "issn": "0022-3077"
+      },
+      "issue_details": {
+        "volume": "112",
+        "issue": "2",
+        "dateOfPublication": "2014 Jul"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "ce132ea82ba2a853a5811bab8bf77579e537fa526b50708eedc7d5c316fb5dca"
+    },
+    {
+      "id": "24259579",
+      "source": "MED",
+      "pmid": "24259579",
+      "pmcid": "PMC3834060",
+      "doi": "10.1523/jneurosci.2837-13.2013",
+      "title": "Eye-centered representation of optic flow tuning in the ventral intraparietal area.",
+      "authorString": "Chen X, DeAngelis GC, Angelaki DE.",
+      "pageInfo": "18574-18582",
+      "pubYear": "2013",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2013-11-01",
+      "authors": [
+        {
+          "fullName": "Chen X",
+          "firstName": "Xiaodong",
+          "lastName": "Chen",
+          "initials": "X",
+          "affiliations": [
+            "Department of Neuroscience, Baylor College of Medicine, Houston, Texas 77030, and Department of Brain and Cognitive Sciences, University of Rochester, Rochester, New York 14627"
+          ]
+        },
+        {
+          "fullName": "DeAngelis GC",
+          "firstName": "Gregory C",
+          "lastName": "DeAngelis",
+          "initials": "GC",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-1635-1273"
+          }
+        },
+        {
+          "fullName": "Angelaki DE",
+          "firstName": "Dora E",
+          "lastName": "Angelaki",
+          "initials": "DE"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474"
+      },
+      "issue_details": {
+        "volume": "33",
+        "issue": "47",
+        "dateOfPublication": "2013 Nov"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "076e05712d7bd72b07fa4378ac2c8981dc437167f8efe5987288653f742d1477"
+    },
+    {
+      "id": "21849564",
+      "source": "MED",
+      "pmid": "21849564",
+      "pmcid": "PMC3169295",
+      "doi": "10.1523/jneurosci.0395-11.2011",
+      "title": "Representation of vestibular and visual cues to self-motion in ventral intraparietal cortex.",
+      "authorString": "Chen A, DeAngelis GC, Angelaki DE.",
+      "pageInfo": "12036-12052",
+      "pubYear": "2011",
+      "pubTypeList": {
+        "pubType": [
+          "Comparative Study",
+          "research-article",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2011-08-01",
+      "authors": [
+        {
+          "fullName": "Chen A",
+          "firstName": "Aihua",
+          "lastName": "Chen",
+          "initials": "A",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-5066-2844"
+          },
+          "affiliations": [
+            "Department of Anatomy and Neurobiology, Washington University School of Medicine, St. Louis, Missouri 63110, USA"
+          ]
+        },
+        {
+          "fullName": "DeAngelis GC",
+          "firstName": "Gregory C",
+          "lastName": "DeAngelis",
+          "initials": "GC",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-1635-1273"
+          }
+        },
+        {
+          "fullName": "Angelaki DE",
+          "firstName": "Dora E",
+          "lastName": "Angelaki",
+          "initials": "DE"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474"
+      },
+      "issue_details": {
+        "volume": "31",
+        "issue": "33",
+        "dateOfPublication": "2011 Aug"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "715cea7112bf3270954c02c1f186396b4a38fc81d1686d84f4b444e32005f1ae"
+    },
+    {
+      "id": "20510863",
+      "source": "MED",
+      "pmid": "20510863",
+      "pmcid": "PMC2889617",
+      "doi": "10.1016/j.neuron.2010.04.026",
+      "title": "Decoding of MSTd population activity accounts for variations in the precision of heading perception.",
+      "authorString": "Gu Y, Fetsch CR, Adeyemo B, Deangelis GC, Angelaki DE.",
+      "pageInfo": "596-609",
+      "pubYear": "2010",
+      "pubTypeList": {
+        "pubType": [
+          "Comparative Study",
+          "research-article",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2010-05-01",
+      "authors": [
+        {
+          "fullName": "Gu Y",
+          "firstName": "Yong",
+          "lastName": "Gu",
+          "initials": "Y",
+          "affiliations": [
+            "Department of Neurobiology, Washington University School of Medicine, St. Louis, MO 63110, USA"
+          ]
+        },
+        {
+          "fullName": "Fetsch CR",
+          "firstName": "Christopher R",
+          "lastName": "Fetsch",
+          "initials": "CR"
+        },
+        {
+          "fullName": "Adeyemo B",
+          "firstName": "Babatunde",
+          "lastName": "Adeyemo",
+          "initials": "B"
+        },
+        {
+          "fullName": "Deangelis GC",
+          "firstName": "Gregory C",
+          "lastName": "Deangelis",
+          "initials": "GC",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-1635-1273"
+          }
+        },
+        {
+          "fullName": "Angelaki DE",
+          "firstName": "Dora E",
+          "lastName": "Angelaki",
+          "initials": "DE"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Neuron",
+        "title": "Neuron",
+        "essn": "1097-4199",
+        "issn": "0896-6273"
+      },
+      "issue_details": {
+        "volume": "66",
+        "issue": "4",
+        "dateOfPublication": "2010 May"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "e3809a6ce7f93d5e5bbd1782bfc919161b8d568a3d829d7d588d5d15d925dd66"
+    },
+    {
+      "id": "20375282",
+      "source": "MED",
+      "pmid": "20375282",
+      "pmcid": "PMC2867917",
+      "doi": "10.1073/pnas.0913209107",
+      "title": "Idiosyncratic and systematic aspects of spatial representations in the macaque parietal cortex.",
+      "authorString": "Chang SW, Snyder LH.",
+      "pageInfo": "7951-7956",
+      "pubYear": "2010",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2010-04-07",
+      "authors": [
+        {
+          "fullName": "Chang SW",
+          "firstName": "Steve W C",
+          "lastName": "Chang",
+          "initials": "SW",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-4160-7549"
+          },
+          "affiliations": [
+            "Department of Anatomy and Neurobiology, Washington University School of Medicine, St Louis, MO 63110, USA"
+          ]
+        },
+        {
+          "fullName": "Snyder LH",
+          "firstName": "Lawrence H",
+          "lastName": "Snyder",
+          "initials": "LH"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Proc Natl Acad Sci U S A",
+        "title": "Proceedings of the National Academy of Sciences of the United States of America",
+        "essn": "1091-6490",
+        "issn": "0027-8424"
+      },
+      "issue_details": {
+        "volume": "107",
+        "issue": "17",
+        "dateOfPublication": "2010 Apr"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "c89047ff6e7b020447603081724e08751b9fb6aadb829b3dade3299043e7066b"
+    },
+    {
+      "id": "19727690",
+      "source": "MED",
+      "pmid": "19727690",
+      "doi": "10.1007/s00221-009-1990-3",
+      "title": "Visual selectivity for heading in monkey area MST.",
+      "authorString": "Bremmer F, Kubischik M, Pekel M, Hoffmann KP, Lappe M.",
+      "pageInfo": "51-60",
+      "pubYear": "2010",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2010-01-01",
+      "authors": [
+        {
+          "fullName": "Bremmer F",
+          "firstName": "Frank",
+          "lastName": "Bremmer",
+          "initials": "F",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-1597-7407"
+          },
+          "affiliations": [
+            "Allg. Zoologie und Neurobiologie, Ruhr Universität Bochum, 44780 Bochum, Germany"
+          ]
+        },
+        {
+          "fullName": "Kubischik M",
+          "firstName": "Michael",
+          "lastName": "Kubischik",
+          "initials": "M"
+        },
+        {
+          "fullName": "Pekel M",
+          "firstName": "Martin",
+          "lastName": "Pekel",
+          "initials": "M"
+        },
+        {
+          "fullName": "Hoffmann KP",
+          "firstName": "Klaus-Peter",
+          "lastName": "Hoffmann",
+          "initials": "KP"
+        },
+        {
+          "fullName": "Lappe M",
+          "firstName": "Markus",
+          "lastName": "Lappe",
+          "initials": "M"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Exp Brain Res",
+        "title": "Experimental brain research",
+        "essn": "1432-1106",
+        "issn": "0014-4819"
+      },
+      "issue_details": {
+        "volume": "200",
+        "issue": "1",
+        "dateOfPublication": "2010 Jan"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "bb3bf78c0c00953c80b8a5b758c8665e24033e5ac984b0c55e6a36bd2a0ba61b"
+    },
+    {
+      "id": "19068491",
+      "source": "MED",
+      "pmid": "19068491",
+      "pmcid": "PMC2705694",
+      "doi": "10.1093/cercor/bhn207",
+      "title": "Motor-related signals in the intraparietal cortex encode locations in a hybrid, rather than eye-centered reference frame.",
+      "authorString": "Mullette-Gillman OA, Cohen YE, Groh JM.",
+      "pageInfo": "1761-1775",
+      "pubYear": "2009",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "research-article",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2008-12-09",
+      "authors": [
+        {
+          "fullName": "Mullette-Gillman OA",
+          "firstName": "O'Dhaniel A",
+          "lastName": "Mullette-Gillman",
+          "initials": "OA",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-5585-2978"
+          },
+          "affiliations": [
+            "Brain Imaging and Analysis Center, Duke University, Durham, NC 27707, USA"
+          ]
+        },
+        {
+          "fullName": "Cohen YE",
+          "firstName": "Yale E",
+          "lastName": "Cohen",
+          "initials": "YE"
+        },
+        {
+          "fullName": "Groh JM",
+          "firstName": "Jennifer M",
+          "lastName": "Groh",
+          "initials": "JM",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-6435-3935"
+          }
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Cereb Cortex",
+        "title": "Cerebral cortex (New York, N.Y. : 1991)",
+        "essn": "1460-2199",
+        "issn": "1047-3211"
+      },
+      "issue_details": {
+        "volume": "19",
+        "issue": "8",
+        "dateOfPublication": "2009 Aug"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "fc139870f8d23071bf33a1407ec6bd2177070d6de2e180fe852d7c8debb284d3"
+    },
+    {
+      "id": "18558861",
+      "source": "MED",
+      "pmid": "18558861",
+      "doi": "10.1146/annurev.neuro.29.051605.112953",
+      "title": "Mechanisms of self-motion perception.",
+      "authorString": "Britten KH.",
+      "pageInfo": "389-410",
+      "pubYear": "2008",
+      "pubTypeList": {
+        "pubType": [
+          "Review",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2008-01-01",
+      "authors": [
+        {
+          "fullName": "Britten KH",
+          "firstName": "Kenneth H",
+          "lastName": "Britten",
+          "initials": "KH",
+          "affiliations": [
+            "Center for Neuroscience and Department of Neurobiology, Physiology, and Behavior, University of California, Davis, California 95616, USA"
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Annu Rev Neurosci",
+        "title": "Annual review of neuroscience",
+        "essn": "1545-4126",
+        "issn": "0147-006X"
+      },
+      "issue_details": {
+        "volume": "31",
+        "dateOfPublication": "2008 "
+      },
+      "abstract_available": true,
+      "abstract_sha256": "2f9d7ba61578a361cdf675e6646a5ebcf43b66c14820722d53c7f14df2580db2"
+    },
+    {
+      "id": "17804635",
+      "source": "MED",
+      "pmid": "17804635",
+      "pmcid": "PMC2587312",
+      "doi": "10.1523/jneurosci.0817-07.2007",
+      "title": "Multimodal coding of three-dimensional rotation and translation in area MSTd: comparison of visual and vestibular selectivity.",
+      "authorString": "Takahashi K, Gu Y, May PJ, Newlands SD, DeAngelis GC, Angelaki DE.",
+      "pageInfo": "9742-9756",
+      "pubYear": "2007",
+      "pubTypeList": {
+        "pubType": [
+          "Comparative Study",
+          "research-article",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2007-09-01",
+      "authors": [
+        {
+          "fullName": "Takahashi K",
+          "firstName": "Katsumasa",
+          "lastName": "Takahashi",
+          "initials": "K",
+          "affiliations": [
+            "Department of Anatomy and Neurobiology, Washington University School of Medicine, St. Louis, Missouri 63110, USA"
+          ]
+        },
+        {
+          "fullName": "Gu Y",
+          "firstName": "Yong",
+          "lastName": "Gu",
+          "initials": "Y"
+        },
+        {
+          "fullName": "May PJ",
+          "firstName": "Paul J",
+          "lastName": "May",
+          "initials": "PJ"
+        },
+        {
+          "fullName": "Newlands SD",
+          "firstName": "Shawn D",
+          "lastName": "Newlands",
+          "initials": "SD"
+        },
+        {
+          "fullName": "DeAngelis GC",
+          "firstName": "Gregory C",
+          "lastName": "DeAngelis",
+          "initials": "GC",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-1635-1273"
+          }
+        },
+        {
+          "fullName": "Angelaki DE",
+          "firstName": "Dora E",
+          "lastName": "Angelaki",
+          "initials": "DE"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474"
+      },
+      "issue_details": {
+        "volume": "27",
+        "issue": "36",
+        "dateOfPublication": "2007 Sep"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "6d5b1e0eb8f988e75ce53dd1eeaffcec48c689b92a60eb7187970eaa7c544567"
+    },
+    {
+      "id": "17234602",
+      "source": "MED",
+      "pmid": "17234602",
+      "pmcid": "PMC1995026",
+      "doi": "10.1523/jneurosci.3553-06.2007",
+      "title": "Spatial reference frames of visual, vestibular, and multimodal heading signals in the dorsal subdivision of the medial superior temporal area.",
+      "authorString": "Fetsch CR, Wang S, Gu Y, Deangelis GC, Angelaki DE.",
+      "pageInfo": "700-712",
+      "pubYear": "2007",
+      "pubTypeList": {
+        "pubType": [
+          "Comparative Study",
+          "Research Support, Non-U.S. Gov't",
+          "research-article",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2007-01-01",
+      "authors": [
+        {
+          "fullName": "Fetsch CR",
+          "firstName": "Christopher R",
+          "lastName": "Fetsch",
+          "initials": "CR",
+          "affiliations": [
+            "Department of Anatomy and Neurobiology, Washington University School of Medicine, St. Louis, Missouri 63110, USA"
+          ]
+        },
+        {
+          "fullName": "Wang S",
+          "firstName": "Sentao",
+          "lastName": "Wang",
+          "initials": "S"
+        },
+        {
+          "fullName": "Gu Y",
+          "firstName": "Yong",
+          "lastName": "Gu",
+          "initials": "Y"
+        },
+        {
+          "fullName": "Deangelis GC",
+          "firstName": "Gregory C",
+          "lastName": "Deangelis",
+          "initials": "GC",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-1635-1273"
+          }
+        },
+        {
+          "fullName": "Angelaki DE",
+          "firstName": "Dora E",
+          "lastName": "Angelaki",
+          "initials": "DE"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474"
+      },
+      "issue_details": {
+        "volume": "27",
+        "issue": "3",
+        "dateOfPublication": "2007 Jan"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "0b4b6fc3fc63c7ca48d30c8eeac6f51eb966b7739084d6938d07547bca83db80"
+    },
+    {
+      "id": "16773892",
+      "source": "MED",
+      "pmid": "16773892",
+      "doi": "10.3758/bf03193668",
+      "title": "Factors affecting curved versus straight path heading perception.",
+      "authorString": "Royden CS, Cahill JM, Conti DM.",
+      "pageInfo": "184-193",
+      "pubYear": "2006",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2006-02-01",
+      "authors": [
+        {
+          "fullName": "Royden CS",
+          "firstName": "Constance S",
+          "lastName": "Royden",
+          "initials": "CS",
+          "affiliations": [
+            "Department of Mathematics and Computer Sciences, College of the Holy Cross, Worcester, MA 01610, USA"
+          ]
+        },
+        {
+          "fullName": "Cahill JM",
+          "firstName": "James M",
+          "lastName": "Cahill",
+          "initials": "JM"
+        },
+        {
+          "fullName": "Conti DM",
+          "firstName": "Daniel M",
+          "lastName": "Conti",
+          "initials": "DM"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Percept Psychophys",
+        "title": "Perception & psychophysics",
+        "essn": "1532-5962",
+        "issn": "0031-5117"
+      },
+      "issue_details": {
+        "volume": "68",
+        "issue": "2",
+        "dateOfPublication": "2006 Feb"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "cdf424e87643cbf336be7c8f5e346c938f14a6349dd3b41bf77c64b6ef2bbb30"
+    },
+    {
+      "id": "16399674",
+      "source": "MED",
+      "pmid": "16399674",
+      "pmcid": "PMC1538979",
+      "doi": "10.1523/jneurosci.2356-05.2006",
+      "title": "Visual and nonvisual contributions to three-dimensional heading selectivity in the medial superior temporal area.",
+      "authorString": "Gu Y, Watkins PV, Angelaki DE, DeAngelis GC.",
+      "pageInfo": "73-85",
+      "pubYear": "2006",
+      "pubTypeList": {
+        "pubType": [
+          "Comparative Study",
+          "Research Support, Non-U.S. Gov't",
+          "research-article",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2006-01-01",
+      "authors": [
+        {
+          "fullName": "Gu Y",
+          "firstName": "Yong",
+          "lastName": "Gu",
+          "initials": "Y",
+          "affiliations": [
+            "Department of Neurobiology, Washington University School of Medicine, St. Louis, Missouri 63110, USA"
+          ]
+        },
+        {
+          "fullName": "Watkins PV",
+          "firstName": "Paul V",
+          "lastName": "Watkins",
+          "initials": "PV",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-2561-3458"
+          }
+        },
+        {
+          "fullName": "Angelaki DE",
+          "firstName": "Dora E",
+          "lastName": "Angelaki",
+          "initials": "DE"
+        },
+        {
+          "fullName": "DeAngelis GC",
+          "firstName": "Gregory C",
+          "lastName": "DeAngelis",
+          "initials": "GC",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-1635-1273"
+          }
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474"
+      },
+      "issue_details": {
+        "volume": "26",
+        "issue": "1",
+        "dateOfPublication": "2006 Jan"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "9d77bad6626ebe5f1ecfd63aa5ef3d0cc459356c1ff48d8b22bba1b0bde7e49b"
+    },
+    {
+      "id": "15716372",
+      "source": "MED",
+      "pmid": "15716372",
+      "doi": "10.1152/jn.00700.2004",
+      "title": "Roles of gravitational cues and efference copy signals in the rotational updating of memory saccades.",
+      "authorString": "Klier EM, Angelaki DE, Hess BJ.",
+      "pageInfo": "468-478",
+      "pubYear": "2005",
+      "pubTypeList": {
+        "pubType": [
+          "Comparative Study",
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2005-02-16",
+      "authors": [
+        {
+          "fullName": "Klier EM",
+          "firstName": "Eliana M",
+          "lastName": "Klier",
+          "initials": "EM",
+          "affiliations": [
+            "Department of Neurobiology, Box 8108, Washington University School of Medicine, 660 South Euclid Avenue, St. Louis, Missouri 63110, USA"
+          ]
+        },
+        {
+          "fullName": "Angelaki DE",
+          "firstName": "Dora E",
+          "lastName": "Angelaki",
+          "initials": "DE"
+        },
+        {
+          "fullName": "Hess BJ",
+          "firstName": "Bernhard J M",
+          "lastName": "Hess",
+          "initials": "BJ"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurophysiol",
+        "title": "Journal of neurophysiology",
+        "essn": "1522-1598",
+        "issn": "0022-3077"
+      },
+      "issue_details": {
+        "volume": "94",
+        "issue": "1",
+        "dateOfPublication": "2005 Jul"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "7690613944165b19b2fdee9f5a2392a965c4a44ad824dcfd63f3d32e93767e0a"
+    },
+    {
+      "id": "15582371",
+      "source": "MED",
+      "pmid": "15582371",
+      "doi": "10.1016/j.conb.2004.10.002",
+      "title": "Sensory signals during active versus passive movement.",
+      "authorString": "Cullen KE.",
+      "pageInfo": "698-706",
+      "pubYear": "2004",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2004-12-01",
+      "authors": [
+        {
+          "fullName": "Cullen KE",
+          "firstName": "Kathleen E",
+          "lastName": "Cullen",
+          "initials": "KE",
+          "affiliations": [
+            "Department of physiology, 3655 Promenade Sir William Osler, Montreal, Quebec H3G 1Y6, Canada"
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Curr Opin Neurobiol",
+        "title": "Current opinion in neurobiology",
+        "essn": "1873-6882",
+        "issn": "0959-4388"
+      },
+      "issue_details": {
+        "volume": "14",
+        "issue": "6",
+        "dateOfPublication": "2004 Dec"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "f382524fa346c4a7b59d886db32ae72d2df1db3e26ef279a87eb16a3ef41aff4"
+    },
+    {
+      "id": "15207243",
+      "source": "MED",
+      "pmid": "15207243",
+      "doi": "10.1016/j.neuron.2004.06.008",
+      "title": "Parietal area VIP neuronal responses to heading stimuli are encoded in head-centered coordinates.",
+      "authorString": "Zhang T, Heuer HW, Britten KH.",
+      "pageInfo": "993-1001",
+      "pubYear": "2004",
+      "pubTypeList": {
+        "pubType": [
+          "Comparative Study",
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2004-06-01",
+      "authors": [
+        {
+          "fullName": "Zhang T",
+          "firstName": "Tao",
+          "lastName": "Zhang",
+          "initials": "T",
+          "affiliations": [
+            "Center for Neuroscience, University of California, Davis, Davis, CA 95616, USA"
+          ]
+        },
+        {
+          "fullName": "Heuer HW",
+          "firstName": "Hilary W",
+          "lastName": "Heuer",
+          "initials": "HW"
+        },
+        {
+          "fullName": "Britten KH",
+          "firstName": "Kenneth H",
+          "lastName": "Britten",
+          "initials": "KH"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Neuron",
+        "title": "Neuron",
+        "essn": "1097-4199",
+        "issn": "0896-6273"
+      },
+      "issue_details": {
+        "volume": "42",
+        "issue": "6",
+        "dateOfPublication": "2004 Jun"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "14c8b29eb153f0d3c3322e1b7c957f855e72d938135109fb1a876694f79b72d3"
+    },
+    {
+      "id": "15145682",
+      "source": "MED",
+      "pmid": "15145682",
+      "doi": "10.1016/j.visres.2004.03.008",
+      "title": "Path perception during rotation: influence of instructions, depth range, and dot density.",
+      "authorString": "Li L, Warren WH.",
+      "pageInfo": "1879-1889",
+      "pubYear": "2004",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2004-01-01",
+      "authors": [
+        {
+          "fullName": "Li L",
+          "firstName": "Li",
+          "lastName": "Li",
+          "initials": "L",
+          "affiliations": [
+            "Department of Cognitive and Linguistic Sciences, Brown University, Box 1978, Providence, RI 02912, USA"
+          ]
+        },
+        {
+          "fullName": "Warren WH Jr",
+          "firstName": "William H",
+          "lastName": "Warren",
+          "initials": "WH"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Vision Res",
+        "title": "Vision research",
+        "essn": "1878-5646",
+        "issn": "0042-6989"
+      },
+      "issue_details": {
+        "volume": "44",
+        "issue": "16",
+        "dateOfPublication": "2004 "
+      },
+      "abstract_available": true,
+      "abstract_sha256": "36a54c42c7c181a5429aae289f85a5cd3c1a5fbcc83442d7e957859e11522a1e"
+    },
+    {
+      "id": "12424299",
+      "source": "MED",
+      "pmid": "12424299",
+      "doi": "10.1152/jn.00002.2001",
+      "title": "Pursuit speed compensation in cortical area MSTd.",
+      "authorString": "Shenoy KV, Crowell JA, Andersen RA.",
+      "pageInfo": "2630-2647",
+      "pubYear": "2002",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2002-11-01",
+      "authors": [
+        {
+          "fullName": "Shenoy KV",
+          "firstName": "Krishna V",
+          "lastName": "Shenoy",
+          "initials": "KV",
+          "affiliations": [
+            "Division of Biology, California Institute of Technology, Pasadena, California 91125, USA"
+          ]
+        },
+        {
+          "fullName": "Crowell JA",
+          "firstName": "James A",
+          "lastName": "Crowell",
+          "initials": "JA"
+        },
+        {
+          "fullName": "Andersen RA",
+          "firstName": "Richard A",
+          "lastName": "Andersen",
+          "initials": "RA"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurophysiol",
+        "title": "Journal of neurophysiology",
+        "essn": "1522-1598",
+        "issn": "0022-3077"
+      },
+      "issue_details": {
+        "volume": "88",
+        "issue": "5",
+        "dateOfPublication": "2002 Nov"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "38f82374368d0365472473b83a54b0e26b4e7f45d132f7c1e8d570329c53b541"
+    },
+    {
+      "id": "12219819",
+      "source": "MED",
+      "pmid": "12219819",
+      "doi": "10.1111/1467-9280.00486",
+      "title": "Retinal flow is sufficient for steering during observer rotation.",
+      "authorString": "Li L, Warren WH.",
+      "pageInfo": "485-491",
+      "pubYear": "2002",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2002-09-01",
+      "authors": [
+        {
+          "fullName": "Li L",
+          "firstName": "Li",
+          "lastName": "Li",
+          "initials": "L",
+          "affiliations": [
+            "Department of Cognitive and Linguistic Sciences, Brown University, Providence, RI 02912, USA"
+          ]
+        },
+        {
+          "fullName": "Warren WH Jr",
+          "firstName": "William H",
+          "lastName": "Warren",
+          "initials": "WH"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Psychol Sci",
+        "title": "Psychological science",
+        "essn": "1467-9280",
+        "issn": "0956-7976"
+      },
+      "issue_details": {
+        "volume": "13",
+        "issue": "5",
+        "dateOfPublication": "2002 Sep"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "446e95f59c130172e4d6005eb97fc7687efb8206047c93c08ea25d4e02e8d32b"
+    },
+    {
+      "id": "11817754",
+      "source": "MED",
+      "pmid": "11817754",
+      "doi": "10.1068/p3271",
+      "title": "Pursuit compensation during self-motion.",
+      "authorString": "Crowell JA, Andersen RA.",
+      "pageInfo": "1465-1488",
+      "pubYear": "2001",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2001-01-01",
+      "authors": [
+        {
+          "fullName": "Crowell JA",
+          "firstName": "J A",
+          "lastName": "Crowell",
+          "initials": "JA",
+          "affiliations": [
+            "Department of Psychology, Ohio State University, Columbus 43210, USA"
+          ]
+        },
+        {
+          "fullName": "Andersen RA",
+          "firstName": "R A",
+          "lastName": "Andersen",
+          "initials": "RA"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Perception",
+        "title": "Perception",
+        "essn": "1468-4233",
+        "issn": "0301-0066"
+      },
+      "issue_details": {
+        "volume": "30",
+        "issue": "12",
+        "dateOfPublication": "2001 "
+      },
+      "abstract_available": true,
+      "abstract_sha256": "25221505b9f7a8d613967a605e8eef9601623f4dccf1cbd5e7d5b3a4d707b977"
+    },
+    {
+      "id": "10997037",
+      "source": "MED",
+      "pmid": "10997037",
+      "doi": "10.3758/bf03212076",
+      "title": "Extraretinal and retinal amplitude and phase errors during Filehne illusion and path perception.",
+      "authorString": "Freeman TC, Banks MS, Crowell JA.",
+      "pageInfo": "900-909",
+      "pubYear": "2000",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2000-07-01",
+      "authors": [
+        {
+          "fullName": "Freeman TC",
+          "firstName": "T C",
+          "lastName": "Freeman",
+          "initials": "TC",
+          "affiliations": [
+            "Cardiff University, School of Psychology"
+          ]
+        },
+        {
+          "fullName": "Banks MS",
+          "firstName": "M S",
+          "lastName": "Banks",
+          "initials": "MS"
+        },
+        {
+          "fullName": "Crowell JA",
+          "firstName": "J A",
+          "lastName": "Crowell",
+          "initials": "JA"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Percept Psychophys",
+        "title": "Perception & psychophysics",
+        "essn": "1532-5962",
+        "issn": "0031-5117"
+      },
+      "issue_details": {
+        "volume": "62",
+        "issue": "5",
+        "dateOfPublication": "2000 Jul"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "ea427ac57752e90290e955aea4edbfabf38f2e1d3bd463f10ca1f2cd7128703f"
+    },
+    {
+      "id": "11090678",
+      "source": "MED",
+      "pmid": "11090678",
+      "doi": "10.1016/s0042-6989(00)00196-6",
+      "title": "Perception of heading during rotation: sufficiency of dense motion parallax and reference objects.",
+      "authorString": "Li L, Warren WH.",
+      "pageInfo": "3873-3894",
+      "pubYear": "2000",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2000-01-01",
+      "authors": [
+        {
+          "fullName": "Li L",
+          "firstName": "L",
+          "lastName": "Li",
+          "initials": "L",
+          "affiliations": [
+            "Department of Cognitive and Linguistic Sciences, Brown University, Box 1978, 02912, Providence, RI, USA"
+          ]
+        },
+        {
+          "fullName": "Warren WH Jr",
+          "firstName": "W H",
+          "lastName": "Warren",
+          "initials": "WH"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Vision Res",
+        "title": "Vision research",
+        "essn": "1878-5646",
+        "issn": "0042-6989"
+      },
+      "issue_details": {
+        "volume": "40",
+        "issue": "28",
+        "dateOfPublication": "2000 "
+      },
+      "abstract_available": true,
+      "abstract_sha256": "519cd97b6a6165231a3745c2c9386deda6d4ff3ab3044defb5b88d53c2f4b233"
+    },
+    {
+      "id": "10474889",
+      "source": "MED",
+      "pmid": "10474889",
+      "doi": "10.1364/josaa.16.002079",
+      "title": "Dynamical use of different sources of information in heading judgments from retinal flow.",
+      "authorString": "Grigo A, Lappe M.",
+      "pageInfo": "2079-2091",
+      "pubYear": "1999",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1999-09-01",
+      "authors": [
+        {
+          "fullName": "Grigo A",
+          "firstName": "A",
+          "lastName": "Grigo",
+          "initials": "A",
+          "affiliations": [
+            "Department of Zoology and Neurobiology, Ruhr University Bochum, Germany"
+          ]
+        },
+        {
+          "fullName": "Lappe M",
+          "firstName": "M",
+          "lastName": "Lappe",
+          "initials": "M"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Opt Soc Am A Opt Image Sci Vis",
+        "title": "Journal of the Optical Society of America. A, Optics, image science, and vision",
+        "essn": "1520-8532",
+        "issn": "1084-7529"
+      },
+      "issue_details": {
+        "volume": "16",
+        "issue": "9",
+        "dateOfPublication": "1999 Sep"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "03ef2833f9c3aa6e6901d87e1e12da1f35d21777af60c9993f60c9b0ad775652"
+    },
+    {
+      "id": "10492828",
+      "source": "MED",
+      "pmid": "10492828",
+      "doi": "10.1016/s0042-6989(98)00293-4",
+      "title": "Path perception and Filehne illusion compared: model and data.",
+      "authorString": "Freeman TC.",
+      "pageInfo": "2659-2667",
+      "pubYear": "1999",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1999-08-01",
+      "authors": [
+        {
+          "fullName": "Freeman TC",
+          "firstName": "T C",
+          "lastName": "Freeman",
+          "initials": "TC",
+          "affiliations": [
+            "School of Psychology, Cardiff University, UK"
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Vision Res",
+        "title": "Vision research",
+        "essn": "1878-5646",
+        "issn": "0042-6989"
+      },
+      "issue_details": {
+        "volume": "39",
+        "issue": "16",
+        "dateOfPublication": "1999 Aug"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "fd474938e517bbac060de38753e16d1d242b1fa7bd0a508fbeb867cb5089c419"
+    },
+    {
+      "id": "10368396",
+      "source": "MED",
+      "pmid": "10368396",
+      "doi": "10.1152/jn.1999.81.6.2764",
+      "title": "Influence of gaze rotation on the visual response of primate MSTd neurons.",
+      "authorString": "Shenoy KV, Bradley DC, Andersen RA.",
+      "pageInfo": "2764-2786",
+      "pubYear": "1999",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1999-06-01",
+      "authors": [
+        {
+          "fullName": "Shenoy KV",
+          "firstName": "K V",
+          "lastName": "Shenoy",
+          "initials": "KV",
+          "affiliations": [
+            "Division of Biology, California Institute of Technology, Pasadena, California 91125, USA"
+          ]
+        },
+        {
+          "fullName": "Bradley DC",
+          "firstName": "D C",
+          "lastName": "Bradley",
+          "initials": "DC"
+        },
+        {
+          "fullName": "Andersen RA",
+          "firstName": "R A",
+          "lastName": "Andersen",
+          "initials": "RA"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurophysiol",
+        "title": "Journal of neurophysiology",
+        "essn": "1522-1598",
+        "issn": "0022-3077"
+      },
+      "issue_details": {
+        "volume": "81",
+        "issue": "6",
+        "dateOfPublication": "1999 Jun"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "f17074ca8a00ed2a1d6ca5a191f0a94da8aef69bc1432088cfc0c765769144b0"
+    },
+    {
+      "id": "10036263",
+      "source": "MED",
+      "pmid": "10036263",
+      "doi": "10.1152/jn.1999.81.2.596",
+      "title": "MST neuronal responses to heading direction during pursuit eye movements.",
+      "authorString": "Page WK, Duffy CJ.",
+      "pageInfo": "596-610",
+      "pubYear": "1999",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1999-02-01",
+      "authors": [
+        {
+          "fullName": "Page WK",
+          "firstName": "W K",
+          "lastName": "Page",
+          "initials": "WK",
+          "affiliations": [
+            "Department of Neurology, The Center for Visual Science, The University of Rochester Medical Center, Rochester, New York 14642, USA"
+          ]
+        },
+        {
+          "fullName": "Duffy CJ",
+          "firstName": "C J",
+          "lastName": "Duffy",
+          "initials": "CJ"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurophysiol",
+        "title": "Journal of neurophysiology",
+        "essn": "1522-1598",
+        "issn": "0022-3077"
+      },
+      "issue_details": {
+        "volume": "81",
+        "issue": "2",
+        "dateOfPublication": "1999 Feb"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "24f152233e1fc2a5952b4598aea65b041b33b8b9b235ca8571afb798a5e77bdc"
+    },
+    {
+      "id": "9744968",
+      "source": "MED",
+      "pmid": "9744968",
+      "doi": "10.1152/jn.1998.80.3.1605",
+      "title": "Efference copy provides the eye position information required for visually guided reaching.",
+      "authorString": "Lewis RF, Gaymard BM, Tamargo RJ.",
+      "pageInfo": "1605-1608",
+      "pubYear": "1998",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1998-09-01",
+      "authors": [
+        {
+          "fullName": "Lewis RF",
+          "firstName": "R F",
+          "lastName": "Lewis",
+          "initials": "RF",
+          "affiliations": [
+            "Department of Neurology, Johns Hopkins University School of Medicine, Baltimore, Maryland 21287, USA"
+          ]
+        },
+        {
+          "fullName": "Gaymard BM",
+          "firstName": "B M",
+          "lastName": "Gaymard",
+          "initials": "BM"
+        },
+        {
+          "fullName": "Tamargo RJ",
+          "firstName": "R J",
+          "lastName": "Tamargo",
+          "initials": "RJ"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurophysiol",
+        "title": "Journal of neurophysiology",
+        "essn": "1522-1598",
+        "issn": "0022-3077"
+      },
+      "issue_details": {
+        "volume": "80",
+        "issue": "3",
+        "dateOfPublication": "1998 Sep"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "d5c287fc4992fea49410b0261e4b086a6c773007c49a6da985c548c5d8a2826b"
+    },
+    {
+      "id": "9425183",
+      "source": "MED",
+      "pmid": "9425183",
+      "doi": "10.1152/jn.1998.79.1.126",
+      "title": "Ventral intraparietal area of the macaque: congruent visual and somatic response properties.",
+      "authorString": "Duhamel JR, Colby CL, Goldberg ME.",
+      "pageInfo": "126-136",
+      "pubYear": "1998",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1998-01-01",
+      "authors": [
+        {
+          "fullName": "Duhamel JR",
+          "firstName": "J R",
+          "lastName": "Duhamel",
+          "initials": "JR",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-0210-1027"
+          },
+          "affiliations": [
+            "Laboratory of Sensorimotor Research, National Eye Institute, Bethesda, Maryland 20892, USA"
+          ]
+        },
+        {
+          "fullName": "Colby CL",
+          "firstName": "C L",
+          "lastName": "Colby",
+          "initials": "CL"
+        },
+        {
+          "fullName": "Goldberg ME",
+          "firstName": "M E",
+          "lastName": "Goldberg",
+          "initials": "ME"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurophysiol",
+        "title": "Journal of neurophysiology",
+        "essn": "1522-1598",
+        "issn": "0022-3077"
+      },
+      "issue_details": {
+        "volume": "79",
+        "issue": "1",
+        "dateOfPublication": "1998 Jan"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "9885f030cae29b9731ee905cbaa985a68b28446b931794e62d94ecda448547a0"
+    },
+    {
+      "id": "9518026",
+      "source": "MED",
+      "pmid": "9518026",
+      "doi": "10.1007/s004220050411",
+      "title": "Orientation tuning curves: empirical description and estimation of parameters.",
+      "authorString": "Swindale NV.",
+      "pageInfo": "45-56",
+      "pubYear": "1998",
+      "pubTypeList": {
+        "pubType": [
+          "Comparative Study",
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1998-01-01",
+      "authors": [
+        {
+          "fullName": "Swindale NV",
+          "firstName": "N V",
+          "lastName": "Swindale",
+          "initials": "NV",
+          "affiliations": [
+            "Department of Ophthalmology, University of British Columbia, Vancouver, Canada"
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Biol Cybern",
+        "title": "Biological cybernetics",
+        "essn": "1432-0770",
+        "issn": "0340-1200"
+      },
+      "issue_details": {
+        "volume": "78",
+        "issue": "1",
+        "dateOfPublication": "1998 Jan"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "b541be75b94f3b649e9c734e9d5010076c735e74c5fd3f1a68968289a68a58e3"
+    },
+    {
+      "id": "10196591",
+      "source": "MED",
+      "pmid": "10196591",
+      "doi": "10.1038/3732",
+      "title": "Visual self-motion perception during head turns.",
+      "authorString": "Crowell JA, Banks MS, Shenoy KV, Andersen RA.",
+      "pageInfo": "732-737",
+      "pubYear": "1998",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1998-12-01",
+      "authors": [
+        {
+          "fullName": "Crowell JA",
+          "firstName": "J A",
+          "lastName": "Crowell",
+          "initials": "JA",
+          "affiliations": [
+            "Caltech Division of Biology, Pasadena 91125, USA"
+          ]
+        },
+        {
+          "fullName": "Banks MS",
+          "firstName": "M S",
+          "lastName": "Banks",
+          "initials": "MS"
+        },
+        {
+          "fullName": "Shenoy KV",
+          "firstName": "K V",
+          "lastName": "Shenoy",
+          "initials": "KV"
+        },
+        {
+          "fullName": "Andersen RA",
+          "firstName": "R A",
+          "lastName": "Andersen",
+          "initials": "RA"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Nat Neurosci",
+        "title": "Nature neuroscience",
+        "essn": "1546-1726",
+        "issn": "1097-6256"
+      },
+      "issue_details": {
+        "volume": "1",
+        "issue": "8",
+        "dateOfPublication": "1998 Dec"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "f1525a56250d38af05256e2f1bf1e6c1d7048b894a9f5afdfd7a399e92b15230"
+    },
+    {
+      "id": "9208854",
+      "source": "MED",
+      "pmid": "9208854",
+      "doi": "10.1016/s0896-6273(00)80326-8",
+      "title": "Neural mechanisms of visual motion perception in primates.",
+      "authorString": "Andersen RA.",
+      "pageInfo": "865-872",
+      "pubYear": "1997",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Review",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1997-06-01",
+      "authors": [
+        {
+          "fullName": "Andersen RA",
+          "firstName": "R A",
+          "lastName": "Andersen",
+          "initials": "RA",
+          "affiliations": [
+            "Division of Biology, California Institute of Technology, Pasadena 91125, USA"
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Neuron",
+        "title": "Neuron",
+        "essn": "1097-4199",
+        "issn": "0896-6273"
+      },
+      "issue_details": {
+        "volume": "18",
+        "issue": "6",
+        "dateOfPublication": "1997 Jun"
+      }
+    },
+    {
+      "id": "9133403",
+      "source": "MED",
+      "pmid": "9133403",
+      "pmcid": "PMC6573698",
+      "doi": "10.1523/jneurosci.17-10-03847.1997",
+      "title": "Encoding of smooth pursuit direction and eye position by neurons of area MSTd of macaque monkey.",
+      "authorString": "Squatrito S, Maioli MG.",
+      "pageInfo": "3847-3860",
+      "pubYear": "1997",
+      "pubTypeList": {
+        "pubType": [
+          "other",
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1997-05-01",
+      "authors": [
+        {
+          "fullName": "Squatrito S",
+          "firstName": "S",
+          "lastName": "Squatrito",
+          "initials": "S",
+          "affiliations": [
+            "Department of Physiology and Pathology, University of Trieste, 34127 Trieste, Italy"
+          ]
+        },
+        {
+          "fullName": "Maioli MG",
+          "firstName": "M G",
+          "lastName": "Maioli",
+          "initials": "MG"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474"
+      },
+      "issue_details": {
+        "volume": "17",
+        "issue": "10",
+        "dateOfPublication": "1997 May"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "94bc34b61d6110d72144d1d1c0e4951e0615fd8c3d2b8705f88f6d15ce54657c"
+    },
+    {
+      "id": "9349815",
+      "source": "MED",
+      "pmid": "9349815",
+      "doi": "10.1038/39865",
+      "title": "Spatial invariance of visual receptive fields in parietal cortex neurons.",
+      "authorString": "Duhamel JR, Bremmer F, Ben Hamed S, Graf W.",
+      "pageInfo": "845-848",
+      "pubYear": "1997",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1997-10-01",
+      "authors": [
+        {
+          "fullName": "Duhamel JR",
+          "firstName": "J R",
+          "lastName": "Duhamel",
+          "initials": "JR",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-0210-1027"
+          },
+          "affiliations": [
+            "Laboratoire de Physiologie de la Perception et de l'Action, CNRS-Collège de France, Paris"
+          ]
+        },
+        {
+          "fullName": "Bremmer F",
+          "firstName": "F",
+          "lastName": "Bremmer",
+          "initials": "F",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-1597-7407"
+          }
+        },
+        {
+          "fullName": "Ben Hamed S",
+          "firstName": "S",
+          "lastName": "Ben Hamed",
+          "initials": "S",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-1510-7284"
+          }
+        },
+        {
+          "fullName": "Graf W",
+          "firstName": "W",
+          "lastName": "Graf",
+          "initials": "W"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Nature",
+        "title": "Nature",
+        "essn": "1476-4687",
+        "issn": "0028-0836"
+      },
+      "issue_details": {
+        "volume": "389",
+        "issue": "6653",
+        "dateOfPublication": "1997 Oct"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "90c6fa53ee3a458b63c114db6990cb04b00605fb4232ea7f3f524baee39e6fc4"
+    },
+    {
+      "id": "8703215",
+      "source": "MED",
+      "pmid": "8703215",
+      "doi": "10.1126/science.273.5281.1544",
+      "title": "Mechanisms of heading perception in primate visual cortex.",
+      "authorString": "Bradley DC, Maxwell M, Andersen RA, Banks MS, Shenoy KV.",
+      "pageInfo": "1544-1547",
+      "pubYear": "1996",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1996-09-01",
+      "authors": [
+        {
+          "fullName": "Bradley DC",
+          "firstName": "D C",
+          "lastName": "Bradley",
+          "initials": "DC",
+          "affiliations": [
+            "Division of Biology, California Institute of Technology, Pasadena, CA 91125, USA"
+          ]
+        },
+        {
+          "fullName": "Maxwell M",
+          "firstName": "M",
+          "lastName": "Maxwell",
+          "initials": "M"
+        },
+        {
+          "fullName": "Andersen RA",
+          "firstName": "R A",
+          "lastName": "Andersen",
+          "initials": "RA"
+        },
+        {
+          "fullName": "Banks MS",
+          "firstName": "M S",
+          "lastName": "Banks",
+          "initials": "MS"
+        },
+        {
+          "fullName": "Shenoy KV",
+          "firstName": "K V",
+          "lastName": "Shenoy",
+          "initials": "KV"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Science",
+        "title": "Science (New York, N.Y.)",
+        "essn": "1095-9203",
+        "issn": "0036-8075"
+      },
+      "issue_details": {
+        "volume": "273",
+        "issue": "5281",
+        "dateOfPublication": "1996 Sep"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "eda0523d0347b83d403621920ceb233fa1a3442f02316923f59399a55d536d74"
+    },
+    {
+      "id": "8746233",
+      "source": "MED",
+      "pmid": "8746233",
+      "doi": "10.1016/0042-6989(95)00122-0",
+      "title": "Estimating heading during real and simulated eye movements.",
+      "authorString": "Banks MS, Ehrlich SM, Backus BT, Crowell JA.",
+      "pageInfo": "431-443",
+      "pubYear": "1996",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1996-02-01",
+      "authors": [
+        {
+          "fullName": "Banks MS",
+          "firstName": "M S",
+          "lastName": "Banks",
+          "initials": "MS",
+          "affiliations": [
+            "Department of Psychology, University of California, Berkeley 94720, USA"
+          ]
+        },
+        {
+          "fullName": "Ehrlich SM",
+          "firstName": "S M",
+          "lastName": "Ehrlich",
+          "initials": "SM"
+        },
+        {
+          "fullName": "Backus BT",
+          "firstName": "B T",
+          "lastName": "Backus",
+          "initials": "BT"
+        },
+        {
+          "fullName": "Crowell JA",
+          "firstName": "J A",
+          "lastName": "Crowell",
+          "initials": "JA"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Vision Res",
+        "title": "Vision research",
+        "essn": "1878-5646",
+        "issn": "0042-6989"
+      },
+      "issue_details": {
+        "volume": "36",
+        "issue": "3",
+        "dateOfPublication": "1996 Feb"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "0f83448b2f8ea7184e2b571f9d64dcae00cf9c43e0a59c6a78ebb40165c2f88f"
+    },
+    {
+      "id": "7623145",
+      "source": "MED",
+      "pmid": "7623145",
+      "pmcid": "PMC6577859",
+      "doi": "10.1523/jneurosci.15-07-05192.1995",
+      "title": "Response of monkey MST neurons to optic flow stimuli with shifted centers of motion.",
+      "authorString": "Duffy CJ, Wurtz RH.",
+      "pageInfo": "5192-5208",
+      "pubYear": "1995",
+      "pubTypeList": {
+        "pubType": [
+          "other",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1995-07-01",
+      "authors": [
+        {
+          "fullName": "Duffy CJ",
+          "firstName": "C J",
+          "lastName": "Duffy",
+          "initials": "CJ",
+          "affiliations": [
+            "Laboratory of Sensorimotor Research, National Eye Institute, Bethesda, Maryland 20892, USA"
+          ]
+        },
+        {
+          "fullName": "Wurtz RH",
+          "firstName": "R H",
+          "lastName": "Wurtz",
+          "initials": "RH"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474"
+      },
+      "issue_details": {
+        "volume": "15",
+        "issue": "7 Pt 2",
+        "dateOfPublication": "1995 Jul"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "81f6c6f8a92654c0c57bfbbb616a0273ccb13dda69d46d9e67c4195faf75e51e"
+    },
+    {
+      "id": "7617432",
+      "source": "MED",
+      "pmid": "7617432",
+      "doi": "10.1068/p240315",
+      "title": "Perceiving heading in the presence of moving objects.",
+      "authorString": "Warren WH, Saunders JA.",
+      "pageInfo": "315-331",
+      "pubYear": "1995",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1995-01-01",
+      "authors": [
+        {
+          "fullName": "Warren WH Jr",
+          "firstName": "W H",
+          "lastName": "Warren",
+          "initials": "WH",
+          "affiliations": [
+            "Department of Cognitive and Linguistic Sciences, Brown University, Providence, RI 02912, USA"
+          ]
+        },
+        {
+          "fullName": "Saunders JA",
+          "firstName": "J A",
+          "lastName": "Saunders",
+          "initials": "JA",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-4694-7526"
+          }
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Perception",
+        "title": "Perception",
+        "essn": "1468-4233",
+        "issn": "0301-0066"
+      },
+      "issue_details": {
+        "volume": "24",
+        "issue": "3",
+        "dateOfPublication": "1995 "
+      },
+      "abstract_available": true,
+      "abstract_sha256": "a07bcb08a45fdaf66f2bfedb79b2ad978a99b37904bb699c9040dbfcd81dedde"
+    },
+    {
+      "id": "7975352",
+      "source": "MED",
+      "pmid": "7975352",
+      "doi": "10.1016/0042-6989(94)90085-x",
+      "title": "Analysis of misperceived observer motion during simulated eye rotations.",
+      "authorString": "Royden CS.",
+      "pageInfo": "3215-3222",
+      "pubYear": "1994",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1994-12-01",
+      "authors": [
+        {
+          "fullName": "Royden CS",
+          "firstName": "C S",
+          "lastName": "Royden",
+          "initials": "CS",
+          "affiliations": [
+            "Department of Computer Science, Wellesley College, MA 02181"
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Vision Res",
+        "title": "Vision research",
+        "essn": "1878-5646",
+        "issn": "0042-6989"
+      },
+      "issue_details": {
+        "volume": "34",
+        "issue": "23",
+        "dateOfPublication": "1994 Dec"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "e7cce524ff232f7cb515fd3e20f7eb99cf51a25791c5fa445ab62358978e8e50"
+    },
+    {
+      "id": "7935814",
+      "source": "MED",
+      "pmid": "7935814",
+      "doi": "10.1038/371700a0",
+      "title": "Why two eyes are better than one for judgements of heading.",
+      "authorString": "van den Berg AV, Brenner E.",
+      "pageInfo": "700-702",
+      "pubYear": "1994",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1994-10-01",
+      "authors": [
+        {
+          "fullName": "van den Berg AV",
+          "firstName": "A V",
+          "lastName": "van den Berg",
+          "initials": "AV",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-1543-5408"
+          },
+          "affiliations": [
+            "Physiology I, Medical Faculty, Erasmus University Rotterdam, The Netherlands"
+          ]
+        },
+        {
+          "fullName": "Brenner E",
+          "firstName": "E",
+          "lastName": "Brenner",
+          "initials": "E"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Nature",
+        "title": "Nature",
+        "essn": "1476-4687",
+        "issn": "0028-0836"
+      },
+      "issue_details": {
+        "volume": "371",
+        "issue": "6499",
+        "dateOfPublication": "1994 Oct"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "b47aa6d22dea80742d5b4f9f4404941b36191a26e0ecb2cd76424d75ca9053f7"
+    },
+    {
+      "id": "8385201",
+      "source": "MED",
+      "pmid": "8385201",
+      "doi": "10.1152/jn.1993.69.3.902",
+      "title": "Ventral intraparietal area of the macaque: anatomic location and visual response properties.",
+      "authorString": "Colby CL, Duhamel JR, Goldberg ME.",
+      "pageInfo": "902-914",
+      "pubYear": "1993",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1993-03-01",
+      "authors": [
+        {
+          "fullName": "Colby CL",
+          "firstName": "C L",
+          "lastName": "Colby",
+          "initials": "CL",
+          "affiliations": [
+            "Laboratory of Sensorimotor Research, National Eye Institute, Bethesda, Maryland 20892"
+          ]
+        },
+        {
+          "fullName": "Duhamel JR",
+          "firstName": "J R",
+          "lastName": "Duhamel",
+          "initials": "JR",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-0210-1027"
+          }
+        },
+        {
+          "fullName": "Goldberg ME",
+          "firstName": "M E",
+          "lastName": "Goldberg",
+          "initials": "ME"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurophysiol",
+        "title": "Journal of neurophysiology",
+        "essn": "1522-1598",
+        "issn": "0022-3077"
+      },
+      "issue_details": {
+        "volume": "69",
+        "issue": "3",
+        "dateOfPublication": "1993 Mar"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "86e8493739873984add2ecc582d93772a9cc3cdfcc82331adb72fd3c1d70c7f0"
+    },
+    {
+      "id": "1461280",
+      "source": "MED",
+      "pmid": "1461280",
+      "doi": "10.1038/360583a0",
+      "title": "The perception of heading during eye movements.",
+      "authorString": "Royden CS, Banks MS, Crowell JA.",
+      "pageInfo": "583-585",
+      "pubYear": "1992",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1992-12-01",
+      "authors": [
+        {
+          "fullName": "Royden CS",
+          "firstName": "C S",
+          "lastName": "Royden",
+          "initials": "CS",
+          "affiliations": [
+            "School of Optometry, University of California, Berkeley 94720"
+          ]
+        },
+        {
+          "fullName": "Banks MS",
+          "firstName": "M S",
+          "lastName": "Banks",
+          "initials": "MS"
+        },
+        {
+          "fullName": "Crowell JA",
+          "firstName": "J A",
+          "lastName": "Crowell",
+          "initials": "JA"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Nature",
+        "title": "Nature",
+        "essn": "1476-4687",
+        "issn": "0028-0836"
+      },
+      "issue_details": {
+        "volume": "360",
+        "issue": "6404",
+        "dateOfPublication": "1992 Dec"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "7bdb7c11cf5cb582f713a6b10fb743b9c163d24111f9fc87f645356255d40bbb"
+    },
+    {
+      "id": "1599203",
+      "source": "MED",
+      "pmid": "1599203",
+      "doi": "10.1111/j.1749-6632.1992.tb25277.x",
+      "title": "Visual direction is corrected by a hybrid extraretinal eye position signal.",
+      "authorString": "Li W, Matin L.",
+      "pageInfo": "865-867",
+      "pubYear": "1992",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1992-05-01",
+      "authors": [
+        {
+          "fullName": "Li W",
+          "firstName": "W",
+          "lastName": "Li",
+          "initials": "W",
+          "affiliations": [
+            "Department of Psychology, Columbia University, New York, New York 10027"
+          ]
+        },
+        {
+          "fullName": "Matin L",
+          "firstName": "L",
+          "lastName": "Matin",
+          "initials": "L"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Ann N Y Acad Sci",
+        "title": "Annals of the New York Academy of Sciences",
+        "essn": "1749-6632",
+        "issn": "0077-8923"
+      },
+      "issue_details": {
+        "volume": "656",
+        "dateOfPublication": "1992 May"
+      }
+    },
+    {
+      "id": "1623984",
+      "source": "MED",
+      "pmid": "1623984",
+      "doi": "10.1007/bf00228258",
+      "title": "Eye position signals in human saccadic processing.",
+      "authorString": "Gellman RS, Fletcher WA.",
+      "pageInfo": "425-434",
+      "pubYear": "1992",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1992-01-01",
+      "authors": [
+        {
+          "fullName": "Gellman RS",
+          "firstName": "R S",
+          "lastName": "Gellman",
+          "initials": "RS",
+          "affiliations": [
+            "Department of Clinical Neurosciences, University of Calgary School of Medicine, AB, Canada"
+          ]
+        },
+        {
+          "fullName": "Fletcher WA",
+          "firstName": "W A",
+          "lastName": "Fletcher",
+          "initials": "WA"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Exp Brain Res",
+        "title": "Experimental brain research",
+        "essn": "1432-1106",
+        "issn": "0014-4819"
+      },
+      "issue_details": {
+        "volume": "89",
+        "issue": "2",
+        "dateOfPublication": "1992 "
+      },
+      "abstract_available": true,
+      "abstract_sha256": "63ca101c04ecb68a4a8a8091b3ead7316f167d1a536f2708f8d05b5fb227edfa"
+    },
+    {
+      "id": "2299447",
+      "source": "MED",
+      "pmid": "2299447",
+      "doi": "10.1364/josaa.7.000160",
+      "title": "Eye movements and optical flow.",
+      "authorString": "Warren WH, Hannon DJ.",
+      "pageInfo": "160-169",
+      "pubYear": "1990",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1990-01-01",
+      "authors": [
+        {
+          "fullName": "Warren WH Jr",
+          "firstName": "W H",
+          "lastName": "Warren",
+          "initials": "WH",
+          "affiliations": [
+            "Department of Cognitive and Linguistic Sciences, Brown University, Providence, Rhode Island 02912"
+          ]
+        },
+        {
+          "fullName": "Hannon DJ",
+          "firstName": "D J",
+          "lastName": "Hannon",
+          "initials": "DJ"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Opt Soc Am A",
+        "title": "Journal of the Optical Society of America. A, Optics and image science",
+        "essn": "2375-1169",
+        "issn": "0740-3232"
+      },
+      "issue_details": {
+        "volume": "7",
+        "issue": "1",
+        "dateOfPublication": "1990 Jan"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "6e40d6ec7bb27f67a0b953bd056a9cc251392563fabf31c7128a379b0c080637"
+    },
+    {
+      "id": "2974874",
+      "source": "MED",
+      "pmid": "2974874",
+      "doi": "10.1037//0096-1523.14.4.646",
+      "title": "Perception of translational heading from optical flow.",
+      "authorString": "Warren WH, Morris MW, Kalish M.",
+      "pageInfo": "646-660",
+      "pubYear": "1988",
+      "pubTypeList": {
+        "pubType": [
+          "Controlled Clinical Trial",
+          "Clinical Trial",
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1988-11-01",
+      "authors": [
+        {
+          "fullName": "Warren WH Jr",
+          "firstName": "W H",
+          "lastName": "Warren",
+          "initials": "WH",
+          "affiliations": [
+            "Department of Psychology, Brown University, Providence, Rhode Island 02912"
+          ]
+        },
+        {
+          "fullName": "Morris MW",
+          "firstName": "M W",
+          "lastName": "Morris",
+          "initials": "MW"
+        },
+        {
+          "fullName": "Kalish M",
+          "firstName": "M",
+          "lastName": "Kalish",
+          "initials": "M"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Exp Psychol Hum Percept Perform",
+        "title": "Journal of experimental psychology. Human perception and performance",
+        "essn": "1939-1277",
+        "issn": "0096-1523"
+      },
+      "issue_details": {
+        "volume": "14",
+        "issue": "4",
+        "dateOfPublication": "1988 Nov"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "b0cf106d2bbf33b0dcb26a5340b325205d5f53c6fcee5739a92ddc9571cf4dd3"
+    },
+    {
+      "id": "3607100",
+      "source": "MED",
+      "pmid": "3607100",
+      "doi": "10.1007/bf00365219",
+      "title": "Facts on optic flow.",
+      "authorString": "Koenderink JJ, van Doorn AJ.",
+      "pageInfo": "247-254",
+      "pubYear": "1987",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1987-01-01",
+      "authors": [
+        {
+          "fullName": "Koenderink JJ",
+          "firstName": "J J",
+          "lastName": "Koenderink",
+          "initials": "JJ"
+        },
+        {
+          "fullName": "van Doorn AJ",
+          "firstName": "A J",
+          "lastName": "van Doorn",
+          "initials": "AJ"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Biol Cybern",
+        "title": "Biological cybernetics",
+        "essn": "1432-0770",
+        "issn": "0340-1200"
+      },
+      "issue_details": {
+        "volume": "56",
+        "issue": "4",
+        "dateOfPublication": "1987 "
+      },
+      "abstract_available": true,
+      "abstract_sha256": "0d93aaada0be4650c19f23b0370ff2efcc76c3081676611e82f20d2531b2c611"
+    },
+    {
+      "id": "3548572",
+      "source": "MED",
+      "pmid": "3548572",
+      "doi": "10.1146/annurev.ps.38.020187.000245",
+      "title": "Perceiving a stable environment when one moves.",
+      "authorString": "Wallach H.",
+      "pageInfo": "1-27",
+      "pubYear": "1987",
+      "pubTypeList": {
+        "pubType": [
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1987-01-01",
+      "authors": [
+        {
+          "fullName": "Wallach H",
+          "firstName": "H",
+          "lastName": "Wallach",
+          "initials": "H"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Annu Rev Psychol",
+        "title": "Annual review of psychology",
+        "essn": "1545-2085",
+        "issn": "0066-4308"
+      },
+      "issue_details": {
+        "volume": "38",
+        "dateOfPublication": "1987 "
+      }
+    },
+    {
+      "id": "3944614",
+      "source": "MED",
+      "pmid": "3944614",
+      "pmcid": "PMC6568626",
+      "doi": "10.1523/jneurosci.06-01-00134.1986",
+      "title": "Analysis of local and wide-field movements in the superior temporal visual areas of the macaque monkey.",
+      "authorString": "Tanaka K, Hikosaka K, Saito H, Yukie M, Fukada Y, Iwai E.",
+      "pageInfo": "134-144",
+      "pubYear": "1986",
+      "pubTypeList": {
+        "pubType": [
+          "other",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1986-01-01",
+      "authors": [
+        {
+          "fullName": "Tanaka K",
+          "firstName": "K",
+          "lastName": "Tanaka",
+          "initials": "K",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-1910-3427"
+          }
+        },
+        {
+          "fullName": "Hikosaka K",
+          "firstName": "K",
+          "lastName": "Hikosaka",
+          "initials": "K"
+        },
+        {
+          "fullName": "Saito H",
+          "firstName": "H",
+          "lastName": "Saito",
+          "initials": "H"
+        },
+        {
+          "fullName": "Yukie M",
+          "firstName": "M",
+          "lastName": "Yukie",
+          "initials": "M"
+        },
+        {
+          "fullName": "Fukada Y",
+          "firstName": "Y",
+          "lastName": "Fukada",
+          "initials": "Y"
+        },
+        {
+          "fullName": "Iwai E",
+          "firstName": "E",
+          "lastName": "Iwai",
+          "initials": "E"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474"
+      },
+      "issue_details": {
+        "volume": "6",
+        "issue": "1",
+        "dateOfPublication": "1986 Jan"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "475590fb6c3f5c1ecab0c801482bf7d655238e24a3aa0e61bc14c4aee11d050c"
+    },
+    {
+      "id": "3973767",
+      "source": "MED",
+      "pmid": "3973767",
+      "doi": "10.1364/josaa.2.000354",
+      "title": "Processing differential image motion.",
+      "authorString": "Rieger JH, Lawton DT.",
+      "pageInfo": "354-360",
+      "pubYear": "1985",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1985-02-01",
+      "authors": [
+        {
+          "fullName": "Rieger JH",
+          "firstName": "J H",
+          "lastName": "Rieger",
+          "initials": "JH"
+        },
+        {
+          "fullName": "Lawton DT",
+          "firstName": "D T",
+          "lastName": "Lawton",
+          "initials": "DT"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Opt Soc Am A",
+        "title": "Journal of the Optical Society of America. A, Optics and image science",
+        "essn": "2375-1169",
+        "issn": "0740-3232"
+      },
+      "issue_details": {
+        "volume": "2",
+        "issue": "2",
+        "dateOfPublication": "1985 Feb"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "fbf8cb5407fa0bb12740a4084abace41ab2694803dd8509889c8cda80ef4c13b"
+    },
+    {
+      "id": "6740325",
+      "source": "MED",
+      "pmid": "6740325",
+      "doi": "10.1126/science.6740325",
+      "title": "Interaction between perceived self-motion and object-motion impairs vehicle guidance.",
+      "authorString": "Probst T, Krafczyk S, Brandt T, Wist ER.",
+      "pageInfo": "536-538",
+      "pubYear": "1984",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1984-08-01",
+      "authors": [
+        {
+          "fullName": "Probst T",
+          "firstName": "T",
+          "lastName": "Probst",
+          "initials": "T"
+        },
+        {
+          "fullName": "Krafczyk S",
+          "firstName": "S",
+          "lastName": "Krafczyk",
+          "initials": "S"
+        },
+        {
+          "fullName": "Brandt T",
+          "firstName": "T",
+          "lastName": "Brandt",
+          "initials": "T"
+        },
+        {
+          "fullName": "Wist ER",
+          "firstName": "E R",
+          "lastName": "Wist",
+          "initials": "ER"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Science",
+        "title": "Science (New York, N.Y.)",
+        "essn": "1095-9203",
+        "issn": "0036-8075"
+      },
+      "issue_details": {
+        "volume": "225",
+        "issue": "4661",
+        "dateOfPublication": "1984 Aug"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "68ae57a84c83be5e467671d01ba8cd41dfdbe66868b2b0fbeb7f891f4d7bf140"
+    },
+    {
+      "id": "7264778",
+      "source": "MED",
+      "pmid": "7264778",
+      "doi": "10.1364/josa.71.000953",
+      "title": "Exterospecific component of the motion parallax field.",
+      "authorString": "Koenderink JJ, van Doorn AJ.",
+      "pageInfo": "953-957",
+      "pubYear": "1981",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1981-08-01",
+      "authors": [
+        {
+          "fullName": "Koenderink JJ",
+          "firstName": "J J",
+          "lastName": "Koenderink",
+          "initials": "JJ"
+        },
+        {
+          "fullName": "van Doorn AJ",
+          "firstName": "A J",
+          "lastName": "van Doorn",
+          "initials": "AJ"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Opt Soc Am",
+        "title": "Journal of the Optical Society of America",
+        "essn": "2375-110X",
+        "issn": "0030-3941"
+      },
+      "issue_details": {
+        "volume": "71",
+        "issue": "8",
+        "dateOfPublication": "1981 Aug"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "d1d1852e6d995451a0c1945f4f6158cac70166c4b66a9b1f5454d754fa4f53e7"
+    },
+    {
+      "id": "6106198",
+      "source": "MED",
+      "pmid": "6106198",
+      "doi": "10.1098/rspb.1980.0057",
+      "title": "The interpretation of a moving retinal image.",
+      "authorString": "Longuet-Higgins HC, Prazdny K.",
+      "pageInfo": "385-397",
+      "pubYear": "1980",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1980-07-01",
+      "authors": [
+        {
+          "fullName": "Longuet-Higgins HC",
+          "firstName": "H C",
+          "lastName": "Longuet-Higgins",
+          "initials": "HC"
+        },
+        {
+          "fullName": "Prazdny K",
+          "firstName": "K",
+          "lastName": "Prazdny",
+          "initials": "K"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Proc R Soc Lond B Biol Sci",
+        "title": "Proceedings of the Royal Society of London. Series B, Biological sciences",
+        "essn": "2053-9185",
+        "issn": "0950-1193"
+      },
+      "issue_details": {
+        "volume": "208",
+        "issue": "1173",
+        "dateOfPublication": "1980 Jul"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "8c4b424c936ef9f303415259576b459378a0b9788c6ba9832f9e986d3f10ebe6"
+    },
+    {
+      "id": "15432778",
+      "source": "MED",
+      "pmid": "15432778",
+      "doi": "10.2307/1418003",
+      "title": "The perception of visual surfaces.",
+      "authorString": "GIBSON JJ.",
+      "pageInfo": "367-384",
+      "pubYear": "1950",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "1950-07-01",
+      "authors": [
+        {
+          "fullName": "GIBSON JJ",
+          "firstName": "J J",
+          "lastName": "GIBSON",
+          "initials": "JJ"
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Am J Psychol",
+        "title": "The American journal of psychology",
+        "essn": "1939-8298",
+        "issn": "0002-9556"
+      },
+      "issue_details": {
+        "volume": "63",
+        "issue": "3",
+        "dateOfPublication": "1950 Jul"
+      }
+    }
+  ],
+  "visible_total": 55,
+  "returned_count": 55,
+  "page_complete": true,
+  "cursor_in": "*",
+  "cursor_out": null,
+  "error_code": null,
+  "error_message": null,
+  "http_status": 200,
+  "status": "success",
+  "body_bytes": 272349,
+  "body_sha256": "3f31d615e87235c4664661f661d9ef9085b5b5c54c444166206ee7dd07e3b31a",
+  "completed_at_utc": "2026-11-28T04:16:10.875314Z"
+}

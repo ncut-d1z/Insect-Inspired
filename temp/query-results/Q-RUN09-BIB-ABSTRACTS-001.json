@@ -1,0 +1,58 @@
+{
+  "query_id": "Q-RUN09-BIB-ABSTRACTS-001",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0011",
+  "run_id": "RUN-0009",
+  "entity_id": "W-S06",
+  "task_id": "T-RUN09-BIB-ABSTRACT-SCREEN",
+  "source_id": "europepmc",
+  "query_kind": "indexed_abstract_screen",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=SRC%3AMED+AND+%28EXT_ID%3A25013104+OR+EXT_ID%3A25693417+OR+EXT_ID%3A40690376%29&resultType=core&format=json&pageSize=3",
+  "raw_parameters": {
+    "query": "SRC:MED AND (EXT_ID:25013104 OR EXT_ID:25693417 OR EXT_ID:40690376)",
+    "resultType": "core",
+    "format": "json",
+    "pageSize": 3
+  },
+  "queried_at_utc": "2026-11-28T04:23:36.521146Z",
+  "external_request_count": 1,
+  "cache_hit": false,
+  "page_index": 1,
+  "cursor_in": "*",
+  "cursor_out": null,
+  "status": "success",
+  "page_complete": true,
+  "visible_total": 3,
+  "returned_count": 3,
+  "records": [
+    {
+      "id": "40690376",
+      "source": "MED",
+      "doi": "10.7554/elife.102230",
+      "title": "Neural circuit mechanisms for steering control in walking &lt;i&gt;Drosophila&lt;/i&gt;.",
+      "abstract_sha256": "d0b45109fd795b09b9945cf6a6a80233c6099397e83b55cd60c75854bf08a654"
+    },
+    {
+      "id": "25693417",
+      "source": "MED",
+      "doi": "10.7554/elife.04693",
+      "title": "Role of visual and non-visual cues in constructing a rotation-invariant representation of heading in parietal cortex.",
+      "abstract_sha256": "418c7cf5cdccd80504a2571597f2c0fef89a8342c2102a20a82646e4ee541e52"
+    },
+    {
+      "id": "25013104",
+      "source": "MED",
+      "doi": "10.1242/jeb.097436",
+      "title": "Gaze characteristics of freely walking blowflies Calliphora vicina in a goal-directed task.",
+      "abstract_sha256": "3f9887ca5da6a73d897ed1c558491c2a0305584c14bbae56c674479b2c1ee359"
+    }
+  ],
+  "error_code": null,
+  "error_message": null,
+  "license_note": "Retain identifiers and abstract hashes; read indexed abstracts only, publish original summaries only.",
+  "rerun_reason": "Earlier DOI lookup retained only checksums for abstracts; no reusable text remained for abstract-level review. This is an explicit abstract retrieval by PubMed ID.",
+  "http_status": 200,
+  "body_bytes": 19396,
+  "body_sha256": "2819c36edea886b70e328cf380fab761af21f54128ea26f7c57b0bf380412d8e",
+  "completed_at_utc": "2026-11-28T04:23:38.055713Z"
+}

@@ -1,0 +1,687 @@
+{
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "recorded_at_utc": "2026-11-28T04:24:46.026949Z",
+  "work_id": "W-D343f06a3bc764bf6",
+  "indexed_citing_records": 44,
+  "earlier_than_record_version": 35,
+  "historical_bibliographies_reused": 7,
+  "newly_queried_bibliographies": 28,
+  "counts": {
+    "version_supported_by_reference": 22,
+    "unresolved_no_exact_version_doi": 10,
+    "unresolved_version_or_date_conflict": 3
+  },
+  "cited_versions": {
+    "10.1101/2020.04.04.024703": "V-W-D6538264ebfa49876-01",
+    "10.7554/elife.102230.1": "V-CP4-Rayshubskiy-2024-reviewed-preprint",
+    "10.7554/elife.102230": "V-W-D343f06a3bc764bf6-01"
+  },
+  "items": [
+    {
+      "citing_doi": "10.7554/elife.58942",
+      "citing_epmc_id": "33141021",
+      "first_publication_date": "2020-11-03",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-001",
+      "deposited_reference_entries": 102,
+      "positions": [
+        {
+          "position": 67,
+          "reference_key": "bib67",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.7554/elife.62576",
+      "citing_epmc_id": "33315010",
+      "first_publication_date": "2020-12-14",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "retained_occurrences": [
+        {
+          "occurrence_id": "R-CR-e64f17a23acccb1e",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ]
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1038/s41586-021-03714-w",
+      "citing_epmc_id": "34234348",
+      "first_publication_date": "2021-07-07",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-001",
+      "deposited_reference_entries": 51,
+      "positions": [
+        {
+          "position": 27,
+          "reference_key": "3714_CR27",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.7554/elife.68911",
+      "citing_epmc_id": "34523418",
+      "first_publication_date": "2021-09-15",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-001",
+      "deposited_reference_entries": 69,
+      "positions": [
+        {
+          "position": 47,
+          "reference_key": "bib47",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.7554/elife.66039",
+      "citing_epmc_id": "34696823",
+      "first_publication_date": "2021-10-26",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "retained_occurrences": [
+        {
+          "occurrence_id": "R-CR-cfec391479f4d582",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ]
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1038/s41586-021-04191-x",
+      "citing_epmc_id": "34912123",
+      "first_publication_date": "2021-12-15",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "retained_occurrences": [
+        {
+          "occurrence_id": "R-CR-39dd3a8970c631a1",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ]
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1016/j.cub.2022.01.035",
+      "citing_epmc_id": "35139358",
+      "first_publication_date": "2022-02-08",
+      "version_dois": [],
+      "status": "unresolved_no_exact_version_doi",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-001",
+      "deposited_reference_entries": 101,
+      "positions": []
+    },
+    {
+      "citing_doi": "10.1242/jeb.243687",
+      "citing_epmc_id": "35048981",
+      "first_publication_date": "2022-02-11",
+      "version_dois": [],
+      "status": "unresolved_no_exact_version_doi",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-001",
+      "deposited_reference_entries": 66,
+      "positions": []
+    },
+    {
+      "citing_doi": "10.1016/j.conb.2022.01.001",
+      "citing_epmc_id": "35158168",
+      "first_publication_date": "2022-02-12",
+      "version_dois": [],
+      "status": "unresolved_no_exact_version_doi",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-002",
+      "deposited_reference_entries": 72,
+      "positions": []
+    },
+    {
+      "citing_doi": "10.1242/jeb.243858",
+      "citing_epmc_id": "35048987",
+      "first_publication_date": "2022-02-23",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-002",
+      "deposited_reference_entries": 55,
+      "positions": [
+        {
+          "position": 36,
+          "reference_key": "2023011810055429400_JEB243858C36",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1016/j.neuron.2022.04.008",
+      "citing_epmc_id": "35525243",
+      "first_publication_date": "2022-05-06",
+      "version_dois": [
+        "10.1101/2020.04.04.024703",
+        "10.7554/elife.102230"
+      ],
+      "status": "unresolved_version_or_date_conflict",
+      "retained_occurrences": [
+        {
+          "occurrence_id": "R-IT2A-N04-064",
+          "version_dois": [
+            "10.7554/elife.102230"
+          ]
+        },
+        {
+          "occurrence_id": "R-CR-b31240863f59517a",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ]
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1016/j.cub.2022.06.019",
+      "citing_epmc_id": "35793679",
+      "first_publication_date": "2022-07-05",
+      "version_dois": [],
+      "status": "unresolved_no_exact_version_doi",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-002",
+      "deposited_reference_entries": 91,
+      "positions": []
+    },
+    {
+      "citing_doi": "10.1038/s41467-022-32247-7",
+      "citing_epmc_id": "35941114",
+      "first_publication_date": "2022-08-08",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-002",
+      "deposited_reference_entries": 72,
+      "positions": [
+        {
+          "position": 50,
+          "reference_key": "32247_CR50",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1162/neco_a_01540",
+      "citing_epmc_id": "36112910",
+      "first_publication_date": "2022-10-01",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-002",
+      "deposited_reference_entries": 63,
+      "positions": [
+        {
+          "position": 52,
+          "reference_key": "2023050517084865300_B52",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.7554/elife.81527",
+      "citing_epmc_id": "36286408",
+      "first_publication_date": "2022-10-26",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-003",
+      "deposited_reference_entries": 88,
+      "positions": [
+        {
+          "position": 65,
+          "reference_key": "bib65",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1038/s41586-022-05485-4",
+      "citing_epmc_id": "36450986",
+      "first_publication_date": "2022-11-30",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-003",
+      "deposited_reference_entries": 83,
+      "positions": [
+        {
+          "position": 30,
+          "reference_key": "5485_CR30",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1007/s00359-022-01601-x",
+      "citing_epmc_id": "36550368",
+      "first_publication_date": "2022-12-23",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-003",
+      "deposited_reference_entries": 118,
+      "positions": [
+        {
+          "position": 86,
+          "reference_key": "1601_CR86",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1007/s00359-022-01611-9",
+      "citing_epmc_id": "36658447",
+      "first_publication_date": "2023-01-20",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-003",
+      "deposited_reference_entries": 258,
+      "positions": [
+        {
+          "position": 178,
+          "reference_key": "1611_CR171",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1007/s00359-023-01616-y",
+      "citing_epmc_id": "36932234",
+      "first_publication_date": "2023-03-17",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-003",
+      "deposited_reference_entries": 140,
+      "positions": [
+        {
+          "position": 103,
+          "reference_key": "1616_CR103",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1038/s41593-023-01281-z",
+      "citing_epmc_id": "36959417",
+      "first_publication_date": "2023-03-23",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-004",
+      "deposited_reference_entries": 88,
+      "positions": [
+        {
+          "position": 41,
+          "reference_key": "1281_CR41",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1093/genetics/iyad064",
+      "citing_epmc_id": "37128740",
+      "first_publication_date": "2023-05-01",
+      "version_dois": [],
+      "status": "unresolved_no_exact_version_doi",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-004",
+      "deposited_reference_entries": 362,
+      "positions": []
+    },
+    {
+      "citing_doi": "10.1016/j.cub.2023.10.011",
+      "citing_epmc_id": "37918398",
+      "first_publication_date": "2023-11-01",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "retained_occurrences": [
+        {
+          "occurrence_id": "R-IT2B-B204-R093",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ]
+        },
+        {
+          "occurrence_id": "R-CR-a4e99fa8795e817b",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ]
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1016/j.conb.2023.102822",
+      "citing_epmc_id": "38096757",
+      "first_publication_date": "2023-12-13",
+      "version_dois": [],
+      "status": "unresolved_no_exact_version_doi",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-004",
+      "deposited_reference_entries": 97,
+      "positions": []
+    },
+    {
+      "citing_doi": "10.1016/j.cub.2023.12.020",
+      "citing_epmc_id": "38181792",
+      "first_publication_date": "2024-01-04",
+      "version_dois": [],
+      "status": "unresolved_no_exact_version_doi",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-004",
+      "deposited_reference_entries": 111,
+      "positions": []
+    },
+    {
+      "citing_doi": "10.1016/j.cub.2023.12.047",
+      "citing_epmc_id": "38228148",
+      "first_publication_date": "2024-01-15",
+      "version_dois": [],
+      "status": "unresolved_no_exact_version_doi",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-004",
+      "deposited_reference_entries": 67,
+      "positions": []
+    },
+    {
+      "citing_doi": "10.1038/s41586-024-07039-2",
+      "citing_epmc_id": "38326621",
+      "first_publication_date": "2024-02-07",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-005",
+      "deposited_reference_entries": 57,
+      "positions": [
+        {
+          "position": 4,
+          "reference_key": "7039_CR4",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1101/2024.04.15.589655",
+      "citing_epmc_id": "PPR837529",
+      "first_publication_date": "2024-04-16",
+      "version_dois": [
+        "10.7554/elife.102230"
+      ],
+      "status": "unresolved_version_or_date_conflict",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-005",
+      "deposited_reference_entries": 69,
+      "positions": [
+        {
+          "position": 49,
+          "reference_key": "2024120513001356000_2024.04.15.589655v2.49",
+          "version_dois": [
+            "10.7554/elife.102230"
+          ],
+          "version_ids": [
+            "V-W-D343f06a3bc764bf6-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1016/j.cell.2024.08.033",
+      "citing_epmc_id": "39293446",
+      "first_publication_date": "2024-09-17",
+      "version_dois": [],
+      "status": "unresolved_no_exact_version_doi",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-005",
+      "deposited_reference_entries": 133,
+      "positions": []
+    },
+    {
+      "citing_doi": "10.1038/s41586-024-07854-7",
+      "citing_epmc_id": "39358520",
+      "first_publication_date": "2024-10-02",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-005",
+      "deposited_reference_entries": 75,
+      "positions": [
+        {
+          "position": 33,
+          "reference_key": "7854_CR33",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1038/s41586-024-08255-6",
+      "citing_epmc_id": "39567699",
+      "first_publication_date": "2024-11-20",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "retained_occurrences": [
+        {
+          "occurrence_id": "R-CR-d19530a7b4fb3b63",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ]
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1002/cne.70009",
+      "citing_epmc_id": "39658819",
+      "first_publication_date": "2024-12-01",
+      "version_dois": [
+        "10.1101/2020.04.04.024703"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-005",
+      "deposited_reference_entries": 77,
+      "positions": [
+        {
+          "position": 51,
+          "reference_key": "e_1_2_10_52_1",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1073/pnas.2407626122",
+      "citing_epmc_id": "40244663",
+      "first_publication_date": "2025-04-17",
+      "version_dois": [
+        "10.7554/elife.102230.1"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-006",
+      "deposited_reference_entries": 71,
+      "positions": [
+        {
+          "position": 21,
+          "reference_key": "e_1_3_4_21_2",
+          "version_dois": [
+            "10.7554/elife.102230.1"
+          ],
+          "version_ids": [
+            "V-CP4-Rayshubskiy-2024-reviewed-preprint"
+          ],
+          "source_field": "unstructured"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1038/s41586-025-08925-z",
+      "citing_epmc_id": "40307549",
+      "first_publication_date": "2025-04-30",
+      "version_dois": [
+        "10.7554/elife.102230.1"
+      ],
+      "status": "version_supported_by_reference",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-006",
+      "deposited_reference_entries": 84,
+      "positions": [
+        {
+          "position": 14,
+          "reference_key": "8925_CR14",
+          "version_dois": [
+            "10.7554/elife.102230.1"
+          ],
+          "version_ids": [
+            "V-CP4-Rayshubskiy-2024-reviewed-preprint"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "citing_doi": "10.1038/s41593-025-01948-9",
+      "citing_epmc_id": "40312577",
+      "first_publication_date": "2025-05-01",
+      "version_dois": [],
+      "status": "unresolved_no_exact_version_doi",
+      "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-006",
+      "deposited_reference_entries": 91,
+      "positions": []
+    },
+    {
+      "citing_doi": "10.1038/s41586-025-09135-3",
+      "citing_epmc_id": "40533549",
+      "first_publication_date": "2025-06-18",
+      "version_dois": [
+        "10.7554/elife.102230"
+      ],
+      "status": "unresolved_version_or_date_conflict",
+      "retained_occurrences": [
+        {
+          "occurrence_id": "R-CR-3a5465d89819557f",
+          "version_dois": [
+            "10.7554/elife.102230"
+          ]
+        }
+      ]
+    }
+  ],
+  "coverage_note": "登记参考条目的版本 DOI 与施引论文首发日期交叉核对。未给可用标识或与时序冲突的记录保留待核实。引用作用均未核实。"
+}

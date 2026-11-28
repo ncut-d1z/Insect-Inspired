@@ -1,0 +1,48 @@
+{
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "recorded_at_utc": "2026-11-28T04:24:46.026949Z",
+  "query_id": "Q-RUN09-BIB-ABSTRACTS-001",
+  "scientific_admission": "abstract_only",
+  "eligible_new_assessments": 0,
+  "items": [
+    {
+      "pmid": "25013104",
+      "doi": "10.1242/jeb.097436",
+      "work_id": "W-D3726e94bf3bda20c",
+      "topic_leads": [
+        "L06",
+        "L08"
+      ],
+      "summary": "作者报告，步行丽蝇接近竖直目标时，随步幅变化的注视偏转仍然存在，启停行为则随视觉条件改变。作者提出比较目标两侧的像速度来提取接近线索。",
+      "boundary": "摘要将距离线索提取表述为假说。其精度、适用距离和一般三维恢复能力待核实。",
+      "abstract_sha256": "3f9887ca5da6a73d897ed1c558491c2a0305584c14bbae56c674479b2c1ee359",
+      "source_url": "https://europepmc.org/article/MED/25013104"
+    },
+    {
+      "pmid": "40690376",
+      "doi": "10.7554/elife.102230",
+      "work_id": "W-D343f06a3bc764bf6",
+      "topic_leads": [
+        "L06"
+      ],
+      "summary": "作者将步行果蝇的两类下行神经元分别与持续低增益转向和短暂高增益转向联系起来，并报告后一类整合内部航向驱动与感觉驱动。",
+      "boundary": "摘要报告的是转向控制。由视网膜光流分离三维旋转和平移的能力待核实。",
+      "abstract_sha256": "d0b45109fd795b09b9945cf6a6a80233c6099397e83b55cd60c75854bf08a654",
+      "source_url": "https://europepmc.org/article/MED/40690376"
+    },
+    {
+      "pmid": "25693417",
+      "doi": "10.7554/elife.04693",
+      "work_id": "W-R24649f4879cc831d",
+      "topic_leads": [
+        "L01",
+        "L06"
+      ],
+      "summary": "作者报告，在猕猴腹侧顶内区的航向表征中，局部运动视差和全局透视变化可为有旋转时的航向判断提供视觉线索。",
+      "boundary": "物种为猕猴。摘要不足以核定误差、尺度可观测性或昆虫是否采用相同机制。",
+      "abstract_sha256": "418c7cf5cdccd80504a2571597f2c0fef89a8342c2102a20a82646e4ee541e52",
+      "source_url": "https://europepmc.org/article/MED/25693417"
+    }
+  ]
+}

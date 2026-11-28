@@ -1,0 +1,38 @@
+{
+  "query_id": "Q-RUN09-BIB-RAY-CROSSREF-VERSIONS-001",
+  "source_id": "crossref",
+  "entity_id": "W-D343f06a3bc764bf6",
+  "task_id": "T-citations-W-D343f06a3bc764bf6",
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0011",
+  "queried_at_utc": "2026-11-28T04:20:36.580890Z",
+  "endpoint_or_url": "https://api.crossref.org/works?filter=doi%3A10.7554%2Felife.58942%2Cdoi%3A10.1038%2Fs41586-021-03714-w%2Cdoi%3A10.7554%2Felife.68911%2Cdoi%3A10.1016%2Fj.cub.2022.01.035%2Cdoi%3A10.1242%2Fjeb.243687&select=DOI%2Ctitle%2Creference%2Creference-count%2Cpublished&rows=5",
+  "raw_parameters": {
+    "filter": "doi:10.7554/elife.58942,doi:10.1038/s41586-021-03714-w,doi:10.7554/elife.68911,doi:10.1016/j.cub.2022.01.035,doi:10.1242/jeb.243687",
+    "select": "DOI,title,reference,reference-count,published",
+    "rows": 5
+  },
+  "query_kind": "version_in_registered_references",
+  "page_index": 1,
+  "cursor_in": null,
+  "cursor_out": null,
+  "external_request_count": 1,
+  "cache_hit": false,
+  "requested_dois": [
+    "10.7554/elife.58942",
+    "10.1038/s41586-021-03714-w",
+    "10.7554/elife.68911",
+    "10.1016/j.cub.2022.01.035",
+    "10.1242/jeb.243687"
+  ],
+  "license_note": "DOI registration and reference-list metadata only. No article or attachment fetched.",
+  "status": "error",
+  "visible_total": null,
+  "returned_count": null,
+  "page_complete": false,
+  "records": [],
+  "error_code": "400",
+  "error_message": "HTTP Error 400: Bad Request",
+  "completed_at_utc": "2026-11-28T04:20:37.444667Z"
+}

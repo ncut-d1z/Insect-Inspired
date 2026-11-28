@@ -1,0 +1,147 @@
+{
+  "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-003",
+  "source_id": "crossref",
+  "entity_id": "W-D343f06a3bc764bf6",
+  "task_id": "T-citations-W-D343f06a3bc764bf6",
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0011",
+  "queried_at_utc": "2026-11-28T04:22:36.013518Z",
+  "endpoint_or_url": "https://api.crossref.org/works?filter=doi%3A10.7554%2Felife.81527%2Cdoi%3A10.1038%2Fs41586-022-05485-4%2Cdoi%3A10.1007%2Fs00359-022-01601-x%2Cdoi%3A10.1007%2Fs00359-022-01611-9%2Cdoi%3A10.1007%2Fs00359-023-01616-y&rows=5",
+  "raw_parameters": {
+    "filter": "doi:10.7554/elife.81527,doi:10.1038/s41586-022-05485-4,doi:10.1007/s00359-022-01601-x,doi:10.1007/s00359-022-01611-9,doi:10.1007/s00359-023-01616-y",
+    "rows": 5
+  },
+  "query_kind": "version_in_registered_references",
+  "page_index": 1,
+  "cursor_in": null,
+  "cursor_out": null,
+  "external_request_count": 1,
+  "cache_hit": false,
+  "requested_dois": [
+    "10.7554/elife.81527",
+    "10.1038/s41586-022-05485-4",
+    "10.1007/s00359-022-01601-x",
+    "10.1007/s00359-022-01611-9",
+    "10.1007/s00359-023-01616-y"
+  ],
+  "license_note": "DOI registration and reference-list metadata only. No article or attachment fetched.",
+  "status": "success",
+  "visible_total": 5,
+  "returned_count": 5,
+  "page_complete": true,
+  "records": [
+    {
+      "doi": "10.1007/s00359-022-01601-x",
+      "title": [
+        "The sky compass network in the brain of the desert locust"
+      ],
+      "declared_reference_count": 118,
+      "deposited_reference_entries": 118,
+      "matched_references": [
+        {
+          "position": 86,
+          "reference_key": "1601_CR86",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00359-022-01611-9",
+      "title": [
+        "Olfactory navigation in arthropods"
+      ],
+      "declared_reference_count": 258,
+      "deposited_reference_entries": 258,
+      "matched_references": [
+        {
+          "position": 178,
+          "reference_key": "1611_CR171",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "doi": "10.7554/elife.81527",
+      "title": [
+        "Descending neuron population dynamics during odor-evoked and spontaneous limb-dependent behaviors"
+      ],
+      "declared_reference_count": 88,
+      "deposited_reference_entries": 88,
+      "matched_references": [
+        {
+          "position": 65,
+          "reference_key": "bib65",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "doi": "10.1007/s00359-023-01616-y",
+      "title": [
+        "Lineages to circuits: the developmental and evolutionary architecture of information channels into the central complex"
+      ],
+      "declared_reference_count": 140,
+      "deposited_reference_entries": 140,
+      "matched_references": [
+        {
+          "position": 103,
+          "reference_key": "1616_CR103",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "doi": "10.1038/s41586-022-05485-4",
+      "title": [
+        "Dopamine promotes head direction plasticity during orienting movements"
+      ],
+      "declared_reference_count": 83,
+      "deposited_reference_entries": 83,
+      "matched_references": [
+        {
+          "position": 30,
+          "reference_key": "5485_CR30",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    }
+  ],
+  "error_code": null,
+  "error_message": null,
+  "rerun_reason": null,
+  "http_status": 200,
+  "body_sha256": "241335706cc6d62cc4d17fa25a8d34523cef638911b55a4b2dcc968d8e8d3d8d",
+  "body_bytes": 301121,
+  "completed_at_utc": "2026-11-28T04:22:38.380709Z"
+}

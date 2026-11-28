@@ -1,0 +1,135 @@
+{
+  "query_id": "Q-RUN09-BIB-RAY-CROSSREF-DEPOSITS-005",
+  "source_id": "crossref",
+  "entity_id": "W-D343f06a3bc764bf6",
+  "task_id": "T-citations-W-D343f06a3bc764bf6",
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0011",
+  "queried_at_utc": "2026-11-28T04:22:47.159810Z",
+  "endpoint_or_url": "https://api.crossref.org/works?filter=doi%3A10.1038%2Fs41586-024-07039-2%2Cdoi%3A10.1101%2F2024.04.15.589655%2Cdoi%3A10.1016%2Fj.cell.2024.08.033%2Cdoi%3A10.1038%2Fs41586-024-07854-7%2Cdoi%3A10.1002%2Fcne.70009&rows=5",
+  "raw_parameters": {
+    "filter": "doi:10.1038/s41586-024-07039-2,doi:10.1101/2024.04.15.589655,doi:10.1016/j.cell.2024.08.033,doi:10.1038/s41586-024-07854-7,doi:10.1002/cne.70009",
+    "rows": 5
+  },
+  "query_kind": "version_in_registered_references",
+  "page_index": 1,
+  "cursor_in": null,
+  "cursor_out": null,
+  "external_request_count": 1,
+  "cache_hit": false,
+  "requested_dois": [
+    "10.1038/s41586-024-07039-2",
+    "10.1101/2024.04.15.589655",
+    "10.1016/j.cell.2024.08.033",
+    "10.1038/s41586-024-07854-7",
+    "10.1002/cne.70009"
+  ],
+  "license_note": "DOI registration and reference-list metadata only. No article or attachment fetched.",
+  "status": "success",
+  "visible_total": 5,
+  "returned_count": 5,
+  "page_complete": true,
+  "records": [
+    {
+      "doi": "10.1101/2024.04.15.589655",
+      "title": [
+        "Inhibitory control of locomotor statistics in walking\n                  <i>Drosophila</i>"
+      ],
+      "declared_reference_count": 69,
+      "deposited_reference_entries": 69,
+      "matched_references": [
+        {
+          "position": 49,
+          "reference_key": "2024120513001356000_2024.04.15.589655v2.49",
+          "version_dois": [
+            "10.7554/elife.102230"
+          ],
+          "version_ids": [
+            "V-W-D343f06a3bc764bf6-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "doi": "10.1038/s41586-024-07039-2",
+      "title": [
+        "Transforming a head direction signal into a goal-oriented steering command"
+      ],
+      "declared_reference_count": 57,
+      "deposited_reference_entries": 57,
+      "matched_references": [
+        {
+          "position": 4,
+          "reference_key": "7039_CR4",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "doi": "10.1038/s41586-024-07854-7",
+      "title": [
+        "Neural circuit mechanisms underlying context-specific halting in Drosophila"
+      ],
+      "declared_reference_count": 75,
+      "deposited_reference_entries": 75,
+      "matched_references": [
+        {
+          "position": 33,
+          "reference_key": "7854_CR33",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "doi": "10.1002/cne.70009",
+      "title": [
+        "Neuroarchitecture of the Central Complex in the Madeira Cockroach\n                    <i>Rhyparobia maderae</i>\n                    : Tangential Neurons"
+      ],
+      "declared_reference_count": 77,
+      "deposited_reference_entries": 77,
+      "matched_references": [
+        {
+          "position": 51,
+          "reference_key": "e_1_2_10_52_1",
+          "version_dois": [
+            "10.1101/2020.04.04.024703"
+          ],
+          "version_ids": [
+            "V-W-D6538264ebfa49876-01"
+          ],
+          "source_field": "DOI"
+        }
+      ]
+    },
+    {
+      "doi": "10.1016/j.cell.2024.08.033",
+      "title": [
+        "Fine-grained descending control of steering in walking Drosophila"
+      ],
+      "declared_reference_count": 133,
+      "deposited_reference_entries": 133,
+      "matched_references": []
+    }
+  ],
+  "error_code": null,
+  "error_message": null,
+  "rerun_reason": null,
+  "http_status": 200,
+  "body_sha256": "72c4f2694574dc1c7e1fc2f684681c0e45320b3e222c7883dccdcc92633a658d",
+  "body_bytes": 133203,
+  "completed_at_utc": "2026-11-28T04:22:51.857370Z"
+}

@@ -54,6 +54,25 @@ def search(target, kind, page=1):
         params = dict(query=f'DOI:"{doi}"',resultType="core",format="json",pageSize=100)
         path = "search"
         field, sub = "resultList","result"
+    elif kind == "list-metadata":
+        relation = {"SUNKARA":"references", "RAY":"citations"}[target]
+        prior = sorted((ROOT / "temp/query-results").glob(f"Q-RUN09-BIB-{target}-{relation.upper()}-*.json"))
+        pages = [json.loads(p.read_bytes()) for p in prior]
+        if not pages or not pages[-1]["page_complete"] or any(p["status"]!="success" for p in pages):
+            raise ValueError("A complete provider list is required for this metadata lookup")
+        groups = {}
+        for result in pages:
+            for item in result["records"]:
+                identifier, source = str(item["id"]), item["source"]
+                if not re.fullmatch(r"[A-Za-z0-9]+",identifier) or not re.fullmatch(r"[A-Z]+",source):
+                    raise ValueError("Unexpected bibliographic identifier")
+                groups.setdefault(source,set()).add(identifier)
+        expression = " OR ".join("(SRC:"+source+" AND ("+" OR ".join('EXT_ID:"'+i+'"' for i in sorted(ids))+"))" for source,ids in sorted(groups.items()))
+        params=dict(query=expression,resultType="core",format="json",pageSize=1000)
+        if page>1:
+            previous=ROOT/"temp/query-results"/(f"Q-RUN09-BIB-{target}-{kind.upper()}-{page-1:03}.json")
+            params["cursorMark"]=json.loads(previous.read_bytes())["cursor_out"]
+        path,field,sub="search","resultList","result"
     else:
         identity = search(target,"identity")
         matches = [row for row in identity["records"] if row.get("doi","").lower() == doi and row.get("source")=="MED"]
@@ -66,11 +85,11 @@ def search(target, kind, page=1):
     url=BASE+path+"?"+urlencode(params)
     started=stamp()
     receipt=dict(query_id=operation, run_id="RUN-0009", scope_id="SCOPE-0001", checkpoint_id="CP-0011",
-                 entity_id=work,task_id="T-"+("metadata" if kind=="identity" else kind)+"-"+work, source_id="europepmc",
+                 entity_id=work,task_id="T-"+("metadata" if kind=="identity" else ({"SUNKARA":"references","RAY":"citations"}[target] if kind=="list-metadata" else kind))+"-"+work, source_id="europepmc",
                  query_kind="bibliographic_"+kind,endpoint_or_url=url,raw_parameters=params,queried_at_utc=started,
                  page_index=page,external_request_count=1,cache_hit=False,license_note="Public bibliographic facts and author identifiers. Abstract text is represented only by availability and a digest.",
                  cutoff_at_utc="2026-11-26T05:24:08Z",records=[],visible_total=None,returned_count=None,page_complete=False,
-                 cursor_in="*" if kind=="identity" else str(page),cursor_out=None,error_code=None,error_message=None)
+                 cursor_in=params.get("cursorMark","*") if path=="search" else str(page),cursor_out=None,error_code=None,error_message=None)
     try:
         with urlopen(Request(url,headers={"Accept":"application/json","User-Agent":"Insect-Inspired-bibliography/1.1"}),timeout=45) as response:
             raw=response.read()
@@ -79,11 +98,11 @@ def search(target, kind, page=1):
         entries=data[field].get(sub,[])
         total=data["hitCount"]
         result=[facts(r) for r in entries]
-        complete = total == len(entries) if kind=="identity" else (page-1)*1000+len(entries)==total
+        complete = (page-1)*params["pageSize"]+len(entries)==total
         if not complete and not entries: raise ValueError("Empty page before visible total")
         receipt.update(status="success",body_bytes=len(raw),body_sha256=hashlib.sha256(raw).hexdigest(),records=result,
                        visible_total=total,returned_count=len(entries),page_complete=complete,
-                       cursor_out=None if complete else (str(page+1) if kind!="identity" else data.get("nextCursorMark")))
+                       cursor_out=None if complete else (data.get("nextCursorMark") if path=="search" else str(page+1)))
     except (OSError, ValueError, KeyError) as exc:
         receipt.update(status="error",error_code=str(exc.code) if isinstance(exc,HTTPError) else type(exc).__name__,error_message=str(exc))
     receipt["completed_at_utc"]=stamp()
@@ -96,7 +115,7 @@ def search(target, kind, page=1):
 if __name__=="__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("target",choices=SOURCES)
-    parser.add_argument("kind",choices=["identity","citations","references"])
+    parser.add_argument("kind",choices=["identity","citations","references","list-metadata"])
     args=parser.parse_args()
     page=1
     while True:
