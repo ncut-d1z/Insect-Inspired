@@ -139,10 +139,30 @@ Q2 独立目录含 {len(parts):,} 个数据分片，最大一片 {max(p['bytes']
 def finalize(qa):
     require(not git(ROOT,"status","--porcelain").strip(), "Publish stable candidate and exports before certification")
     cp_path=ROOT/CANDIDATE; candidate_hash=digest(cp_path);public=read(cp_path); inputs=read(ROOT/INPUTS)
+    recipe=read(TEMP/"validation/cp13-bibtex-repair.json")
+    current=input_snapshot(ROOT,inputs)
+    frozen_commit=public["validation_results"]["input_commit"]
+    repaired_commit=recipe["repair_commit"]
+    git(ROOT,"merge-base","--is-ancestor",frozen_commit,repaired_commit)
+    git(ROOT,"merge-base","--is-ancestor",repaired_commit,"HEAD")
+    changed={p for p in inputs if inputs[p]!=current[p]}
+    require(changed==set(recipe["script_bindings"])=={"scripts/export_run.py","scripts/finalize_run11.py"} and
+            recipe["frozen_input_commit"]==frozen_commit and recipe["status"]=="passed",
+            "Unexpected change to the frozen input or export recipe")
+    for path in changed:
+        before=git(ROOT,"show",frozen_commit+":"+path)
+        after=git(ROOT,"show",repaired_commit+":"+path)
+        require(inputs[path]=={"bytes":len(before),"sha256":sha(before)} and
+                current[path]=={"bytes":len(after),"sha256":sha(after)} and
+                recipe["script_bindings"][path]=={"before":sha(before),"after":sha(after)},
+                "Unbound export script correction: "+path)
     require(public["status"]=="invalid" and public["parent_checkpoint_id"]=="CP-0012" and set(inputs)==frozen_files() and
-            inputs==input_snapshot(ROOT,inputs) and input_digest(inputs)==public["validation_results"]["input_digest_sha256"] and
+            input_digest(inputs)==public["validation_results"]["input_digest_sha256"] and
             digest(ROOT/HISTORY)==public["validation_results"]["history_sha256"], "Frozen canonical evidence changed")
     proofs=gather(qa,public,candidate_hash)
+    require(recipe["after_bibliography_sha256"]==proofs["cp13-bibtex-parse.json"]["input_sha256"] and
+            recipe["determinism_sha256"]==digest(qa/"determinism.json")==proofs["cp13-data-audit.json"]["statistics"]["staged_export_manifest_sha256"],
+            "Repaired bibliography differs from the independently audited generations")
     source_control=source_evidence(public["counts"])
     run=read(STATE);now=stamp();hours=(datetime.fromisoformat(now)-datetime.fromisoformat(run["started_at_utc"])).total_seconds()/3600
     due=public["coverage"]["unknown_review"].get("next_deadline_utc")
@@ -175,6 +195,7 @@ def finalize(qa):
     cp["coverage"]["derived_views"]={"state":"validated","counts":proofs["cp13-export-validation.json"]["counts"],
                                     "hash_manifest":"temp/validation/cp13-determinism.json"}
     cp["coverage"]["historical_source_controls"]=source_control
+    cp["validation_results"]["export_recipe_amendment"]="temp/validation/cp13-bibtex-repair.json"
     cp["validation_results"].update(state=state,data_audit="passed",exports="passed",native_bibtex="passed",offline_browsers=2,
         data_audit_errors=0,data_audit_warnings=proofs["cp13-data-audit.json"]["warning_count"], existing_records_lost=0,
         audited_candidate_sha256=candidate_hash,audited_candidate_commit=head(),updated_at_utc=now,post_commit_receipt=POST)
