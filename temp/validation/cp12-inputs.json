@@ -72,8 +72,8 @@
     "sha256": "2f2925b87a7d48b60b8208b56dd6b28efaccf600c6245f95056f649802371d18"
   },
   "scripts/checkpoint_run10.py": {
-    "bytes": 15475,
-    "sha256": "42785dbe418b4c9ece99c416765b96a0b35760b15b6446fb65b6b43cfdb49da6"
+    "bytes": 16284,
+    "sha256": "10919096cc39bd8a0a48276486eaeb0fdf71da410fa01799b0faad41f7b74cdb"
   },
   "scripts/checkpoint_run9_bibliography.py": {
     "bytes": 19191,
@@ -100,8 +100,8 @@
     "sha256": "91ffe7d264f67ccee8a99d70d3b447edbd68902a1abcf47c87762fa1a0588be5"
   },
   "scripts/export_run.py": {
-    "bytes": 23916,
-    "sha256": "b54d78f8c74ecb389ca2b15353021125913adb2ee88954c0bb0d382374b5673c"
+    "bytes": 24017,
+    "sha256": "8beed95ef09e030c6f26f08f906acb52efe0affa77bb28d6d38fb2adf5e96362"
   },
   "scripts/fetch_epmc_run5.py": {
     "bytes": 5516,
