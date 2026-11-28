@@ -1,0 +1,228 @@
+{
+  "run_id": "RUN-0010",
+  "scope_id": "SCOPE-0001",
+  "target_checkpoint": "CP-0012",
+  "batch": "versions-and-abstracts",
+  "updated_at_utc": "2026-11-28T09:00:35.931323Z",
+  "counts": {
+    "tasks": 23,
+    "manual-reviews": 16,
+    "versions": 4,
+    "aliases": 1,
+    "authors": 0,
+    "works": 0,
+    "queries": 20,
+    "source-observations": 20
+  },
+  "identity_match_counts": {},
+  "authorship_counts": {},
+  "coverage": [],
+  "input_receipts": {
+    "temp/query-results/Q-RUN10-P56-ABSTRACT-A1.json": "cd3e6e9d0eaac6719a63b7edf9f488bbbf1b8626380aec236e8af1cde8d059dc",
+    "temp/query-results/Q-RUN10-VBIO-024703-A1.json": "9f68d7dace800cab5d55d9ade578a675d131735511ed0e024509c3f3c0075e21",
+    "temp/query-results/Q-RUN10-VBIO-589655-A1.json": "72bd8b804f7e57ac74c1b00d22a48e7efd93a9e31f2db6dfc6bd4076bb654eb6",
+    "temp/query-results/Q-RUN10-VCR-001-005-A1.json": "8e57207fe3e1abc2e746529dd4881c8094314f7cec8259f911661d7a266c13b1",
+    "temp/query-results/Q-RUN10-VCR-006-010-A1.json": "1422524918778ea80d642a9928a6f531cb387b1c19d33653dad05d82243b61c4",
+    "temp/query-results/Q-RUN10-VCR-011-013-A1.json": "baee550b956e81cb511f713138dd29c07f767831c558b75fc4357273025a70f2",
+    "temp/query-results/Q-RUN10-VEP-35048981-P1-A1.json": "cb62f44d873fd221cf1646a264d6f04b7e3a45b3fcb4577d9c9c210e734282c0",
+    "temp/query-results/Q-RUN10-VEP-35139358-P1-A1.json": "feca2d0df033b88ab59e90bd9b53d0771755f6816e949893182b4af1a09e9e5d",
+    "temp/query-results/Q-RUN10-VEP-35158168-P1-A1.json": "462656600378d0b14aa04476e3c108ac7786fe8b64653305b2715b08ba8aca30",
+    "temp/query-results/Q-RUN10-VEP-35525243-P1-A1.json": "39f89b7c8fb3b7c443d1ed7de29cd3c8fdb9557a0adda72c7ad0c76d225e3ab7",
+    "temp/query-results/Q-RUN10-VEP-35793679-P1-A1.json": "b5f5b7acfec84524c491947371b24a8923c886948895c7bf63ebb21b33be820c",
+    "temp/query-results/Q-RUN10-VEP-37128740-P1-A1.json": "51407066fc40b0499f447b2a23f05a1e40e608abfe2712da4b717e7ec8ef9707",
+    "temp/query-results/Q-RUN10-VEP-38096757-P1-A1.json": "a8e22ae7f8cea27640fa215167829be65bc6a3198992dbf520bafbf42d775537",
+    "temp/query-results/Q-RUN10-VEP-38181792-P1-A1.json": "804449994262a8a34d3198dd9174b61a92cad51d5704b840f087ac20494ca425",
+    "temp/query-results/Q-RUN10-VEP-38228148-P1-A1.json": "ad1de8d69e07d338de741f375bed48e20627c072a1d52aae421cf4fd53099d41",
+    "temp/query-results/Q-RUN10-VEP-39293446-P1-A1.json": "d707ffb8deeac79475e6e16f57708daed7a0f51ffb44da12eb4f20c9880e3e4d",
+    "temp/query-results/Q-RUN10-VEP-40312577-P1-A1.json": "ec2b4375b5f3748ecfa497b10e4cbf800360eba80540bafca654d370f60a8e90",
+    "temp/query-results/Q-RUN10-VEP-40533549-P1-A1.json": "68fd2789bf8f8f7a00507366b692f6402dd6038362af9287b002fcd1fe3adcb0",
+    "temp/query-results/Q-RUN10-VEP-PPR837529-P1-A1.json": "04817e03bf6962ef9a83a58d755f8eaf158e022092704ba47da9a84530f573d8",
+    "temp/query-results/Q-RUN10-VTARGET-A1.json": "48074b0d98fc75af88e57b68da2cb422e9667c198cf26486f92dfa62e72d2a7e",
+    "temp/reports/RUN-0010-abstract-affiliation-review.json": "eb888b5389374015589d61ea4571c44e9a053db3fc813c7ba11a428853a20486",
+    "temp/reports/RUN-0010-cited-versions.json": "1477f6a477ec2dd20cbf021ac0e32e7bed30394ed5f9fa74f0171a39b342b86e"
+  },
+  "before_commit": "875f5b92f5fe2ddd5887b93999b26d879c4020f1",
+  "datasets": {
+    "aliases": {
+      "logical_records": 339,
+      "logical_sha256": "2b56f2289fd6e24fee414a6befc8230d7deaf579732c382f650d8a117359c7e0",
+      "replacements": [],
+      "appended_ids": [
+        "AL-R10-RAY-ELIFE-3"
+      ]
+    },
+    "authors": {
+      "logical_records": 20918,
+      "logical_sha256": "30be3df5f102c6c792758be6b2fd1bfbf0107c9143336c1aacda9a54e3fa281b",
+      "replacements": [
+        {
+          "id": "P-R3f604d5df1733a27",
+          "before_sha256": "a359763ed76d53cd8d54bc5f84bc3934ba356e7e2f9906ce8a70aabfa518f61b",
+          "after_sha256": "beb570ba0b5e375e76dad7981124592bd7a6f30672e7c2f44bdb0612dd8c48c2"
+        },
+        {
+          "id": "P-BIB-2e14cc6b786470bcf7",
+          "before_sha256": "b1b6fce2212792f1c9a95dff6f5fe10592f0218735629d55b452b87baee7e107",
+          "after_sha256": "e4b07ec0e964dd61eafd64ef724298c384a5e426ca7316b5a7c1522d438ed4ce"
+        },
+        {
+          "id": "P-BIB-ba1557a0a7fb3acc89",
+          "before_sha256": "147e744478e8d36d3e4307e1dd46324711863f9f58c0732d726424936045ecea",
+          "after_sha256": "2ca75f985a625f8df0dded124d24cfeca0f777bf97c37f587ecf42d81bdc7811"
+        },
+        {
+          "id": "P-BIB-af840a09afe0b0eab7",
+          "before_sha256": "2773951bcab148b5cabe21b7937d9b62b9decb894d90a83b0f2c5420dbdd1aa5",
+          "after_sha256": "9c22f545cceddf42320a089a78bd0b29303ce29acc4c83cb7d3c76758aef03f9"
+        },
+        {
+          "id": "P-BIB-37ca4bfc812f66beab",
+          "before_sha256": "c37be84f4eb1cbeae913bddeb18a652741754f657886425a0ec4ffccd2c88a46",
+          "after_sha256": "60ff5653b9b9e3d03d306fbc76143c7cca5fcab69bcaf333f43abba39d21ff48"
+        }
+      ],
+      "appended_ids": []
+    },
+    "manual-reviews": {
+      "logical_records": 391,
+      "logical_sha256": "1f749a4ebc556c7449fe7a3a235a9fd104b992fb12cbb025df103939a7d70ca1",
+      "replacements": [],
+      "appended_ids": [
+        "MR-R10-VERSION-b94cdf6cc3b880dfa72c",
+        "MR-R10-VERSION-b952704b2b47004c66e2",
+        "MR-R10-VERSION-753a8d8fcae3ce587322",
+        "MR-R10-VERSION-96f5aa9a76c96df89252",
+        "MR-R10-VERSION-131f28e3c7ccaf25b6ec",
+        "MR-R10-VERSION-edd63da4e6cc7376a50c",
+        "MR-R10-VERSION-4d2c2c1e61caa585644c",
+        "MR-R10-VERSION-30c48c0935ab06d7017c",
+        "MR-R10-VERSION-043e62d8aeac0cd9393f",
+        "MR-R10-VERSION-0633149dcb0cde8bae6e",
+        "MR-R10-VERSION-6d500f489cf6b0378c40",
+        "MR-R10-VERSION-6afbe9305d2fefc8009e",
+        "MR-R10-VERSION-66f785a02b658dc19aa4",
+        "MR-R10-ABSTRACT-36112910",
+        "MR-R10-ABSTRACT-15145682",
+        "MR-R10-ABSTRACT-11090678"
+      ]
+    },
+    "queries": {
+      "logical_records": 1018,
+      "logical_sha256": "74dc91aaf5966744e1d3c083d06c33e68e50fb2b42a90824b18a050102971424",
+      "replacements": [],
+      "appended_ids": [
+        "Q-RUN10-P56-ABSTRACT-A1",
+        "Q-RUN10-VBIO-024703-A1",
+        "Q-RUN10-VBIO-589655-A1",
+        "Q-RUN10-VCR-001-005-A1",
+        "Q-RUN10-VCR-006-010-A1",
+        "Q-RUN10-VCR-011-013-A1",
+        "Q-RUN10-VEP-35048981-P1-A1",
+        "Q-RUN10-VEP-35139358-P1-A1",
+        "Q-RUN10-VEP-35158168-P1-A1",
+        "Q-RUN10-VEP-35525243-P1-A1",
+        "Q-RUN10-VEP-35793679-P1-A1",
+        "Q-RUN10-VEP-37128740-P1-A1",
+        "Q-RUN10-VEP-38096757-P1-A1",
+        "Q-RUN10-VEP-38181792-P1-A1",
+        "Q-RUN10-VEP-38228148-P1-A1",
+        "Q-RUN10-VEP-39293446-P1-A1",
+        "Q-RUN10-VEP-40312577-P1-A1",
+        "Q-RUN10-VEP-40533549-P1-A1",
+        "Q-RUN10-VEP-PPR837529-P1-A1",
+        "Q-RUN10-VTARGET-A1"
+      ]
+    },
+    "source-observations": {
+      "logical_records": 1019,
+      "logical_sha256": "89207c6c01992dc3024f74e647b2ab94df5a8d4d4601b5b99530aaafd1de1c2e",
+      "replacements": [],
+      "appended_ids": [
+        "OBS-Q-RUN10-P56-ABSTRACT-A1",
+        "OBS-Q-RUN10-VBIO-024703-A1",
+        "OBS-Q-RUN10-VBIO-589655-A1",
+        "OBS-Q-RUN10-VCR-001-005-A1",
+        "OBS-Q-RUN10-VCR-006-010-A1",
+        "OBS-Q-RUN10-VCR-011-013-A1",
+        "OBS-Q-RUN10-VEP-35048981-P1-A1",
+        "OBS-Q-RUN10-VEP-35139358-P1-A1",
+        "OBS-Q-RUN10-VEP-35158168-P1-A1",
+        "OBS-Q-RUN10-VEP-35525243-P1-A1",
+        "OBS-Q-RUN10-VEP-35793679-P1-A1",
+        "OBS-Q-RUN10-VEP-37128740-P1-A1",
+        "OBS-Q-RUN10-VEP-38096757-P1-A1",
+        "OBS-Q-RUN10-VEP-38181792-P1-A1",
+        "OBS-Q-RUN10-VEP-38228148-P1-A1",
+        "OBS-Q-RUN10-VEP-39293446-P1-A1",
+        "OBS-Q-RUN10-VEP-40312577-P1-A1",
+        "OBS-Q-RUN10-VEP-40533549-P1-A1",
+        "OBS-Q-RUN10-VEP-PPR837529-P1-A1",
+        "OBS-Q-RUN10-VTARGET-A1"
+      ]
+    },
+    "tasks": {
+      "logical_records": 201739,
+      "logical_sha256": "3c0fa5bc7e2da48a660c04e86d295972e3b583c691844a2f91ee33b8aca16cc3",
+      "replacements": [],
+      "appended_ids": [
+        "T-BIB-CITED-VERSION-b94cdf6cc3b880dfa7",
+        "T-BIB-CITED-VERSION-b952704b2b47004c66",
+        "T-BIB-CITED-VERSION-753a8d8fcae3ce5873",
+        "T-BIB-CITED-VERSION-96f5aa9a76c96df892",
+        "T-BIB-CITED-VERSION-131f28e3c7ccaf25b6",
+        "T-BIB-CITED-VERSION-edd63da4e6cc7376a5",
+        "T-BIB-CITED-VERSION-4d2c2c1e61caa58564",
+        "T-BIB-CITED-VERSION-30c48c0935ab06d701",
+        "T-BIB-CITED-VERSION-043e62d8aeac0cd939",
+        "T-BIB-CITED-VERSION-0633149dcb0cde8bae",
+        "T-BIB-CITED-VERSION-6d500f489cf6b0378c",
+        "T-BIB-CITED-VERSION-6afbe9305d2fefc800",
+        "T-BIB-CITED-VERSION-66f785a02b658dc19a",
+        "T-abstract-W-BIB-fabd58f4e448da4573",
+        "T-affiliations_projects-W-BIB-fabd58f4e448da4573",
+        "T-assessment-W-BIB-fabd58f4e448da4573",
+        "T-abstract-W-BIB-1f86ade079db96318d",
+        "T-affiliations_projects-W-BIB-1f86ade079db96318d",
+        "T-assessment-W-BIB-1f86ade079db96318d",
+        "T-abstract-W-BIB-84f993ae1d48cbb4c4",
+        "T-affiliations_projects-W-BIB-84f993ae1d48cbb4c4",
+        "T-assessment-W-BIB-84f993ae1d48cbb4c4",
+        "T-citations-W-D343f06a3bc764bf6"
+      ]
+    },
+    "versions": {
+      "logical_records": 5230,
+      "logical_sha256": "502247c2486fe64f41e693ea1ddab0fb300cb64e1e2b1bf7081085580940bf26",
+      "replacements": [],
+      "appended_ids": [
+        "V-R10-RAY-BIORXIV-2",
+        "V-R10-RAY-BIORXIV-3",
+        "V-R10-RAY-BIORXIV-4",
+        "V-R10-RAY-ELIFE-2"
+      ]
+    },
+    "works": {
+      "logical_records": 5177,
+      "logical_sha256": "5723840175b045de3e3f06b536c3c71b37ab9ba9720498557282e1200cd0603d",
+      "replacements": [
+        {
+          "id": "W-BIB-84f993ae1d48cbb4c4",
+          "before_sha256": "3c6753134441f325718c147c9735f210e89c581b54179fbd0f08d4efe9988d9a",
+          "after_sha256": "a840e0c03301f23ec8ea7e065d9e04b0638a8882fcda475f109f25a94e04c919"
+        },
+        {
+          "id": "W-BIB-1f86ade079db96318d",
+          "before_sha256": "d6c2b95f100e141fa8fff43620f6e85ac1bd72e562667ec9fb052bcbb8011036",
+          "after_sha256": "6f19a6c7c099c84488d851bbb7d86dfc75de127a3c5e32308cf9a1f2a62c1146"
+        },
+        {
+          "id": "W-BIB-fabd58f4e448da4573",
+          "before_sha256": "18a429628d790a169d5012bd1c7423ce4b5f4432c1b83f3f5193408a6d69a3a1",
+          "after_sha256": "fa34cd6b5d6dadc8a3d7d8b1393c69c5b2262281981aaabaffe2c1e099aafef6"
+        }
+      ],
+      "appended_ids": []
+    }
+  },
+  "checkpoint_status": "pending_validation"
+}

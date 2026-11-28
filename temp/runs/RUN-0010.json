@@ -27,8 +27,8 @@
     "manual_review_items": 200,
     "paid_spend": 0
   },
-  "external_requests_used": 19,
-  "manual_review_items_used": 13,
+  "external_requests_used": 118,
+  "manual_review_items_used": 16,
   "paid_spend": 0,
   "closure": false,
   "version_review_input": "temp/reports/RUN-0009-bibliographic-citation-versions.json",
