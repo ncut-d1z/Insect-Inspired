@@ -1,0 +1,815 @@
+{
+  "run_id": "RUN-0010",
+  "checkpoint_id": "CP-0011",
+  "scope_id": "SCOPE-0001",
+  "source_report": "temp/reports/RUN-0009-bibliographic-integration.json",
+  "source_report_sha256": "a14fc4de9953128e9be2ecdf72cc07347d5538e36951578d0a813b807f667ce8",
+  "source_array": "datasets.works.appended_ids",
+  "unresolved_dois": [
+    "10.1016/j.cub.2022.01.035",
+    "10.1242/jeb.243687",
+    "10.1016/j.conb.2022.01.001",
+    "10.1016/j.neuron.2022.04.008",
+    "10.1016/j.cub.2022.06.019",
+    "10.1093/genetics/iyad064",
+    "10.1016/j.conb.2023.102822",
+    "10.1016/j.cub.2023.12.020",
+    "10.1016/j.cub.2023.12.047",
+    "10.1101/2024.04.15.589655",
+    "10.1016/j.cell.2024.08.033",
+    "10.1038/s41593-025-01948-9",
+    "10.1038/s41586-025-09135-3"
+  ],
+  "worklist": [
+    {
+      "work_id": "W-BIB-ca21ac7ff1f6cd7861",
+      "work_key": "Chang2010",
+      "doi": "10.1073/pnas.0913209107",
+      "epmc": "MED:20375282",
+      "task_id": "T-references-W-BIB-ca21ac7ff1f6cd7861",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-b63469bc4186ebb137",
+      "work_key": "Bremmer2010",
+      "doi": "10.1007/s00221-009-1990-3",
+      "epmc": "MED:19727690",
+      "task_id": "T-references-W-BIB-b63469bc4186ebb137",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-24fe349eed368202e5",
+      "work_key": "Chen2011",
+      "doi": "10.1523/jneurosci.0395-11.2011",
+      "epmc": "MED:21849564",
+      "task_id": "T-references-W-BIB-24fe349eed368202e5",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-a1f5c34a6aeb7cce64",
+      "work_key": "Chen2013b",
+      "doi": "10.1523/jneurosci.2837-13.2013",
+      "epmc": "MED:24259579",
+      "task_id": "T-references-W-BIB-a1f5c34a6aeb7cce64",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-3d4eed5a151fc29f32",
+      "work_key": "Chen2014a",
+      "doi": "10.1152/jn.00057.2014",
+      "epmc": "MED:24790176",
+      "task_id": "T-references-W-BIB-3d4eed5a151fc29f32",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-23598869dffc246f3b",
+      "work_key": "Rosenberg2014",
+      "doi": "10.1523/jneurosci.2030-14.2014",
+      "epmc": "MED:25339732",
+      "task_id": "T-references-W-BIB-23598869dffc246f3b",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-afb1219262f976f47f",
+      "work_key": "Kaminiarz2014",
+      "doi": "10.1152/jn.00410.2014",
+      "epmc": "MED:25122709",
+      "task_id": "T-references-W-BIB-afb1219262f976f47f",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-e4591ac088dcd09fd6",
+      "work_key": "Kim2015a",
+      "doi": "10.1038/nn.3889",
+      "epmc": "MED:25436667",
+      "task_id": "T-references-W-BIB-e4591ac088dcd09fd6",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-e8d117c28e5ca08c26",
+      "work_key": "Freeman2000",
+      "doi": "10.3758/bf03212076",
+      "epmc": "MED:10997037",
+      "task_id": "T-references-W-BIB-e8d117c28e5ca08c26",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-84f993ae1d48cbb4c4",
+      "work_key": "Li2000",
+      "doi": "10.1016/s0042-6989(00)00196-6",
+      "epmc": "MED:11090678",
+      "task_id": "T-references-W-BIB-84f993ae1d48cbb4c4",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-61f2dbc2113887cb7e",
+      "work_key": "Crowell2001",
+      "doi": "10.1068/p3271",
+      "epmc": "MED:11817754",
+      "task_id": "T-references-W-BIB-61f2dbc2113887cb7e",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-bbbb2b49585134e281",
+      "work_key": "Li2002",
+      "doi": "10.1111/1467-9280.00486",
+      "epmc": "MED:12219819",
+      "task_id": "T-references-W-BIB-bbbb2b49585134e281",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-d839043938a578a2ca",
+      "work_key": "Shenoy2002",
+      "doi": "10.1152/jn.00002.2001",
+      "epmc": "MED:12424299",
+      "task_id": "T-references-W-BIB-d839043938a578a2ca",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-1f86ade079db96318d",
+      "work_key": "Li2004",
+      "doi": "10.1016/j.visres.2004.03.008",
+      "epmc": "MED:15145682",
+      "task_id": "T-references-W-BIB-1f86ade079db96318d",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-8b83a1177b626e7547",
+      "work_key": "Zhang2004",
+      "doi": "10.1016/j.neuron.2004.06.008",
+      "epmc": "MED:15207243",
+      "task_id": "T-references-W-BIB-8b83a1177b626e7547",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-57d85a760621fab7da",
+      "work_key": "Koenderink1981",
+      "doi": "10.1364/josa.71.000953",
+      "epmc": "MED:7264778",
+      "task_id": "T-references-W-BIB-57d85a760621fab7da",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-f85e98da86ec4fd398",
+      "work_key": "Probst1984",
+      "doi": "10.1126/science.6740325",
+      "epmc": "MED:6740325",
+      "task_id": "T-references-W-BIB-f85e98da86ec4fd398",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-020fa0f424d3ca818c",
+      "work_key": "Tanaka1986",
+      "doi": "10.1523/jneurosci.06-01-00134.1986",
+      "epmc": "MED:3944614",
+      "task_id": "T-references-W-BIB-020fa0f424d3ca818c",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-44e02ee7f4fa1d6218",
+      "work_key": "Wallach1987",
+      "doi": "10.1146/annurev.ps.38.020187.000245",
+      "epmc": "MED:3548572",
+      "task_id": "T-references-W-BIB-44e02ee7f4fa1d6218",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-236027dbc9576f5875",
+      "work_key": "Warren1988a",
+      "doi": "10.1037//0096-1523.14.4.646",
+      "epmc": "MED:2974874",
+      "task_id": "T-references-W-BIB-236027dbc9576f5875",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-31f0835f20bd7e2e5e",
+      "work_key": "Warren1990",
+      "doi": "10.1364/josaa.7.000160",
+      "epmc": "MED:2299447",
+      "task_id": "T-references-W-BIB-31f0835f20bd7e2e5e",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-fc25ebf47f5f42e58a",
+      "work_key": "Li1992",
+      "doi": "10.1111/j.1749-6632.1992.tb25277.x",
+      "epmc": "MED:1599203",
+      "task_id": "T-references-W-BIB-fc25ebf47f5f42e58a",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-8307e21de1fb8006f2",
+      "work_key": "Gellman1992",
+      "doi": "10.1007/bf00228258",
+      "epmc": "MED:1623984",
+      "task_id": "T-references-W-BIB-8307e21de1fb8006f2",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-13dd7a3af08545b224",
+      "work_key": "Royden1992",
+      "doi": "10.1038/360583a0",
+      "epmc": "MED:1461280",
+      "task_id": "T-references-W-BIB-13dd7a3af08545b224",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-c9cd6828aef1cc0d8b",
+      "work_key": "Colby1993",
+      "doi": "10.1152/jn.1993.69.3.902",
+      "epmc": "MED:8385201",
+      "task_id": "T-references-W-BIB-c9cd6828aef1cc0d8b",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-77d75988c21ff116a0",
+      "work_key": "van_den_Berg1994",
+      "doi": "10.1038/371700a0",
+      "epmc": "MED:7935814",
+      "task_id": "T-references-W-BIB-77d75988c21ff116a0",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-7caa96b0f3cc462db2",
+      "work_key": "Royden1994",
+      "doi": "10.1016/0042-6989(94)90085-x",
+      "epmc": "MED:7975352",
+      "task_id": "T-references-W-BIB-7caa96b0f3cc462db2",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-f2f7cad876b410f37f",
+      "work_key": "Banks1996",
+      "doi": "10.1016/0042-6989(95)00122-0",
+      "epmc": "MED:8746233",
+      "task_id": "T-references-W-BIB-f2f7cad876b410f37f",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-aeb2e1352edd264566",
+      "work_key": "Bradley1996",
+      "doi": "10.1126/science.273.5281.1544",
+      "epmc": "MED:8703215",
+      "task_id": "T-references-W-BIB-aeb2e1352edd264566",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-3d5658fca9f081cea6",
+      "work_key": "Squatrito1997",
+      "doi": "10.1523/jneurosci.17-10-03847.1997",
+      "epmc": "MED:9133403",
+      "task_id": "T-references-W-BIB-3d5658fca9f081cea6",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-b9d3498756b17122da",
+      "work_key": "Andersen1997",
+      "doi": "10.1016/s0896-6273(00)80326-8",
+      "epmc": "MED:9208854",
+      "task_id": "T-references-W-BIB-b9d3498756b17122da",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-8aa31830ffd2b2b5e5",
+      "work_key": "Duhamel1997",
+      "doi": "10.1038/39865",
+      "epmc": "MED:9349815",
+      "task_id": "T-references-W-BIB-8aa31830ffd2b2b5e5",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-2d3f1ff2184e0172c7",
+      "work_key": "Duhamel1998",
+      "doi": "10.1152/jn.1998.79.1.126",
+      "epmc": "MED:9425183",
+      "task_id": "T-references-W-BIB-2d3f1ff2184e0172c7",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-b7e5c69a84efd24224",
+      "work_key": "Swindale1998",
+      "doi": "10.1007/s004220050411",
+      "epmc": "MED:9518026",
+      "task_id": "T-references-W-BIB-b7e5c69a84efd24224",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-a9fe4fd9aea4be55aa",
+      "work_key": "Lewis1998a",
+      "doi": "10.1152/jn.1998.80.3.1605",
+      "epmc": "MED:9744968",
+      "task_id": "T-references-W-BIB-a9fe4fd9aea4be55aa",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-120d652cd1937f0510",
+      "work_key": "Page1999",
+      "doi": "10.1152/jn.1999.81.2.596",
+      "epmc": "MED:10036263",
+      "task_id": "T-references-W-BIB-120d652cd1937f0510",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-53da9595b5aea0d037",
+      "work_key": "Crowell1998",
+      "doi": "10.1038/3732",
+      "epmc": "MED:10196591",
+      "task_id": "T-references-W-BIB-53da9595b5aea0d037",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-bddb3269e120c99314",
+      "work_key": "Shenoy1999",
+      "doi": "10.1152/jn.1999.81.6.2764",
+      "epmc": "MED:10368396",
+      "task_id": "T-references-W-BIB-bddb3269e120c99314",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-77325bedd0b0f5cad0",
+      "work_key": "Grigo1999",
+      "doi": "10.1364/josaa.16.002079",
+      "epmc": "MED:10474889",
+      "task_id": "T-references-W-BIB-77325bedd0b0f5cad0",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-beb2a777e5387f91fd",
+      "work_key": "Freeman1999",
+      "doi": "10.1016/s0042-6989(98)00293-4",
+      "epmc": "MED:10492828",
+      "task_id": "T-references-W-BIB-beb2a777e5387f91fd",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-043e6eb9418a5f380e",
+      "work_key": "Cullen2004",
+      "doi": "10.1016/j.conb.2004.10.002",
+      "epmc": "MED:15582371",
+      "task_id": "T-references-W-BIB-043e6eb9418a5f380e",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-be0980ce6cc1cd3f65",
+      "work_key": "Klier2005",
+      "doi": "10.1152/jn.00700.2004",
+      "epmc": "MED:15716372",
+      "task_id": "T-references-W-BIB-be0980ce6cc1cd3f65",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-3f982c02fdf4b4a611",
+      "work_key": "Gu2006",
+      "doi": "10.1523/jneurosci.2356-05.2006",
+      "epmc": "MED:16399674",
+      "task_id": "T-references-W-BIB-3f982c02fdf4b4a611",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-b864da046029a7476e",
+      "work_key": "Royden2006",
+      "doi": "10.3758/bf03193668",
+      "epmc": "MED:16773892",
+      "task_id": "T-references-W-BIB-b864da046029a7476e",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-71d15603934c639bd5",
+      "work_key": "Fetsch2007",
+      "doi": "10.1523/jneurosci.3553-06.2007",
+      "epmc": "MED:17234602",
+      "task_id": "T-references-W-BIB-71d15603934c639bd5",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-987280614feb03d2a7",
+      "work_key": "Takahashi2007",
+      "doi": "10.1523/jneurosci.0817-07.2007",
+      "epmc": "MED:17804635",
+      "task_id": "T-references-W-BIB-987280614feb03d2a7",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-c66f3aea4d8fa5bfd6",
+      "work_key": "MulletteGillman2009",
+      "doi": "10.1093/cercor/bhn207",
+      "epmc": "MED:19068491",
+      "task_id": "T-references-W-BIB-c66f3aea4d8fa5bfd6",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-1ba11f5ff1a74bb7ec",
+      "work_key": "Gu2010",
+      "doi": "10.1016/j.neuron.2010.04.026",
+      "epmc": "MED:20510863",
+      "task_id": "T-references-W-BIB-1ba11f5ff1a74bb7ec",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-0811db9558dea79029",
+      "work_key": "Lanz2026",
+      "doi": "10.1038/s41586-026-11144-9",
+      "epmc": "MED:42844464",
+      "task_id": "T-references-W-BIB-0811db9558dea79029",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-b7a107f8b65f04e12a",
+      "work_key": "Freas2026",
+      "doi": "10.7554/elife.110165",
+      "epmc": "MED:42836771",
+      "task_id": "T-references-W-BIB-b7a107f8b65f04e12a",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-11bb2ebf4dcdf106a6",
+      "work_key": "Kyllmann2026",
+      "doi": "10.3389/fnins.2026.1911198",
+      "epmc": "MED:42871902",
+      "task_id": "T-references-W-BIB-11bb2ebf4dcdf106a6",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-564a46d0a121dcbbf5",
+      "work_key": "Cheong2026",
+      "doi": "10.7554/elife.96084",
+      "epmc": "MED:42474298",
+      "task_id": "T-references-W-BIB-564a46d0a121dcbbf5",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-96ed0b0bbced9d4be9",
+      "work_key": "Maimon2026",
+      "doi": "10.1146/annurev-neuro-112723-062711",
+      "epmc": "MED:42420168",
+      "task_id": "T-references-W-BIB-96ed0b0bbced9d4be9",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-39975d3a8d06e5608d",
+      "work_key": "Dallmann2025",
+      "doi": "10.1038/s41586-025-09554-2",
+      "epmc": "MED:40963018",
+      "task_id": "T-references-W-BIB-39975d3a8d06e5608d",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-83c3632c94e927cc2c",
+      "work_key": "Basnak2025",
+      "doi": "10.1038/s41593-024-01823-z",
+      "epmc": "MED:40702322",
+      "task_id": "T-references-W-BIB-83c3632c94e927cc2c",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-f6f0619e40377b8244",
+      "work_key": "Sturner2025",
+      "doi": "10.1038/s41586-025-08925-z",
+      "epmc": "MED:40307549",
+      "task_id": "T-references-W-BIB-f6f0619e40377b8244",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-0020574552d73fde30",
+      "work_key": "Gattuso2025",
+      "doi": "10.1073/pnas.2407626122",
+      "epmc": "MED:40244663",
+      "task_id": "T-references-W-BIB-0020574552d73fde30",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-603d8d2624ff22d11f",
+      "work_key": "Jahn2024",
+      "doi": "10.1002/cne.70009",
+      "epmc": "MED:39658819",
+      "task_id": "T-references-W-BIB-603d8d2624ff22d11f",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-520573ce24cd86ba50",
+      "work_key": "Sapkal2024",
+      "doi": "10.1038/s41586-024-07854-7",
+      "epmc": "MED:39358520",
+      "task_id": "T-references-W-BIB-520573ce24cd86ba50",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-4d2ce81bb054a5d7aa",
+      "work_key": "Yang2024",
+      "doi": "10.1016/j.cell.2024.08.033",
+      "epmc": "MED:39293446",
+      "task_id": "T-references-W-BIB-4d2ce81bb054a5d7aa",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-a3f7c80953d22f5f06",
+      "work_key": "Gattuso2024",
+      "doi": "10.1101/2024.04.15.589655",
+      "epmc": "PPR:PPR837529",
+      "task_id": "T-references-W-BIB-a3f7c80953d22f5f06",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-d67e04f4c45bea3b16",
+      "work_key": "Westeinde2024",
+      "doi": "10.1038/s41586-024-07039-2",
+      "epmc": "MED:38326621",
+      "task_id": "T-references-W-BIB-d67e04f4c45bea3b16",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-e290fafda61be9582b",
+      "work_key": "Ros2024",
+      "doi": "10.1016/j.cub.2023.12.047",
+      "epmc": "MED:38228148",
+      "task_id": "T-references-W-BIB-e290fafda61be9582b",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-3511fabfdc2d5c5f5e",
+      "work_key": "Hamid2024",
+      "doi": "10.1016/j.cub.2023.12.020",
+      "epmc": "MED:38181792",
+      "task_id": "T-references-W-BIB-3511fabfdc2d5c5f5e",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-1e06bd6d35f6893fdb",
+      "work_key": "Simpson2024",
+      "doi": "10.1016/j.conb.2023.102822",
+      "epmc": "MED:38096757",
+      "task_id": "T-references-W-BIB-1e06bd6d35f6893fdb",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-b60c0a3566221f8c05",
+      "work_key": "Chen2023a",
+      "doi": "10.1038/s41593-023-01281-z",
+      "epmc": "MED:36959417",
+      "task_id": "T-references-W-BIB-b60c0a3566221f8c05",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-86433a128341d7bddd",
+      "work_key": "Kandimalla2023",
+      "doi": "10.1007/s00359-023-01616-y",
+      "epmc": "MED:36932234",
+      "task_id": "T-references-W-BIB-86433a128341d7bddd",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-a1ce976ae9ca7b0f05",
+      "work_key": "Steele2023",
+      "doi": "10.1007/s00359-022-01611-9",
+      "epmc": "MED:36658447",
+      "task_id": "T-references-W-BIB-a1ce976ae9ca7b0f05",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-b63ed93c3a381a9671",
+      "work_key": "Homberg2023",
+      "doi": "10.1007/s00359-022-01601-x",
+      "epmc": "MED:36550368",
+      "task_id": "T-references-W-BIB-b63ed93c3a381a9671",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-28a4f12aa99254af45",
+      "work_key": "Fisher2022",
+      "doi": "10.1038/s41586-022-05485-4",
+      "epmc": "MED:36450986",
+      "task_id": "T-references-W-BIB-28a4f12aa99254af45",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-fabd58f4e448da4573",
+      "work_key": "Adden2022",
+      "doi": "10.1162/neco_a_01540",
+      "epmc": "MED:36112910",
+      "task_id": "T-references-W-BIB-fabd58f4e448da4573",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-cc7a4e7f9c113e78c6",
+      "work_key": "Matheson2022",
+      "doi": "10.1038/s41467-022-32247-7",
+      "epmc": "MED:35941114",
+      "task_id": "T-references-W-BIB-cc7a4e7f9c113e78c6",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-b9ce2ce35a1beaccce",
+      "work_key": "Takahashi2022",
+      "doi": "10.1242/jeb.243858",
+      "epmc": "MED:35048987",
+      "task_id": "T-references-W-BIB-b9ce2ce35a1beaccce",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-fe8f7fff90699013f3",
+      "work_key": "Goncalves2022",
+      "doi": "10.1016/j.conb.2022.01.001",
+      "epmc": "MED:35158168",
+      "task_id": "T-references-W-BIB-fe8f7fff90699013f3",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-88fa915acb1694e0a5",
+      "work_key": "Franzke2022",
+      "doi": "10.1242/jeb.243687",
+      "epmc": "MED:35048981",
+      "task_id": "T-references-W-BIB-88fa915acb1694e0a5",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-e7eb323311e2131026",
+      "work_key": "Israel2022",
+      "doi": "10.1016/j.cub.2022.01.035",
+      "epmc": "MED:35139358",
+      "task_id": "T-references-W-BIB-e7eb323311e2131026",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-55f297f134ea45aed4",
+      "work_key": "Sayre2021",
+      "doi": "10.7554/elife.68911",
+      "epmc": "MED:34523418",
+      "task_id": "T-references-W-BIB-55f297f134ea45aed4",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-8a231eb715c18ce430",
+      "work_key": "Hindmarsh_Sten2021",
+      "doi": "10.1038/s41586-021-03714-w",
+      "epmc": "MED:34234348",
+      "task_id": "T-references-W-BIB-8a231eb715c18ce430",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    },
+    {
+      "work_id": "W-BIB-cfb513c938d5ce9ba3",
+      "work_key": "Schretter2020",
+      "doi": "10.7554/elife.58942",
+      "epmc": "MED:33141021",
+      "task_id": "T-references-W-BIB-cfb513c938d5ce9ba3",
+      "prior_cursor": null,
+      "prior_state": "pending",
+      "prior_event": 1
+    }
+  ]
+}
