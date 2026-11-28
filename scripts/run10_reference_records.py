@@ -61,6 +61,8 @@ def existing():
             idmap[ident].add(wid)
     for filename in ("versions.jsonl","aliases.jsonl"):
         for r in iter_logical(filename,TEMP):
+            if r.get("verification_status") in {"conflicting","rejected"}:
+                continue
             wid=r.get("work_id") or (r.get("target_id") if r.get("entity_type")=="work" else None)
             if wid in works:
                 for ident in identifiers(r):
@@ -145,7 +147,7 @@ def ep_metadata(item):
                 abstract_sha256=r.get("abstract_sha256"),source_identifier=r["source"]+":"+str(r["id"]))
 
 
-def request_identities(group, provider, owners):
+def request_identities(group, provider, owners, requester=fetch):
     key="ID-"+{"crossref":"CR","openalex":"OA","europepmc":"EP"}[provider]+"-"+token(*group)
     if provider=="crossref":
         params={"filter":",".join("doi:"+d for d in group),"rows":len(group)}
@@ -192,7 +194,7 @@ def request_identities(group, provider, owners):
             raise ValueError("Identifier lookup did not reconcile")
         return dict(records=rows,visible_total=n,returned_count=len(rows),page_complete=True,
                     requested_identifiers=group,missing_identifiers=sorted(set(group)-set(returned)))
-    return fetch(key,provider,endpoint,params,owners,"Resolve a reference-list identifier and recover its bibliographic fields.",verified)
+    return requester(key,provider,endpoint,params,owners,"Resolve a reference-list identifier and recover its bibliographic fields.",verified)
 
 
 def hydrate(queue,provider,folder=OUT,limit=None):
