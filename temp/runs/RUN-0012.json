@@ -1,0 +1,55 @@
+{
+  "run_id": "RUN-0012",
+  "scope_id": "SCOPE-0001",
+  "started_at_utc": "2026-11-28T18:32:44Z",
+  "authorization": "继续推进 P3–P6，改善检索速度，保留书目、摘要及参考文献范围并小批 Git 同步。",
+  "start_checkpoint_id": "CP-0012",
+  "recovered_checkpoint_id": "CP-0013",
+  "recovered_checkpoint_status": "invalid",
+  "target_checkpoint_id": "CP-0014",
+  "start_commit_sha": "821bad8c7f9c97fc8375d9dc9171ef46c23bbe3e",
+  "start_tree": "5b2f6cc7c07c822890d2b12b4e6b66581d6a53b2",
+  "remote_data_commit": "ef9c064118b46ef4fcae5e43aa24f8fae3ed22d9",
+  "start_sync_receipt": "temp/validation/cp13-post-push.json",
+  "source_frontier": "temp/reports/RUN-0011-frontier-after-CP12.json",
+  "source_frontier_sha256": "64fecccd1591f600583c94117caa366d46ba69c25dae7cf116dd4a8b5483a790",
+  "queue_count": 47775,
+  "first_key": "TempWR11800bb4dbf1d483d625c6",
+  "known_parent_identifier_counts": {
+    "doi": 47269,
+    "openalex": 7093,
+    "epmc": 7012
+  },
+  "budget": {
+    "external_requests": 2000,
+    "manual_review_items": 200,
+    "paid_spend": 0,
+    "wall_clock_hours": 6
+  },
+  "research_cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "source_limits": {
+    "per_provider_concurrency": 1,
+    "crossref_lookup_requests_per_second": 1,
+    "crossref_list_requests_per_second": 1,
+    "response_timeout_seconds": 25,
+    "retry_policy": "Retry-After if provided; otherwise bounded backoff 2/5/15 seconds, then retryable_error. Do not repeat exhausted daily quota in this run."
+  },
+  "read_scope": [
+    "bibliographic_metadata",
+    "abstracts",
+    "reference_lists"
+  ],
+  "status": "running",
+  "closure": false,
+  "initial_deadline_check": {
+    "field_states": {
+      "unknown": 260389,
+      "unknown_review_required": 65391
+    },
+    "next_deadline_utc": "2026-11-29T03:35:35Z",
+    "open_tasks": 325435,
+    "overdue_open_tasks": 65046,
+    "unupgraded_overdue_tasks": 0
+  },
+  "recorded_at_utc": "2026-11-28T18:36:13.984547Z"
+}

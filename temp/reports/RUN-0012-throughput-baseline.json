@@ -1,0 +1,39 @@
+{
+  "run_id": "RUN-0011",
+  "start": "2026-11-28T12:20:02.140263Z",
+  "canonical_watermark": "2026-11-28T17:16:08.520692Z",
+  "formal_seal": "2026-11-28T18:20:30.577807Z",
+  "seconds_until_canonical_watermark": 17766.38,
+  "seconds_from_watermark_to_seal": 3862.057,
+  "seconds_to_seal": 21628.438,
+  "first_recorded_source_time": "2026-11-28T12:22:28.903140Z",
+  "last_recorded_source_time": "2026-11-28T16:18:01.124398Z",
+  "native_commits": 494,
+  "parents": 2620,
+  "parents_with_visible_entries": 2450,
+  "positions": 141610,
+  "requests": {
+    "crossref": 573,
+    "europepmc": 234,
+    "openalex": 921,
+    "publisher": 62,
+    "semantic_scholar": 4,
+    "ror": 8
+  },
+  "total_requests": 1802,
+  "affected_receipt_rechecks": 81,
+  "overlapping_source_windows": 62,
+  "audit_elapsed_seconds": 1915.662,
+  "bibtex_failing_keys": [
+    "Beckingham2005",
+    "Bullmore2004",
+    "Covich1994",
+    "Friesen1976",
+    "Glasauer_Marianne_Dieterich_Thoma2001",
+    "Hummel1999",
+    "Olivier1990",
+    "Sombke2011b",
+    "TempWR1115b69d3212924d70676c"
+  ],
+  "interval_note": "Wall intervals include overlapping retrieval, integration, Git and QA; they are not exclusive CPU or network times."
+}
