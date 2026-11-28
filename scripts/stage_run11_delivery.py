@@ -20,8 +20,11 @@ def groups(source, kind):
         if not fixed <= inventory.keys() or not all(k in fixed or k.startswith(CP + "/") for k in inventory):
             raise ValueError("Unexpected checkpoint inventory")
     else:
-        det = json.loads((source.parent / "determinism.json").read_bytes())
-        if det["status"] != "passed" or det["checkpoint_id"] != "CP-0013":
+        first_only = kind == "export-parts"
+        proof = "first-files.json" if first_only else "determinism.json"
+        expected = "first_generation" if first_only else "passed"
+        det = json.loads((source.parent / proof).read_bytes())
+        if det["status"] != expected or det["checkpoint_id"] != "CP-0013":
             raise ValueError("Unverified export")
         inventory = det["artifacts"]
         if not set(EXPORTS) <= inventory.keys() or not all(k in EXPORTS or k.startswith(tuple(v+"/" for v in VIEWS)) for k in inventory):
@@ -30,8 +33,8 @@ def groups(source, kind):
     blocks, batch, mass = [], [], 0
     for k in parts:
         n = inventory[k]["bytes"]
-        if not 0 < n <= 2*1024*1024:
-            raise ValueError("Unexpected JSON part size " + k)
+        if not 0 < n <= 2*1024*1024 or not k.endswith("-" + inventory[k]["sha256"] + ".json"):
+            raise ValueError("Invalid JSON part size or content-addressed filename " + k)
         if batch and mass + n > 12*1024*1024:
             blocks.append(batch)
             batch, mass = [], 0
@@ -39,6 +42,9 @@ def groups(source, kind):
         mass += n
     if batch:
         blocks.append(batch)
+    if kind == "export-parts":
+        # These files have no public effect until the independently reproduced indices are activated.
+        return {k: inventory[k] for k in parts}, blocks
     remaining = sorted(inventory.keys()-set(parts))
     if kind == "candidate":
         blocks.append(remaining)
@@ -79,7 +85,7 @@ def install(repo, source, inventory, group):
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("action", choices=("plan","install","stage"))
-    p.add_argument("--kind", choices=("candidate","exports"), required=True)
+    p.add_argument("--kind", choices=("candidate","export-parts","exports"), required=True)
     p.add_argument("--source", type=Path, required=True)
     p.add_argument("--repo", type=Path, default=Path.cwd())
     p.add_argument("--group", type=int)

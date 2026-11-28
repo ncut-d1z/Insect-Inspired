@@ -104,7 +104,10 @@ def exports(output):
     candidate=read(ROOT/CANDIDATE)
     require(candidate["status"]=="invalid" and candidate["parent_checkpoint_id"]=="CP-0012","Expected CP13 validation candidate")
     ch=digest(ROOT/CANDIDATE);first=output/"first";second=output/"independent"
-    a=generate(first,CP);b=generate(second,CP)
+    a=generate(first,CP)
+    require(all(0<v["bytes"]<100*1024**2 for v in a.values()),"A generated export exceeds the ordinary Git file limit")
+    put(output/"first-files.json",encode(dict(status="first_generation",checkpoint_id=CP,candidate_sha256=ch,artifacts=a))+b"\n")
+    b=generate(second,CP)
     require(a==b and all(0<v["bytes"]<100*1024**2 for v in a.values()),"Export files differ or exceed GitHub's Git object limit")
     for k in ("research_entities.json","citation_graph.json"):
         f=Path("temp/exports")/k
