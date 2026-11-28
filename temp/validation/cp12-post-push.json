@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checkpoint_id": "CP-0012",
+  "verified_at_utc": "2026-11-28T11:04:45.528969Z",
+  "verified_remote": "https://github.com/ncut-d1z/Insect-Inspired.git",
+  "branch": "main",
+  "transport": "Independent native Git HTTPS fetch into a separate bare object store; no alternates.",
+  "commit": "473466faff6b95c3e127e78a5eaca77af8054004",
+  "tree": "8e5abb68471579146422f366b71fa28b89da68b9",
+  "checkpoint_sha256": "4ef2ec2c2ba4132afa1281e9dd588dabcd843e82a9c6136bad41e2809d78e3a3",
+  "previous_checkpoint_blobs_unchanged": 11,
+  "old_reports_queries_runs_and_validation_files_changed": 0,
+  "checked_artifact_hashes": 1864,
+  "checked_artifact_bytes": 1693411769,
+  "recursive_frontier": "temp/reports/RUN-0010-frontier-after-recursive-24.json",
+  "remote_readback_complete": true
+}
