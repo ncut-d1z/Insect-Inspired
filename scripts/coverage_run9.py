@@ -122,6 +122,6 @@ def collect():
                        "identity_confidence":dict(Counter(w["identity_confidence"] for w in rows("works")))},
         pagination={"source_rows":totals["source-list-coverage"],"fully_reconciled_by_source":dict(Counter(r["source_id"] for r in rows("source-list-coverage") if r["total_reconciled"])),
                     "run9_new_complete_citing_lists_at_europepmc":1},citation_version_screen=version_review["counts"],
-        reading_policy=read("temp/reports/RUN-0009-bibliography-roadmap.json")["allowed_publication_materials"],
+        reading_policy={"allowed_materials":read("temp/reports/RUN-0009-bibliography-roadmap.json")["allowed_publication_materials"]},
         synchronization={"status_at_freeze":"pending_post_commit_readback"})
     return counts, coverage, cursor, unresolved

@@ -1,0 +1,242 @@
+{
+  "status": "passed",
+  "baseline_commit": "5f2181b0e5a91bcafde2a3f19eb526668934a80e",
+  "baseline_tree": "53463d7daa180a82199ab56281afe411f8e61e7b",
+  "old_records_lost": 0,
+  "historical_files_verified": 1266,
+  "logical_datasets": {
+    "aliases": {
+      "old_rows": 258,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 80,
+      "added_deadline_events": 0
+    },
+    "assessments": {
+      "old_rows": 72,
+      "research_modified": 0,
+      "maintenance_only_transitions": 1,
+      "added_records": 1,
+      "added_deadline_events": 0
+    },
+    "author-publication-leads": {
+      "old_rows": 3811,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "authors": {
+      "old_rows": 20635,
+      "research_modified": 0,
+      "maintenance_only_transitions": 5121,
+      "added_records": 283,
+      "added_deadline_events": 0
+    },
+    "cascade-events": {
+      "old_rows": 0,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "citation-context-audit": {
+      "old_rows": 32,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 4,
+      "added_deadline_events": 0
+    },
+    "citation-edges": {
+      "old_rows": 31843,
+      "research_modified": 13,
+      "maintenance_only_transitions": 0,
+      "added_records": 89,
+      "added_deadline_events": 0
+    },
+    "discovery-paths": {
+      "old_rows": 40595,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 79,
+      "added_deadline_events": 0
+    },
+    "fulltext-file-audit": {
+      "old_rows": 27,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "identity-conflicts": {
+      "old_rows": 72,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "institution-project-leads": {
+      "old_rows": 2,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "manual-reviews": {
+      "old_rows": 362,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 13,
+      "added_deadline_events": 0
+    },
+    "merged-work-audit": {
+      "old_rows": 42,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "new-fulltext-reference-audit": {
+      "old_rows": 1193,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "official-person-review-facts": {
+      "old_rows": 8,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "organizations": {
+      "old_rows": 1415,
+      "research_modified": 0,
+      "maintenance_only_transitions": 110,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "privacy-redactions": {
+      "old_rows": 3,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 1,
+      "added_deadline_events": 0
+    },
+    "project-relations": {
+      "old_rows": 49,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 1,
+      "added_deadline_events": 0
+    },
+    "projects": {
+      "old_rows": 7,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 1,
+      "added_deadline_events": 0
+    },
+    "queries": {
+      "old_rows": 974,
+      "research_modified": 0,
+      "maintenance_only_transitions": 299,
+      "added_records": 24,
+      "added_deadline_events": 0
+    },
+    "reference-coverage": {
+      "old_rows": 2381,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "reference-occurrences": {
+      "old_rows": 158544,
+      "research_modified": 4,
+      "maintenance_only_transitions": 0,
+      "added_records": 55,
+      "added_deadline_events": 0
+    },
+    "scope-exclusions": {
+      "old_rows": 1,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "seed-manifest": {
+      "old_rows": 20,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "source-list-coverage": {
+      "old_rows": 96,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 2,
+      "added_deadline_events": 0
+    },
+    "source-observations": {
+      "old_rows": 975,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 24,
+      "added_deadline_events": 0
+    },
+    "tasks": {
+      "old_rows": 185050,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 1143,
+      "added_deadline_events": 15502
+    },
+    "uploads": {
+      "old_rows": 24,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "versions": {
+      "old_rows": 5147,
+      "research_modified": 1,
+      "maintenance_only_transitions": 7,
+      "added_records": 79,
+      "added_deadline_events": 0
+    },
+    "work-merge-events": {
+      "old_rows": 42,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "work-relations": {
+      "old_rows": 4,
+      "research_modified": 0,
+      "maintenance_only_transitions": 0,
+      "added_records": 0,
+      "added_deadline_events": 0
+    },
+    "works": {
+      "old_rows": 5098,
+      "research_modified": 3,
+      "maintenance_only_transitions": 1041,
+      "added_records": 79,
+      "added_deadline_events": 0
+    }
+  },
+  "totals": {
+    "old_rows": 458782,
+    "research_modified": 21,
+    "maintenance_only_transitions": 6579,
+    "added_records": 1958,
+    "added_deadline_events": 15502
+  },
+  "scientific_baseline_rows": 72,
+  "old_reference_strings_preserved": true
+}
