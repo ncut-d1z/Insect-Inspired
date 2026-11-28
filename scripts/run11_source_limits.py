@@ -9,9 +9,9 @@ import time
 from search_run10_references import OUT, ROOT
 
 
-def private_directory():
+def private_directory(run_id="RUN-0011"):
     value=subprocess.check_output(["git","-C",str(ROOT),"rev-parse","--path-format=absolute","--git-common-dir"],text=True).strip()
-    directory=Path(value)/"RUN-0011-source-control"
+    directory=Path(value)/(run_id+"-source-control")
     directory.mkdir(exist_ok=True)
     return directory
 
@@ -39,10 +39,17 @@ def locked(path):
 
 @contextmanager
 def source_slot(source,file,run):
-    private=private_directory()
+    run_id=run["run_id"]
+    query_prefix="Q-RUN"+str(int(run_id.rsplit("-",1)[1]))+"-"
+    private=private_directory(run_id)
     with locked(private/(source+".lock")):
-        if (private.parent/"RUN-0011-sync-halt").exists():
+        if (private.parent/(run_id+"-sync-halt")).exists():
             raise RuntimeError("Earlier Git synchronization requires recovery")
+        if file.is_file():
+            yield None
+            return
+        if (private/(source+".quota")).exists():
+            raise RuntimeError(source+" daily quota previously exhausted")
         delay=private/(source+".next")
         if delay.exists():
             left=float(delay.read_text())-time.time()
@@ -50,7 +57,7 @@ def source_slot(source,file,run):
             if left>0:time.sleep(left)
         reservation=private/(file.stem+".inflight")
         with locked(private/"budget.lock"):
-            saved={p.stem for p in OUT.glob("Q-RUN11-*.json")}
+            saved={p.stem for p in OUT.glob(query_prefix+"*.json")}
             inflight={p.stem for p in private.glob("*.inflight")}-saved
             if file.stem in inflight:raise RuntimeError("Interrupted source request requires reconciliation: "+file.stem)
             if len(saved|inflight)>=run["budget"]["external_requests"]:raise RuntimeError("Source request budget reached")

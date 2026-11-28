@@ -53,10 +53,12 @@ def frozen_titles():
     return {r["work_id"]:r["titles"] for r in read(path)["items"]}
 
 
-def request(key, source, endpoint, parameters, owners, why, project, page=1, decode=json.loads, accept="application/json", open_url=urlopen):
+def request(key, source, endpoint, parameters, owners, why, project, page=1, decode=json.loads, accept="application/json", open_url=urlopen, *, run_id=RUN, checkpoint=CP):
+    state = TEMP / "runs" / (run_id + ".json")
+    prefix = "Q-RUN" + str(int(run_id.rsplit("-", 1)[1])) + "-"
     url = endpoint + ("?" + urlencode(parameters) if parameters else "")
     for attempt in range(1, 5):
-        file = OUT / f"Q-RUN11-{key}-A{attempt}.json"
+        file = OUT / f"{prefix}{key}-A{attempt}.json"
         if file.exists():
             saved = read(file)
             if saved["endpoint_or_url"] != url or saved["owners"] != owners:
@@ -64,13 +66,18 @@ def request(key, source, endpoint, parameters, owners, why, project, page=1, dec
             if saved["status"] == "success" or not saved.get("retryable") or saved.get("deferred") or attempt == 4:
                 return saved
             continue
-        run = read(STATE)
+        run = read(state)
         if (datetime.now(timezone.utc)-datetime.fromisoformat(run["started_at_utc"])).total_seconds() >= run["budget"]["wall_clock_hours"]*3600:
             raise RuntimeError("Run clock budget reached")
-        if sum(1 for _ in OUT.glob("Q-RUN11-*.json")) >= run["budget"]["external_requests"]:
+        if sum(1 for _ in OUT.glob(prefix+"*.json")) >= run["budget"]["external_requests"]:
             raise RuntimeError("Run source request budget reached")
         with source_slot(source,file,run) as provider_delay:
-            entry = dict(query_id=file.stem,run_id=RUN,scope_id=SCOPE,target_checkpoint=CP,source_id=source,
+            if provider_delay is None:
+                saved=read(file)
+                if saved["endpoint_or_url"]!=url or saved["owners"]!=owners:raise ValueError("Concurrent query key collision")
+                if saved["status"]=="success" or not saved.get("retryable") or saved.get("deferred") or attempt==4:return saved
+                continue
+            entry = dict(query_id=file.stem,run_id=run_id,scope_id=SCOPE,target_checkpoint=checkpoint,source_id=source,
                          requested_at_utc=stamp(),endpoint_or_url=url,parameters=parameters,page_index=page,owners=owners,
                          reason=why,external_request_count=1,attempt=attempt,status="error",http_status=None,retryable=False,
                          execution_limits={"per_provider_concurrency":1,"timeout_seconds":25,"retry_backoff_seconds":[2,5,15]})
@@ -91,6 +98,10 @@ def request(key, source, endpoint, parameters, owners, why, project, page=1, dec
                 if detail:
                     entry["error_response_sha256"]=hashlib.sha256(detail).hexdigest()
                     entry["error_response_prefix"]=detail.decode("utf-8",errors="replace")[:2600]
+                error_text=entry.get("error_response_prefix","").lower()
+                if exc.code in (403,429) and any(k in error_text for k in ("daily_budget","daily budget","daily quota","daily limit")):
+                    provider_delay.with_suffix(".quota").write_text(file.stem)
+                    entry.update(deferred=True,retryable=False)
                 header = exc.headers.get("Retry-After")
                 if header:
                     entry["retry_after"] = header
