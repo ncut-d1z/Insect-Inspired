@@ -31,6 +31,8 @@ def report(study,counts,coverage,timing,proof):
 | P5 研究主体 | 核对 {v['abstracts']['byline_positions']} 个署名位置，其中 {v['abstracts']['publication_affiliations']} 条发表时机构关系有来源支持。两家同名 York University 经国家和城市区分。 | 两条历史署名的机构身份待核实。出版登记中的资助方和编号见下文。 |
 | P6 主题证据 | 新增 {v['abstracts']['abstracts']} 份与来源指纹绑定的中文摘要。人类虚拟走廊距离判断、猕猴航向线索、鸟类飞行流场和计算模型的适用条件分别登记。 | 新增达到主题验收门槛的判断为 0。累计 {counts['assessments']} 项活动评估，其中 {counts['eligible_claims']} 项已达标。 |
 
+CP12 后续的 {v['cp12_xml']['tickets']} 条疑义另按施引论文合并复核。{v['cp12_xml']['distinct_parent_lists']} 份登记书目中复用了 {v['cp12_xml']['reused_parent_lists']} 份现有回执，{v['cp12_xml']['positions_matched']} 条定位到同一条目，{v['cp12_xml']['position_unavailable']} 条仍未定位。新确定原始版次 {v['cp12_xml']['newly_resolved']} 条。[逐项复核依据](RUN-0012-CP12-deposit-reviews.json)
+
 本轮另核对了 {v.get('publication_funding',{}).get('works_checked',0)} 篇的出版登记资助字段。其中 {v.get('publication_funding',{}).get('works_with_funder_metadata',0)} 篇列有资助方，共 {v.get('publication_funding',{}).get('distinct_funder_award_pairs',0)} 组不同的资助方与编号。项目负责人和正式成果归属继续待核实。
 
 ## 检索与同步效率
