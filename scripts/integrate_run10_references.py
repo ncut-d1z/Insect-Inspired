@@ -3,6 +3,7 @@ import argparse
 from collections import Counter, defaultdict
 from copy import deepcopy
 from datetime import datetime, timedelta
+from difflib import SequenceMatcher
 import hashlib
 import json
 import re
@@ -28,6 +29,8 @@ def source(q, identifier, section, note):
         url="https://api.crossref.org/works/"+quote(identifier,safe="/")
     elif q["source_id"]=="europepmc" and re.fullmatch(r"(MED|PPR):[A-Z0-9]+",identifier):
         url="https://europepmc.org/article/"+identifier.replace(":","/")
+    elif q["source_id"]=="openalex" and re.fullmatch(r"W[0-9]+",identifier):
+        url="https://api.openalex.org/works/"+identifier
     loc=dict(source_id=q["source_id"],identifier=identifier,url=url,section=section,
              accessed_at=q["completed_at_utc"],evidence_note=note+" "+q["query_id"])
     return dict(source_id=q["source_id"],identifier=identifier,url=url,accessed_at=q["completed_at_utc"],
@@ -50,6 +53,26 @@ def document_type(r):
     return "other"
 
 
+def conflicting_title(raw,provider,registered):
+    # Container and series titles describe a different entity. Only explicit work
+    # titles can contradict an identifier. Similarity never establishes a match.
+    stated=raw.get("title") if provider=="europepmc" else raw.get("article-title") or raw.get("chapter-title")
+    a,b=norm(stated),norm(registered)
+    if not a or not b or a in b or b in a:return False
+    return SequenceMatcher(None,a,b,autojunk=False).ratio()<0.55
+
+
+def reference_source(q,owner,position):
+    sid=q["source_id"]
+    label={"crossref":"Publisher-deposited reference","europepmc":"Europe PMC indexed reference","openalex":"OpenAlex reference ID (index position)"}[sid]
+    locator=owner.get("epmc") if sid=="europepmc" else q.get("corrected_identifier") or owner.get("doi")
+    if sid=="openalex":
+        locator=(q.get("source_bibliography") or {}).get("id") or owner.get("openalex") or owner.get("epmc")
+        locator=locator.rsplit("/",1)[-1] if locator else None
+    section=f"{label} {position}"
+    return section,source(q,locator or owner["work_id"],section,"仅核实书目出现及索引身份，引用作用待核实。")
+
+
 class Batch:
     def __init__(self):
         self.works,self.identities,self.names=existing()
@@ -67,8 +90,12 @@ class Batch:
         self.now=stamp()
         self.source_credit=defaultdict(list)
         self.metas=defaultdict(list)
+        self.registry_titles=defaultdict(set)
         for r,q in metadata():
-            for k in {r.get("doi"),r.get("epmc"),r.get("openalex"),r.get("requested_openalex")} - {"",None}:
+            identifiers={r.get("doi"),r.get("epmc"),r.get("openalex"),r.get("requested_openalex")} - {"",None}
+            if r.get("title") and r.get("year"):
+                self.registry_titles[norm(r["title"]),str(r["year"])].update(identifiers)
+            for k in identifiers:
                 self.metas[k].append((r,q))
         self.resolution=Counter()
         self.new_frontier=[]
@@ -164,11 +191,12 @@ class Batch:
             key=base+s
         self.keys.add(key);return key
 
-    def enroll(self,record,mq,owner,relation,ids):
+    def enroll(self,record,mq,owner,relation,ids,discovery_query_id):
         primary=record.get("doi") or record.get("epmc") or record["openalex"]
         wid="W-R10-"+token(primary)
         require(wid not in self.works and record["year"] and record["title"],"Unbound Work "+wid)
-        src=source(mq,primary,"Bibliographic metadata","作者署名、题名、标识和出版信息。")
+        locator=record.get("source_identifier") or primary
+        src=source(mq,locator,"Bibliographic metadata","作者署名、题名、标识和出版信息。")
         people=self.people_for(wid,record,src)
         dim={k:"pending" for k in DIMENSIONS}
         dim.update(metadata="partial",fulltext="restricted",authors="partial" if people else "pending")
@@ -217,8 +245,10 @@ class Batch:
             self.task("T-"+dimname+"-"+wid,wid,dimname,"继承发现路径，按允许资料继续检索与核验。",state,source_id=mq["source_id"])
         self.new_frontier.append(dict(work_id=wid,work_key=key,doi=w["doi"],epmc=ids_meta.get("europepmc"),
                                   task_id="T-references-"+wid,prior_cursor=None,prior_state="pending",prior_event=1,
-                                  depth=len(path),parent_work_id=pk))
-        self.source_credit[mq["query_id"]].append(wid)
+                                  openalex=ids_meta.get("openalex"),depth=len(path),parent_work_id=pk))
+        credit=mq["query_id"] if mq["query_id"] not in self.known_queries else discovery_query_id
+        require(credit not in self.known_queries,"Discovery needs a current query for "+wid)
+        self.source_credit[credit].append(wid)
         return wid
 
     def resolve(self,raw,q,owner,relation):
@@ -233,9 +263,18 @@ class Batch:
             ids.update(x for x in (r.get("doi"),r.get("epmc"),r.get("openalex")) if x)
         hit=set().union(*(self.identities.get(k,set()) for k in ids))
         titles=self.names.get((norm(title),year),set()) if title and year else set()
+        explicit=raw.get("title") if q["source_id"]=="europepmc" else raw.get("article-title") or raw.get("chapter-title")
+        other_ids=self.registry_titles.get((norm(explicit),year),set()) if explicit and year else set()
+        if ids and other_ids and ids.isdisjoint(other_ids) and not hit.intersection(titles):
+            return None,sorted(ids|other_ids|titles|hit),"identifier_title_conflict"
         if len(hit)>1 or (hit and titles and hit.isdisjoint(titles)):
-            return None,sorted(hit|titles),"canonical_identity_conflict"
-        if hit:return next(iter(hit)),sorted(ids),"identifier"
+            return None,sorted(hit|titles|ids),"canonical_identity_conflict"
+        if hit:
+            target=next(iter(hit));w=self.works[target]
+            titles=[w["canonical_title"],*[v for v in w.get("title_variants",[]) if isinstance(v,str)]]
+            if (owner["work_id"],target) not in self.cited_version_reviews and all(conflicting_title(raw,q["source_id"],t) for t in titles):
+                return None,sorted(hit|ids),"identifier_title_conflict"
+            return target,sorted(ids),"identifier"
         if len(titles)==1 and author:
             wid=next(iter(titles));people=self.works[wid].get("authors") or []
             if people:
@@ -248,13 +287,15 @@ class Batch:
             # Prefer an explicit Europe PMC crosswalk when the two records share a DOI.
             valid.sort(key=lambda x:(not bool(x[0].get("epmc")),not bool(x[0].get("authors")),x[1]["query_id"]))
             record,mq=valid[0]
+            if conflicting_title(raw,q["source_id"],record["title"]):
+                return None,sorted(ids),"identifier_title_conflict"
             reg_titles=self.names.get((norm(record["title"]),str(record["year"])),set())
             if reg_titles:
                 return None,sorted(reg_titles|ids),"registered_title_identity_open"
             if record["year"]>int(self.cutoff[:4]) or (record["year"]==int(self.cutoff[:4]) and (not record.get("date") or
                     len(record["date"])<10 or record["date"][:10]>=self.cutoff)):
                 return None,sorted(ids),"cutoff_date_review"
-            return self.enroll(record,mq,owner,relation,ids),sorted(ids),"new_bibliographic_identity"
+            return self.enroll(record,mq,owner,relation,ids,q["query_id"]),sorted(ids),"new_bibliographic_identity"
         return None,sorted(ids),"identifier_or_metadata_missing"
 
     def backward(self,queue):
@@ -262,12 +303,26 @@ class Batch:
         wanted={o["work_id"] for o in queue}
         attempts=defaultdict(lambda:defaultdict(list))
         for p in sorted(OUT.glob("Q-RUN10-*.json")):
-            if not p.name.startswith(("Q-RUN10-VCR-","Q-RUN10-BCR-","Q-RUN10-VEP-","Q-RUN10-BEP-","Q-RUN10-RCR-","Q-RUN10-REP-","Q-RUN10-F-OA-","Q-RUN10-F-DOI-")):continue
+            if not p.name.startswith(("Q-RUN10-VCR-","Q-RUN10-BCR-","Q-RUN10-VEP-","Q-RUN10-BEP-","Q-RUN10-RCR-","Q-RUN10-REP-","Q-RUN10-ROA-","Q-RUN10-F-OA-","Q-RUN10-F-DOI-")):continue
             q=read(p)
             for own in q["owners"]:
                 if own["work_id"] in wanted:attempts[own["work_id"]][q["source_id"]].append(q["query_id"])
         for owner,q,refs,declared,present in source_lists(queue):
             by_owner[owner["work_id"]].append((q,refs,declared,present))
+        # Resolve printed title/year/byline entries against the complete batch,
+        # including registry identities first encountered on a later source page.
+        admissions={}
+        for owner in queue:
+            wid=owner["work_id"]
+            require(wid in self.roots,"Missing admitted seed path "+wid)
+            for q,refs,_,_ in by_owner[wid]:
+                start=(int(q.get("page_index",1))-1)*1000
+                for i,raw in enumerate(refs,start+1):
+                    d,e,*_=fields(raw,q["source_id"])
+                    if not any(k in self.metas for k in (d,e,raw.get("openalex")) if k):continue
+                    _,relation=reference_source(q,owner,i)
+                    target,_,reason=self.resolve(raw,q,owner,relation)
+                    if reason=="new_bibliographic_identity":admissions[wid,q["query_id"],i]=target
         outcomes=[]
         for owner in queue:
             wid=owner["work_id"];work=self.works[wid];seen_sources=defaultdict(list)
@@ -289,12 +344,14 @@ class Batch:
                 lists.append(dict(source_id=sid,query_id=qid,rows=len(refs),visible_total=declared,source_reconciled=complete))
                 start=(int(q.get("page_index",1))-1)*1000
                 for i,raw in enumerate(refs,start+1):
-                    section={"crossref":"Publisher-deposited reference","europepmc":"Europe PMC indexed reference","openalex":"OpenAlex reference ID (index position)"}[sid]+" "+str(i)
+                    section,relation=reference_source(q,owner,i)
                     label=raw.get("key") if sid=="crossref" else raw.get("citedOrder")
-                    relation=source(q,owner["doi"] or owner["epmc"],section,"仅核实书目出现及索引身份，引用作用待核实。")
                     ref_id="R-R10-"+token(wid,version["version_id"],sid,i)
                     require(ref_id not in seen_occurrences,"Duplicate provider reference position");seen_occurrences.add(ref_id)
                     target,choices,reason=self.resolve(raw,q,owner,relation)
+                    if (wid,qid,i) in admissions:
+                        require(target==admissions[wid,qid,i],f"Discovery and registered identity disagree {wid} {qid} {i}: admitted {admissions[wid,qid,i]}, now {target}, {reason}, {choices}")
+                        reason="new_bibliographic_identity"
                     if target==wid:target=None;reason="possible_reference_to_another_version"
                     raw_text=raw.get("unstructured") if sid=="crossref" and raw.get("unstructured") else json.dumps(raw,ensure_ascii=False,separators=(",",":"))
                     fs={"page":nonapplicable(relation,"索引没有提供施引书目所在印刷页。")}
@@ -329,7 +386,7 @@ class Batch:
                         if edge["edge_id"] not in self.adds["citation-edges"] and edge["edge_id"] not in self.changes["citation-edges"]:
                             original=edge;edge=deepcopy(edge);self.modify("citation-edges",original,edge);self.edges[pair]=edge
                         edge["occurrence_ids"].append(ref_id)
-                        if not any(s["source_id"]==sid and s["identifier"]==relation["identifier"] and
+                        if not any(s["source_id"]==sid and s.get("identifier")==relation["identifier"] and
                                    any(qid in l.get("evidence_note","") for l in s["evidence_locator"]) for s in edge["discovery_sources"]):
                             edge["discovery_sources"].append(relation)
                     else:
@@ -518,17 +575,19 @@ def main():
     report_path=f"temp/reports/RUN-0010-integration-{args.name}.json"
     if (ROOT/report_path).exists():
         print("Existing integration receipt",report_path);return
-    b=Batch();queue=read(args.frontier)["worklist"]
+    b=Batch();input_frontier=Path(args.frontier).resolve();selection=read(input_frontier);queue=selection["worklist"]
     if args.versions:
         b.version_reviews();b.screened_abstracts();outcomes=[]
         paths={*OUT.glob("Q-RUN10-V*.json"),*OUT.glob("Q-RUN10-P56-*.json")}
     else:
-        b.input_paths.add(Path(args.frontier))
+        b.input_paths.add(input_frontier)
         b.corrected_doi()
         outcomes=b.backward(queue)
         # All currently unregistered request receipts belong to this resumed RUN.
         paths=set(OUT.glob("Q-RUN10-*.json"))
     b.queries(paths)
+    for name,entries in b.changes.items():
+        b.changes[name]={key:pair for key,pair in entries.items() if pair[0]!=pair[1]}
     report=dict(run_id=RUN,scope_id=SCOPE,target_checkpoint=CP,batch=args.name,updated_at_utc=b.now,
                 counts={k:len(v) for k,v in b.adds.items()},identity_match_counts=dict(b.resolution),
                 authorship_counts=dict(b.stats),coverage=outcomes,
@@ -538,7 +597,22 @@ def main():
     if args.versions:run["manual_review_items_used"]=len(b.adds["manual-reviews"])
     if not args.versions:
         frontier_path=f"temp/reports/RUN-0010-frontier-after-{args.name}.json"
-        extra[frontier_path]=dict(run_id=RUN,parent_batch=report_path,scope_id=SCOPE,worklist=b.new_frontier)
+        remaining=[]
+        if selection.get("queue_source"):
+            source_path=ROOT/selection["queue_source"]
+            require(file_hash(source_path)==selection["queue_sha256"],"Recursive frontier changed")
+            prior=read(source_path)["worklist"];end=selection["next_index"]
+            require(selection["start_index"]==0 and prior[:end]==queue and len(prior)==selection["queue_total"],"Parent cursor mismatch")
+            remaining=prior[end:]
+        # Rotate equal-depth, equal-priority discoveries across their parents.
+        # A long first bibliography must not consume an entire recursive batch.
+        per_parent=Counter();ranked=[]
+        for ordinal,item in enumerate(b.new_frontier):
+            parent=(item["depth"],item["parent_work_id"])
+            ranked.append((item["depth"],per_parent[parent],ordinal,item));per_parent[parent]+=1
+        forward=[*remaining,*(item for _,_,_,item in sorted(ranked))]
+        require(len({r["work_id"] for r in forward})==len(forward),"Duplicate recursive queue entry")
+        extra[frontier_path]=dict(run_id=RUN,parent_batch=report_path,scope_id=SCOPE,carried_unvisited=len(remaining),newly_discovered=len(b.new_frontier),worklist=forward)
         run["next_backward_frontier"]=frontier_path
     extra["temp/runs/RUN-0010.json"]=run
     print(json.dumps({k:report[k] for k in ("counts","identity_match_counts","authorship_counts")}),flush=True)

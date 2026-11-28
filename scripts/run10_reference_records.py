@@ -72,8 +72,9 @@ def source_lists(queue, folder=OUT):
     """Yield one source-specific list page per parent, retaining all positions in receipt order."""
     by_doi={o["doi"].lower():o for o in queue if o.get("doi")}
     by_epmc={o["epmc"]:o for o in queue if o.get("epmc")}
+    by_work={o["work_id"]:o for o in queue}
     for p in sorted(folder.glob("Q-RUN10-*.json")):
-        if not p.name.startswith(("Q-RUN10-VCR-","Q-RUN10-BCR-","Q-RUN10-VEP-","Q-RUN10-BEP-","Q-RUN10-RCR-","Q-RUN10-REP-","Q-RUN10-F-OA-","Q-RUN10-F-DOI-")):
+        if not p.name.startswith(("Q-RUN10-VCR-","Q-RUN10-BCR-","Q-RUN10-VEP-","Q-RUN10-BEP-","Q-RUN10-RCR-","Q-RUN10-REP-","Q-RUN10-ROA-","Q-RUN10-F-OA-","Q-RUN10-F-DOI-")):
             continue
         q=read(p)
         if q["status"]!="success":
@@ -85,7 +86,7 @@ def source_lists(queue, folder=OUT):
                     parent=by_epmc.get(q["owners"][0]["epmc"])
                 if parent:
                     yield parent,q,paper.get("reference",[]),paper.get("reference-count"),"reference" in paper
-        elif parent:=by_epmc.get(q["owners"][0]["epmc"]):
+        elif parent:=by_work.get(q["owners"][0]["work_id"]):
             yield parent,q,q["records"],q["visible_total"],True
 
 
