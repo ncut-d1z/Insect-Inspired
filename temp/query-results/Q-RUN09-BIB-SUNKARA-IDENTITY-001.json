@@ -1,0 +1,100 @@
+{
+  "query_id": "Q-RUN09-BIB-SUNKARA-IDENTITY-001",
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0011",
+  "entity_id": "W-R24649f4879cc831d",
+  "task_id": "T-metadata-W-R24649f4879cc831d",
+  "source_id": "europepmc",
+  "query_kind": "bibliographic_identity",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.7554%2Felife.04693%22&resultType=core&format=json&pageSize=100",
+  "raw_parameters": {
+    "query": "DOI:\"10.7554/elife.04693\"",
+    "resultType": "core",
+    "format": "json",
+    "pageSize": 100
+  },
+  "queried_at_utc": "2026-11-28T04:09:11.403218Z",
+  "page_index": 1,
+  "external_request_count": 1,
+  "cache_hit": false,
+  "license_note": "Public bibliographic facts and author identifiers. Abstract text is represented only by availability and a digest.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "records": [
+    {
+      "id": "25693417",
+      "source": "MED",
+      "pmid": "25693417",
+      "pmcid": "PMC4337725",
+      "doi": "10.7554/elife.04693",
+      "title": "Role of visual and non-visual cues in constructing a rotation-invariant representation of heading in parietal cortex.",
+      "authorString": "Sunkara A, DeAngelis GC, Angelaki DE.",
+      "pubYear": "2015",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article",
+          "Research Support, N.I.H., Extramural"
+        ]
+      },
+      "firstPublicationDate": "2015-02-18",
+      "authors": [
+        {
+          "fullName": "Sunkara A",
+          "firstName": "Adhira",
+          "lastName": "Sunkara",
+          "initials": "A",
+          "affiliations": [
+            "Department of Biomedical Engineering, Washington University in St. Louis, St. Louis, United States."
+          ]
+        },
+        {
+          "fullName": "DeAngelis GC",
+          "firstName": "Gregory C",
+          "lastName": "DeAngelis",
+          "initials": "GC",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-1635-1273"
+          },
+          "affiliations": [
+            "Department of Brain and Cognitive Sciences, University of Rochester, Rochester, United States."
+          ]
+        },
+        {
+          "fullName": "Angelaki DE",
+          "firstName": "Dora E",
+          "lastName": "Angelaki",
+          "initials": "DE",
+          "affiliations": [
+            "Department of Neuroscience, Baylor College of Medicine, Houston, United States."
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Elife",
+        "title": "eLife",
+        "essn": "2050-084X",
+        "issn": "2050-084X"
+      },
+      "issue_details": {
+        "volume": "4",
+        "dateOfPublication": "2015 Feb"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "418c7cf5cdccd80504a2571597f2c0fef89a8342c2102a20a82646e4ee541e52"
+    }
+  ],
+  "visible_total": 1,
+  "returned_count": 1,
+  "page_complete": true,
+  "cursor_in": "*",
+  "cursor_out": null,
+  "error_code": null,
+  "error_message": null,
+  "http_status": 200,
+  "status": "success",
+  "body_bytes": 5917,
+  "body_sha256": "17cac28d0f1a4e569cba591e36054adfe3c9c681b82d5f8dac4d56347c2e918c",
+  "completed_at_utc": "2026-11-28T04:09:25.097179Z"
+}

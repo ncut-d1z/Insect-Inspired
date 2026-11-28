@@ -1,0 +1,91 @@
+{
+  "query_id": "Q-RUN09-BIB-KRESS-IDENTITY-001",
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0011",
+  "entity_id": "W-D3726e94bf3bda20c",
+  "task_id": "T-metadata-W-D3726e94bf3bda20c",
+  "source_id": "europepmc",
+  "query_kind": "bibliographic_identity",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1242%2Fjeb.097436%22&resultType=core&format=json&pageSize=100",
+  "raw_parameters": {
+    "query": "DOI:\"10.1242/jeb.097436\"",
+    "resultType": "core",
+    "format": "json",
+    "pageSize": 100
+  },
+  "queried_at_utc": "2026-11-28T04:08:55.622566Z",
+  "page_index": 1,
+  "external_request_count": 1,
+  "cache_hit": false,
+  "license_note": "Public bibliographic facts and author identifiers. Abstract text is represented only by availability and a digest.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "records": [
+    {
+      "id": "25013104",
+      "source": "MED",
+      "pmid": "25013104",
+      "doi": "10.1242/jeb.097436",
+      "title": "Gaze characteristics of freely walking blowflies Calliphora vicina in a goal-directed task.",
+      "authorString": "Kress D, Egelhaaf M.",
+      "pageInfo": "3209-3220",
+      "pubYear": "2014",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2014-07-10",
+      "authors": [
+        {
+          "fullName": "Kress D",
+          "firstName": "Daniel",
+          "lastName": "Kress",
+          "initials": "D",
+          "affiliations": [
+            "Department of Neurobiology and CITEC Center of Excellence Cognitive Interaction Technology, Bielefeld University, Universitätsstraße 25, 33615 Bielefeld, Germany Daniel.kress@uni-bielefeld.de."
+          ]
+        },
+        {
+          "fullName": "Egelhaaf M",
+          "firstName": "Martin",
+          "lastName": "Egelhaaf",
+          "initials": "M",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-9336-4270"
+          },
+          "affiliations": [
+            "Department of Neurobiology and CITEC Center of Excellence Cognitive Interaction Technology, Bielefeld University, Universitätsstraße 25, 33615 Bielefeld, Germany."
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "J Exp Biol",
+        "title": "The Journal of experimental biology",
+        "essn": "1477-9145",
+        "issn": "0022-0949"
+      },
+      "issue_details": {
+        "volume": "217",
+        "issue": "Pt 18",
+        "dateOfPublication": "2014 Sep"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "3f9887ca5da6a73d897ed1c558491c2a0305584c14bbae56c674479b2c1ee359"
+    }
+  ],
+  "visible_total": 1,
+  "returned_count": 1,
+  "page_complete": true,
+  "cursor_in": "*",
+  "cursor_out": null,
+  "error_code": null,
+  "error_message": null,
+  "http_status": 200,
+  "status": "success",
+  "body_bytes": 5539,
+  "body_sha256": "f596ec9a7bb55102ea550efe15943dbbb99e9e62c7e45585e4ebb3f5aedba784",
+  "completed_at_utc": "2026-11-28T04:09:07.676679Z"
+}

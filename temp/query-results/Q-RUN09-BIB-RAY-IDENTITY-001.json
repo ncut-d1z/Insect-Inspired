@@ -1,0 +1,140 @@
+{
+  "query_id": "Q-RUN09-BIB-RAY-IDENTITY-001",
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0011",
+  "entity_id": "W-D343f06a3bc764bf6",
+  "task_id": "T-metadata-W-D343f06a3bc764bf6",
+  "source_id": "europepmc",
+  "query_kind": "bibliographic_identity",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.7554%2Felife.102230%22&resultType=core&format=json&pageSize=100",
+  "raw_parameters": {
+    "query": "DOI:\"10.7554/elife.102230\"",
+    "resultType": "core",
+    "format": "json",
+    "pageSize": 100
+  },
+  "queried_at_utc": "2026-11-28T04:09:08.661990Z",
+  "page_index": 1,
+  "external_request_count": 1,
+  "cache_hit": false,
+  "license_note": "Public bibliographic facts and author identifiers. Abstract text is represented only by availability and a digest.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "records": [
+    {
+      "id": "40690376",
+      "source": "MED",
+      "pmid": "40690376",
+      "pmcid": "PMC12279373",
+      "doi": "10.7554/elife.102230",
+      "title": "Neural circuit mechanisms for steering control in walking &lt;i&gt;Drosophila&lt;/i&gt;.",
+      "authorString": "Rayshubskiy A, Holtz SL, Bates AS, Vanderbeck QX, Serratosa Capdevila L, Rockwell V, Wilson R.",
+      "pageInfo": "RP102230",
+      "pubYear": "2025",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "firstPublicationDate": "2025-07-21",
+      "authors": [
+        {
+          "fullName": "Rayshubskiy A",
+          "firstName": "Aleksandr",
+          "lastName": "Rayshubskiy",
+          "initials": "A",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0009-0009-3139-7606"
+          },
+          "affiliations": [
+            "Department of Neurobiology, Harvard Medical School, Boston, United States."
+          ]
+        },
+        {
+          "fullName": "Holtz SL",
+          "firstName": "Stephen L",
+          "lastName": "Holtz",
+          "initials": "SL",
+          "affiliations": [
+            "Department of Neurobiology, Harvard Medical School, Boston, United States."
+          ]
+        },
+        {
+          "fullName": "Bates AS",
+          "firstName": "Alexander S",
+          "lastName": "Bates",
+          "initials": "AS",
+          "affiliations": [
+            "Department of Neurobiology, Harvard Medical School, Boston, United States."
+          ]
+        },
+        {
+          "fullName": "Vanderbeck QX",
+          "firstName": "Quinn X",
+          "lastName": "Vanderbeck",
+          "initials": "QX",
+          "affiliations": [
+            "Department of Neurobiology, Harvard Medical School, Boston, United States."
+          ]
+        },
+        {
+          "fullName": "Serratosa Capdevila L",
+          "firstName": "Laia",
+          "lastName": "Serratosa Capdevila",
+          "initials": "L",
+          "affiliations": [
+            "Aelysia LTD, Bristol, United Kingdom."
+          ]
+        },
+        {
+          "fullName": "Rockwell V",
+          "firstName": "Victoria",
+          "lastName": "Rockwell",
+          "initials": "V",
+          "affiliations": [
+            "Department of Neurobiology, Harvard Medical School, Boston, United States."
+          ]
+        },
+        {
+          "fullName": "Wilson R",
+          "firstName": "Rachel",
+          "lastName": "Wilson",
+          "initials": "R",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-8573-9266"
+          },
+          "affiliations": [
+            "Department of Neurobiology, Harvard Medical School, Boston, United States."
+          ]
+        }
+      ],
+      "journal": {
+        "medlineAbbreviation": "Elife",
+        "title": "eLife",
+        "essn": "2050-084X",
+        "issn": "2050-084X"
+      },
+      "issue_details": {
+        "volume": "13",
+        "dateOfPublication": "2025 Jul"
+      },
+      "abstract_available": true,
+      "abstract_sha256": "d0b45109fd795b09b9945cf6a6a80233c6099397e83b55cd60c75854bf08a654"
+    }
+  ],
+  "visible_total": 1,
+  "returned_count": 1,
+  "page_complete": true,
+  "cursor_in": "*",
+  "cursor_out": null,
+  "error_code": null,
+  "error_message": null,
+  "http_status": 200,
+  "status": "success",
+  "body_bytes": 8282,
+  "body_sha256": "bd190b8c0213823407e19cf411b6b20dd510002cfb89394ab05028fe05250941",
+  "completed_at_utc": "2026-11-28T04:09:10.586590Z"
+}

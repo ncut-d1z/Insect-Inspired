@@ -1,0 +1,92 @@
+{
+  "scope_id": "SCOPE-0001",
+  "run_id": "RUN-0009",
+  "recorded_at_utc": "2026-11-28T04:10:27.468964Z",
+  "roadmap_section": 10,
+  "allowed_publication_materials": [
+    "bibliographic_metadata",
+    "abstract",
+    "reference_list"
+  ],
+  "stopped": [
+    "article_body",
+    "figures",
+    "tables",
+    "supplementary_material",
+    "experimental_data_recalculation"
+  ],
+  "historical_cutoff_utc": "2026-11-26T05:24:08Z",
+  "authorization": "用户在本机侧对话明确授权主对话按新范围继续检索并修改所有分支 README。",
+  "historical_run9_transaction": "f0f545cc4ad90f0af0be23610a68af2d0692ed99",
+  "current_status": "完整保留旧事务，当前研究分支上的临时正文语境、项目归属和实验判断等候按新约束标为待核实。",
+  "branches": [
+    {
+      "branch": "main",
+      "before": "5f2181b0e5a91bcafde2a3f19eb526668934a80e",
+      "after": "9112a00455a6ab68e00fb6504361a89debe5305a",
+      "tree": "70f06b8d6d692eb2769ffe4863d52b591ea3a7c7",
+      "readme_blob": "45aa594a23565d7d07bec0d931480ecd70d0ffdc",
+      "changed_files": [
+        "README.md"
+      ],
+      "independent_readback": true
+    },
+    {
+      "branch": "research/p3-p6-cp10",
+      "before": "5f2181b0e5a91bcafde2a3f19eb526668934a80e",
+      "after": "9112a00455a6ab68e00fb6504361a89debe5305a",
+      "tree": "70f06b8d6d692eb2769ffe4863d52b591ea3a7c7",
+      "readme_blob": "45aa594a23565d7d07bec0d931480ecd70d0ffdc",
+      "changed_files": [
+        "README.md"
+      ],
+      "independent_readback": true
+    },
+    {
+      "branch": "research/p3-p6-cp5",
+      "before": "82f759ce71e7b532f03cd4ba54a1fcc77c4f4006",
+      "after": "d7427b1cefd29f4dabf6ce8a20d23175001403a6",
+      "tree": "d06ec0ee940ad19dd785e6e6576054664bb10ad9",
+      "readme_blob": "12b8233aa1f908d33b6020bb2ea29f6c55ab3635",
+      "changed_files": [
+        "README.md"
+      ],
+      "independent_readback": true
+    },
+    {
+      "branch": "research/p3-p6-cp6",
+      "before": "a1303b6b6c38692b4f57da5cfb342289c6dc17e5",
+      "after": "1a9ac9188314ac7b2a5146d236a80e1a3240d06d",
+      "tree": "cb7a0a8ae0c50a0e830681911653781c8dcbe66a",
+      "readme_blob": "3a2379e10189e01213a4dbbef43e2ed3c628a69b",
+      "changed_files": [
+        "README.md"
+      ],
+      "independent_readback": true
+    },
+    {
+      "branch": "research/p3-p6-cp7",
+      "before": "0ee3b7de167a70933bc9884b9217142c2661c374",
+      "after": "23867b5db5e6180de34af2b5da3a632a9502886a",
+      "tree": "f1951fb10aca2cc39624eb549b3b1fdcb8086c1e",
+      "readme_blob": "3a2379e10189e01213a4dbbef43e2ed3c628a69b",
+      "changed_files": [
+        "README.md"
+      ],
+      "independent_readback": true
+    },
+    {
+      "branch": "codex/p3-p6-cp11",
+      "before": "f0f545cc4ad90f0af0be23610a68af2d0692ed99",
+      "after": "a4956f6f267bc12cf19c1369431f25338b8e16b9",
+      "tree": "2fb6352f4d1f1265904e0a274492120a953b4e9c",
+      "readme_blob": "45aa594a23565d7d07bec0d931480ecd70d0ffdc",
+      "changed_files": [
+        "README.md"
+      ],
+      "independent_readback": true
+    }
+  ],
+  "baseline_checkpoint": "CP-0010",
+  "new_checkpoint_validated": false
+}
