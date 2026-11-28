@@ -91,11 +91,12 @@ class LocationMap(MutableMapping):
 class FullAudit(audit_run.Audit):
     schema_ledger=None
     staged_exports=None
+    state_file=STATE
 
     def html_bib(self):
         if self.staged_exports is not None:
             marker=self.staged_exports
-            run=read(STATE)
+            run=read(self.state_file)
             limit=datetime.fromisoformat(run["started_at_utc"])+timedelta(hours=run["budget"]["wall_clock_hours"])
             while not marker.is_file():
                 require(datetime.now(timezone.utc)<limit and not marker.with_name("export-staging-failed.txt").exists(),
@@ -147,13 +148,14 @@ class FullAudit(audit_run.Audit):
             if isinstance(rows,LogicalRows):rows.close()
 
 
-def run(out,ledger=None,staged_exports=None):
-    cp=read(CANDIDATE);run=read(STATE);baseline=run["checkpoint_commit"]
-    bound=digest(CANDIDATE)
+def run(out,ledger=None,staged_exports=None,*,candidate=CANDIDATE,state_file=STATE):
+    cp=read(candidate);run=read(state_file);baseline=run["checkpoint_commit"]
+    bound=digest(candidate)
     with blobs() as get:
         m=json.loads(get(baseline,"temp/partitions/manifest.json"))
         prior=[json.loads(line) for part in parts_for("assessments",m) for line in get(baseline,"temp/"+part["path"]).splitlines() if line]
     engine=FullAudit(ROOT,out,datetime.fromisoformat(cp["created_at_utc"]))
+    engine.state_file=state_file
     if staged_exports is not None:
         require(staged_exports.is_absolute() and not staged_exports.resolve().is_relative_to(ROOT),
                 "An independent export staging receipt is required")
@@ -167,7 +169,7 @@ def run(out,ledger=None,staged_exports=None):
     try:engine.run()
     finally:engine.close()
     result=read(out)
-    require(digest(CANDIDATE)==bound and not result["changed_inputs"] and result["status"]=="passed" and result["error_count"]==0,
+    require(digest(candidate)==bound and not result["changed_inputs"] and result["status"]=="passed" and result["error_count"]==0,
             "Full research audit failed: "+str(result["findings"]["error"].keys()))
     baseline_warnings=read(TEMP/"validation/cp12-data-audit.json")["findings"]["warning"]
     require(all(k in baseline_warnings and item["count"]<=baseline_warnings[k]["count"] for k,item in result["findings"]["warning"].items()),"New audit warnings require review")

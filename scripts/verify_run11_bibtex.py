@@ -117,7 +117,7 @@ def run(parser, repo, revision, source, out, checkpoint, entries_per_part=1600):
     original.write_bytes(source_bytes)
     environment_version = subprocess.check_output([str(parser), "--version"], encoding="utf-8").strip()
     whole = None
-    if os.name == "nt" and checkpoint == "CP-0013" and len(starts) > entries_per_part:
+    if os.name == "nt" and len(starts) > entries_per_part:
         whole = whole_file_parse(parser, original, expected)
     step = entries_per_part if whole is not None else len(starts)
     if not step or starts[0].start() != 0 or (whole and source_bytes != text.encode("utf-8")):

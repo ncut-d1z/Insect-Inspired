@@ -13,18 +13,20 @@ VIEWS = ("temp/exports/research_entities", "temp/exports/citation_graph")
 CHUNK = re.compile(r"/\d{4,}-[0-9a-f]{64}\.json$")
 
 
-def groups(source, kind):
+def groups(source, kind, checkpoint="CP-0013"):
+    public="temp/snapshots/checkpoints/"+checkpoint
+    prefix="cp"+str(int(checkpoint.rsplit("-",1)[1]))
     if kind == "candidate":
         inventory = json.loads((source / "candidate-files.json").read_bytes())
-        fixed = {CP + ".json", "temp/validation/cp13-inputs.json", "temp/validation/cp13-history.json"}
-        if not fixed <= inventory.keys() or not all(k in fixed or k.startswith(CP + "/") for k in inventory):
+        fixed = {public + ".json", f"temp/validation/{prefix}-inputs.json", f"temp/validation/{prefix}-history.json"}
+        if not fixed <= inventory.keys() or not all(k in fixed or k.startswith(public + "/") for k in inventory):
             raise ValueError("Unexpected checkpoint inventory")
     else:
         first_only = kind == "export-parts"
         proof = "first-files.json" if first_only else "determinism.json"
         expected = "first_generation" if first_only else "passed"
         det = json.loads((source.parent / proof).read_bytes())
-        if det["status"] != expected or det["checkpoint_id"] != "CP-0013":
+        if det["status"] != expected or det["checkpoint_id"] != checkpoint:
             raise ValueError("Unverified export")
         inventory = det["artifacts"]
         if not set(EXPORTS) <= inventory.keys() or not all(k in EXPORTS or k.startswith(tuple(v+"/" for v in VIEWS)) for k in inventory):

@@ -14,10 +14,12 @@ from search_run10_references import CP, OUT, ROOT, RUN, SCOPE, TEMP, read
 def collect(frozen, run_id=RUN):
     run = read(TEMP / "runs" / (run_id+".json"))
     use_run11 = run_id == "RUN-0011"
+    use_run12 = run_id == "RUN-0012"
     checkpoint = run.get("target_checkpoint_id") or CP
-    parent_file = TEMP / "snapshots/checkpoints" / (run["start_checkpoint_id"]+".json")
+    parent_file = TEMP / "snapshots/checkpoints" / (run.get("recovered_checkpoint_id",run["start_checkpoint_id"])+".json")
     parent = {k:v for k,v in read(parent_file).items() if k in {"counts","coverage"}}
-    run_prefix = "run11_" if use_run11 else "run10_"
+    number = str(int(run_id.rsplit("-",1)[1]))
+    run_prefix = "run"+number+"_"
     scope = read(TEMP / "snapshots/scope.json")
     manifest = read(TEMP / "partitions/manifest.json")
     now = datetime.fromisoformat(frozen)
@@ -66,7 +68,7 @@ def collect(frozen, run_id=RUN):
     queries=list(rows("queries")); current={q["query_id"]:q for q in queries if q["checkpoint_id"]==checkpoint}
     observations=[o for o in rows("source-observations") if o.get("query_id") in current]
     require(Counter(o["query_id"] for o in observations)==Counter({k:1 for k in current}),"Missing observation")
-    require(set(current)=={p.stem for p in OUT.glob(("Q-RUN11-" if use_run11 else "Q-RUN10-")+"*.json")},"Unregistered request receipt")
+    require(set(current)=={p.stem for p in OUT.glob("Q-RUN"+number+"-*.json")},"Unregistered request receipt")
     requests=0
     for o in observations:
         path=ROOT/o["receipt_path"];raw=path.read_bytes();receipt=json.loads(raw)
@@ -103,7 +105,12 @@ def collect(frozen, run_id=RUN):
     for a in rows("aliases"):
         if a.get("historical_key"):retired[a["historical_key"]].add(a["target_id"])
     require(all(not (retired[keys[w]]-{w}) for w in discovered),"New Work occupies another Work's historical key")
-    if use_run11:
+    if use_run12:
+        source_report=read(ROOT/run["source_accounting"])
+        original=read(ROOT/run["source_frontier"])["worklist"]
+        require(source_report["with_entries"]+source_report["without_entries"]==source_report["visited"]<=len(original) and
+                source_report["source_frontier_sha256"]==run["source_frontier_sha256"],"Saved parent source accounting differs")
+    elif use_run11:
         source_report=read(TEMP/"reports/RUN-0011-CP12-parent-reconciliation-reconciled.json")
         original=read(ROOT/run["frontier"])["worklist"]
         require(source_report["visited"]==len(original)==2620 and original[0]["work_key"]=="Hildreth1987" and
@@ -127,10 +134,11 @@ def collect(frozen, run_id=RUN):
         scientific_gates=parent["coverage"]["scientific_gates"],unknown_review=dict(field_states=dict(fields),open_tasks=len(clocks),overdue_open_tasks=len(due),
             unupgraded_overdue_tasks=0,next_deadline_utc=min((v.isoformat().replace("+00:00","Z") for v in clocks.values() if v>now),default=None)),
         task_states=dict(Counter(t["task_state"] for t in latest.values())),logical_record_counts=totals,
-        **{("delta_from_cp12" if use_run11 else "delta_from_cp11"):delta},
+        **{("delta_from_recovered_cp13" if use_run12 else "delta_from_cp12" if use_run11 else "delta_from_cp11"):delta},
         source_requests=dict(by_source=dict(Counter(o["source_id"] for o in observations)),by_status=dict(Counter(o["status"] for o in observations))),
         backward_queue=dict(path=run["next_backward_frontier"],work_count=len(frontier)),
-        version_review=read(TEMP/"reports"/(run_id+"-cited-versions.json"))["counts"],abstract_review=read(TEMP/"reports"/(run_id+"-abstract-affiliation-review.json"))["counts"],
+        version_review=read(ROOT/run["version_review_file"] if use_run12 else TEMP/"reports"/(run_id+"-cited-versions.json"))["counts"],
+        abstract_review=read(ROOT/run["abstract_review_file"] if use_run12 else TEMP/"reports"/(run_id+"-abstract-affiliation-review.json"))["counts"],
         reading_policy={"allowed_materials":run["read_scope"]},synchronization={"status_at_freeze":"pending_post_commit_readback"})
     if use_run11:
         require({w["work_id"] for w in frontier}==set(discovered),"Discovered Work IDs must all have a continuing reference task")
@@ -139,4 +147,8 @@ def collect(frozen, run_id=RUN):
         if motion.exists():
             combined=Counter(coverage["abstract_review"]);combined.update(read(motion)["counts"])
             coverage["abstract_review"]=dict(combined)
+    if use_run12:
+        inherited={r["work_id"] for r in original[source_report["visited"]:]}
+        require(inherited.isdisjoint(discovered) and {r["work_id"] for r in frontier}==inherited|set(discovered),"Saved frontier lost or duplicated a continuing Work")
+        coverage["parent_reference_search"]={k:source_report[k] for k in ("visited","with_entries","without_entries","positions","original_bibliographies_verified_complete")}
     return count,coverage,cursor,opened

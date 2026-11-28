@@ -73,8 +73,8 @@ def compare(get, before, commit, left, right):
             b = None
 
 
-def audit(end="HEAD"):
-    run=read(STATE)
+def audit(end="HEAD",state_file=STATE):
+    run=read(state_file)
     base=run["start_commit_sha"]
     end=git(ROOT,"rev-parse",end+"^{commit}").decode().strip()
     git(ROOT,"merge-base","--is-ancestor",base,end)
@@ -83,7 +83,7 @@ def audit(end="HEAD"):
     require(not git(ROOT,"diff","--name-only","--no-renames","--diff-filter=DM",base,end,"--",*frozen), "Historical scope, receipt or checkpoint changed")
     seen={}; receipt_list=[]; total=Counter()
     with blobs() as get:
-        parent=get(base,"temp/snapshots/checkpoints/CP-0012.json")
+        parent=get(base,"temp/snapshots/checkpoints/"+run["start_checkpoint_id"]+".json")
         require(sha(parent)==run["start_sync_gate"]["checkpoint_sha256"] and json.loads(parent)["status"]=="valid","CP12 differs")
         for commit in changed:
             before=git(ROOT,"rev-parse",commit+"^").decode().strip()
@@ -140,7 +140,7 @@ def audit(end="HEAD"):
             total.update(tally)
             receipt_list.append(dict(commit=commit,before=before,receipt=name,receipt_sha256=sha(get(commit,name)),counts=dict(tally)))
             print(commit[:10],len(receipt_list),"/",len(changed),dict(tally),flush=True)
-    return dict(run_id="RUN-0011",parent_checkpoint="CP-0012",parent_commit=base,parent_checkpoint_sha256=sha(parent),bound_commit=end,
+    return dict(run_id=run["run_id"],parent_checkpoint=run["start_checkpoint_id"],parent_commit=base,parent_checkpoint_sha256=sha(parent),bound_commit=end,
                 status="passed",historical_rows_lost=0,ordered_transactions=receipt_list,totals=dict(total),unique_verified_partition_blobs=len(seen))
 
 
