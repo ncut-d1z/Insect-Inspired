@@ -12,8 +12,8 @@ from search_run10_references import ROOT, TEMP, read
 
 
 @contextmanager
-def blobs():
-    proc=subprocess.Popen(["git","--no-replace-objects","-C",str(ROOT),"cat-file","--batch"],stdin=subprocess.PIPE,stdout=subprocess.PIPE)
+def blobs(repo=ROOT):
+    proc=subprocess.Popen(["git","--no-replace-objects","-C",str(repo),"cat-file","--batch"],stdin=subprocess.PIPE,stdout=subprocess.PIPE)
     def get(rev,path):
         require(not Path(path).is_absolute() and ".." not in Path(path).parts and "\n" not in path,"Invalid Git path")
         proc.stdin.write(f"{rev}:{path}\n".encode());proc.stdin.flush()

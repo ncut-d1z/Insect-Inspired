@@ -541,6 +541,7 @@ duplicate_pending_merge 仅指身份未定的 Work 合并疑义，不是已经�
         citation_graph.json
         evidence_matrix.csv
         research_entities.json
+        research_entities/         # CP-0013 起按研究主体类别保存的 JSON 及目录索引
         research_paths.json
         research_implications.csv
       snapshots/
@@ -586,6 +587,8 @@ Checkpoint 提交前统一生成并校验 ref.bib、两页书目及全部离线�
 | R15 | 研究视图与规范库不一致 | §8.4、§9.2 导出对账 |
 
 ### 8.4 研究问题交付视图及格式
+
+从 CP-0013 的工作快照起，Q2 的入口为 `temp/exports/research_entities.json`。打开同级目录 `research_entities/index.json` 可按需查阅五组独立 JSON 文件。目录 `people/` 保存人员，`organizations/` 保存机构，`projects/` 保存项目，`work_refs/` 保存 Work ID 与书目键，`relations/` 保存带来源和状态的关系。每个数据文件是带有作用域、检查点标识和 `records` 数组的普通 UTF-8 JSON，最大 2 MiB。索引列出有序文件名、主键范围、条数、字节数与 SHA-256。空集合在索引中显示为零条。按索引顺序读取各组即可重建原有 Q2 对象。入口绑定具体索引的 SHA-256，索引绑定重建对象的 SHA-256。Q3 引文图使用同一格式，按节点、边、未解析位置和独立进展四组保存。工作快照的验收状态见对应的检查点清单。
 
 固定路径见 §1.1。所有视图均含 scope_id、checkpoint_id、schema_version（JSON 顶层；CSV 每行），使用 UTF-8、LF、确定性排序、有限数值、无凭据/受限正文；JSON 为合法对象及数组，CSV 为 RFC 4180 风格逗号分隔、固定表头、正确引用/转义，复合字段以合法 JSON 编码在单元格内，空值按 schema 状态表示。每次有效 Checkpoint 的视图均由规范实体生成，禁止手工补填不在源记录中的事实。
 

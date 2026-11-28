@@ -28,6 +28,7 @@ from urllib.parse import unquote
 
 from jsonschema import Draft202012Validator, FormatChecker
 from storage import read_logical
+from partitioned_research_json import load_view, view_files
 
 ROOT = Path(__file__).resolve().parents[1]
 TERMINAL = {'verified_complete', 'verified_none', 'not_applicable', 'out_of_scope'}
@@ -172,7 +173,12 @@ class Audit:
     def load_json(self, path, kind=None):
         self.watch(path)
         try:
-            value = json.loads(Path(path).read_text(encoding='utf-8'))
+            if kind in {'research_entities', 'citation_graph'}:
+                for part in view_files(path):
+                    self.watch(part)
+                value = load_view(path)
+            else:
+                value = json.loads(Path(path).read_text(encoding='utf-8'))
         except Exception as e:
             self.note('read_error', f'{type(e).__name__}: {e}', path=path)
             return None

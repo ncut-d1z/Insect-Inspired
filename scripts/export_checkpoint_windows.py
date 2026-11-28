@@ -10,9 +10,17 @@ import sys
 from audit_cp10 import EXPORTS as ORIGINAL_EXPORTS
 from checkpoint_cp10 import require
 from render_html import WEB_FILES
+from partitioned_research_json import view_files
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPORTS = tuple(dict.fromkeys((*ORIGINAL_EXPORTS, *WEB_FILES)))
+
+
+def export_files(output):
+    names = list(EXPORTS)
+    for entry in ('temp/exports/research_entities.json', 'temp/exports/citation_graph.json'):
+        names.extend(path.relative_to(output).as_posix() for path in view_files(output / entry))
+    return list(dict.fromkeys(names))
 
 
 def generate(output, checkpoint):
@@ -33,7 +41,7 @@ def generate(output, checkpoint):
     require(not validation["schema_errors"] and not validation["canonical_schema_pointer_patch_needed"],
             "Canonical export schema differs")
     bindings = {}
-    for name in EXPORTS:
+    for name in export_files(output):
         path = output / name
         raw = path.read_bytes()
         normalized = raw.replace(b"\r\n", b"\n")

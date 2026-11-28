@@ -21,6 +21,7 @@ import sys
 from jsonschema import Draft202012Validator, FormatChecker
 from storage import read_logical
 from audit_run import MATRIX_HEADER, IMPLICATION_HEADER
+from partitioned_research_json import ENTITY_KEYS, GRAPH_KEYS, write_view, view_files
 
 ROOT = Path(__file__).resolve().parents[1]
 FIELD_ORDER = ('author editor title year month journal booktitle series edition volume number pages eid publisher school '
@@ -207,6 +208,18 @@ def edge_locator(edge):
     return None
 
 
+def entity_view(prefix, works, people, organizations, projects, project_relations):
+    return {
+        **prefix,
+        'people': sorted(people.values(), key=lambda p: p['person_id']),
+        'organizations': sorted(organizations, key=lambda o: o['org_id']),
+        'projects': sorted(projects, key=lambda p: p['project_id']),
+        'work_refs': [{'work_id': w['work_id'], 'work_key': w['work_key']}
+                      for w in sorted(works.values(), key=lambda w: w['work_id'])],
+        'relations': entity_relations(works, people, project_relations),
+    }
+
+
 def research_paths(assessments, works, seeds, discoveries, graph_edges, entity_rows):
     by_work = defaultdict(list)
     for d in discoveries:
@@ -340,12 +353,8 @@ def run(args):
     graph = {**prefix, 'nodes': nodes, 'edges': edges, 'unresolved_occurrences': pointers,
              'independent_progress': [{k: a[k] for k in ['assessment_id', 'work_id', 'limitation_id', 'relation_type']}
                                       for a in active if 'independent_progress' in a['relation_type']]}
-    relations = entity_relations(works, people, data['project-relations.jsonl'])
-    entities = {**prefix, 'people': sorted(people.values(), key=lambda x: x['person_id']),
-                'organizations': sorted(data['organizations.jsonl'], key=lambda x: x['org_id']),
-                'projects': sorted(data['projects.jsonl'], key=lambda x: x['project_id']),
-                'work_refs': [{'work_id': w['work_id'], 'work_key': w['work_key']} for w in sorted(works.values(), key=lambda x: x['work_id'])],
-                'relations': relations}
+    entities = entity_view(prefix, works, people, data['organizations.jsonl'], data['projects.jsonl'], data['project-relations.jsonl'])
+    relations = entities['relations']
     paths = {**prefix, 'paths': research_paths(active, works, seeds, data['discovery-paths.jsonl'], edges, relations)}
     objects = {'citation_graph': graph, 'research_entities': entities, 'research_paths': paths}
     schema_patch_needed = registry['$defs']['citation_graph']['properties']['unresolved_occurrences']['items'] != POINTER_SCHEMA
@@ -364,8 +373,17 @@ def run(args):
     out = args.output_dir
     out.mkdir(parents=True, exist_ok=True)
     (out / 'ref.bib').write_text(bibliography(works, scope), encoding='utf-8')
+    artifacts = [out / 'ref.bib']
+    partitioned = re.fullmatch(r'CP-(\d+)', args.checkpoint)
+    partitioned = partitioned and int(partitioned[1]) >= 13
     for name, obj in objects.items():
-        write_json(out / 'temp/exports' / (name + '.json'), obj)
+        path = out / 'temp/exports' / (name + '.json')
+        if partitioned and name in {'research_entities', 'citation_graph'}:
+            write_view(path, obj, ENTITY_KEYS if name == 'research_entities' else GRAPH_KEYS)
+            artifacts.extend(view_files(path))
+        else:
+            write_json(path, obj)
+            artifacts.append(path)
     for filename, header in [('evidence_matrix.csv', MATRIX_HEADER), ('research_implications.csv', IMPLICATION_HEADER)]:
         path = out / 'temp/exports' / filename
         with path.open('w', encoding='utf-8', newline='') as f:
@@ -380,7 +398,7 @@ def run(args):
     patch = [{'op': 'replace', 'path': '/$defs/citation_graph/properties/unresolved_occurrences/items', 'value': POINTER_SCHEMA}]
     patch_path = args.report.parent / 'graph-schema-patch.json'
     write_json(patch_path, patch)
-    artifacts = [out / 'ref.bib'] + sorted((out / 'temp/exports').glob('*'))
+    artifacts.extend(out / 'temp/exports' / filename for filename in ('evidence_matrix.csv', 'research_implications.csv'))
     report = {'scope_id': scope['scope_id'], 'checkpoint_id': args.checkpoint,
               'schema_version': registry['schema_version'], 'output_dir': str(out),
               'canonical_schema_pointer_patch_needed': schema_patch_needed,
