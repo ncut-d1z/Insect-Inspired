@@ -40,8 +40,10 @@ def collect(frozen):
     cursor = {k:{f:t.get(f) for f in CURSOR_FIELDS} for k,t in sorted(latest.items())}
     dims = defaultdict(Counter)
     work_ids = set()
+    keys = {}
     for w in rows("works"):
         work_ids.add(w["work_id"])
+        keys[w["work_id"]]=w["work_key"]
         for k in DIMENSIONS: dims[k][w["dimension_status"][k]] += 1
     active = [a for a in rows("assessments") if a["assessment_status"]=="active"]
     eligible = [a for a in active if a["evidence_admission_status"]=="eligible"]
@@ -85,9 +87,20 @@ def collect(frozen):
     require(delta["eligible_claims"]==delta["assessments"]==delta["context_reviewed_edges"]==0,"Unexpected change to scientific admissions")
     discovered=[w for q in current.values() for w in q["new_work_ids"]]
     require(len(discovered)==len(set(discovered))==delta["canonical_works"] and set(discovered)<=work_ids,"New Work credits differ")
+    retired=defaultdict(set)
+    for a in rows("aliases"):
+        if a.get("historical_key"):retired[a["historical_key"]].add(a["target_id"])
+    require(all(not (retired[keys[w]]-{w}) for w in discovered),"New Work occupies another Work's historical key")
+    first=read(TEMP/"reports/RUN-0010-integration-initial-79.json")["coverage"]
+    original=read(TEMP/"reports/RUN-0010-initial-frontier.json")["worklist"]
+    require(len(original)==79 and [r["work_id"] for r in original]==[r["work_id"] for r in first],"CP11 parent queue differs")
+    source_positions=Counter()
+    for r in first:
+        for page in r["source_lists"]:source_positions[page["source_id"]]+=page["rows"]
+    require(source_positions=={"crossref":4680,"europepmc":4279,"openalex":166} and sum(bool(r["counts"].get("occurrences")) for r in first)==78,"CP11 source coverage differs")
     frontier=read(ROOT/run["next_backward_frontier"])["worklist"]
     require(len({w["work_id"] for w in frontier})==len(frontier) and all(latest[w["task_id"]]["entity_id"]==w["work_id"] and
-            latest[w["task_id"]]["task_state"] not in TERMINAL for w in frontier),"Recursive frontier disconnected")
+            keys[w["work_id"]]==w["work_key"] and latest[w["task_id"]]["task_state"] not in TERMINAL for w in frontier),"Recursive frontier disconnected")
     coverage={k:dict(denominator=len(work_ids),states=dict(v)) for k,v in dims.items()}
     coverage.update(phase_status={**parent["coverage"]["phase_status"],**{f"P{i}":"iterated_partial" for i in range(3,7)}},
         closure=dict(established=False,reason="尚有未检索的递归队列、版本歧义、身份缺口及未核实科学主张。"),

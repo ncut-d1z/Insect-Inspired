@@ -447,6 +447,38 @@ class Batch:
             outcomes.append(dict(work_id=wid,task_id=owner["task_id"],source_lists=lists,query_attempt_ids=dict(attempts[wid]),counts=dict(counts),task_state=state))
         return outcomes
 
+    def reference_coverage(self,outcomes):
+        prior={r["work_id"] for r in iter_logical("reference-coverage.jsonl",TEMP)}
+        first=TEMP/"reports/RUN-0010-integration-initial-79.json"
+        prior_outcomes=read(first)["coverage"] if first.is_file() else []
+        pending={r["work_id"]:r for r in [*prior_outcomes,*outcomes] if r["work_id"] not in prior}
+        if not pending:return
+        if prior_outcomes:self.input_paths.add(first)
+        targets=defaultdict(set);positions=Counter();unresolved=Counter()
+        def observe(ref):
+            wid=ref["citing_work_id"]
+            if wid not in pending or not ref["occurrence_id"].startswith("R-R10-"):return
+            pair=(wid,ref["source"]["source_id"]);positions[pair]+=1
+            if ref["cited_work_id"]:targets[pair].add(ref["cited_work_id"])
+            else:unresolved[pair]+=1
+        for ref in iter_logical("reference-occurrences.jsonl",TEMP):observe(ref)
+        for ref in self.adds["reference-occurrences"].values():observe(ref)
+        for wid,item in pending.items():
+            pages=item["source_lists"];attempts=item["query_attempt_ids"]
+            cr=next((p for p in pages if p["source_id"]=="crossref"),None)
+            source_coverage={}
+            for provider,ids in attempts.items():
+                reported=sum(p["rows"] for p in pages if p["source_id"]==provider)
+                require(reported==positions[wid,provider],"Unreconciled per-source occurrences for "+wid)
+                source_coverage[provider]=dict(queries=ids,returned_positions=reported,distinct_resolved_work_count=len(targets[wid,provider]),
+                                               unresolved_positions=unresolved[wid,provider])
+            all_targets=set().union(*(targets[wid,s] for s in attempts));all_queries=[q for ids in attempts.values() for q in ids]
+            require(all_queries and sum(v["returned_positions"] for v in source_coverage.values())==item["counts"].get("occurrences",0),"Unbound source coverage")
+            self.add("reference-coverage",dict(work_id=wid,doi=self.works[wid].get("doi"),query_id=cr["query_id"] if cr else all_queries[0],
+                     deposited_reference_count=cr["visible_total"] if cr else None,returned_reference_count=cr["rows"] if cr else None,
+                     original_fulltext_completeness="not_verified",indexed_sources=source_coverage,distinct_resolved_works=len(all_targets),
+                     coverage_note="登记列表和索引位置按来源对账。原文书目边界及未解析位置继续开放。"))
+
     def version_reviews(self):
         path=TEMP/"reports/RUN-0010-cited-versions.json";report=read(path)
         self.input_paths.add(path)
@@ -649,6 +681,7 @@ def main():
         b.corrected_doi()
         key_changes=b.bibliographic_keys()
         outcomes=b.backward(queue)
+        b.reference_coverage(outcomes)
         # All currently unregistered request receipts belong to this resumed RUN.
         paths=set(OUT.glob("Q-RUN10-*.json"))
     edition_counts=b.index_editions() if not args.versions else {}

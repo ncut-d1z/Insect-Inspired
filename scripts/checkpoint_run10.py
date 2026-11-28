@@ -119,6 +119,8 @@ def finalize(qa):
                checkpoint_wall_clock_hours=hours,closure=False,sync_state="See independent post-push receipt",post_commit_verification_url=PUBLISHED)
     delta=cov["delta_from_cp11"];queue=cov["backward_queue"]
     batches=[read(p) for p in sorted((TEMP/"reports").glob("RUN-0010-integration-*.json"))];recursive=[r for r in batches if r["coverage"] and r["batch"]!="initial-79"]
+    fix=read(TEMP/"reports/RUN-0010-integration-catalog-corrections.json")
+    editions={k:sum(r.get("indexed_edition_checks",{}).get(k,0) for r in batches) for k in ("published_location","registered_preprint","unknown_location")}
     def num(x):return f"{x:,}"
     report=f"""# CP-0012 阶段报告
 
@@ -135,6 +137,8 @@ def finalize(qa):
 
 到期维护共追加 {c['run10_deadline_task_events']} 个事件、变更 {c['run10_deadline_field_transitions']} 个字段状态。保留原始时限。已逾期且未升级 {cov['unknown_review']['unupgraded_overdue_tasks']} 个。书目校正保留了旧 DOI。实际来源请求 {c['run10_external_requests']} 次，人工复核 {c['run10_manual_reviews']} 项，付费 0。
 
+导出核对后修正 {len(fix['affiliation_role_corrections'])} 个署名角色名和 {len(fix['bibliographic_key_corrections'])} 个书目键。两项恢复历史别名归属，另 47 项保留复姓空白的下划线写法和先前定位。机构证据与 Work ID 保留。另查 OpenAlex 的位置版本字段，{editions['published_location']} 条明确为 publishedVersion，{editions['registered_preprint']} 条有预印本书目类型，{editions['unknown_location']} 条保留版本待核实。[键与署名逐项记录](RUN-0010-integration-catalog-corrections.json)
+
 主库有 {num(c['canonical_works'])} 篇、{num(c['versions'])} 个版本、{num(c['citation_edges'])} 条边、{num(c['unresolved_occurrences'])} 个未解析位置、{num(c['unresolved_tasks'])} 个开放工单。下一批按[递归队列](../../{queue['path']})继续。来源空列表、缺失标识及限流均保留在工单和查询日志中。
 
 有一条 1979 年的引文展示了版本以外的书目歧义。施引书目第 64 项的题名以 *Deficit* 开头，登记的 DOI 末尾为 `sp012690`。该 DOI 的注册题名以 *Facilitation* 开头，*Deficit* 一文对应 `sp012691`。逐项记录保留了两个候选。[施引书目](../query-results/Q-RUN10-BCR-071-079-A1.json) · [两篇的标识和题名](../query-results/Q-RUN10-ID-EP-4da91f61dfaa6bb17f45-A1.json)
@@ -143,10 +147,11 @@ def finalize(qa):
 """
     outputs={ROOT/REPORT:report.encode(),ROOT/RUN_FILE:dump(run)}
     for name,obj in qa_files.items():outputs[TEMP/"validation"/name]=dump(obj)
-    for name,text in (("temp/change-log.md",f"\n\n## RUN-0010 / CP-0012\n\n{end}。检索 CP11 的 79 篇并展开下一层，新增 {num(delta['canonical_works'])} 篇及 {num(delta['citation_edges'])} 条边。[阶段报告](reports/P3-P6-CP0012.md)。\n"),
-                      ("temp/progress.md",f"\n\n## CP-0012\n\n{end}。P3–P6 部分完成。共 {num(c['canonical_works'])} 篇，下一批 {num(queue['work_count'])} 篇。[阶段报告](reports/P3-P6-CP0012.md)。\n")):
-        old=(ROOT/name).read_bytes();require(b"RUN-0010 / CP-0012" not in old and b"## CP-0012" not in old,"Existing progress entry")
-        outputs[ROOT/name]=old.rstrip()+text.encode()
+    log=TEMP/"change-log.md";old=log.read_bytes();require(b"## RUN-0010 / CP-0012" not in old,"Existing change-log entry")
+    outputs[log]=old.rstrip()+f"\n\n## RUN-0010 / CP-0012\n\n{end}。检索 CP11 的 79 篇并展开下一层，新增 {num(delta['canonical_works'])} 篇及 {num(delta['citation_edges'])} 条边。[阶段报告](reports/P3-P6-CP0012.md)。\n".encode()
+    progress=TEMP/"progress.md";heading,prior=progress.read_text(encoding="utf8").split("\n",1)
+    require(heading=="# 当前研究进度" and "## CP-0012" not in prior,"Unexpected progress document")
+    outputs[progress]=(heading+f"\n\n## CP-0012\n\n{end}。P3–P6 部分完成。累计 {num(c['canonical_works'])} 篇、{num(c['citation_edges'])} 条边和 {c['eligible_claims']} 条合格主张。下一批待展开 {num(queue['work_count'])} 篇。\n\n[阶段报告](reports/P3-P6-CP0012.md) · [检查点](snapshots/checkpoints/CP-0012.json) · [远端回读](validation/cp12-post-push.json)\n\n## CP-0011\n\n"+prior.lstrip()).encode()
     rd=(ROOT/"README.md").read_text(encoding="utf8");start=rd.index("执行状态统一记录于 ");end_p=rd.index("\n\n",start)
     outputs[ROOT/"README.md"]=(rd[:start]+"执行状态统一记录于 [进度追踪](temp/progress.md)。[CP-0012 阶段报告](temp/reports/P3-P6-CP0012.md)记录本轮研究、覆盖和缺口。[CP-0012](temp/snapshots/checkpoints/CP-0012.json) 已通过数据验收，父检查点为 [CP-0011](temp/snapshots/checkpoints/CP-0011.json)。CP-0003 保留为 invalid 历史。"+rd[end_p:]).encode()
     cp["status"]="valid";cp["failure_reasons"]=cp["failure_reasons"][1:];cov["derived_views"]={"state":"validated","counts":meta["counts"],"artifacts":det["artifacts"]}
