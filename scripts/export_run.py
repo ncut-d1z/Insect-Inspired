@@ -222,14 +222,19 @@ def entity_view(prefix, works, people, organizations, projects, project_relation
 
 def research_paths(assessments, works, seeds, discoveries, graph_edges, entity_rows):
     by_work = defaultdict(list)
+    path_entities = set()
     for d in discoveries:
         by_work[d.get('work_id')].append(d)
-    edge_pairs = {(e['citing_work_id'], e['cited_work_id']): e for e in graph_edges}
+        for step in d.get('steps', []):
+            path_entities.update((step.get('from_entity_id'), step.get('to_entity_id')))
+    edge_pairs = {(e['citing_work_id'], e['cited_work_id']): e for e in graph_edges
+                  if e['citing_work_id'] in path_entities and e['cited_work_id'] in path_entities}
     relation_pairs = defaultdict(list)
     author_edges = defaultdict(dict)
     for r in entity_rows:
-        relation_pairs[(r['from_id'], r['to_id'])].append(r)
-        if r['relation_type'] == 'authored_by':
+        if r['from_id'] in path_entities and r['to_id'] in path_entities:
+            relation_pairs[(r['from_id'], r['to_id'])].append(r)
+        if r['relation_type'] == 'authored_by' and r['from_id'] in path_entities:
             author_edges[r['from_id']][r['to_id']] = r
     seed_by_work = defaultdict(list)
     for sid, seed in seeds.items():
@@ -373,6 +378,8 @@ def run(args):
     entities = entity_view(prefix, works, people, data['organizations.jsonl'], data['projects.jsonl'], data['project-relations.jsonl'])
     relations = entities['relations']
     paths = {**prefix, 'paths': research_paths(active, works, seeds, data['discovery-paths.jsonl'], edges, relations)}
+    bibtex = bibliography(works, scope)
+    del data, works, by_key, people, seeds
     objects = {'citation_graph': graph, 'research_entities': entities, 'research_paths': paths}
     schema_patch_needed = registry['$defs']['citation_graph']['properties']['unresolved_occurrences']['items'] != POINTER_SCHEMA
     # Private compatibility patch follows the approved README 1.1.1. The
@@ -389,7 +396,7 @@ def run(args):
         raise ValueError('Export schema violations: ' + json.dumps(errors, ensure_ascii=False))
     out = args.output_dir
     out.mkdir(parents=True, exist_ok=True)
-    (out / 'ref.bib').write_text(bibliography(works, scope), encoding='utf-8')
+    (out / 'ref.bib').write_text(bibtex, encoding='utf-8')
     artifacts = [out / 'ref.bib']
     partitioned = re.fullmatch(r'CP-(\d+)', args.checkpoint)
     partitioned = partitioned and int(partitioned[1]) >= 13
@@ -420,7 +427,7 @@ def run(args):
               'schema_version': registry['schema_version'], 'output_dir': str(out),
               'canonical_schema_pointer_patch_needed': schema_patch_needed,
               'schema_patch_path': str(patch_path), 'input_record_counts': counts,
-              'counts': {'bibtex_entries': len(works), 'graph_nodes': len(nodes), 'graph_edges': len(edges),
+              'counts': {'bibtex_entries': counts['works.jsonl'], 'graph_nodes': len(nodes), 'graph_edges': len(edges),
                          'unresolved_pointers': len(pointers), 'independent_progress': len(graph['independent_progress']),
                          'active_assessments': len(active), 'entity_relations': len(relations),
                          'paths': len(paths['paths']), 'path_gaps': sum(bool(p['gap_reason']) for p in paths['paths'])},
