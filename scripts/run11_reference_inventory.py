@@ -134,7 +134,8 @@ def source_pages(owner,row,titles,extra=None):
 
 def raw_ids(raw,provider):
     if provider=="openalex":
-        return tuple(k for k in (doi(raw.get("raw_doi")),raw.get("openalex")) if k)
+        printed,*_=fields({"unstructured":raw.get("raw_reference_string")},"crossref")
+        return tuple(dict.fromkeys(k for k in (doi(raw.get("raw_doi")),printed,raw.get("openalex")) if k))
     d,e,*_=fields(raw,provider)
     return tuple(k for k in (d,e) if k)
 

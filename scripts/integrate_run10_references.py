@@ -145,14 +145,14 @@ class Batch:
                        field_path=None,unknown_since_utc=None,deadline_at_utc=None,review_task_id=None,priority="normal",
                        overdue=False,supporting_record_ids=[])
             self.adds["tasks"][tid]=t
-        t.update(task_state=state,updated_at_utc=self.now,checkpoint_id=CP,review_condition=why,
+        t.update(task_state=state,updated_at_utc=self.now,checkpoint_id=getattr(self,"checkpoint",CP),review_condition=why,
                  failure_reason=None if state in TERMINAL else why)
         t["query_ids"]=list(dict.fromkeys([*t["query_ids"],*qids]))
         t["supporting_record_ids"]=list(dict.fromkeys([*t.get("supporting_record_ids",[]),*qids]))
         return t
 
     def unknown(self,etype,eid,key,src):
-        tid="T-R10-F-"+token(eid,key)
+        tid="T-"+getattr(self,"id_prefix","R10")+"-F-"+token(eid,key)
         reason="当前已核对的书目字段不足，待以独立来源补核。"
         t=self.task(tid,eid,"field_review",reason,etype=etype,source_id=src["source_id"])
         when=t.get("unknown_since_utc") or self.now
@@ -539,7 +539,7 @@ class Batch:
 
     def queries(self,paths):
         apis={"crossref":"Crossref REST v1","europepmc":"Europe PMC REST","publisher":"bioRxiv publisher metadata","openalex":"OpenAlex REST",
-              "semantic_scholar":"Semantic Scholar Academic Graph v1"}
+              "semantic_scholar":"Semantic Scholar Academic Graph v1","ror":"Research Organization Registry v2"}
         for path in sorted(paths):
             q=read(path);qid=q["query_id"]
             if qid in self.known_queries:continue
@@ -558,7 +558,9 @@ class Batch:
                 for key in ("returned_count","count_before_dedup","count_after_dedup","visible_total"):
                     fs[key]=nonapplicable(src,"请求失败，来源未提供结果总数。")
             credits=self.source_credit.get(qid,[])
-            row=dict(query_id=qid,task_id=tid,scope_id=SCOPE,checkpoint_id=CP,entity_id=o["work_id"],source_id=sid,
+            time_status=q.get("query_time_status","exact")
+            date=q["requested_at_utc"][:10] if q["requested_at_utc"] else q["queried_date"]
+            row=dict(query_id=qid,task_id=tid,scope_id=SCOPE,checkpoint_id=getattr(self,"checkpoint",CP),entity_id=o["work_id"],source_id=sid,
                      endpoint_or_url=q["endpoint_or_url"],api_version=apis[sid],query_kind="bibliography_"+qid.split("-")[2].lower(),
                      raw_parameters=q["parameters"],normalized_parameters={**q["parameters"],"scope_id":SCOPE},
                      queried_at_utc=q["requested_at_utc"],cursor_in=q.get("cursor_in"),cursor_out=q.get("cursor_out"),
@@ -568,12 +570,15 @@ class Batch:
                      verification_status="source_supported" if ok else "unverified",error_code=None if ok else str(q.get("http_status") or "transport"),
                      error_message=q.get("error"),retry_count=q["attempt"]-1,retry_at=None,cache_path=path.relative_to(ROOT).as_posix(),
                      cache_hit=False,reused_query_id=None,rerun_reason=q["reason"],coverage_note="按来源、查询及分页计数；登记条目与索引匹配分别保留。",
-                     license_note="Public bibliographic metadata and reference lists only.",query_time_status="exact",
-                     recorded_at_utc=q["completed_at_utc"],queried_date=q["requested_at_utc"][:10],field_states=fs)
+                     license_note="Public bibliographic metadata and reference lists only.",query_time_status=time_status,
+                     recorded_at_utc=q["completed_at_utc"],queried_date=date,field_states=fs)
+            if time_status=="unavailable_exact":
+                row.update(status="partial",verification_status="source_supported",
+                           coverage_note="请求发生但原始时间与响应未保存。仅审计该请求，不认定取得任何结果。")
             self.add("queries",row)
             self.add("source-observations",dict(observation_id="OBS-"+qid,query_id=qid,task_id=tid,source_id=sid,
                      endpoint_or_url=q["endpoint_or_url"],queried_at_utc=q["requested_at_utc"],recorded_at_utc=q["completed_at_utc"],
-                     query_time_status="exact",status=q["status"],http_status=q["http_status"],response_kind=row["query_kind"],
+                     query_time_status=time_status,status=q["status"],http_status=q["http_status"],response_kind=row["query_kind"],
                      returned_count=received,visible_total=q.get("visible_total"),page_complete=row["page_complete"],count_scope=row["coverage_note"],
                      receipt_path=row["cache_path"],receipt_sha256=file_hash(path),external_request_performed=True,external_request_count=1,
                      external_request_count_basis=REQUEST_COUNT_BASIS,cache_hit=False))
