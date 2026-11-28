@@ -212,6 +212,11 @@ def lookup_request(key,provider,endpoint,params,owners,why,project):
 
 
 def hydrate(start,count,plan_name):
+    import subprocess
+    common=Path(subprocess.check_output(["git","rev-parse","--path-format=absolute","--git-common-dir"],text=True).strip())
+    if (common/"RUN-0011-identity-yield").exists():
+        print(f"Yielding before identity group {start+1} in {plan_name}.",flush=True)
+        raise SystemExit(75)
     plan=read(PLAN/plan_name)
     for i,group in enumerate(plan["groups"][start:start+count],start):
         q=request_identities(group["ids"],group["provider"],group["owners"],lookup_request)
