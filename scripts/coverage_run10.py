@@ -52,7 +52,7 @@ def collect(frozen):
     union=set.union(*themes.values())
     require(union <= work_ids and len(work_ids)==totals["works"], "Work or topic identity mismatch")
     queries=list(rows("queries")); current={q["query_id"]:q for q in queries if q["checkpoint_id"]==CP}
-    observations=[o for o in rows("source-observations") if o["query_id"] in current]
+    observations=[o for o in rows("source-observations") if o.get("query_id") in current]
     require(Counter(o["query_id"] for o in observations)==Counter({k:1 for k in current}),"Missing observation")
     require(set(current)=={p.stem for p in OUT.glob("Q-RUN10-*.json")},"Unregistered request receipt")
     requests=0
