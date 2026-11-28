@@ -93,10 +93,15 @@ def instant(value):
 
 
 def next_actions(tasks, owners, cutoff):
+    return ranked_actions(tasks.items(), owners, cutoff,
+                          lambda tid: tid in tasks and tasks[tid]["task_state"] in TERMINAL)
+
+
+def ranked_actions(entries, owners, cutoff, completed):
     """Pick one eligible open task using its persisted priority, deadline and ID."""
     choices, open_works, bibliographic = {}, set(), set()
     ranks = {"urgent": 0, "high": 1, "normal": 2, "low": 3}
-    for tid, task in tasks.items():
+    for tid, task in entries:
         wid = owners.get(task["entity_id"])
         state = task["task_state"]
         if wid is None or state in TERMINAL:
@@ -111,7 +116,7 @@ def next_actions(tasks, owners, cutoff):
         retry = instant(task.get("retry_at"))
         if retry and (not cutoff or retry > cutoff):
             continue
-        if any(dep not in tasks or tasks[dep]["task_state"] not in TERMINAL for dep in task.get("dependency_ids", [])):
+        if any(not completed(dep) for dep in task.get("dependency_ids", [])):
             continue
         due = instant(task.get("deadline_at_utc"))
         rank = (ranks.get(task.get("priority") or "normal", 2), due is None, due, tid)
@@ -123,16 +128,40 @@ def next_actions(tasks, owners, cutoff):
     return result
 
 
-def source_actions(base, works, assessments, versions, tasks, checkpoint):
+def task_owners(works, assessments, versions):
     owners = {w["work_id"]: w["work_id"] for w in works}
     selected = set(owners)
     for records, field in ((assessments, "assessment_id"), (versions, "version_id")):
         owners.update({r[field]: r["work_id"] for r in records if r["work_id"] in selected})
+    return owners
+
+
+def source_actions(base, works, assessments, versions, tasks, checkpoint):
+    owners = task_owners(works, assessments, versions)
     stamp = max((t.get("updated_at_utc") or "" for t in tasks.values()), default="")
     cp_file = base / "snapshots/checkpoints" / (checkpoint + ".json")
     if re.fullmatch(r"CP-\d{4,}", checkpoint) and cp_file.is_file():
         stamp = json.loads(cp_file.read_bytes()).get("created_at_utc") or stamp
     return next_actions(tasks, owners, instant(stamp))
+
+
+def logical_actions(base, works, assessments, checkpoint):
+    owners = task_owners(works, assessments, iter_logical("versions.jsonl", base))
+    latest, closed = {}, set()
+    for t in iter_logical("tasks.jsonl", base):
+        tid = t["task_id"]
+        latest[tid] = t["event_sequence"]
+        if t["task_state"] in TERMINAL:
+            closed.add(tid)
+        else:
+            closed.discard(tid)
+    def last_events():
+        return (t for t in iter_logical("tasks.jsonl", base) if latest[t["task_id"]] == t["event_sequence"])
+    cp_file = base / "snapshots/checkpoints" / (checkpoint + ".json")
+    stamp = json.loads(cp_file.read_bytes()).get("created_at_utc") if re.fullmatch(r"CP-\d{4,}",checkpoint) and cp_file.is_file() else None
+    if not stamp:
+        stamp = max((t.get("updated_at_utc") or "" for t in last_events()), default="")
+    return ranked_actions(((t["task_id"], t) for t in last_events()), owners, instant(stamp), closed.__contains__)
 
 
 def topic_groups(assessments, known):
@@ -264,7 +293,13 @@ def generate(base, output, checkpoint=None):
     if output.name.casefold() == "misc.html":
         raise ValueError("Topic and U00 output paths must differ")
     scope = json.loads((base/"snapshots/scope.json").read_bytes())
-    works = sorted(iter_logical("works.jsonl", base), key=lambda w: w["work_key"])
+    fields = ("work_id","work_key","canonical_title","authors","year","venue","school","publisher","doi","u00_reasons")
+    works = []
+    for row in iter_logical("works.jsonl", base):
+        work = {k: row[k] for k in fields if k in row}
+        work["authors"] = [{"display_name": a["display_name"]} for a in row.get("authors", []) if a.get("display_name")]
+        works.append(work)
+    works.sort(key=lambda w: w["work_key"])
     keys = {w["work_key"] for w in works}
     ids = {w["work_id"] for w in works}
     if len(keys) != len(works) or len(ids) != len(works):
@@ -273,11 +308,11 @@ def generate(base, output, checkpoint=None):
     groups = topic_groups(assessment_rows, keys)
     union = set().union(*groups.values())
     misc_works = [w for w in works if w["work_key"] not in union]
-    tasks = {t["task_id"]: t for t in iter_logical("tasks.jsonl", base)}
     if not checkpoint:
-        checkpoint = max((t["checkpoint_id"] for t in tasks.values() if t.get("checkpoint_id")), default="未记录")
-    actions = source_actions(base, misc_works, assessment_rows, iter_logical("versions.jsonl", base), tasks, checkpoint)
-    del tasks
+        tasks = {t["task_id"]: t.get("checkpoint_id") for t in iter_logical("tasks.jsonl", base)}
+        checkpoint = max((c for c in tasks.values() if c), default="未记录")
+        del tasks
+    actions = logical_actions(base, misc_works, assessment_rows, checkpoint)
     topics = make_payload([w for w in works if w["work_key"] in union], checkpoint, groups=groups)
     misc = make_payload(misc_works, checkpoint, actions=actions)
     dest = output.parent

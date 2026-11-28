@@ -19,7 +19,7 @@ import sys
 # Adjacent project-local helpers are resolved by Python's script directory.
 
 from jsonschema import Draft202012Validator, FormatChecker
-from storage import read_logical
+from storage import iter_logical
 from audit_run import MATRIX_HEADER, IMPLICATION_HEADER
 from partitioned_research_json import ENTITY_KEYS, GRAPH_KEYS, write_view, view_files
 
@@ -324,10 +324,30 @@ def run(args):
     registry = json.loads((temp / 'schema.json').read_text())
     scope = json.loads((temp / 'snapshots/scope.json').read_text())
     data = {}
-    for filename in ['works.jsonl', 'authors.jsonl', 'organizations.jsonl', 'projects.jsonl',
-                     'assessments.jsonl', 'citation-edges.jsonl', 'reference-occurrences.jsonl',
-                     'seed-manifest.jsonl', 'discovery-paths.jsonl', 'project-relations.jsonl']:
-        data[filename] = read_logical(filename, base=temp)
+    counts = {}
+    work_fields = set(FIELD_ORDER + NODE_FIELDS + ['editors','authors','abstract_items','seed_ids','discovery_sources',
+                                                  'verification_status','degree_type','document_type','publication_date','venue'])
+    for filename in ['assessments.jsonl', 'works.jsonl', 'authors.jsonl', 'organizations.jsonl', 'projects.jsonl',
+                     'citation-edges.jsonl','reference-occurrences.jsonl','seed-manifest.jsonl',
+                     'discovery-paths.jsonl','project-relations.jsonl']:
+        selected = []
+        count = 0
+        if filename == 'discovery-paths.jsonl':
+            assessed = {a['work_id'] for a in data['assessments.jsonl'] if a['assessment_status'] == 'active'}
+        for row in iter_logical(filename,base=temp):
+            count += 1
+            if filename == 'works.jsonl':
+                row = {k:v for k,v in row.items() if k in work_fields}
+            elif filename == 'reference-occurrences.jsonl':
+                if row.get('cited_work_id') is not None:
+                    continue
+                row = {k:row.get(k) for k in ('occurrence_id','citing_work_id','candidate_ids','failure_reason')}
+                row['canonical_dataset'] = 'temp/reference-occurrences.jsonl'
+            elif filename == 'discovery-paths.jsonl' and row['work_id'] not in assessed:
+                continue
+            selected.append(row)
+        data[filename] = selected
+        counts[filename] = count
     works = {w['work_id']: w for w in data['works.jsonl']}
     by_key = {w['work_key']: w for w in works.values()}
     if len(works) != len(data['works.jsonl']) or len(by_key) != len(works):
@@ -346,10 +366,7 @@ def run(args):
         edges.append({**{k: e[k] for k in EDGE_FIELDS},
                       'citing_work_id': by_key[e['citing_key']]['work_id'],
                       'cited_work_id': by_key[e['cited_key']]['work_id']})
-    pointers = sorted(({'occurrence_id': r['occurrence_id'], 'citing_work_id': r['citing_work_id'],
-                        'candidate_ids': r['candidate_ids'], 'failure_reason': r.get('failure_reason'),
-                        'canonical_dataset': 'temp/reference-occurrences.jsonl'}
-                       for r in data['reference-occurrences.jsonl'] if r.get('cited_work_id') is None), key=lambda r: r['occurrence_id'])
+    pointers = sorted(data['reference-occurrences.jsonl'], key=lambda r: r['occurrence_id'])
     graph = {**prefix, 'nodes': nodes, 'edges': edges, 'unresolved_occurrences': pointers,
              'independent_progress': [{k: a[k] for k in ['assessment_id', 'work_id', 'limitation_id', 'relation_type']}
                                       for a in active if 'independent_progress' in a['relation_type']]}
@@ -402,7 +419,7 @@ def run(args):
     report = {'scope_id': scope['scope_id'], 'checkpoint_id': args.checkpoint,
               'schema_version': registry['schema_version'], 'output_dir': str(out),
               'canonical_schema_pointer_patch_needed': schema_patch_needed,
-              'schema_patch_path': str(patch_path), 'input_record_counts': {n: len(x) for n, x in data.items()},
+              'schema_patch_path': str(patch_path), 'input_record_counts': counts,
               'counts': {'bibtex_entries': len(works), 'graph_nodes': len(nodes), 'graph_edges': len(edges),
                          'unresolved_pointers': len(pointers), 'independent_progress': len(graph['independent_progress']),
                          'active_assessments': len(active), 'entity_relations': len(relations),
