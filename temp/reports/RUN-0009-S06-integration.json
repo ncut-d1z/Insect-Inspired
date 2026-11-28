@@ -1,0 +1,253 @@
+{
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "target_checkpoint": "CP-0011",
+  "status": "integrated_pending_checkpoint_qa",
+  "before_commit": "cd1b1d1901b5bf928b32c3054b3fd6e0b1c69792",
+  "reviewed_at_utc": "2026-11-28T03:44:54.505933Z",
+  "integrated_at_utc": "2026-11-28T03:59:01.083836Z",
+  "datasets": {
+    "aliases": {
+      "before_logical_sha256": "e6feb23ac8af304ddca57538de9a5eb84a9ba78edab64c720f8b76d55783a465",
+      "after": {
+        "bytes": 271778,
+        "sha256": "6a3845ef30ec5d44907cfa51fa9334eb3f00fae3fba1e9fe2b10029bff7bea09",
+        "records": 259
+      },
+      "changed": [],
+      "appended_ids": [
+        "AL-RUN09-SUNKARA-DOI"
+      ]
+    },
+    "assessments": {
+      "before_logical_sha256": "f195f2108425d8db052600ef15048a87fa24f1c9395610cd0f02a02b7610e38f",
+      "after": {
+        "bytes": 3760219,
+        "sha256": "8c7ad25ba5efb31ae7f673b2350c15d8cf7a0c513e4b7dfae611d33a2a32682c",
+        "records": 73
+      },
+      "changed": [],
+      "appended_ids": [
+        "A-RUN09-S06-L04-bIPS-mixture"
+      ]
+    },
+    "citation-context-audit": {
+      "before_logical_sha256": "c206d16aa98b1526ddb4a2c0919d2a1bfae878c42fe0bd19295d06dc54e9a23b",
+      "after": {
+        "bytes": 32969,
+        "sha256": "30e91a4eecaf4c92ae8f2e638d582846b5994246b2e97cbb83323086fca84093",
+        "records": 36
+      },
+      "changed": [],
+      "appended_ids": [
+        "CTX-RUN09-S06-CR3",
+        "CTX-RUN09-S06-CR14",
+        "CTX-RUN09-S06-CR38",
+        "CTX-RUN09-S06-CR78"
+      ]
+    },
+    "citation-edges": {
+      "before_logical_sha256": "a741b1f5aea1d146e73695cefa940f1f8b2aee41ea3d6843b8b057d0e56cc188",
+      "after": {
+        "bytes": 16138299,
+        "sha256": "3ac06e49677e84446ba99b1fc671b7e83d27371115d83b35541e0cff0456a174",
+        "records": 31843
+      },
+      "changed": [
+        {
+          "id": "CE-8080142e39e03c28",
+          "before_sha256": "7be72873156cd075d59e68fc3cc53549e32698327b6c6a11f9e2d6e113a97191",
+          "after_sha256": "232580628ecd69cbf16118206e83c17ee0ffdfbb6b26ed0d24488dd7edba1d3e"
+        },
+        {
+          "id": "CE-74bfb031fdec4f0c",
+          "before_sha256": "5a4199855dcef8ad5fba2f6933498aac2de26259df9a423ac7cd2a8bae4fb48a",
+          "after_sha256": "812232104d7944be9ab2319418178aa5571e76718b998d09ba8a73958ea6a272"
+        },
+        {
+          "id": "CE-a7275edbccb620c8",
+          "before_sha256": "b73c8b13dbaad1b62fc8b01f5184f8b6522ce9793bb4134f14bc43911de45e59",
+          "after_sha256": "9856633b32729912ca8f520b7947a2380947bb544eab7fc4a72f40f3637a1efb"
+        },
+        {
+          "id": "CE-8eb9cd638f02313e",
+          "before_sha256": "b7acde660a11120859399caf5b0eb3814e51f3e05e04c0bd9a374a165e27a3f6",
+          "after_sha256": "35518b42c605873182c4a1368ab017c68e520c3091e41c4320202a2f41cd14de"
+        }
+      ],
+      "appended_ids": []
+    },
+    "manual-reviews": {
+      "before_logical_sha256": "d126fd0edb2ab6acf59dce06a3edcf511fa1797e03a95defe5f0d86e640aabbe",
+      "after": {
+        "bytes": 181374,
+        "sha256": "34695fd24c2687ad781cbd9f57e0e57403866574ac43c86919b4f475d7f5ef79",
+        "records": 372
+      },
+      "changed": [],
+      "appended_ids": [
+        "MR-RUN09-P3-01",
+        "MR-RUN09-P3-02",
+        "MR-RUN09-P3-03",
+        "MR-RUN09-P3-04",
+        "MR-RUN09-P4-01",
+        "MR-RUN09-P4-02",
+        "MR-RUN09-P4-03",
+        "MR-RUN09-P4-04",
+        "MR-RUN09-P5-01",
+        "MR-RUN09-P6-01"
+      ]
+    },
+    "project-relations": {
+      "before_logical_sha256": "df1629a9cf64b8a43345f1dfc7dbc4923bf68a76416e9c4e546388c8d97f76ab",
+      "after": {
+        "bytes": 35550,
+        "sha256": "daef4ba65aa91793807802fe8dc9fe3c087af729dd32294b86487a595e055b4f",
+        "records": 50
+      },
+      "changed": [],
+      "appended_ids": [
+        "ER-RUN09-S06-CONGENTO"
+      ]
+    },
+    "projects": {
+      "before_logical_sha256": "702116c6be0c4a9ad00c691fad57aee36ecfb81aa89cc6aec841e35e82013f02",
+      "after": {
+        "bytes": 48190,
+        "sha256": "1f4e046d3c484c7633b3b4c16a9f5cf4b1c69712b4e2c8dd5795fc777c6aa017",
+        "records": 8
+      },
+      "changed": [],
+      "appended_ids": [
+        "PRJ-CONGENTO-LISBOA-01-0145-FEDER-022170"
+      ]
+    },
+    "queries": {
+      "before_logical_sha256": "4501f80d93cacb88c48ca44333e04313f1db6185ef82e96b0defc7dd9016dcf7",
+      "after": {
+        "bytes": 2821846,
+        "sha256": "27e4e04e6ce0ce5111fe973d451016ca83ac7e8a186dc3c458c22166719737e9",
+        "records": 983
+      },
+      "changed": [],
+      "appended_ids": [
+        "Q-RUN09-P3-ELIFE-002",
+        "Q-RUN09-P3-SUNKARA-006",
+        "Q-RUN09-P5-CONGENTO-003",
+        "Q-RUN09-P5-CONGENTO-004",
+        "Q-RUN09-P5-CONGENTO-005",
+        "Q-RUN09-S06-FIG5-007",
+        "Q-RUN09-S06-FIG5-008",
+        "Q-RUN09-S06-FIG5-009",
+        "Q-RUN09-S06-JATS-001"
+      ]
+    },
+    "reference-occurrences": {
+      "before_logical_sha256": "ed055a93a0c5399d11f6c994a5f4d6709ad62d9a62f0b032605d2f5a276eb42d",
+      "after": {
+        "bytes": 189571183,
+        "sha256": "5fe8398549289baa664f77c9c6912f4548c2a41b4bf00db54209e5bea72cbe06",
+        "records": 158544
+      },
+      "changed": [
+        {
+          "id": "R-CR-1f729eb243e56440",
+          "before_sha256": "d6ca4e01ed7787d8aca21ca98d29d750d63fbf1ced2330c3c506b03fba5ff640",
+          "after_sha256": "bd73aed5c589f5eae56f29e8c54b88a195835a3c13bb3890f36700b050e45ba7"
+        },
+        {
+          "id": "R-CR-3882cb2a0b082181",
+          "before_sha256": "9e2e91c368bdc4273b44ce577e7c0a66722e2c97511beb39b6beafb66dd9dc0b",
+          "after_sha256": "113f2a9688ff2aad9b6f0cc4e08851f7a03228679347dd9332bb3f23e51c88d8"
+        },
+        {
+          "id": "R-CR-55c3a2acbc6d1c8b",
+          "before_sha256": "a7916f628c41a6e81cb919f4e2c03151e005095d3a6fd1b2464221464de8df9b",
+          "after_sha256": "01bba42731676dcfd7b41fcf79069f31c68785fd30d7887ad6a86e4e3f75164e"
+        },
+        {
+          "id": "R-CR-f393d727c0c39976",
+          "before_sha256": "38dd9fcd9c1482adc980e0a1e0fc5faf07f09bcccfc3dee9bcb23577e277aad5",
+          "after_sha256": "50a6aa9f59390c1b7ebce802e002552f226fcbb592d38ea509ae3c384bab2037"
+        }
+      ],
+      "appended_ids": []
+    },
+    "source-observations": {
+      "before_logical_sha256": "0b72da4adf374eca43fd85ad452616ea552d9343c0a3b47dce38f510e5472740",
+      "after": {
+        "bytes": 866539,
+        "sha256": "e42f9b19d99ca19f4581c5683218e1280d2ffe761735a94692c19fa8e93a5ec3",
+        "records": 984
+      },
+      "changed": [],
+      "appended_ids": [
+        "OBS-Q-RUN09-P3-ELIFE-002",
+        "OBS-Q-RUN09-P3-SUNKARA-006",
+        "OBS-Q-RUN09-P5-CONGENTO-003",
+        "OBS-Q-RUN09-P5-CONGENTO-004",
+        "OBS-Q-RUN09-P5-CONGENTO-005",
+        "OBS-Q-RUN09-S06-FIG5-007",
+        "OBS-Q-RUN09-S06-FIG5-008",
+        "OBS-Q-RUN09-S06-FIG5-009",
+        "OBS-Q-RUN09-S06-JATS-001"
+      ]
+    },
+    "tasks": {
+      "before_logical_sha256": "084e8b26c62204a8ff83d7ca52a0f9c254e4941cd4842967f91cc4aa2f65c142",
+      "after": {
+        "bytes": 183789721,
+        "sha256": "38e4f5e10f28c6f756869ce2ba39a4aef776f39ae4874b7786130b7c87979980",
+        "records": 200569
+      },
+      "changed": [],
+      "appended_ids": [
+        "T-References-S06",
+        "T-Unknown-85f64c308e176320",
+        "T-Unknown-e0abdc4623f3d125",
+        "T-Unknown-f64c74bcc1900037",
+        "T-Unknown-14726cfdb38dca1c",
+        "T-RUN09-F-2b9796b6f8707e6349",
+        "T-RUN09-F-8f33e3a6036f730077",
+        "T-RUN09-F-0f9cec34b0cf2373ad",
+        "T-RUN09-CONGENTO-OUTPUTS",
+        "T-RUN09-F-9f22a97ed9b513b9a6",
+        "T-RUN09-F-d2788f8f819e55245f",
+        "T-RUN09-F-6314ea2b380dfebc81",
+        "T-RUN09-S06-R38-VERSION",
+        "T-RUN09-S06-R78-IDENTITY",
+        "T-RUN09-S06-CONGENTO",
+        "T-RUN09-S06-FIG5",
+        "T-RUN09-F-5073ce421eb0fbda62"
+      ]
+    },
+    "works": {
+      "before_logical_sha256": "1bfe6cf0577b2c92fb7f4f17941ca134f5af956928be0d13e3f5838816af63de",
+      "after": {
+        "bytes": 62495856,
+        "sha256": "fbd18b0ae6d09b8c9f14db44f6ddd9c43c1bae567cc4dbff2bb47a9e22c82e86",
+        "records": 5098
+      },
+      "changed": [
+        {
+          "id": "W-R24649f4879cc831d",
+          "before_sha256": "e3c51bebb161758768652ea75139a4c893af819400e79d74596d3e616b3d4b75",
+          "after_sha256": "0b8d97eb52ab8227963e7418cf77c8235a866700c56270b3cd737bce2ae8dda6"
+        }
+      ],
+      "appended_ids": []
+    }
+  },
+  "new_work_count": 0,
+  "new_edges": 0,
+  "new_resolved_occurrences": 4,
+  "new_verified_context_edges": 4,
+  "new_projects": 1,
+  "new_project_work_relations": 1,
+  "new_active_assessments": 1,
+  "new_eligible_assessments": 1,
+  "new_manual_reviews": 10,
+  "external_requests": 9,
+  "closed_authority_field_reviews": 4,
+  "closure": false
+}
