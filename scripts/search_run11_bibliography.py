@@ -21,7 +21,6 @@ SCOPE = "SCOPE-0001"
 STATE = TEMP / "runs" / (RUN + ".json")
 BATCHES = TEMP / "reports" / "RUN-0011-batches"
 OA = "https://api.openalex.org/works"
-SELECT_LIST = "DOI,title,reference,reference-count"
 WIDTH = 64
 
 
@@ -69,8 +68,8 @@ def request(key, source, endpoint, parameters, owners, why, project, page=1):
                 try:
                     delay = max(delay, int(header) if header.isdigit() else (parsedate_to_datetime(header)-datetime.now(timezone.utc)).total_seconds())
                 except (TypeError,ValueError,OverflowError): pass
-        except (OSError,KeyError,ValueError,TypeError) as exc:
-            entry.update(error=str(exc),retryable=isinstance(exc,OSError))
+        except (OSError,KeyError,ValueError,TypeError,AssertionError) as exc:
+            entry.update(error=type(exc).__name__+": "+str(exc),retryable=isinstance(exc,OSError))
         if delay > 60: entry["deferred"] = True
         entry["completed_at_utc"] = stamp()
         write(file,entry)
@@ -96,12 +95,13 @@ def chunks(rows, id_field, maximum, characters=1800):
 
 def deposited(key, group):
     wanted = {doi(row["doi"]): row for row in group}
-    params = {"filter":",".join("doi:"+k for k in wanted),"rows":len(wanted),"select":SELECT_LIST}
+    params = {"filter":",".join("doi:"+k for k in wanted),"rows":len(wanted)}
     def project(data):
         msg = data["message"]; papers = msg["items"]
         got = [doi(p["DOI"]) for p in papers]
         if len(set(got)) != len(papers) or set(got)-set(wanted) or len(papers) != msg["total-results"]:
             raise ValueError("Crossref DOI-set response differs")
+        papers=[{k:r[k] for k in ("DOI","title","reference","reference-count","published") if k in r} for r in papers]
         return dict(records=papers,visible_total=len(papers),returned_count=len(papers),page_complete=True,
                     missing_identifiers=sorted(set(wanted)-set(got)))
     return request(key,"crossref",CR,params,owners_input(group),"Publisher-deposited reference lists for the saved CP12 parents.",project)
@@ -113,20 +113,23 @@ def indexed(key, group, field):
     ids = [k.split(":")[-1] if field=="epmc" else k for k in wanted]
     params = {"filter":api+":"+"|".join(ids),"per_page":len(ids),"select":"id,doi,ids,display_name,publication_year,referenced_works"}
     def project(data):
-        records=[];seen=set()
+        records=[];seen=set();hits=Counter()
         for paper in data["results"]:
             oid=paper["id"].rsplit("/",1)[-1];pmid=(paper.get("ids",{}).get("pmid") or "").rsplit("/",1)[-1]
             got={"doi":doi(paper.get("doi")),"openalex":oid,"epmc":"MED:"+pmid}[field]
-            if got not in wanted or got in seen or not re.fullmatch(r"W\d+",oid):
-                raise ValueError("Unbound OpenAlex parent " + got)
-            seen.add(got)
+            if oid in seen or not re.fullmatch(r"W\d+",oid):raise ValueError("Duplicate or malformed OpenAlex Work ID")
+            seen.add(oid);hits[got]+=1
             ids=[v.rsplit("/",1)[-1] for v in paper["referenced_works"]]
             if not all(re.fullmatch(r"W\d+",v) for v in ids):raise ValueError("Malformed referenced Work ID")
-            records.append(dict(source_identifier=oid,work_id=wanted[got]["work_id"],parent_title=paper.get("display_name"),
+            records.append(dict(source_identifier=oid,requested_identity=got,work_id=None,parent_title=paper.get("display_name"),
                            doi=doi(paper.get("doi")),pmid=pmid or None,reference_ids=ids))
         if len(records)!=data["meta"]["count"]:raise ValueError("OpenAlex list pagination differs")
+        for r in records:
+            value=r["requested_identity"]
+            if value in wanted and hits[value]==1:r["work_id"]=wanted[value]["work_id"]
+        matched={r["requested_identity"] for r in records if r["work_id"]}
         return dict(records=records,visible_total=len(records),returned_count=len(records),page_complete=True,
-                    missing_identifiers=sorted(set(wanted)-seen))
+                    missing_or_ambiguous_identifiers=sorted(set(wanted)-matched))
     return request(key,"openalex",OA,params,owners_input(group),"Indexed reference identifiers for a missing or incomplete deposited bibliography.",project)
 
 
@@ -147,7 +150,7 @@ def european(prefix, owner):
         total=q["visible_total"];page+=1
 
 
-def fetch_batch(start):
+def fetch_batch(start, reconcile=False):
     run=read(STATE);frontier=ROOT/run["frontier"]
     if digest(frontier)!=run["frontier_sha256"]:raise ValueError("CP12 queue has changed")
     queue=read(frontier)["worklist"]
@@ -156,16 +159,23 @@ def fetch_batch(start):
     BATCHES.mkdir(exist_ok=True)
     if start and not (BATCHES/f"{start-WIDTH+1:04}-{start:04}.json").exists():raise ValueError("Missing earlier batch")
     report=BATCHES/f"{start+1:04}-{end:04}.json"
+    prior=None
+    if reconcile:
+        if start!=0 or not report.exists():raise ValueError("Expected the original first batch")
+        prior=read(report);report=report.with_stem(report.stem+"-reconciled")
     if report.exists():
         obj=read(report)
         assert obj["frontier_sha256"]==run["frontier_sha256"] and all(digest(ROOT/p)==h for p,h in obj["input_receipts"].items())
         return
     prefix=f"B{start+1:04}";coverage={r["work_id"]:[] for r in parents}
     def add(owner,q,n,declared,present,complete):
+        if any(s["query_id"]==q["query_id"] for s in coverage[owner["work_id"]]):return
         coverage[owner["work_id"]].append(dict(source_id=q["source_id"],query_id=q["query_id"],rows=n,source_declared=declared,
                                   available=present,source_reconciled=complete,status=q["status"]))
+    if prior:
+        for row in prior["worklist"]:coverage[row["work_id"]].extend(row["sources"])
     for ix,group in enumerate(chunks([p for p in parents if p["doi"]],"doi",18)):
-        q=deposited(prefix+f"-CR-{ix+1:02}",group)
+        q=deposited(prefix+f"-DEP-{ix+1:02}",group)
         recs={doi(r["DOI"]):r for r in q.get("records",[])}
         for owner in group:
             item=recs.get(doi(owner["doi"]),{});n=len(item.get("reference",[]));decl=item.get("reference-count")
@@ -176,7 +186,7 @@ def fetch_batch(start):
     for field in ("openalex","doi","epmc"):
         subset=[p for p in needs if p.get(field)]
         for ix,group in enumerate(chunks(subset,field,35)):
-            q=indexed(prefix+f"-OA-{field.upper()}-{ix+1:02}",group,field)
+            q=indexed(prefix+f"-IDX-{field.upper()}-{ix+1:02}",group,field)
             recs={r["work_id"]:r for r in q.get("records",[])}
             for p in group:
                 item=recs.get(p["work_id"]);n=len(item["reference_ids"]) if item else 0
@@ -196,10 +206,13 @@ def fetch_batch(start):
              first_key=parents[0]["work_key"],parent_count=len(parents),parents_with_rows=sum(any(s["rows"] for s in r["sources"]) for r in tables),
              source_positions=dict(counts),sources_requested=len(receipts),created_at_utc=stamp(),worklist=tables,
              input_receipts={p.relative_to(ROOT).as_posix():digest(p) for p in receipts})
+    if prior:obj["supersedes_batch_sha256"]=digest(BATCHES/f"{start+1:04}-{end:04}.json")
     write(report,obj);print(report.name,obj["parents_with_rows"],sum(counts.values()),dict(counts),flush=True)
 
 
 if __name__=="__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("start",type=int,help="Zero-based saved index in the CP12 frontier")
-    fetch_batch(parser.parse_args().start)
+    parser.add_argument("--reconcile",action="store_true")
+    args=parser.parse_args()
+    fetch_batch(args.start,args.reconcile)
