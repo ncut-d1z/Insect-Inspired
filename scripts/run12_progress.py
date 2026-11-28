@@ -36,6 +36,7 @@ def account():
     added=Counter()
     version_ids=set()
     unresolved=0
+    funding={}
     inputs={}
     measurements=[]
     bound={}
@@ -71,6 +72,7 @@ def account():
         for r in d["coverage"]:
             if sum(r["positions"].values())!=bound[r["work_id"]]:raise ValueError("Returned and registered position totals differ "+r["work_id"])
             materialized.update(r["positions"]);unresolved+=sum(r["unresolved"].values())
+        if "funding_review" in d:funding=d["funding_review"]
         new.extend(d["discovered_worklist"])
         added.update(d["added_counts"])
         version_ids.update(t for t in d["datasets"]["tasks"]["appended_ids"] if t.startswith("T-R12-CITED-"))
@@ -93,7 +95,7 @@ def account():
         next_frontier_count=len(frontier),original_bibliographies_verified_complete=0,source_frontier_sha256=run["source_frontier_sha256"])
     resource=dict(plan_identifier_cache_memberships=sum(p["cached_or_canonical_identifier_count"] for p in plans),
                   identifier_request_groups=sum(len(p["groups"]) for p in plans),identifier_candidates=sum(sum(p["ids_to_lookup"].values()) for p in plans))
-    return run,stats,absent,frontier,new,inputs,dict(versions=reviews["counts"],oldest=original_review["counts"],abstracts=abstracts["counts"],forward=forward["counts"]),measurements,resource
+    return run,stats,absent,frontier,new,inputs,dict(versions=reviews["counts"],oldest=original_review["counts"],abstracts=abstracts["counts"],forward=forward["counts"],publication_funding=funding),measurements,resource
 
 
 def times():

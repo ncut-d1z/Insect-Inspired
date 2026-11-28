@@ -17,12 +17,12 @@ PRE = TEMP / "validation/cp13-export-readback.json"
 CHECKS = TEMP / "reports/RUN-0011-source-rechecks.json"
 
 
-def gather(qa, candidate, candidate_hash):
+def gather(qa, candidate, candidate_hash, *, checkpoint=CP, prereadback=PRE):
     det = read(qa/"determinism.json")
     data = read(qa/"data-audit.json")
     meta = read(qa/"first/export-validation.json")
     bib = read(qa/"biber/bibtex-parse.json")
-    remote = read(PRE)
+    remote = read(prereadback)
     require(det["status"] == data["status"] == bib["status"] == remote["status"] == "passed" and
             not data["changed_inputs"] and data["error_count"]==0 and not meta["schema_errors"] and
             data["statistics"]["candidate_sha256"] == det["candidate_sha256"] == remote["checkpoint_sha256"] == candidate_hash,
@@ -43,7 +43,7 @@ def gather(qa, candidate, candidate_hash):
     out = {"cp13-data-audit.json":data,"cp13-determinism.json":det,"cp13-export-validation.json":meta,"cp13-bibtex-parse.json":bib}
     for browser in ("chrome","edge"):
         ui = read(qa/browser/"ui-audit-final.json")
-        require(ui["passed"] and ui["checkpoint_id"]==CP and not ui["errors"] and ui["offline"] and len(ui["checks"])==9 and all(ui["checks"].values()) and
+        require(ui["passed"] and ui["checkpoint_id"]==checkpoint and not ui["errors"] and ui["offline"] and len(ui["checks"])==9 and all(ui["checks"].values()) and
                 all(len(ui["samples"][k])==3 for k in ("topics","misc")) and all(det["artifacts"][p]==v for p,v in ui["artifacts"].items()) and
                 datetime.fromisoformat(ui["started_at_utc"])>=datetime.fromisoformat(candidate["created_at_utc"]), "Offline browser evidence differs")
         out["cp13-ui-"+browser+".json"] = ui
@@ -52,7 +52,8 @@ def gather(qa, candidate, candidate_hash):
         ledger = qa/"schema-parts.json"
         require(digest(ledger)==schema_digest,"Final schema ledger differs")
         out["cp13-schema-parts.json"] = read(ledger)
-    return out
+    prefix="cp"+str(int(checkpoint.rsplit("-",1)[1]))+"-"
+    return {k.replace("cp13-",prefix,1):v for k,v in out.items()}
 
 
 def source_evidence(counts):

@@ -138,12 +138,20 @@ def apply(start,end):
     for p in related:
         q=read(p)
         if any(o["task_id"] in owners for o in q["owners"]):paths.add(p)
+    from run12_funding import REPORT as funding_report, register as register_funding
+    funding_pending=funding_report.is_file() and not any("funding_review" in read(part) for part in prior)
+    if funding_pending:
+        paths.add(OUT/(read(funding_report)["query_id"]+".json"))
+        paths.update(OUT.glob("Q-RUN12-P5-DEPOSITED-FUNDING-*.json"))
     ledger=CurrentCanonical(data,inputs,paths)
-    outcomes=ledger.register(data);ledger.account(paths)
+    outcomes=ledger.register(data)
+    funding=register_funding(ledger) if funding_pending else None
+    ledger.account(paths)
     counts={k:len(v) for k,v in ledger.adds.items() if v}
     report=dict(run_id=RUN,scope_id=SCOPE,checkpoint_id=CP,starting_index=start,next_index=end,created_at_utc=ledger.now,
         source_frontier=read(STATE)["source_frontier"],coverage=outcomes,discovered_worklist=ledger.new_frontier,
         input_receipts={p.relative_to(ROOT).as_posix():digest(p) for p in ledger.input_paths},added_counts=counts)
+    if funding is not None:report["funding_review"]=funding
     print("Canonical batch",label(start,end),counts,flush=True)
     apply_batch(ledger.changes,{k:list(v.values()) for k,v in ledger.adds.items() if v},report,path.relative_to(ROOT).as_posix())
     print("Committed-file transaction seconds",round(monotonic()-t,2),flush=True)
