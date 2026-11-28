@@ -2,19 +2,20 @@
 from pathlib import Path
 import json,hashlib
 REPO=Path(__file__).resolve().parents[1];TEMP=REPO/'temp'
-def read_logical(name,base=TEMP):
+def iter_logical(name,base=TEMP):
  path=Path(base)/name
  manifest=Path(base)/'partitions/manifest.json'
  parts=[path]
  if manifest.exists():
-  d=json.loads(manifest.read_text())
+  d=json.loads(manifest.read_bytes())
   if name in d['datasets']:parts=[Path(base)/x['path'] for x in d['datasets'][name]['parts']]
- out=[]
  for p in parts:
-  with p.open() as f:
+  with p.open(encoding="utf-8") as f:
    for line in f:
-    if line.strip():out.append(json.loads(line))
- return out
+    if line.strip():yield json.loads(line)
+
+def read_logical(name,base=TEMP):
+ return list(iter_logical(name,base))
 
 def replace_logical(name,rows,base=TEMP):
  """Replace one unpublished logical dataset and update its content-addressed parts."""

@@ -1,0 +1,450 @@
+{
+  "status": "passed",
+  "view_format": 2,
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0011",
+  "verified_at_utc": "2026-11-28T08:13:28.661417Z",
+  "research_records_added": 0,
+  "frozen_source": {
+    "commit": "cf6b1453d668477d2631a73cd40ab548deb89110",
+    "tree": "0dc354e78f4ee0b9020f4069c9c523f849cb3c40",
+    "checkpoint_sha256": "bbdae2a70cca6306918f3a4c51ae0281b3cd637d840f3e2de8153825de847855"
+  },
+  "counts": {
+    "K": 5177,
+    "T_union": 35,
+    "U": 5142,
+    "T_i": {
+      "L01": 9,
+      "L02": 5,
+      "L03": 11,
+      "L04": 9,
+      "L05": 5,
+      "L06": 12,
+      "L07": 1,
+      "L08": 5,
+      "L09": 2
+    }
+  },
+  "topic_rows": 59,
+  "topic_load_bytes": 31262,
+  "total_bytes": 1236438,
+  "artifacts": {
+    "ref.html": {
+      "bytes": 11199,
+      "sha256": "5805605016e8b6c7abd6ff1e8a4409fb01cccc0aa5124cb548df6db9eb43f41a"
+    },
+    "misc.html": {
+      "bytes": 2626,
+      "sha256": "56d4829a63a8866f5708195db9b169fdd6e0e7d0ab879e0001c84ac013be6a27"
+    },
+    "ref-data/index.css": {
+      "bytes": 4174,
+      "sha256": "697815005cc6d2f19f9bf4a5e8ab0e7778cf198b10f2a418e7691742df9944cc"
+    },
+    "ref-data/index.js": {
+      "bytes": 6739,
+      "sha256": "36809472a20dccf93f38f805df5191cf797d57a43d1856cad7ed96182c8071d1"
+    },
+    "ref-data/topics.js": {
+      "bytes": 9150,
+      "sha256": "fee286813cccf81179a31a4ea0903032e6f889db3e179101166cd9d0d82904a8"
+    },
+    "ref-data/misc.js": {
+      "bytes": 1202550,
+      "sha256": "241d23a2cf33a6ce7251eb890501519d1629ba93a522901346e40b4422ef643f"
+    }
+  },
+  "revisions": {
+    "README.md": {
+      "frozen_sha256": "9420b64eb227fb5b95da3a3fc2fa3f899454deca310225b2cf22d89b1996b431",
+      "view_sha256": "c63cf2fa394f6436bd020254d257211568deffd4105692ad72cc0f85b1238a47"
+    },
+    "ref.html": {
+      "frozen_sha256": "8733ad0c2a6cd9b74cfaf6c826000ee01bb5015b0d5be7b35be88e83cd12d020",
+      "view_sha256": "5805605016e8b6c7abd6ff1e8a4409fb01cccc0aa5124cb548df6db9eb43f41a"
+    },
+    "scripts/README.md": {
+      "frozen_sha256": "d8e0b664698da8ade72b8d90199ac2e52a94db36b1e55ad6d0a13981a6423be3",
+      "view_sha256": "0b77566aff7c5ae1678030e78adc8cd53d04c7fc875040429b2e00b717fa9e89"
+    },
+    "scripts/audit_run.py": {
+      "frozen_sha256": "03b349c4814a07eb2994f70b2ce068e954379bd352651756e23adc6df79cd044",
+      "view_sha256": "5738669d38e959f69a79b1000f6361f98334d38bf38be7c518068d7461cf7e65"
+    },
+    "scripts/export_checkpoint_windows.py": {
+      "frozen_sha256": "4fcc934f5e3e19bd5aa1352753a504d01f34d74211fc37074b686acd47457d21",
+      "view_sha256": "91ffe7d264f67ccee8a99d70d3b447edbd68902a1abcf47c87762fa1a0588be5"
+    },
+    "scripts/html-smoke-checkpoint.mjs": {
+      "frozen_sha256": "8a87b3490b50d9c5892541aea8592b7f5d342ceab0547794abde4b1f6382d9ec",
+      "view_sha256": "6519c95baad4eb0b0270136be26aec7c14523aae63b14c3605f2e07b6d9c7bed"
+    },
+    "scripts/render_html.py": {
+      "frozen_sha256": "6bab80620d4c8d65c1ec135ede1e0f94a597892f329b21c8614de878af469618",
+      "view_sha256": "315b2be308d848e67dcd3223e834e79d8b436426b52816ebaeecfe5be1b9c6f1"
+    },
+    "scripts/storage.py": {
+      "frozen_sha256": "290a532b435f949697132047af1351322944c7bdf038a8865f4462c863f1cda1",
+      "view_sha256": "b87ee67a962afbc9d614bca08f346ce50227855ef614cbcafdb55c57103a6db4"
+    }
+  },
+  "independent_regeneration": {
+    "byte_identical": 12,
+    "ordered_inputs": "CP11 manifest-ordered data, independently rendered in a fresh external directory",
+    "unchanged_research_outputs": {
+      "ref.bib": "6605bf909bd067322d0dad32d9203d9ee7223067ab791462b8f4431234ac6f65",
+      "temp/exports/citation_graph.json": "d10020a26642f0d9ee5d3fa051890d846f89d92a1296f37242e07155789a5a05",
+      "temp/exports/evidence_matrix.csv": "4f13d4428960da344ba45778674b4a0424abf86f4a0bfbb6747089ac9acf6f21",
+      "temp/exports/research_entities.json": "c1b82b9459051bfb1fd6a531a0adb30f790ec35429c7ead8bff110fa63e7e42e",
+      "temp/exports/research_implications.csv": "1a1d3206083ec6a50439204164f96657e88a825afef0a7648877dc4feb1a7180",
+      "temp/exports/research_paths.json": "1781cbbccf73e81c1c190bc971a2b79c90632d332ef361b527ba4ed5076476b7"
+    }
+  },
+  "functional_browser_checks": {
+    "chrome": {
+      "version": "158.0.8127.88",
+      "offline": true,
+      "checks": {
+        "nine_and_one_tables": true,
+        "exact_columns": true,
+        "isolated_offline_resources": true,
+        "local_search_sort": true,
+        "pagination_and_legacy_anchor": true,
+        "missing_doi": true,
+        "clear_and_empty": true,
+        "mobile": true,
+        "stable_bytes": true
+      },
+      "method": "Three new browser processes and empty browser profiles per entry, disabled network, navigation through usable rows. Browser launch time recorded separately.",
+      "samples": {
+        "topics": [
+          {
+            "navigation_seconds": 0.057,
+            "navigation_observed_seconds": 0.415,
+            "launch_to_ready_seconds": 1.894
+          },
+          {
+            "navigation_seconds": 1.121,
+            "navigation_observed_seconds": 1.661,
+            "launch_to_ready_seconds": 7.442
+          },
+          {
+            "navigation_seconds": 0.698,
+            "navigation_observed_seconds": 1.048,
+            "launch_to_ready_seconds": 4.879
+          }
+        ],
+        "misc": [
+          {
+            "navigation_seconds": 0.204,
+            "navigation_observed_seconds": 0.672,
+            "launch_to_ready_seconds": 3.033
+          },
+          {
+            "navigation_seconds": 0.103,
+            "navigation_observed_seconds": 0.313,
+            "launch_to_ready_seconds": 1.404
+          },
+          {
+            "navigation_seconds": 0.1,
+            "navigation_observed_seconds": 0.308,
+            "launch_to_ready_seconds": 1.417
+          }
+        ]
+      },
+      "median_navigation_seconds": {
+        "topics": 0.698,
+        "misc": 0.103
+      }
+    },
+    "edge": {
+      "version": "158.0.4370.45",
+      "offline": true,
+      "checks": {
+        "nine_and_one_tables": true,
+        "exact_columns": true,
+        "isolated_offline_resources": true,
+        "local_search_sort": true,
+        "pagination_and_legacy_anchor": true,
+        "missing_doi": true,
+        "clear_and_empty": true,
+        "mobile": true,
+        "stable_bytes": true
+      },
+      "method": "Three new browser processes and empty browser profiles per entry, disabled network, navigation through usable rows. Browser launch time recorded separately.",
+      "samples": {
+        "topics": [
+          {
+            "navigation_seconds": 1.704,
+            "navigation_observed_seconds": 2.412,
+            "launch_to_ready_seconds": 8.064
+          },
+          {
+            "navigation_seconds": 0.938,
+            "navigation_observed_seconds": 1.395,
+            "launch_to_ready_seconds": 5.862
+          },
+          {
+            "navigation_seconds": 0.299,
+            "navigation_observed_seconds": 1.205,
+            "launch_to_ready_seconds": 4.122
+          }
+        ],
+        "misc": [
+          {
+            "navigation_seconds": 0.43,
+            "navigation_observed_seconds": 0.648,
+            "launch_to_ready_seconds": 2.44
+          },
+          {
+            "navigation_seconds": 1.077,
+            "navigation_observed_seconds": 1.627,
+            "launch_to_ready_seconds": 6.724
+          },
+          {
+            "navigation_seconds": 1.028,
+            "navigation_observed_seconds": 1.438,
+            "launch_to_ready_seconds": 5.19
+          }
+        ]
+      },
+      "median_navigation_seconds": {
+        "topics": 0.938,
+        "misc": 1.028
+      }
+    }
+  },
+  "direct_file_launch": {
+    "Chrome": {
+      "ref.html": {
+        "samples": [
+          {
+            "process_start_to_ready_s": 4.313,
+            "file_navigation_s": 1.562
+          },
+          {
+            "process_start_to_ready_s": 4.355,
+            "file_navigation_s": 1.732
+          },
+          {
+            "process_start_to_ready_s": 1.14,
+            "file_navigation_s": 0.314
+          }
+        ],
+        "median_process_start_to_ready_s": 4.313,
+        "median_file_navigation_s": 1.562
+      },
+      "misc.html": {
+        "samples": [
+          {
+            "process_start_to_ready_s": 1.298,
+            "file_navigation_s": 0.468
+          },
+          {
+            "process_start_to_ready_s": 1.279,
+            "file_navigation_s": 0.455
+          },
+          {
+            "process_start_to_ready_s": 1.343,
+            "file_navigation_s": 0.475
+          }
+        ],
+        "median_process_start_to_ready_s": 1.298,
+        "median_file_navigation_s": 0.468
+      }
+    },
+    "Edge": {
+      "ref.html": {
+        "samples": [
+          {
+            "process_start_to_ready_s": 7.26,
+            "file_navigation_s": 3.63
+          },
+          {
+            "process_start_to_ready_s": 5.619,
+            "file_navigation_s": 1.066
+          },
+          {
+            "process_start_to_ready_s": 5.263,
+            "file_navigation_s": 2.167
+          }
+        ],
+        "median_process_start_to_ready_s": 5.619,
+        "median_file_navigation_s": 2.167
+      },
+      "misc.html": {
+        "samples": [
+          {
+            "process_start_to_ready_s": 3.684,
+            "file_navigation_s": 1.191
+          },
+          {
+            "process_start_to_ready_s": 2.718,
+            "file_navigation_s": 0.812
+          },
+          {
+            "process_start_to_ready_s": 1.87,
+            "file_navigation_s": 0.768
+          }
+        ],
+        "median_process_start_to_ready_s": 2.718,
+        "median_file_navigation_s": 0.812
+      }
+    }
+  },
+  "direct_file_launch_controlled": {
+    "method": "Independent native process and profile for each measurement. Alternating a local blank page and both real entries, offline. DevTools attaches after 4.2 seconds; timestamps come from the page performance mark, not observer arrival.",
+    "browsers": {
+      "Chrome": {
+        "empty-file.html": {
+          "samples": [
+            {
+              "process_start_to_ready_s": 1.171,
+              "file_navigation_s": 0.278,
+              "document_response_s": 0.09,
+              "dom_interactive_s": 0.279
+            },
+            {
+              "process_start_to_ready_s": 2.389,
+              "file_navigation_s": 0.831,
+              "document_response_s": 0.469,
+              "dom_interactive_s": 0.832
+            },
+            {
+              "process_start_to_ready_s": 2.677,
+              "file_navigation_s": 0.484,
+              "document_response_s": 0.229,
+              "dom_interactive_s": 0.484
+            }
+          ],
+          "median_process_start_to_ready_s": 2.389,
+          "median_file_navigation_s": 0.484
+        },
+        "ref.html": {
+          "samples": [
+            {
+              "process_start_to_ready_s": 1.177,
+              "file_navigation_s": 0.322,
+              "document_response_s": 0.097,
+              "dom_interactive_s": 0.291
+            },
+            {
+              "process_start_to_ready_s": 1.289,
+              "file_navigation_s": 0.486,
+              "document_response_s": 0.113,
+              "dom_interactive_s": 0.225
+            },
+            {
+              "process_start_to_ready_s": 2.279,
+              "file_navigation_s": 0.636,
+              "document_response_s": 0.186,
+              "dom_interactive_s": 0.351
+            }
+          ],
+          "median_process_start_to_ready_s": 1.289,
+          "median_file_navigation_s": 0.486
+        },
+        "misc.html": {
+          "samples": [
+            {
+              "process_start_to_ready_s": 1.31,
+              "file_navigation_s": 0.519,
+              "document_response_s": 0.111,
+              "dom_interactive_s": 0.187
+            },
+            {
+              "process_start_to_ready_s": 1.393,
+              "file_navigation_s": 0.503,
+              "document_response_s": 0.126,
+              "dom_interactive_s": 0.248
+            },
+            {
+              "process_start_to_ready_s": 4.698,
+              "file_navigation_s": 1.434,
+              "document_response_s": 0.291,
+              "dom_interactive_s": 0.615
+            }
+          ],
+          "median_process_start_to_ready_s": 1.393,
+          "median_file_navigation_s": 0.519
+        }
+      },
+      "Edge": {
+        "empty-file.html": {
+          "samples": [
+            {
+              "process_start_to_ready_s": 1.131,
+              "file_navigation_s": 0.251,
+              "document_response_s": 0.219,
+              "dom_interactive_s": 0.251
+            },
+            {
+              "process_start_to_ready_s": 1.421,
+              "file_navigation_s": 0.299,
+              "document_response_s": 0.262,
+              "dom_interactive_s": 0.299
+            },
+            {
+              "process_start_to_ready_s": 1.48,
+              "file_navigation_s": 0.298,
+              "document_response_s": 0.23,
+              "dom_interactive_s": 0.298
+            }
+          ],
+          "median_process_start_to_ready_s": 1.421,
+          "median_file_navigation_s": 0.298
+        },
+        "ref.html": {
+          "samples": [
+            {
+              "process_start_to_ready_s": 1.944,
+              "file_navigation_s": 0.787,
+              "document_response_s": 0.227,
+              "dom_interactive_s": 0.322
+            },
+            {
+              "process_start_to_ready_s": 1.464,
+              "file_navigation_s": 0.392,
+              "document_response_s": 0.239,
+              "dom_interactive_s": 0.343
+            },
+            {
+              "process_start_to_ready_s": 9.121,
+              "file_navigation_s": 2.56,
+              "document_response_s": 0.828,
+              "dom_interactive_s": 0.958
+            }
+          ],
+          "median_process_start_to_ready_s": 1.944,
+          "median_file_navigation_s": 0.787
+        },
+        "misc.html": {
+          "samples": [
+            {
+              "process_start_to_ready_s": 1.834,
+              "file_navigation_s": 0.766,
+              "document_response_s": 0.235,
+              "dom_interactive_s": 0.338
+            },
+            {
+              "process_start_to_ready_s": 1.797,
+              "file_navigation_s": 0.721,
+              "document_response_s": 0.313,
+              "dom_interactive_s": 0.316
+            },
+            {
+              "process_start_to_ready_s": 1.71,
+              "file_navigation_s": 0.658,
+              "document_response_s": 0.283,
+              "dom_interactive_s": 0.283
+            }
+          ],
+          "median_process_start_to_ready_s": 1.797,
+          "median_file_navigation_s": 0.721
+        }
+      }
+    }
+  },
+  "notes": "Presentation-only release. The original CP11 certificate and research datasets remain available at the frozen commit. Process-start timings include native browser startup."
+}

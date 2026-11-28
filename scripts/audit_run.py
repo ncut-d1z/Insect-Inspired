@@ -772,6 +772,18 @@ class Audit:
         self.watch(p)
         try:
             html = p.read_text(encoding='utf-8')
+            if '<meta name="bibliography-format" content="2">' in html or (self.repo / 'misc.html').exists():
+                from audit_bibliography import audit_package, source_actions, WEB_FILES
+                for name in WEB_FILES:
+                    self.watch(self.repo / name)
+                snapshot = json.loads((self.temp / 'exports/research_paths.json').read_bytes())['checkpoint_id']
+                works, assessments, versions = (self.datasets[k + '.jsonl'] for k in ('works','assessments','versions'))
+                tasks = {t['task_id']: t for t in self.datasets['tasks.jsonl']}
+                actions = source_actions(self.temp, works, assessments, versions, tasks, snapshot)
+                view = audit_package(self.repo, works, assessments, actions, snapshot, self.scope['scope_id'])
+                self.stats['reconciliation'] = {k: view[k] for k in ('K','T_union','U','T_i')}
+                self.stats['offline_bibliography'] = view
+                return
             parser = HTMLTables()
             parser.feed(html)
         except Exception as e:
@@ -1020,6 +1032,12 @@ class Audit:
             hashes = cp.get('artifact_hashes', {})
             if not isinstance(hashes, dict):
                 continue
+            revisions = {}
+            receipt = self.repo / 'temp/validation/bibliography-view.json'
+            if receipt.is_file() and hashes:
+                from audit_bibliography import presentation_revisions
+                self.watch(receipt)
+                revisions = presentation_revisions(self.repo, cid, hashes)
             for rel, expected in hashes.items():
                 p = self.repo / rel
                 if not p.is_file():
@@ -1030,6 +1048,7 @@ class Audit:
                     continue
                 if isinstance(expected, dict):
                     expected = expected.get('sha256')
+                expected = revisions.get(rel, expected)
                 if isinstance(expected, str) and re.fullmatch(r'[0-9a-f]{64}', expected):
                     self.require(sha(p) == expected, 'checkpoint_artifact_hash', rel, cid)
 

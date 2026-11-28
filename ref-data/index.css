@@ -1,0 +1,308 @@
+:root {
+  color-scheme:light;
+  --ink:#182d30;
+  --muted:#4e686b;
+  --accent:#11625d;
+  --line:#cddbd8;
+  --paper:#fff;
+  --tint:#f1f6f4;
+  font-family:Inter,"Segoe UI","Microsoft YaHei",sans-serif;
+  color:var(--ink);
+  background:#f7f9f8;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  max-width:96rem;
+  margin:0 auto;
+  padding:1.5rem clamp(.75rem,3vw,3rem);
+  font-size:15px;
+  line-height:1.5;
+}
+
+header {
+  position:relative;
+  padding:1.3rem 0 1.1rem;
+  border-bottom:2px solid var(--accent);
+}
+
+header p,.snapshot,.count,#search-status {
+  color:var(--muted);
+}
+
+header p {
+  margin:0 0 .25rem;
+}
+
+h1 {
+  margin:0;
+  font-size:clamp(1.65rem,3vw,2.35rem);
+  line-height:1.25;
+}
+
+h2 {
+  font-size:1.15rem;
+  margin:0 0 .65rem;
+}
+
+.snapshot {
+  font-size:.82rem;
+  margin-top:.4rem;
+}
+
+a {
+  color:var(--accent);
+  text-underline-offset:.18em;
+}
+
+.switch {
+  display:inline-block;
+  margin-top:.65rem;
+}
+
+button,input,select {
+  font:inherit;
+  color:inherit;
+}
+
+button,input,select {
+  background:var(--paper);
+  border:1px solid #a8bdb7;
+  border-radius:.35rem;
+}
+
+button {
+  cursor:pointer;
+  padding:.4rem .75rem;
+}
+
+button:hover:enabled,select:hover {
+  background:var(--tint);
+}
+
+button:disabled {
+  opacity:.5;
+  cursor:default;
+}
+
+input,select {
+  display:block;
+  padding:.4rem .55rem;
+  width:100%;
+  min-height:2.3rem;
+}
+
+.controls {
+  display:flex;
+  align-items:end;
+  flex-wrap:wrap;
+  gap:.6rem 1rem;
+  margin:1.2rem 0 .45rem;
+}
+
+.controls label {
+  font-size:.88rem;
+  font-weight:600;
+}
+
+.controls input,.controls select {
+  font-weight:400;
+}
+
+.controls label:first-child {
+  width:min(100%,24rem);
+}
+
+#search-status {
+  min-height:1.5em;
+  margin:.55rem 0 1.1rem;
+  font-size:.9rem;
+}
+
+.count {
+  font-size:.82rem;
+  font-weight:400;
+  margin-left:.4rem;
+}
+
+section {
+  margin:0 0 1.5rem;
+  scroll-margin-top:.8rem;
+}
+
+.table-scroll {
+  overflow:auto;
+  border:1px solid var(--line);
+  border-radius:.45rem;
+  background:var(--paper);
+}
+
+table {
+  border-collapse:collapse;
+  width:100%;
+  min-width:50rem;
+  table-layout:fixed;
+  font-size:.88rem;
+}
+
+th,td {
+  padding:.52rem .65rem;
+  text-align:left;
+  vertical-align:top;
+  overflow-wrap:anywhere;
+}
+
+tbody tr+tr {
+  border-top:1px solid var(--line);
+}
+
+thead {
+  background:var(--tint);
+}
+
+thead th {
+  padding:.28rem .42rem;
+  border-bottom:1px solid var(--line);
+}
+
+thead button {
+  width:100%;
+  text-align:left;
+  font-size:.84rem;
+  font-weight:650;
+  border:0;
+  background:transparent;
+  padding:.3rem .23rem;
+}
+
+thead [aria-sort=ascending] button::after {
+  content:" ↑";
+}
+
+thead [aria-sort=descending] button::after {
+  content:" ↓";
+}
+
+tbody th {
+  font:500 .82rem/1.5 "Cascadia Mono",Consolas,monospace;
+}
+
+th:nth-child(1) {
+  width:12%;
+}
+
+th:nth-child(2) {
+  width:29%;
+}
+
+th:nth-child(3) {
+  width:18%;
+}
+
+th:nth-child(4) {
+  width:5.5%;
+}
+
+th:nth-child(5) {
+  width:17%;
+}
+
+body[data-page=misc] table {
+  min-width:65rem;
+}
+
+body[data-page=misc] th:nth-child(1) {
+  width:10%;
+}
+
+body[data-page=misc] th:nth-child(2) {
+  width:23%;
+}
+
+body[data-page=misc] th:nth-child(3) {
+  width:14%;
+}
+
+body[data-page=misc] th:nth-child(4) {
+  width:5%;
+}
+
+body[data-page=misc] th:nth-child(5) {
+  width:12%;
+}
+
+body[data-page=misc] th:nth-child(6) {
+  width:14%;
+}
+
+body[data-page=misc] th:nth-child(7) {
+  width:9%;
+}
+
+.pager {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:1rem;
+}
+
+.pager[hidden],[hidden] {
+  display:none!important;
+}
+
+tr:target {
+  outline:2px solid var(--accent);
+  outline-offset:-2px;
+}
+
+footer {
+  border-top:1px solid var(--line);
+  padding:1rem 0;
+  margin-top:2rem;
+}
+
+:focus-visible {
+  outline:2px solid #007368;
+  outline-offset:2px;
+}
+
+.visually-hidden {
+  position:absolute;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip-path:inset(50%);
+  white-space:nowrap;
+}
+
+@media(min-width:48rem) {
+  .switch {
+    position:absolute;
+    bottom:1.2rem;
+    right:0;
+  }
+}
+
+@media(max-width:40rem) {
+  body {
+    padding:.6rem .75rem;
+  }
+  .controls label:first-child {
+    width:100%;
+  }
+  .controls select {
+    max-width:70vw;
+  }
+  h2 {
+    font-size:1.02rem;
+  }
+  th,td {
+    padding:.45rem;
+  }
+  .pager {
+    gap:.6rem;
+  }
+}

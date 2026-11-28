@@ -2,12 +2,18 @@
 
 这些脚本只服务于本仓库的文献数据和证据审计，不构成新的通用检索系统。RUN-0005 沿用 SCOPE-0001；科学范围、种子、截止时间、强类型规则、量化门禁和尺度门禁不因工具迁移改变。脚本生成的规范数据仍须按主 README 的检查点和即时同步规则提交。
 
+## 当前离线书目
+
+在仓库根目录用 PowerShell 执行 `python -B -X utf8 scripts/render_html.py --base temp --output ref.html --checkpoint CP-0011` 可生成双页书目。复制 `ref.html`、`misc.html` 和 `ref-data/` 后即可离线打开。主题文献与 U00 使用独立数据脚本，完整导出清单由 `export_checkpoint_windows.py` 生成。
+
+用 `python -B -X utf8 scripts/audit_bibliography.py --base temp --dir . --checkpoint CP-0011` 核对全部书目、已登记工单、表头、资源和集合。`html-smoke-checkpoint.mjs` 的 `--executable-path` 可分别传入 Chrome 或 Edge，`--out-dir` 指向新的仓库外目录。CP11 的原始单页版本随其发布提交归档。
+
 ## 来源与迁移范围
 
 - `storage.py`、`export_run.py`、`render_html.py`、`index-base.css` 和 `audit_run.py` 来源于已发布的 `temp/validation/cp5-tools/`。旧文件保留不动。
 - `gates.py` 来源于 P1/P2 已使用的项目门禁脚本；迁移前 SHA-256 为 `2c54ec78e1711b30e25164f5432c03e819bc1f4d99aed6d0939ae3555406a0fe`。仅改为从本仓库读取 schema，并修正文档中的路径说明；科学判断函数不变。
 - 默认根路径和相邻模块引用改为相对 `scripts/`。`export_run.py` 的 `graph-schema-patch.json` 辅助文件改写到 `--report` 所在目录，避免独立验证时修改脚本目录。
-- `render_html.py` 继续使用相邻 `index-base.css`，生成的结构和交互逻辑不变。
+- 历史 CP7 生成器使用相邻的 `index-base.css`。重现历史导出时使用对应检查点提交中的生成器。
 - 通用 `audit_run.py` 保留实体、外键、来源、查询、工单、量化、尺度、HTML、导出与分片规则；历史人工判断改为由适配器显式提供不可变已发布基准。没有适配器时，完整审计拒绝跳过该基准。
 
 ## CP7 历史科学保护

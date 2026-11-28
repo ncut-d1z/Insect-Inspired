@@ -23,6 +23,11 @@ if (!fs.existsSync(htmlPath) || fs.existsSync(root)) throw new Error('HTML must 
 if (root===repo || root.startsWith(repo+path.sep)) throw new Error('UI output must be outside the repository');
 const require=createRequire(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES ? path.join(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES,'_checkpoint_resolution.cjs') : import.meta.url);
 const {chromium: pw}=require('playwright');
+if (fs.readFileSync(htmlPath,'utf8').includes('<meta name="bibliography-format" content="2">')) {
+ const {runSplitAudit}=await import('./html-smoke-split.mjs');
+ await runSplitAudit({pw,htmlPath,root,checkpoint:options['--checkpoint'],executablePath:options['--executable-path']});
+ process.exit(0);
+}
 fs.mkdirSync(root,{recursive:true});
 const htmlBefore=fs.readFileSync(htmlPath);
 const htmlSha=createHash('sha256').update(htmlBefore).digest('hex');

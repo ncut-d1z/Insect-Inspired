@@ -1,4 +1,4 @@
-"""Regenerate the seven research outputs and canonicalize their UTF-8 newlines on Windows."""
+"""Regenerate the research exports and both pages of the offline bibliography on Windows."""
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -7,10 +7,12 @@ from pathlib import Path
 import subprocess
 import sys
 
-from audit_cp10 import EXPORTS
+from audit_cp10 import EXPORTS as ORIGINAL_EXPORTS
 from checkpoint_cp10 import require
+from render_html import WEB_FILES
 
 ROOT = Path(__file__).resolve().parents[1]
+EXPORTS = tuple(dict.fromkeys((*ORIGINAL_EXPORTS, *WEB_FILES)))
 
 
 def generate(output, checkpoint):
@@ -39,6 +41,7 @@ def generate(output, checkpoint):
             path.write_bytes(normalized)
         bindings[name] = {"bytes": len(normalized), "sha256": hashlib.sha256(normalized).hexdigest()}
     validation["artifact_hashes"] = {name: entry["sha256"] for name, entry in bindings.items()}
+    validation["bibliography"] = json.loads((output / "html-summary.json").read_bytes())
     validation["canonical_utf8_newline"] = "LF"
     validation["completed_at_utc"] = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
     report.write_bytes((json.dumps(validation, ensure_ascii=False, indent=2) + "\n").encode())
