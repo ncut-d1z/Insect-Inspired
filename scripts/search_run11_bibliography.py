@@ -46,7 +46,14 @@ def owners_input(rows):
     return [{k:row[k] for k in ("work_id","task_id")} for row in rows]
 
 
-def request(key, source, endpoint, parameters, owners, why, project, page=1):
+def frozen_titles():
+    path=TEMP/"reports/RUN-0011-CP12-parent-titles.json"
+    if digest(path)!="bec0f765a6c6895504e9707bc3552a69b1ace5cb08ad34e9fce67c68760158ff":
+        raise ValueError("CP12 parent identities changed")
+    return {r["work_id"]:r["titles"] for r in read(path)["items"]}
+
+
+def request(key, source, endpoint, parameters, owners, why, project, page=1, decode=json.loads, accept="application/json", open_url=urlopen):
     url = endpoint + ("?" + urlencode(parameters) if parameters else "")
     for attempt in range(1, 5):
         file = OUT / f"Q-RUN11-{key}-A{attempt}.json"
@@ -68,13 +75,13 @@ def request(key, source, endpoint, parameters, owners, why, project, page=1):
                          reason=why,external_request_count=1,attempt=attempt,status="error",http_status=None,retryable=False,
                          execution_limits={"per_provider_concurrency":1,"timeout_seconds":25,"retry_backoff_seconds":[2,5,15]})
             delay = (2,5,15,15)[attempt-1]
-            headers = {"Accept":"application/json","User-Agent":"Insect-Inspired-Bibliography/1.3"}
+            headers = {"Accept":accept,"User-Agent":"Insect-Inspired-Bibliography/1.3"}
             try:
-                with urlopen(Request(url,headers=headers), timeout=25) as response:
+                with open_url(Request(url,headers=headers), timeout=25) as response:
                     entry["http_status"] = response.status
                     raw = response.read()
                 entry.update(response_sha256=hashlib.sha256(raw).hexdigest(),response_bytes=len(raw))
-                entry.update(project(json.loads(raw)))
+                entry.update(project(decode(raw)))
                 entry["status"] = "success"
             except HTTPError as exc:
                 entry.update(http_status=exc.code,error=str(exc),retryable=exc.code in (408,429,500,502,503,504))
@@ -178,9 +185,7 @@ def fetch_batch(start, reconcile=False):
     queue=read(frontier)["worklist"]
     if not 0<=start<len(queue) or start%WIDTH:raise ValueError("Use a saved batch boundary")
     parents=queue[start:start+WIDTH];end=start+len(parents)
-    selected={r["work_id"] for r in parents}
-    titles={w["work_id"]:[w["canonical_title"],*(v for v in w.get("title_variants",[]) if isinstance(v,str))]
-            for w in iter_logical("works.jsonl") if w["work_id"] in selected}
+    titles=frozen_titles()
     BATCHES.mkdir(exist_ok=True)
     if start and not (BATCHES/f"{start-WIDTH+1:04}-{start:04}.json").exists():raise ValueError("Missing earlier batch")
     report=BATCHES/f"{start+1:04}-{end:04}.json"

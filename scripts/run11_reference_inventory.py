@@ -7,7 +7,7 @@ import re
 
 from run10_reference_records import doi, fields, identifiers, metadata, request_identities, token
 from search_run11_bibliography import (
-    BATCHES, OA, OUT, ROOT, STATE, TEMP, WIDTH, compatible_parent, digest, owners_input, read, request, stamp, write,
+    BATCHES, OA, OUT, ROOT, STATE, TEMP, WIDTH, compatible_parent, digest, frozen_titles, owners_input, read, request, stamp, write,
 )
 from storage import iter_logical
 
@@ -26,9 +26,7 @@ def queue_inputs():
     if digest(frontier)!=run["frontier_sha256"]:
         raise ValueError("CP12 frontier checksum changed")
     queue=read(frontier)["worklist"]
-    selected={p["work_id"] for p in queue}
-    titles={w["work_id"]:[w["canonical_title"],*(v for v in w.get("title_variants",[]) if isinstance(v,str))]
-            for w in iter_logical("works.jsonl") if w["work_id"] in selected}
+    titles=frozen_titles()
     assert len(titles)==len(queue)==run["initial_queue_count"]
     return queue,titles
 

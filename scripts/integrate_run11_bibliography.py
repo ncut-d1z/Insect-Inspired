@@ -133,7 +133,10 @@ class Canonical(Batch):
         outcomes=[]
         for owner,prior,extra,attempts,pages in data:
             wid=owner["work_id"];work=self.works[wid];versions=[v for v in self.versions if v["work_id"]==wid]
-            assert len(versions)==1,(wid,len(versions))
+            if len(versions)>1:
+                primary=doi(work.get("doi")) or owner.get("epmc") or owner.get("openalex")
+                versions=[v for v in versions if primary in identifiers(v)]
+            assert len(versions)==1,("Unbound bibliography registration",wid,len(versions))
             version=versions[0];known=defaultdict(set);unresolved=Counter();positions=Counter();status=Counter();edges_added=0
             by_source=defaultdict(list)
             for qid in sorted(attempts):by_source[receipt(qid)["source_id"]].append(qid)
