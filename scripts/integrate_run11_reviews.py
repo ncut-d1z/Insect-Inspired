@@ -16,6 +16,8 @@ YOUGH="W-R10-b7df2a3ab7ba7062945d"
 class Ledger(Batch):
     checkpoint=CP
     id_prefix="R11"
+    run_id=RUN
+    version_report=VREPORT
 
     def __init__(self,wanted_tasks,work_ids,other_entities=()):
         self.adds=defaultdict(dict);self.changes=defaultdict(dict)
@@ -29,14 +31,15 @@ class Ledger(Batch):
         self.counts=Counter()
 
     def manual(self,rid,wid,artifact,when,kind,note):
-        self.add("manual-reviews",dict(review_id=rid,run_id=RUN,review_type=kind,entity_id=wid,reviewer="Codex 书目复核",
+        self.add("manual-reviews",dict(review_id=rid,run_id=self.run_id,review_type=kind,entity_id=wid,reviewer="Codex 书目复核",
                  recorded_at_utc=when,artifact=artifact.relative_to(ROOT).as_posix(),notes=note))
 
     def cited(self,report):
         for item in report["items"]:
             tid=item["task_id"];old=self.latest[tid];wid=item["citing_work_id"];assert old["entity_id"]==wid
             qids=set(item["evidence_queries"]);ordinal=item["ordinal"];m=item["exact_original_version"];binding=None;distinct=None
-            for p in (OUT/f"Q-RUN11-VER-PAIR-{ordinal}-A1.json",OUT/f"Q-RUN11-VER-PAIR-EPMC-{ordinal}-A1.json"):
+            pairs=(OUT/f"Q-RUN11-VER-PAIR-{ordinal}-A1.json",OUT/f"Q-RUN11-VER-PAIR-EPMC-{ordinal}-A1.json") if self.run_id==RUN else ()
+            for p in pairs:
                 if p.exists():qids.add(p.stem)
             if m:
                 ident=doi(m["doi"]);revision=m["revision"];items=[*self.versions,*self.adds["versions"].values()]
@@ -53,7 +56,7 @@ class Ledger(Batch):
                         version_work=item["cited_work_id"]
                     original=[v for v in self.versions if v["work_id"]==version_work]
                     src=source(evidence,ident+"v"+revision,"bioRxiv version history",item["interpretation"])
-                    v=dict(version_id="V-R11-"+token(ident,revision),work_id=version_work,version_type="preprint",version_date=m["date"],
+                    v=dict(version_id="V-"+self.id_prefix+"-"+token(ident,revision),work_id=version_work,version_type="preprint",version_date=m["date"],
                            identifiers={"biorxiv_revision":ident+"v"+revision},source=src,url="https://www.biorxiv.org/content/"+ident+"v"+revision,
                            file_records=[],verification_status="source_supported",related_version_ids=[v["version_id"] for v in original],
                            version_materialization="bibliographic_only",field_states={},notes=m["title"])
@@ -61,9 +64,9 @@ class Ledger(Batch):
                 assert len(versions)==1,(ordinal,versions)
                 binding=versions[0]["version_id"];distinct=versions[0]["work_id"]!=item["cited_work_id"]
                 self.counts["printed_original_versions_supported"]+=1
-            rid="MR-R11-VERSION-"+token(tid)
+            rid="MR-"+self.id_prefix+"-VERSION-"+token(tid)
             note=item["interpretation"]
-            if ordinal==46:
+            if self.run_id==RUN and ordinal==46:
                 note+=" 两条 DOI 登记的四名作者及顺序一致，但题名有变；数据库未登记版本关系，另留正式条目关联工单。"
                 follow=self.task("T-R11-VERSION-LINK-"+token(tid),item["cited_work_id"],"bibliographic_version_link",
                                  "已定位原始书目的预印本。登记作者相同、题名略异，待出版社或预印本库明示版本关系。","needs_disambiguation",sorted(qids))
@@ -75,7 +78,7 @@ class Ledger(Batch):
             event["normalized_parameters"]={**event["normalized_parameters"],"reviewed_target_work_id":item["cited_work_id"],
                       "cited_manifestation":binding,"printed_and_indexed_work_records_differ":distinct,
                       "deposit_position":item["deposit_position"],"review_disposition":item["status"]}
-            self.manual(rid,wid,VREPORT,report["reviewed_at_utc"],"original_cited_version_bibliography",note)
+            self.manual(rid,wid,self.version_report,report["reviewed_at_utc"],"original_cited_version_bibliography",note)
 
     def abstracts(self,report,artifact=AREPORT):
         q=read(ROOT/report["source_receipt"]);assert digest(ROOT/report["source_receipt"])==report["source_receipt_sha256"]
@@ -87,7 +90,7 @@ class Ledger(Batch):
             r=next(r for r in q["records"] if r["id"]==row["pmid"])
             assert doi(r["doi"])==doi(old["doi"]) and r.get("abstract_sha256")==row["abstract_sha256"]
             src=source(q,"MED:"+row["pmid"],"Abstract and publication byline",row["boundary"])
-            rid="MR-R11-ABSTRACT-"+row["pmid"];qids={q["query_id"]}
+            rid="MR-"+self.id_prefix+"-ABSTRACT-"+row["pmid"];qids={q["query_id"]}
             if row["summary_zh"]:
                 versions=[v for v in self.versions if v["work_id"]==wid and w["doi"] in identifiers(v)]
                 assert len(versions)==1 and not w["abstract_items"]
@@ -98,7 +101,8 @@ class Ledger(Batch):
             else:qids.add("Q-RUN11-P56-HILDRETH-CR-A1")
             for link in row["publication_affiliation_links"]:
                 p=OUT/(link["ror_query"]+".json");assert digest(p)==link["ror_receipt_sha256"];oq=read(p)
-                rr=[o for o in oq["records"] if o.get("chosen") and o["source_identifier"]==link["ror"]]
+                place=link.get("registry_location")
+                rr=[o for o in oq["records"] if o["source_identifier"]==link["ror"] and (o.get("chosen") or (place and any(all(loc.get(k)==v for k,v in place.items()) for loc in o.get("locations",[]))))]
                 assert len(rr)==1 and any(n["value"]==link["institution"] and "ror_display" in n["types"] for n in rr[0]["names"])
                 matches=[o for o in orgs.values() if o.get("ror")==link["ror"] or norm(o["canonical_name"])==norm(link["institution"])]
                 assert len(matches)<=1;osrc=source(oq,link["ror"],"ROR organization identity",link["institution"])
@@ -112,7 +116,7 @@ class Ledger(Batch):
                                     etype=oldtask["entity_type"],source_id=oldtask["source_id"]);e["overdue"]=False
                     self.modify("organizations",org,changed)
                 else:
-                    orgid="ORG-R11-"+link["ror"].rsplit("/",1)[-1]
+                    orgid="ORG-"+self.id_prefix+"-"+link["ror"].rsplit("/",1)[-1]
                     changed=dict(org_id=orgid,canonical_name=link["institution"],name_variants=[n["value"] for n in rr[0]["names"]],
                                  raw_affiliations=[link["affiliation"]],ror=link["ror"],external_ids={"ror":link["ror"]},
                                  organization_level="university",parent_org_id=None,historical_relations=[],valid_from=None,valid_to=None,

@@ -119,6 +119,13 @@ class Canonical(Batch):
             if (OUT/(q["query_id"]+".json")) in qpaths:self.prior_queries[q["query_id"]]=q
         keys={self.works[k]["work_key"] for k in owners}
         self.edges={(r["citing_key"],r["cited_key"]):r for r in iter_logical("citation-edges.jsonl") if r["citing_key"] in keys}
+        self.prior_positions={}
+        if getattr(self,"reuse_citing_positions",False) and self.edges:
+            known_ids={rid for e in self.edges.values() for rid in e["occurrence_ids"]}
+            for occurrence in iter_logical("reference-occurrences.jsonl"):
+                if occurrence["occurrence_id"] in known_ids:
+                    key=(occurrence["citing_work_id"],occurrence["version_id"],occurrence["source"]["source_id"],occurrence["section"],occurrence["raw_fingerprint"])
+                    self.prior_positions.setdefault(key,occurrence)
         self.people={};self.orcids=defaultdict(set)
         for a in iter_logical("authors.jsonl"):
             if a.get("orcid"):
@@ -195,9 +202,15 @@ class Canonical(Batch):
                     literal=raw.get("unstructured") or raw.get("raw_reference_string") or json.dumps(raw,ensure_ascii=False,separators=(",",":"))
                     fs={"page":nonapplicable(rel,"书目接口未提供施引页码。")}
                     if label is None:fs["reference_label"]=nonapplicable(rel,"无来源标签，保留来源顺序。")
-                    self.add("reference-occurrences",dict(occurrence_id=rid,citing_work_id=wid,version_id=version["version_id"],
+                    fingerprint=hashlib.sha256(literal.encode()).hexdigest()
+                    previous=self.prior_positions.get((wid,version["version_id"],sid,section,fingerprint))
+                    if previous:
+                        if previous["cited_work_id"]!=target:raise ValueError("Previously verified reference target differs: "+previous["occurrence_id"])
+                        rid=previous["occurrence_id"]
+                        self.stats["existing_positions_reused"]+=1
+                    else:self.add("reference-occurrences",dict(occurrence_id=rid,citing_work_id=wid,version_id=version["version_id"],
                              reference_label=None if label is None else str(label),section=section,page=None,raw_reference=literal,
-                             raw_fingerprint=hashlib.sha256(literal.encode()).hexdigest(),candidate_ids=choices,cited_work_id=target,
+                             raw_fingerprint=fingerprint,candidate_ids=choices,cited_work_id=target,
                              identity_confidence="probable" if target else ("ambiguous" if choices else "unresolved"),
                              verification_status="source_supported" if target else "unverified",source=rel,failure_reason=None if target else reason,field_states=fs))
                     positions[sid]+=1;status[reason]+=1
@@ -215,7 +228,8 @@ class Canonical(Batch):
                     if edge:
                         if edge["edge_id"] not in self.adds["citation-edges"] and edge["edge_id"] not in self.changes["citation-edges"]:
                             original=edge;edge=deepcopy(edge);self.modify("citation-edges",original,edge);self.edges[pair]=edge
-                        assert rid not in edge["occurrence_ids"];edge["occurrence_ids"].append(rid)
+                        if rid not in edge["occurrence_ids"]:edge["occurrence_ids"].append(rid)
+                        elif not previous:raise ValueError("Duplicate unbound reference position: "+rid)
                         if not any(s["source_id"]==sid and s.get("identifier")==parent and any(qid in l.get("evidence_note","") for l in s.get("evidence_locator",[])) for s in edge["discovery_sources"]):
                             edge["discovery_sources"].append(rel)
                     else:

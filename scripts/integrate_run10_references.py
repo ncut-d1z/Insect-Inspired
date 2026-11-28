@@ -236,7 +236,7 @@ class Batch:
         dim={k:"pending" for k in DIMENSIONS}
         dim.update(metadata="partial",fulltext="restricted",authors="partial" if people else "pending")
         pk=owner["work_id"];parent=self.works[pk]
-        path=[*parent["discovery_path"],dict(from_entity_id=pk,to_entity_id=wid,discovery_route="backward_citation",
+        path=[*parent["discovery_path"],dict(from_entity_id=pk,to_entity_id=wid,discovery_route=getattr(self,"discovery_route","backward_citation"),
              source_id=relation["source_id"],evidence_locator=relation["evidence_locator"],verification_status="source_supported",scope_id=SCOPE)]
         ids_meta={}
         if record.get("doi"):ids_meta["doi"]=record["doi"]

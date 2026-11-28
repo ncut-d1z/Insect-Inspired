@@ -21,6 +21,7 @@ TRANSACTIONS=TEMP/"reports/RUN-0012-canonical"
 class CurrentCanonical(Canonical):
     checkpoint=CP
     id_prefix="R12"
+    reuse_citing_positions=True
     metadata_prefixes=(*Canonical.metadata_prefixes,"Q-RUN12-ID-")
 
 
