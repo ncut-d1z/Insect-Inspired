@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "parent_commit": "435598bcf4bc66aa40fd5fc2bdb7cdeaf67b5d96",
+  "parent_checkpoint_sha256": "bbdae2a70cca6306918f3a4c51ae0281b3cd637d840f3e2de8153825de847855",
+  "canonical_transactions": [
+    {
+      "receipt": "temp/reports/RUN-0010-deadlines-20261128T083351408771Z.json",
+      "commit": "d188fc2dc84d5b7169eb07f15c3c9fcca52d3861",
+      "before": "c00e2791ce49883e6dc024f8787e72ff04a5d263",
+      "maintenance": true,
+      "transaction_format": "deadline_fields_and_events",
+      "counts": {
+        "byte_identical_row_comparisons": 204179,
+        "changed_rows": 10,
+        "appended_rows": 21
+      }
+    },
+    {
+      "receipt": "temp/reports/RUN-0010-integration-versions-and-abstracts.json",
+      "commit": "f2931c4fb72b98b347b515b6f1ab0b88c89d4d3f",
+      "before": "875f5b92f5fe2ddd5887b93999b26d879c4020f1",
+      "maintenance": false,
+      "transaction_format": "dataset_row_hashes",
+      "counts": {
+        "byte_identical_row_comparisons": 235739,
+        "appended_rows": 84,
+        "changed_rows": 8
+      }
+    },
+    {
+      "receipt": "temp/reports/RUN-0010-deadlines-20261128T092944735609Z.json",
+      "commit": "92466d1a46779f7eff77e814fc256f68857f0699",
+      "before": "9cbe8924eecb93a413b5b9c08f4b7121a6bd38a2",
+      "maintenance": true,
+      "transaction_format": "deadline_fields_and_events",
+      "counts": {
+        "byte_identical_row_comparisons": 202748,
+        "changed_rows": 9,
+        "appended_rows": 9
+      }
+    },
+    {
+      "receipt": "temp/reports/RUN-0010-integration-initial-79.json",
+      "commit": "62606826b3365ff478189f0a0d2bac1363dd38b5",
+      "before": "92466d1a46779f7eff77e814fc256f68857f0699",
+      "maintenance": false,
+      "transaction_format": "dataset_row_hashes",
+      "counts": {
+        "byte_identical_row_comparisons": 466642,
+        "appended_rows": 58317,
+        "changed_rows": 110
+      }
+    },
+    {
+      "receipt": "temp/reports/RUN-0010-integration-catalog-corrections.json",
+      "commit": "5313a5d52da9b5f152df2ab8ee57bbe17381b9b7",
+      "before": "2563e73853e15eacc8e5a2db7d834b28793f5e0a",
+      "maintenance": true,
+      "transaction_format": "dataset_row_hashes",
+      "counts": {
+        "byte_identical_row_comparisons": 73704,
+        "appended_rows": 47,
+        "changed_rows": 176
+      }
+    },
+    {
+      "receipt": "temp/reports/RUN-0010-integration-recursive-24.json",
+      "commit": "fd727b656c3d411696f1deb1eb8974f5b1cdc453",
+      "before": "cd3d74ec2e3f518bcd8439a908fb071c096b0524",
+      "maintenance": false,
+      "transaction_format": "dataset_row_hashes",
+      "counts": {
+        "byte_identical_row_comparisons": 527330,
+        "appended_rows": 11861,
+        "changed_rows": 167
+      }
+    }
+  ],
+  "totals": {
+    "byte_identical_row_comparisons": 1710342,
+    "changed_rows": 480,
+    "appended_rows": 70339
+  },
+  "old_records_lost": 0,
+  "clock_history_preserved": true
+}
