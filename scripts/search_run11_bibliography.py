@@ -16,6 +16,7 @@ from urllib.request import Request, urlopen
 from run10_reference_records import clean, doi, norm
 from search_run10_references import CR, EPMC, OUT, ROOT, TEMP, read, stamp, write
 from storage import iter_logical
+from run11_source_limits import source_slot
 
 RUN = "RUN-0011"
 CP = "CP-0013"
@@ -47,13 +48,13 @@ def owners_input(rows):
 
 def request(key, source, endpoint, parameters, owners, why, project, page=1):
     url = endpoint + ("?" + urlencode(parameters) if parameters else "")
-    for attempt in range(1, 4):
+    for attempt in range(1, 5):
         file = OUT / f"Q-RUN11-{key}-A{attempt}.json"
         if file.exists():
             saved = read(file)
             if saved["endpoint_or_url"] != url or saved["owners"] != owners:
                 raise ValueError("Mismatching recorded query " + key)
-            if saved["status"] == "success" or not saved.get("retryable") or saved.get("deferred") or attempt == 3:
+            if saved["status"] == "success" or not saved.get("retryable") or saved.get("deferred") or attempt == 4:
                 return saved
             continue
         run = read(STATE)
@@ -61,36 +62,39 @@ def request(key, source, endpoint, parameters, owners, why, project, page=1):
             raise RuntimeError("Run clock budget reached")
         if sum(1 for _ in OUT.glob("Q-RUN11-*.json")) >= run["budget"]["external_requests"]:
             raise RuntimeError("Run source request budget reached")
-        entry = dict(query_id=file.stem,run_id=RUN,scope_id=SCOPE,target_checkpoint=CP,source_id=source,
-                     requested_at_utc=stamp(),endpoint_or_url=url,parameters=parameters,page_index=page,owners=owners,
-                     reason=why,external_request_count=1,attempt=attempt,status="error",http_status=None,retryable=False)
-        delay = 2**attempt
-        headers = {"Accept":"application/json","User-Agent":"Insect-Inspired-Bibliography/1.3"}
-        try:
-            with urlopen(Request(url,headers=headers), timeout=32) as response:
-                entry["http_status"] = response.status
-                raw = response.read()
-            entry.update(response_sha256=hashlib.sha256(raw).hexdigest(),response_bytes=len(raw))
-            entry.update(project(json.loads(raw)))
-            entry["status"] = "success"
-        except HTTPError as exc:
-            entry.update(http_status=exc.code,error=str(exc),retryable=exc.code in (408,429,500,502,503,504))
-            detail=exc.read(65536)
-            if detail:
-                entry["error_response_sha256"]=hashlib.sha256(detail).hexdigest()
-                entry["error_response_prefix"]=detail.decode("utf-8",errors="replace")[:2600]
-            header = exc.headers.get("Retry-After")
-            if header:
-                entry["retry_after"] = header
-                try:
-                    delay = max(delay, int(header) if header.isdigit() else (parsedate_to_datetime(header)-datetime.now(timezone.utc)).total_seconds())
-                except (TypeError,ValueError,OverflowError): pass
-        except (OSError,KeyError,ValueError,TypeError,AssertionError) as exc:
-            entry.update(error=type(exc).__name__+": "+str(exc),retryable=isinstance(exc,OSError))
-        if delay > 60: entry["deferred"] = True
-        entry["completed_at_utc"] = stamp()
-        write(file,entry)
-        if entry["status"] == "success" or not entry["retryable"] or entry.get("deferred") or attempt == 3:
+        with source_slot(source,file,run) as provider_delay:
+            entry = dict(query_id=file.stem,run_id=RUN,scope_id=SCOPE,target_checkpoint=CP,source_id=source,
+                         requested_at_utc=stamp(),endpoint_or_url=url,parameters=parameters,page_index=page,owners=owners,
+                         reason=why,external_request_count=1,attempt=attempt,status="error",http_status=None,retryable=False)
+            delay = (2,5,15,15)[attempt-1]
+            headers = {"Accept":"application/json","User-Agent":"Insect-Inspired-Bibliography/1.3"}
+            try:
+                with urlopen(Request(url,headers=headers), timeout=25) as response:
+                    entry["http_status"] = response.status
+                    raw = response.read()
+                entry.update(response_sha256=hashlib.sha256(raw).hexdigest(),response_bytes=len(raw))
+                entry.update(project(json.loads(raw)))
+                entry["status"] = "success"
+            except HTTPError as exc:
+                entry.update(http_status=exc.code,error=str(exc),retryable=exc.code in (408,429,500,502,503,504))
+                detail=exc.read(65536)
+                if detail:
+                    entry["error_response_sha256"]=hashlib.sha256(detail).hexdigest()
+                    entry["error_response_prefix"]=detail.decode("utf-8",errors="replace")[:2600]
+                header = exc.headers.get("Retry-After")
+                if header:
+                    entry["retry_after"] = header
+                    try:
+                        delay = max(delay, int(header) if header.isdigit() else (parsedate_to_datetime(header)-datetime.now(timezone.utc)).total_seconds())
+                    except (TypeError,ValueError,OverflowError): pass
+            except (OSError,KeyError,ValueError,TypeError,AssertionError) as exc:
+                entry.update(error=type(exc).__name__+": "+str(exc),retryable=isinstance(exc,OSError))
+            if entry.get("retry_after") and delay>0:
+                provider_delay.write_text(str(time.time()+delay))
+            if delay > 60: entry["deferred"] = True
+            entry["completed_at_utc"] = stamp()
+            write(file,entry)
+        if entry["status"] == "success" or not entry["retryable"] or entry.get("deferred") or attempt == 4:
             return entry
         time.sleep(delay)
 
