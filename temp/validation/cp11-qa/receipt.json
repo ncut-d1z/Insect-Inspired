@@ -1,0 +1,16 @@
+{
+  "checked_at_utc": "2026-11-28T04:51:05.514043Z",
+  "candidate_sha256": "cd7c0196f103c312bb6b87592ebd504af07b6c389ae9b044ffb80916f6698548",
+  "input_digest": "e7b7bd834ad0a7253d3f9033680779b7562d89fd5b9280069dd260bb9abecbac",
+  "checks": {
+    "temp/validation/cp11-data-audit.json": "09c830ba7b68bb0d94a8f40ad6df09ae66a218751f198f3559deeb11314038d8",
+    "temp/validation/cp11-determinism.json": "5b2be6ebd6442063d997e665b6f3bfd2c478164ca242acc0eff86b89f3361284",
+    "temp/validation/cp11-ui-validation.json": "93a86b67410107647f3b20a11551eb4dd8c2e687c63b6aa72dd15111e8d28b87",
+    "temp/validation/cp11-export-validation.json": "a2e83f4e0f36800a4d57e5ecc3df7a84ae25fc3619a827489a847fcb5780f0cd",
+    "temp/validation/cp11-qa/html-desktop.png": "2012d9856efe249fda3689845ba07962b8a636b62d60fa41d808958903990be4",
+    "temp/validation/cp11-qa/html-topic.png": "373b1c8f4c7d661070b96b02f0c5ca8e3ee8d4f73b9c69a355c1086a49db24c2",
+    "temp/validation/cp11-qa/html-mobile.png": "b20cdb5b5423f023d1bfb35d15e43e0e4c6856c0d6815f4cc6ad8588a6d60a46",
+    "temp/validation/cp11-qa/html-mobile-controls.png": "b373989b611c0a60344d8472b13fd91d9376abf3e96ba62695da78e252dae9f7",
+    "temp/validation/cp11-qa/audited-candidate.json": "cd7c0196f103c312bb6b87592ebd504af07b6c389ae9b044ffb80916f6698548"
+  }
+}

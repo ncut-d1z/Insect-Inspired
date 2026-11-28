@@ -1,0 +1,46 @@
+{
+  "artifact_hashes": {
+    "ref.bib": "6605bf909bd067322d0dad32d9203d9ee7223067ab791462b8f4431234ac6f65",
+    "ref.html": "8733ad0c2a6cd9b74cfaf6c826000ee01bb5015b0d5be7b35be88e83cd12d020",
+    "temp/exports/citation_graph.json": "d10020a26642f0d9ee5d3fa051890d846f89d92a1296f37242e07155789a5a05",
+    "temp/exports/evidence_matrix.csv": "4f13d4428960da344ba45778674b4a0424abf86f4a0bfbb6747089ac9acf6f21",
+    "temp/exports/research_entities.json": "c1b82b9459051bfb1fd6a531a0adb30f790ec35429c7ead8bff110fa63e7e42e",
+    "temp/exports/research_implications.csv": "1a1d3206083ec6a50439204164f96657e88a825afef0a7648877dc4feb1a7180",
+    "temp/exports/research_paths.json": "1781cbbccf73e81c1c190bc971a2b79c90632d332ef361b527ba4ed5076476b7"
+  },
+  "authorship_statuses": {
+    "source_supported": 22047
+  },
+  "canonical_schema_pointer_patch_needed": false,
+  "checkpoint_id": "CP-0011",
+  "counts": {
+    "active_assessments": 72,
+    "bibtex_entries": 5177,
+    "entity_relations": 26084,
+    "graph_edges": 31932,
+    "graph_nodes": 5177,
+    "independent_progress": 7,
+    "path_gaps": 0,
+    "paths": 72,
+    "unresolved_pointers": 124353
+  },
+  "input_record_counts": {
+    "assessments.jsonl": 73,
+    "authors.jsonl": 20918,
+    "citation-edges.jsonl": 31932,
+    "discovery-paths.jsonl": 40674,
+    "organizations.jsonl": 1415,
+    "project-relations.jsonl": 50,
+    "projects.jsonl": 8,
+    "reference-occurrences.jsonl": 158599,
+    "seed-manifest.jsonl": 20,
+    "works.jsonl": 5177
+  },
+  "output_dir": "D:\\Developments\\cp10-recovery-57f4142ff7774b76823159c90d817ba2\\run9-qa\\bibliographic-first",
+  "schema_errors": [],
+  "schema_patch_path": "D:\\Developments\\cp10-recovery-57f4142ff7774b76823159c90d817ba2\\run9-qa\\bibliographic-first\\graph-schema-patch.json",
+  "schema_version": "1.1.1",
+  "scope_id": "SCOPE-0001",
+  "canonical_utf8_newline": "LF",
+  "completed_at_utc": "2026-11-28T04:33:03.686985Z"
+}

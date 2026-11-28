@@ -1,12 +1,7 @@
-# 当前执行进度：CP-0010
+# 当前研究进度
 
-更新时间：2026-11-27 17:39:18 UTC+8。**SCOPE-0001 / RUN-0008 / CP-0010：valid 数据检查点。** 有效父检查点 CP-0009；CP3 invalid 历史保留。
+SCOPE-0001 / RUN-0009 / CP-0011，已通过检查点验收。P3–P6 部分完成，递归闭包仍开放。
 
-完整数据审计 0 错误、16 项已披露警告；七项导出逐字一致；十项 UI 检查通过。
+5,177 条 Work、5,226 个 Version、31,932 条引文边、63 条合格主张。新增 79 篇书目，3 篇摘要概述，新增合格科学主张 0 条。未解析引文出现项 124,353 条，未结任务 131,884 个。
 
-- 规范 Work 5,098；活动主张 72：合格 63、不足 9、反证 23。
-- 本轮新 Work 0，新解析参考出现项 0，新边 0，新主张 0。
-- K=5098，T_union=35，U=5063。
-- 未结任务 130,764；未解析参考出现项 124,357；开放 unknown 工单 65,053。
-
-P3–P6 继续部分推进，研究闭包未成立，P7 未启动，P8 未触发。详见[阶段报告](reports/P3-P6-CP0010.md)和[CP10](snapshots/checkpoints/CP-0010.json)。最终提交后的[独立同步证明](https://github.com/ncut-d1z/Insect-Inspired/blob/sync/cp10-checkpoint-import/temp/sync/CP-0010/verification.json)单独保存；通过前不得开始下一研究批。
+[阶段报告](reports/P3-P6-CP0011.md) · [检查点](snapshots/checkpoints/CP-0011.json) · [后置同步凭据](validation/cp11-post-push.json)

@@ -17,7 +17,7 @@
     "manual_review_items": 200,
     "paid_spend": 0
   },
-  "status": "in_progress",
+  "status": "checkpointed_open",
   "branch": "codex/p3-p6-cp11",
   "external_requests_used": 24,
   "manual_review_items_used": 13,
@@ -45,8 +45,14 @@
   },
   "sync_policy": "按批用本机 Git 普通推送并核对远端提交。",
   "next_batch": "根据论文书目元数据和参考文献列表核对文献身份、施引与署名。等待仅凭允许材料无法核验的项目及科学问题。",
-  "end_checkpoint_id": null,
+  "end_checkpoint_id": "CP-0011",
   "read_policy": "temp/reports/RUN-0009-bibliography-roadmap.json",
   "scope_cutover": "temp/reports/RUN-0009-bibliography-cutover.json",
-  "existing_citing_work_bibliographies_reused": 7
+  "existing_citing_work_bibliographies_reused": 7,
+  "checkpoint_status": "valid",
+  "checkpoint_validation_state": "passed",
+  "checkpoint_completed_at_utc": "2026-11-28T04:51:05.514043Z",
+  "checkpoint_wall_clock_hours": 1.4514,
+  "sync_state": "post_commit_independent_readback",
+  "post_commit_verification_url": "temp/validation/cp11-post-push.json"
 }
