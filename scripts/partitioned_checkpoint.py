@@ -97,3 +97,24 @@ def checkpoint_files(path, public=None):
     if active.read_bytes() != immutable.read_bytes():
         raise ValueError("Checkpoint entry and active task collections differ")
     return [path, immutable, *view_files(active)]
+
+
+if __name__=="__main__":
+    import argparse
+    parser=argparse.ArgumentParser(description="Verify a complete checkpoint and optionally reconstruct its original JSON object.")
+    parser.add_argument("entry",type=Path)
+    parser.add_argument("--output",type=Path,help="Write the verified logical checkpoint to a new file")
+    args=parser.parse_args()
+    checkpoint=load_checkpoint(args.entry)
+    checkpoint_files(args.entry)
+    binding=logical_binding(checkpoint)
+    if args.output is not None:
+        with args.output.open("xb") as dest:
+            try:
+                for part in logical_chunks(checkpoint):dest.write(part)
+            except BaseException:
+                dest.close()
+                args.output.unlink(missing_ok=True)
+                raise
+    print(json.dumps({"checkpoint_id":checkpoint["checkpoint_id"],"status":checkpoint["status"],
+                      "task_cursors":len(checkpoint["task_cursor_state"]),"unresolved_tasks":len(checkpoint["unresolved_tasks"]),**binding}))

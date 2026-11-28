@@ -18,7 +18,7 @@ RUN_FILE = "temp/runs/RUN-0011.json"
 VIEWS = ("temp/exports/research_entities.json", "temp/exports/citation_graph.json")
 
 
-def readback(repo, ref, scratch, output):
+def readback(repo, ref, scratch, output, deterministic=None):
     require(git(repo, "rev-parse", "--is-bare-repository").strip() == b"true" and
             not (repo / "objects/info/alternates").exists(), "Use an independent bare object store")
     commit = git(repo, "rev-parse", "--verify", ref+"^{commit}").decode().strip()
@@ -44,13 +44,23 @@ def readback(repo, ref, scratch, output):
         parent_sha = sha(get(commit, PARENT))
         require(parent_sha == run["start_sync_gate"]["checkpoint_sha256"], "CP12 differs from its original binding")
         artifacts = public["artifact_hashes"]
-        if public["status"] == "valid":
+        if artifacts or public["status"] == "valid":
             require(set(artifacts) == paths - {CHECKPOINT, "temp/validation/cp13-post-push.json"}, "Checkpoint inventory differs from the remote tree")
         total = 0
         for name, expected in artifacts.items():
             data = get(commit, name)
             require(sha(data) == expected, "Remote data digest differs: " + name)
             total += len(data)
+        export_count=0
+        if deterministic:
+            expected=json.loads(deterministic.read_bytes())
+            require(expected["status"]=="passed" and expected["checkpoint_id"]==public["checkpoint_id"],"Invalid independent export inventory")
+            if public["status"]=="invalid":
+                require(expected["candidate_sha256"]==sha(get(commit,CHECKPOINT)),"Different candidate audited")
+            for name,binding in expected["artifacts"].items():
+                raw=get(commit,name)
+                require({"bytes":len(raw),"sha256":sha(raw)}==binding,"Remote export differs from double generation: "+name)
+                export_count+=1
         def copy_view(name):
             path = copy(name)
             pointer = json.loads(path.read_bytes())
@@ -79,13 +89,16 @@ def readback(repo, ref, scratch, output):
         del recovered
         gc.collect()
         frontier = json.loads(get(commit, run["next_backward_frontier"]))
-        require(frontier["canonical_positions"] == public["coverage"]["parent_reference_search"]["positions"]["positions"] and
+        require(frontier["canonical_parents"] == public["coverage"]["recursive_cursor"]["canonical_parents"] and
                 frontier["discovered_work_count"] == len(frontier["worklist"]) == public["coverage"]["backward_queue"]["work_count"], "Remote recursive cursor differs")
+        if frontier["remaining_original_parents"]==0:
+            require(frontier["canonical_positions"]==public["coverage"]["parent_reference_search"]["positions"]["positions"],"Remote parent position count differs")
         result = dict(status="passed", verified_at_utc=stamp(), verified_remote="https://github.com/ncut-d1z/Insect-Inspired.git",
                       branch="main", method="Native Git fetch into an independent bare object store, followed by full blob SHA-256 and logical JSON reconstruction.",
                       commit=commit, tree=tree, checkpoint_status=public["status"], checkpoint_sha256=sha(get(commit, CHECKPOINT)),
                       previous_checkpoint_files_unchanged=len(previous), parent_checkpoint_sha256=parent_sha, old_reports_queries_runs_and_validation_files_changed=0,
-                      checked_artifact_hashes=len(artifacts), checked_artifact_bytes=total, reconstructed_json=logical, recovered_queue=queue_stats,
+                      checked_artifact_hashes=len(artifacts), checked_artifact_bytes=total, physical_exports_compared_with_double_generation=export_count,
+                      reconstructed_json=logical, recovered_queue=queue_stats,
                       original_parents=frontier["canonical_parents"], new_recursive_tasks=frontier["discovered_work_count"])
         put(output, encode(result) + b"\n")
         print("Remote commit, tree, verified artifacts, bytes and recovered queue:", commit, tree, len(artifacts), total, queue_stats, flush=True)
@@ -97,5 +110,6 @@ if __name__ == "__main__":
     parser.add_argument("--ref", required=True)
     parser.add_argument("--scratch", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--determinism",type=Path)
     args = parser.parse_args()
-    readback(args.repo.resolve(), args.ref, args.scratch.resolve(), args.output.resolve())
+    readback(args.repo.resolve(), args.ref, args.scratch.resolve(), args.output.resolve(), args.determinism)

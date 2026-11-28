@@ -74,6 +74,8 @@ def request(key, source, endpoint, parameters, owners, why, project, page=1, dec
                          requested_at_utc=stamp(),endpoint_or_url=url,parameters=parameters,page_index=page,owners=owners,
                          reason=why,external_request_count=1,attempt=attempt,status="error",http_status=None,retryable=False,
                          execution_limits={"per_provider_concurrency":1,"timeout_seconds":25,"retry_backoff_seconds":[2,5,15]})
+            if source=="crossref":
+                provider_delay.write_text(str(datetime.fromisoformat(entry["requested_at_utc"]).timestamp()+1.01))
             delay = (2,5,15,15)[attempt-1]
             headers = {"Accept":accept,"User-Agent":"Insect-Inspired-Bibliography/1.3"}
             try:
