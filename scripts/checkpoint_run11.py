@@ -66,7 +66,8 @@ def prepare(output):
     require(output.is_absolute() and not output.exists() and not output.is_relative_to(ROOT),"Use a new external candidate directory")
     require(not git(ROOT,"status","--porcelain").strip(),"Freeze committed inputs")
     run=read(STATE);require(run["next_backward_frontier"]==FRONTIER.as_posix(),"Publish the recovery frontier before freezing")
-    original=read(TEMP/"snapshots/checkpoints/CP-0012.json")
+    original={k:v for k,v in read(TEMP/"snapshots/checkpoints/CP-0012.json").items()
+              if k in {"status","checkpoint_id","schema_version"}}
     require(original["status"]=="valid" and run["start_checkpoint_id"]==original["checkpoint_id"] and run["scope_id"]==SCOPE,"Invalid parent")
     commit=head();history=audit(commit)
     require(history["parent_checkpoint_sha256"]==run["start_sync_gate"]["checkpoint_sha256"],"Parent binding differs")

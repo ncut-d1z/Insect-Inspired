@@ -15,7 +15,8 @@ def collect(frozen, run_id=RUN):
     run = read(TEMP / "runs" / (run_id+".json"))
     use_run11 = run_id == "RUN-0011"
     checkpoint = run.get("target_checkpoint_id") or CP
-    parent = read(TEMP / "snapshots/checkpoints" / (run["start_checkpoint_id"]+".json"))
+    parent_file = TEMP / "snapshots/checkpoints" / (run["start_checkpoint_id"]+".json")
+    parent = {k:v for k,v in read(parent_file).items() if k in {"counts","coverage"}}
     run_prefix = "run11_" if use_run11 else "run10_"
     scope = read(TEMP / "snapshots/scope.json")
     manifest = read(TEMP / "partitions/manifest.json")
