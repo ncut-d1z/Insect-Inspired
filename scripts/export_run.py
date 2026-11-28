@@ -59,14 +59,21 @@ def tex(value):
 
 
 def name_bib(author):
-    if author.get('is_corporate'):
-        return '{' + tex(author['display_name']) + '}'
     family, given = author.get('family_name'), author.get('given_name')
+    display = author.get('display_name', '')
+    components = (family, given) if family else (display,)
+    if author.get('is_corporate') or any(
+        re.search(r',|(?:^|\s)and(?:\s|$)', part, re.IGNORECASE)
+        for part in components if part
+    ):
+        # A comma or an unprotected “and” inside a source name changes the
+        # BibTeX byline. Keep the supplied spelling as one literal name.
+        return '{' + tex(display or ' '.join(p for p in (given, family) if p)) + '}'
     if family:
         return tex(family) + (', ' + tex(given) if given else '')
     # Preserve the supplied name when structured components are unavailable;
     # never invent an anonymous author or infer family-name boundaries.
-    return tex(author.get('display_name', ''))
+    return tex(display)
 
 
 def bibliography(works, scope):

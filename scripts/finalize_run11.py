@@ -97,7 +97,7 @@ def narrative(cp, qa, source_control, accepted):
     index=read(TEMP/"exports/research_entities/index.json")
     parts=[p for group in index["collections"].values() for p in group["parts"]]
     entities=entity["collection_counts"]
-    status="已通过数据验收" if accepted else "已完成数据与导出检查，来源复核仍有待确认项"
+    status="已通过数据验收" if accepted else "尚未通过本轮验收，具体原因见检查点与运行记录"
     child=frontier["worklist"][0]["work_key"] if frontier["worklist"] else "无"
     return f"""# CP-0013 阶段报告
 
@@ -127,6 +127,8 @@ Weir 等人的摘要报告，果蝇扇形体内一组神经元在静止时对视
 规范库累计有 {counts['canonical_works']:,} 篇文献、{counts['versions']:,} 个版本、{counts['citation_edges']:,} 条引文边、{counts['unresolved_occurrences']:,} 个未解析位置和 {counts['unresolved_tasks']:,} 个开放工单。活跃主题文献并集 {counts['topic_work_union']:,} 篇，U00 有 {counts['u00_works']:,} 篇。后续沿已存游标从 {child} 继续，并优先复核缺少来源的列表、歧义版本和冲突机构。
 
 独立 Biber 读回 {bib['roundtripped_distinct_keys']:,} 个书目键，原始导出题名亦已逐项核对。主题页 ref.html 为 {assets['ref.html']['bytes']:,} 字节，U00 独立入口 misc.html 为 {assets['misc.html']['bytes']:,} 字节。离线首屏可操作中位数在 Chrome 为主题 {ui['median_seconds']['topics']:.3f} 秒、U00 {ui['median_seconds']['misc']:.3f} 秒，在 Edge 为主题 {edge['median_seconds']['topics']:.3f} 秒、U00 {edge['median_seconds']['misc']:.3f} 秒。
+
+标准 Biber 往返最初漏读了 9 个含特殊署名分隔符的条目。导出器现用 BibTeX 花括号保护来源中的完整姓名。传统 bibtex.exe 遇到仅大小写不同的稳定键时，将 {bib['classic_bibtex_compatibility']['missing_keys']:,} 个键视作重复，实际输出 {bib['classic_bibtex_compatibility']['output_keys']:,} 条。原始书目键和规范署名均保留。[两种解析器的实测记录](../validation/cp13-bibtex-parse.json)
 
 Q2 独立目录含 {len(parts):,} 个数据分片，最大一片 {max(p['bytes'] for p in parts):,} 字节。GitHub 回读重建的完整 JSON 为 {entity['logical_bytes']:,} 字节，含 {entities['people']:,} 条人员记录、{entities['organizations']:,} 个机构、{entities['projects']:,} 个项目、{entities['work_refs']:,} 个书目指针和 {entities['relations']:,} 条关系。各组文件可单独读取。[Q2 文件清单与校验和](../exports/research_entities/index.json)
 
