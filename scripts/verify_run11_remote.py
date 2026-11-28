@@ -15,13 +15,40 @@ from search_run11_bibliography import stamp
 CHECKPOINT = "temp/snapshots/checkpoints/CP-0013.json"
 PARENT = "temp/snapshots/checkpoints/CP-0012.json"
 RUN_FILE = "temp/runs/RUN-0011.json"
+POST = "temp/validation/cp13-post-push.json"
+VERIFIER = "scripts/verify_run11_remote.py"
 VIEWS = ("temp/exports/research_entities.json", "temp/exports/citation_graph.json")
+
+
+def post_push_subject(repo, requested):
+    """A delivery receipt can follow the sealed data without changing those data."""
+    if not git(repo, "ls-tree", "--name-only", requested, "--", POST).strip():
+        return requested, None
+    with blobs(repo) as get:
+        receipt = json.loads(get(requested, POST))
+        subject = receipt["commit"]
+        git(repo, "merge-base", "--is-ancestor", subject, requested)
+        require(receipt["status"] == "passed" and
+                receipt["tree"] == git(repo, "rev-parse", subject + "^{tree}").decode().strip() and
+                receipt["checkpoint_sha256"] == sha(get(subject, CHECKPOINT)),
+                "Post-push receipt does not identify the sealed Git tree")
+        changed = set(git(repo, "diff", "--name-only", "--no-renames", "-z", subject, requested).decode().split("\0")) - {""}
+        allowed = {POST}
+        repair = receipt.get("verifier_amendment")
+        if repair is not None:
+            require(repair["path"] == VERIFIER and repair["sealed_sha256"] == sha(get(subject, VERIFIER)) and
+                    repair["executed_sha256"] == sha(get(requested, VERIFIER)),
+                    "Post-push verifier amendment differs from its Git blobs")
+            allowed.add(VERIFIER)
+        require(changed == allowed, "This revision changed other files since CP13; use its sealed data commit")
+    return subject, repair
 
 
 def readback(repo, ref, scratch, output, deterministic=None):
     require(git(repo, "rev-parse", "--is-bare-repository").strip() == b"true" and
             not (repo / "objects/info/alternates").exists(), "Use an independent bare object store")
-    commit = git(repo, "rev-parse", "--verify", ref+"^{commit}").decode().strip()
+    requested = git(repo, "rev-parse", "--verify", ref+"^{commit}").decode().strip()
+    commit, delivered_repair = post_push_subject(repo, requested)
     tree = git(repo, "rev-parse", commit+"^{tree}").decode().strip()
     paths = set(git(repo, "ls-tree", "--name-only", "-r", "-z", commit).decode().split("\0")) - {""}
     with blobs(repo) as get, TemporaryDirectory(prefix="cp13-independent-", dir=scratch) as tmp:
@@ -45,7 +72,7 @@ def readback(repo, ref, scratch, output, deterministic=None):
         require(parent_sha == run["start_sync_gate"]["checkpoint_sha256"], "CP12 differs from its original binding")
         artifacts = public["artifact_hashes"]
         if artifacts or public["status"] == "valid":
-            require(set(artifacts) == paths - {CHECKPOINT, "temp/validation/cp13-post-push.json"}, "Checkpoint inventory differs from the remote tree")
+            require(set(artifacts) == paths - {CHECKPOINT, POST}, "Checkpoint inventory differs from the remote tree")
         total = 0
         for name, expected in artifacts.items():
             data = get(commit, name)
@@ -55,8 +82,22 @@ def readback(repo, ref, scratch, output, deterministic=None):
         if deterministic:
             expected=json.loads(deterministic.read_bytes())
             require(expected["status"]=="passed" and expected["checkpoint_id"]==public["checkpoint_id"],"Invalid independent export inventory")
-            if public["status"]=="invalid":
-                require(expected["candidate_sha256"]==sha(get(commit,CHECKPOINT)),"Different candidate audited")
+            if artifacts:
+                validation = public["validation_results"]
+                candidate_commit = validation["audited_candidate_commit"]
+                git(repo, "merge-base", "--is-ancestor", candidate_commit, commit)
+                candidate_raw = get(candidate_commit, CHECKPOINT)
+                candidate = json.loads(candidate_raw)
+                require(candidate["validation_results"]["state"] == "pending" and
+                        candidate["counts"] == public["counts"] and
+                        candidate["task_collections_sha256"] == public["task_collections_sha256"] and
+                        sha(candidate_raw) == validation["audited_candidate_sha256"] == expected["candidate_sha256"],
+                        "The sealed data and the audited candidate have different provenance")
+                require(sha(deterministic.read_bytes()) == artifacts["temp/validation/cp13-determinism.json"],
+                        "Independent exports differ from the inventory bound by the seal")
+            else:
+                require(public["status"] == "invalid" and public["validation_results"]["state"] == "pending" and
+                        expected["candidate_sha256"] == sha(get(commit, CHECKPOINT)), "Different pending candidate audited")
             for name,binding in expected["artifacts"].items():
                 raw=get(commit,name)
                 require({"bytes":len(raw),"sha256":sha(raw)}==binding,"Remote export differs from double generation: "+name)
@@ -100,6 +141,15 @@ def readback(repo, ref, scratch, output, deterministic=None):
                       checked_artifact_hashes=len(artifacts), checked_artifact_bytes=total, physical_exports_compared_with_double_generation=export_count,
                       reconstructed_json=logical, recovered_queue=queue_stats,
                       original_parents=frontier["canonical_parents"], new_recursive_tasks=frontier["discovered_work_count"])
+        if artifacts:
+            sealed_verifier = artifacts[VERIFIER]
+            executed_verifier = sha(Path(__file__).read_bytes())
+            if executed_verifier != sealed_verifier:
+                result["verifier_amendment"] = dict(path=VERIFIER, sealed_sha256=sealed_verifier,
+                                                     executed_sha256=executed_verifier)
+        if requested != commit:
+            require(result.get("verifier_amendment") == delivered_repair, "The delivered verifier differs from the one used")
+            result["verified_delivery_commit"] = requested
         put(output, encode(result) + b"\n")
         print("Remote commit, tree, verified artifacts, bytes and recovered queue:", commit, tree, len(artifacts), total, queue_stats, flush=True)
 
