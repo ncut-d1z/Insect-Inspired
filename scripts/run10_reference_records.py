@@ -34,6 +34,8 @@ def identifiers(obj):
     ids=set()
     for k,v in {**obj.get("identifiers",{}),"work_doi":obj.get("doi"),"raw":obj.get("raw_identifier"),
                 "normalized":obj.get("normalized_identifier")}.items():
+        if k=="doi_as_indexed_at_cp11":
+            continue
         for val in v if isinstance(v,list) else [v]:
             if not isinstance(val,(str,int)) or not val:
                 continue

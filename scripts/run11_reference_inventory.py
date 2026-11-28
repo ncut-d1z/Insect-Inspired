@@ -140,8 +140,17 @@ def raw_ids(raw,provider):
     return tuple(k for k in (d,e) if k)
 
 
-def plan(queue,titles):
+def plan(queue,titles,end_at=None):
     PLAN.mkdir(exist_ok=True)
+    end_at=end_at or len(queue)
+    if not 0<end_at<=len(queue) or (end_at%WIDTH and end_at!=len(queue)):
+        raise ValueError("The plan must end at a verified cohort boundary")
+    p=PLAN/("groups.json" if end_at==len(queue) else f"first-{end_at:04}.json")
+    if p.is_file():
+        saved=read(p)
+        assert saved["queue_end"]==end_at and all(digest(ROOT/k)==v for k,v in saved["source_hashes"].items())
+        print("Verified saved plan",p.name,len(saved["groups"]),flush=True)
+        return
     previous=set()
     for name in ("works","versions","aliases"):
         for r in iter_logical(name+".jsonl"):
@@ -150,8 +159,13 @@ def plan(queue,titles):
     for r,_ in metadata():previous.update(k for k in (r.get("doi"),r.get("epmc"),r.get("openalex")) if k)
     # The misassigned Europe PMC crosswalk must never vouch for the 1999 record.
     previous.discard("10.1523/jneurosci.19-19-08573.1999")
+    for p in OUT.glob("Q-RUN11-ID-*.json"):
+        q=receipt(p.stem)
+        if q["status"]=="success":
+            previous.update(q.get("requested_identifiers",[]))
+            for r in q["records"]:previous.update(k for k in (r.get("doi"),r.get("epmc"),r.get("openalex")) if k)
     todo=defaultdict(dict);counts=Counter();source_hashes={};frontier={}
-    for start in range(0,len(queue),WIDTH):
+    for start in range(0,end_at,WIDTH):
         group=queue[start:start+WIDTH];end=start+len(group);path,batch=manifest(start,end)
         sp=SUPPLEMENT/f"{start+1:04}-{end:04}.json";supp=read(sp);assert supp["base_sha256"]==digest(path)
         source_hashes[sp.relative_to(ROOT).as_posix()]=digest(sp)
@@ -165,13 +179,13 @@ def plan(queue,titles):
                         provider="openalex" if k.startswith("W") else "europepmc" if k.startswith(("MED:","PPR:")) else "crossref"
                         todo[provider].setdefault(k,owner["work_id"])
             frontier[owner["work_id"]]=owner["task_id"]
-    groups=[];limits={"openalex":85,"crossref":40,"europepmc":52}
+    groups=[];limits={"openalex":95,"crossref":115,"europepmc":88}
     # Rotate through providers; a finite source budget must not starve the smaller ID namespaces.
     packed={}
     for provider,ids in todo.items():
         batches=[];items=[];length=0
         for k,wid in ids.items():
-            if items and (len(items)>=limits[provider] or length+len(k)>1900):
+            if items and (len(items)>=limits[provider] or length+len(k)>3900):
                 batches.append(items);items=[];length=0
             items.append((k,wid));length+=len(k)
         if items:batches.append(items)
@@ -181,27 +195,35 @@ def plan(queue,titles):
             if i>=len(packed.get(provider,[])):continue
             items=packed[provider][i];parents=list(dict.fromkeys(w for _,w in items))
             groups.append(dict(provider=provider,ids=[k for k,_ in items],owners=[dict(work_id=w,task_id=frontier[w]) for w in parents]))
-    p=PLAN/"groups.json"
-    if not p.exists():write(p,dict(run_id="RUN-0011",source_positions=dict(counts),unique_new_identifier_candidates={k:len(v) for k,v in todo.items()},
-                                  source_hashes=source_hashes,groups=groups,created_at_utc=stamp()))
-    else:assert read(p)["groups"]==groups
+    write(p,dict(run_id="RUN-0011",queue_end=end_at,source_positions=dict(counts),unique_new_identifier_candidates={k:len(v) for k,v in todo.items()},
+                 source_hashes=source_hashes,groups=groups,created_at_utc=stamp()))
     print("distinct unqueried identifiers",dict((k,len(v)) for k,v in todo.items()),"query groups",len(groups),"positions",dict(counts),flush=True)
 
 
-def hydrate(start,count):
-    plan=read(PLAN/"groups.json")
+def lookup_request(key,provider,endpoint,params,owners,why,project):
+    if provider=="crossref":
+        # A full DOI registration retains language as well as article-number.
+        # Crossref explicitly rejects language in its field-selection syntax.
+        key+="-META"
+    return request(key,provider,endpoint,params,owners,why,project)
+
+
+def hydrate(start,count,plan_name):
+    plan=read(PLAN/plan_name)
     for i,group in enumerate(plan["groups"][start:start+count],start):
-        q=request_identities(group["ids"],group["provider"],group["owners"],request)
+        q=request_identities(group["ids"],group["provider"],group["owners"],lookup_request)
         print(i+1,q["query_id"],q["status"],q.get("returned_count"),flush=True)
+        if q.get("deferred"):raise RuntimeError("Provider requires deferred retry: "+q["query_id"])
 
 
 if __name__=="__main__":
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("action",choices=("supplement","plan","hydrate"));p.add_argument("start",type=int,nargs="?",default=0)
-    p.add_argument("--count",type=int,default=1);args=p.parse_args()
-    if args.action=="hydrate":hydrate(args.start,args.count)
+    p.add_argument("--count",type=int,default=1);p.add_argument("--end",type=int)
+    p.add_argument("--plan",choices=("groups.json","first-1024.json"),default="groups.json");args=p.parse_args()
+    if args.action=="hydrate":hydrate(args.start,args.count,args.plan)
     else:
         queue,titles=queue_inputs()
-        if args.action=="plan":plan(queue,titles)
+        if args.action=="plan":plan(queue,titles,args.end)
         else:
             for start in range(args.start,min(args.start+args.count*WIDTH,len(queue)),WIDTH):supplement(queue,titles,start)

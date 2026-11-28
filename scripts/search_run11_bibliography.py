@@ -75,6 +75,10 @@ def request(key, source, endpoint, parameters, owners, why, project, page=1):
             entry["status"] = "success"
         except HTTPError as exc:
             entry.update(http_status=exc.code,error=str(exc),retryable=exc.code in (408,429,500,502,503,504))
+            detail=exc.read(65536)
+            if detail:
+                entry["error_response_sha256"]=hashlib.sha256(detail).hexdigest()
+                entry["error_response_prefix"]=detail.decode("utf-8",errors="replace")[:2600]
             header = exc.headers.get("Retry-After")
             if header:
                 entry["retry_after"] = header
