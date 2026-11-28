@@ -63,8 +63,14 @@ def source_index():
         totals.update(m["counts"]);inputs[path.relative_to(ROOT).as_posix()]=digest(path)
     assert len(parents)==len(set(parents))==len(frontier)==2620
     result=TEMP/"reports/RUN-0011-CP12-parent-reconciliation.json"
+    lineage={}
+    if result.exists() and read(result)["inputs"]!=inputs:
+        lineage={"supersedes":result.relative_to(ROOT).as_posix(),"supersedes_sha256":digest(result)}
+        result=result.with_stem(result.stem+"-reconciled")
+    if result.exists() and read(result)["inputs"]!=inputs:
+        raise ValueError("A different published reference reconciliation exists")
     if not result.exists():
-        write(result,dict(run_id="RUN-0011",scope_id=q["scope_id"],created_at_utc=stamp(),source_frontier=q["frontier"],source_frontier_sha256=q["frontier_sha256"],
+        write(result,dict(**lineage,run_id="RUN-0011",scope_id=q["scope_id"],created_at_utc=stamp(),source_frontier=q["frontier"],source_frontier_sha256=q["frontier_sha256"],
                     initial_key=frontier[0]["work_key"],last_key=frontier[-1]["work_key"],visited=len(parents),with_entries=len(parents)-len(gaps),
                     without_entries=len(gaps),positions=dict(totals),positions_by_source_representation=dict(channels),openalex_literal_endpoint_fields=dict(oa),
                     excluded_parent_identities=excluded,alternative_source_queue=gaps,inputs=inputs,original_bibliographies_verified_complete=0,

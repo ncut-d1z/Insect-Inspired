@@ -1,8 +1,8 @@
 """Disambiguate two adjacent journal articles using registered DOIs, PMIDs, pages and bylines."""
-from pathlib import Path
+from copy import deepcopy
 
 from run10_reference_records import cross_metadata, doi, norm
-from search_run11_bibliography import CR, OA, OUT, TEMP, digest, read, request, stamp, write
+from search_run11_bibliography import CR, OA, OUT, ROOT, TEMP, deposited, digest, read, request, stamp, write
 
 CHAO = "W-R10-39cb4c627b0997084cdb"
 REVIEW = TEMP / "reports/RUN-0011-Chao1995-identifier-review.json"
@@ -58,5 +58,35 @@ def main():
     print([(r["pmid"],r["registered_doi"],r["pages"]) for r in items],flush=True)
 
 
+def complete_list():
+    from run11_reference_inventory import SUPPLEMENT
+    from index_run11_positions import build, queue_inputs
+    review = read(REVIEW)
+    chao = next(r for r in review["items"] if r["pmid"] == "7571013")
+    owner = dict(work_id=CHAO, task_id="T-references-"+CHAO, doi=chao["registered_doi"])
+    q = deposited("PARENT-CHAO-DEP", [owner])
+    assert q["status"] == "success" and len(q["records"]) == 1
+    item = q["records"][0]
+    assert doi(item["DOI"]) == owner["doi"] and norm(item["title"][0]) == norm(chao["title"])
+    if "reference" not in item:
+        print("No deposited list on the corrected DOI", flush=True)
+        return
+    assert len(item["reference"]) == item["reference-count"]
+    orig = SUPPLEMENT / "2561-2620.json"
+    dest = SUPPLEMENT / "2561-2620-reconciled.json"
+    if not dest.exists():
+        sup = deepcopy(read(orig))
+        row = next(r for r in sup["parents"] if r["work_id"] == CHAO)
+        row["corrected_deposited_query"] = dict(query_id=q["query_id"], doi=owner["doi"], declared=item["reference-count"])
+        sup.update(supersedes=orig.relative_to(ROOT).as_posix(), supersedes_sha256=digest(orig), updated_at_utc=stamp())
+        qp = OUT/(q["query_id"]+".json")
+        sup["receipts"].update({p.relative_to(ROOT).as_posix():digest(p) for p in (qp, REVIEW)})
+        write(dest,sup)
+    queue, titles = queue_inputs()
+    build(2560, queue, titles, reconcile=True)
+    print("Registered list on the corrected DOI:",item["reference-count"],flush=True)
+
+
 if __name__ == "__main__":
     main()
+    complete_list()

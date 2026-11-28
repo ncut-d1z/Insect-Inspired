@@ -64,6 +64,7 @@ def index_rows(queue,titles,start,count):
                 q=receipt(Path(k).stem)
                 if any(o["work_id"]==owner["work_id"] for o in q["owners"]):attempts.add(q["query_id"])
             if ext["openalex_literal_query"]:attempts.add(ext["openalex_literal_query"])
+            if ext.get("corrected_deposited_query"):attempts.add(ext["corrected_deposited_query"]["query_id"])
             pages=list(source_pages(owner,row,titles[owner["work_id"]],ext))
             qpaths.update(OUT/(qid+".json") for qid in attempts)
             data.append((owner,row,ext,attempts,pages))
@@ -122,6 +123,8 @@ class Canonical(Batch):
         self.cutoff=read(TEMP/"snapshots/scope.json")["cutoff_at_utc"][:10]
         self.cited_version_reviews={}
         self.metas=defaultdict(list);self.registry_titles=defaultdict(set)
+        review=TEMP/"reports/RUN-0011-Chao1995-identifier-review.json"
+        corrected={("MED:"+r["pmid"],norm(r["title"])):r["registered_doi"] for r in read(review)["items"]} if review.exists() else {}
         wanted={k for *_,pages in data for q,kind,refs,parent,positions in pages for raw in refs for k in raw_ids(raw,q["source_id"])}
         title_years=set()
         for *_,pages in data:
@@ -135,6 +138,10 @@ class Canonical(Batch):
                 if q["status"]!="success":continue
                 for r in q.get("records",[]):
                     if r.get("epmc")=="MED:37234941" and r.get("doi")==BAD_DOI:r={**r,"doi":None}
+                    registered=corrected.get((r.get("epmc"),norm(r.get("title") or "")))
+                    if registered and r.get("doi")!=registered:
+                        r={**r,"doi":registered}
+                        self.input_paths.add(review)
                     keys={s for s in (r.get("doi"),r.get("epmc"),r.get("openalex"),r.get("requested_openalex")) if s}
                     ty=(norm(r.get("title")),str(r.get("year"))) if r.get("year") and r.get("title") else None
                     if ty and ty in title_years:self.registry_titles[ty].update(keys)
@@ -216,6 +223,10 @@ class Canonical(Batch):
             cr=next((s for s in prior["sources"] if s["source_id"]=="crossref" and s["status"]=="success" and
                      (s["available"] or s["query_id"] in extra.get("certified_parent_queries",())) and
                      not any(c["query_id"]==s["query_id"] for c in extra["excluded_parent_identities"])),None)
+            if extra.get("corrected_deposited_query"):
+                correction=extra["corrected_deposited_query"]
+                assert not cr and doi(work["doi"])==correction["doi"]
+                cr={"source_declared":correction["declared"],"query_id":correction["query_id"]}
             query=cr["query_id"] if cr else sorted(attempts)[0]
             self.add("reference-coverage",dict(work_id=wid,doi=work.get("doi"),query_id=query,
                  deposited_reference_count=cr["source_declared"] if cr else None,returned_reference_count=positions["crossref"] if cr else None,

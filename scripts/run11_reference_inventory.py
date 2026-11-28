@@ -119,6 +119,14 @@ def supplement(queue,titles,start):
 
 def source_pages(owner,row,titles,extra=None):
     """Supplementary literal matches and matched-ID projections can describe the same reference."""
+    correction = (extra or {}).get("corrected_deposited_query")
+    if correction:
+        q = receipt(correction["query_id"])
+        paper, = q["records"]
+        assert q["status"] == "success" and doi(paper["DOI"]) == correction["doi"]
+        refs = paper["reference"]
+        assert len(refs) == paper["reference-count"] == correction["declared"]
+        yield q, "deposited", refs, correction["doi"], list(range(1, len(refs)+1))
     literal_q=receipt(extra["openalex_literal_query"]) if extra and extra.get("openalex_literal_query") else None
     literal_ids=set()
     if literal_q and literal_q["status"]=="success":
