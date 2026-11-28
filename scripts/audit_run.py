@@ -29,6 +29,7 @@ from urllib.parse import unquote
 from jsonschema import Draft202012Validator, FormatChecker
 from storage import read_logical
 from partitioned_research_json import load_view, view_files
+from partitioned_checkpoint import checkpoint_files, load_checkpoint
 
 ROOT = Path(__file__).resolve().parents[1]
 TERMINAL = {'verified_complete', 'verified_none', 'not_applicable', 'out_of_scope'}
@@ -177,6 +178,11 @@ class Audit:
                 for part in view_files(path):
                     self.watch(part)
                 value = load_view(path)
+            elif kind == 'checkpoint':
+                public = json.loads(Path(path).read_bytes())
+                for part in checkpoint_files(path, public):
+                    self.watch(part)
+                value = load_checkpoint(path, public)
             else:
                 value = json.loads(Path(path).read_text(encoding='utf-8'))
         except Exception as e:
