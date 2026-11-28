@@ -27,8 +27,8 @@
     "manual_review_items": 200,
     "paid_spend": 0
   },
-  "external_requests_used": 0,
-  "manual_review_items_used": 0,
+  "external_requests_used": 19,
+  "manual_review_items_used": 13,
   "paid_spend": 0,
   "closure": false,
   "version_review_input": "temp/reports/RUN-0009-bibliographic-citation-versions.json",
@@ -37,5 +37,6 @@
     "commit": "435598bcf4bc66aa40fd5fc2bdb7cdeaf67b5d96",
     "receipt": "temp/validation/bibliography-view-readback.json",
     "checkpoint_sha256": "bbdae2a70cca6306918f3a4c51ae0281b3cd637d840f3e2de8153825de847855"
-  }
+  },
+  "version_review": "temp/reports/RUN-0010-cited-versions.json"
 }
