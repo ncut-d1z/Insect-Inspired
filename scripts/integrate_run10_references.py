@@ -78,6 +78,12 @@ class Batch:
         self.works,self.identities,self.names=existing()
         self.original_works=set(self.works)
         self.keys={w["work_key"] for w in self.works.values()}
+        self.retired=defaultdict(set)
+        for alias in iter_logical("aliases.jsonl",TEMP):
+            if alias.get("historical_key"):self.retired[alias["historical_key"]].add(alias["target_id"])
+        for merged in iter_logical("merged-work-audit.jsonl",TEMP):
+            if merged.get("work_key"):self.keys.add(merged["work_key"])
+        self.keys.update(self.retired)
         self.versions=list(iter_logical("versions.jsonl",TEMP))
         self.latest={t["task_id"]:t for t in iter_logical("tasks.jsonl",TEMP)}
         self.edges={(r["citing_key"],r["cited_key"]):r for r in iter_logical("citation-edges.jsonl",TEMP)}
@@ -178,11 +184,13 @@ class Batch:
                                is_corporate=bool(a.get("collectiveName")),organization_ids=[],source=src,field_states={}))
         return result
 
-    def bibkey(self,record,wid):
-        authors=record.get("authors") or [{}]
-        family=authors[0].get("lastName") or ""
-        stem=re.sub("[^a-zA-Z0-9_]","",unicodedata.normalize("NFKD",family).encode("ascii","ignore").decode())
-        base=stem+str(record["year"]) if stem else "Temp"+wid.replace("-","")
+    @staticmethod
+    def key_base(family,year,wid):
+        spaced=re.sub(r"\s+","_",unicodedata.normalize("NFKD",family.strip()))
+        stem=re.sub("[^a-zA-Z0-9_]","",spaced.encode("ascii","ignore").decode()).strip("_")
+        return stem+str(year) if stem else "Temp"+wid.replace("-","")
+
+    def allocate_key(self,base):
         key=base;n=0
         while key in self.keys:
             n+=1;s="";m=n
@@ -190,6 +198,32 @@ class Batch:
                 m,i=divmod(m-1,26);s=chr(97+i)+s
             key=base+s
         self.keys.add(key);return key
+
+    def bibliographic_keys(self):
+        path=TEMP/"reports/RUN-0010-integration-initial-79.json"
+        if not path.is_file():return []
+        initial=read(path);self.input_paths.add(path);log=[];replace={}
+        for wid in initial["datasets"]["works"]["appended_ids"]:
+            old=self.works[wid];key=old["work_key"];authors=old["authors"] or [{}]
+            family=authors[0].get("family_name") or "";base=self.key_base(family,old["year"],wid)
+            retired=bool(self.retired.get(key,set())-{wid})
+            if not retired and (not re.search(r"\s",family.strip()) or re.fullmatch(re.escape(base)+"[a-z]*",key)):continue
+            corrected=self.allocate_key(base);w=deepcopy(old);w["work_key"]=corrected
+            self.modify("works",old,w);self.works[wid]=w;replace[key]=corrected
+            src=w["discovery_sources"][-1]
+            if not retired:
+                self.add("aliases",dict(alias_id="AL-R10-KEY-"+token(wid,key),entity_type="work",raw_identifier=key,normalized_identifier=key,
+                    target_id=wid,historical_key=key,reason="按已登记署名的空白转写修正 BibTeX key，保留原有定位。",source=src,
+                    verification_status="source_supported",date=self.now[:10]))
+            log.append(dict(work_id=wid,prior_key=key,corrected_key=corrected,prior_key_owner=sorted(self.retired.get(key,set())),
+                            reason="retired_key_collision" if retired else "whitespace_transliteration"))
+        for pair,edge in list(self.edges.items()):
+            revised=tuple(replace.get(k,k) for k in pair)
+            if pair==revised:continue
+            require(revised not in self.edges,"Rekey would merge two edges")
+            row=deepcopy(edge);row["citing_key"],row["cited_key"]=revised
+            self.modify("citation-edges",edge,row);del self.edges[pair];self.edges[revised]=row
+        return log
 
     def enroll(self,record,mq,owner,relation,ids,discovery_query_id):
         primary=record.get("doi") or record.get("epmc") or record["openalex"]
@@ -213,7 +247,8 @@ class Batch:
         if record.get("doi"):url="https://doi.org/"+record["doi"]
         elif record.get("epmc"):url="https://europepmc.org/article/"+record["epmc"].replace(":","/")
         else:url="https://openalex.org/"+record["openalex"]
-        typ=document_type(record);key=self.bibkey(record,wid)
+        typ=document_type(record);family=(record.get("authors") or [{}])[0].get("lastName") or ""
+        key=self.allocate_key(self.key_base(family,record["year"],wid))
         w=dict(work_id=wid,work_key=key,canonical_title=record["title"],title_variants=[],authors=people,document_type=typ,
                publication_status="preprint" if typ=="preprint" else "published",year=record["year"],publication_date=record.get("date"),
                venue=record.get("venue"),volume=record.get("volume"),number=record.get("number"),pages=record.get("pages"),
@@ -553,7 +588,7 @@ class Batch:
                 author["organization_ids"].append(org)
                 loc=source(q,"MED:"+row["pmid"],f"Byline {rank+1}, publication affiliation",link["affiliation"])
                 person=self.people[author["person_id"]];revised=deepcopy(person)
-                revised["affiliation_history"].append(dict(org_id=org,role="publication_byline",valid_from=None,valid_to=None,work_id=wid,
+                revised["affiliation_history"].append(dict(org_id=org,role="byline_affiliation_at_publication",valid_from=None,valid_to=None,work_id=wid,
                     evidence_locator=loc["evidence_locator"],field_states={k:nonapplicable(loc,"仅记发表时署名，不推定任职区间。") for k in ("valid_from","valid_to")}))
                 self.modify("authors",person,revised);self.people[author["person_id"]]=revised
             for dim in ("abstract","affiliations_projects","assessment"):
@@ -605,12 +640,14 @@ def main():
     if (ROOT/report_path).exists():
         print("Existing integration receipt",report_path);return
     b=Batch();input_frontier=Path(args.frontier).resolve();selection=read(input_frontier);queue=selection["worklist"]
+    key_changes=[]
     if args.versions:
         b.version_reviews();b.screened_abstracts();outcomes=[]
         paths={*OUT.glob("Q-RUN10-V*.json"),*OUT.glob("Q-RUN10-P56-*.json")}
     else:
         b.input_paths.add(input_frontier)
         b.corrected_doi()
+        key_changes=b.bibliographic_keys()
         outcomes=b.backward(queue)
         # All currently unregistered request receipts belong to this resumed RUN.
         paths=set(OUT.glob("Q-RUN10-*.json"))
@@ -620,7 +657,7 @@ def main():
         b.changes[name]={key:pair for key,pair in entries.items() if pair[0]!=pair[1]}
     report=dict(run_id=RUN,scope_id=SCOPE,target_checkpoint=CP,batch=args.name,updated_at_utc=b.now,
                 counts={k:len(v) for k,v in b.adds.items()},identity_match_counts=dict(b.resolution),
-                authorship_counts=dict(b.stats),indexed_edition_checks=edition_counts,coverage=outcomes,
+                authorship_counts=dict(b.stats),indexed_edition_checks=edition_counts,bibliographic_key_corrections=key_changes,coverage=outcomes,
                 input_receipts={p.relative_to(ROOT).as_posix():file_hash(p) for p in sorted(b.input_paths)})
     extra={};run=read(TEMP/"runs/RUN-0010.json")
     run["external_requests_used"]=len(list(OUT.glob("Q-RUN10-*.json")))
@@ -633,7 +670,7 @@ def main():
             require(file_hash(source_path)==selection["queue_sha256"],"Recursive frontier changed")
             prior=read(source_path)["worklist"];end=selection["next_index"]
             require(selection["start_index"]==0 and prior[:end]==queue and len(prior)==selection["queue_total"],"Parent cursor mismatch")
-            remaining=prior[end:]
+            remaining=[{**item,"work_key":b.works[item["work_id"]]["work_key"]} for item in prior[end:]]
         # Rotate equal-depth, equal-priority discoveries across their parents.
         # A long first bibliography must not consume an entire recursive batch.
         per_parent=Counter();ranked=[]

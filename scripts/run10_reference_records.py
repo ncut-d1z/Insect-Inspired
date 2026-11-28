@@ -32,7 +32,7 @@ def doi(value):
 
 def identifiers(obj):
     ids=set()
-    for k,v in {**obj.get("identifiers",{}),"doi":obj.get("doi"),"raw":obj.get("raw_identifier"),
+    for k,v in {**obj.get("identifiers",{}),"work_doi":obj.get("doi"),"raw":obj.get("raw_identifier"),
                 "normalized":obj.get("normalized_identifier")}.items():
         for val in v if isinstance(v,list) else [v]:
             if not isinstance(val,(str,int)) or not val:

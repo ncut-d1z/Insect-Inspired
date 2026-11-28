@@ -61,6 +61,9 @@ def fetch(key, provider, endpoint, params, owners, reason, transform, page=1):
                 return previous
             continue
         run = read(TEMP / "runs/RUN-0010.json")
+        hold=TEMP/"runs/RUN-0010-source-hold.json"
+        if hold.is_file() and (state:=read(hold)).get("status","open")=="open":
+            raise RuntimeError("Source work paused for the recorded data correction: "+state["reason"])
         start = datetime.fromisoformat(run["started_at_utc"])
         if (datetime.now(timezone.utc) - start).total_seconds() >= run["budget"]["wall_clock_hours"] * 3600:
             raise RuntimeError("RUN10 wall-clock budget reached")
