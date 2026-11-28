@@ -13,11 +13,13 @@ from run12_canonical import CurrentCanonical
 from run12_followups import FORWARD
 from run12_reference_search import CP, RUN
 from run12_reviews import ABSTRACTS, VERSIONS
+from run12_version_screen import OLD
 from run9_metadata_transaction import apply_batch
 from search_run11_bibliography import OUT, ROOT, SCOPE, TEMP, digest, read, stamp, write
 from storage import iter_logical
 
 PAIRS=TEMP/"reports/RUN-0012-forward-reviewed.json"
+LEGACY=TEMP/"reports/RUN-0012-legacy-version-reviews.json"
 TRANSACTION=TEMP/"reports/RUN-0012-scientific-integration.json"
 
 
@@ -32,9 +34,12 @@ def prepare():
             and doi(record["raw_doi"])=="10.1016/s0042-6989(00)00243-1"
             and "redlick" in norm(record["raw_reference_string"]) and "humanscanuseopticflowtoestimatedistanceoftravel" in norm(record["raw_reference_string"])):
         raise ValueError("Indexed literal reference changed")
-    versions=[v for v in iter_logical("versions.jsonl") if "W2005001755" in identifiers(v)]
-    if {v["work_id"] for v in versions}!={"W-R10-309e3918d95e6bdaaafc"} or not any(item["citing_doi"] in identifiers(v) for v in versions):
-        raise ValueError("Citing index ID not bound to citing DOI")
+    identity=OUT/"Q-RUN11-B0065-IDX-DOI-01-A1.json"
+    match,=[a for a in read(identity)["records"] if a["source_identifier"]=="W2005001755"]
+    versions=[v for v in iter_logical("versions.jsonl") if item["citing_doi"] in identifiers(v)]
+    if ({v["work_id"] for v in versions}!={match["work_id"]} or match["doi"]!=item["citing_doi"]
+        or match["pmid"]!=item["citing_pmid"] or not any("MED:"+match["pmid"] in identifiers(v) for v in versions)):
+        raise ValueError("Citing DOI, PMID and OpenAlex parent are not bound")
     for r in items:
         if r is item:
             r.update(status="forward_and_literal_reference_match",verified_list_query=q["query_id"],kind="literal_bibliography",parent="W2005001755",
@@ -43,7 +48,27 @@ def prepare():
             if r["status"]!="forward_and_deposited_doi_match":raise ValueError("Missing deposited evidence")
             r.update(verified_list_query=r["deposited_query"],kind="deposited",parent=r["citing_doi"])
     write(PAIRS,dict(run_id=RUN,reviewed_at_utc=stamp(),items=items,counts=dict(examined=5,located=5,deposited=4,literal_index=1,new_roles=0),
-              input_receipts={**original["input_receipts"],FORWARD.relative_to(ROOT).as_posix():digest(FORWARD),extra.relative_to(ROOT).as_posix():digest(extra)}))
+              input_receipts={**original["input_receipts"],FORWARD.relative_to(ROOT).as_posix():digest(FORWARD),extra.relative_to(ROOT).as_posix():digest(extra),identity.relative_to(ROOT).as_posix():digest(identity)}))
+
+
+def legacy():
+    if LEGACY.exists():return
+    previous=[r for r in read(OLD)["items"] if r["cohort"]=="CP11-original"]
+    notes=["登记 XML 的 eLife 卷、RP 页码和 DOI 均指向家族，未标明修订后缀。",
+           "登记 XML 明示 bioRxiv 和题名，条目没有修订链接。此前已公开的同题修订仍有多个。",
+           "条目键明确属于施引 v2，DOI 标注由 Crossref 提供。首发 v1 书目继续待核实。",
+           "登记 XML 仅有作者、年份和题名。缺少刊名、版本号或原始链接。"]
+    result=[];inputs={OLD.relative_to(ROOT).as_posix():digest(OLD)}
+    for item,note in zip(previous,notes,strict=True):
+        p=OUT/("Q-RUN12-P4-LEGACY-XML-"+str(item["ordinal"])+"-A1.json");q=read(p)
+        pos=item["deposit_position"]
+        if q["status"]!="success" or q["matched_positions"]!=[pos] or q["records"][pos-1]["links"]:raise ValueError("Original XML position changed")
+        fields={v["field"]:v["value"] for v in q["records"][pos-1]["fields"]}
+        if fields.get("doi") and doi(fields["doi"])!="10.7554/elife.102230":raise ValueError("A version DOI requires adjudication")
+        row={k:item[k] for k in ("ordinal","task_id","citing_work_id","cited_work_id","cited_registry_doi","deposit_position","status")}
+        row.update(exact_original_version=None,evidence_queries=sorted({q["query_id"],*item["evidence_queries"]}),interpretation=note)
+        inputs[p.relative_to(ROOT).as_posix()]=digest(p);result.append(row)
+    write(LEGACY,dict(run_id=RUN,scope_id=SCOPE,reviewed_at_utc=stamp(),counts={"examined":4,"still_open":4},items=result,input_receipts=inputs))
 
 
 class Evidence(CurrentCanonical):
@@ -120,26 +145,27 @@ class Evidence(CurrentCanonical):
 
 def integrate():
     if TRANSACTION.exists():raise ValueError("Already integrated")
-    ap=read(ABSTRACTS);vp=read(VERSIONS);pairs=read(PAIRS)
+    ap=read(ABSTRACTS);vp=read(VERSIONS);original=read(LEGACY);pairs=read(PAIRS)
     paths=set(OUT.glob("Q-RUN12-P*.json"))
     wids={r["work_id"] for r in ap["items"]}
     citing_ids={r["citing_doi"] for r in pairs["items"]}
     for v in iter_logical("versions.jsonl"):
         if identifiers(v)&citing_ids:wids.add(v["work_id"])
     data=[({"work_id":wid},{},{},set(),[]) for wid in sorted(wids)]
-    inputs={ABSTRACTS,VERSIONS,PAIRS,*[ROOT/p for p in pairs["input_receipts"]],*[ROOT/p for p in vp["input_receipts"]]}
+    inputs={ABSTRACTS,VERSIONS,PAIRS,LEGACY,*[ROOT/p for p in original["input_receipts"]],*[ROOT/p for p in pairs["input_receipts"]],*[ROOT/p for p in vp["input_receipts"]]}
     b=Evidence(data,inputs,paths);b.counts=Counter()
     b.versions=list(iter_logical("versions.jsonl"))
-    tids={r["task_id"] for r in vp["items"]};org_ids={l["ror"] for i in ap["items"] for l in i["publication_affiliation_links"]}
+    tids={r["task_id"] for r in vp["items"]+original["items"]};org_ids={l["ror"] for i in ap["items"] for l in i["publication_affiliation_links"]}
     onames={norm(l["institution"]) for i in ap["items"] for l in i["publication_affiliation_links"]}
     orgs={o["org_id"] for o in iter_logical("organizations.jsonl") if o.get("ror") in org_ids or norm(o["canonical_name"]) in onames}
     for task in iter_logical("tasks.jsonl"):
         if task["task_id"] in tids or task["entity_id"] in orgs:b.latest[task["task_id"]]=task
-    b.cited(vp);b.abstracts(ap,ABSTRACTS);forward=b.forward(pairs["items"])
+    b.cited(vp);b.version_report=LEGACY;b.cited(original)
+    b.abstracts(ap,ABSTRACTS);forward=b.forward(pairs["items"])
     b.account(paths)
     counts={k:len(v) for k,v in b.adds.items() if v}
     report=dict(run_id=RUN,scope_id=SCOPE,checkpoint_id=CP,created_at_utc=b.now,version_review=vp["counts"],abstract_byline_review=ap["counts"],
-             forward=forward,byline_activity=dict(b.stats),added_counts=counts,discovered_worklist=b.new_frontier,
+             original_version_review=original["counts"],forward=forward,byline_activity=dict(b.stats),added_counts=counts,discovered_worklist=b.new_frontier,
              input_receipts={p.relative_to(ROOT).as_posix():digest(p) for p in b.input_paths})
     print("Scientific transaction",report["version_review"],report["abstract_byline_review"],counts,flush=True)
     apply_batch(b.changes,{k:list(v.values()) for k,v in b.adds.items() if v},report,TRANSACTION.relative_to(ROOT).as_posix())
@@ -147,5 +173,5 @@ def integrate():
 
 if __name__=="__main__":
     p=argparse.ArgumentParser(description=__doc__);p.add_argument("mode",choices=("prepare","integrate"));a=p.parse_args()
-    if a.mode=="prepare":prepare()
+    if a.mode=="prepare":prepare();legacy()
     else:integrate()
