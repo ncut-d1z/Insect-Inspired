@@ -40,6 +40,16 @@ POINTER_SCHEMA = {
     'additionalProperties': False}
 
 
+SHARED_EXPORT_VALUES = {"verification_status", "source_id", "license", "identity_confidence",
+                        "publication_status", "entity_type", "relation_type", "status"}
+
+
+def share_export_labels(pairs):
+    # A full snapshot holds many separate source records with identical schema names and status values.
+    return {sys.intern(key): sys.intern(value) if key in SHARED_EXPORT_VALUES and isinstance(value, str) else value
+            for key, value in pairs}
+
+
 def json_text(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'), allow_nan=False)
 
@@ -337,6 +347,7 @@ def run(args):
     scope = json.loads((temp / 'snapshots/scope.json').read_text())
     data = {}
     counts = {}
+    decode_row = json.JSONDecoder(object_pairs_hook=share_export_labels).decode
     work_fields = set(FIELD_ORDER + NODE_FIELDS + ['editors','authors','abstract_items','seed_ids','discovery_sources',
                                                   'verification_status','degree_type','document_type','publication_date','venue'])
     for filename in ['assessments.jsonl', 'works.jsonl', 'authors.jsonl', 'organizations.jsonl', 'projects.jsonl',
@@ -346,7 +357,7 @@ def run(args):
         count = 0
         if filename == 'discovery-paths.jsonl':
             assessed = {a['work_id'] for a in data['assessments.jsonl'] if a['assessment_status'] == 'active'}
-        for row in iter_logical(filename,base=temp):
+        for row in iter_logical(filename,base=temp,decode=decode_row):
             count += 1
             if filename == 'works.jsonl':
                 row = {k:v for k,v in row.items() if k in work_fields}

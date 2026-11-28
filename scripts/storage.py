@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,hashlib
 REPO=Path(__file__).resolve().parents[1];TEMP=REPO/'temp'
-def iter_logical(name,base=TEMP):
+def iter_logical(name,base=TEMP,*,decode=json.loads):
  path=Path(base)/name
  manifest=Path(base)/'partitions/manifest.json'
  parts=[path]
@@ -12,7 +12,7 @@ def iter_logical(name,base=TEMP):
  for p in parts:
   with p.open(encoding="utf-8") as f:
    for line in f:
-    if line.strip():yield json.loads(line)
+    if line.strip():yield decode(line)
 
 def read_logical(name,base=TEMP):
  return list(iter_logical(name,base))

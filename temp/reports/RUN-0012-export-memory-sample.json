@@ -1,0 +1,69 @@
+{
+  "canonical_git_revision": "cd2e59d8fabdf135b05911e1098b3025140cc568",
+  "counts_as_scientific_research": false,
+  "method": "First, middle and last native Git parts per dataset, at most 333 evenly spaced source rows per part; retain parsed rows and measure Python allocations with tracemalloc. SHA-256 compares the complete re-encoded sample rows, not only labels.",
+  "observed_at_utc": "2026-11-28T20:12:05.186496+00:00",
+  "result": {
+    "authors": {
+      "measurements": {
+        "ordinary": {
+          "bytes": 4125373,
+          "hash": "115c395f7de727c933c1af155cd461365e7376df0d47a374aeb0555db1101526",
+          "seconds": 0.172
+        },
+        "shared_schema_labels": {
+          "bytes": 2894528,
+          "hash": "115c395f7de727c933c1af155cd461365e7376df0d47a374aeb0555db1101526",
+          "seconds": 0.221
+        }
+      },
+      "sample_rows": 737
+    },
+    "citation-edges": {
+      "measurements": {
+        "ordinary": {
+          "bytes": 2975518,
+          "hash": "1c39798cf7649854efaa9ade7ce2d38f2eb0921a6eb6f672867211871abd8238",
+          "seconds": 0.104
+        },
+        "shared_schema_labels": {
+          "bytes": 1901120,
+          "hash": "1c39798cf7649854efaa9ade7ce2d38f2eb0921a6eb6f672867211871abd8238",
+          "seconds": 0.125
+        }
+      },
+      "sample_rows": 999
+    },
+    "reference-occurrences": {
+      "measurements": {
+        "ordinary": {
+          "bytes": 3151004,
+          "hash": "7230f014ac7854c0fd5999442bc5f68bdb7ff611c35ac860c78fc069df1b8914",
+          "seconds": 0.1
+        },
+        "shared_schema_labels": {
+          "bytes": 2066934,
+          "hash": "7230f014ac7854c0fd5999442bc5f68bdb7ff611c35ac860c78fc069df1b8914",
+          "seconds": 0.132
+        }
+      },
+      "sample_rows": 670
+    },
+    "works": {
+      "measurements": {
+        "ordinary": {
+          "bytes": 21909652,
+          "hash": "5e293d786776789dd2d42911ade3c0987985e8f988f75f2dccf2a9e5a985252d",
+          "seconds": 0.723
+        },
+        "shared_schema_labels": {
+          "bytes": 17126058,
+          "hash": "5e293d786776789dd2d42911ade3c0987985e8f988f75f2dccf2a9e5a985252d",
+          "seconds": 0.953
+        }
+      },
+      "sample_rows": 712
+    }
+  },
+  "type": "export_memory_sample"
+}
