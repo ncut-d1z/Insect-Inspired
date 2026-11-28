@@ -46,5 +46,6 @@
   "sync_policy": "按批用本机 Git 普通推送并核对远端提交。",
   "next_batch": "根据论文书目元数据和参考文献列表核对文献身份、施引与署名。等待仅凭允许材料无法核验的项目及科学问题。",
   "end_checkpoint_id": null,
-  "read_policy": "temp/reports/RUN-0009-bibliography-roadmap.json"
+  "read_policy": "temp/reports/RUN-0009-bibliography-roadmap.json",
+  "scope_cutover": "temp/reports/RUN-0009-bibliography-cutover.json"
 }
