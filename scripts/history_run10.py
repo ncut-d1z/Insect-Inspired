@@ -48,9 +48,10 @@ def verify(base):
             require(git(ROOT,"rev-parse",commit+"^").decode().strip()==before,"Unexpected transaction parent")
             require(get(commit,rel)==(ROOT/rel).read_bytes(),"Published receipt differs")
             old=json.loads(get(before,"temp/partitions/manifest.json"));new=json.loads(get(commit,"temp/partitions/manifest.json"))
-            maint=bool(report.get("maintenance_only")); datasets=report.get("datasets",{})
+            deadline=Path(rel).name.startswith("RUN-0010-deadlines-");datasets=report.get("datasets",{})
+            require(bool(datasets)!=deadline and (not deadline or report.get("maintenance_only") is True),"Transaction receipt format differs")
             fields={};events={}
-            if maint:
+            if deadline:
                 for r in ledger(report["field_change_parts"]):fields[r["dataset"],r["line_index"]]=r
                 events={r["task_id"]:r for r in ledger(report["task_event_parts"])}
                 names=set(report["changed_records_by_dataset"]) | ({"tasks"} if events else set())
@@ -66,19 +67,19 @@ def verify(base):
             for name in sorted(names):
                 delta=datasets.get(name,{})
                 replacements={r["id"]:r for r in delta.get("replacements",[])}
-                extra=iter(sorted(events) if maint and name=="tasks" else delta.get("appended_ids",[]))
+                extra=iter(sorted(events) if deadline and name=="tasks" else delta.get("appended_ids",[]))
                 for i,(a,b) in enumerate(itertools.zip_longest(lines(before,old,name),lines(commit,new,name))):
                     require(b is not None,"Lost prior record")
                     if a is None:
                         row=json.loads(b);key=row[IDS[name]]
                         require(next(extra,None)==key,"Undeclared appended row "+key)
-                        if maint:
+                        if deadline:
                             e=events.pop(key)
                             require(sha(b)==e["after_sha256"] and row["unknown_since_utc"]==e["unknown_since_utc"] and
                                     row["deadline_at_utc"]==e["deadline_at_utc"] and row["overdue"],"Deadline clock changed")
                         tally["appended_rows"]+=1
                     elif a!=b:
-                        if maint:
+                        if deadline:
                             entry=fields.pop((name,i))
                             require(sha(a)==entry["before_line_sha256"] and sha(b)==entry["after_line_sha256"] and
                                     b==replace_status_tokens(a,[v["pointer"] for v in entry["changes"]]),"Undeclared field mutation")
@@ -89,7 +90,8 @@ def verify(base):
                     else: tally["byte_identical_row_comparisons"]+=1
                 require(next(extra,None) is None and not replacements,"Unapplied records "+name)
             require(not fields and not events,"Incomplete deadline replay")
-            replays.append(dict(receipt=rel,commit=commit,before=before,maintenance=maint,counts=dict(tally)))
+            replays.append(dict(receipt=rel,commit=commit,before=before,maintenance=bool(report.get("maintenance_only")),
+                                transaction_format="deadline_fields_and_events" if deadline else "dataset_row_hashes",counts=dict(tally)))
             totals.update(tally)
         cp="temp/snapshots/checkpoints/CP-0011.json"
         require(get(base,cp)==(ROOT/cp).read_bytes() and read(ROOT/cp)["status"]=="valid","Invalid parent checkpoint")
