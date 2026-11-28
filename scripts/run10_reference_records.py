@@ -146,13 +146,35 @@ def ep_metadata(item):
 
 
 def request_identities(group, provider, owners):
-    key="ID-"+("CR" if provider=="crossref" else "EP")+"-"+token(*group)
+    key="ID-"+{"crossref":"CR","openalex":"OA","europepmc":"EP"}[provider]+"-"+token(*group)
     if provider=="crossref":
         params={"filter":",".join("doi:"+d for d in group),"rows":len(group)}
         endpoint=CR
         def project(data):
             m=data["message"]
             return [cross_metadata(r) for r in m["items"]],m["total-results"]
+    elif provider=="openalex":
+        endpoint="https://api.openalex.org/works"
+        params={"filter":"openalex_id:"+"|".join(group),"per_page":len(group),
+                "select":"id,doi,display_name,publication_year,publication_date,ids,type,primary_location,authorships"}
+        def project(data):
+            output=[]
+            for item in data["results"]:
+                key=item["id"].rsplit("/",1)[-1];pmid=(item.get("ids",{}).get("pmid") or "").rsplit("/",1)[-1]
+                loc=item.get("primary_location") or {};venue=loc.get("source") or {};authors=[]
+                for authorship in item.get("authorships",[]):
+                    a=authorship.get("author") or {};name=authorship.get("raw_author_name") or a.get("display_name")
+                    if not name:continue
+                    author={"fullName":name}
+                    if a.get("orcid"):author["authorId"]={"type":"ORCID","value":a["orcid"]}
+                    authors.append(author)
+                typ=item.get("type")
+                if typ=="article" and venue.get("type")=="journal":typ="journal-article"
+                if typ=="preprint":typ="posted-content"
+                output.append(dict(openalex=key,source_identifier=key,doi=doi(item.get("doi")),epmc="MED:"+pmid if pmid.isdigit() else None,
+                        title=clean(item.get("display_name")),year=item.get("publication_year"),date=item.get("publication_date"),
+                        venue=venue.get("display_name"),authors=authors,document_type=typ,location_version=loc.get("version")))
+            return output,data["meta"]["count"]
     else:
         grouped=defaultdict(list)
         for x in group:
@@ -189,14 +211,16 @@ def hydrate(queue,provider,folder=OUT,limit=None):
             if provider=="crossref":
                 looked.update(s[4:] for s in q["parameters"]["filter"].split(",doi:")[:1])
                 looked.update(q["parameters"]["filter"].split(",doi:")[1:])
-            else:
+            elif provider=="europepmc":
                 for src,part in re.findall(r"\(SRC:(\w+) AND \(([^()]*)\)\)",q["parameters"]["query"]):
                     looked.update(src+":"+i for i in re.findall(r'EXT_ID:"([A-Za-z0-9]+)"',part))
+            elif provider=="openalex":
+                looked.update(q["parameters"].get("filter","").removeprefix("openalex_id:").split("|"))
     needed={}
     for owner,q,refs,_,_ in source_lists(queue,folder):
         for raw in refs:
             d,e,*_=fields(raw,q["source_id"])
-            k=d if provider=="crossref" else e
+            k={"crossref":d,"europepmc":e,"openalex":raw.get("openalex")}.get(provider)
             if k and k not in represented and k not in looked:needed.setdefault(k,owner)
     keys=sorted(needed)
     # Use small explicit-ID queries. Long DOI values can exceed a GET URL even in a modest batch.
@@ -218,7 +242,7 @@ def hydrate(queue,provider,folder=OUT,limit=None):
 if __name__=="__main__":
     from pathlib import Path
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument("provider",choices=["europepmc","crossref"])
+    p.add_argument("provider",choices=["europepmc","crossref","openalex"])
     p.add_argument("--folder",type=Path,default=OUT)
     p.add_argument("--frontier",type=Path,default=FRONTIER)
     p.add_argument("--groups",type=int,help="Number of small query groups before publishing the next Git batch")

@@ -233,6 +233,8 @@ class Batch:
                version_date=w["publication_date"],identifiers=ids_meta,source=src,url=url,file_records=[],
                verification_status="source_supported",related_version_ids=[],version_materialization="bibliographic_only",field_states={},
                notes="由版本书目登记。没有取得文件。")
+        if mq["source_id"]=="openalex" and typ!="preprint" and record.get("location_version")!="publishedVersion":
+            v["version_type"]="unknown";v["field_states"]["version_type"]=self.unknown("version",vid,"version_type",src)
         if not v["version_date"]:v["field_states"]["version_date"]=self.unknown("version",vid,"version_date",src)
         self.add("versions",v)
         self.add("aliases",dict(alias_id="AL-R10-"+token(wid,primary),entity_type="work",raw_identifier=primary,normalized_identifier=primary,
@@ -562,6 +564,33 @@ class Batch:
                      entity_id=wid,reviewer="Codex 摘要与署名复核",recorded_at_utc=review["reviewed_at_utc"],
                      artifact=path.relative_to(ROOT).as_posix(),notes=row["boundary"]))
 
+    def index_editions(self):
+        versions={v["version_id"]:v for v in self.versions};latest={}
+        for path in sorted(OUT.glob("Q-RUN10-ED-*.json")):
+            q=read(path)
+            if q["query_id"] in self.known_queries:continue
+            self.input_paths.add(path)
+            records={r["source_identifier"]:r for r in q.get("records",[])}
+            for owner in q["owners"]:latest[owner["version_id"]]=(owner,q,records.get(owner["openalex"]))
+        counts=Counter()
+        for vid,(owner,q,r) in latest.items():
+            old=versions[vid];work=self.works[owner["work_id"]];oid=owner["openalex"]
+            require(old["work_id"]==work["work_id"] and old["identifiers"].get("openalex")==oid,"Index edition owner mismatch")
+            marker=(r or {}).get("location_version");same=not r or not (r.get("doi") and work.get("doi")) or doi(r["doi"])==doi(work["doi"])
+            v=deepcopy(old)
+            if marker=="publishedVersion" and same:
+                v["version_type"]="version_of_record";note="OpenAlex 主位置的版本字段明确记为 publishedVersion。";counts["published_location"]+=1
+            elif work["document_type"]=="preprint" and same:
+                v["version_type"]="preprint";note="书目类型明示为预印本，位置字段未证实正式版。";counts["registered_preprint"]+=1
+            else:
+                v["version_type"]="unknown";note=f"OpenAlex 主位置的版本字段为 {marker or '未提供'}，书目所指的具体版本待核实。";counts["unknown_location"]+=1
+            src=source(q,oid,"Indexed primary location version",note) if q["status"]=="success" else old["source"]
+            v["source"]=src;v["notes"]=note+" 仅核对书目字段。"
+            if v["version_type"]=="unknown":
+                v["field_states"]["version_type"]=self.unknown("version",vid,"version_type",src)
+            self.modify("versions",old,v)
+        return dict(counts)
+
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
@@ -585,12 +614,13 @@ def main():
         outcomes=b.backward(queue)
         # All currently unregistered request receipts belong to this resumed RUN.
         paths=set(OUT.glob("Q-RUN10-*.json"))
+    edition_counts=b.index_editions() if not args.versions else {}
     b.queries(paths)
     for name,entries in b.changes.items():
         b.changes[name]={key:pair for key,pair in entries.items() if pair[0]!=pair[1]}
     report=dict(run_id=RUN,scope_id=SCOPE,target_checkpoint=CP,batch=args.name,updated_at_utc=b.now,
                 counts={k:len(v) for k,v in b.adds.items()},identity_match_counts=dict(b.resolution),
-                authorship_counts=dict(b.stats),coverage=outcomes,
+                authorship_counts=dict(b.stats),indexed_edition_checks=edition_counts,coverage=outcomes,
                 input_receipts={p.relative_to(ROOT).as_posix():file_hash(p) for p in sorted(b.input_paths)})
     extra={};run=read(TEMP/"runs/RUN-0010.json")
     run["external_requests_used"]=len(list(OUT.glob("Q-RUN10-*.json")))
