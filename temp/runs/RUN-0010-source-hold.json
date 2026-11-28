@@ -1,1 +1,28 @@
-{"run_id":"RUN-0010","opened_utc":"2026-11-28T09:43:45.647873Z","reason":"Resolve the publication-affiliation export role and two occupied legacy aliases."}
+{
+  "run_id": "RUN-0010",
+  "opened_utc": "2026-11-28T09:43:45.647873Z",
+  "reason": "Resolve the publication-affiliation export role and two occupied legacy aliases.",
+  "status": "resolved",
+  "resolved_utc": "2026-11-28T09:50:19.719441Z",
+  "correction_commit": "5313a5d52da9b5f152df2ab8ee57bbe17381b9b7",
+  "correction_report": "temp/reports/RUN-0010-integration-catalog-corrections.json",
+  "verification": {
+    "schema_errors": 0,
+    "checked_export_hashes": {
+      "ref.bib": "ac7f005dd20c9a04b19d68259da496e5ca2025c402c79907f765fc05a44baa39",
+      "ref.html": "e68df03475f25dde3ef57c8570d241abc61679469c01df30075ae447e67e92a0",
+      "temp/exports/citation_graph.json": "174716475776fea42b33826e8db78102d9352e5df719d7d206058a0a201eeb1f",
+      "temp/exports/evidence_matrix.csv": "dba66110491611a8938e68fbfe982b784b20fe2d986a94a2912bc98aac121b2f",
+      "temp/exports/research_entities.json": "217233c5656802b61d00f8cae2793bb88c5c8e8a04bfe86afae9b79b4f1b7d75",
+      "temp/exports/research_implications.csv": "fc8c4832e733bbba402feb14cde8e238e74854dec0030d0d33a038f0acbc2425",
+      "temp/exports/research_paths.json": "f0586159dc39718b07325e92c1dad05f78fbd0adec8c57b9072b41bbe95f4ab0",
+      "misc.html": "6d88c08bf1997a234bf19790d754649618797f28e15dd40e2103b8e6820824ff",
+      "ref-data/index.css": "697815005cc6d2f19f9bf4a5e8ab0e7778cf198b10f2a418e7691742df9944cc",
+      "ref-data/index.js": "36809472a20dccf93f38f805df5191cf797d57a43d1856cad7ed96182c8071d1",
+      "ref-data/topics.js": "e2300af7697a614b894d256e8777a3f5e8209b9d1f16e469ff5c8e5f16e2654d",
+      "ref-data/misc.js": "a1cf54ed94d353e64bb85fa197f7fedcc2aee9f7515e0725287f36c576697d50"
+    },
+    "preserved_affiliation_evidence": 5,
+    "restored_retired_key_owners": 2
+  }
+}
