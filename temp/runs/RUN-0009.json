@@ -1,0 +1,43 @@
+{
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "start_checkpoint_id": "CP-0010",
+  "start_commit_sha": "5f2181b0e5a91bcafde2a3f19eb526668934a80e",
+  "started_at_utc": "2026-11-28T03:24:00.614471Z",
+  "authorization": "用户要求在 Windows 11 上继承现有数据，按既定范围递归执行 P3–P6，逐批提交并回读 GitHub。",
+  "authorized_stages": [
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "budget": {
+    "wall_clock_hours": 6,
+    "external_requests": 2000,
+    "manual_review_items": 200,
+    "paid_spend": 0
+  },
+  "status": "in_progress",
+  "branch": "codex/p3-p6-cp11",
+  "external_requests_used": 0,
+  "manual_review_items_used": 0,
+  "cache_reuse_events": 0,
+  "paid_spend": 0,
+  "closure": false,
+  "research_cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "start_sync_gate": {
+    "status": "passed",
+    "receipt": "temp/validation/cp10-windows-host-readback.json",
+    "receipt_sha256": "ff8388209ab232880152eefdfda5e00d3edba0651fd2014ff6317c5046761f82",
+    "canonical_commit_sha": "5f2181b0e5a91bcafde2a3f19eb526668934a80e"
+  },
+  "review_deadline_recovery": {
+    "checked_at_utc": "2026-11-28T03:22:03.319274Z",
+    "unupgraded_overdue_tasks": 15502,
+    "next_known_deadline_at_utc": "2026-11-28T06:43:19Z",
+    "recompute_at_each_canonical_write_and_checkpoint": true
+  },
+  "sync_policy": "按批用本机 Git 普通推送并核对远端提交。",
+  "next_batch": "按原始时钟升级到期工单；继续广度优先解析种子书目、核对正文引用和作者／项目，复核原始证据。",
+  "end_checkpoint_id": null
+}
