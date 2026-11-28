@@ -261,9 +261,12 @@ class Canonical(Batch):
             note="已查登记书目及替代索引。继续消歧、补缺和向后扩展。" if seen else "可用接口未返回可归属的书目位置；保留替代来源检索入口。"
             event=self.task(owner["task_id"],wid,"references",note,state,sorted(attempts))
             event["cursor"]="unresolved_reference_identities_and_source_coverage" if seen else "alternative_bibliographic_source"
-            if prior.get("reference_index_indicator") or prior.get("deferred_sources"):
-                event["normalized_parameters"]={**event["normalized_parameters"],"reference_index_indicator":prior.get("reference_index_indicator"),
-                                                  "deferred_reference_sources":prior.get("deferred_sources",{})}
+            flag=prior.get("reference_index_indicator") or {}
+            if flag:
+                event["normalized_parameters"].update(reference_index_flag=flag.get("has_references"),
+                        reference_index_identifier=flag.get("source_identifier"),reference_index_query=flag.get("query_id"))
+            for provider,reason in (prior.get("deferred_sources") or {}).items():
+                event["normalized_parameters"]["deferred_reference_"+provider]=reason
             if work["dimension_status"]["references"]!=state:
                 w=deepcopy(work);w["dimension_status"]["references"]=state;self.works[wid]=w;self.modify("works",work,w)
             else:w=work

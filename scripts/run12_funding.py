@@ -69,7 +69,10 @@ def register(ledger):
         work["dimension_status"][dim]=state
         ledger.modify("works",w,work);ledger.works[wid]=work
         event=ledger.task(tid,wid,dim,study["boundary"],state,[q["query_id"]],source_id="crossref")
-        event["normalized_parameters"]={**event["normalized_parameters"],"deposited_funding":r["deposited_funding"],"funding_source_doi":r["doi"],"funding_evidence_locator":evidence["evidence_locator"]}
+        event["normalized_parameters"].update(funding_source_doi=r["doi"],funding_query=q["query_id"],
+                funding_source_url=evidence["evidence_locator"][0]["url"],funding_report=REPORT.relative_to(ROOT).as_posix(),
+                deposited_funder_names=[f["deposited_funder"] for f in r["deposited_funding"] if f["deposited_funder"]],
+                deposited_award_identifiers=sorted({item for f in r["deposited_funding"] for item in f["award_identifiers"]}))
         event["supporting_record_ids"]=list(dict.fromkeys([*event["supporting_record_ids"],q["query_id"]]))
     ledger.input_paths.update((REPORT,p))
     return study["counts"]
