@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "checkpoint_id": "CP-0012",
+  "checked_at_utc": "2026-11-28T10:43:48.559525Z",
+  "tool": "biber version: 2.21",
+  "input_sha256": "c839d3028c31ba370c781e5bc15c05c4d8ad4640fbdf86f7f6cba52a8fa0898c",
+  "bibtex_entries": 7821,
+  "roundtripped_distinct_keys": 7821,
+  "missing_keys": 0,
+  "extra_keys": 0,
+  "parser_exit_code": 0,
+  "warning_count": 7,
+  "warning_examples": [
+    "WARN - Possible typo (case mismatch) between datasource keys: 'Borst1996' and 'BORST1996' in file 'source.bib'",
+    "WARN - Possible typo (case mismatch) between datasource keys: 'Krapp2008' and 'KRAPP2008' in file 'source.bib'",
+    "WARN - Possible typo (case mismatch) between datasource keys: 'Warzecha1998' and 'WARZECHA1998' in file 'source.bib'",
+    "WARN - Possible typo (case mismatch) between datasource keys: 'el_Jundi2015' and 'El_Jundi2015' in file 'source.bib'",
+    "WARN - Possible typo (case mismatch) between datasource keys: 'vanHateren1990' and 'VanHateren1990' in file 'source.bib'",
+    "WARN - Range field 'pages' in entry 'TempWDed88b15ce98fea78' is malformed, falling back to literal"
+  ],
+  "roundtrip_sha256": "3b38c7e9a41405ca7fe18369491f45e4c1e57877896a6125f87365b047bea6fa",
+  "warnings": [
+    "WARN - Possible typo (case mismatch) between datasource keys: 'Borst1996' and 'BORST1996' in file 'source.bib'",
+    "WARN - Possible typo (case mismatch) between datasource keys: 'Krapp2008' and 'KRAPP2008' in file 'source.bib'",
+    "WARN - Possible typo (case mismatch) between datasource keys: 'Warzecha1998' and 'WARZECHA1998' in file 'source.bib'",
+    "WARN - Possible typo (case mismatch) between datasource keys: 'el_Jundi2015' and 'El_Jundi2015' in file 'source.bib'",
+    "WARN - Possible typo (case mismatch) between datasource keys: 'vanHateren1990' and 'VanHateren1990' in file 'source.bib'",
+    "WARN - Range field 'pages' in entry 'TempWDed88b15ce98fea78' is malformed, falling back to literal",
+    "WARN - Range field 'pages' in entry 'TempWR3613f8e8cf2ed589' is malformed, falling back to literal"
+  ],
+  "warning_counts": {
+    "case_sensitive_key_pairs": 5,
+    "literal_page_fields": 2
+  },
+  "parser_log_sha256": "1587f7d992c3d3caead6c02788e02503fe477eb782d8a2f63484323112c7b3f2"
+}
