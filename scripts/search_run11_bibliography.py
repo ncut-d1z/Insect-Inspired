@@ -3,6 +3,7 @@ import argparse
 from collections import Counter
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
+from difflib import SequenceMatcher
 import hashlib
 import json
 from pathlib import Path
@@ -12,8 +13,9 @@ from urllib.error import HTTPError
 from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
 
-from run10_reference_records import clean, doi
+from run10_reference_records import clean, doi, norm
 from search_run10_references import CR, EPMC, OUT, ROOT, TEMP, read, stamp, write
+from storage import iter_logical
 
 RUN = "RUN-0011"
 CP = "CP-0013"
@@ -26,6 +28,17 @@ WIDTH = 64
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def compatible_parent(title, variants):
+    actual=norm(title)
+    if not actual:return False
+    for variant in variants:
+        expected=norm(variant)
+        if not expected:continue
+        if expected==actual or (min(len(expected),len(actual))>=15 and (expected in actual or actual in expected)):return True
+        if SequenceMatcher(None,actual,expected,autojunk=False).ratio()>=0.72:return True
+    return False
 
 
 def owners_input(rows):
@@ -156,6 +169,9 @@ def fetch_batch(start, reconcile=False):
     queue=read(frontier)["worklist"]
     if not 0<=start<len(queue) or start%WIDTH:raise ValueError("Use a saved batch boundary")
     parents=queue[start:start+WIDTH];end=start+len(parents)
+    selected={r["work_id"] for r in parents}
+    titles={w["work_id"]:[w["canonical_title"],*(v for v in w.get("title_variants",[]) if isinstance(v,str))]
+            for w in iter_logical("works.jsonl") if w["work_id"] in selected}
     BATCHES.mkdir(exist_ok=True)
     if start and not (BATCHES/f"{start-WIDTH+1:04}-{start:04}.json").exists():raise ValueError("Missing earlier batch")
     report=BATCHES/f"{start+1:04}-{end:04}.json"
@@ -168,10 +184,10 @@ def fetch_batch(start, reconcile=False):
         assert obj["frontier_sha256"]==run["frontier_sha256"] and all(digest(ROOT/p)==h for p,h in obj["input_receipts"].items())
         return
     prefix=f"B{start+1:04}";coverage={r["work_id"]:[] for r in parents}
-    def add(owner,q,n,declared,present,complete):
+    def add(owner,q,n,declared,present,complete,conflict=False):
         if any(s["query_id"]==q["query_id"] for s in coverage[owner["work_id"]]):return
         coverage[owner["work_id"]].append(dict(source_id=q["source_id"],query_id=q["query_id"],rows=n,source_declared=declared,
-                                  available=present,source_reconciled=complete,status=q["status"]))
+                                  available=present,source_reconciled=complete,status=q["status"],parent_title_conflict=conflict))
     if prior:
         for row in prior["worklist"]:coverage[row["work_id"]].extend(row["sources"])
     for ix,group in enumerate(chunks([p for p in parents if p["doi"]],"doi",18)):
@@ -179,18 +195,20 @@ def fetch_batch(start, reconcile=False):
         recs={doi(r["DOI"]):r for r in q.get("records",[])}
         for owner in group:
             item=recs.get(doi(owner["doi"]),{});n=len(item.get("reference",[]));decl=item.get("reference-count")
-            add(owner,q,n,decl,"reference" in item,"reference" in item and n==decl)
+            conflict=bool(item) and not any(compatible_parent(t,titles[owner["work_id"]]) for t in item.get("title",[]))
+            add(owner,q,0 if conflict else n,decl,"reference" in item and not conflict,"reference" in item and n==decl and not conflict,conflict)
     def usable(owner):
         return any(r["rows"]>0 and r["source_reconciled"] for r in coverage[owner["work_id"]])
     needs=[p for p in parents if not usable(p)]
-    for field in ("openalex","doi","epmc"):
+    for field in ("openalex","epmc","doi"):
         subset=[p for p in needs if p.get(field)]
         for ix,group in enumerate(chunks(subset,field,35)):
             q=indexed(prefix+f"-IDX-{field.upper()}-{ix+1:02}",group,field)
             recs={r["work_id"]:r for r in q.get("records",[])}
             for p in group:
                 item=recs.get(p["work_id"]);n=len(item["reference_ids"]) if item else 0
-                add(p,q,n,n if item else None,bool(item),bool(item))
+                conflict=bool(item) and not compatible_parent(item["parent_title"],titles[p["work_id"]])
+                add(p,q,0 if conflict else n,n if item else None,bool(item) and not conflict,bool(item) and not conflict,conflict)
         needs=[p for p in needs if not p.get(field)]
     for p in parents:
         if p.get("epmc") and not usable(p):
@@ -215,4 +233,11 @@ if __name__=="__main__":
     parser.add_argument("start",type=int,help="Zero-based saved index in the CP12 frontier")
     parser.add_argument("--reconcile",action="store_true")
     args=parser.parse_args()
+    # The native Git coordinator can yield between complete, published batches.
+    # The flag lives in the worktree's Git directory and never enters a data commit.
+    import subprocess
+    git_dir=Path(subprocess.check_output(["git","rev-parse","--absolute-git-dir"],text=True).strip())
+    if (git_dir/"RUN-0011-yield").is_file():
+        print(f"Yielding before CP12 queue position {args.start+1}.")
+        raise SystemExit(75)
     fetch_batch(args.start,args.reconcile)
