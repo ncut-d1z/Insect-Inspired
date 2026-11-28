@@ -47,6 +47,10 @@ def update():
         raise ValueError("Duplicate manual review ID")
     correction=TEMP/"reports/RUN-0011-Chao1995-integration.json"
     added=read(correction)["added_counts"] if correction.relative_to(ROOT).as_posix() in tracked else {}
+    first=read(TEMP/"reports/RUN-0011-abstract-affiliation-review.json")["counts"]
+    motion=TEMP/"reports/RUN-0011-motion-abstract-integration.json"
+    more=read(motion)["counts"] if motion.relative_to(ROOT).as_posix() in tracked else {}
+    counted={k:first.get(k,0)+more.get(k,0) for k in first.keys()|more.keys()}
     can_end=max((r["next_index"] for r in canon),default=0)
     stats=dict(bound_commit=head,recorded_at_utc=stamp(),parent_queue_total=len(front),source_parents_visited=end,
                next_parent_key=front[end]["work_key"] if end<len(front) else None,parents_with_source_supplements=len(bound(SUPPLEMENT,tracked)),
@@ -58,7 +62,7 @@ def update():
                new_backward_edges=sum(r["added_counts"].get("citation-edges",0) for r in canon)+added.get("citation-edges",0),
                version_tasks_reviewed=65 if manual else 0,printed_original_versions_identified=33 if manual else 0,
                reviewed_inherited_tasks_still_ambiguous=32 if manual else 0,new_scientific_admissions=0,
-               published_requests=raw,manual_review_items=len(manual))
+               published_requests=raw,manual_review_items=len(manual),abstract_and_byline_checks=counted)
     stats["parents_with_source_supplements"]=sum(len(read(p)["parents"]) for p in latest_cohorts(SUPPLEMENT,tracked))
     run.update(external_requests_used=raw,manual_review_items_used=len(manual),synchronization_watermark=stats)
     assert len(front)==2620 and raw<=run["budget"]["external_requests"] and run["paid_spend"]==0
@@ -75,7 +79,7 @@ def update():
     text=(f"{marker}\n### RUN-0011 从 CP-0012 续检\n\n"
           f"Git 数据提交 `{head[:12]}` 的已回读进度：原队列 {end:,}/2,620 篇已查，{stats['parents_with_final_position_index']:,} 篇完成逐来源位置对账。"
           f"规范库已逐项处理队首 {can_end:,} 篇，新增 {stats['new_canonical_works']:,} 篇 Work、{stats['new_backward_edges']:,} 条向后引文边。\n\n"
-          f"65 条原有版本工单已复核，33 条已定位原始版次，32 条待核实。抽查 5 篇，登记 4 篇摘要和 3 条发表时机构关系；新增合格科学主张 0 条。"
+          f"65 条原有版本工单已复核，33 条已定位原始版次，32 条待核实。抽查 {counted['records_checked']} 篇，登记 {counted['summaries']} 篇摘要和 {counted['publication_affiliations']} 条发表时机构关系。新增合格科学主张 {counted['new_eligible_claims']} 条。"
           f"本次水位累计 {raw:,} 次已推送来源请求、{len(manual)} 项人工复核。"
           "各项任务的来源、游标和缺口见 [运行记录](runs/RUN-0011.json)。P3–P6 继续开放，最近通过全套验收的检查点为 CP-0012。\n"
           "<!-- end RUN-0011 live progress -->")

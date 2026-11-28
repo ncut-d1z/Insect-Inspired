@@ -73,8 +73,9 @@ class Page(HTMLParser):
             self.in_script = False
 
 
-def audit_package(directory, works, assessments, actions, checkpoint, scope_id):
-    by_key = {w["work_key"]:w for w in works}
+def audit_package(directory, works, assessments, actions, checkpoint, scope_id, by_key=None):
+    if by_key is None:
+        by_key = {w["work_key"]:w for w in works}
     groups = {t:set() for t in TITLES}
     for a in assessments:
         if a["assessment_status"] == "active" and a["evidence_admission_status"] == "eligible" and SUBSTANTIVE.intersection(a["relation_type"]):

@@ -213,7 +213,7 @@ class Audit:
 
     def index(self, kind, records, field=None, permit_events=False):
         field = field or PRIMARY[kind]
-        index = {}
+        index = self.index_storage(records)
         first_clock = {}
         last_seq = {}
         for r in records:
@@ -238,6 +238,12 @@ class Audit:
             index[key] = r
         self.indices[kind] = index
         return index
+
+    def index_storage(self, records):
+        return {}
+
+    def logical_records(self, name, parts):
+        return read_logical(name, base=self.temp)
 
     def fk(self, kind, key, entity, field, nullable=False):
         if key is None and nullable:
@@ -292,7 +298,7 @@ class Audit:
             for part in physical_parts.get(name, {}).get('parts', []):
                 self.watch(self.temp / part['path'])
             try:
-                records = read_logical(name, base=self.temp)
+                records = self.logical_records(name, physical_parts.get(name, {}).get('parts', []))
             except Exception as e:
                 self.note('logical_read_error', f'{type(e).__name__}: {e}', name)
                 records = []
@@ -790,9 +796,9 @@ class Audit:
                     self.watch(self.repo / name)
                 snapshot = json.loads((self.temp / 'exports/research_paths.json').read_bytes())['checkpoint_id']
                 works, assessments, versions = (self.datasets[k + '.jsonl'] for k in ('works','assessments','versions'))
-                tasks = {t['task_id']: t for t in self.datasets['tasks.jsonl']}
+                tasks = self.indices['task']
                 actions = source_actions(self.temp, works, assessments, versions, tasks, snapshot)
-                view = audit_package(self.repo, works, assessments, actions, snapshot, self.scope['scope_id'])
+                view = audit_package(self.repo, works, assessments, actions, snapshot, self.scope['scope_id'], self.indices['work_key'])
                 self.stats['reconciliation'] = {k: view[k] for k in ('K','T_union','U','T_i')}
                 self.stats['offline_bibliography'] = view
                 return

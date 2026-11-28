@@ -128,8 +128,20 @@ def records(idx,folder,name):
 def load_view(entry):
     idx,folder=metadata(entry)
     if folder is None:return idx
-    obj={**idx["metadata"],**{k:list(records(idx,folder,k)) for k in idx["collections"]}}
-    if sha(encode(obj)+b"\n")!=idx["logical_sha256"]:raise ValueError("Logical view SHA-256 differs")
+    obj=dict(idx["metadata"]);digest=hashlib.sha256();digest.update(b"{")
+    for n,key in enumerate(sorted(obj.keys()|idx["collections"].keys())):
+        if n:digest.update(b",")
+        digest.update(encode(key)+b":")
+        if key in idx["metadata"]:
+            digest.update(encode(obj[key]))
+            continue
+        rows=[];digest.update(b"[")
+        for i,row in enumerate(records(idx,folder,key)):
+            if i:digest.update(b",")
+            digest.update(encode(row));rows.append(row)
+        obj[key]=rows;digest.update(b"]")
+    digest.update(b"}\n")
+    if digest.hexdigest()!=idx["logical_sha256"]:raise ValueError("Logical view SHA-256 differs")
     return obj
 
 
