@@ -1,0 +1,139 @@
+{
+  "review_id": "REV-RUN09-S06-REFS-FUNDING",
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "parent_checkpoint": "CP-0010",
+  "target_checkpoint": "CP-0011",
+  "recorded_at_utc": "2026-11-28T03:44:54.505933Z",
+  "work_id": "W-S06",
+  "version_id": "V-S06-01",
+  "article_doi": "10.1038/s41593-025-01948-9",
+  "article_jats_hash": "2b68f94cb6b394717d0e8e6b126bc275b467c4dc2e040601a33f42dc69fbd210",
+  "reviewer": "Codex 原文、注册记录与归档引文对照",
+  "references": [
+    {
+      "ref_number": 3,
+      "deposit_occurrence": "R-CR-1f729eb243e56440",
+      "printed_occurrence": "R-S06-003",
+      "target_work": "W-D3726e94bf3bda20c",
+      "existing_edge": "CE-8080142e39e03c28",
+      "target_key": "Kress2014",
+      "reference_doi": "10.1242/jeb.097436",
+      "jats_ref": "CR3",
+      "context_locators": [
+        "Sec1/p[1]"
+      ],
+      "citation_roles": [
+        "background"
+      ],
+      "interpretation": "作者用既有行走观察说明头部平移和旋转随步态周期变化。"
+    },
+    {
+      "ref_number": 14,
+      "deposit_occurrence": "R-CR-3882cb2a0b082181",
+      "printed_occurrence": "R-S06-014",
+      "target_work": "W-R781bb2351c6013be",
+      "existing_edge": "CE-74bfb031fdec4f0c",
+      "target_key": "TempWR781bb2351c6013be",
+      "reference_doi": null,
+      "jats_ref": "CR14",
+      "context_locators": [
+        "Sec1/p[2]"
+      ],
+      "citation_roles": [
+        "background"
+      ],
+      "interpretation": "作者在说明连续控制以抑制航向漂移的背景段落引用此书。印刷版与存储引文均作 Berstein；本次只对账同一书目出现项，保留原拼写和暂定身份。"
+    },
+    {
+      "ref_number": 38,
+      "deposit_occurrence": "R-CR-55c3a2acbc6d1c8b",
+      "printed_occurrence": "R-S06-038",
+      "target_work": "W-D343f06a3bc764bf6",
+      "existing_edge": "CE-8eb9cd638f02313e",
+      "target_key": "Rayshubskiy2025",
+      "reference_doi": "10.7554/eLife.102230",
+      "jats_ref": "CR38",
+      "context_locators": [
+        "Sec4/p[3]",
+        "Sec14/p[2]"
+      ],
+      "citation_roles": [
+        "background"
+      ],
+      "interpretation": "在描述转向相关下降神经元 DNa02 的解剖输出及讨论连续控制时引用。原表列 2024，规范记录为 2025；同一 DOI 已核对，所引的具体版本日期保留待查。"
+    },
+    {
+      "ref_number": 78,
+      "deposit_occurrence": "R-CR-f393d727c0c39976",
+      "printed_occurrence": "R-S06-078",
+      "target_work": "W-R24649f4879cc831d",
+      "existing_edge": "CE-a7275edbccb620c8",
+      "target_key": "TempWR24649f4879cc831d",
+      "reference_doi": "10.7554/eLife.04693",
+      "jats_ref": "CR78",
+      "context_locators": [
+        "Sec27/p[4]"
+      ],
+      "citation_roles": [
+        "background"
+      ],
+      "interpretation": "方法段在解释模拟省略相对距离、迫近和透视线索时引用该工作，作用为交代刺激简化背景。"
+    }
+  ],
+  "project": {
+    "grant_id": "LISBOA-01-0145-FEDER-022170",
+    "short_name": "Congento",
+    "work_id": "W-S06",
+    "source_locators": [
+      "article:back/ack, last funding paragraph",
+      "official portal: Ficha de projeto — Código de operação, Data de conclusão, Beneficiário principal"
+    ],
+    "registry": {
+      "operation_code": "LISBOA-01-0145-FEDER-022170",
+      "completion_date_text": "24.01.2021",
+      "lead_beneficiary": "FUNDAÇÃO D. ANNA DE SOMMER CHAMPALIMAUD E DR. CARLOS MONTEZ CHAMPALIMAUD"
+    },
+    "canonical_org_id": "ORG-Rb033ca95e631a27f",
+    "work_relationship": "funding_acknowledgment",
+    "notes": "论文致谢明确说明本研究获 Congento 基础设施支持。政府记录核实编号、主要受益机构和结项日。项目参与人、PI、对论文作者的直接拨款及官方成果目录未核实。"
+  },
+  "authority_for_CR78": {
+    "DOI": "10.7554/elife.04693",
+    "title": [
+      "Role of visual and non-visual cues in constructing a rotation-invariant representation of heading in parietal cortex"
+    ],
+    "container-title": [
+      "eLife"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2015,
+          2,
+          18
+        ]
+      ]
+    },
+    "volume": "4",
+    "article-number": "e04693",
+    "page": null,
+    "publisher": "eLife Sciences Publications, Ltd",
+    "type": "journal-article",
+    "authors": [
+      {
+        "given": "Adhira",
+        "family": "Sunkara"
+      },
+      {
+        "given": "Gregory C",
+        "family": "DeAngelis"
+      },
+      {
+        "given": "Dora E",
+        "family": "Angelaki"
+      }
+    ]
+  },
+  "status": "source_verified_pending_canonical_integration"
+}

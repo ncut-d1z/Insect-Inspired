@@ -1,0 +1,33 @@
+{
+  "run_id": "RUN-0009",
+  "checkpoint_id": "CP-0011",
+  "scope_id": "SCOPE-0001",
+  "entity_id": "W-S06",
+  "task_id": "T-RUN09-S06-FIG5",
+  "raw_parameters": {
+    "article_doi": "10.1038/s41593-025-01948-9",
+    "JATS_media_id": "MOESM10",
+    "asset": "41593_2025_1948_MOESM10_ESM.xlsx"
+  },
+  "query_kind": "publisher_figure_source_data",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "license_note": "Only derived measurements and cell locators are retained in Git; the spreadsheet stays in a local cache.",
+  "query_id": "Q-RUN09-S06-FIG5-008",
+  "source_id": "institutional_repository",
+  "endpoint_or_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/599a/12148931/76a447d1cfcf/41593_2025_1948_MOESM10_ESM.xlsx",
+  "queried_at_utc": "2026-11-28T03:41:05.027314Z",
+  "external_request_count": 1,
+  "cache_hit": false,
+  "visible_total": null,
+  "rerun_reason": "Publisher transport failed. The independently fetched article JATS supplies the exact PMC blob URN, byte length and MD5.",
+  "expected_md5": "76a447d1cfcf7dad5f45ac96650d2160",
+  "expected_bytes": 19111,
+  "status": "retryable_error",
+  "returned_count": 0,
+  "page_complete": false,
+  "result_identifiers": [],
+  "error_code": "HTTPError",
+  "error_message": "HTTP Error 404: Not Found",
+  "completed_at_utc": "2026-11-28T03:41:06.808994Z",
+  "distribution": "US National Library of Medicine, NCBI PubMed Central Open Access distribution"
+}

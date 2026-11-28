@@ -1,0 +1,39 @@
+{
+  "run_id": "RUN-0009",
+  "checkpoint_id": "CP-0011",
+  "scope_id": "SCOPE-0001",
+  "entity_id": "W-S06",
+  "task_id": "T-RUN09-S06-FIG5",
+  "raw_parameters": {
+    "article_doi": "10.1038/s41593-025-01948-9",
+    "JATS_media_id": "MOESM10",
+    "asset": "41593_2025_1948_MOESM10_ESM.xlsx"
+  },
+  "query_kind": "publisher_figure_source_data",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "license_note": "Only derived measurements and cell locators are retained in Git; the spreadsheet stays in a local cache.",
+  "expected_md5": "76a447d1cfcf7dad5f45ac96650d2160",
+  "expected_bytes": 19111,
+  "query_id": "Q-RUN09-S06-FIG5-009",
+  "source_id": "institutional_repository",
+  "endpoint_or_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12148931.1/41593_2025_1948_MOESM10_ESM.xlsx",
+  "queried_at_utc": "2026-11-28T03:41:38.418162Z",
+  "external_request_count": 1,
+  "cache_hit": false,
+  "visible_total": null,
+  "rerun_reason": "Legacy PMC blob URL returned 404; use the PMC public OA distribution with the exact PMCID version and JATS filename.",
+  "http_status": 200,
+  "bytes": 19111,
+  "md5": "76a447d1cfcf7dad5f45ac96650d2160",
+  "sha256": "1e96c3b3497d2d51273ccba308db218ce2f52b45c80bb7ecc8609c59c4e2b359",
+  "final_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12148931.1/41593_2025_1948_MOESM10_ESM.xlsx",
+  "status": "success",
+  "returned_count": 1,
+  "result_identifiers": [
+    "10.1038/s41593-025-01948-9#MOESM10"
+  ],
+  "page_complete": true,
+  "coverage_note": "Exact figure source data, bound to the JATS by both byte count and MD5.",
+  "completed_at_utc": "2026-11-28T03:41:40.237440Z",
+  "distribution": "US National Library of Medicine, NCBI PubMed Central Open Access distribution"
+}

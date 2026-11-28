@@ -19,8 +19,8 @@
   },
   "status": "in_progress",
   "branch": "codex/p3-p6-cp11",
-  "external_requests_used": 4,
-  "manual_review_items_used": 0,
+  "external_requests_used": 9,
+  "manual_review_items_used": 10,
   "cache_reuse_events": 0,
   "paid_spend": 0,
   "closure": false,
@@ -44,6 +44,6 @@
     "checked_at_utc": "2026-11-28T03:30:04.437307Z"
   },
   "sync_policy": "按批用本机 Git 普通推送并核对远端提交。",
-  "next_batch": "核对 S06 四条参考、正文作用、Congento 资助身份和图 5 的实验条件。",
+  "next_batch": "把四条参考及其语境、资助关系和图 5h 的独立复算集成入规范记录，随后生成研究视图。",
   "end_checkpoint_id": null
 }

@@ -1,0 +1,80 @@
+{
+  "review_id": "REV-RUN09-S06-FIG5H",
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "target_checkpoint": "CP-0011",
+  "recorded_at_utc": "2026-11-28T03:44:21.679563Z",
+  "reviewer": "Codex 原始数据复核",
+  "work_id": "W-S06",
+  "version_id": "V-S06-01",
+  "limitation": "L04",
+  "route": "biological_mechanism",
+  "article_doi": "10.1038/s41593-025-01948-9",
+  "figure": "5h",
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12148931.1/41593_2025_1948_MOESM10_ESM.xlsx",
+  "spreadsheet_sha256": "1e96c3b3497d2d51273ccba308db218ce2f52b45c80bb7ecc8609c59c4e2b359",
+  "jats_receipt": "Q-RUN09-S06-JATS-001",
+  "workbook_receipt": "Q-RUN09-S06-FIG5-009",
+  "group": "未施加该操纵的 bIPS 对照组",
+  "species": "Drosophila melanogaster",
+  "sample": {
+    "flies": 6,
+    "rois": 7,
+    "repetitions_per_fly_reported_range": [
+      5,
+      10
+    ],
+    "statistical_unit": "每个 ROI 的重复试验均值。文章报告 6 只蝇、7 个 ROI。复算的分母为 7 个 ROI。"
+  },
+  "metric": "首选与非首选偏航方向之间的 z 标准化钙响应差；每个速度水平取 7 个非空 ROI 的算术平均。",
+  "groups": [
+    {
+      "level": "zero",
+      "translation_to_yaw_weight": 0,
+      "cells": "5h!B22:H22",
+      "nonempty_numeric_roi_values": 7,
+      "mean": 9.472760387245742,
+      "sample_sd": 8.796024638295112
+    },
+    {
+      "level": "low",
+      "translation_to_yaw_weight": 0.71,
+      "cells": "5h!B23:H23",
+      "nonempty_numeric_roi_values": 7,
+      "mean": 10.135331084890623,
+      "sample_sd": 8.7150230454311
+    },
+    {
+      "level": "intermediate",
+      "translation_to_yaw_weight": 1.42,
+      "cells": "5h!B24:H24",
+      "nonempty_numeric_roi_values": 7,
+      "mean": 1.291811177922176,
+      "sample_sd": 2.391516722745526
+    },
+    {
+      "level": "fast",
+      "translation_to_yaw_weight": 2.14,
+      "cells": "5h!B25:H25",
+      "nonempty_numeric_roi_values": 7,
+      "mean": 0.8177609397358142,
+      "sample_sd": 2.355975450009594
+    }
+  ],
+  "zero_minus_fast": 8.654999447509928,
+  "source_reported_zero_vs_fast": {
+    "cell": "5h!A28",
+    "p": 0.0040793,
+    "test": "图注注明双侧 Wilcoxon 秩和检验及 Bonferroni 多重比较校正。此处转录作者的 p 值。"
+  },
+  "method_locators": [
+    "Sec17 ¶1; Sec18 ¶1",
+    "Sec8 ¶1–4",
+    "Fig5 legend panels f–h",
+    "Sec27 ¶1–4, 9–10",
+    "Sec38 ¶1–3"
+  ],
+  "interpretation": "在这组人工复合光流中，bIPS 对照组在中、高平移权重下的平均偏航方向选择性低于纯偏航与低权重条件。",
+  "boundaries": "四个水平是刺激设计中的平移／旋转权重。作者将复合刺激整体速度减半，未把球形跑台的名义换算速度用作动物的实测速度。结果只度量 bIPS 钙响应，未测运动估计误差、真实场景速度泛化或绝对尺度。",
+  "status": "source_verified_pending_canonical_assessment"
+}

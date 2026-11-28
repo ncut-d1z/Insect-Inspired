@@ -1,0 +1,72 @@
+{
+  "query_id": "Q-RUN09-P3-SUNKARA-006",
+  "run_id": "RUN-0009",
+  "checkpoint_id": "CP-0011",
+  "scope_id": "SCOPE-0001",
+  "entity_id": "W-S06",
+  "task_id": "T-RUN09-S06-R78-IDENTITY",
+  "source_id": "crossref",
+  "endpoint_or_url": "https://api.crossref.org/works/10.7554/eLife.04693",
+  "raw_parameters": {
+    "identifier": "10.7554/eLife.04693"
+  },
+  "query_kind": "doi_metadata_verification",
+  "queried_at_utc": "2026-11-28T03:38:00.071105Z",
+  "external_request_count": 1,
+  "cache_hit": false,
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "visible_total": null,
+  "license_note": "Public bibliographic and grant facts only; source documents remain outside Git.",
+  "rerun_reason": "No matching DOI lookup in the full query log; resolve the previously DOI-less registered reference against its original citation.",
+  "http_status": 200,
+  "final_url": "https://api.crossref.org/works/10.7554/eLife.04693",
+  "bytes": 21696,
+  "sha256": "fe8e77c29deccbc8ec683cd8fc753b042fb201324e9a4ecf83de275764d1d9c6",
+  "records": [
+    {
+      "DOI": "10.7554/elife.04693",
+      "title": [
+        "Role of visual and non-visual cues in constructing a rotation-invariant representation of heading in parietal cortex"
+      ],
+      "container-title": [
+        "eLife"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2015,
+            2,
+            18
+          ]
+        ]
+      },
+      "volume": "4",
+      "article-number": "e04693",
+      "page": null,
+      "publisher": "eLife Sciences Publications, Ltd",
+      "type": "journal-article",
+      "authors": [
+        {
+          "given": "Adhira",
+          "family": "Sunkara"
+        },
+        {
+          "given": "Gregory C",
+          "family": "DeAngelis"
+        },
+        {
+          "given": "Dora E",
+          "family": "Angelaki"
+        }
+      ]
+    }
+  ],
+  "status": "success",
+  "returned_count": 1,
+  "result_identifiers": [
+    "10.7554/elife.04693"
+  ],
+  "page_complete": true,
+  "coverage_note": "The one selected identifier record was retrieved; publication and project inventory remain open.",
+  "completed_at_utc": "2026-11-28T03:38:01.558287Z"
+}

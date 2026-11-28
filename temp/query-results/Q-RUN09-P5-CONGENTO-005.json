@@ -1,0 +1,40 @@
+{
+  "query_id": "Q-RUN09-P5-CONGENTO-005",
+  "run_id": "RUN-0009",
+  "checkpoint_id": "CP-0011",
+  "scope_id": "SCOPE-0001",
+  "entity_id": "W-S06",
+  "task_id": "T-RUN09-S06-CONGENTO",
+  "source_id": "official_projects",
+  "endpoint_or_url": "https://transparencia.gov.pt/pt/fundos-europeus/pt2020/beneficiarios-projetos/projeto/LISBOA-01-0145-FEDER-022170/",
+  "raw_parameters": {
+    "identifier": "LISBOA-01-0145-FEDER-022170"
+  },
+  "query_kind": "official_grant_record_lookup",
+  "queried_at_utc": "2026-11-28T03:37:57.772547Z",
+  "external_request_count": 1,
+  "cache_hit": false,
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "visible_total": null,
+  "license_note": "Public bibliographic and grant facts only; source documents remain outside Git.",
+  "rerun_reason": "One bounded retry of the failed official page through native HTTPS.",
+  "http_status": 200,
+  "final_url": "https://transparencia.gov.pt/pt/fundos-europeus/pt2020/beneficiarios-projetos/projeto/LISBOA-01-0145-FEDER-022170/",
+  "bytes": 101979,
+  "sha256": "d913dc17377aefd2f263413a1649bac6472236ccc4eadadf5b5f92ee17e263c5",
+  "records": [
+    {
+      "operation_code": "LISBOA-01-0145-FEDER-022170",
+      "completion_date_text": "24.01.2021",
+      "lead_beneficiary": "FUNDAÇÃO D. ANNA DE SOMMER CHAMPALIMAUD E DR. CARLOS MONTEZ CHAMPALIMAUD"
+    }
+  ],
+  "status": "success",
+  "returned_count": 1,
+  "result_identifiers": [
+    "LISBOA-01-0145-FEDER-022170"
+  ],
+  "page_complete": true,
+  "coverage_note": "The one selected identifier record was retrieved; publication and project inventory remain open.",
+  "completed_at_utc": "2026-11-28T03:38:00.066554Z"
+}

@@ -1,0 +1,30 @@
+{
+  "query_id": "Q-RUN09-S06-FIG5-007",
+  "run_id": "RUN-0009",
+  "checkpoint_id": "CP-0011",
+  "scope_id": "SCOPE-0001",
+  "entity_id": "W-S06",
+  "task_id": "T-RUN09-S06-FIG5",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://static-content.springer-cdn.net/esm/art%3A10.1038%2Fs41593-025-01948-9/MediaObjects/41593_2025_1948_MOESM10_ESM.xlsx",
+  "raw_parameters": {
+    "article_doi": "10.1038/s41593-025-01948-9",
+    "JATS_media_id": "MOESM10",
+    "asset": "41593_2025_1948_MOESM10_ESM.xlsx"
+  },
+  "query_kind": "publisher_figure_source_data",
+  "queried_at_utc": "2026-11-28T03:40:21.393867Z",
+  "external_request_count": 1,
+  "cache_hit": false,
+  "visible_total": null,
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "license_note": "Only derived measurements and cell locators are retained in Git; the spreadsheet stays in a local cache.",
+  "status": "retryable_error",
+  "page_complete": false,
+  "returned_count": 0,
+  "result_identifiers": [],
+  "error_code": "URLError",
+  "error_message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>",
+  "http_status": null,
+  "completed_at_utc": "2026-11-28T03:40:23.720696Z"
+}
