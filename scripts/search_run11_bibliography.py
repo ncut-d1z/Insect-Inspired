@@ -122,7 +122,7 @@ def chunks(rows, id_field, maximum, characters=1800):
         yield packet
 
 
-def deposited(key, group):
+def deposited(key, group, requester=request):
     wanted = {doi(row["doi"]): row for row in group}
     params = {"filter":",".join("doi:"+k for k in wanted),"rows":len(wanted)}
     def project(data):
@@ -133,10 +133,10 @@ def deposited(key, group):
         papers=[{k:r[k] for k in ("DOI","title","reference","reference-count","published") if k in r} for r in papers]
         return dict(records=papers,visible_total=len(papers),returned_count=len(papers),page_complete=True,
                     missing_identifiers=sorted(set(wanted)-set(got)))
-    return request(key,"crossref",CR,params,owners_input(group),"Publisher-deposited reference lists for the saved CP12 parents.",project)
+    return requester(key,"crossref",CR,params,owners_input(group),"Publisher-deposited reference lists for the saved CP12 parents.",project)
 
 
-def indexed(key, group, field):
+def indexed(key, group, field, requester=request):
     wanted = {row[field]:row for row in group}
     api = {"doi":"doi","openalex":"openalex_id","epmc":"pmid"}[field]
     ids = [k.split(":")[-1] if field=="epmc" else k for k in wanted]
@@ -159,7 +159,7 @@ def indexed(key, group, field):
         matched={r["requested_identity"] for r in records if r["work_id"]}
         return dict(records=records,visible_total=len(records),returned_count=len(records),page_complete=True,
                     missing_or_ambiguous_identifiers=sorted(set(wanted)-matched))
-    return request(key,"openalex",OA,params,owners_input(group),"Indexed reference identifiers for a missing or incomplete deposited bibliography.",project)
+    return requester(key,"openalex",OA,params,owners_input(group),"Indexed reference identifiers for a missing or incomplete deposited bibliography.",project)
 
 
 def european(prefix, owner):
