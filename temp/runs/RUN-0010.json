@@ -27,7 +27,7 @@
     "manual_review_items": 200,
     "paid_spend": 0
   },
-  "external_requests_used": 191,
+  "external_requests_used": 252,
   "manual_review_items_used": 16,
   "paid_spend": 0,
   "closure": false,
@@ -39,5 +39,5 @@
     "checkpoint_sha256": "bbdae2a70cca6306918f3a4c51ae0281b3cd637d840f3e2de8153825de847855"
   },
   "version_review": "temp/reports/RUN-0010-cited-versions.json",
-  "next_backward_frontier": "temp/reports/RUN-0010-frontier-after-catalog-corrections.json"
+  "next_backward_frontier": "temp/reports/RUN-0010-frontier-after-recursive-24.json"
 }
