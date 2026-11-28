@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+import re
 from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -12,6 +13,7 @@ BASE = "https://www.ebi.ac.uk/europepmc/webservices/rest/"
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = {"KRESS":"10.1242/jeb.097436", "RAY":"10.7554/elife.102230", "SUNKARA":"10.7554/elife.04693"}
 IDS = {"KRESS":"W-D3726e94bf3bda20c","RAY":"W-D343f06a3bc764bf6","SUNKARA":"W-R24649f4879cc831d"}
+CONTACT = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 
 
 def stamp():
@@ -28,7 +30,8 @@ def facts(row):
         for author in row["authorList"].get("author",[]):
             a = {k:author[k] for k in ("fullName","firstName","lastName","initials","collectiveName","authorId") if k in author}
             affiliations = author.get("authorAffiliationDetailsList",{}).get("authorAffiliation",[])
-            if affiliations: a["affiliations"] = [v["affiliation"] for v in affiliations if v.get("affiliation")]
+            if affiliations:
+                a["affiliations"] = [CONTACT.sub("", v["affiliation"]).strip(" .;,") for v in affiliations if v.get("affiliation")]
             record["authors"].append(a)
     if "journalInfo" in row:
         ji = row["journalInfo"]
