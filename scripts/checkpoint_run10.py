@@ -103,6 +103,10 @@ def finalize(qa):
     det=read(qa/"determinism.json");data=read(qa/"data-audit.json");meta=read(qa/"first/export-validation.json")
     require(data["status"]==det["status"]=="passed" and data["error_count"]==0 and not data["changed_inputs"] and
             data["statistics"]["candidate_sha256"]==det["candidate_sha256"]==candidate and det["artifacts"]==input_snapshot(ROOT,EXPORTS) and not meta["schema_errors"],"Incomplete data or export audit")
+    bib=read(TEMP/"validation/cp12-bibtex-parse.json")
+    require(bib["status"]=="passed" and bib["checkpoint_id"]==CP and bib["input_sha256"]==det["artifacts"]["ref.bib"]["sha256"] and
+            bib["parser_exit_code"]==bib["missing_keys"]==bib["extra_keys"]==0 and
+            bib["bibtex_entries"]==bib["roundtripped_distinct_keys"]==c["canonical_works"],"Native BibTeX parse differs from the canonical bibliography")
     qa_files={"cp12-data-audit.json":data,"cp12-determinism.json":det,"cp12-export-validation.json":meta}
     for browser in ("chrome","edge"):
         ui=read(qa/browser/"ui-audit-final.json")
@@ -142,6 +146,8 @@ def finalize(qa):
 主库有 {num(c['canonical_works'])} 篇、{num(c['versions'])} 个版本、{num(c['citation_edges'])} 条边、{num(c['unresolved_occurrences'])} 个未解析位置、{num(c['unresolved_tasks'])} 个开放工单。下一批按[递归队列](../../{queue['path']})继续。来源空列表、缺失标识及限流均保留在工单和查询日志中。
 
 有一条 1979 年的引文展示了版本以外的书目歧义。施引书目第 64 项的题名以 *Deficit* 开头，登记的 DOI 末尾为 `sp012690`。该 DOI 的注册题名以 *Facilitation* 开头，*Deficit* 一文对应 `sp012691`。逐项记录保留了两个候选。[施引书目](../query-results/Q-RUN10-BCR-071-079-A1.json) · [两篇的标识和题名](../query-results/Q-RUN10-ID-EP-4da91f61dfaa6bb17f45-A1.json)
+
+首次导出时，一条原始题名带三个未配对的左花括号，导致 Biber 解析中断。修正导出转义后，Biber 重新读写了全部 {num(bib['roundtripped_distinct_keys'])} 个书目键。原始题名和书目键均保留。[首次失败与修复记录](../validation/cp12-bibtex-repair.json) · [独立解析结果及警告](../validation/cp12-bibtex-parse.json)
 
 [版本逐条复核](RUN-0010-cited-versions.json) · [首轮来源覆盖](RUN-0010-supplemental-reference-coverage.json) · [摘要与署名](RUN-0010-abstract-affiliation-review.json) · [规范库审计](../validation/cp12-data-audit.json) · [历史重放](../validation/cp12-history.json) · [导出哈希](../validation/cp12-determinism.json) · [远端回读](../validation/cp12-post-push.json)
 """

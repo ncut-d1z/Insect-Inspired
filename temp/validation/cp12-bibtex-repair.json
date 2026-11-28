@@ -1,0 +1,39 @@
+{
+  "checkpoint_id": "CP-0012",
+  "reported_at_utc": "2026-11-28T10:27:10.613840Z",
+  "old_candidate_status": "invalid",
+  "old_candidate_commit": "85939e086da64e534472133b8895280b11e9cadf",
+  "rejected_export_commit": "eaa25e064434703f3736d4891b3c8fa5ef4cc7a7",
+  "old_candidate_sha256": "2b57184ff09b93e2fdc7e16bd771f169f61d6d6a729e714b97bb344da5fa1e3c",
+  "rejected_input_manifest_sha256": "9e1a7716883e5ecf13858b2671ef73fdaab4e3000294a0dd49035c8774a4c5ca",
+  "rejected_export_sha256": "10c1c7c94b31be19d1d174f49c6cf51bdb10f65b5282a9425a3c3a0b8b17d0e5",
+  "native_tool": "Biber 2.21",
+  "parser_result": "failed",
+  "error_count": 1,
+  "error": "Runaway braced title beginning at source.bib:91451, followed by a syntax error at end of input.",
+  "work_key": "TempWR1e7395607b0d35a4",
+  "problem": "Three literal left brace characters in the deposited title. A backslash-brace still changes BibTeX grouping.",
+  "failed_parser_log_sha256": "b073e458b82b9cd74f27afd8fe76e19eb5ffc03563e7daecd5e5381950f44589",
+  "repair": "Use balanced LaTeX textbraceleft and textbraceright commands for literal field text. Canonical titles and IDs are preserved.",
+  "regression_check": {
+    "status": "passed",
+    "distinct_roundtripped_keys": 7,
+    "keys": [
+      "BORST1996",
+      "Borst1996",
+      "KRAPP2008",
+      "Krapp2008",
+      "TempWDed88b15ce98fea78",
+      "TempWR1e7395607b0d35a4",
+      "TempWRe572b370ca189530"
+    ],
+    "input_sha256": "0cd3b45e47045be93c89a55da55c0144fd39d550d4a630cebef7591d712190cd",
+    "output_sha256": "386d269d7e1dd50294b8ca0ac8d3615a73e23191e1e4ff702f403665ef2493da"
+  },
+  "changed_frozen_paths": [
+    "scripts/checkpoint_run10.py",
+    "scripts/export_run.py"
+  ],
+  "full_revalidation_required": true,
+  "earlier_candidate_and_inputs_locator": "eaa25e064434703f3736d4891b3c8fa5ef4cc7a7"
+}

@@ -50,8 +50,9 @@ def write_json(path, obj):
 
 
 def tex(value):
+    # BibTeX counts braces when parsing a field even after a backslash.
     replacements = {'\\': r'\textbackslash{}', '&': r'\&', '%': r'\%', '$': r'\$',
-                    '#': r'\#', '_': r'\_', '{': r'\{', '}': r'\}',
+                    '#': r'\#', '_': r'\_', '{': r'\textbraceleft{}', '}': r'\textbraceright{}',
                     '~': r'\textasciitilde{}', '^': r'\textasciicircum{}'}
     return ''.join(replacements.get(c, c) for c in str(value).replace('\r', ' ').replace('\n', ' '))
 
