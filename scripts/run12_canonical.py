@@ -23,6 +23,7 @@ class CurrentCanonical(Canonical):
     checkpoint=CP
     id_prefix="R12"
     reuse_citing_positions=True
+    prefer_supporting_coverage_query=True
     metadata_prefixes=(*Canonical.metadata_prefixes,"Q-RUN12-ID-")
 
 

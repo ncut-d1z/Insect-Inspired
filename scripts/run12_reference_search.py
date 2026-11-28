@@ -82,12 +82,18 @@ def register(observations, titles, coverage, deferred_sources):
                 source_reconciled=available and match and count==declared,parent_title_conflict=bool(item) and not match))
 
 
-def recover_empty(owners, coverage, control, prefix, postponed):
+def recover_empty(owners, coverage, control, prefix, postponed, titles):
+    from run12_index_availability import CALIBRATION, lookup
     literal={}
+    empty=[o for o in owners if o.get("epmc") and not any(s["rows"] for s in coverage[o["work_id"]])]
+    calibrated=CALIBRATION.is_file() and read(CALIBRATION)["negative_indicator_usable_as_index_observation"]
+    flags=lookup(empty,prefix+"-EP-AVAIL") if calibrated and empty and not deferred("europepmc",control) else {}
     for owner in owners:
         wid=owner["work_id"]
         if any(s["rows"] for s in coverage[wid]):continue
-        if owner.get("epmc"):
+        flag=flags.get(wid,{})
+        source_negative=flag.get("has_references")=="N" and compatible_parent(flag.get("parent_title"),titles[wid])
+        if owner.get("epmc") and not source_negative:
             wait=deferred("europepmc",control)
             if wait:postponed[wid]["europepmc"]=wait
             else:
@@ -102,6 +108,9 @@ def recover_empty(owners, coverage, control, prefix, postponed):
                 for row in receipt(s["query_id"])["records"]:
                     if row.get("work_id")==wid:matched.add(row["source_identifier"])
         if len(matched)!=1:continue
+        if calibrated and not any((s.get("source_declared") or 0)>0 or s.get("parent_title_conflict") for s in coverage[wid]):
+            postponed[wid]["openalex_literal"]="保留逐篇参考条目接口复查。上批 63 个零索引母文献的该接口均返回零条；本轮先处理有来源差额的名单。"
+            continue
         ident,=matched
         wait=deferred("openalex",control)
         if wait:
@@ -110,7 +119,7 @@ def recover_empty(owners, coverage, control, prefix, postponed):
         q=query(prefix+"-LITERAL-"+ident,"openalex",OA+"/"+ident+"/references",{},owners_input([owner]),
             "Inspect the reference-list representation of an identified parent whose deposited and matched-index views returned no positions.",literal_project)
         literal[wid]=dict(query_id=q["query_id"],parent=ident,rows=len(q.get("records",[])),status=q["status"])
-    return literal
+    return literal,flags
 
 
 def run(start, count):
@@ -151,8 +160,8 @@ def run(start, count):
         group=[o for o in needs if o.get(field)]
         if group:register(family(prefix+"-FALLBACK",group,"openalex",field,control),titles,coverage,deferred_sources)
         needs=[o for o in needs if not o.get(field)]
-    literal=recover_empty(owners,coverage,control,prefix,deferred_sources)
-    tables=[dict(queue_position=i,work_id=o["work_id"],work_key=o["work_key"],task_id=o["task_id"],literal=literal.get(o["work_id"]),
+    literal,flags=recover_empty(owners,coverage,control,prefix,deferred_sources,titles)
+    tables=[dict(queue_position=i,work_id=o["work_id"],work_key=o["work_key"],task_id=o["task_id"],literal=literal.get(o["work_id"]),reference_index_indicator=flags.get(o["work_id"]),
                  sources=coverage[o["work_id"]],deferred_sources=deferred_sources[o["work_id"]])
             for i,o in enumerate(owners,start+1)]
     if any(not r["sources"] and not r["deferred_sources"] for r in tables):raise ValueError("Missing source accounting")

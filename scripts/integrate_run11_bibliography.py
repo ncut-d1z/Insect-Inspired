@@ -246,6 +246,10 @@ class Canonical(Batch):
                 assert not cr and doi(work["doi"])==correction["doi"]
                 cr={"source_declared":correction["declared"],"query_id":correction["query_id"]}
             query=cr["query_id"] if cr else sorted(attempts)[0]
+            if not cr and getattr(self,"prefer_supporting_coverage_query",False):
+                supported=[q["query_id"] for q,kind,refs,identifier,locs in pages if refs]
+                successful=[qid for qid in sorted(attempts) if receipt(qid)["status"]=="success"]
+                query=next(iter(supported or successful),query)
             self.add("reference-coverage",dict(work_id=wid,doi=work.get("doi"),query_id=query,
                  deposited_reference_count=cr["source_declared"] if cr else None,returned_reference_count=positions["crossref"] if cr else None,
                  original_fulltext_completeness="not_verified",indexed_sources=indexed,distinct_resolved_works=len(set().union(*known.values())),
@@ -254,6 +258,9 @@ class Canonical(Batch):
             note="已查登记书目及替代索引。继续消歧、补缺和向后扩展。" if seen else "可用接口未返回可归属的书目位置；保留替代来源检索入口。"
             event=self.task(owner["task_id"],wid,"references",note,state,sorted(attempts))
             event["cursor"]="unresolved_reference_identities_and_source_coverage" if seen else "alternative_bibliographic_source"
+            if prior.get("reference_index_indicator") or prior.get("deferred_sources"):
+                event["normalized_parameters"]={**event["normalized_parameters"],"reference_index_indicator":prior.get("reference_index_indicator"),
+                                                  "deferred_reference_sources":prior.get("deferred_sources",{})}
             if work["dimension_status"]["references"]!=state:
                 w=deepcopy(work);w["dimension_status"]["references"]=state;self.works[wid]=w;self.modify("works",work,w)
             else:w=work
