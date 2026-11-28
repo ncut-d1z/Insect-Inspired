@@ -1,0 +1,108 @@
+{
+  "status": "passed",
+  "verified_at_utc": "2026-11-28T08:21:23.011743Z",
+  "github_repository": "ncut-d1z/Insect-Inspired",
+  "transport": "Independent HTTPS fetch into a bare Git repository with no object alternates",
+  "branch": "main",
+  "commit": "6bbeb6ae31759973bfaa9dba65ef68d093484299",
+  "tree": "39530c5218a083a062dbb18f37df7a853a23b6d7",
+  "parent_main": "d75de69048360652396c4a3cb8b95a858babbe15",
+  "remote_heads": [
+    "main"
+  ],
+  "strict_git_fsck": "passed",
+  "changed_paths": [
+    "README.md",
+    "misc.html",
+    "ref-data/index.css",
+    "ref-data/index.js",
+    "ref-data/misc.js",
+    "ref-data/topics.js",
+    "ref.html",
+    "scripts/README.md",
+    "scripts/audit_bibliography.py",
+    "scripts/audit_run.py",
+    "scripts/export_checkpoint_windows.py",
+    "scripts/html-smoke-checkpoint.mjs",
+    "scripts/html-smoke-split.mjs",
+    "scripts/render_html.py",
+    "scripts/storage.py",
+    "scripts/test_bibliography_index.py",
+    "temp/validation/bibliography-view.json"
+  ],
+  "unchanged_checkpoint_blobs": {
+    "CP-0007": "c9d5814e78fbf6495d6b39f0eae3ec4e29c7863d",
+    "CP-0008": "374fb64efe3d239baf6e08b373290f0f2bef8039",
+    "CP-0009": "bda573ee1783ddf40c456068aea095ddcc856af0",
+    "CP-0010": "d2ee1eaf90206061f523247b5782586d201bf209",
+    "CP-0011": "bbb2627f1806180bfc89d41780e938751ad12cc4"
+  },
+  "bibliography_receipt_sha256": "7e3cf282483af1660ed2b0f4c347e4fb0274c85222b85305106f91763065623d",
+  "verified_outputs": {
+    "misc.html": {
+      "sha256": "56d4829a63a8866f5708195db9b169fdd6e0e7d0ab879e0001c84ac013be6a27",
+      "bytes": 2626
+    },
+    "ref-data/index.css": {
+      "sha256": "697815005cc6d2f19f9bf4a5e8ab0e7778cf198b10f2a418e7691742df9944cc",
+      "bytes": 4174
+    },
+    "ref-data/index.js": {
+      "sha256": "36809472a20dccf93f38f805df5191cf797d57a43d1856cad7ed96182c8071d1",
+      "bytes": 6739
+    },
+    "ref-data/misc.js": {
+      "sha256": "241d23a2cf33a6ce7251eb890501519d1629ba93a522901346e40b4422ef643f",
+      "bytes": 1202550
+    },
+    "ref-data/topics.js": {
+      "sha256": "fee286813cccf81179a31a4ea0903032e6f889db3e179101166cd9d0d82904a8",
+      "bytes": 9150
+    },
+    "ref.bib": {
+      "sha256": "6605bf909bd067322d0dad32d9203d9ee7223067ab791462b8f4431234ac6f65",
+      "bytes": 2623473
+    },
+    "ref.html": {
+      "sha256": "5805605016e8b6c7abd6ff1e8a4409fb01cccc0aa5124cb548df6db9eb43f41a",
+      "bytes": 11199
+    },
+    "temp/exports/citation_graph.json": {
+      "sha256": "d10020a26642f0d9ee5d3fa051890d846f89d92a1296f37242e07155789a5a05",
+      "bytes": 53993220
+    },
+    "temp/exports/evidence_matrix.csv": {
+      "sha256": "4f13d4428960da344ba45778674b4a0424abf86f4a0bfbb6747089ac9acf6f21",
+      "bytes": 3201702
+    },
+    "temp/exports/research_entities.json": {
+      "sha256": "c1b82b9459051bfb1fd6a531a0adb30f790ec35429c7ead8bff110fa63e7e42e",
+      "bytes": 56977870
+    },
+    "temp/exports/research_implications.csv": {
+      "sha256": "1a1d3206083ec6a50439204164f96657e88a825afef0a7648877dc4feb1a7180",
+      "bytes": 1977417
+    },
+    "temp/exports/research_paths.json": {
+      "sha256": "1781cbbccf73e81c1c190bc971a2b79c90632d332ef361b527ba4ed5076476b7",
+      "bytes": 106129
+    }
+  },
+  "data_audit": {
+    "file": "temp/validation/bibliography-view-data-audit.json",
+    "sha256": "53546fd64892fd71695a14a44ee19687fcd3ee235a13e20df16a4b2e2f7d434d",
+    "deadline_reference_utc": "2026-11-28T04:42:10.233431Z",
+    "manual_assessment_baseline_commit": "5f2181b0e5a91bcafde2a3f19eb526668934a80e",
+    "compared_baseline_assessments": 72,
+    "error_count": 0,
+    "warning_count": 16,
+    "counters": {
+      "schema_records": 426493,
+      "assertions": 3894800,
+      "set_reconciliations": 15,
+      "unknown_fields": 65869,
+      "manual_rejections_preserved_over_mechanical_pass": 1
+    },
+    "changed_inputs": []
+  }
+}

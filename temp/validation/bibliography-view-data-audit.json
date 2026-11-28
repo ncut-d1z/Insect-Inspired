@@ -1,0 +1,235 @@
+{
+  "audit_version": "1.0",
+  "read_only": true,
+  "audited_at_utc": "2026-11-28T04:42:10.233431Z",
+  "repository": "D:\\Developments\\insect-inspired-cp4",
+  "schema_version": "1.1.1",
+  "scope_id": "SCOPE-0001",
+  "status": "passed",
+  "error_count": 0,
+  "warning_count": 16,
+  "duration_seconds": 420.838,
+  "validator_count": 20,
+  "counters": {
+    "schema_records": 426493,
+    "assertions": 3894800,
+    "set_reconciliations": 15,
+    "unknown_fields": 65869,
+    "manual_rejections_preserved_over_mechanical_pass": 1
+  },
+  "statistics": {
+    "aliases.jsonl": 338,
+    "assessments.jsonl": 73,
+    "author-publication-leads.jsonl": 3811,
+    "authors.jsonl": 20918,
+    "cascade-events.jsonl": 0,
+    "citation-context-audit.jsonl": 36,
+    "citation-edges.jsonl": 31932,
+    "discovery-paths.jsonl": 40674,
+    "fulltext-file-audit.jsonl": 27,
+    "identity-conflicts.jsonl": 72,
+    "institution-project-leads.jsonl": 2,
+    "manual-reviews.jsonl": 375,
+    "merged-work-audit.jsonl": 42,
+    "new-fulltext-reference-audit.jsonl": 1193,
+    "official-person-review-facts.jsonl": 8,
+    "organizations.jsonl": 1415,
+    "privacy-redactions.jsonl": 4,
+    "project-relations.jsonl": 50,
+    "projects.jsonl": 8,
+    "queries.jsonl": 998,
+    "reference-coverage.jsonl": 2381,
+    "reference-occurrences.jsonl": 158599,
+    "rejected_uploads.log": 0,
+    "scope-exclusions.jsonl": 1,
+    "seed-manifest.jsonl": 20,
+    "source-list-coverage.jsonl": 98,
+    "source-observations.jsonl": 999,
+    "tasks.jsonl": 201695,
+    "uploads.jsonl": 24,
+    "versions.jsonl": 5226,
+    "work-merge-events.jsonl": 42,
+    "work-relations.jsonl": 4,
+    "works.jsonl": 5177,
+    "canonical_works": 5177,
+    "versions": 5226,
+    "canonical_uploads": 24,
+    "duplicate_uploads": 0,
+    "unique_file_hashes": 47,
+    "latest_tasks": 132705,
+    "task_states": {
+      "partial": 9160,
+      "pending": 120472,
+      "verified_complete": 821,
+      "retryable_error": 19,
+      "needs_disambiguation": 1565,
+      "restricted": 668
+    },
+    "unresolved_tasks": 131884,
+    "assessments_compared_to_manual_baseline": 72,
+    "active_assessments": 72,
+    "active_admission_states": {
+      "eligible": 63,
+      "insufficient_evidence": 9
+    },
+    "reconciliation": {
+      "K": 5177,
+      "T_union": 35,
+      "U": 5142,
+      "T_i": {
+        "L01": 9,
+        "L02": 5,
+        "L03": 11,
+        "L04": 9,
+        "L05": 5,
+        "L06": 12,
+        "L07": 1,
+        "L08": 5,
+        "L09": 2
+      }
+    },
+    "offline_bibliography": {
+      "checkpoint_id": "CP-0011",
+      "status": "passed",
+      "K": 5177,
+      "U": 5142,
+      "T_union": 35,
+      "T_i": {
+        "L01": 9,
+        "L02": 5,
+        "L03": 11,
+        "L04": 9,
+        "L05": 5,
+        "L06": 12,
+        "L07": 1,
+        "L08": 5,
+        "L09": 2
+      },
+      "topic_load_bytes": 31262,
+      "total_bytes": 1236438,
+      "artifacts": {
+        "ref.html": {
+          "bytes": 11199,
+          "sha256": "5805605016e8b6c7abd6ff1e8a4409fb01cccc0aa5124cb548df6db9eb43f41a"
+        },
+        "misc.html": {
+          "bytes": 2626,
+          "sha256": "56d4829a63a8866f5708195db9b169fdd6e0e7d0ab879e0001c84ac013be6a27"
+        },
+        "ref-data/index.css": {
+          "bytes": 4174,
+          "sha256": "697815005cc6d2f19f9bf4a5e8ab0e7778cf198b10f2a418e7691742df9944cc"
+        },
+        "ref-data/index.js": {
+          "bytes": 6739,
+          "sha256": "36809472a20dccf93f38f805df5191cf797d57a43d1856cad7ed96182c8071d1"
+        },
+        "ref-data/topics.js": {
+          "bytes": 9150,
+          "sha256": "fee286813cccf81179a31a4ea0903032e6f889db3e179101166cd9d0d82904a8"
+        },
+        "ref-data/misc.js": {
+          "bytes": 1202550,
+          "sha256": "241d23a2cf33a6ce7251eb890501519d1629ba93a522901346e40b4422ef643f"
+        }
+      }
+    },
+    "export_metadata": [
+      [
+        "citation_graph",
+        "SCOPE-0001",
+        "CP-0011",
+        "1.1.1"
+      ],
+      [
+        "research_entities",
+        "SCOPE-0001",
+        "CP-0011",
+        "1.1.1"
+      ],
+      [
+        "research_paths",
+        "SCOPE-0001",
+        "CP-0011",
+        "1.1.1"
+      ],
+      [
+        "evidence_matrix.csv",
+        "SCOPE-0001",
+        "CP-0011",
+        "1.1.1"
+      ],
+      [
+        "research_implications.csv",
+        "SCOPE-0001",
+        "CP-0011",
+        "1.1.1"
+      ]
+    ]
+  },
+  "findings": {
+    "error": {},
+    "warning": {
+      "unregistered_auxiliary_schema": {
+        "count": 16,
+        "examples": [
+          {
+            "message": "Logical dataset read; no registered entity schema. Generic FK/source checks still apply.",
+            "entity": "author-publication-leads.jsonl"
+          },
+          {
+            "message": "Logical dataset read; no registered entity schema. Generic FK/source checks still apply.",
+            "entity": "citation-context-audit.jsonl"
+          },
+          {
+            "message": "Logical dataset read; no registered entity schema. Generic FK/source checks still apply.",
+            "entity": "discovery-paths.jsonl"
+          },
+          {
+            "message": "Logical dataset read; no registered entity schema. Generic FK/source checks still apply.",
+            "entity": "fulltext-file-audit.jsonl"
+          },
+          {
+            "message": "Logical dataset read; no registered entity schema. Generic FK/source checks still apply.",
+            "entity": "identity-conflicts.jsonl"
+          },
+          {
+            "message": "Logical dataset read; no registered entity schema. Generic FK/source checks still apply.",
+            "entity": "institution-project-leads.jsonl"
+          },
+          {
+            "message": "Logical dataset read; no registered entity schema. Generic FK/source checks still apply.",
+            "entity": "manual-reviews.jsonl"
+          },
+          {
+            "message": "Logical dataset read; no registered entity schema. Generic FK/source checks still apply.",
+            "entity": "merged-work-audit.jsonl"
+          },
+          {
+            "message": "Logical dataset read; no registered entity schema. Generic FK/source checks still apply.",
+            "entity": "new-fulltext-reference-audit.jsonl"
+          },
+          {
+            "message": "Logical dataset read; no registered entity schema. Generic FK/source checks still apply.",
+            "entity": "official-person-review-facts.jsonl"
+          },
+          {
+            "message": "Logical dataset read; no registered entity schema. Generic FK/source checks still apply.",
+            "entity": "privacy-redactions.jsonl"
+          },
+          {
+            "message": "Logical dataset read; no registered entity schema. Generic FK/source checks still apply.",
+            "entity": "reference-coverage.jsonl"
+          }
+        ]
+      }
+    }
+  },
+  "changed_inputs": [],
+  "limits": [
+    "Mechanical validation does not independently confirm scientific truth or reread papers.",
+    "Known manual scientific rejections override a mechanical pass.",
+    "Unregistered auxiliary datasets receive generic checks and a schema-registration warning.",
+    "No search or new scientific manual-budget activity was performed."
+  ]
+}
