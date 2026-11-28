@@ -1,7 +1,9 @@
 """Materialize a contiguous slice of the CP12 frontier against the retained bibliographic receipts."""
 import argparse
+from calendar import monthrange
 from collections import Counter, defaultdict
 from copy import deepcopy
+from datetime import date
 import hashlib
 import json
 from pathlib import Path
@@ -15,6 +17,25 @@ from storage import iter_logical
 
 OUTCOMES=TEMP/"reports/RUN-0011-canonical"
 BAD_DOI="10.1523/jneurosci.19-19-08573.1999"
+
+
+def publication_interval(value,year=None):
+    text=str(value or year or "")
+    try:
+        if len(text)==4 and text.isdigit():
+            y=int(text);return date(y,1,1),date(y,12,31)
+        if len(text)==7 and text[4]=="-":
+            y,m=map(int,text.split("-"));return date(y,m,1),date(y,m,monthrange(y,m)[1])
+        if len(text)==10:
+            d=date.fromisoformat(text);return d,d
+    except ValueError:
+        pass
+    return None
+
+
+def definitely_later(citing_date,citing_year,cited_date,cited_year):
+    a=publication_interval(citing_date,citing_year);b=publication_interval(cited_date,cited_year)
+    return bool(a and b and b[0]>a[1])
 
 
 def evidence(q,parent,kind,position,raw=None):
@@ -175,8 +196,7 @@ class Canonical(Batch):
                         event["normalized_parameters"]={"occurrence_id":rid,"candidate_ids":choices}
                         continue
                     known[sid].add(target);cited=self.works[target]
-                    dates=version.get("version_date"),cited.get("publication_date")
-                    if all(isinstance(d,str) and len(d)==10 for d in dates) and dates[1]>dates[0]:
+                    if definitely_later(version.get("version_date"),work.get("year"),cited.get("publication_date"),cited.get("year")):
                         tid="T-R11-CITED-"+token(wid,target)
                         event=self.task(tid,wid,"cited_version_review","登记目标晚于施引版，需以原始书目定位实际版次。","needs_disambiguation",[qid],source_id=sid)
                         event["supporting_record_ids"]=list(dict.fromkeys([*event["supporting_record_ids"],rid]))
@@ -205,7 +225,9 @@ class Canonical(Batch):
             note="已查登记书目及替代索引。继续消歧、补缺和向后扩展。" if seen else "可用接口未返回可归属的书目位置；保留替代来源检索入口。"
             event=self.task(owner["task_id"],wid,"references",note,state,sorted(attempts))
             event["cursor"]="unresolved_reference_identities_and_source_coverage" if seen else "alternative_bibliographic_source"
-            w=deepcopy(work);w["dimension_status"]["references"]=state;self.works[wid]=w;self.modify("works",work,w)
+            if work["dimension_status"]["references"]!=state:
+                w=deepcopy(work);w["dimension_status"]["references"]=state;self.works[wid]=w;self.modify("works",work,w)
+            else:w=work
             outcomes.append(dict(ordinal=prior["queue_position"],work_id=wid,work_key=w["work_key"],task_id=owner["task_id"],
                          positions=dict(positions),unresolved=dict(unresolved),new_edges=edges_added,resolution=dict(status),task_state=state))
         return outcomes

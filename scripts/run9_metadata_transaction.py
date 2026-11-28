@@ -3,6 +3,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 
 from advance_review_deadlines import transaction_directory
@@ -31,6 +32,8 @@ def stage_rows(stage, name, changes, additions, old_manifest, new_manifest, guar
     seen=set()
     added_ids={r[IDS[name]]:r for r in additions}
     require(len(added_ids)==len(additions),"Duplicate added IDs in "+name)
+    wanted={key.encode("utf-8") for key in set(added_ids)|set(changes)}
+    head_id=re.compile(rb'^\s*\{\s*"'+re.escape(IDS[name].encode())+rb'"\s*:\s*"([A-Za-z0-9._:/+@-]+)"')
     preexisting={}
     seen_changes=[]
     def output(data):
@@ -39,7 +42,9 @@ def stage_rows(stage, name, changes, additions, old_manifest, new_manifest, guar
         digest=sha(data); n=sum(bool(l) for l in data.splitlines())
         dest=name+".jsonl" if not sequence else "partitions/"+name+"/"+digest+".jsonl"
         path=stage/"files/temp"/dest; path.parent.mkdir(parents=True,exist_ok=True)
-        if not (BASE/dest).is_file() or sha((BASE/dest).read_bytes())!=digest:
+        guarded=guards.get("temp/"+dest)
+        already_verified=guarded is not None and guarded["bytes"]==len(data) and guarded["sha256"]==digest
+        if not already_verified and (not (BASE/dest).is_file() or sha((BASE/dest).read_bytes())!=digest):
             path.write_bytes(data)
         sequence.append(dict(path=dest,records=n,sha256=digest,bytes=len(data)))
         combined.update(data);count+=n
@@ -56,6 +61,12 @@ def stage_rows(stage, name, changes, additions, old_manifest, new_manifest, guar
                 output(bytes(buf));buf=bytearray()
             buf.extend(line)
         for line in raw.splitlines(keepends=True):
+            # Older rows can use other whitespace, key order, escapes or alphabets.
+            # Decode those normally. An unescaped leading ID is a lossless prefix test.
+            k=head_id.match(line)
+            if k and k[1] not in wanted:
+                consume(line)
+                continue
             r=json.loads(line)
             key=r[IDS[name]]
             if key in added_ids:

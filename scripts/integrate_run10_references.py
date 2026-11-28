@@ -564,8 +564,11 @@ class Batch:
             credits=self.source_credit.get(qid,[])
             time_status=q.get("query_time_status","exact")
             date=q["requested_at_utc"][:10] if q["requested_at_utc"] else q["queried_date"]
+            api=apis[sid]
+            if sid=="publisher" and getattr(self,"id_prefix",None)=="R11" and "api.biorxiv.org/" not in q["endpoint_or_url"]:
+                api="Publisher reference-list endpoint"
             row=dict(query_id=qid,task_id=tid,scope_id=SCOPE,checkpoint_id=getattr(self,"checkpoint",CP),entity_id=o["work_id"],source_id=sid,
-                     endpoint_or_url=q["endpoint_or_url"],api_version=apis[sid],query_kind="bibliography_"+qid.split("-")[2].lower(),
+                     endpoint_or_url=q["endpoint_or_url"],api_version=api,query_kind="bibliography_"+qid.split("-")[2].lower(),
                      raw_parameters=q["parameters"],normalized_parameters={**q["parameters"],"scope_id":SCOPE},
                      queried_at_utc=q["requested_at_utc"],cursor_in=q.get("cursor_in"),cursor_out=q.get("cursor_out"),
                      page_index=q["page_index"],page_complete=q.get("page_complete",False),visible_total=q.get("visible_total"),
@@ -589,9 +592,9 @@ class Batch:
             for owner in q["owners"]:
                 self.task_queries[owner["task_id"]].add(qid)
             if sid=="semantic_scholar" and not ok:
-                t=self.task("T-R10-S2-"+token(o["work_id"]),o["work_id"],"reference_source_retry",
+                t=self.task("T-"+getattr(self,"id_prefix","R10")+"-S2-"+token(o["work_id"]),o["work_id"],"reference_source_retry",
                             "公开书目接口限流，本轮已保留全部重试；来源恢复后按原 PMID 重试。","retryable_error",[qid],source_id=sid)
-                t.update(cursor=o.get("epmc"),error_code=str(q["http_status"]))
+                t.update(cursor=o.get("epmc") or q["endpoint_or_url"],error_code=str(q["http_status"]))
                 t["attempt_count"]+=1
         for tid,qids in self.task_queries.items():
             t=self.adds["tasks"].get(tid)
