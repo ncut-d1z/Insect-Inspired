@@ -1,0 +1,21 @@
+{
+  "previous_remote": "088b293520981fe393ea79320692d4a09fbf4902",
+  "verified_commit": "192c08528fcc803adb469abb31514f6db4ccb328",
+  "verified_tree": "c00099f64c36df542fbb53ad1a683d9165724e63",
+  "independent_repository": "separate native Git object store",
+  "initial_push_error": "Program \"git.exe\" ended with non-zero exit code: 128 (0x00000080).",
+  "verified_at_utc": "2026-11-28T20:41:54.2550482Z",
+  "run_id": "RUN-0012",
+  "affected_parent_positions": [
+    1537,
+    1792
+  ],
+  "original_commit_preserved": true,
+  "source_work_resumed_after_verification": true,
+  "science_credit": 0,
+  "new_or_changed_blobs": 83,
+  "sum_of_uncompressed_blob_bytes": 321255012,
+  "scope": "The byte count is the full size of changed destination blobs. The interrupted SSH transfer byte count was not recorded.",
+  "recovery": "Retried the original commit on the existing SSH route with keepalive. Fetched by HTTPS into a separate native Git object store and matched the commit and tree.",
+  "subsequent_source_batch_size": 128
+}
