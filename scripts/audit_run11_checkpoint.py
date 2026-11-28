@@ -4,6 +4,7 @@ from collections import OrderedDict
 from collections.abc import MutableMapping
 from datetime import datetime
 from functools import lru_cache
+from hashlib import sha256
 import json
 from pathlib import Path
 
@@ -12,6 +13,7 @@ from checkpoint_cp10 import require
 from history_run10 import blobs
 from escalate_unknown_run7 import parts_for
 from search_run11_bibliography import ROOT, STATE, TEMP, digest, read
+from schema_run11_parts import key as part_key, read_ledger
 
 CANDIDATE=TEMP/"snapshots/checkpoints/CP-0013.json"
 
@@ -86,6 +88,28 @@ class LocationMap(MutableMapping):
 
 
 class FullAudit(audit_run.Audit):
+    schema_ledger=None
+
+    def validate_records(self,kind,records,name):
+        if self.schema_ledger is None:
+            return super().validate_records(kind,records,name)
+        validator=self.validator(kind)
+        require(validator is not None,"Missing schema "+kind)
+        for path in records.paths:
+            raw=path.read_bytes()
+            checksum=sha256(raw).hexdigest()
+            verified=self.schema_ledger["parts"].get(part_key(kind,checksum))
+            if verified:
+                count=sum(bool(line.strip()) for line in raw.splitlines())
+                require(verified["bytes"]==len(raw) and verified["records"]==count,"Invalid schema validation ledger")
+                self.counts["schema_records"]+=count
+                self.counts["schema_records_prevalidated_from_identical_git_bytes"]+=count
+            else:
+                for n,line in enumerate(raw.splitlines(),1):
+                    if line.strip():
+                        row=json.loads(line)
+                        self.validate(kind,row,row.get(audit_run.PRIMARY.get(kind,""),f"{path.name}:{n}"))
+
     def logical_records(self,name,parts):
         return LogicalRows(self.temp,name,parts)
 
@@ -103,13 +127,17 @@ class FullAudit(audit_run.Audit):
             if isinstance(rows,LogicalRows):rows.close()
 
 
-def run(out):
+def run(out,ledger=None):
     cp=read(CANDIDATE);run=read(STATE);baseline=run["checkpoint_commit"]
     bound=digest(CANDIDATE)
     with blobs() as get:
         m=json.loads(get(baseline,"temp/partitions/manifest.json"))
         prior=[json.loads(line) for part in parts_for("assessments",m) for line in get(baseline,"temp/"+part["path"]).splitlines() if line]
     engine=FullAudit(ROOT,out,datetime.fromisoformat(cp["created_at_utc"]))
+    if ledger is not None:
+        require(ledger.is_file(),"Missing independent schema validation ledger")
+        engine.schema_ledger=read_ledger(ledger,(TEMP/"schema.json").read_bytes())
+        engine.stats["schema_validation_ledger_sha256"]=digest(ledger)
     engine._manual_assessment_baselines=[(baseline+":temp/assessments.jsonl",prior)]
     engine.stats["candidate_sha256"]=bound
     try:engine.run()
@@ -125,5 +153,6 @@ def run(out):
 if __name__=="__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output",type=Path,required=True)
+    parser.add_argument("--schema-ledger",type=Path)
     args=parser.parse_args()
-    run(args.output)
+    run(args.output,args.schema_ledger)

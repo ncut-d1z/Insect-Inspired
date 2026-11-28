@@ -211,6 +211,11 @@ class Audit:
             self.note('schema.' + kind, e.message, entity,
                       '/'.join(map(str, e.absolute_path)))
 
+    def validate_records(self, kind, records, name):
+        for i, record in enumerate(records):
+            label = record.get(PRIMARY.get(kind, ''), f'{name}:{i+1}')
+            self.validate(kind, record, label)
+
     def index(self, kind, records, field=None, permit_events=False):
         field = field or PRIMARY[kind]
         index = self.index_storage(records)
@@ -306,9 +311,7 @@ class Audit:
             self.stats[name] = len(records)
             kind = self.entity_files.get(name) or self.extra_schemas.get(name)
             if kind:
-                for i, r in enumerate(records):
-                    label = r.get(PRIMARY.get(kind, ''), f'{name}:{i+1}')
-                    self.validate(kind, r, label)
+                self.validate_records(kind, records, name)
             elif records:
                 self.note('unregistered_auxiliary_schema',
                           'Logical dataset read; no registered entity schema. Generic FK/source checks still apply.',
