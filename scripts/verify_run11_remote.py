@@ -9,7 +9,7 @@ from checkpoint_cp10 import require
 from escalate_unknown_run7 import git
 from history_run10 import blobs
 from partitioned_checkpoint import checkpoint_files, load_checkpoint
-from partitioned_research_json import bound_path, encode, metadata, put, reconstruct, sha, view_files
+from partitioned_research_json import bound_path, encode, metadata, put, reconstruction_info, sha, view_files
 from search_run11_bibliography import stamp
 
 CHECKPOINT = "temp/snapshots/checkpoints/CP-0013.json"
@@ -76,7 +76,7 @@ def readback(repo, ref, scratch, output, deterministic=None):
         logical = {}
         for view in VIEWS:
             index, entry = copy_view(view)
-            logical[view] = dict(logical_sha256=reconstruct(entry), physical_files=len(view_files(entry)),
+            logical[view] = dict(**reconstruction_info(entry), physical_files=len(view_files(entry)),
                                  collection_counts={k:c["records"] for k,c in index["collections"].items()})
         cp_path = copy(CHECKPOINT)
         immutable = bound_path(cp_path.parent, public["task_collections"])

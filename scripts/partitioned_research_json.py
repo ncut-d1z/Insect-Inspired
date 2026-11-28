@@ -153,15 +153,15 @@ def view_files(entry):
     return [*active,*(bound_path(folder,p["path"]) for c in idx["collections"].values() for p in c["parts"])]
 
 
-def reconstruct(entry, output=None):
-    """Check every part and optionally create the original single JSON in canonical order."""
+def reconstruction_info(entry, output=None):
+    """Verify the complete logical byte stream and optionally write it to a new file."""
     index, folder = metadata(entry)
     if folder is None:
         data = encode(index) + b"\n"
         if output is not None:
             with output.open("xb") as dest:
                 dest.write(data)
-        return sha(data)
+        return {"logical_sha256":sha(data),"logical_bytes":len(data)}
     view_files(entry)
     def chunks():
         yield b"{"
@@ -180,9 +180,11 @@ def reconstruct(entry, output=None):
                 yield b"]"
         yield b"}\n"
     digest = hashlib.sha256()
+    length = 0
     dest = output.open("xb") if output is not None else None
     try:
         for chunk in chunks():
+            length += len(chunk)
             digest.update(chunk)
             if dest is not None:
                 dest.write(chunk)
@@ -196,7 +198,11 @@ def reconstruct(entry, output=None):
     finally:
         if dest is not None:
             dest.close()
-    return digest.hexdigest()
+    return {"logical_sha256":digest.hexdigest(),"logical_bytes":length}
+
+
+def reconstruct(entry, output=None):
+    return reconstruction_info(entry, output)["logical_sha256"]
 
 
 if __name__ == "__main__":

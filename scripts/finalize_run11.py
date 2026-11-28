@@ -93,6 +93,10 @@ def narrative(cp, qa, source_control, accepted):
     version_tasks={tid for b in outcomes for tid in b["datasets"]["tasks"]["appended_ids"] if tid.startswith("T-R11-CITED-")}
     bib=qa["cp13-bibtex-parse.json"];ui=qa["cp13-ui-chrome.json"];edge=qa["cp13-ui-edge.json"]
     assets=qa["cp13-determinism.json"]["artifacts"]
+    entity=read(PRE)["reconstructed_json"]["temp/exports/research_entities.json"]
+    index=read(TEMP/"exports/research_entities/index.json")
+    parts=[p for group in index["collections"].values() for p in group["parts"]]
+    entities=entity["collection_counts"]
     status="已通过数据验收" if accepted else "已完成数据与导出检查，来源复核仍有待确认项"
     child=frontier["worklist"][0]["work_key"] if frontier["worklist"] else "无"
     return f"""# CP-0013 阶段报告
@@ -108,6 +112,10 @@ def narrative(cp, qa, source_control, accepted):
 
 [参考文献来源对账](RUN-0011-CP12-parent-reconciliation-reconciled.json) · [下一层队列](RUN-0011-frontier-after-CP12.json) · [施引版本逐条复核](RUN-0011-cited-versions.json) · [摘要与署名记录](RUN-0011-abstract-affiliation-review.json) · [另四篇运动视觉论文](RUN-0011-motion-abstracts.json)
 
+第 56 条版本工单的参考文献列出 Clements 等人的 neuPrint 预印本，公开版本记录可定位到 v1。索引连接的期刊文献首作者是 Plaza，题名也不同。两条记录的版本关系继续待核实。[书目及版本证据](RUN-0011-cited-versions.json)
+
+Weir 等人的摘要报告，果蝇扇形体内一组神经元在静止时对视觉运动缺乏响应，在系留飞行时基线活动升高，视野中从前向后的运动还会改变其响应。该记录支持行为状态影响这组细胞的视觉运动响应，速度标定和六自由度恢复能力仍待核实。[摘要和适用边界](RUN-0011-motion-abstracts.json)
+
 书目消歧时，Yough 2022 的 PMID 与 1999 年论文 DOI 在索引中串接。Chao 与 Hempstead 1995 的文献也被分配了同一期相邻页 Jeannerod 等人的 DOI。已保存原始冲突、独立登记记录及修订前后的发现路径。[Yough 校正与版本记录](RUN-0011-cited-versions.json) · [Chao 与 Jeannerod 核对](RUN-0011-Chao1995-identifier-review.json)
 
 ## 数据维护、发布与缺口
@@ -119,6 +127,8 @@ def narrative(cp, qa, source_control, accepted):
 规范库累计有 {counts['canonical_works']:,} 篇文献、{counts['versions']:,} 个版本、{counts['citation_edges']:,} 条引文边、{counts['unresolved_occurrences']:,} 个未解析位置和 {counts['unresolved_tasks']:,} 个开放工单。活跃主题文献并集 {counts['topic_work_union']:,} 篇，U00 有 {counts['u00_works']:,} 篇。后续沿已存游标从 {child} 继续，并优先复核缺少来源的列表、歧义版本和冲突机构。
 
 独立 Biber 读回 {bib['roundtripped_distinct_keys']:,} 个书目键，原始导出题名亦已逐项核对。主题页 ref.html 为 {assets['ref.html']['bytes']:,} 字节，U00 独立入口 misc.html 为 {assets['misc.html']['bytes']:,} 字节。离线首屏可操作中位数在 Chrome 为主题 {ui['median_seconds']['topics']:.3f} 秒、U00 {ui['median_seconds']['misc']:.3f} 秒，在 Edge 为主题 {edge['median_seconds']['topics']:.3f} 秒、U00 {edge['median_seconds']['misc']:.3f} 秒。
+
+Q2 独立目录含 {len(parts):,} 个数据分片，最大一片 {max(p['bytes'] for p in parts):,} 字节。GitHub 回读重建的完整 JSON 为 {entity['logical_bytes']:,} 字节，含 {entities['people']:,} 条人员记录、{entities['organizations']:,} 个机构、{entities['projects']:,} 个项目、{entities['work_refs']:,} 个书目指针和 {entities['relations']:,} 条关系。各组文件可单独读取。[Q2 文件清单与校验和](../exports/research_entities/index.json)
 
 [Q2 人员、机构、项目及关系索引](../exports/research_entities/index.json) · [Q3 引文图索引](../exports/citation_graph/index.json) · [数据审计](../validation/cp13-data-audit.json) · [Git 历史重放](../validation/cp13-history.json) · [双生成导出哈希](../validation/cp13-determinism.json) · [独立远程导出核验](../validation/cp13-export-readback.json)
 """
