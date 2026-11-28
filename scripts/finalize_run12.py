@@ -23,6 +23,9 @@ def report(study,counts,coverage,timing,proof):
     start=datetime.fromisoformat(read(STATE)["started_at_utc"])
     measured=(datetime.fromisoformat(study["observed_at_utc"])-start).total_seconds()
     historical=read(TEMP/"reports/RUN-0012-throughput-baseline.json")
+    cached = v.get("cached_versions", {})
+    reviewed_crossdate = sum(v["versions"].values()) + cached.get("reviewed_items", 0)
+    resolved_crossdate = v["versions"]["original_version_supported"] + cached.get("original_version_supported", 0)
     return f"""# CP-0014 研究进度
 
 本检查点继承最近有效的 CP-0012，并从 CP-0013 已独立回读的数据继续。CP-0013 的原始状态及回执保存在历史中。P3–P6 均在继续。
@@ -30,11 +33,13 @@ def report(study,counts,coverage,timing,proof):
 | 阶段 | 本轮实质成果 | 剩余缺口 |
 | --- | --- | --- |
 | P3 向后检索 | 按序登记 {s['canonical_parents']:,} 篇母文献，其中 {s['with_entries']:,} 篇取得条目。{s['canonical_positions']:,} 个来源位置中，{s['resolved_positions']:,} 个已绑定目标。新增 {s['new_backward_works']:,} 篇规范文献和 {s['new_backward_edges']:,} 条去重引用边。 | {s['without_entries']:,} 篇目前没有可归属条目，另有 {s['unresolved_positions']:,} 个位置身份待查。原队列尚余 {s['remaining_original_parents']:,} 篇。 |
-| P4 施引与版本 | 两组施引索引共返回 154 项。已定位 5 对引文，其中 4 对来自出版商登记书目，1 对来自含书目原文的索引。新增 {s['new_forward_works']} 篇规范文献和 {s['new_forward_edges']} 条边。20 项跨日期工单逐条复核，{v['versions']['original_version_supported']} 项已定位版次。 | 最早 4 项回查登记 XML 后仍未定位原始修订。继承的 32 项与 627 项中共余 {32+627-v['versions']['original_version_supported']} 项。P3 又产生 {s['new_crossdate_tasks']:,} 项。其余施引命中、来源覆盖和引用作用继续核验。 |
+| P4 施引与版本 | 两组施引索引共返回 154 项。已定位 5 对引文，其中 4 对来自出版商登记书目，1 对来自含书目原文的索引。新增 {s['new_forward_works']} 篇规范文献和 {s['new_forward_edges']} 条边。{reviewed_crossdate} 项跨日期工单逐条复核，{resolved_crossdate} 项已定位版次。 | 最早 4 项回查登记 XML 后仍未定位原始修订。继承的 32 项与 627 项中共余 {32+627-resolved_crossdate} 项。P3 又产生 {s['new_crossdate_tasks']:,} 项。其余施引命中、来源覆盖和引用作用继续核验。 |
 | P5 研究主体 | 核对 {v['abstracts']['byline_positions']} 个署名位置，其中 {v['abstracts']['publication_affiliations']} 条发表时机构关系有来源支持。两家同名 York University 经国家和城市区分。另依据出版社 RIS 的唯一署名将 H. Schöne 的姓氏恢复为原拼写，保留原记录及文献键。 | 两条历史署名的机构身份待核实。出版登记中的资助方和编号见下文。 |
 | P6 主题证据 | 新增 {v['abstracts']['abstracts']+v['insect_abstracts']['reviewed_abstracts']} 份与来源指纹绑定的中文摘要，其中 {v['insect_abstracts']['reviewed_abstracts']} 份为本轮专项核查的昆虫里程计或学习飞行文献。人类虚拟走廊距离判断、猕猴航向线索、鸟类飞行流场和计算模型的适用条件分别登记。 | 新增达到主题验收门槛的判断为 0。累计 {counts['assessments']} 项活动评估，其中 {counts['eligible_claims']} 项已达标。 |
 
 CP12 后续的 {v['cp12_xml']['tickets']} 条疑义另按施引论文合并复核。{v['cp12_xml']['distinct_parent_lists']} 份登记书目中复用了 {v['cp12_xml']['reused_parent_lists']} 份现有回执，{v['cp12_xml']['positions_matched']} 条定位到同一条目，{v['cp12_xml']['position_unavailable']} 条仍未定位。新确定原始版次 {v['cp12_xml']['newly_resolved']} 条。[逐项复核依据](RUN-0012-CP12-deposit-reviews.json)
+
+另用已有回执核对了 {cached.get("reviewed_items",0)} 条版本疑义。Pires 2022 首发书目第 27 条保留了被引预印本 v1 的原题，与 v2 的改题可区分。另有 {cached.get("later_citing_revision_only",0)} 条来自施引预印本的后续修订，首发书目中的版次仍待核实。[逐项书目位置与版本历史](RUN-0012-cached-version-reviews.json)
 
 本轮另核对了 {v.get('publication_funding',{}).get('works_checked',0)} 篇的出版登记资助字段。其中 {v.get('publication_funding',{}).get('works_with_funder_metadata',0)} 篇列有资助方，共 {v.get('publication_funding',{}).get('distinct_funder_award_pairs',0)} 组不同的资助方与编号。项目负责人和正式成果归属继续待核实。
 

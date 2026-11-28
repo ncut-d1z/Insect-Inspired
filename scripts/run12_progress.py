@@ -37,6 +37,7 @@ def account():
     version_ids=set()
     unresolved=0
     funding={}
+    cached_versions={}
     cp12_xml={}
     insects={}
     inputs={}
@@ -74,6 +75,7 @@ def account():
         for r in d["coverage"]:
             if sum(r["positions"].values())!=bound[r["work_id"]]:raise ValueError("Returned and registered position totals differ "+r["work_id"])
             materialized.update(r["positions"]);unresolved+=sum(r["unresolved"].values())
+        if "cached_version_review" in d:cached_versions=d["cached_version_review"]
         if "funding_review" in d:funding=d["funding_review"]
         if "cp12_xml_review" in d:cp12_xml=d["cp12_xml_review"]
         if "insect_abstract_review" in d:insects=d["insect_abstract_review"]
@@ -99,7 +101,7 @@ def account():
         next_frontier_count=len(frontier),original_bibliographies_verified_complete=0,source_frontier_sha256=run["source_frontier_sha256"])
     resource=dict(plan_identifier_cache_memberships=sum(p["cached_or_canonical_identifier_count"] for p in plans),
                   identifier_request_groups=sum(len(p["groups"]) for p in plans),identifier_candidates=sum(sum(p["ids_to_lookup"].values()) for p in plans))
-    return run,stats,absent,frontier,new,inputs,dict(versions=reviews["counts"],oldest=original_review["counts"],abstracts=abstracts["counts"],forward=forward["counts"],publication_funding=funding,cp12_xml=cp12_xml,insect_abstracts=insects),measurements,resource
+    return run,stats,absent,frontier,new,inputs,dict(versions=reviews["counts"],oldest=original_review["counts"],abstracts=abstracts["counts"],forward=forward["counts"],publication_funding=funding,cp12_xml=cp12_xml,insect_abstracts=insects,cached_versions=cached_versions),measurements,resource
 
 
 def times():
@@ -138,7 +140,7 @@ def main(freeze):
     run,s,absent,frontier,new,inputs,science,measurements,resources=account()
     timing=times()
     if timing["overlapping_source_windows"] or timing["crossref_short_intervals"]:raise ValueError("Source timing requires reconciliation")
-    reviewed=read(TRANSACTION)["added_counts"]["manual-reviews"]+science["cp12_xml"].get("reviewed_items",0)+science["insect_abstracts"].get("reviewed_abstracts",0)
+    reviewed=read(TRANSACTION)["added_counts"]["manual-reviews"]+science["cp12_xml"].get("reviewed_items",0)+science["insect_abstracts"].get("reviewed_abstracts",0)+science["cached_versions"].get("reviewed_items",0)
     when=stamp()
     report=dict(run_id=RUN,scope_id=SCOPE,checkpoint_target=CP,observed_at_utc=when,checkpoint_validated=False,canonical_head=git("rev-parse","HEAD"),
             study=s,scientific_reviews=science,source_timing={k:v for k,v in timing.items() if k!="publish_timings"},measurements=measurements,

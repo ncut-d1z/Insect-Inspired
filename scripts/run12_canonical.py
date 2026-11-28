@@ -151,11 +151,14 @@ def apply(start,end):
     insects_pending=insect_report.is_file() and not any("insect_abstract_review" in read(part) for part in prior)
     if insects_pending:
         paths.update(OUT.glob("Q-RUN12-P6-INSECT-*.json"))
+    from run12_cached_revisions import REPORT as extra_report, register as register_extra_versions
+    extra_pending = extra_report.is_file() and not any("cached_version_review" in read(p) for p in prior)
     ledger=CurrentCanonical(data,inputs,paths)
     outcomes=ledger.register(data)
     funding=register_funding(ledger) if funding_pending else None
     legacy=register_legacy(ledger) if legacy_pending else None
     insects=register_insects(ledger) if insects_pending else None
+    extra_versions = register_extra_versions(ledger) if extra_pending else None
     ledger.account(paths)
     counts={k:len(v) for k,v in ledger.adds.items() if v}
     report=dict(run_id=RUN,scope_id=SCOPE,checkpoint_id=CP,starting_index=start,next_index=end,created_at_utc=ledger.now,
@@ -164,6 +167,8 @@ def apply(start,end):
     if funding is not None:report["funding_review"]=funding
     if legacy is not None:report["cp12_xml_review"]=legacy
     if insects is not None:report["insect_abstract_review"]=insects
+    if extra_versions is not None:
+        report["cached_version_review"] = extra_versions
     print("Canonical batch",label(start,end),counts,flush=True)
     apply_batch(ledger.changes,{k:list(v.values()) for k,v in ledger.adds.items() if v},report,path.relative_to(ROOT).as_posix())
     print("Committed-file transaction seconds",round(monotonic()-t,2),flush=True)
