@@ -77,7 +77,7 @@ class Ledger(Batch):
                       "deposit_position":item["deposit_position"],"review_disposition":item["status"]}
             self.manual(rid,wid,VREPORT,report["reviewed_at_utc"],"original_cited_version_bibliography",note)
 
-    def abstracts(self,report):
+    def abstracts(self,report,artifact=AREPORT):
         q=read(ROOT/report["source_receipt"]);assert digest(ROOT/report["source_receipt"])==report["source_receipt_sha256"]
         orgs={r["org_id"]:r for r in iter_logical("organizations.jsonl")}
         people_wanted={a["person_id"] for row in report["items"] for a in self.works[row["work_id"]]["authors"]}
@@ -135,7 +135,7 @@ class Ledger(Batch):
                                 state,sorted(qids))
                 event["supporting_record_ids"].append(rid);w["dimension_status"][dim]=state
             self.modify("works",old,w);self.works[wid]=w
-            self.manual(rid,wid,AREPORT,report["reviewed_at_utc"],"abstract_and_publication_byline",row["boundary"])
+            self.manual(rid,wid,artifact,report["reviewed_at_utc"],"abstract_and_publication_byline",row["boundary"])
 
     def correct_yough(self,vreport):
         affected=[r for r in vreport["items"] if r["status"]=="indexed_identity_conflict"];assert len(affected)==3
