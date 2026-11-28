@@ -68,7 +68,7 @@ class Batch:
         self.source_credit=defaultdict(list)
         self.metas=defaultdict(list)
         for r,q in metadata():
-            for k in {r.get("doi"),r.get("epmc"),r.get("openalex")} - {"",None}:
+            for k in {r.get("doi"),r.get("epmc"),r.get("openalex"),r.get("requested_openalex")} - {"",None}:
                 self.metas[k].append((r,q))
         self.resolution=Counter()
         self.new_frontier=[]
@@ -376,6 +376,28 @@ class Batch:
                  target_id=primary,historical_key=None,reason="将正式版的带后缀 DOI 映射到已有正式 Version。",source=src,
                  verification_status="source_supported",date=self.now[:10]))
 
+    def corrected_doi(self):
+        report=read(TEMP/"reports/RUN-0010-supplemental-reference-coverage.json")["corrected_parent_doi"]
+        wid=report["work_id"];old=self.works[wid];d=report["canonical"]
+        if old.get("doi")==d:return
+        require(old.get("doi")==report["prior"] and not self.identities.get(d),"Canonical DOI requires disambiguation")
+        cr,oa=(read(OUT/(i+".json")) for i in report["source_queries"])
+        record=cr["records"][0];meta=oa["source_bibliography"]
+        require(norm(record["title"][0])==norm(old["canonical_title"]) and doi(meta["doi"])==d and
+                meta["ids"]["pmid"].rsplit("/",1)[-1]==old["identifiers"]["pmid"] and record["published"]["date-parts"][0][0]==old["year"],
+                "Correction requires agreement on title, PMID and year")
+        src=source(cr,d,"Crossref title and identifiers","与 OpenAlex 的既有 PMID 交叉辨认。")
+        w=deepcopy(old);w.update(doi=d,url="https://doi.org/"+d)
+        w["identifiers"].update(doi=d,doi_as_indexed_at_cp11=report["prior"]);w["discovery_sources"].append(src)
+        self.modify("works",old,w);self.works[wid]=w;self.identities[d].add(wid)
+        versions=[v for v in self.versions if v["work_id"]==wid]
+        require(len(versions)==1,"Ambiguous version for DOI correction")
+        v=deepcopy(versions[0]);v["identifiers"].update(doi=d,doi_as_indexed_at_cp11=report["prior"]);v["url"]=w["url"]
+        self.modify("versions",versions[0],v)
+        self.add("aliases",dict(alias_id="AL-R10-"+token(wid,d),entity_type="work",raw_identifier=record["DOI"],normalized_identifier=d,
+                 target_id=wid,historical_key=None,reason="题名、年份、PMID 支持修正双斜杠 DOI；保留旧标识。",source=src,
+                 verification_status="source_supported",date=self.now[:10]))
+
     def queries(self,paths):
         apis={"crossref":"Crossref REST v1","europepmc":"Europe PMC REST","publisher":"bioRxiv publisher metadata","openalex":"OpenAlex REST"}
         for path in sorted(paths):
@@ -483,6 +505,7 @@ def main():
         paths={*OUT.glob("Q-RUN10-V*.json"),*OUT.glob("Q-RUN10-P56-*.json")}
     else:
         b.input_paths.add(Path(args.frontier))
+        b.corrected_doi()
         outcomes=b.backward(queue)
         # All currently unregistered request receipts belong to this resumed RUN.
         paths=set(OUT.glob("Q-RUN10-*.json"))
