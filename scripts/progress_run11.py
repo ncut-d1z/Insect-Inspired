@@ -7,6 +7,8 @@ import subprocess
 from search_run11_bibliography import BATCHES, OUT, ROOT, STATE, TEMP, read, stamp
 from run11_reference_inventory import SUPPLEMENT
 from index_run11_positions import INDEX
+from escalate_unknown_run7 import parts_for
+from history_run10 import blobs
 
 
 def git(*args):
@@ -37,17 +39,23 @@ def update():
     canon=[read(p) for p in bound(TEMP/"reports/RUN-0011-canonical",tracked)]
     qfiles=[p for p in bound(OUT,tracked) if p.name.startswith("Q-RUN11-")]
     raw=sum(read(p)["external_request_count"] for p in qfiles)
-    mr=TEMP/"reports/RUN-0011-review-integration.json"
-    manual=read(mr)["datasets"]["manual-reviews"]["appended_ids"] if mr.relative_to(ROOT).as_posix() in tracked else []
+    with blobs() as get:
+        manifest=json.loads(get(head,"temp/partitions/manifest.json"))
+        manual=[review["review_id"] for p in parts_for("manual-reviews",manifest)
+                for review in map(json.loads,get(head,"temp/"+p["path"]).splitlines()) if review["run_id"]=="RUN-0011"]
+    if len(set(manual))!=len(manual):
+        raise ValueError("Duplicate manual review ID")
+    correction=TEMP/"reports/RUN-0011-Chao1995-integration.json"
+    added=read(correction)["added_counts"] if correction.relative_to(ROOT).as_posix() in tracked else {}
     can_end=max((r["next_index"] for r in canon),default=0)
     stats=dict(bound_commit=head,recorded_at_utc=stamp(),parent_queue_total=len(front),source_parents_visited=end,
                next_parent_key=front[end]["work_key"] if end<len(front) else None,parents_with_source_supplements=len(bound(SUPPLEMENT,tracked)),
                parents_with_final_position_index=sum(r["parent_count"] for r in indexes),
                indexed_positions=sum(r["counts"]["positions"] for r in indexes),positions_with_candidate_id=sum(r["counts"].get("with_candidate_identifier",0) for r in indexes),
                canonical_parents_processed=can_end,next_canonical_parent_key=front[can_end]["work_key"] if can_end<len(front) else None,
-               new_canonical_works=sum(r["added_counts"].get("works",0) for r in canon),
+               new_canonical_works=sum(r["added_counts"].get("works",0) for r in canon)+added.get("works",0),
                canonical_source_positions=sum(r["added_counts"].get("reference-occurrences",0) for r in canon),
-               new_backward_edges=sum(r["added_counts"].get("citation-edges",0) for r in canon),
+               new_backward_edges=sum(r["added_counts"].get("citation-edges",0) for r in canon)+added.get("citation-edges",0),
                version_tasks_reviewed=65 if manual else 0,printed_original_versions_identified=33 if manual else 0,
                reviewed_inherited_tasks_still_ambiguous=32 if manual else 0,new_scientific_admissions=0,
                published_requests=raw,manual_review_items=len(manual))
