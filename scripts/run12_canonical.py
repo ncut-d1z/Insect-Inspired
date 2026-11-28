@@ -133,7 +133,8 @@ def apply(start,end):
     prior=sorted(TRANSACTIONS.glob("*.json"))
     if (read(prior[-1])["next_index"] if prior else 0)!=start:raise ValueError("Canonical cursor gap")
     owners={o["task_id"] for o,*_ in data}
-    for p in OUT.glob("Q-RUN12-ID-*.json"):
+    related=(*OUT.glob("Q-RUN12-ID-*.json"),*OUT.glob("Q-RUN12-AVAIL-CAL-*.json"))
+    for p in related:
         q=read(p)
         if any(o["task_id"] in owners for o in q["owners"]):paths.add(p)
     ledger=CurrentCanonical(data,inputs,paths)
