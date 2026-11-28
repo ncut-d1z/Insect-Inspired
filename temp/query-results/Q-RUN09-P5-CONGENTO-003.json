@@ -1,0 +1,120 @@
+{
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0011",
+  "entity_id": "W-S06",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "external_request_count": 1,
+  "cache_hit": false,
+  "visible_total": null,
+  "license_note": "Only source identifiers and independently written observations are retained.",
+  "query_id": "Q-RUN09-P5-CONGENTO-003",
+  "task_id": "T-RUN09-S06-CONGENTO",
+  "source_id": "official_projects",
+  "endpoint_or_url": "https://transparencia.gov.pt/",
+  "raw_parameters": {
+    "query": "\"LISBOA-01-0145-FEDER-022170\" CONGENTO site:pt",
+    "transport": "web search"
+  },
+  "query_kind": "official_grant_identity_discovery",
+  "queried_at_utc": "2026-11-28T03:35:35Z",
+  "completed_at_utc": "2026-11-28T03:35:38Z",
+  "status": "partial",
+  "page_complete": false,
+  "returned_count": 18,
+  "records": [
+    {
+      "title": "Projeto Portugal 2020",
+      "url": "https://transparencia.gov.pt/pt/fundos-europeus/pt2020/beneficiarios-projetos/projeto/LISBOA-01-0145-FEDER-022170/"
+    },
+    {
+      "title": "Avaliação Intercalar do Programa Operacional Regional de Lisboa – Relatório Final",
+      "url": "https://www.planapp.gov.pt/wp-content/uploads/2023/07/Relatorio-Final-2.pdf"
+    },
+    {
+      "title": "EY Parthenon",
+      "url": "https://planapp.gov.pt/wp-content/uploads/2023/07/Relatorio-Final-2.pdf"
+    },
+    {
+      "title": "# PROJETOS APROVADOS NO PROGRAMA OPERACIONAL REGIONAL DE LISBOA 2014/2020",
+      "url": "https://lisboa.portugal2020.pt/np4/%7B%24clientServletPath%7D/?fileName=Lista_Projeto_Lisboa2020_site29.pdf&newsId=47"
+    },
+    {
+      "title": "Avaliação Intercalar do",
+      "url": "https://www.adcoesao.pt/wp-content/uploads/Av-Intercalar-Lisboa2020_RF.pdf"
+    },
+    {
+      "title": "Operações aprovadas | Approved Operations (31.12.2017)",
+      "url": "https://poseur.portugal2020.pt/media/40689/lista_operacoes_aprovadas_31122017.pdf"
+    },
+    {
+      "title": "# PROJETOS APROVADOS NO PROGRAMA OPERACIONAL REGIONAL DE LISBOA 2014/2020",
+      "url": "https://lisboa.portugal2020.pt/np4/%7B%24clientServletPath%7D/?fileName=Lista_Projeto_Lisboa2020_site17.pdf&newsId=47"
+    },
+    {
+      "title": "Identification and Validation of Dormant Cancer Cell Enhancers for Targeted Gene Delivery - Universidade de Lisboa",
+      "url": "https://researchportal.ulisboa.pt/pt/studentTheses/identification-and-validation-of-dormant-cancer-cell-enhancers-fo/"
+    },
+    {
+      "title": "",
+      "url": "https://gimm.pt/pt-pt/infrastructure/aquatica/"
+    },
+    {
+      "title": "Neuro-mesenchymal units control ILC2 and obesity via a brain–adipose circuit",
+      "url": "https://repositorio.ulisboa.pt/entities/publication/76e46c06-4856-4460-8c41-eb0b65738233/full"
+    },
+    {
+      "title": "Erratum: Postingestive Modulation of Food Seeking Depends on Vagus-Mediated Dopamine Neuron Activity (Neuron (2020) 106(5) (778–788.e6), (S0896627320302166), (10.1016/j.neuron.2020.03.009))",
+      "url": "https://novaresearch.unl.pt/en/publications/erratum-postingestive-modulation-of-food-seeking-depends-on-vagus/"
+    },
+    {
+      "title": "Functional analysis of transcriptional enhancers associated with dormant cancer cells - University of Lisbon",
+      "url": "https://researchportal.ulisboa.pt/en/studentTheses/functional-analysis-of-transcriptional-enhancers-associated-with-/"
+    },
+    {
+      "title": "Ana Filipa Carvalho Marques Dias (B213-35E0-CF55) | CIÊNCIAVITAE",
+      "url": "https://www.cienciavitae.pt/portal/en/B213-35E0-CF55"
+    },
+    {
+      "title": "Yap induces osteoblast differentiation by modulating Bmp signalling during zebrafish caudal fin regeneration",
+      "url": "https://run.unl.pt/entities/publication/e0ece73a-3bd3-4b9b-9ab9-58195ad4e10c"
+    },
+    {
+      "title": "Ferritin heavy chain supports stability and function of the regulatory T cell lineage",
+      "url": "https://repositorio.ulisboa.pt/entities/publication/7494d80b-eaaf-43c5-95a2-206aff64bab5/full"
+    },
+    {
+      "title": "Water mobility across blood, cerebral spinal fluid and the brain: a window through arterial spin labeling and functional magnetic resonance imaging",
+      "url": "https://scholar.tecnico.ulisboa.pt/records/rgW-eb55Mdpk1Ko5GQguLOG95eZkWyj2Lp-r"
+    },
+    {
+      "title": "Transdifferentiation of plasmatocytes to crystal cells in the lymph gland of Drosophila melanogaster",
+      "url": "https://repositorio.ulisboa.pt/entities/publication/5f9940f0-a409-4232-91fb-2139882183b3/full"
+    },
+    {
+      "title": "dMyc-dependent upregulation of CD98 amino acid transporters is required for Drosophila brain tumor growth",
+      "url": "https://run.unl.pt/entities/publication/95224a73-4cf8-4e0b-b043-005244372b2d/full"
+    }
+  ],
+  "result_identifiers": [
+    "https://transparencia.gov.pt/pt/fundos-europeus/pt2020/beneficiarios-projetos/projeto/LISBOA-01-0145-FEDER-022170/",
+    "https://www.planapp.gov.pt/wp-content/uploads/2023/07/Relatorio-Final-2.pdf",
+    "https://planapp.gov.pt/wp-content/uploads/2023/07/Relatorio-Final-2.pdf",
+    "https://lisboa.portugal2020.pt/np4/%7B%24clientServletPath%7D/?fileName=Lista_Projeto_Lisboa2020_site29.pdf&newsId=47",
+    "https://www.adcoesao.pt/wp-content/uploads/Av-Intercalar-Lisboa2020_RF.pdf",
+    "https://poseur.portugal2020.pt/media/40689/lista_operacoes_aprovadas_31122017.pdf",
+    "https://lisboa.portugal2020.pt/np4/%7B%24clientServletPath%7D/?fileName=Lista_Projeto_Lisboa2020_site17.pdf&newsId=47",
+    "https://researchportal.ulisboa.pt/pt/studentTheses/identification-and-validation-of-dormant-cancer-cell-enhancers-fo/",
+    "https://gimm.pt/pt-pt/infrastructure/aquatica/",
+    "https://repositorio.ulisboa.pt/entities/publication/76e46c06-4856-4460-8c41-eb0b65738233/full",
+    "https://novaresearch.unl.pt/en/publications/erratum-postingestive-modulation-of-food-seeking-depends-on-vagus/",
+    "https://researchportal.ulisboa.pt/en/studentTheses/functional-analysis-of-transcriptional-enhancers-associated-with-/",
+    "https://www.cienciavitae.pt/portal/en/B213-35E0-CF55",
+    "https://run.unl.pt/entities/publication/e0ece73a-3bd3-4b9b-9ab9-58195ad4e10c",
+    "https://repositorio.ulisboa.pt/entities/publication/7494d80b-eaaf-43c5-95a2-206aff64bab5/full",
+    "https://scholar.tecnico.ulisboa.pt/records/rgW-eb55Mdpk1Ko5GQguLOG95eZkWyj2Lp-r",
+    "https://repositorio.ulisboa.pt/entities/publication/5f9940f0-a409-4232-91fb-2139882183b3/full",
+    "https://run.unl.pt/entities/publication/95224a73-4cf8-4e0b-b043-005244372b2d/full"
+  ],
+  "coverage_note": "Count is the number of displayed result cards. The search service exposed neither a total nor an exhaustive page cursor. Results are discovery leads; publications and official outputs require individual verification."
+}

@@ -19,7 +19,7 @@
   },
   "status": "in_progress",
   "branch": "codex/p3-p6-cp11",
-  "external_requests_used": 0,
+  "external_requests_used": 4,
   "manual_review_items_used": 0,
   "cache_reuse_events": 0,
   "paid_spend": 0,
@@ -44,6 +44,6 @@
     "checked_at_utc": "2026-11-28T03:30:04.437307Z"
   },
   "sync_policy": "按批用本机 Git 普通推送并核对远端提交。",
-  "next_batch": "按原始时钟升级到期工单；继续广度优先解析种子书目、核对正文引用和作者／项目，复核原始证据。",
+  "next_batch": "核对 S06 四条参考、正文作用、Congento 资助身份和图 5 的实验条件。",
   "end_checkpoint_id": null
 }

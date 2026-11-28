@@ -1,0 +1,30 @@
+{
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0011",
+  "entity_id": "W-S06",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "external_request_count": 1,
+  "cache_hit": false,
+  "visible_total": null,
+  "license_note": "Only source identifiers and independently written observations are retained.",
+  "query_id": "Q-RUN09-P5-CONGENTO-004",
+  "task_id": "T-RUN09-S06-CONGENTO",
+  "source_id": "official_projects",
+  "endpoint_or_url": "https://transparencia.gov.pt/pt/fundos-europeus/pt2020/beneficiarios-projetos/projeto/LISBOA-01-0145-FEDER-022170/",
+  "raw_parameters": {
+    "operation_code": "LISBOA-01-0145-FEDER-022170",
+    "transport": "web open"
+  },
+  "query_kind": "official_grant_record_lookup",
+  "queried_at_utc": "2026-11-28T03:35:46Z",
+  "completed_at_utc": "2026-11-28T03:35:49Z",
+  "status": "retryable_error",
+  "http_status": 500,
+  "error_code": "web_retrieval_failure",
+  "error_message": "The web retrieval service reported HTTP 500 for this open operation.",
+  "returned_count": 0,
+  "result_identifiers": [],
+  "page_complete": false,
+  "coverage_note": "No target document reached the reviewer through this open; the discovery result remains a separate observation."
+}

@@ -1,0 +1,28 @@
+{
+  "run_id": "RUN-0009",
+  "scope_id": "SCOPE-0001",
+  "checkpoint_id": "CP-0011",
+  "entity_id": "W-S06",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "external_request_count": 1,
+  "cache_hit": false,
+  "visible_total": null,
+  "license_note": "Only source identifiers and independently written observations are retained.",
+  "query_id": "Q-RUN09-P3-ELIFE-002",
+  "task_id": "T-RUN09-S06-R38-VERSION",
+  "source_id": "publisher",
+  "endpoint_or_url": "https://elifesciences.org/articles/102230",
+  "raw_parameters": {
+    "doi": "10.7554/eLife.102230"
+  },
+  "query_kind": "publisher_version_history",
+  "queried_at_utc": "2026-11-28T03:34:23Z",
+  "completed_at_utc": "2026-11-28T03:34:26Z",
+  "status": "restricted",
+  "page_complete": false,
+  "returned_count": 0,
+  "result_identifiers": [],
+  "error_code": "publisher_client_challenge",
+  "error_message": "The public publisher route returned a browser challenge; the article and version history were unavailable through this response.",
+  "coverage_note": "0 requested article records were exposed on this response. The HTTP status and the publication-version date were not reported."
+}

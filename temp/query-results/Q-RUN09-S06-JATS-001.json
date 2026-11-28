@@ -1,0 +1,49 @@
+{
+  "query_id": "Q-RUN09-S06-JATS-001",
+  "run_id": "RUN-0009",
+  "checkpoint_id": "CP-0011",
+  "scope_id": "SCOPE-0001",
+  "task_id": "T-References-S06",
+  "entity_id": "W-S06",
+  "source_id": "europepmc",
+  "endpoint_or_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12148931/fullTextXML",
+  "api_version": "REST fullTextXML",
+  "query_kind": "single_article_jats_references_context_methods_and_funding",
+  "raw_parameters": {
+    "pmcid": "PMC12148931",
+    "representation": "JATS XML"
+  },
+  "queried_at_utc": "2026-11-28T03:33:36.225520Z",
+  "external_request_count": 1,
+  "cache_hit": false,
+  "rerun_reason": "The restored ledger contains no successful request for this exact XML endpoint. The archived bibliography leaves specific deposit occurrences unresolved and contains no verified scopes for these citing passages.",
+  "cutoff_at_utc": "2026-11-26T05:24:08Z",
+  "http_status": 200,
+  "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12148931/fullTextXML",
+  "status": "success",
+  "sha256": "2b68f94cb6b394717d0e8e6b126bc275b467c4dc2e040601a33f42dc69fbd210",
+  "bytes": 339325,
+  "article_ids": {
+    "pmcid": "PMC12148931",
+    "pmcid-ver": "PMC12148931.1",
+    "pmcaid": "12148931",
+    "pmcaiid": "12148931",
+    "pmid": "40312577",
+    "doi": "10.1038/s41593-025-01948-9",
+    "publisher-id": "1948"
+  },
+  "title": "A competitive disinhibitory network for robust optic flow processing in Drosophila",
+  "license_links": [
+    "https://creativecommons.org/licenses/by-nc-nd/4.0/Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International "
+  ],
+  "reference_elements": 91,
+  "returned_count": 1,
+  "visible_total": null,
+  "page_complete": true,
+  "result_identifiers": [
+    "10.1038/s41593-025-01948-9"
+  ],
+  "coverage_note": "One identified publication XML. Completeness concerns this HTTP response only. Supplementary files and external citation indexes are separate.",
+  "license_note": "Only bibliographic facts, locators and independently written summaries are published. The article bytes are held outside Git.",
+  "completed_at_utc": "2026-11-28T03:33:51.164166Z"
+}
