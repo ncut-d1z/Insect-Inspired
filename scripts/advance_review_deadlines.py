@@ -1,10 +1,12 @@
 """Apply the README's 24-hour rule to the current run, preserving the exact task clocks."""
 import argparse
+from contextlib import contextmanager
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 import json
 from pathlib import Path
-import tempfile
+import shutil
+from uuid import uuid4
 
 from checkpoint_cp10 import latest_tasks, TERMINAL
 from escalate_unknown_run7 import (
@@ -12,6 +14,20 @@ from escalate_unknown_run7 import (
     publish, replace_status_tokens, require, row_id, sha, stage_dataset, utc, write_parts,
 )
 from storage import read_logical
+
+
+@contextmanager
+def transaction_directory(repo):
+    # A Windows private temp directory would transfer its owner-only ACL to the data.
+    # Inherit the project volume's ordinary permissions and keep staging outside Git.
+    parent = repo.parent.resolve()
+    stage = parent / ('insect-deadlines-' + uuid4().hex)
+    stage.mkdir(mode=0o755)
+    try:
+        yield stage
+    finally:
+        require(stage.resolve().parent == parent and not stage.is_symlink(), 'Unexpected staging path')
+        shutil.rmtree(stage)
 
 
 def main():
@@ -91,8 +107,7 @@ def main():
     new_manifest = deepcopy(manifest)
     prefix = f"temp/reports/{args.run}-deadlines-{now:%Y%m%dT%H%M%S%fZ}"
     # Stage on the same volume as the data for rollback-safe file replacement.
-    with tempfile.TemporaryDirectory(prefix="insect-deadlines-", dir=repo / ".git") as directory:
-        stage = Path(directory)
+    with transaction_directory(repo) as stage:
         for name in sorted(set(changes) | ({"tasks"} if events else set())):
             def revised_lines():
                 for ordinal, raw in enumerate(logical_lines(repo, name, manifest)):

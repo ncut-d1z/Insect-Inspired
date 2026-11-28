@@ -32,10 +32,16 @@
     "canonical_commit_sha": "5f2181b0e5a91bcafde2a3f19eb526668934a80e"
   },
   "review_deadline_recovery": {
-    "checked_at_utc": "2026-11-28T03:22:03.319274Z",
-    "unupgraded_overdue_tasks": 15502,
+    "original_clocks_preserved": true,
     "next_known_deadline_at_utc": "2026-11-28T06:43:19Z",
-    "recompute_at_each_canonical_write_and_checkpoint": true
+    "open_unknown_tasks": 65053,
+    "initial_unupgraded_overdue_tasks": 15502,
+    "due_open_unknown_tasks": 65023,
+    "field_status_changes": 15673,
+    "unupgraded_overdue_tasks": 0,
+    "maintenance_receipt": "temp/reports/RUN-0009-deadlines-20261128T032738482072Z.json",
+    "recompute_at_each_canonical_write_and_checkpoint": true,
+    "checked_at_utc": "2026-11-28T03:30:04.437307Z"
   },
   "sync_policy": "按批用本机 Git 普通推送并核对远端提交。",
   "next_batch": "按原始时钟升级到期工单；继续广度优先解析种子书目、核对正文引用和作者／项目，复核原始证据。",
