@@ -78,6 +78,7 @@ class Canonical(Batch):
     checkpoint=CP
     id_prefix="R11"
     credit_discovery=True
+    metadata_prefixes=("Q-RUN10-ID-","Q-RUN11-ID-")
 
     def __init__(self,data,inputs,qpaths):
         owners={o["work_id"] for o,*_ in data}
@@ -135,7 +136,7 @@ class Canonical(Batch):
                 for raw in refs:
                     d,e,t,y,a=fields(raw,q["source_id"])
                     if t and y:title_years.add((norm(t),y))
-        for prefix in ("Q-RUN10-ID-","Q-RUN11-ID-"):
+        for prefix in self.metadata_prefixes:
             for path in sorted(OUT.glob(prefix+"*.json")):
                 q=read(path)
                 if q["status"]!="success":continue
@@ -184,7 +185,7 @@ class Canonical(Batch):
                 sid=q["source_id"];qid=q["query_id"]
                 for pos,raw in zip(locs,refs,strict=True):
                     section,rel=evidence(q,parent,kind,pos,raw)
-                    rid="R-R11-"+token(wid,version["version_id"],kind,pos);assert rid not in seen;seen.add(rid)
+                    rid="R-"+self.id_prefix+"-"+token(wid,version["version_id"],kind,pos);assert rid not in seen;seen.add(rid)
                     target,choices,reason=self.resolve(raw,q,owner,rel)
                     if (kind,qid,pos) in cached_admissions:
                         assert cached_admissions[kind,qid,pos]==target
@@ -202,12 +203,12 @@ class Canonical(Batch):
                     positions[sid]+=1;status[reason]+=1
                     if not target:
                         unresolved[sid]+=1
-                        event=self.task("T-R11-IDENT-"+token(rid),wid,"reference_identity",reason,"needs_disambiguation",[qid],source_id=sid)
+                        event=self.task("T-"+self.id_prefix+"-IDENT-"+token(rid),wid,"reference_identity",reason,"needs_disambiguation",[qid],source_id=sid)
                         event["normalized_parameters"]={"occurrence_id":rid,"candidate_ids":choices}
                         continue
                     known[sid].add(target);cited=self.works[target]
                     if definitely_later(version.get("version_date"),work.get("year"),cited.get("publication_date"),cited.get("year")):
-                        tid="T-R11-CITED-"+token(wid,target)
+                        tid="T-"+self.id_prefix+"-CITED-"+token(wid,target)
                         event=self.task(tid,wid,"cited_version_review","登记目标晚于施引版，需以原始书目定位实际版次。","needs_disambiguation",[qid],source_id=sid)
                         event["supporting_record_ids"]=list(dict.fromkeys([*event["supporting_record_ids"],rid]))
                     pair=(work["work_key"],cited["work_key"]);edge=self.edges.get(pair)
@@ -218,7 +219,7 @@ class Canonical(Batch):
                         if not any(s["source_id"]==sid and s.get("identifier")==parent and any(qid in l.get("evidence_note","") for l in s.get("evidence_locator",[])) for s in edge["discovery_sources"]):
                             edge["discovery_sources"].append(rel)
                     else:
-                        self.edges[pair]=self.add("citation-edges",dict(edge_id="CE-R11-"+token(*pair),citing_key=pair[0],cited_key=pair[1],
+                        self.edges[pair]=self.add("citation-edges",dict(edge_id="CE-"+self.id_prefix+"-"+token(*pair),citing_key=pair[0],cited_key=pair[1],
                                  occurrence_ids=[rid],discovery_sources=[rel],verification_status="source_supported",citation_roles=["unknown"],context_locators=[],date=self.now[:10]))
                         edges_added+=1
             indexed={sid:dict(queries=ids,returned_positions=positions[sid],distinct_resolved_work_count=len(known[sid]),unresolved_positions=unresolved[sid])
@@ -250,7 +251,7 @@ class Canonical(Batch):
         self.queries(paths)
         for qid,wids in self.source_credit.items():
             if qid not in self.known_queries:continue
-            old=self.prior_queries[qid];q=deepcopy(old);assert q["checkpoint_id"]==CP
+            old=self.prior_queries[qid];q=deepcopy(old);assert q["checkpoint_id"]==self.checkpoint
             assert set(wids).isdisjoint(q["new_work_ids"])
             q["new_work_ids"].extend(wids);q["new_work_count"]=len(q["new_work_ids"])
             self.modify("queries",old,q)
