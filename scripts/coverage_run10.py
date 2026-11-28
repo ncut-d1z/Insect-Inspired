@@ -147,6 +147,13 @@ def collect(frozen, run_id=RUN):
             combined=Counter(coverage["abstract_review"]);combined.update(read(motion)["counts"])
             coverage["abstract_review"]=dict(combined)
     if use_run12:
+        scientific=source_report["scientific_reviews"]
+        extra=scientific["insect_abstracts"]
+        coverage["abstract_review"]={**coverage["abstract_review"],
+                "abstracts":coverage["abstract_review"]["abstracts"]+extra["reviewed_abstracts"],
+                "insect_odometry_abstracts":extra["reviewed_abstracts"]}
+        coverage["cp12_deposited_version_recheck"]=scientific["cp12_xml"]
+        coverage["publication_funding_review"]=scientific["publication_funding"]
         inherited={r["work_id"] for r in original[source_report["visited"]:]}
         require(inherited.isdisjoint(discovered) and {r["work_id"] for r in frontier}==inherited|set(discovered),"Saved frontier lost or duplicated a continuing Work")
         coverage["parent_reference_search"]={k:source_report[k] for k in ("visited","with_entries","without_entries","positions","original_bibliographies_verified_complete")}

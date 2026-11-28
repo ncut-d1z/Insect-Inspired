@@ -20,6 +20,9 @@ PRE=TEMP/"validation/cp14-export-readback.json"
 
 def report(study,counts,coverage,timing,proof):
     s=study["study"];v=study["scientific_reviews"];resources=study["identifier_lookup"]
+    start=datetime.fromisoformat(read(STATE)["started_at_utc"])
+    measured=(datetime.fromisoformat(study["observed_at_utc"])-start).total_seconds()
+    historical=read(TEMP/"reports/RUN-0012-throughput-baseline.json")
     return f"""# CP-0014 研究进度
 
 本检查点继承最近有效的 CP-0012，并从 CP-0013 已独立回读的数据继续。CP-0013 的原始状态及回执保存在历史中。P3–P6 均在继续。
@@ -28,8 +31,8 @@ def report(study,counts,coverage,timing,proof):
 | --- | --- | --- |
 | P3 向后检索 | 按序登记 {s['canonical_parents']:,} 篇母文献，其中 {s['with_entries']:,} 篇取得条目。{s['canonical_positions']:,} 个来源位置中，{s['resolved_positions']:,} 个已绑定目标。新增 {s['new_backward_works']:,} 篇规范文献和 {s['new_backward_edges']:,} 条去重引用边。 | {s['without_entries']:,} 篇目前没有可归属条目，另有 {s['unresolved_positions']:,} 个位置身份待查。原队列尚余 {s['remaining_original_parents']:,} 篇。 |
 | P4 施引与版本 | 两组施引索引共返回 154 项。已定位 5 对引文，其中 4 对来自出版商登记书目，1 对来自含书目原文的索引。新增 {s['new_forward_works']} 篇规范文献和 {s['new_forward_edges']} 条边。20 项跨日期工单逐条复核，{v['versions']['original_version_supported']} 项已定位版次。 | 最早 4 项回查登记 XML 后仍未定位原始修订。继承的 32 项与 627 项中共余 {32+627-v['versions']['original_version_supported']} 项。P3 又产生 {s['new_crossdate_tasks']:,} 项。其余施引命中、来源覆盖和引用作用继续核验。 |
-| P5 研究主体 | 核对 {v['abstracts']['byline_positions']} 个署名位置，其中 {v['abstracts']['publication_affiliations']} 条发表时机构关系有来源支持。两家同名 York University 经国家和城市区分。 | 两条历史署名的机构身份待核实。出版登记中的资助方和编号见下文。 |
-| P6 主题证据 | 新增 {v['abstracts']['abstracts']} 份与来源指纹绑定的中文摘要。人类虚拟走廊距离判断、猕猴航向线索、鸟类飞行流场和计算模型的适用条件分别登记。 | 新增达到主题验收门槛的判断为 0。累计 {counts['assessments']} 项活动评估，其中 {counts['eligible_claims']} 项已达标。 |
+| P5 研究主体 | 核对 {v['abstracts']['byline_positions']} 个署名位置，其中 {v['abstracts']['publication_affiliations']} 条发表时机构关系有来源支持。两家同名 York University 经国家和城市区分。另依据出版社 RIS 的唯一署名将 H. Schöne 的姓氏恢复为原拼写，保留原记录及文献键。 | 两条历史署名的机构身份待核实。出版登记中的资助方和编号见下文。 |
+| P6 主题证据 | 新增 {v['abstracts']['abstracts']+v['insect_abstracts']['reviewed_abstracts']} 份与来源指纹绑定的中文摘要，其中 {v['insect_abstracts']['reviewed_abstracts']} 份为本轮专项核查的昆虫里程计或学习飞行文献。人类虚拟走廊距离判断、猕猴航向线索、鸟类飞行流场和计算模型的适用条件分别登记。 | 新增达到主题验收门槛的判断为 0。累计 {counts['assessments']} 项活动评估，其中 {counts['eligible_claims']} 项已达标。 |
 
 CP12 后续的 {v['cp12_xml']['tickets']} 条疑义另按施引论文合并复核。{v['cp12_xml']['distinct_parent_lists']} 份登记书目中复用了 {v['cp12_xml']['reused_parent_lists']} 份现有回执，{v['cp12_xml']['positions_matched']} 条定位到同一条目，{v['cp12_xml']['position_unavailable']} 条仍未定位。新确定原始版次 {v['cp12_xml']['newly_resolved']} 条。[逐项复核依据](RUN-0012-CP12-deposit-reviews.json)
 
@@ -38,6 +41,8 @@ CP12 后续的 {v['cp12_xml']['tickets']} 条疑义另按施引论文合并复�
 ## 检索与同步效率
 
 上轮 2,620 篇母文献从开跑至最后规范更新用了 4 小时 56 分 06 秒。随后到封存另用 64 分 22 秒，其中一次完整数据审计约 31 分 56 秒。本轮通过批量查标识、跨来源并行和同来源互斥，保留来源顺序、条目位置与错误回执。
+
+从本轮启动至已同步规范数据冻结共 {measured/3600:.2f} 小时。按此口径，每小时处理 {s['canonical_parents']*3600/measured:,.0f} 篇母文献、登记 {s['canonical_positions']*3600/measured:,.0f} 个来源位置。上轮对应均值为 {historical['parents']*3600/historical['seconds_until_canonical_watermark']:,.0f} 篇与 {historical['positions']*3600/historical['seconds_until_canonical_watermark']:,.0f} 个位置。两批文献和每篇参考数不同，验收与推送耗时另记。
 
 本轮在 {resources['identifier_request_groups']} 个身份查询组中安排了 {resources['identifier_candidates']:,} 个标识候选。各批已有规范身份或元数据命中合计 {resources['plan_identifier_cache_memberships']:,} 个标识，该数按计划内去重。所有来源实际请求 {timing['requests']:,} 次，人工复核 {study['manual_review_items']} 项。各来源时间窗重叠 {len(timing['overlapping_source_windows'])} 次，Crossref 起始间隔少于一秒 {len(timing['crossref_short_intervals'])} 次。
 
@@ -49,7 +54,7 @@ CP12 后续的 {v['cp12_xml']['tickets']} 条疑义另按施引论文合并复�
 
 恢复时从 `{s['next_original_key']}` 接续。合并剩余母文献与本轮新发现后，向后队列共有 {s['next_frontier_count']:,} 个任务。来源缺口、精确版次与机构消歧另保存在各自工单。阶段门禁和证据要求沿用 README。
 
-[逐批来源与规范计数](RUN-0012-reference-accounting.json) · [递归游标](RUN-0012-next-frontier.json) · [版本复核](RUN-0012-version-decisions.json) · [署名与摘要](RUN-0012-motion-reviews.json) · [前向引文定位](RUN-0012-forward-reviewed.json)
+[逐批来源与规范计数](RUN-0012-reference-accounting.json) · [递归游标](RUN-0012-next-frontier.json) · [版本复核](RUN-0012-version-decisions.json) · [署名与摘要](RUN-0012-motion-reviews.json) · [昆虫视觉里程计摘要](RUN-0012-insect-odometry-reviews.json) · [前向引文定位](RUN-0012-forward-reviewed.json)
 """
 
 
