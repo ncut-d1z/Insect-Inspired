@@ -161,6 +161,9 @@ class Canonical(Batch):
                         self.input_paths.add(path)
 
     def resolve(self,raw,q,owner,relation):
+        if q["source_id"]=="crossref" and raw.get("DOI") and not doi(raw["DOI"]):
+            # A truncated substring of an invalid deposited DOI cannot establish identity.
+            return None,[],"malformed_deposited_doi"
         keys=raw_ids(raw,q["source_id"])
         if len({k for k in keys if doi(k)})>1:return None,sorted(keys),"printed_and_assigned_doi_conflict"
         if q["source_id"]=="crossref" and raw.get("DOI") and raw.get("unstructured"):
