@@ -1,6 +1,7 @@
 """Bind large checkpoint task cursors and unresolved task IDs to ordinary JSON files."""
 import hashlib
 import json
+import sys
 from pathlib import Path
 from partitioned_research_json import bound_path, encode, metadata, put, records, sha, view_files, write_view
 
@@ -16,10 +17,10 @@ def logical_chunks(checkpoint):
         yield encode(key) + b":"
         if key == "task_cursor_state":
             yield b"{"
-            for j, (tid, cursor) in enumerate(sorted(checkpoint[key].items())):
+            for j, tid in enumerate(sorted(checkpoint[key])):
                 if j:
                     yield b","
-                yield encode(tid) + b":" + encode(cursor)
+                yield encode(tid) + b":" + encode(checkpoint[key][tid])
             yield b"}"
         elif key == "unresolved_tasks":
             yield b"["
@@ -50,7 +51,7 @@ def write_checkpoint(path, checkpoint):
         raise ValueError("Checkpoint path or task membership differs")
     queues = {
         **meta,
-        "task_cursor_state": ({"task_id": k, "cursor_state": v} for k, v in sorted(checkpoint["task_cursor_state"].items())),
+        "task_cursor_state": ({"task_id": k, "cursor_state": checkpoint["task_cursor_state"][k]} for k in sorted(checkpoint["task_cursor_state"])),
         "unresolved_tasks": ({"task_id": tid} for tid in checkpoint["unresolved_tasks"]),
     }
     # Bind each checkpoint state to an immutable index before changing its public entry.
@@ -79,7 +80,14 @@ def load_checkpoint(path, public=None):
     if folder is None or set(index["collections"]) != set(COLLECTIONS) or any(public[k] != index["metadata"][k] for k in ("scope_id", "checkpoint_id", "schema_version")):
         raise ValueError("Checkpoint collections or scope differs")
     checkpoint = {k: v for k, v in public.items() if k not in ("format", "task_collections", "task_collections_sha256", "logical_bytes", "logical_sha256")}
-    checkpoint["task_cursor_state"] = {r["task_id"]: r["cursor_state"] for r in records(index, folder, "task_cursor_state")}
+    cursors = {}
+    for row in records(index, folder, "task_cursor_state"):
+        state = row["cursor_state"]
+        for field in ("task_state", "failure_reason", "review_condition"):
+            if isinstance(state.get(field), str):
+                state[field] = sys.intern(state[field])
+        cursors[row["task_id"]] = state
+    checkpoint["task_cursor_state"] = cursors
     checkpoint["unresolved_tasks"] = [r["task_id"] for r in records(index, folder, "unresolved_tasks")]
     if not set(checkpoint["unresolved_tasks"]) <= checkpoint["task_cursor_state"].keys() or logical_binding(checkpoint) != {k: public[k] for k in ("logical_bytes", "logical_sha256")}:
         raise ValueError("Checkpoint data differ from the public binding")

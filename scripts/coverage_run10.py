@@ -51,7 +51,6 @@ def collect(frozen, run_id=RUN):
     clocks = {tid:utc(latest[tid]["deadline_at_utc"]) for tid in opened if latest[tid].get("unknown_since_utc")}
     due = {tid for tid,end in clocks.items() if end<=now}
     require(all(latest[k]["overdue"] and latest[k]["priority"] in {"high","critical","urgent"} for k in due), "Unprocessed deadline")
-    cursor = {k:{f:t.get(f) for f in CURSOR_FIELDS} for k,t in sorted(latest.items())}
     dims = defaultdict(Counter)
     work_ids = set()
     keys = {}
@@ -151,4 +150,12 @@ def collect(frozen, run_id=RUN):
         inherited={r["work_id"] for r in original[source_report["visited"]:]}
         require(inherited.isdisjoint(discovered) and {r["work_id"] for r in frontier}==inherited|set(discovered),"Saved frontier lost or duplicated a continuing Work")
         coverage["parent_reference_search"]={k:source_report[k] for k in ("visited","with_entries","without_entries","positions","original_bibliographies_verified_complete")}
+    # All entity, deadline and task-type checks are finished. Reuse the current rows for the checkpoint.
+    if use_run12:
+        for task in latest.values():
+            for field in ("task_id","entity_id","unknown_since_utc","deadline_at_utc","overdue","priority"):
+                del task[field]
+        cursor = latest
+    else:
+        cursor = {k:{f:t.get(f) for f in CURSOR_FIELDS} for k,t in sorted(latest.items())}
     return count,coverage,cursor,opened
