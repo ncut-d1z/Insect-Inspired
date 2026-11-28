@@ -6,8 +6,8 @@
   "partition_target_bytes": 4194304,
   "datasets": {
     "authors.jsonl": {
-      "logical_records": 164370,
-      "logical_sha256": "87356eac527066f3184fbff03817bf4ea1b65c71c212a3b5054820101dea09c0",
+      "logical_records": 167464,
+      "logical_sha256": "5f8c739a0c291660df13eb322a2d4bd253e06aba1b504b4aa17f6c0369ec0610",
       "parts": [
         {
           "path": "authors.jsonl",
@@ -376,16 +376,22 @@
           "bytes": 4193444
         },
         {
-          "path": "partitions/authors/ba1b28cb0c5b8c84cff1083e38dbe0956e6ef7169d3fbe51f57f5bd21fdcd1f8.jsonl",
-          "records": 743,
-          "sha256": "ba1b28cb0c5b8c84cff1083e38dbe0956e6ef7169d3fbe51f57f5bd21fdcd1f8",
-          "bytes": 1036773
+          "path": "partitions/authors/e6f275141bc3515353586f84ea8588294a050af2dc658e1843383cd1072ee208.jsonl",
+          "records": 2977,
+          "sha256": "e6f275141bc3515353586f84ea8588294a050af2dc658e1843383cd1072ee208",
+          "bytes": 4194291
+        },
+        {
+          "path": "partitions/authors/9d7ffbd8eb088e6f8090087df5f944940329ee0e257caf5a297844ca4bb496d1.jsonl",
+          "records": 860,
+          "sha256": "9d7ffbd8eb088e6f8090087df5f944940329ee0e257caf5a297844ca4bb496d1",
+          "bytes": 1170556
         }
       ]
     },
     "citation-edges.jsonl": {
-      "logical_records": 130185,
-      "logical_sha256": "caaef4838a1bc61dea1cc4b6a0f2616514517f6469f19dddba3f75e2062b7fa3",
+      "logical_records": 132896,
+      "logical_sha256": "4cbf5014ea06d9ce822ed38cf6f1ce1c2264c41c586fae339eb1776b6df78328",
       "parts": [
         {
           "path": "citation-edges.jsonl",
@@ -532,16 +538,16 @@
           "bytes": 4194195
         },
         {
-          "path": "partitions/citation-edges/9c4b8e51dd87aad161d46ef8508fb0e68946de0c6ab27061369297441b1d6a80.jsonl",
-          "records": 431,
-          "sha256": "9c4b8e51dd87aad161d46ef8508fb0e68946de0c6ab27061369297441b1d6a80",
-          "bytes": 254786
+          "path": "partitions/citation-edges/e074bca4a1bfcf37157f199a8ae77b564ae6c00b26c8703de673770af6572f73.jsonl",
+          "records": 3142,
+          "sha256": "e074bca4a1bfcf37157f199a8ae77b564ae6c00b26c8703de673770af6572f73",
+          "bytes": 1861507
         }
       ]
     },
     "discovery-paths.jsonl": {
-      "logical_records": 83147,
-      "logical_sha256": "2aa0934c12b82b0357908684720ad46b29090b59ed23ac6229d5ed502bcb7382",
+      "logical_records": 83898,
+      "logical_sha256": "6ba9d359b6f390f2ac7c097915ffe1ec04861a84ea0f30ce579c44a1308290bd",
       "parts": [
         {
           "path": "discovery-paths.jsonl",
@@ -784,16 +790,22 @@
           "bytes": 4192633
         },
         {
-          "path": "partitions/discovery-paths/9f0c5ac09b84654b7b95416429bfbbb524a22ef0e252a92f8d836f14ef890586.jsonl",
-          "records": 1317,
-          "sha256": "9f0c5ac09b84654b7b95416429bfbbb524a22ef0e252a92f8d836f14ef890586",
-          "bytes": 3682612
+          "path": "partitions/discovery-paths/800499dd5aef93654f386694059870377bfcc9931e55be1a879edaac7e479937.jsonl",
+          "records": 1496,
+          "sha256": "800499dd5aef93654f386694059870377bfcc9931e55be1a879edaac7e479937",
+          "bytes": 4193285
+        },
+        {
+          "path": "partitions/discovery-paths/7982d5e4a6aa39cfc384e40d6438bfe7f6ccc633e86b3f8ffd4b0ef05e5312cf.jsonl",
+          "records": 572,
+          "sha256": "7982d5e4a6aa39cfc384e40d6438bfe7f6ccc633e86b3f8ffd4b0ef05e5312cf",
+          "bytes": 1610902
         }
       ]
     },
     "reference-occurrences.jsonl": {
-      "logical_records": 277889,
-      "logical_sha256": "b5159c7d5473a60905dcc0963f67ce5d09cac4f3ac8e1bd0d1a055921ca5955e",
+      "logical_records": 281048,
+      "logical_sha256": "942c81502ec3c77a6f2430f55204ef69953cf0355ef8beaf09d0dca21746046a",
       "parts": [
         {
           "path": "reference-occurrences.jsonl",
@@ -1324,16 +1336,22 @@
           "bytes": 4193722
         },
         {
-          "path": "partitions/reference-occurrences/b726254a805712c15f34c115da0b65019a4b931624917ad989c11dfbee003387.jsonl",
-          "records": 98,
-          "sha256": "b726254a805712c15f34c115da0b65019a4b931624917ad989c11dfbee003387",
-          "bytes": 135475
+          "path": "partitions/reference-occurrences/c58f2e1cc6436aa3073d1a282eb61d7c60bc418c2a8e9cd5af4faf2510837e55.jsonl",
+          "records": 2878,
+          "sha256": "c58f2e1cc6436aa3073d1a282eb61d7c60bc418c2a8e9cd5af4faf2510837e55",
+          "bytes": 4194147
+        },
+        {
+          "path": "partitions/reference-occurrences/5ca5f75d25848d08cdcff2f56e6786815f5ca6be60b6dce3d80fa91678bc592a.jsonl",
+          "records": 379,
+          "sha256": "5ca5f75d25848d08cdcff2f56e6786815f5ca6be60b6dce3d80fa91678bc592a",
+          "bytes": 590772
         }
       ]
     },
     "tasks.jsonl": {
-      "logical_records": 778662,
-      "logical_sha256": "95c667b03e3e0aacfa97c45dc8c6638bcb2a2089bc7599603c1a6430dca34b71",
+      "logical_records": 789045,
+      "logical_sha256": "c8992c5bb1538209d846991fb81a166ec3f500dd78433c0fb187c77cd6474452",
       "parts": [
         {
           "path": "tasks.jsonl",
@@ -2296,16 +2314,28 @@
           "bytes": 4193933
         },
         {
-          "path": "partitions/tasks/8d4e5a0629bea36c4f9726c4e18931625e2d62a2a1dfd05df54c8be9de555a6c.jsonl",
-          "records": 3449,
-          "sha256": "8d4e5a0629bea36c4f9726c4e18931625e2d62a2a1dfd05df54c8be9de555a6c",
-          "bytes": 2926935
+          "path": "partitions/tasks/ff2777175ac422b1faf59adcc29012e09badfa7ada3d6d7f48f9f5e521299ec7.jsonl",
+          "records": 4944,
+          "sha256": "ff2777175ac422b1faf59adcc29012e09badfa7ada3d6d7f48f9f5e521299ec7",
+          "bytes": 4193890
+        },
+        {
+          "path": "partitions/tasks/65c482cadf9f1b2dd2d65a6f571b7edefeda324b6e626b67b4a5cdc1d994ad8c.jsonl",
+          "records": 4955,
+          "sha256": "65c482cadf9f1b2dd2d65a6f571b7edefeda324b6e626b67b4a5cdc1d994ad8c",
+          "bytes": 4193952
+        },
+        {
+          "path": "partitions/tasks/755e3df1b913ae992848afa8dee596660cc59d30f23fa4fceb3a63e90e702dd7.jsonl",
+          "records": 3933,
+          "sha256": "755e3df1b913ae992848afa8dee596660cc59d30f23fa4fceb3a63e90e702dd7",
+          "bytes": 3336861
         }
       ]
     },
     "versions.jsonl": {
-      "logical_records": 47705,
-      "logical_sha256": "455101d94c8038743eb74687d16eb2171d1b35d5b0ef61c3b1f30bb1037fdff3",
+      "logical_records": 48456,
+      "logical_sha256": "c1cf1c56d1b13ba7ba8b4389c2a415e33f2485f2f438a6fff19d64a40ab2f7e3",
       "parts": [
         {
           "path": "versions.jsonl",
@@ -2386,16 +2416,16 @@
           "bytes": 4193710
         },
         {
-          "path": "partitions/versions/85bf6a5097fb02dc9d38692992b0a5b0d9cdd9f5940250f9c69835d2645ce5d4.jsonl",
-          "records": 1838,
-          "sha256": "85bf6a5097fb02dc9d38692992b0a5b0d9cdd9f5940250f9c69835d2645ce5d4",
-          "bytes": 2007250
+          "path": "partitions/versions/5b99d7a28da282ceacb1e1d3806cfce7e7ae12ecbc71cb0685a124e53eaaa802.jsonl",
+          "records": 2589,
+          "sha256": "5b99d7a28da282ceacb1e1d3806cfce7e7ae12ecbc71cb0685a124e53eaaa802",
+          "bytes": 2822864
         }
       ]
     },
     "works.jsonl": {
-      "logical_records": 47649,
-      "logical_sha256": "03664d16a251251f007bd01961ba18c4bbd346b063e37d572ffc7b7487ca45d2",
+      "logical_records": 48400,
+      "logical_sha256": "aaae2f6fe140a1dd38bbad2b807c3b364b75897c8ee680d1984cc5c9a60245e4",
       "parts": [
         {
           "path": "works.jsonl",
@@ -3070,10 +3100,22 @@
           "bytes": 4190170
         },
         {
-          "path": "partitions/works/35fe824b2b38a4ab8377494603f8177af9b729a533e44f414bd189b6dc4aa033.jsonl",
-          "records": 337,
-          "sha256": "35fe824b2b38a4ab8377494603f8177af9b729a533e44f414bd189b6dc4aa033",
-          "bytes": 3354525
+          "path": "partitions/works/17c341a2407d5aaf1eb2af6a10538fc37a8132d2384be400613ba06e8ae6c8c1.jsonl",
+          "records": 429,
+          "sha256": "17c341a2407d5aaf1eb2af6a10538fc37a8132d2384be400613ba06e8ae6c8c1",
+          "bytes": 4186720
+        },
+        {
+          "path": "partitions/works/f558fa89b1169d092d2bb00ac6957c13f1b54a829cc408175cc9d3faf4ad1053.jsonl",
+          "records": 449,
+          "sha256": "f558fa89b1169d092d2bb00ac6957c13f1b54a829cc408175cc9d3faf4ad1053",
+          "bytes": 4186394
+        },
+        {
+          "path": "partitions/works/b746c93aa3ba84fe77dd80bfd31c8af790ce109af455830112b70baf22ab8380.jsonl",
+          "records": 210,
+          "sha256": "b746c93aa3ba84fe77dd80bfd31c8af790ce109af455830112b70baf22ab8380",
+          "bytes": 2277856
         }
       ]
     },
@@ -3097,7 +3139,7 @@
     },
     "queries.jsonl": {
       "logical_records": 2463,
-      "logical_sha256": "3935446d01905c7a41b663ef3ef8810bac75e595eb64f9c3a8beea13826c4d55",
+      "logical_sha256": "893e678902250b2ba0070d46a3de70ea2bc99f0d4539dc18af0848350c5e1cc3",
       "parts": [
         {
           "path": "queries.jsonl",
@@ -3112,16 +3154,16 @@
           "bytes": 7160
         },
         {
-          "path": "partitions/queries/bdb4b6c65a6e70e0264bbd3ca8b188a48e49e5363886ac0c9412192c83d8730c.jsonl",
+          "path": "partitions/queries/f11a51e636835d041560f777268065dc8a5530b8aecae9a3629ac3a150041c1e.jsonl",
           "records": 1062,
-          "sha256": "bdb4b6c65a6e70e0264bbd3ca8b188a48e49e5363886ac0c9412192c83d8730c",
-          "bytes": 3770617
+          "sha256": "f11a51e636835d041560f777268065dc8a5530b8aecae9a3629ac3a150041c1e",
+          "bytes": 3792397
         }
       ]
     },
     "aliases.jsonl": {
-      "logical_records": 42860,
-      "logical_sha256": "59bf6376918a89c2fe503c726ec2b46447df4dd95abe679cb5f8e5070d025c8c",
+      "logical_records": 43611,
+      "logical_sha256": "4bbb24e19e58bbf93014a71d887d997332e5c17a93187b9efb2ae149356930dd",
       "parts": [
         {
           "path": "aliases.jsonl",
@@ -3178,10 +3220,10 @@
           "bytes": 4193420
         },
         {
-          "path": "partitions/aliases/a10a5d2de3f7e03222ae1913c79f72454f2088593c1c2387262597cb165a177f.jsonl",
-          "records": 3116,
-          "sha256": "a10a5d2de3f7e03222ae1913c79f72454f2088593c1c2387262597cb165a177f",
-          "bytes": 2970987
+          "path": "partitions/aliases/0c96db8ce174037dd00d8b092369f4161cb276d89bcbee5335cd1c8e07b6a684.jsonl",
+          "records": 3867,
+          "sha256": "0c96db8ce174037dd00d8b092369f4161cb276d89bcbee5335cd1c8e07b6a684",
+          "bytes": 3687746
         }
       ]
     }
