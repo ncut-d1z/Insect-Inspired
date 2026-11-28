@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "checkpoint_id": "CP-0011",
+  "verified_at_utc": "2026-11-28T04:53:49.200076Z",
+  "remote": "https://github.com/ncut-d1z/Insect-Inspired",
+  "readback": "Independent Git fetch of both published heads over HTTPS, SHA-256 of every tracked file, JSON parsing and ordered reassembly of every manifested dataset.",
+  "commit": "cf6b1453d668477d2631a73cd40ab548deb89110",
+  "tree": "0dc354e78f4ee0b9020f4069c9c523f849cb3c40",
+  "branches": {
+    "main": "cf6b1453d668477d2631a73cd40ab548deb89110",
+    "codex/p3-p6-cp11": "cf6b1453d668477d2631a73cd40ab548deb89110"
+  },
+  "checkpoint_sha256": "bbdae2a70cca6306918f3a4c51ae0281b3cd637d840f3e2de8153825de847855",
+  "verified_file_count": 1534,
+  "verified_file_bytes": 1593955390,
+  "distinct_git_blobs": 1500,
+  "manifest_artifacts": 1533,
+  "partitioned_datasets": {
+    "authors.jsonl": {
+      "records": 20918,
+      "bytes": 36026200,
+      "sha256": "f320fcb2d54b74c7e5d299b821a0a068b9dd5bba5ed647e46956bd110ef9ee66"
+    },
+    "citation-edges.jsonl": {
+      "records": 31932,
+      "bytes": 16227295,
+      "sha256": "ebf804c85b278f1674cddc293c0540c5e69dada689a4a7d78baa48a9ca0c908d"
+    },
+    "discovery-paths.jsonl": {
+      "records": 40674,
+      "bytes": 56777864,
+      "sha256": "99d4b4adb7814d8947763cd6419a1290898ca109da303658a36d87af52269c4e"
+    },
+    "organizations.jsonl": {
+      "records": 1415,
+      "bytes": 4599983,
+      "sha256": "bb8fc643bfe817f92ae7c493a39963d1a1d34d5802705f4d2b4e7736c09f4a6d"
+    },
+    "reference-occurrences.jsonl": {
+      "records": 158599,
+      "bytes": 189715268,
+      "sha256": "bb4fd05f62c7ac1a733d64dd81fd92bdb6ff2aecabbc9baeb7137aa02134908c"
+    },
+    "tasks.jsonl": {
+      "records": 201695,
+      "bytes": 184725649,
+      "sha256": "c2ebd39364840544d4b67adb48750d9e88f5f7e814f0c9f7e03d1a7022f0dd15"
+    },
+    "versions.jsonl": {
+      "records": 5226,
+      "bytes": 6067428,
+      "sha256": "84a383e8b4b5e0b3cce5522bdd65733ab5c7ea52ad778d385bd317caab506efc"
+    },
+    "works.jsonl": {
+      "records": 5177,
+      "bytes": 65074946,
+      "sha256": "24f607510547409dc732ae85427b549067a2ce237d8f5524abef8408f3b9c08f"
+    }
+  },
+  "eligible_claims": 63,
+  "total_works": 5177,
+  "source_matched_citations": {
+    "version_supported_by_reference": 22,
+    "unresolved_no_exact_version_doi": 10,
+    "unresolved_version_or_date_conflict": 3
+  },
+  "research_closure": false,
+  "git_fsck_strict": "passed",
+  "roadmap_readback": {
+    "main": {
+      "head": "cf6b1453d668477d2631a73cd40ab548deb89110",
+      "readme_sha256": "9420b64eb227fb5b95da3a3fc2fa3f899454deca310225b2cf22d89b1996b431",
+      "roadmap_requirements_sha256": "e19be24f7bb07d207d2b282e2133da0fb753105bb96075d879b7f293cd3aa7f3"
+    },
+    "research/p3-p6-cp10": {
+      "head": "9112a00455a6ab68e00fb6504361a89debe5305a",
+      "readme_sha256": "eea4ffbc9b17871222d209a2c64307aa68a12847c614229cee7ecf999e0924b2",
+      "roadmap_requirements_sha256": "e19be24f7bb07d207d2b282e2133da0fb753105bb96075d879b7f293cd3aa7f3"
+    },
+    "research/p3-p6-cp5": {
+      "head": "d7427b1cefd29f4dabf6ce8a20d23175001403a6",
+      "readme_sha256": "81fe3935b8663fd37c9556ab7376d972cd713e2959ff1715cc44a09e1f41c96e",
+      "roadmap_requirements_sha256": "e19be24f7bb07d207d2b282e2133da0fb753105bb96075d879b7f293cd3aa7f3"
+    },
+    "research/p3-p6-cp6": {
+      "head": "1a9ac9188314ac7b2a5146d236a80e1a3240d06d",
+      "readme_sha256": "cfca62901900ce2bad059dee14c00fec43b25dd9be3e4b654abdfcc1f887f2b1",
+      "roadmap_requirements_sha256": "e19be24f7bb07d207d2b282e2133da0fb753105bb96075d879b7f293cd3aa7f3"
+    },
+    "research/p3-p6-cp7": {
+      "head": "23867b5db5e6180de34af2b5da3a632a9502886a",
+      "readme_sha256": "cfca62901900ce2bad059dee14c00fec43b25dd9be3e4b654abdfcc1f887f2b1",
+      "roadmap_requirements_sha256": "e19be24f7bb07d207d2b282e2133da0fb753105bb96075d879b7f293cd3aa7f3"
+    },
+    "codex/p3-p6-cp11": {
+      "head": "cf6b1453d668477d2631a73cd40ab548deb89110",
+      "readme_sha256": "9420b64eb227fb5b95da3a3fc2fa3f899454deca310225b2cf22d89b1996b431",
+      "roadmap_requirements_sha256": "e19be24f7bb07d207d2b282e2133da0fb753105bb96075d879b7f293cd3aa7f3"
+    }
+  }
+}
