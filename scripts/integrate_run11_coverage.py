@@ -90,7 +90,10 @@ def coverage():
 
 def queries():
     paths=set(OUT.glob("Q-RUN11-*.json"));reg=Ledger({o["task_id"] for p in paths for o in read(p)["owners"]},set())
-    pending={p for p in paths if p.stem not in reg.known_queries};assert pending
+    pending={p for p in paths if p.stem not in reg.known_queries}
+    if not pending:
+        print("All source receipts already have canonical query records.")
+        return
     reg.queries(pending)
     report=dict(run_id=RUN,scope_id=SCOPE,checkpoint_id=CP,recorded_at_utc=stamp(),registered=len(pending),
                 input_receipts={p.relative_to(ROOT).as_posix():digest(p) for p in pending})

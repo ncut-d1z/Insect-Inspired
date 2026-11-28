@@ -56,13 +56,16 @@ def index_rows(queue,titles,start,count):
         assert extra["base_sha256"]==digest(path)
         for p,h in extra["receipts"].items():assert digest(ROOT/p)==h
         inputs.update((path,sp))
+        request_owners=defaultdict(set)
+        for name in m["input_receipts"]:
+            request=receipt(Path(name).stem)
+            for owner in request["owners"]:
+                request_owners[owner["work_id"]].add(request["query_id"])
         for n in range(max(base,start),min(end,finish)):
             owner=queue[n];row=m["worklist"][n-base];ext=extra["parents"][n-base]
             assert row["work_id"]==ext["work_id"]==owner["work_id"] and row["queue_position"]==n+1
             attempts={s["query_id"] for s in row["sources"]}
-            for k in m["input_receipts"]:
-                q=receipt(Path(k).stem)
-                if any(o["work_id"]==owner["work_id"] for o in q["owners"]):attempts.add(q["query_id"])
+            attempts.update(request_owners[owner["work_id"]])
             if ext["openalex_literal_query"]:attempts.add(ext["openalex_literal_query"])
             if ext.get("corrected_deposited_query"):attempts.add(ext["corrected_deposited_query"]["query_id"])
             pages=list(source_pages(owner,row,titles[owner["work_id"]],ext))

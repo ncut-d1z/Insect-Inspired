@@ -21,6 +21,22 @@ def committed_paths(folder):
     return set(probe.stdout.decode().splitlines()) if probe.returncode==0 else set()
 
 
+def batch_end(start, maximum_parents=64, maximum_positions=3200):
+    """Bound an incremental Git transaction by parents and actual source positions."""
+    if not 0<=start<2620 or maximum_parents<1 or maximum_positions<1:
+        raise ValueError("Invalid recursive slice")
+    stop=min(start+maximum_parents,2620)
+    count=0
+    for base in range(start//WIDTH*WIDTH,stop,WIDTH):
+        records=read(preferred(INDEX,f"{base+1:04}-{min(base+WIDTH,2620):04}"))["parents"]
+        for i in range(max(start,base),min(stop,base+len(records))):
+            record=records[i-base]
+            if record["queue_position"]!=i+1:raise ValueError("Reference index order changed")
+            count+=record["counts"].get("positions",0)
+            if count>maximum_positions and i>start:return i
+    return stop
+
+
 def readiness(start,end):
     inputs=[PLAN/"first-1024.json"]
     if end>1024:inputs.append(PLAN/"groups.json")
@@ -46,5 +62,6 @@ def readiness(start,end):
 
 
 if __name__=="__main__":
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument("start",type=int);p.add_argument("end",type=int)
-    args=p.parse_args();print("ready" if readiness(args.start,args.end) else "waiting")
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument("start",type=int);p.add_argument("end",nargs="?",type=int)
+    args=p.parse_args()
+    print(batch_end(args.start) if args.end is None else ("ready" if readiness(args.start,args.end) else "waiting"))

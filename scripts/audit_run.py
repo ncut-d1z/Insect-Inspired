@@ -838,16 +838,15 @@ class Audit:
 
     def exports(self):
         export_meta = []
-        graph = self.load_json(self.temp / 'exports/citation_graph.json', 'citation_graph')
-        entities = self.load_json(self.temp / 'exports/research_entities.json', 'research_entities')
-        paths = self.load_json(self.temp / 'exports/research_paths.json', 'research_paths')
+        def load_export(name):
+            obj = self.load_json(self.temp / 'exports' / (name + '.json'), name)
+            if obj is not None:
+                export_meta.append((name, obj.get('scope_id'), obj.get('checkpoint_id'), obj.get('schema_version')))
+            return obj
+        graph = load_export('citation_graph')
         works = self.indices.get('work', {})
         edges = self.indices.get('citation_edge', {})
         refs = self.indices.get('reference_occurrence', {})
-        for export, obj in [('citation_graph', graph), ('research_entities', entities), ('research_paths', paths)]:
-            if obj is None:
-                continue
-            export_meta.append((export, obj.get('scope_id'), obj.get('checkpoint_id'), obj.get('schema_version')))
         if graph:
             nodes = graph.get('nodes', [])
             node_ids = [x.get('work_id') for x in nodes]
@@ -891,6 +890,9 @@ class Audit:
                 a = self.active.get(p.get('assessment_id'))
                 if a:
                     self.require(all(p.get(k) == a.get(k) for k in p), 'graph_independent_progress_value', 'Assessment differs', p.get('assessment_id'))
+            del nodes, export_edges, unresolved, independent
+        del graph
+        entities = load_export('research_entities')
         relation_index = {}
         if entities:
             for group, kind, key in [('people', 'person', 'person_id'), ('organizations', 'organization', 'org_id'), ('projects', 'project', 'project_id')]:
@@ -930,6 +932,7 @@ class Audit:
             for canonical in canonical_projects:
                 self.require(relation_index.get(canonical.get('relation_id')) == canonical,
                              'entities_project_relation_value', 'Canonical project relation missing or changed', canonical.get('relation_id'))
+        paths = load_export('research_paths')
         if paths:
             rows = paths.get('paths', [])
             self.require(len(rows) == len({p.get('path_id') for p in rows}), 'paths_duplicate_id', 'Duplicate path ID')
