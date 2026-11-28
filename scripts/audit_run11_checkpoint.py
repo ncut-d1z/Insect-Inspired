@@ -2,11 +2,12 @@
 import argparse
 from collections import OrderedDict
 from collections.abc import MutableMapping
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from functools import lru_cache
 from hashlib import sha256
 import json
 from pathlib import Path
+import time
 
 import audit_run
 from checkpoint_cp10 import require
@@ -89,6 +90,25 @@ class LocationMap(MutableMapping):
 
 class FullAudit(audit_run.Audit):
     schema_ledger=None
+    staged_exports=None
+
+    def html_bib(self):
+        if self.staged_exports is not None:
+            marker=self.staged_exports
+            run=read(STATE)
+            limit=datetime.fromisoformat(run["started_at_utc"])+timedelta(hours=run["budget"]["wall_clock_hours"])
+            while not marker.is_file():
+                require(datetime.now(timezone.utc)<limit and not marker.with_name("export-staging-failed.txt").exists(),
+                        "The frozen export audit could not start")
+                time.sleep(5)
+            report=marker.with_name("determinism.json")
+            require(marker.read_text(encoding="ascii").strip()==digest(report),"Staged export inventory changed")
+            proof=read(report)
+            require(proof["status"]=="passed" and proof["candidate_sha256"]==self.stats["candidate_sha256"] and
+                    all((self.repo/k).stat().st_size==v["bytes"] and digest(self.repo/k)==v["sha256"]
+                        for k,v in proof["artifacts"].items()),"Staged exports differ from the independent generations")
+            self.stats["staged_export_manifest_sha256"]=digest(report)
+        return super().html_bib()
 
     def validate_records(self,kind,records,name):
         if self.schema_ledger is None:
@@ -127,13 +147,17 @@ class FullAudit(audit_run.Audit):
             if isinstance(rows,LogicalRows):rows.close()
 
 
-def run(out,ledger=None):
+def run(out,ledger=None,staged_exports=None):
     cp=read(CANDIDATE);run=read(STATE);baseline=run["checkpoint_commit"]
     bound=digest(CANDIDATE)
     with blobs() as get:
         m=json.loads(get(baseline,"temp/partitions/manifest.json"))
         prior=[json.loads(line) for part in parts_for("assessments",m) for line in get(baseline,"temp/"+part["path"]).splitlines() if line]
     engine=FullAudit(ROOT,out,datetime.fromisoformat(cp["created_at_utc"]))
+    if staged_exports is not None:
+        require(staged_exports.is_absolute() and not staged_exports.resolve().is_relative_to(ROOT),
+                "An independent export staging receipt is required")
+        engine.staged_exports=staged_exports
     if ledger is not None:
         require(ledger.is_file(),"Missing independent schema validation ledger")
         engine.schema_ledger=read_ledger(ledger,(TEMP/"schema.json").read_bytes())
@@ -154,5 +178,6 @@ if __name__=="__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output",type=Path,required=True)
     parser.add_argument("--schema-ledger",type=Path)
+    parser.add_argument("--staged-exports",type=Path)
     args=parser.parse_args()
-    run(args.output,args.schema_ledger)
+    run(args.output,args.schema_ledger,args.staged_exports)

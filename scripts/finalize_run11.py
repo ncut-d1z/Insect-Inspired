@@ -32,6 +32,14 @@ def gather(qa, candidate, candidate_hash):
             remote["physical_exports_compared_with_double_generation"] == len(det["artifacts"]), "Remote or local exports differ")
     require(bib["input_sha256"]==det["artifacts"]["ref.bib"]["sha256"] and bib["parser_exit_code"]==bib["missing_keys"]==bib["extra_keys"]==0 and
             bib["bibtex_entries"]==bib["checked_original_titles"]==bib["roundtripped_distinct_keys"]==candidate["counts"]["canonical_works"], "BibTeX title or key set differs")
+    parts = bib["roundtrip_parts"]
+    whole = bib["whole_file_parse"]
+    require(parts and bib["roundtrip_input_sha256"]==bib["input_sha256"] and sum(p["entries"] for p in parts)==bib["bibtex_entries"] and
+            sum(p["bytes"] for p in parts)==det["artifacts"]["ref.bib"]["bytes"] and all(p["exit_code"]==0 and p["returned_keys"]==p["entries"] for p in parts),
+            "Native Biber coverage is incomplete")
+    if len(parts)>1:
+        require(whole and whole["input_sha256"]==bib["input_sha256"] and whole["parsed_entries"]==whole["distinct_keys"]==bib["bibtex_entries"],
+                "The complete bibliography must also parse as a single file")
     out = {"cp13-data-audit.json":data,"cp13-determinism.json":det,"cp13-export-validation.json":meta,"cp13-bibtex-parse.json":bib}
     for browser in ("chrome","edge"):
         ui = read(qa/browser/"ui-audit-final.json")
